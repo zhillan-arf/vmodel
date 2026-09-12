@@ -55,3 +55,13 @@ An earlier run failed outright because the permitted fixture still was not route
 3. Instrument the next soak to record `visibilitychange`, `freeze`, `resume`, WebGL context-loss events and executing processor numbers continuously, rather than reconstructing them afterwards. The existing [capture-animation probe](../../scripts/capture-animation-probe.mjs) already listens for the first four.
 
 The blank-white capture symptom remains entirely unexplained and is not addressed by anything in this record.
+
+---
+
+## Resolved elsewhere: the action being tested was wrong
+
+2026-09-13. This investigation tested **covering** the window. The mechanism that actually reproduces the TASK-020 signature is **minimizing** it: measured 60.04 fps before, **0.00 fps while minimized with `visibilityState` reporting `hidden`**, and 59.91 fps after restoring. See [minimizing the output window](capture-minimize-cause.md).
+
+The null results below are retained and are not worthless: they measured a flat 60 fps under an opaque full-screen window in both automated and non-automated Chrome, which establishes that **working in front of the output window is harmless**. What they could not do was establish occlusion, because `visibilityState` never left `visible`.
+
+The lesson worth keeping: a probe that never establishes its own condition produces a confident-looking null result. The `visibilityState` column was the tell, and it was in the table the whole time.

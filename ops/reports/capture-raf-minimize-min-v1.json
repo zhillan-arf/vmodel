@@ -1,0 +1,57 @@
+{
+  "date": "2026-09-12T17:11:16.855Z",
+  "runLabel": "min-v1",
+  "passed": true,
+  "status": "complete",
+  "question": "Does minimizing the output window stop frame delivery and so reproduce the 1 Hz / blank-capture signature?",
+  "chromePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "phaseMs": 10000,
+  "automationAttached": false,
+  "obsInvolved": false,
+  "physicalMedia": false,
+  "liveAccepted": false,
+  "limits": [
+    "A synthetic WebGL page, not the avatar runtime: it shows scheduler behaviour, not application performance.",
+    "Programmatic ShowWindow minimize; a user minimising by hand or switching virtual desktops is similar but not identical.",
+    "No OBS capture output is inspected, so the blank-capture link is inferred from frame delivery, not observed here.",
+    "Frame counts arrive by beacon every 500 ms; timers continue while frames are stopped, which is why they remain readable.",
+    "One short run on one host; ambient load is recorded, not controlled."
+  ],
+  "minimizeResult": {
+    "found": true,
+    "minimized": true,
+    "visible": true
+  },
+  "restoreResult": {
+    "found": true,
+    "minimized": false,
+    "visible": true
+  },
+  "before": {
+    "samples": 20,
+    "framesPerSecond": 60.04,
+    "visibility": "visible",
+    "hiddenEvents": 0
+  },
+  "during": {
+    "samples": 10,
+    "framesPerSecond": 0,
+    "visibility": "hidden",
+    "hiddenEvents": 0
+  },
+  "after": {
+    "samples": 20,
+    "framesPerSecond": 59.91,
+    "visibility": "visible",
+    "hiddenEvents": 0
+  },
+  "comparison": {
+    "beforeFps": 60.04,
+    "duringFps": 0,
+    "afterFps": 59.91,
+    "visibilityWhileMinimized": "hidden",
+    "framesStoppedWhileMinimized": true,
+    "recovered": true,
+    "reproducesSignature": true
+  }
+}

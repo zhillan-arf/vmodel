@@ -279,7 +279,16 @@ async function sample({ collectMemory = false, requireFresh = true } = {}) {
   assert(currentScene.currentProgramSceneName === sceneName && currentCollection.currentSceneCollectionName === 'Ene Studio' && currentProfile.currentProfileName === 'Ene Landscape', 'OBS selection changed during the fixture.');
   assert(recording.outputBytes < STOP_BYTES, 'Owned recording reached the 512 MiB stop threshold.');
   assert(recording.outputDuration < 975000, 'Owned recording reached its duration bound.');
-  assert(state.clean && state.visibility === 'visible' && state.previewHidden, 'Keep the owned clean view visible with the camera preview hidden.');
+  if (!(state.clean && state.visibility === 'visible' && state.previewHidden)) {
+    // Persist which condition broke: a bare assertion here loses the one fact
+    // that distinguishes occlusion from a changed view, and it cannot be
+    // reconstructed afterwards.
+    report.viewStateFailure = { observedAtUTC: new Date().toISOString(), phase: currentPhase?.id ?? null,
+      clean: state.clean, visibility: state.visibility, previewHidden: state.previewHidden,
+      view: state.view ?? null, viewEvents: state.viewEvents ?? null };
+    assert.fail('Keep the owned clean view visible with the camera preview hidden. Observed clean=' +
+      state.clean + ' visibility=' + state.visibility + ' previewHidden=' + state.previewHidden);
+  }
   assert(state.delegate === 'GPU' && state.workers === 1 && state.acquisitions === 1 && state.blockedMediaRequests === 0 && !state.overflow, 'The real GPU/fake-camera workload changed or telemetry overflowed.');
   assert(state.tracks.length === 1 && state.tracks[0].state === 'live' && state.tracks[0].kind === 'video' && state.tracks[0].settings.width === 640 && state.tracks[0].settings.height === 480, 'Fixed 640×480 video track is unavailable.');
   assert.deepEqual(state.workerErrors, []);

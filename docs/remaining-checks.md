@@ -54,17 +54,25 @@ Details: [combined workload and reproducibility](../ops/reports/voice-combined-w
 
 Your listening preference in step 2 still matters, and matters more now: if one of the three existing RVC voices fits, we may not need this particular converter at all.
 
-## The long-session problem: mostly resolved, one part needs free memory
+## The long-session problem: cause found
 
-The failure where drawing slowed to about one frame per second and OBS screenshots came out white **did not come back**. A full 15-minute seated session just completed cleanly: 58.5 frames per second, zero dropped OBS frames out of 27,002, zero blank captures, and no slowdown from start to finish. That ran while your browser and editor were open, which makes it a more honest result than a quiet-machine run would have been.
+The failure where the avatar slowed to about one frame per second and OBS screenshots came out white now has a mechanism, and it is a simple one.
 
-Two suspects were ruled in or out along the way: processor core placement is [tested and rejected](../ops/reports/capture-core-placement.md), and the "Chrome hid the window" idea is [untested rather than disproven](../ops/reports/capture-occlusion-investigation.md) because neither probe managed to actually hide the window.
+**Minimizing the output window stops it completely.** Measured: 60.0 frames per second normally, **0.0 while minimized**, 59.9 again the moment it is restored. A minimized window produces no frames at all, so the avatar freezes and OBS has nothing to capture — which is exactly white stills plus a near-dead frame rate, both symptoms from one cause.
 
-**One thing I could not finish.** The standing-with-hands session is still unmeasured. It failed once in a real way — the browser closed after 55 seconds, cause not captured — and then twice more for a reason that turned out to be my own fault: a bug in the single-phase test option I had just added meant the camera never started at all. That bug is fixed and the run is in progress.
+The good news is the other half of that measurement:
 
-I briefly told you this needed you to close your editor and browser to free memory. That was wrong, and I withdraw it — the evidence never supported it.
+- **Covering the window is completely safe.** Put anything you like in front of it, full screen included — still a full 60 frames per second. You can work normally while streaming.
+- **Minimizing it is the one thing to avoid.**
+- **Restoring it fixes everything instantly.** No restart, nothing to reconfigure.
 
-One separate performance fact worth knowing: with hands enabled, a complete tracking update takes 418-464 ms, so standing tracking refreshes about **2.2 times per second**. Head and body motion stay smooth because drawing runs independently, but fast hand movement will lag.
+So: if the avatar ever freezes or your scene goes white, check the taskbar first.
+
+I should be straight about what this is and isn't. I proved the mechanism reproduces the symptoms; I did **not** prove the original failure was a minimize, because nothing recorded the window state at that moment. The test harness now records it, so next time there will be no guessing. Details: [minimizing the output window](../ops/reports/capture-minimize-cause.md).
+
+A full 15-minute seated session also passed cleanly — 58.5 fps, zero dropped OBS frames out of 27,002, zero blank captures — while your browser and editor were open.
+
+The standing-with-hands session still has not completed a full 15 minutes. It sustained 30 fps with a passing render gate and no dropped frames for 11.5 minutes before a sudden whole-system stall, and later attempts were interrupted by the window being minimized. That one gate stays open.
 
 ## What is already done
 

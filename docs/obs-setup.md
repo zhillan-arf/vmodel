@@ -35,3 +35,15 @@ Virtual-camera playback in another local application still needs verification. S
 OBS and its saved profiles/scenes live in `.tools/obs/`. The Attach helpers use OBS's password-protected WebSocket interface on port 4455. Its private password is in the ignored portable configuration; do not include that folder when sharing project code. The app itself serves only on the laptop's loopback interface.
 
 See [capture evidence](../ops/reports/obs-capture.md) for the exact tested setup and remaining checks.
+
+## Never minimize the Ene output window
+
+**Minimizing the output window stops the avatar and blanks the capture.** This is measured, not a precaution: a minimized Chrome window delivers **zero** animation frames, and OBS has nothing current to capture, so the scene goes blank.
+
+- **Covering it is fine.** Put any window you like in front of it, full screen included. Measured at a full 60 frames per second while completely covered.
+- **Minimizing it is not.** Frame delivery drops to zero until you restore the window.
+- **Restoring fixes it immediately**, with no restart and no settings to change.
+
+If the avatar freezes or your OBS scene goes white mid-stream, check the taskbar first: the output window has almost certainly been minimized.
+
+Details and measurements: [minimizing the output window](../ops/reports/capture-minimize-cause.md).

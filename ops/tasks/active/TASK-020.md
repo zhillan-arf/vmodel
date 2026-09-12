@@ -108,3 +108,17 @@ Memory is not implicated: Chrome private bytes rose 39.74 MiB across the window 
 The fail-fast draw guard did not fire, correctly per its rule — it needs three consecutive draws over 500 ms and this produced exactly one. A single stall over a second, followed by a wedged recording, is worth catching; the guard's shape should be revisited rather than its threshold simply lowered.
 
 Standing remains **unmeasured against the full 900-second gate**, so that criterion stays open. It is no longer unmeasured in character: the workload sustains 30 fps with a passing render gate and no dropped output frames or blank captures for eleven and a half minutes, and its failure is a sudden whole-system stall rather than degradation. Cleanup passed with no cleanup errors in every run.
+
+### Cause identified for the failure signature — 2026-09-13
+
+**A minimized Chrome window delivers zero animation frames.** Measured with real non-automated Chrome: **60.04 fps before, 0.00 fps while minimized with `visibilityState` reporting `hidden`, and 59.91 fps after restoring.** [Evidence](../../reports/capture-raf-minimize-min-v1.json), [report](../../reports/capture-minimize-cause.md), [probe](../../../scripts/raf_minimize_check.mjs).
+
+This reproduces both original symptoms from one mechanism. Animation frames stop entirely when hidden, so draw cadence collapses — the soak saw roughly 1 Hz rather than zero because interval-driven work still occasionally drove a draw. OBS window capture of a window producing no new frames has nothing current to sample, which yields the blank white stills. No other hypothesis explained both symptoms together.
+
+It surfaced from two consecutive standing-run failures that looked unrelated: one tripped the clean-view check, and the next tripped the native window preflight with the owned window reporting **`minimized: true`** at rectangle `-21333,-21333`, the standard Windows minimized position at this display's 1.5 device pixel ratio. That same run recorded `ACLineStatus: 1` at 17:09:14 UTC, a change from battery to AC, so a person was physically at the machine when the window became minimized.
+
+The [occlusion investigation](../../reports/capture-occlusion-investigation.md) missed this because it tested **covering** the window rather than minimizing it; its `visibilityState` never left `visible`. Its null result is still useful in the opposite direction: covering the output window measured a flat 60 fps, so working in front of it is harmless.
+
+**Not claimed:** that the original soak failure *was* a minimize event. No visibility state was recorded at that time — exactly the gap now closed in the harness, where the clean-view assertion persists `clean`, `visibility`, `previewHidden`, view geometry and view events before failing. This is a mechanism that reproduces the signature, not a log of the original event. The blank-capture link is inferred from frame delivery stopping rather than re-observed against an OBS source.
+
+Product consequence, since this is the failure mode most likely to be hit in normal use: covering the output window is safe, minimizing it freezes the avatar and blanks the capture, and recovery on restore is automatic and complete. The beginner documentation now states this, and the application should detect `visibilitychange` rather than leaving the user to discover a frozen stream.
