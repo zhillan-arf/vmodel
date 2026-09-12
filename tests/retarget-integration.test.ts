@@ -43,6 +43,79 @@ function settle(solver: Retargeter, data: TrackingFrame, seconds = 1) {
   for (let i = 0; i < seconds*60; i++) solver.update(data, defaults, 1/60, data.timestamp + i*3);
 }
 
+describe('head noise damping, loss and recovery', () => {
+  // TASK-010: noise must be damped without a long lag, and losing then regaining
+  // the face must not produce an abrupt extreme rotation. Both are measurable.
+  const headYaw = (nodes: Map<string, Object3D>) =>
+    new Euler().setFromQuaternion(nodes.get('head')!.getWorldQuaternion(new Quaternion()), 'YXZ').y;
+  const stale = (now: number) => {
+    const data = frame(0, now);
+    return { ...data, samples: { ...data.samples,
+      face: { timestamp: now - 10000, present: false, inferenceMs: 1 },
+      pose: { timestamp: now - 10000, present: false, inferenceMs: 1 } } };
+  };
+
+  it('damps landmark noise far below the input while still following the signal', () => {
+    const { solver, nodes } = rig();
+    let clock = 1000, seed = 7;
+    // Deterministic pseudo-noise around a fixed 0.3 rad target.
+    const noisy = () => { seed = (seed * 1103515245 + 12345) % 2147483648; return (seed / 2147483648 - 0.5) * 0.3; };
+    const inputs: number[] = [], outputs: number[] = [];
+    for (let i = 0; i < 600; i++) {
+      const yaw = 0.3 + noisy();
+      inputs.push(yaw);
+      solver.update(frame(yaw, clock), defaults, 1/60, clock);
+      clock += 16;
+      if (i >= 120) outputs.push(headYaw(nodes));
+    }
+    const spread = (values: number[]) => {
+      const mean = values.reduce((sum, value) => sum + value, 0) / values.length;
+      return Math.sqrt(values.reduce((sum, value) => sum + (value - mean) ** 2, 0) / values.length);
+    };
+    const settled = outputs.reduce((sum, value) => sum + value, 0) / outputs.length;
+    // Noise is attenuated, and the damped output still centres on the real target.
+    expect(spread(outputs)).toBeLessThan(spread(inputs.slice(120)) * 0.5);
+    expect(settled).toBeGreaterThan(0.2);
+    expect(settled).toBeLessThan(0.4);
+  });
+
+  it('fades to idle on face loss and returns without an abrupt extreme rotation', () => {
+    const { solver, nodes } = rig();
+    let clock = 1000;
+    for (let i = 0; i < 180; i++) { solver.update(frame(0.4, clock), defaults, 1/60, clock); clock += 16; }
+    expect(headYaw(nodes)).toBeGreaterThan(0.3);
+
+    // Measure the head in world space: its local rotation stays near identity
+    // because the yaw is carried through the torso chain, so a local-space
+    // measurement reports no movement at all.
+    const headWorld = () => nodes.get('head')!.getWorldQuaternion(new Quaternion());
+    // Face and pose go stale: the head must relax, not hold an extreme angle.
+    let worstStep = 0, previous = headWorld();
+    for (let i = 0; i < 240; i++) {
+      solver.update(stale(clock), defaults, 1/60, clock); clock += 16;
+      const now = headWorld();
+      worstStep = Math.max(worstStep, previous.angleTo(now));
+      previous = now.clone();
+    }
+    expect(Math.abs(headYaw(nodes))).toBeLessThan(0.05);
+    expect(worstStep).toBeLessThan(0.15);
+
+    // Reacquired at the opposite extreme: the approach must still be gradual.
+    worstStep = 0; previous = headWorld();
+    const travelStart = previous.clone();
+    for (let i = 0; i < 240; i++) {
+      solver.update(frame(-0.4, clock), defaults, 1/60, clock); clock += 16;
+      const now = headWorld();
+      worstStep = Math.max(worstStep, previous.angleTo(now));
+      previous = now.clone();
+    }
+    const travel = travelStart.angleTo(headWorld());
+    expect(travel).toBeGreaterThan(0.3);
+    expect(worstStep / travel).toBeLessThan(0.35);
+    expect(headYaw(nodes)).toBeLessThan(-0.3);
+  });
+});
+
 describe('hand identity and reentry through the full solver', () => {
   // TASK-012: crossing hands must not leave a persistent identity swap, uncertain
   // detections must decay, and hands leaving and re-entering frame must not lock

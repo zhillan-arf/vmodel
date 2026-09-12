@@ -31,3 +31,15 @@ Uses face output as measurements, not direct arbitrary Euler assignments to the 
 
 When completing this task, record changed artifact paths, exact validation commands/results or manual evidence, and any unresolved limitation in the task or its linked report. Leave unperformed checks unchecked.
 
+## Noise damping, face loss and recovery — 2026-09-13
+
+Two tests in [retarget-integration.test.ts](../../../tests/retarget-integration.test.ts) measure the numeric halves of the third criterion through the full solver.
+
+- **Noise is damped while the signal is still followed.** Six hundred frames of deterministic pseudo-noise of +/-0.15 rad around a 0.3 rad target: after warm-up the output spread is **under half** the input spread, and the settled mean stays between 0.2 and 0.4 rad, so damping does not come at the cost of tracking the real angle.
+- **Loss and recovery produce no abrupt extreme rotation.** With face and pose samples stale for 240 frames the head relaxes to within 0.05 rad of neutral, with no single-frame step above 0.15 rad. Reacquiring at the opposite extreme moves it more than 0.3 rad, with the worst single frame under 35% of the total travel, ending past -0.3 rad.
+
+### A measurement mistake worth recording
+
+The loss test first reported zero travel on reacquisition. The head's **local** quaternion stays near identity because the yaw is carried through the torso chain, so measuring the head bone locally reports no movement however far the avatar actually turns. Measuring in world space gives the real figure. The solver was correct; the measurement was not.
+
+**Boundary:** synthetic frames through the real solver. Whether response feels quick enough — the criterion's "without a visibly long response delay" — is a human judgement this cannot supply, and the first two criteria need a person turning their head and blinking in front of a camera. No box is ticked.
