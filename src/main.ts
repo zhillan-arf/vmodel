@@ -3,6 +3,7 @@ import { AvatarViewer } from './viewer';
 import { CameraTracker } from './camera';
 import { defaults, normalizeSettings, readSettings, type Calibration, type TrackingFrame } from './types';
 import { createFreezeNotice } from './freeze-notice';
+import { describeLoadFailure } from './load-failure';
 import { confidence, Retargeter } from './retarget';
 import { compositionSize } from './composition';
 import { OutputLink, type OutputSnapshot } from './output-link';
@@ -117,7 +118,7 @@ async function load(blob: Blob, nextLabel = label) {
   } catch (error) {
     if (generation !== loadGeneration) return;
     loadingAvatarId = null;
-    const message = String(error); status(message);
+    const message = describeLoadFailure(error); status(message);
     const loading = document.querySelector('#loading'); if (loading) loading.textContent = `${message} Use Load another VRM to choose an avatar.`;
   }
 }

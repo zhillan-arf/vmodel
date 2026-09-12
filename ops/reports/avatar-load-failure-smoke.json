@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-12T19:35:58.866Z",
+  "passed": true,
+  "status": "complete",
+  "question": "Does an unusable avatar file produce a message a beginner can act on, leave the app working, and recover?",
+  "obsInvolved": false,
+  "physicalMedia": false,
+  "cases": [
+    {
+      "name": "not-a-model",
+      "description": "A text file renamed to .vrm.",
+      "message": "Select a VRM avatar. PMX needs conversion; VMD is animation data.",
+      "avatarRetained": true,
+      "stillRendering": true,
+      "namesAnAction": true,
+      "looksLikeRawError": false
+    },
+    {
+      "name": "empty",
+      "description": "An empty file.",
+      "message": "Select a VRM avatar. PMX needs conversion; VMD is animation data.",
+      "avatarRetained": true,
+      "stillRendering": true,
+      "namesAnAction": true,
+      "looksLikeRawError": false
+    },
+    {
+      "name": "truncated-gltf",
+      "description": "A glTF header with the body cut off.",
+      "message": "This file could not be read as a VRM avatar. It may be incomplete, or not a VRM at all. Use Load another VRM to choose a different file.",
+      "avatarRetained": true,
+      "stillRendering": true,
+      "namesAnAction": true,
+      "looksLikeRawError": false
+    }
+  ],
+  "limits": [
+    "Three malformed inputs, not an exhaustive corpus of broken VRM files.",
+    "Judges whether the message names an action, not whether the wording is ideal."
+  ],
+  "goodAvatarId": "3657b97928638e7ada5f6639141fb63f555912049a2c6ec217851001e322cbcb",
+  "recoveredAfterFailures": true,
+  "pageErrors": [],
+  "checks": {
+    "everyFailureRetainedTheAvatar": true,
+    "everyFailureKeptRendering": true,
+    "everyMessageNamesAnAction": true,
+    "noRawExceptionText": true,
+    "recoveredAfterFailures": true,
+    "noPageErrors": true
+  }
+}

@@ -20,6 +20,7 @@ const CHECKS = [
   { name: 'unit tests', command: 'npm test --silent' },
   { name: 'production build and typecheck', command: 'npm run build --silent' },
   { name: 'runtime bundle audit', command: 'node scripts/audit_bundle.mjs' },
+  { name: 'avatar load failure handling', command: 'node scripts/avatar_load_failure_smoke.mjs' },
   { name: 'beginner documentation', command: 'node scripts/audit_docs.mjs' },
   { name: 'task register', command: 'python scripts/task_audit.py' },
   { name: 'acceptance claims', command: 'python scripts/audit_acceptance_claims.py' },

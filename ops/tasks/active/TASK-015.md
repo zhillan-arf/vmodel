@@ -45,3 +45,15 @@ When completing this task, record changed artifact paths, exact validation comma
 **Stop and Recenter are always available.** Verified present, enabled and not hidden in four states — before start, after a failed acquisition, while running, and after stop — across all four injected camera failures in [camera-denial-smoke.json](../../reports/camera-denial-smoke.json). No control in the studio is ever disabled, and Space stops from Clean view while Escape leaves it.
 
 **Boundary:** this covers control availability and the manual/automatic blending rule. The remaining criterion — a first-time user reaching a calibrated moving sample without developer tools — is a person-following-the-guide check and stays open.
+
+## Choosing an unusable avatar file — 2026-09-13
+
+Selecting the wrong file is an ordinary beginner mistake, and [avatar_load_failure_smoke.mjs](../../../scripts/avatar_load_failure_smoke.mjs) drives three bad inputs through the real file input: a text file renamed `.vrm`, an empty file, and a glTF header with the body cut off. [Evidence](../../reports/avatar-load-failure-smoke.json).
+
+In every case the working avatar is retained, rendering continues, the message names an action, no raw exception text appears, and a good file afterwards recovers without a reload.
+
+**Defect found and fixed.** The load path reported failures with `String(error)`, which did two things to the user. It prefixed this application's own guidance with `Error:`, and for a malformed file it surfaced the parser's exception verbatim — the observed example being `RangeError: Offset is outside the bounds of the DataView`, which a beginner cannot act on. [load-failure.ts](../../../src/load-failure.ts) now keeps guidance that already names the file kinds and substitutes an actionable sentence otherwise, with four unit tests including one asserting the result never looks like raw exception text.
+
+This is the third instance of the same defect shape this session, after the camera's `NotFoundError` and the microphone's erased failure reason: error handling that looks correct when read, and surfaces something useless when actually driven.
+
+**Boundary:** three malformed inputs, not an exhaustive corpus, and it judges whether a message names an action rather than whether the wording is ideal. The remaining criterion — a first-time user reaching a calibrated moving sample without developer tools — still needs a person.
