@@ -195,3 +195,58 @@ Two further observations:
 Standing is therefore **still unmeasured against the full 900-second gate**, but it is no longer unmeasured in character: the workload itself sustains 30 fps with a passing render gate, zero dropped output frames and zero blank captures for eleven and a half minutes, and the failure is a sudden whole-system stall rather than degradation.
 
 Cleanup passed with no cleanup errors in every run above.
+
+### Both whole-system stalls coincide with an AC/DC power transition, and AC doubles standing cadence
+
+The new single-stall guard fired during a further standing run and collected the paired evidence that every previous attempt had missed. [Run evidence](local/combined-soak/2026-09-12T17-14-31-614Z-c8be2e10/report.json).
+
+#### Standing on AC power: 60.61 fps
+
+Measured over 770 seconds before the stall, with the render gate passing:
+
+| Measurement | On AC (this run) | On battery (earlier run) |
+| --- | --- | --- |
+| Median cadence | **60.61 fps** | 30.03 fps |
+| Draw interval p50 / p95 / p99 | **16.5 / 33.8 / 44.8 ms** | 33.3 / 34.3 / 35.5 ms |
+| Frames observed | 41,692 | 20,641 |
+| OBS output skipped / total | **0 of 23,106** | 0 of 20,701 |
+| OBS render skipped | 2 | 39 |
+| Blank captures | **0 of 27** | 0 of 23 |
+| Render gate | passed | passed |
+
+**Power state doubles standing cadence.** The battery run was capped near 30 fps; on AC the same workload sustains 60 fps. Earlier measurements recorded the processor at 72-73% of maximum frequency on battery, which is consistent.
+
+#### The stall is a power-source transition
+
+The guard caught a single **1,017.3 ms** draw interval at 767.3 s. At that moment the collected evidence shows the system was otherwise healthy:
+
+- Window **not minimized**: `visible: true, minimized: false, foreground: true, cloaked: 0`.
+- OBS capture **not blank**: `blank: false`, near-white fraction 0.00067.
+- WebGL context **not lost**, renderer ANGLE Intel Iris Xe D3D11, driver 31.0.101.4255.
+- No worker errors, GPU delegate active, last tracking result 103.7 ms old.
+- Memory not implicated.
+
+What had changed was the power source:
+
+| Run | Power at start | Power at/after failure | Transition |
+| --- | --- | --- | --- |
+| Stall at 767.3 s | **AC**, `Balanced` | **DC**, `BetterBattery` | unplugged during the run |
+| Stall at 689.4 s | **DC**, `BatterySaver` | **AC**, `Balanced` | plugged in during the run |
+
+**Both observed whole-system stalls happened in runs where the charger was connected or disconnected mid-run**, and in both cases Windows also changed effective power mode. A platform re-negotiating CPU and GPU frequency stalls every process at once, which is exactly the simultaneity that neither browser-starves-OBS nor OBS-starves-browser could explain.
+
+An earlier `ACLineStatus` change was recorded at 17:09:14 UTC in a different run, so someone has been physically connecting and disconnecting the charger through this period.
+
+#### What is and is not established
+
+Established: two of two whole-system stalls occurred in runs containing an AC/DC transition; at the one stall with a snapshot taken at the moment of failure, the power source differed from the run's start; and every other candidate — minimized window, blank capture, lost GL context, worker error, memory exhaustion — was directly measured and ruled out at that instant.
+
+**Not established: exact temporal coincidence.** Power was sampled at run start, at run end and once at the failure. That brackets the transition within the run but does not prove it occurred at the stall instant. Correlation is two of two with a plausible mechanism, which is suggestive, not conclusive.
+
+Power state is now sampled on every memory tick, alongside free and committed memory, so the next occurrence brackets the transition to within one sampling interval instead of a whole run.
+
+#### Consequence
+
+Standing still has **no completed 900-second window**. It has now twice been interrupted by a power transition rather than by any application fault, and in between it sustained a passing render gate at 60 fps on AC and 30 fps on battery, with zero dropped OBS output frames and zero blank captures in every attempt.
+
+To measure the standing gate cleanly, leave the charger alone for the duration of the run.

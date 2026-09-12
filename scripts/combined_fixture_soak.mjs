@@ -138,7 +138,7 @@ async function processMemory() {
   // Numeric PIDs originate only from this Chrome CDP session and the exact owned OBS executable.
   // One PowerShell invocation per sample. Host memory is gathered inside the same
   // call: a second spawn per tick pushed this sampler past its timeout under load.
-  const command = `$soakIds=@(${ids.join(',')}); $soakRows=@(foreach($soakId in $soakIds){try{$soakProcess=[Diagnostics.Process]::GetProcessById($soakId);[pscustomobject]@{pid=$soakId;privateBytes=$soakProcess.PrivateMemorySize64;workingSetBytes=$soakProcess.WorkingSet64}}catch{}}); $soakOs=Get-CimInstance Win32_OperatingSystem; ConvertTo-Json -Depth 4 -Compress -InputObject ([pscustomobject]@{rows=$soakRows;system=[pscustomobject]@{freeMiB=[math]::Round($soakOs.FreePhysicalMemory/1KB,1);totalMiB=[math]::Round($soakOs.TotalVisibleMemorySize/1KB,1);committedMiB=[math]::Round(($soakOs.TotalVirtualMemorySize-$soakOs.FreeVirtualMemory)/1KB,1)}})`;
+  const command = `$soakIds=@(${ids.join(',')}); $soakRows=@(foreach($soakId in $soakIds){try{$soakProcess=[Diagnostics.Process]::GetProcessById($soakId);[pscustomobject]@{pid=$soakId;privateBytes=$soakProcess.PrivateMemorySize64;workingSetBytes=$soakProcess.WorkingSet64}}catch{}}); $soakOs=Get-CimInstance Win32_OperatingSystem; $soakBat=Get-CimInstance -ClassName BatteryStatus -Namespace root\wmi -ErrorAction SilentlyContinue | Select-Object -First 1; ConvertTo-Json -Depth 4 -Compress -InputObject ([pscustomobject]@{rows=$soakRows;system=[pscustomobject]@{freeMiB=[math]::Round($soakOs.FreePhysicalMemory/1KB,1);totalMiB=[math]::Round($soakOs.TotalVisibleMemorySize/1KB,1);committedMiB=[math]::Round(($soakOs.TotalVirtualMemorySize-$soakOs.FreeVirtualMemory)/1KB,1);acOnline=$(if($soakBat){[bool]$soakBat.PowerOnline}else{$null})}})`;
   const payload = JSON.parse((await run('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', command], { windowsHide: true, timeout: 15000 })).stdout.replace(/^\uFEFF/, ''));
   const rows = Array.isArray(payload.rows) ? payload.rows : [payload.rows].filter(Boolean);
   const system = payload.system ?? null;
@@ -150,6 +150,9 @@ async function processMemory() {
     obsPrivateMiB: obsRow.privateBytes / 1024 ** 2, obsWorkingSetMiB: obsRow.workingSetBytes / 1024 ** 2,
     jsHeapUsedMiB: Number.isFinite(metrics.JSHeapUsedSize) ? metrics.JSHeapUsedSize / 1024 ** 2 : null,
     systemFreeMiB: system?.freeMiB ?? null, systemTotalMiB: system?.totalMiB ?? null, systemCommittedMiB: system?.committedMiB ?? null,
+    // Sampled per memory tick: both observed whole-system stalls coincided with an
+    // AC/DC transition, and endpoint-only power readings cannot time that.
+    acOnline: system?.acOnline ?? null,
     chromeProcesses: chrome.length, observedChromePids: chrome.map(row => row.pid),
     note: 'Main-page JS heap excludes worker heaps. Chrome process totals include this browser’s renderer/worker/GPU processes; working sets can count shared pages more than once.' };
 }

@@ -122,3 +122,17 @@ The [occlusion investigation](../../reports/capture-occlusion-investigation.md) 
 **Not claimed:** that the original soak failure *was* a minimize event. No visibility state was recorded at that time — exactly the gap now closed in the harness, where the clean-view assertion persists `clean`, `visibility`, `previewHidden`, view geometry and view events before failing. This is a mechanism that reproduces the signature, not a log of the original event. The blank-capture link is inferred from frame delivery stopping rather than re-observed against an OBS source.
 
 Product consequence, since this is the failure mode most likely to be hit in normal use: covering the output window is safe, minimizing it freezes the avatar and blanks the capture, and recovery on restore is automatic and complete. The beginner documentation now states this, and the application should detect `visibilitychange` rather than leaving the user to discover a frozen stream.
+
+### Power transitions explain the whole-system stalls; AC doubles standing cadence — 2026-09-13
+
+The single-stall guard added after the previous run fired and collected the paired evidence earlier attempts had missed. [Run evidence](../../reports/local/combined-soak/2026-09-12T17-14-31-614Z-c8be2e10/report.json), [analysis](../../reports/performance.md).
+
+**Standing on AC sustains 60.61 fps median**, against 30.03 fps for the same workload on battery, over 770 measured seconds with the **render gate passing**: draw interval p50/p95/p99 **16.5/33.8/44.8 ms** across 41,692 frames, **0 skipped OBS output frames of 23,106** (2 render skips), and **0 blank captures of 27**. Earlier measurements put the processor at 72-73% of maximum frequency on battery, consistent with the halved cadence.
+
+The guard caught a single **1,017.3 ms** draw interval at 767.3 s. The evidence collected at that instant rules out every other candidate: the window was **not minimized** (`visible: true, minimized: false, foreground: true, cloaked: 0`), the OBS capture was **not blank** (`blank: false`), the **WebGL context was not lost** (ANGLE Intel Iris Xe D3D11, driver 31.0.101.4255), there were no worker errors, the GPU delegate was active with a 103.7 ms-old tracking result, and memory was not implicated.
+
+What differed was the power source. **Both observed whole-system stalls occurred in runs containing an AC/DC transition**: the 767.3 s stall in a run that started on AC/`Balanced` and was on DC/`BetterBattery` at failure, and the 689.4 s stall in a run that started on DC/`BatterySaver` and ended on AC/`Balanced`. A platform re-negotiating CPU and GPU frequency stalls every process simultaneously, which is the one thing that explains a browser and OBS freezing together.
+
+**Not established: exact temporal coincidence.** Power was sampled at run start, run end and once at failure, which brackets the transition within the run but does not prove it occurred at the stall instant. Two of two with a plausible mechanism is suggestive, not conclusive. Power state is now sampled on every memory tick so the next occurrence is bracketed to one interval.
+
+Standing still has **no completed 900-second window**, so that gate stays open. It has twice been interrupted by a power transition rather than an application fault, and between interruptions it sustained a passing render gate with zero dropped OBS output frames and zero blank captures in every attempt. Measuring it cleanly requires leaving the charger connected or disconnected for the whole run.
