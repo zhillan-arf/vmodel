@@ -1,5 +1,5 @@
-﻿{
-    "date":  "2026-09-12T09:24:17.8437576Z",
+{
+    "date":  "2026-09-12T20:04:56.9695210Z",
     "registrations":  [
                           {
                               "usesProjectModule":  false,
@@ -14,7 +14,7 @@
                               "expectedSha256":  "0DCDE4A969A7CE45A39472D39BD15F5BFFF242A06449B27C61E20E667358EC34"
                           }
                       ],
-    "detail":  "This command cannot be run due to the error: The operation was canceled by the user.",
+    "detail":  "The reviewed modules are present and signed. Windows administrator confirmation is needed to register the missing camera components.",
     "obsVersion":  "32.2.2",
-    "state":  "not-installed"
+    "state":  "registration-required"
 }

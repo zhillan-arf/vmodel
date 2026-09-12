@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import json
+import math
 import sys
 from collections import Counter
 
@@ -44,7 +45,14 @@ def audit():
         print('AUDIT', path.name, 'bones',len(model.bones),'morphs',len(model.morphs),'rigids',len(model.rigids),'joints',len(model.joints),flush=True)
     report = ROOT / 'ops/reports/asset-inventory.json'
     report.parent.mkdir(parents=True, exist_ok=True)
-    report.write_text(json.dumps(results,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    # JSON has no NaN: emitting it produced the one report a strict parser
+    # rejected. An undefined measurement is written as null instead.
+    def finite(value):
+        if isinstance(value,float) and not math.isfinite(value):return None
+        if isinstance(value,dict):return {key:finite(item) for key,item in value.items()}
+        if isinstance(value,list):return [finite(item) for item in value]
+        return value
+    report.write_text(json.dumps(finite(results),ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8')
     print('AUDIT_WRITTEN', report, flush=True)
 
 if __name__ == '__main__':

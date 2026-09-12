@@ -22,7 +22,10 @@ function Save-Report([string]$state, [string]$detail) {
         $registeredPath = Get-Registration $bits
         @{ bits = $bits; registered = [bool]$registeredPath; usesProjectModule = $registeredPath -eq (Join-Path $moduleRoot ('obs-virtualcam-module' + $bits + '.dll')); expectedSha256 = $expected[$bits] }
     }
-    @{ date = [DateTime]::UtcNow.ToString('o'); state = $state; detail = $detail; obsVersion = '32.2.2'; registrations = @($entries) } | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $reportPath -Encoding UTF8
+    $json = @{ date = [DateTime]::UtcNow.ToString('o'); state = $state; detail = $detail; obsVersion = '32.2.2'; registrations = @($entries) } | ConvertTo-Json -Depth 5
+    # A byte-order mark made this the one evidence file of 170 that a strict
+    # JSON parser rejected. Write UTF-8 without one, on 5.1 as well as 7.
+    [IO.File]::WriteAllText($reportPath, $json, (New-Object Text.UTF8Encoding($false)))
 }
 
 foreach ($bits in @('32', '64')) {
@@ -45,7 +48,20 @@ if (-not $isAdmin) {
         if ($child.ExitCode -ne 0) { throw ('The registration helper exited with code ' + $child.ExitCode) }
         if (-not (Get-Registration '32') -or -not (Get-Registration '64')) { throw 'Windows confirmation did not result in both camera registrations.' }
         Write-Output 'OBS Virtual Camera registered. Restart the project OBS instance before testing it.'
-    } catch { Save-Report 'not-installed' $_.Exception.Message; Write-Error ('OBS camera registration was not completed: ' + $_.Exception.Message); exit 1 }
+    } catch {
+        # Declining the Windows prompt is the common outcome and is recoverable;
+        # saying only that it was cancelled leaves the user without the next step.
+        $detail = $_.Exception.Message
+        Save-Report 'not-installed' $detail
+        if ($detail -match 'canceled by the user|cancelled by the user') {
+            Write-Error ('The Windows administrator prompt was declined, so OBS Virtual Camera was not registered. ' +
+                'Nothing was changed. Run Install OBS Camera.cmd again and choose Yes on the prompt. ' +
+                'OBS window capture and recording work without this; only the virtual camera for Zoom, Discord and similar apps needs it.')
+        } else {
+            Write-Error ('OBS camera registration was not completed: ' + $detail)
+        }
+        exit 1
+    }
     exit 0
 }
 

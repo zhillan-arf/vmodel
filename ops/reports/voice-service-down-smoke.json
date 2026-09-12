@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-12T20:02:09.371Z",
+  "date": "2026-09-12T20:07:28.870Z",
   "passed": true,
   "status": "complete",
   "question": "When the local voice service stops, is the user told something actionable rather than shown a fetch error?",

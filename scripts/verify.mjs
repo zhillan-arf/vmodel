@@ -22,6 +22,7 @@ const CHECKS = [
   { name: 'runtime bundle audit', command: 'node scripts/audit_bundle.mjs' },
   { name: 'avatar load failure handling', command: 'node scripts/avatar_load_failure_smoke.mjs' },
   { name: 'beginner documentation', command: 'node scripts/audit_docs.mjs' },
+  { name: 'evidence reports readable', command: 'node scripts/audit_reports_readable.mjs' },
   { name: 'task register', command: 'python scripts/task_audit.py' },
   { name: 'acceptance claims', command: 'python scripts/audit_acceptance_claims.py' },
   { name: 'voice OBS route licences', command: `${quote(VOICE_PYTHON)} scripts/voice/audit_obs_route.py`, optional: true },

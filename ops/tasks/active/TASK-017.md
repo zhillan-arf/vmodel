@@ -51,3 +51,17 @@ Both message branches were exercised directly. `--attach` was deliberately **not
 Checked while here: `Attach OBS Landscape.cmd` and `Attach OBS Portrait.cmd` are not duplicates — Portrait passes `--portrait` and the script selects 720x1280 accordingly.
 
 Nothing about capture, recording or Virtual Camera acceptance changes; those still need the administrator prompt and the operator.
+
+### Virtual Camera messaging and unreadable evidence — 2026-09-13
+
+Two findings while following the launcher chain to this gate.
+
+**The declined prompt said what happened, not what to do.** Cancelling the Windows elevation produced *"OBS camera registration was not completed: The operation was canceled by the user."* Since declining is the common outcome and is exactly what happened here, that message now says nothing was changed, that running **Install OBS Camera.cmd** again and choosing Yes is the fix, and that window capture and recording work without it — only the virtual camera for call apps needs it. Other registration errors are unchanged, so genuine faults are not papered over.
+
+**The evidence file for this gate could not be parsed.** `obs-virtual-camera-install.json` was written with a UTF-8 byte-order mark, making it the one report of 170 that strict JSON parsers rejected. The writer now emits UTF-8 without a mark and the file was regenerated; its content is unchanged (`registration-required`, neither architecture registered).
+
+Checking that systematically then found a **second** unreadable file. `asset-inventory.json` contained literal `NaN` rotations from the Blender asset audit. Python accepts `NaN`, which is why an earlier scan reported the file as fine; strict JSON does not. The six values are now `null` — JSON's representation of no value, which preserves the observation rather than inventing a number — and the writer emits `null` with `allow_nan=False` so it cannot recur. A structural comparison confirmed exactly six differences and nothing else moved.
+
+[audit_reports_readable.mjs](../../../scripts/audit_reports_readable.mjs) now checks all **171** reports parse with no byte-order marks, and runs in `npm run verify`. Evidence nothing can read is not evidence.
+
+The gate itself is unchanged: registration still needs the administrator prompt.

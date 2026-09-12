@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-12T20:07:25.568Z",
+  "passed": true,
+  "status": "complete",
+  "readOnly": true,
+  "question": "Can every evidence report be parsed, and is any carrying a byte-order mark?",
+  "limits": [
+    "Checks that each file parses, not that its contents are correct or current."
+  ],
+  "scanned": 171,
+  "withBom": [],
+  "unparseable": [],
+  "checks": {
+    "everyReportParses": true,
+    "noByteOrderMarks": true
+  }
+}

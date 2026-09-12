@@ -9881,9 +9881,9 @@
           -2.1815202236175537
         ],
         "rotation": [
-          NaN,
-          NaN,
-          NaN
+          null,
+          null,
+          null
         ],
         "mass": 1000.0,
         "velocity_attenuation": 0.0,
@@ -25026,9 +25026,9 @@
           -2.1815202236175537
         ],
         "rotation": [
-          NaN,
-          NaN,
-          NaN
+          null,
+          null,
+          null
         ],
         "mass": 1000.0,
         "velocity_attenuation": 0.0,
