@@ -74,6 +74,23 @@ A full 15-minute seated session also passed cleanly — 58.5 fps, zero dropped O
 
 The standing-with-hands session still has not completed a full 15 minutes. It sustained 30 fps with a passing render gate and no dropped frames for 11.5 minutes before a sudden whole-system stall, and later attempts were interrupted by the window being minimized. That one gate stays open.
 
+## Checking the build yourself
+
+`npm run verify` runs every check that does not need a device or a person — unit tests, the production build, the runtime bundle, the beginner guides, the task register, the acceptance-claim guard, and the voice studio and converter tests. It takes about half a minute and prints a single verdict.
+
+It also prints what it deliberately does **not** cover, so the gap stays visible:
+
+```
+Not covered here, and still required for delivery:
+  - Live camera quality, gestures and standing movement (needs a person).
+  - Voice preference and listening acceptance (needs the user).
+  - OBS Virtual Camera registration and consumer test (needs an administrator prompt).
+  - Final landscape and portrait recordings with audio (needs the operator).
+  - Combined OBS soaks and physical audio latency or sync (needs devices and time).
+```
+
+That list is the same four steps above, plus the long soaks. A green `verify` means the software is sound; it does not mean the kit is accepted.
+
 ## What is already done
 
 - **Your avatar (G1).** Ene Cyber legs is imported, rigged, expression-mapped and exported as a reusable VRM, with the editable Blender source and a [conversion recipe](avatar-conversion.md) so it can be rebuilt.
