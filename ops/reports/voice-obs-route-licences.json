@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-12T19:27:36Z",
+  "date": "2026-09-12T19:30:18Z",
   "question": "Does the required converted-voice OBS route use approved open-source components only?",
   "readOnly": true,
   "startedNothing": true,
@@ -80,7 +80,7 @@
       "licence": "BSD-3-Clause (CEF) over Chromium BSD",
       "licenceFilePresent": false,
       "licenceFile": null,
-      "note": "CEF carries its own BSD terms, but this portable OBS distribution ships no separate CEF licence or credits file."
+      "note": "Its notice ships inside the CEF resource bundles rather than as a loose text file; see cefNoticeBundles."
     },
     {
       "component": "OBS Browser helper process",
@@ -107,19 +107,30 @@
   "importsNotInLicenceInventory": [],
   "licenceInventoryEntries": 127,
   "proprietaryVirtualAudioFound": [],
-  "missingLicenceFiles": [
-    "Chromium Embedded Framework"
+  "cefNoticeBundles": [
+    {
+      "bundle": ".tools/obs/obs-plugins/64bit/chrome_100_percent.pak",
+      "bytes": 680973,
+      "sha256": "617368e617aa56193eec7b21a05edc3116314434cf490cba13109084468fab2d"
+    },
+    {
+      "bundle": ".tools/obs/obs-plugins/64bit/chrome_200_percent.pak",
+      "bytes": 1065410,
+      "sha256": "65ea636b01f8deb739d65d0a2244f1e476efa9df06ea2bfe06cb3107dad465a8"
+    }
   ],
+  "missingLicenceFiles": [],
   "checks": {
     "allComponentsPresent": true,
     "noProprietaryVirtualAudioInRoute": true,
     "allServerImportsLicensed": true,
-    "everyComponentHasKnownLicence": true
+    "everyComponentHasKnownLicence": true,
+    "cefNoticeRetained": true
   },
   "limits": [
     "A static inventory: it reads installed files and does not start OBS, capture audio or verify runtime behaviour.",
     "Proprietary virtual-audio detection is a name scan of driver and program directories, not an exhaustive audit.",
-    "Licence identification for OBS and CEF comes from their published terms; only OBS ships its text in this distribution.",
+    "Licence identification comes from published terms plus the notice text actually present in the installed files.",
     "It does not establish audio quality, routing correctness, latency or sync, which are separate criteria."
   ],
   "passed": true

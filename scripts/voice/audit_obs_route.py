@@ -52,6 +52,25 @@ def component(name, path, licence, licence_path=None, note=None):
     }
 
 
+def cef_notice_in_resources():
+    """CEF ships its credits inside the resource paks, not as a loose text file.
+
+    A file-only search reports a compliance gap that does not exist, so look for
+    the actual notice text in the bundles the distribution installs.
+    """
+    needles = (b'Chromium Embedded', b'Redistribution and use in source')
+    found = []
+    for name in ('resources.pak', 'chrome_100_percent.pak', 'chrome_200_percent.pak'):
+        bundle = OBS / 'obs-plugins/64bit' / name
+        if not bundle.exists():
+            continue
+        data = bundle.read_bytes()
+        if all(needle in data for needle in needles):
+            found.append({'bundle': bundle.relative_to(ROOT).as_posix(), 'bytes': len(data),
+                          'sha256': sha(bundle)})
+    return found
+
+
 def installed_proprietary_audio():
     """Look for known proprietary virtual-audio drivers by file and registry name."""
     found = []
@@ -105,13 +124,16 @@ def main():
         component('OBS Browser Source plugin', OBS / 'obs-plugins/64bit/obs-browser.dll', 'GPL-2.0-or-later', gplv2,
                   'Part of the OBS distribution and covered by its licence.'),
         component('Chromium Embedded Framework', OBS / 'obs-plugins/64bit/libcef.dll', 'BSD-3-Clause (CEF) over Chromium BSD', None,
-                  'CEF carries its own BSD terms, but this portable OBS distribution ships no separate CEF licence or credits file.'),
+                  'Its notice ships inside the CEF resource bundles rather than as a loose text file; see cefNoticeBundles.'),
         component('OBS Browser helper process', OBS / 'obs-plugins/64bit/obs-browser-page.exe', 'GPL-2.0-or-later', gplv2),
     ]
 
     proprietary = installed_proprietary_audio()
+    cef_bundles = cef_notice_in_resources()
     missing_licence_files = [entry['component'] for entry in components
-                             if entry['present'] and entry['licence'] != 'Project source' and not entry['licenceFilePresent']]
+                             if entry['present'] and entry['licence'] != 'Project source'
+                             and not entry['licenceFilePresent']
+                             and not (entry['component'].startswith('Chromium Embedded') and cef_bundles)]
 
     report = {
         'date': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
@@ -123,17 +145,19 @@ def main():
         'importsNotInLicenceInventory': unlisted,
         'licenceInventoryEntries': len(inventory),
         'proprietaryVirtualAudioFound': proprietary,
+        'cefNoticeBundles': cef_bundles,
         'missingLicenceFiles': missing_licence_files,
         'checks': {
             'allComponentsPresent': all(entry['present'] for entry in components),
             'noProprietaryVirtualAudioInRoute': proprietary == [],
             'allServerImportsLicensed': unlisted == [],
             'everyComponentHasKnownLicence': all(entry['licence'] for entry in components),
+            'cefNoticeRetained': bool(cef_bundles),
         },
         'limits': [
             'A static inventory: it reads installed files and does not start OBS, capture audio or verify runtime behaviour.',
             'Proprietary virtual-audio detection is a name scan of driver and program directories, not an exhaustive audit.',
-            'Licence identification for OBS and CEF comes from their published terms; only OBS ships its text in this distribution.',
+            'Licence identification comes from published terms plus the notice text actually present in the installed files.',
             'It does not establish audio quality, routing correctness, latency or sync, which are separate criteria.',
         ],
     }
