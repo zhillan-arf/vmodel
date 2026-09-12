@@ -17,6 +17,13 @@ function rig() {
     add(side+'LowerArm', side+'UpperArm', [sign*.3, 0, 0]); add(side+'Hand', side+'LowerArm', [sign*.25, 0, 0]);
     add(side+'UpperLeg', 'hips', [sign*.1, -.05, 0]); add(side+'LowerLeg', side+'UpperLeg', [0, -.4, 0]);
     add(side+'Foot', side+'LowerLeg', [0, -.4, 0]); add(side+'Toes', side+'Foot', [0, 0, .1]);
+    // Finger proximals are required before the solver builds a palm basis at all,
+    // and without a palm the whole hand path is skipped in silence.
+    for (const [finger, offset] of [['Index', .03], ['Middle', .01], ['Ring', -.01], ['Little', -.03]] as const) {
+      add(side+finger+'Proximal', side+'Hand', [sign*.06, 0, offset]);
+      add(side+finger+'Intermediate', side+finger+'Proximal', [sign*.03, 0, 0]);
+      add(side+finger+'Distal', side+finger+'Intermediate', [sign*.02, 0, 0]);
+    }
   }
   scene.updateMatrixWorld(true);
   const vrm = { scene, humanoid: { resetNormalizedPose() {}, getNormalizedBoneNode: (name: string) => nodes.get(name) ?? null },
@@ -35,6 +42,115 @@ function frame(yaw = 0, now = 1000): TrackingFrame {
 function settle(solver: Retargeter, data: TrackingFrame, seconds = 1) {
   for (let i = 0; i < seconds*60; i++) solver.update(data, defaults, 1/60, data.timestamp + i*3);
 }
+
+describe('hand identity and reentry through the full solver', () => {
+  // TASK-012: crossing hands must not leave a persistent identity swap, uncertain
+  // detections must decay, and hands leaving and re-entering frame must not lock
+  // an extreme pose. The association unit tests cover the assignment rule; these
+  // drive the whole retargeter so the rule's effect on the rig is what is checked.
+  // A palm needs real geometry: wrist, index, middle and little must span a
+  // plane. Collinear points are rejected as degenerate and the hand is skipped.
+  const handAt = (x: number, side: string, score = 0.95, roll = 0) => {
+    const landmarks = Array.from({ length: 21 }, () => ({ x, y: 0.5, z: 0 }));
+    const world = Array.from({ length: 21 }, () => ({ x: 0, y: 0, z: 0 }));
+    const place = (index: number, px: number, py: number, pz: number) => {
+      const cos = Math.cos(roll), sin = Math.sin(roll);
+      world[index] = { x: px, y: py * cos - pz * sin, z: py * sin + pz * cos };
+    };
+    place(0, 0, 0, 0);          // wrist
+    place(5, 0.030, 0.080, 0);  // index proximal
+    place(9, 0.008, 0.090, 0);  // middle proximal
+    place(13, -0.012, 0.085, 0); // ring proximal
+    place(17, -0.032, 0.070, 0); // little proximal
+    for (const [start, base] of [[5, 5], [9, 9], [13, 13], [17, 17]] as const) {
+      for (let joint = 1; joint <= 3; joint++) {
+        const root = world[base];
+        place(start + joint, root.x, root.y + joint * 0.022, root.z);
+      }
+    }
+    return { side, landmarks, world, score };
+  };
+  // Pose wrists are the anatomical anchor: index 15 is left, 16 is right.
+  const withHands = (leftX: number, rightX: number, hands: ReturnType<typeof handAt>[], now: number) => {
+    const data = frame(0, now);
+    const poseImage = Array.from({ length: 33 }, () => ({ x: 0, y: 0, z: 0, visibility: 0 }));
+    poseImage[15] = { x: leftX, y: 0.5, z: 0, visibility: 1 };
+    poseImage[16] = { x: rightX, y: 0.5, z: 0, visibility: 1 };
+    return { ...data, poseImage, hands, inputSize: { width: 640, height: 480 },
+      samples: { ...data.samples, hands: { timestamp: now, present: true, inferenceMs: 1 } } };
+  };
+  const handQuaternions = (nodes: Map<string, Object3D>) =>
+    ['leftHand','rightHand'].map(name => nodes.get(name)!.quaternion.clone());
+
+  it('does not leave a persistent identity swap after the wrists cross', () => {
+    const { solver, nodes } = rig();
+    let clock = 1000;
+    const apart = () => withHands(0.7, 0.3, [handAt(0.7, 'Left'), handAt(0.3, 'Right')], clock);
+    for (let i = 0; i < 90; i++) { solver.update(apart(), defaults, 1/60, clock); clock += 16; }
+    const before = handQuaternions(nodes);
+    // Guard against a vacuous pass: the hands must actually be driving the rig.
+    expect(before.some(q => q.angleTo(new Quaternion()) > 0.01)).toBe(true);
+    // Wrists swap image sides and the detector reverses its ordering.
+    for (let i = 0; i < 90; i++) {
+      solver.update(withHands(0.3, 0.7, [handAt(0.7, 'Left'), handAt(0.3, 'Right')], clock), defaults, 1/60, clock);
+      clock += 16;
+    }
+    // Returning to the original arrangement must restore the original assignment.
+    for (let i = 0; i < 90; i++) { solver.update(apart(), defaults, 1/60, clock); clock += 16; }
+    const after = handQuaternions(nodes);
+    expect(before[0].angleTo(after[0])).toBeLessThan(0.05);
+    expect(before[1].angleTo(after[1])).toBeLessThan(0.05);
+  });
+
+  it('ignores uncertain detections rather than driving the rig from them', () => {
+    const { solver, nodes } = rig();
+    let clock = 1000;
+    for (let i = 0; i < 90; i++) {
+      solver.update(withHands(0.7, 0.3, [handAt(0.7, 'Left'), handAt(0.3, 'Right')], clock), defaults, 1/60, clock);
+      clock += 16;
+    }
+    const confident = handQuaternions(nodes);
+    // Below the association score floor these must not be adopted.
+    for (let i = 0; i < 60; i++) {
+      solver.update(withHands(0.7, 0.3, [handAt(0.2, 'Left', 0.2), handAt(0.9, 'Right', 0.2)], clock), defaults, 1/60, clock);
+      clock += 16;
+    }
+    const after = handQuaternions(nodes);
+    // Detections below the score floor are dropped, so the goal expires and the
+    // hand decays to rest. The point is that it relaxes rather than adopting the
+    // bogus pose, so rest is the expectation, not proximity to the driven pose.
+    const bogus = handAt(0.2, 'Left', 0.95, 1.2);
+    expect(bogus.world[9].y).not.toBeCloseTo(0.09, 3);
+    for (const [index, quaternion] of after.entries()) {
+      expect(Number.isFinite(quaternion.x + quaternion.y + quaternion.z + quaternion.w)).toBe(true);
+      expect(quaternion.angleTo(new Quaternion())).toBeLessThan(0.1);
+      expect(confident[index].angleTo(quaternion)).toBeGreaterThan(0.05);
+    }
+  });
+
+  it('does not lock an extreme pose when hands leave and re-enter frame', () => {
+    const { solver, nodes } = rig();
+    let clock = 1000;
+    const present = () => withHands(0.7, 0.3, [handAt(0.7, 'Left'), handAt(0.3, 'Right')], clock);
+    for (let i = 0; i < 90; i++) { solver.update(present(), defaults, 1/60, clock); clock += 16; }
+    const established = handQuaternions(nodes);
+    // Hands leave: no detections and the hand sample goes stale.
+    for (let i = 0; i < 120; i++) {
+      const data = frame(0, clock);
+      solver.update({ ...data, hands: [], samples: { ...data.samples, hands: { timestamp: clock - 5000, present: false, inferenceMs: 1 } } },
+        defaults, 1/60, clock);
+      clock += 16;
+    }
+    const absent = handQuaternions(nodes);
+    for (const quaternion of absent) expect(Number.isFinite(quaternion.w)).toBe(true);
+    // Hands return: the rig must follow them again, not stay stuck.
+    for (let i = 0; i < 120; i++) { solver.update(present(), defaults, 1/60, clock); clock += 16; }
+    const returned = handQuaternions(nodes);
+    for (const [index, quaternion] of returned.entries()) {
+      expect(established[index].angleTo(quaternion)).toBeLessThan(0.05);
+    }
+  });
+});
 
 describe('occlusion and reacquisition stability', () => {
   // TASK-011 and TASK-013 require that hidden limbs relax without stretching or
