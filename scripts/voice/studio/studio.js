@@ -9,8 +9,15 @@ function message(text){$('message').textContent=text;}
 function clearFailureNotice(){failureNotice=null;}
 function controls(enabled){connected=enabled;document.querySelectorAll('.preset,#reference,#live,#natural,#save,#reset,#copy').forEach(b=>b.disabled=!enabled);}
 async function api(path,data={}) {
-  const response=await fetch('/api/'+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
-  const value=await response.json(); if(!response.ok)throw new Error(value.error||'Local voice request failed');return value;
+  // A stopped or crashed service surfaces as "Failed to fetch", which tells the
+  // user nothing. Name the service and the launcher instead.
+  let response;
+  try{response=await fetch('/api/'+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});}
+  catch{throw new Error('The local voice service is not responding. Start it with Start Voice Studio.cmd, then reload this page.');}
+  let value;
+  try{value=await response.json();}
+  catch{throw new Error('The local voice service sent an unreadable reply. Restart it with Stop Voice Studio.cmd, then Start Voice Studio.cmd.');}
+  if(!response.ok)throw new Error(value.error||'Local voice request failed');return value;
 }
 async function action(command,extra={}){
   if(!lease)throw new Error('Reconnect the voice controls first.');

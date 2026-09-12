@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-12T19:44:44.330Z",
+  "passed": true,
+  "status": "complete",
+  "question": "When the local voice service stops, is the user told something actionable rather than shown a fetch error?",
+  "physicalMedia": false,
+  "obsInvolved": false,
+  "limits": [
+    "Stops the owned service abruptly; a gradual failure or a hung service may read differently.",
+    "Checks the message only, not recovery after the service is restarted.",
+    "Exercises the WebSocket disconnect path. The request path, where HTTP fails while the socket is still open, is not reached by killing the service."
+  ],
+  "message": "Controls disconnected. Audio is muted. Reconnect, then start explicitly.",
+  "checks": {
+    "reportsDisconnection": true,
+    "saysAudioIsMuted": true,
+    "namesWhatToDo": true,
+    "noRawFetchError": true
+  }
+}

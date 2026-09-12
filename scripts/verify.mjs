@@ -25,6 +25,7 @@ const CHECKS = [
   { name: 'task register', command: 'python scripts/task_audit.py' },
   { name: 'acceptance claims', command: 'python scripts/audit_acceptance_claims.py' },
   { name: 'voice OBS route licences', command: `${quote(VOICE_PYTHON)} scripts/voice/audit_obs_route.py`, optional: true },
+  { name: 'voice service-down message', command: 'node scripts/voice/service_down_smoke.mjs', optional: true },
   { name: 'voice studio tests', command: `${quote(VOICE_PYTHON)} scripts/voice/test_studio.py`, optional: true },
   { name: 'voice paced LLVC tests', command: `${quote(VOICE_PYTHON)} scripts/voice/test_llvc_paced.py`, optional: true },
   { name: 'voice LLVC chunker tests', command: `${quote(VOICE_PYTHON)} scripts/voice/test_llvc_chunker.py`, optional: true },

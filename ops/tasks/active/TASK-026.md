@@ -65,3 +65,17 @@ All four cases end with the server reporting **`mode: idle` and `muted: true`**,
 Model-load failure and backend loss are covered separately by the fifteen Python studio tests, which pass consistently across three consecutive runs; one earlier `FAILED (failures=1)` did not reproduce and appears to be a flake, recorded here rather than ignored.
 
 **Boundary:** injected exceptions with no real microphone, speaker or OBS. This establishes muted-and-released behaviour and clear reporting, not audio quality, latency or sync. The criterion also names occupied devices and restart, which are covered, but physical device behaviour remains open.
+
+### Service-down behaviour: the expected defect was not there — 2026-09-13
+
+The `String(error)` sweep that found three real defects elsewhere predicted a fourth here: the voice studio's request helper threw whatever `fetch` threw, so a stopped service looked like it would surface `TypeError: Failed to fetch`.
+
+[service_down_smoke.mjs](../../../scripts/voice/service_down_smoke.mjs) killed an owned studio server mid-session and used the controls. **The prediction was wrong.** The control WebSocket closes before any HTTP request is attempted, and its disconnect handler already reports:
+
+> Controls disconnected. Audio is muted. Reconnect, then start explicitly.
+
+That names the state, confirms audio is muted and says what to do. [Evidence](../../reports/voice-service-down-smoke.json) now asserts that behaviour rather than the defect that was assumed.
+
+The request helper was hardened in the same change, so a failed `fetch` or an unreadable reply names the service and its launcher instead of a platform exception. That covers a **narrower** case — HTTP failing while the socket is still open, such as a hung rather than stopped service — and this probe does **not** exercise it. It is defensive, not a fix for an observed defect, and is recorded that way.
+
+Worth keeping as a counterexample: three sweeps found real defects and the fourth found working code. A pattern that has held is still a hypothesis each time it is applied.
