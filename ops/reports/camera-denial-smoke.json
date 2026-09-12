@@ -1,0 +1,85 @@
+{
+  "date": "2026-09-12T18:32:18.571Z",
+  "passed": true,
+  "status": "complete",
+  "question": "Does the app report denied, missing and busy camera states clearly, release resources, and recover on retry?",
+  "physicalCamera": false,
+  "cases": [
+    {
+      "name": "denied",
+      "injectedError": "NotAllowedError",
+      "intent": "The user or the OS refuses camera access.",
+      "failureStatus": "Camera permission denied. Allow camera access for this local app, then retry.",
+      "messageMatchedExpectation": true,
+      "releasedOnFailure": {
+        "tracks": 0,
+        "running": false
+      },
+      "recoveredOnRetry": true,
+      "recoveredStatus": "Camera active · GPU tracking",
+      "statusAfterStop": "Camera stopped",
+      "pageErrors": []
+    },
+    {
+      "name": "missing",
+      "injectedError": "NotFoundError",
+      "intent": "No camera device is present.",
+      "failureStatus": "No camera found. Connect a webcam, then press Start camera.",
+      "messageMatchedExpectation": true,
+      "releasedOnFailure": {
+        "tracks": 0,
+        "running": false
+      },
+      "recoveredOnRetry": true,
+      "recoveredStatus": "Camera active · GPU tracking",
+      "statusAfterStop": "Camera stopped",
+      "pageErrors": []
+    },
+    {
+      "name": "busy",
+      "injectedError": "NotReadableError",
+      "intent": "Another application holds the camera.",
+      "failureStatus": "Camera is busy. Close the other camera app, then retry.",
+      "messageMatchedExpectation": true,
+      "releasedOnFailure": {
+        "tracks": 0,
+        "running": false
+      },
+      "recoveredOnRetry": true,
+      "recoveredStatus": "Camera active · GPU tracking",
+      "statusAfterStop": "Camera stopped",
+      "pageErrors": []
+    },
+    {
+      "name": "overconstrained",
+      "injectedError": "OverconstrainedError",
+      "intent": "The device cannot satisfy the requested resolution.",
+      "failureStatus": "This camera cannot provide the selected resolution. Choose another resolution, then retry.",
+      "messageMatchedExpectation": true,
+      "releasedOnFailure": {
+        "tracks": 0,
+        "running": false
+      },
+      "recoveredOnRetry": true,
+      "recoveredStatus": "Camera active · GPU tracking",
+      "statusAfterStop": "Camera stopped",
+      "pageErrors": []
+    }
+  ],
+  "limits": [
+    "Injected DOMExceptions, not a physical device: the browser permission UI and OS camera privacy setting are untouched.",
+    "Recovery is verified against the fake device, so it shows the application path recovers, not that a real camera re-acquires.",
+    "One attempt per state on one host; no repeated-failure or flapping-device behaviour is covered."
+  ],
+  "server": {
+    "base": "http://127.0.0.1:61368",
+    "port": 61368,
+    "owned": true
+  },
+  "chromeVersion": "152.0.7977.83",
+  "summary": {
+    "allMessagesClear": true,
+    "allRecovered": true,
+    "noPageErrors": true
+  }
+}

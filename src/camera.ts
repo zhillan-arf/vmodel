@@ -63,7 +63,11 @@ export class CameraTracker {
       this.stop();
       const name = error instanceof DOMException ? error.name : '';
       this.onStatus(name === 'NotAllowedError' ? 'Camera permission denied. Allow camera access for this local app, then retry.' :
-        name === 'NotReadableError' ? 'Camera is busy. Close the other camera app, then retry.' : `Camera unavailable: ${String(error)}`);
+        name === 'NotReadableError' ? 'Camera is busy. Close the other camera app, then retry.' :
+        // A missing device otherwise fell through to the raw exception text.
+        name === 'NotFoundError' ? 'No camera found. Connect a webcam, then press Start camera.' :
+        name === 'OverconstrainedError' ? 'This camera cannot provide the selected resolution. Choose another resolution, then retry.' :
+        `Camera unavailable: ${String(error)}`);
     }
   }
   private schedule() {
