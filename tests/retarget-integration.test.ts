@@ -43,6 +43,74 @@ function settle(solver: Retargeter, data: TrackingFrame, seconds = 1) {
   for (let i = 0; i < seconds*60; i++) solver.update(data, defaults, 1/60, data.timestamp + i*3);
 }
 
+describe('anatomical side and mirror independence', () => {
+  // TASK-010 and TASK-011: head and limbs must follow the correct side whether
+  // or not preview mirroring is on. Mirroring is a presentation transform on the
+  // canvas element, so the retargeting must be identical either way - a claim
+  // worth pinning, because a mirror applied twice is a classic side-swap bug.
+  const armFrame = (now: number, raised: 'left' | 'right') => {
+    const data = frame(0, now);
+    const pose = data.pose.map(point => ({ ...point }));
+    const set = (index: number, x: number, y: number) => { pose[index] = { x, y, z: 0, visibility: 1 }; };
+    // MediaPipe indices: 11/13/15 are the anatomical left shoulder, elbow, wrist.
+    // Stored pose y follows the frame helper's convention, where a smaller value
+    // is higher; shoulders sit at -.5 above hips at 0.
+    set(11, .2, -.5); set(12, -.2, -.5); set(23, .1, 0); set(24, -.1, 0);
+    if (raised === 'left') { set(13, .5, -.9); set(15, .7, -1.2); set(14, -.5, -.5); set(16, -.75, -.5); }
+    else { set(13, .5, -.5); set(15, .75, -.5); set(14, -.5, -.9); set(16, -.7, -1.2); }
+    return { ...data, pose, poseImage: pose };
+  };
+  const height = (nodes: Map<string, Object3D>, bone: string) =>
+    nodes.get(bone)!.getWorldPosition(new Vector3()).y;
+
+  it('raises the avatar arm on the same anatomical side as the performer', () => {
+    for (const side of ['left', 'right'] as const) {
+      const { solver, nodes } = rig();
+      let clock = 1000;
+      const rest = { left: height(nodes, 'leftHand'), right: height(nodes, 'rightHand') };
+      for (let i = 0; i < 240; i++) { solver.update(armFrame(clock, side), defaults, 1/60, clock); clock += 16; }
+      const raised = side === 'left' ? height(nodes, 'leftHand') : height(nodes, 'rightHand');
+      const other = side === 'left' ? height(nodes, 'rightHand') : height(nodes, 'leftHand');
+      // The named side must rise clearly, and by more than the other side moves.
+      expect(raised - rest[side]).toBeGreaterThan(0.05);
+      expect(raised - rest[side]).toBeGreaterThan(Math.abs(other - rest[side === 'left' ? 'right' : 'left']));
+    }
+  });
+
+  it('produces identical retargeting with preview mirroring on and off', () => {
+    const mirrored = rig(), plain = rig();
+    let clock = 1000;
+    for (let i = 0; i < 180; i++) {
+      const data = armFrame(clock, 'left');
+      mirrored.solver.update(data, { ...defaults, mirror: true }, 1/60, clock);
+      plain.solver.update(data, { ...defaults, mirror: false }, 1/60, clock);
+      clock += 16;
+    }
+    const bones = ['head','neck','spine','leftUpperArm','leftLowerArm','leftHand','rightUpperArm','rightLowerArm','rightHand'];
+    for (const bone of bones) {
+      const a = mirrored.nodes.get(bone)!.quaternion;
+      const b = plain.nodes.get(bone)!.quaternion;
+      expect(a.angleTo(b)).toBeLessThan(1e-9);
+    }
+    // Guard against a vacuous pass: the arm must actually have moved.
+    expect(mirrored.nodes.get('leftUpperArm')!.quaternion.angleTo(new Quaternion())).toBeGreaterThan(0.01);
+  });
+
+  it('turns the head the same way regardless of the mirror setting', () => {
+    const yawOf = (nodes: Map<string, Object3D>) =>
+      new Euler().setFromQuaternion(nodes.get('head')!.getWorldQuaternion(new Quaternion()), 'YXZ').y;
+    const results: number[] = [];
+    for (const mirror of [true, false]) {
+      const { solver, nodes } = rig();
+      let clock = 1000;
+      for (let i = 0; i < 180; i++) { solver.update(frame(0.35, clock), { ...defaults, mirror }, 1/60, clock); clock += 16; }
+      results.push(yawOf(nodes));
+    }
+    expect(results[0]).toBeGreaterThan(0.3);
+    expect(Math.abs(results[0] - results[1])).toBeLessThan(1e-9);
+  });
+});
+
 describe('seated framing does not invent foot tracking', () => {
   // TASK-013: seated must stay stable and must not fabricate leg or foot motion,
   // even when the camera can see the legs. Standing solves them; seated must not.

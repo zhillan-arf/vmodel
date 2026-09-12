@@ -43,3 +43,15 @@ Two tests in [retarget-integration.test.ts](../../../tests/retarget-integration.
 The loss test first reported zero travel on reacquisition. The head's **local** quaternion stays near identity because the yaw is carried through the torso chain, so measuring the head bone locally reports no movement however far the avatar actually turns. Measuring in world space gives the real figure. The solver was correct; the measurement was not.
 
 **Boundary:** synthetic frames through the real solver. Whether response feels quick enough — the criterion's "without a visibly long response delay" — is a human judgement this cannot supply, and the first two criteria need a person turning their head and blinking in front of a camera. No box is ticked.
+
+## Anatomical side and mirror independence — 2026-09-13
+
+Three tests in [retarget-integration.test.ts](../../../tests/retarget-integration.test.ts) pin the side and mirror behaviour, because a mirror applied twice is a classic side-swap defect and a fixture can catch it where a person cannot easily tell.
+
+- **The avatar raises the arm on the same anatomical side as the performer.** Raising MediaPipe's left arm landmarks lifts the avatar's left hand by more than 0.05 units and by more than the opposite hand moves; the same holds for the right.
+- **Retargeting is byte-for-byte identical with mirroring on and off.** Across head, neck, spine and all six arm bones, the two solvers agree to within 1e-9 rad. Mirroring is a `scaleX(-1)` presentation transform on the canvas element and never reaches the solver, which [retarget-math.ts](../../../src/retarget-math.ts) states explicitly. A vacuity guard confirms the arm actually moved, so the agreement is not two motionless rigs matching.
+- **The head turns the same way regardless of the mirror setting**, reaching past 0.35 rad in both and agreeing to within 1e-9.
+
+A convention error in the first draft is worth recording: the raised arm initially moved **down**. Stored pose `y` follows the frame helper's convention where a smaller value is higher, and the test had used image-space intuition. The solver was correct; the fixture was upside down.
+
+**Boundary:** synthetic landmark frames. Whether head and limbs *look* correct to a person watching the preview, mirrored or not, is the criterion's own wording and needs the operator, so no box is ticked.

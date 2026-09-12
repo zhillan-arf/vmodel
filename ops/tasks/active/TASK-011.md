@@ -49,3 +49,15 @@ With all six arm landmarks dropped to zero visibility:
 Reacquisition is covered by the same ratio test in reverse: restoring the landmarks produces no single-frame snap either.
 
 **Boundary:** synthetic landmark frames through the real solver. This closes the numeric half of the criterion — no stretching, snapping or avatar displacement — but a person watching their own hidden arm relax is a separate judgement and the criterion stays open pending the operator check.
+
+## Anatomical side and mirror independence — 2026-09-13
+
+Three tests in [retarget-integration.test.ts](../../../tests/retarget-integration.test.ts) pin the side and mirror behaviour, because a mirror applied twice is a classic side-swap defect and a fixture can catch it where a person cannot easily tell.
+
+- **The avatar raises the arm on the same anatomical side as the performer.** Raising MediaPipe's left arm landmarks lifts the avatar's left hand by more than 0.05 units and by more than the opposite hand moves; the same holds for the right.
+- **Retargeting is byte-for-byte identical with mirroring on and off.** Across head, neck, spine and all six arm bones, the two solvers agree to within 1e-9 rad. Mirroring is a `scaleX(-1)` presentation transform on the canvas element and never reaches the solver, which [retarget-math.ts](../../../src/retarget-math.ts) states explicitly. A vacuity guard confirms the arm actually moved, so the agreement is not two motionless rigs matching.
+- **The head turns the same way regardless of the mirror setting**, reaching past 0.35 rad in both and agreeing to within 1e-9.
+
+A convention error in the first draft is worth recording: the raised arm initially moved **down**. Stored pose `y` follows the frame helper's convention where a smaller value is higher, and the test had used image-space intuition. The solver was correct; the fixture was upside down.
+
+**Boundary:** synthetic landmark frames. Whether head and limbs *look* correct to a person watching the preview, mirrored or not, is the criterion's own wording and needs the operator, so no box is ticked.
