@@ -33,3 +33,19 @@ Live acceptance with Ene is repeated in TASK-021 after avatar export.
 
 When completing this task, record changed artifact paths, exact validation commands/results or manual evidence, and any unresolved limitation in the task or its linked report. Leave unperformed checks unchecked.
 
+## Hidden-limb relaxation — 2026-09-13
+
+Three system-level tests in [retarget-integration.test.ts](../../../tests/retarget-integration.test.ts) exercise the whole solver, not an isolated limb function, over a visible → hidden → visible sequence.
+
+"Smooth, not snapping" is asserted as a **ratio rather than an absolute angle**: exponential smoothing always moves a bounded fraction of the remaining error, whereas a snap covers most of the travel in one frame. The worst single-frame step is therefore compared against the whole journey. An earlier absolute threshold of 0.2 rad failed at 0.239 rad, which on inspection was simply the configured smoothing factor's first step — correct behaviour that a badly-chosen threshold had labelled a defect.
+
+With all six arm landmarks dropped to zero visibility:
+
+- No single frame covers more than 35% of the total travel, and the last step is under a tenth of the first, so the motion decays rather than jumping.
+- **Bone lengths are unchanged to ten decimal places** across `leftLowerArm`, `leftHand`, `rightLowerArm`, `rightHand` and both legs — no stretching.
+- The avatar root does not move at all (under 1e-6), so nothing drifts off-screen.
+- All resulting quaternions stay finite.
+
+Reacquisition is covered by the same ratio test in reverse: restoring the landmarks produces no single-frame snap either.
+
+**Boundary:** synthetic landmark frames through the real solver. This closes the numeric half of the criterion — no stretching, snapping or avatar displacement — but a person watching their own hidden arm relax is a separate judgement and the criterion stays open pending the operator check.

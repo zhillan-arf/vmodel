@@ -36,6 +36,101 @@ function settle(solver: Retargeter, data: TrackingFrame, seconds = 1) {
   for (let i = 0; i < seconds*60; i++) solver.update(data, defaults, 1/60, data.timestamp + i*3);
 }
 
+describe('occlusion and reacquisition stability', () => {
+  // TASK-011 and TASK-013 require that hidden limbs relax without stretching or
+  // snapping, and that occlusion and reacquisition produce no explosive joints
+  // or uncontrolled root drift. These are numeric properties, so they are
+  // asserted directly rather than inferred from a solver unit test.
+  const boneLengths = (nodes: Map<string, Object3D>) =>
+    ['leftLowerArm','leftHand','rightLowerArm','rightHand','leftLowerLeg','leftFoot','rightLowerLeg','rightFoot']
+      .map(name => nodes.get(name)!.position.length());
+  const hide = (data: TrackingFrame, indices: number[]) => {
+    const copy: TrackingFrame = { ...data, pose: data.pose.map(point => ({ ...point })) };
+    for (const index of indices) copy.pose[index] = { x: 0, y: 0, z: 0, visibility: 0 };
+    return copy;
+  };
+  // "Smooth, not snapping" is a ratio, not an absolute angle: exponential
+  // smoothing always moves a bounded fraction of the remaining error, whereas a
+  // snap covers most of the travel in one frame. Compare the worst single step
+  // against the whole journey rather than against an arbitrary threshold.
+  const relaxation = (solver: Retargeter, data: TrackingFrame, nodes: Map<string, Object3D>, bones: string[], frames = 120) => {
+    const start = new Map(bones.map(name => [name, nodes.get(name)!.quaternion.clone()]));
+    const previous = new Map(bones.map(name => [name, nodes.get(name)!.quaternion.clone()]));
+    let worstStep = 0, firstStep = 0, lastStep = 0;
+    for (let i = 0; i < frames; i++) {
+      solver.update(data, defaults, 1/60, data.timestamp + 2000 + i*16);
+      for (const name of bones) {
+        const now = nodes.get(name)!.quaternion;
+        const step = previous.get(name)!.angleTo(now);
+        worstStep = Math.max(worstStep, step);
+        if (i === 0) firstStep = Math.max(firstStep, step);
+        if (i === frames - 1) lastStep = Math.max(lastStep, step);
+        previous.set(name, now.clone());
+      }
+    }
+    const total = Math.max(...bones.map(name => start.get(name)!.angleTo(nodes.get(name)!.quaternion)));
+    return { worstStep, firstStep, lastStep, total, largestFraction: total > 1e-9 ? worstStep / total : 0 };
+  };
+
+  it('relaxes hidden arms smoothly without stretching bones or moving the avatar', () => {
+    const { solver, nodes, scene } = rig();
+    const visible = frame(0);
+    settle(solver, visible, 2);
+    const restLengths = boneLengths(nodes);
+    const rootBefore = scene.position.clone();
+    // Arms disappear: shoulders, elbows and wrists all drop to zero visibility.
+    const hidden = hide(visible, [11, 12, 13, 14, 15, 16]);
+    const relax = relaxation(solver, hidden, nodes, ['leftUpperArm','leftLowerArm','rightUpperArm','rightLowerArm']);
+    // No single frame covers most of the travel, and the motion decays away.
+    expect(relax.largestFraction).toBeLessThan(0.35);
+    expect(relax.lastStep).toBeLessThan(relax.firstStep * 0.1);
+    boneLengths(nodes).forEach((length, index) => expect(length).toBeCloseTo(restLengths[index], 10));
+    expect(scene.position.distanceTo(rootBefore)).toBeLessThan(1e-6);
+    for (const name of ['leftUpperArm','leftLowerArm','rightUpperArm','rightLowerArm']) {
+      const q = nodes.get(name)!.quaternion;
+      expect(Number.isFinite(q.x) && Number.isFinite(q.y) && Number.isFinite(q.z) && Number.isFinite(q.w)).toBe(true);
+    }
+  });
+
+  it('keeps knees and the root bounded through occlusion and reacquisition while standing', () => {
+    const { solver, nodes } = rig();
+    const standing = { ...defaults, mode: 'standing' as const };
+    const visible = frame(0);
+    for (let i = 0; i < 120; i++) solver.update(visible, standing, 1/60, visible.timestamp + i*16);
+    const restLengths = boneLengths(nodes);
+    const hips = nodes.get('hips')!;
+    const hipsBefore = hips.position.clone();
+    let worstKnee = 0, worstHipDrift = 0;
+    const sequence = [hide(visible, [25, 26, 27, 28]), visible, hide(visible, [23, 24, 25, 26, 27, 28]), visible];
+    let clock = visible.timestamp + 2000;
+    for (const data of sequence) {
+      for (let i = 0; i < 120; i++) {
+        solver.update(data, standing, 1/60, clock); clock += 16;
+        for (const knee of ['leftLowerLeg','rightLowerLeg']) {
+          const angle = 2 * Math.acos(Math.min(1, Math.abs(nodes.get(knee)!.quaternion.w)));
+          worstKnee = Math.max(worstKnee, angle);
+        }
+        worstHipDrift = Math.max(worstHipDrift, hips.position.distanceTo(hipsBefore));
+      }
+    }
+    // No explosive knee, no uncontrolled root drift, no stretching.
+    expect(worstKnee).toBeLessThan(Math.PI * 0.75);
+    expect(worstHipDrift).toBeLessThan(0.5);
+    boneLengths(nodes).forEach((length, index) => expect(length).toBeCloseTo(restLengths[index], 10));
+  });
+
+  it('recovers arms on reacquisition without a single-frame snap', () => {
+    const { solver, nodes } = rig();
+    const visible = frame(0);
+    settle(solver, visible, 2);
+    const hidden = hide(visible, [11, 12, 13, 14, 15, 16]);
+    settle(solver, hidden, 2);
+    const recover = relaxation(solver, visible, nodes, ['leftUpperArm','leftLowerArm','rightUpperArm','rightLowerArm']);
+    expect(recover.largestFraction).toBeLessThan(0.35);
+    expect(recover.lastStep).toBeLessThan(recover.firstStep * 0.1);
+  });
+});
+
 describe('manual expression controls alongside automatic tracking', () => {
   // TASK-015: a held manual expression must not suppress tracked blinking or
   // mouth movement, and tracking must still be able to exceed the manual floor.

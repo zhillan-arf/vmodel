@@ -31,3 +31,12 @@ Required for release. Exact dance choreography and studio-quality full-body moca
 
 When completing this task, record changed artifact paths, exact validation commands/results or manual evidence, and any unresolved limitation in the task or its linked report. Leave unperformed checks unchecked.
 
+## Occlusion and reacquisition stability while standing — 2026-09-13
+
+A system-level test in [retarget-integration.test.ts](../../../tests/retarget-integration.test.ts) drives the solver in **standing** mode through four phases — knees hidden, restored, hips and knees hidden, restored — at 120 frames each, measuring continuously.
+
+- **No explosive knees.** The worst knee rotation across every frame of all four phases stays under 135 degrees.
+- **No uncontrolled root drift.** Maximum hip displacement from its pre-occlusion position stays under 0.5 units across the whole sequence.
+- **No limb stretching.** Bone lengths for both lower legs, both feet and both arms are unchanged to ten decimal places from before occlusion to after reacquisition.
+
+**Boundary:** synthetic landmark frames through the real solver, so this establishes the numeric stability the criterion names. It does **not** establish that a person moving in front of a camera produces recognisable standing motion, which is the separate first criterion and needs the operator. The criterion stays open pending that check.
