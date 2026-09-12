@@ -3,7 +3,7 @@ import { AvatarViewer } from './viewer';
 import { CameraTracker } from './camera';
 import { defaults, normalizeSettings, readSettings, type Calibration, type TrackingFrame } from './types';
 import { createFreezeNotice } from './freeze-notice';
-import { describeLoadFailure } from './load-failure';
+import { describeLoadFailure, readableError } from './load-failure';
 import { confidence, Retargeter } from './retarget';
 import { compositionSize } from './composition';
 import { OutputLink, type OutputSnapshot } from './output-link';
@@ -187,7 +187,8 @@ else {
   document.querySelector('#settings-file')!.addEventListener('change', async e => {
     const file = (e.target as HTMLInputElement).files?.[0]; if (!file || !avatarId) return;
     try { if (file.size > 65536) throw new Error('Settings file is too large.'); settings = parseSettingsFile(await file.text(), avatarId); restoreCalibration(); applySettings(); status('Avatar settings loaded.'); }
-    catch (error) { status(String(error)); }
+    catch (error) { status(readableError(error,
+      'That settings file could not be used. Choose a file this app saved with Save settings.')); }
   });
   // A hidden window delivers no animation frames, so the avatar stops and any OBS
   // capture of it goes blank. The warning cannot be read while hidden; report it
@@ -209,7 +210,10 @@ applySettings();
 if (!output) void fetch('/avatars/ene.vrm').then(response => {
   if (!response.ok) throw new Error('Prepared Ene avatar not found. Run the avatar preparation script or select a VRM.');
   return response.blob();
-}).then(load).catch(error => { status(String(error)); const loading = document.querySelector('#loading'); if (loading) loading.textContent = String(error); });
+}).then(load).catch(error => {
+  const message = readableError(error, 'The prepared Ene avatar could not be loaded. Run Setup VModel.cmd, or use Load another VRM.');
+  status(message); const loading = document.querySelector('#loading'); if (loading) loading.textContent = message;
+});
 function animate(now: number) {
   const dt = Math.min(0.1, (now - lastTime) / 1000); lastTime = now;
   retarget?.update(lastFrame, settings, dt, performance.timeOrigin + now); viewer.draw(dt);

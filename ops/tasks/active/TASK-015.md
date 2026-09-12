@@ -57,3 +57,16 @@ In every case the working avatar is retained, rendering continues, the message n
 This is the third instance of the same defect shape this session, after the camera's `NotFoundError` and the microphone's erased failure reason: error handling that looks correct when read, and surfaces something useless when actually driven.
 
 **Boundary:** three malformed inputs, not an exhaustive corpus, and it judges whether a message names an action rather than whether the wording is ideal. The remaining criterion — a first-time user reaching a calibrated moving sample without developer tools — still needs a person.
+
+### The same defect in two more places — 2026-09-13
+
+A deliberate sweep for `String(error)` reaching the status bar found two further sites beyond the avatar loader:
+
+- **Loading a settings file.** A malformed file throws a JSON `SyntaxError`, which the user saw verbatim.
+- **The prepared avatar missing on first run.** A failed fetch throws `TypeError: Failed to fetch`, shown as-is.
+
+Both now use a shared `readableError(error, fallback)`: it keeps a message this application raised and substitutes an actionable sentence for a parser, fetch or platform exception. The settings path offers *"Choose a file this app saved with Save settings."*; the first-run path offers *"Run Setup VModel.cmd, or use Load another VRM."*
+
+The guard is deliberately **narrow** — it matches only `vrm`, `pmx`, `vmd`, `avatar` and `settings`. An earlier draft also matched `file`, `camera` and `preparation`, which was unnecessary (every message this application raises already names one of the five) and actively harmful, since it would have let a platform error such as `Failed to fetch file` through as if it were guidance. A test now asserts exactly that case falls back.
+
+Worker-level messages keep their raw detail: they are prefixed with context such as *"Tracking could not start:"* and are diagnostic rather than a user action, so removing the detail would cost more than it gained.

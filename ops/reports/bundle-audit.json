@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-12T19:35:57.677Z",
+  "date": "2026-09-12T19:40:21.870Z",
   "scope": "Static served build only; does not scan unrelated files or certify future changes.",
   "checks": {
     "onlyDesignatedFiles": true,
@@ -14,8 +14,8 @@
       "bytes": 5265
     },
     {
-      "path": "assets/index-DyuOWrq9.js",
-      "bytes": 793388
+      "path": "assets/index-DxtK6Vzr.js",
+      "bytes": 793604
     },
     {
       "path": "assets/tracking.worker-a-4NTgbs.js",
