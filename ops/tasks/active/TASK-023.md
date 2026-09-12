@@ -39,3 +39,12 @@ When completing this task, record changed artifacts, exact validation commands/r
 - Two Python validation/HTTP tests passed. Chrome/Playwright verified comparison playback, correct durations, no automatic playback, no concurrent players, stop/rewind, provisional notes/restoration, no horizontal overflow on mobile, zero camera/microphone calls, zero external requests and zero browser errors. [Browser evidence](../../reports/voice-audition-ui-smoke.json). Test notes were isolated and never written to the user's ratings file.
 - All acceptance boxes remain open: this is an 8.397-second public-domain **reference**, not the user's required 60–90-second takes or a trained English-control target. User listening, meaningful timbre confirmation, speaking comfort, difficult sounds, actual control acquisition/training and live conversation still need evidence. No unheard voice is selected as a default.
 
+## The listening room had no launcher — 2026-09-13
+
+The handoff told the user to open `http://127.0.0.1:5081/` to choose a voice, and the audition server has run continuously since the session that started it. **Nothing could start it again.** `serve_auditions.py` was referenced only by its own test: no `.cmd` existed for it, so after a reboot the listening room would have been unreachable without developer tools.
+
+That silently blocked this task's own criterion, which needs the user's preference, and by extension TASK-027's training decision.
+
+**Start Voice Auditions.cmd** now starts the server and opens the page, matching the existing launcher pattern including the missing-environment guard. Both [remaining checks](../../../docs/remaining-checks.md) and the [voice quickstart](../../../docs/voice-quickstart.md) name it instead of a bare URL, and the documentation audit confirms the launcher exists and every link resolves.
+
+Worth noting how it was missed: every automated check passed throughout, because the port was open and the page loaded. Nothing verifies that a service the documentation depends on can be *started* — only that it answers when already running. The gap was found by asking what a user would do after a reboot.

@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-12T19:44:40.965Z",
+  "date": "2026-09-12T19:49:55.390Z",
   "passed": true,
   "status": "complete",
   "question": "Do the beginner guides reference launchers, links and local addresses that actually exist?",
@@ -64,6 +64,7 @@
       "file": "docs/remaining-checks.md",
       "links": 7,
       "launchers": [
+        "Start Voice Auditions.cmd",
         "Install OBS Camera.cmd"
       ],
       "ports": [
@@ -92,10 +93,12 @@
       "file": "docs/voice-quickstart.md",
       "links": 11,
       "launchers": [
-        "Start Voice Studio.cmd"
+        "Start Voice Studio.cmd",
+        "Start Voice Auditions.cmd"
       ],
       "ports": [
         5082,
+        5081,
         5081
       ]
     },
@@ -477,6 +480,7 @@
     "Setup VModel.cmd",
     "Start OBS.cmd",
     "Start VModel.cmd",
+    "Start Voice Auditions.cmd",
     "Start Voice Studio.cmd",
     "Stop VModel.cmd"
   ],

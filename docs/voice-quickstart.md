@@ -54,3 +54,9 @@ Given an explicitly supplied endpoint, the bounded checker can inspect its model
 Replace the placeholder only with the supplied address. The tool never discovers hosts, follows redirects or uploads audio. If needed, it reads `VMODEL_VOICE_API_KEY` from the environment and omits that value from output; do not put credentials in the URL or saved profiles. A separate voice-conversion contract or authorized RVC service may be required.
 
 For startup failures, read `.cache/voice/server-error.log`. Do not replace an unrelated program occupying port 5082; stop only the owned Voice Studio instance. Saved profiles and private route identity live under `assets/voice/studio/`, outside distribution. Restore missing pinned dependencies/assets using [voice setup](voice-setup.md). Replacing the private route file changes the OBS URL and requires reattachment.
+
+## Comparing the candidate voices
+
+**Start Voice Auditions.cmd** opens the listening room at `http://127.0.0.1:5081/`, where the converted candidates and the unconverted English reference play at matched levels. It needs no microphone and starts no conversion. Leave the window open while you listen, then press Ctrl+C in it.
+
+This is separate from Voice Studio on port 5082, which is the live conversion interface.

@@ -18,7 +18,7 @@ Useful feedback names the check, what your body did, what Ene did, seated or sta
 
 **Unblocks TASK-023, and lets TASK-027 close without training a new voice.**
 
-Open the listening room at `http://127.0.0.1:5081/`. It has three converted English voices plus the unconverted reference, all level-matched.
+Run **Start Voice Auditions.cmd**. It opens the listening room at `http://127.0.0.1:5081/` with three converted English voices plus the unconverted reference, all level-matched. Leave that window open while you listen; Ctrl+C in it when you are done.
 
 Tell us your **default** and your **alternatives**, and say what is wrong with the ones you reject — too breathy, too young, consonants mushy, whatever you hear. A voice nobody has listened to cannot be marked accepted, and a rejected fit becomes the brief for training a custom one.
 
