@@ -54,14 +54,25 @@ Details: [combined workload and reproducibility](../ops/reports/voice-combined-w
 
 Your listening preference in step 2 still matters, and matters more now: if one of the three existing RVC voices fits, we may not need this particular converter at all.
 
-## One known problem we have not solved
+## The long-session problem: mostly resolved, one part needs free memory
 
-During a long combined session, drawing slowed to roughly one frame per second and three OBS screenshots came out entirely white. It has not happened again in shorter runs, and we have now ruled out two suspects:
+The failure where drawing slowed to about one frame per second and OBS screenshots came out white **did not come back**. A full 15-minute seated session just completed cleanly: 58.5 frames per second, zero dropped OBS frames out of 27,002, zero blank captures, and no slowdown from start to finish. That ran while your browser and editor were open, which makes it a more honest result than a quiet-machine run would have been.
 
-- **Processor core placement** — [tested and rejected](../ops/reports/capture-core-placement.md). Forcing every browser process onto the slow cores costs 13% of the frame rate, not 98%.
-- **Chrome hiding an unseen window** — [tested, but the test failed](../ops/reports/capture-occlusion-investigation.md). Neither probe managed to actually hide the window, so this is unresolved rather than eliminated.
+Two suspects were ruled in or out along the way: processor core placement is [tested and rejected](../ops/reports/capture-core-placement.md), and the "Chrome hid the window" idea is [untested rather than disproven](../ops/reports/capture-occlusion-investigation.md) because neither probe managed to actually hide the window.
 
-The cause is still unknown, and TASK-020 stays open with the defect recorded rather than being quietly marked passed. If you see Ene freeze or the OBS capture go blank during step 4, tell us what else was on screen at that moment — that is exactly the observation we are missing.
+**One thing I could not finish.** The standing-with-hands session failed twice — once the browser closed after 55 seconds, once tracking never started. Both times the machine was out of memory: 1.5 GB free of 16 GB, with 23-25 GB committed. Your editor, browser, OBS and background services already fill the machine, and the test browser needs about 2 GB on top.
+
+This does not look like a bug. No crash was logged, no worker errored, and hand tracking ran correctly at 169-303 ms per result whenever it got going.
+
+**If you want this closed:** close your editor and spare browser windows, then run this one command and leave the laptop alone for about 17 minutes:
+
+```
+node scripts/combined_fixture_soak.mjs --run --quiet-window --phase=standing-hands
+```
+
+Until then the standing preset is genuinely unmeasured, and I am not inferring it from the seated pass.
+
+One separate performance fact worth knowing: with hands enabled, a complete tracking update takes 418-464 ms, so standing tracking refreshes about **2.2 times per second**. Head and body motion stay smooth because drawing runs independently, but fast hand movement will lag.
 
 ## What is already done
 

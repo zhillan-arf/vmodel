@@ -70,3 +70,15 @@ Cleanup passed with no cleanup errors; the owned recording stopped and the origi
 Acceptance effect: the baseline and frame-time gates **pass for the seated preset** and remain unmeasured for standing, so the first criterion keeps this task open with measured defects. The no-crash criterion **fails** on the observed crash; post-warmup memory growth is not demonstrated either way, with Chrome private bytes up 39.01 MiB over 15 seated minutes while the working set fell 49.06 MiB. Offline and recovery checks were not part of this run.
 
 Next work should capture the standing crash rather than re-run blind: record browser process exit codes and crash state, sample system-wide available memory throughout, and consider running the standing phase first so it does not inherit fifteen minutes of accumulated browser state.
+
+### Standing-only reproduction — 2026-09-12
+
+The standing workload was re-run alone using the new `--phase=<id>` selector, with fresh browser state and the newly added system-memory sampling. [Run evidence](../../reports/local/combined-soak/2026-09-12T14-38-42-211Z-c43a78e8/report.json).
+
+It failed earlier and differently: `page.waitForFunction: Timeout 90000ms exceeded` while establishing the required consecutive face-plus-pose-plus-hands detections, producing no phase data. Cleanup passed with no cleanup errors.
+
+The memory sampling supplies the missing context. That run began with **1,468.9 MiB free of 16,002.5 MiB and 25,237.9 MiB committed**, so the host was paging; the earlier 55-second termination occurred at 3,080 MiB free. The soak browser alone holds close to 2 GB private, on top of a baseline that includes the user's browser at 1,142 MiB across 11 processes, the editor, OBS and security services.
+
+**The standing-plus-hands workload cannot be validated on this host while the user's normal working set is loaded.** Two attempts failed in two different ways, both consistent with memory pressure. This is **not** established as a code defect: no Chrome crash event, worker error, queue overflow or capture failure was recorded in either attempt, and hand tracking ran correctly at 169-303 ms per result when it ran. The seated workload passed its full window on the same host under the same load.
+
+Required to close the standing gates: close the editor and other browser windows, then run `node scripts/combined_fixture_soak.mjs --run --quiet-window --phase=standing-hands`. Raising the 90-second preparation timeout would mask the condition and is not recommended. Until then the standing preset's frame-time and stability gates remain **unmeasured**, and no standing acceptance is inferred from the seated pass.

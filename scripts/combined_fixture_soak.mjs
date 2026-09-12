@@ -19,7 +19,8 @@ const run = promisify(execFile), delay = ms => new Promise(resolve => setTimeout
 const WARMUP_MS = 60000, PHASE_MS = 900000, TICK_MS = 5000;
 const STOP_BYTES = 512 * 1024 ** 2, FINAL_MAX_BYTES = 600 * 1024 ** 2, TRACE_MAX_BYTES = 50 * 1024 ** 2;
 const args = process.argv.slice(2);
-assert(args.every(arg => ['--run', '--quiet-window', '--plan'].includes(arg)), 'Usage: node scripts/combined_fixture_soak.mjs --plan OR --run --quiet-window');
+assert(args.every(arg => ['--run', '--quiet-window', '--plan'].includes(arg) || arg.startsWith('--phase=')),
+  'Usage: node scripts/combined_fixture_soak.mjs --plan OR --run --quiet-window [--phase=<id>]');
 const usage = 'https://www.nasa.gov/nasa-brand-center/images-and-media/';
 const fixtures = [
   { id: 'portrait', file: 'assets/testing/jsc2021e037768_alt.jpg', sha256: '7a7536821783691d1c7b58f5ee7cb601abbeaaa2f4703e755a15c5dbb4271b78',
@@ -33,7 +34,14 @@ const phases = [
   { id: 'standing-hands', fixture: 'body', mode: 'standing', hands: true, framing: 'body', crop: { x: 150, y: 75, width: 520, height: 400 },
     input: 'Proven face/pose/hand-positive upper-body crop of the permitted full-body photo, letterboxed into 640×480. Feet are outside this crop; standing is a settings/workload label, not full-body tracking acceptance.' },
 ];
-const plan = { phases, warmupSecondsPerPhase: 60, measuredSecondsPerPhase: 900, expectedWallMinutes: '32–35 including setup/cleanup',
+const selectedPhaseId = (args.find(arg => arg.startsWith('--phase=')) ?? '').slice('--phase='.length);
+if (selectedPhaseId) assert(phases.some(phase => phase.id === selectedPhaseId),
+  'Unknown --phase id; expected one of: ' + phases.map(phase => phase.id).join(', '));
+const activePhases = selectedPhaseId ? phases.filter(phase => phase.id === selectedPhaseId) : phases;
+const plan = { phases: activePhases, selectedPhaseId: selectedPhaseId || null,
+  singlePhaseDiagnostic: Boolean(selectedPhaseId),
+  singlePhaseBoundary: selectedPhaseId ? 'One phase only: this reproduces that workload with fresh browser state and does not constitute the full combined soak.' : null,
+  warmupSecondsPerPhase: 60, measuredSecondsPerPhase: 900, expectedWallMinutes: '32–35 including setup/cleanup',
   inputSize: { width: 640, height: 480 }, requestedCaptureFps: 30, outputSize: { width: 1280, height: 720, fps: 30 },
   quality: 'balanced', springMotion: 'gentle', delegate: 'default GPU; abort if actual initialization falls back to CPU',
   recording: 'Existing Ene Landscape encoder/profile, uniquely owned recording directory; video-only source; existing silent audio track may remain.',
@@ -131,12 +139,18 @@ async function processMemory() {
   const command = `$soakIds=@(${ids.join(',')}); $soakRows=@(foreach($soakId in $soakIds){try{$soakProcess=[Diagnostics.Process]::GetProcessById($soakId);[pscustomobject]@{pid=$soakId;privateBytes=$soakProcess.PrivateMemorySize64;workingSetBytes=$soakProcess.WorkingSet64}}catch{}}); ConvertTo-Json -InputObject $soakRows -Compress`;
   const rows = JSON.parse((await run('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', command], { windowsHide: true, timeout: 5000 })).stdout.replace(/^\uFEFF/, ''));
   const obsRow = rows.find(row => row.pid === obsPid); assert(obsRow, 'Owned OBS process exited.');
+  let system = null;
+  try {
+    const osCommand = '$soakOs=Get-CimInstance Win32_OperatingSystem; [pscustomobject]@{freeMiB=[math]::Round($soakOs.FreePhysicalMemory/1KB,1);totalMiB=[math]::Round($soakOs.TotalVisibleMemorySize/1KB,1);committedMiB=[math]::Round(($soakOs.TotalVirtualMemorySize-$soakOs.FreeVirtualMemory)/1KB,1)} | ConvertTo-Json -Compress';
+    system = JSON.parse((await run('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', osCommand], { windowsHide: true, timeout: 5000 })).stdout.replace(/^\uFEFF/, ''));
+  } catch { system = null; }
   const chrome = rows.filter(row => row.pid !== obsPid);
   const metrics = Object.fromEntries((await pageCDP.send('Performance.getMetrics')).metrics.map(metric => [metric.name, metric.value]));
   return { chromePrivateMiB: chrome.reduce((sum, row) => sum + row.privateBytes, 0) / 1024 ** 2,
     chromeWorkingSetMiB: chrome.reduce((sum, row) => sum + row.workingSetBytes, 0) / 1024 ** 2,
     obsPrivateMiB: obsRow.privateBytes / 1024 ** 2, obsWorkingSetMiB: obsRow.workingSetBytes / 1024 ** 2,
     jsHeapUsedMiB: Number.isFinite(metrics.JSHeapUsedSize) ? metrics.JSHeapUsedSize / 1024 ** 2 : null,
+    systemFreeMiB: system?.freeMiB ?? null, systemTotalMiB: system?.totalMiB ?? null, systemCommittedMiB: system?.committedMiB ?? null,
     chromeProcesses: chrome.length, observedChromePids: chrome.map(row => row.pid),
     note: 'Main-page JS heap excludes worker heaps. Chrome process totals include this browser’s renderer/worker/GPU processes; working sets can count shared pages more than once.' };
 }
@@ -394,7 +408,7 @@ try {
   await page.locator('#clean').click(); await page.evaluate(value => { document.title = value; }, title);
   assert.deepEqual(await page.evaluate(() => ({ width: window.__vmodel.viewer.renderer.domElement.width, height: window.__vmodel.viewer.renderer.domElement.height, canvasCount: document.querySelectorAll('canvas').length })), { width: 1280, height: 720, canvasCount: 1 });
   await attachOwnedWindow();
-  for (const phase of phases) {
+  for (const phase of activePhases) {
     currentPhase = phase; checkInterrupt();
     await page.evaluate(phase => {
       for (const key of ['mode', 'hands', 'framing']) { const input = document.getElementById(key); if (key === 'hands') input.checked = phase.hands; else input.value = phase[key]; input.dispatchEvent(new Event('change')); }
