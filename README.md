@@ -20,7 +20,8 @@ Double-click these; none of them need a terminal.
 | **[Start Voice Auditions.cmd](Start%20Voice%20Auditions.cmd)** | The listening room, to compare candidate voices |
 | **[Start Voice Studio.cmd](Start%20Voice%20Studio.cmd)** / **[Stop](Stop%20Voice%20Studio.cmd)** | The live voice controls |
 | **[Start Web Showcase.cmd](Start%20Web%20Showcase.cmd)** | The website showcase with all five animations |
-| **[Setup VModel.cmd](Setup%20VModel.cmd)** | Initial provisioning; already run on this laptop |
+| **[Setup VModel.cmd](Setup%20VModel.cmd)** | Initial provisioning for the studio; already run on this laptop |
+| **[Setup Voice.cmd](Setup%20Voice.cmd)** | Provisioning for the voice workstream; already run on this laptop |
 
 Guides: **[quickstart](docs/quickstart.md)** for calibration, **[OBS setup](docs/obs-setup.md)** for capture, **[recording](docs/recording.md)** for clips, **[voice quickstart](docs/voice-quickstart.md)**, **[website showcase](docs/web-showcase.md)**.
 

@@ -4,7 +4,9 @@ Codex provisions this environment. It converts local files into three licensed c
 
 The kit uses isolated Python 3.10.19 at `.tools/voice/venv`, a pinned deiteris RVC source checkout and local weights at `assets/voice`. It uses CPU inference and does not depend on an A100. The avatar launcher continues to work independently.
 
-From the project folder, installation/recovery is:
+Double-click **Setup Voice.cmd**. It downloads the pinned public inputs and builds the isolated environment; the first run takes several minutes and needs an internet connection. When it finishes, **Start Voice Auditions.cmd** opens the listening room.
+
+The launcher is a thin wrapper around the same command, if you would rather run it yourself:
 
 ```powershell
 python scripts/voice/provision.py

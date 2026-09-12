@@ -48,3 +48,15 @@ That silently blocked this task's own criterion, which needs the user's preferen
 **Start Voice Auditions.cmd** now starts the server and opens the page, matching the existing launcher pattern including the missing-environment guard. Both [remaining checks](../../../docs/remaining-checks.md) and the [voice quickstart](../../../docs/voice-quickstart.md) name it instead of a bare URL, and the documentation audit confirms the launcher exists and every link resolves.
 
 Worth noting how it was missed: every automated check passed throughout, because the port was open and the page loaded. Nothing verifies that a service the documentation depends on can be *started* — only that it answers when already running. The gap was found by asking what a user would do after a reboot.
+
+### Voice setup also needed a launcher — 2026-09-13
+
+Following the same journey further found the next link in the chain. `Setup VModel.cmd` provisions only the studio: npm dependencies, runtime assets and the build. It does **not** set up voice. The voice launchers correctly detected the missing environment, but their guard pointed at `docs/voice-setup.md`, whose instruction was `python scripts/voice/provision.py` in PowerShell — a developer command in a kit where everything else is a double-click.
+
+So a user on a fresh machine could reach the voice step and be told, in effect, to open a terminal.
+
+**Setup Voice.cmd** now wraps the same provisioning, checks that Python is present with a message naming what to install, and points at `Start Voice Auditions.cmd` when it finishes. Both voice launchers name it in their guard, the setup guide leads with it, and the README lists both setup steps so the split between studio and voice provisioning is visible rather than implied.
+
+Verified: the documentation audit reports no missing launchers and no unknown addresses across 69 documents, and all 24 README links resolve.
+
+This is the fourth handoff gap found by walking the user's journey rather than testing code, after the listening room, the showcase and the README itself. The automated checks passed throughout each one.
