@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-12T19:17:27.712Z",
+  "passed": true,
+  "status": "complete",
+  "question": "Does the avatar start, render and track with no voice service running, contacting nothing but its own server?",
+  "voiceServiceRunning": true,
+  "obsInvolved": false,
+  "physicalCamera": false,
+  "limits": [
+    "A permitted still drives tracking through the fake-camera path; this is not live camera quality.",
+    "Confirms independence from the voice service, not that any voice backend works offline.",
+    "Shows the avatar never contacts a voice service. When voice happens to be listening, that is independence under availability, not a cold boot with voice absent."
+  ],
+  "voicePorts": [
+    {
+      "port": 5081,
+      "listening": true
+    },
+    {
+      "port": 5082,
+      "listening": true
+    }
+  ],
+  "evidenceKind": "Independence observed while voice services were listening and available.",
+  "avatarLoaded": "3657b97928638e7ada5f6639141fb63f555912049a2c6ec217851001e322cbcb",
+  "measured": {
+    "draws": 480,
+    "drawsPerSecond": 59.88,
+    "inferences": 64,
+    "delegate": "GPU",
+    "workerErrors": []
+  },
+  "offServerRequests": [],
+  "pageErrors": [],
+  "checks": {
+    "avatarLoaded": true,
+    "rendered": true,
+    "tracked": true,
+    "contactedNothingElse": true,
+    "noWorkerErrors": true,
+    "noPageErrors": true
+  }
+}

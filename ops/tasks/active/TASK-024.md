@@ -77,3 +77,15 @@ No acceptance box is closed by this step. There was no microphone, speaker, brow
 - The binding constraint is the deliberate four-packet / 64 ms ingress bound, which is smaller than one slow call. A reviewed startup allowance - not starting the input clock until the first output exists - would address the transient without weakening the steady-state guarantee. **No such contract change was made here.**
 
 This supplies the first acceptance criterion's reproducible measured laptop verdict covering converter-alone and combined-workload results, recorded as a **measured defect**. The specification's p95 <= 350 ms, <= 100 ms jitter spread and five-minute no-breakup gates are **not met**, no microphone, speaker, OBS or physical device was involved, and no listening acceptance is claimed. The task remains open.
+
+## Avatar independence from the voice service — 2026-09-13
+
+[local_only_startup_smoke.mjs](../../../scripts/local_only_startup_smoke.mjs) starts the studio and drives it through load, tracking and stop while watching every request the page makes. [Evidence](../../reports/local-only-startup-smoke.json).
+
+The avatar loaded, rendered at **59.88 draws/s** over 8 seconds with 64 GPU inferences, and **contacted no origin other than its own server** — no worker errors, no page errors.
+
+This ran with **both voice services listening** on 5081 and 5082, which makes the result stronger rather than weaker: the avatar had a running voice service available and never reached for it. The application source contains no reference to a voice port at all.
+
+The distinction is recorded rather than blurred: this is independence observed under availability, **not** a cold boot with the voice service absent. An earlier version of the probe skipped entirely when voice was running, which would have reported nothing useful; it now runs and labels which kind of evidence it obtained.
+
+This supports the fourth criterion's first clause. The clause after it — naming whether **the accepted voice** works offline — cannot be answered while no voice is accepted, so the criterion stays open. For the record, every candidate measured so far is local: the pinned RVC checkpoints, the ONNX and OpenVINO variants and the LLVC research model all run from local files with no network inference, and the only non-local option ever discussed is the tentative VPN-reached remote API, which has never been supplied or tested.
