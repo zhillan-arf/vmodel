@@ -64,3 +64,54 @@ Further work should correlate actual browser canvas pixels versus OBS source pix
 A subsequent [180-second passive plus 30-second activation diagnostic](capture-animation-diagnostic.md) did not reproduce the failure: paired canvas/OBS images retained Ene, viewer GL identified Iris Xe/D3D11, and no context loss occurred. Its native-window helper matched no window, a preserved limitation now guarded by an exactly-one-match preflight for future runs. This short good result is not an identified fix and does not supersede the failed full measurements.
 
 The later [177-second original-style passive control](capture-passive-control.md) also stayed healthy after a60-second warm-up, with the corrected native preflight and pre/post AC power observations. It used no extra rAF observer, periodic native/GL probes, initial canvas readback or activation. The report verifies that all three tests used the same single Clean-mode viewer; no separate viewer was removed. It documents missing historical Chrome Energy Saver/native state and preserves the original long-run failure as unresolved.
+
+## 2026-09-12 instrumented re-run: seated passes 900 seconds; standing crashes at 55 seconds
+
+A further full soak ran with the fail-fast draw-health guard and blank-capture detection armed. [Run evidence](local/combined-soak/2026-09-12T14-15-58-634Z-0c607f43/report.json). **The earlier 1 Hz collapse and blank-white captures did not reproduce in the seated window.** A new and different defect appeared in the standing window.
+
+Conditions were recorded and were deliberately **not** a coordinated quiet window: approximately 33-60% ambient CPU from the user's editor and browser, processor at 73% of maximum frequency, on battery, with 3,080 MB free of 16,002 MB at the end. This is ordinary working load, which makes the seated result stronger and the standing crash harder to attribute.
+
+### Seated, no hands: full 900 seconds, render gate passed
+
+| Measurement | Result |
+| --- | --- |
+| Measured window | 900 s completed, 40,942 render frames |
+| Median cadence | **58.48 fps** |
+| Frame interval p50 / p95 / p99 / max | 17.1 / 49.1 / 55.8 / 96.2 ms |
+| Inference p50 / p95 / max | 130.3 / 230.6 / 270.7 ms |
+| Proposed render gate | **passed** |
+| OBS render skipped / total | **0 of 27,002** |
+| OBS output skipped / total | **0 of 27,002** |
+| OBS active fps | 30.0 at p50, p95 and p99 |
+| OBS average frame render time | p50 3.39 ms, max 4.78 ms |
+| Blank captures | **0 of 31 capture-health samples** |
+| Recording | 962.5 s, 1280x720, h264, 14,858,612 bytes, audio track silent at -91 dB |
+
+Degradation across the window was absent: last-versus-first ratios were 1.004 for render interval p95, 1.002 for inference p95, 0.996 for render rate and 0.998 for inference rate.
+
+Memory over 29 samples is inconclusive rather than a leak. Chrome private bytes rose from a 1,696.62 MiB median to 1,735.63 MiB (+39.01 MiB, descriptive slope +3.86 MiB/min) while the working set **fell** from 2,069.58 to 2,020.52 MiB (-49.06 MiB). No forced GC or worker-heap attribution was performed.
+
+This is the first complete 900-second window with the render gate passing, zero dropped OBS frames and zero blank captures. It does not identify the earlier failure's cause; it establishes that the failure is not reliably reproducible under these conditions.
+
+### Standing with hands: browser closed at approximately 55 seconds
+
+The second phase reached roughly 55 seconds of its measured window and then ended with `page.evaluate: Target page, context or browser has been closed`. No phase summary, recording verification or capture-health conclusion exists for it.
+
+What the eleven collected samples do show:
+
+- Steady-state hand inference cost **169-303 ms** per result, pose 100-130 ms and face 55-115 ms. A complete cycle with all three tasks fresh cost **418-464 ms**, so full standing tracking updates arrive at roughly 2.2 Hz.
+- The `prepared` snapshot recorded a single **5,047.9 ms** hands reading. That is a one-off cold model load, not steady-state, and should not be quoted as the running cost.
+- Chrome private bytes moved only from 1,857.18 to 1,869.90 MiB across the observed 55 seconds, so a runaway allocation inside the window is not evidenced.
+- OBS recorded 65 skipped render frames of 523,277 during this phase, against zero in the seated phase.
+
+**The crash cause was not captured.** The Windows Application log contains no Chrome crash or hang event for the interval, only unrelated extension garbage-collection entries. System memory was under pressure at the end of the run (3,080 MB free of 16,002 MB) with the soak browser near 1.9 GB private alongside the user's own browser, editor and OBS, so an out-of-memory renderer termination is plausible but **unproven**. Do not record it as the cause.
+
+Cleanup passed with no cleanup errors: the owned recording stopped, the temporary scene and input were removed, and the original OBS collection, profile, program scene, scene-item enable flags and recording destination were restored.
+
+### Effect on acceptance
+
+- The baseline and frame-time gates **pass for the seated preset** and are unmeasured for standing. The task stays open with measured defects, as its first criterion allows.
+- The no-crash criterion **fails**: a crash occurred. Post-warmup memory growth is not demonstrated either way.
+- Offline and recovery checks were not part of this run.
+
+Next work should capture the standing crash rather than re-running blind: collect browser process exit codes and `chrome://crashes` state, record system-wide available memory throughout, and consider running the standing phase first so it does not inherit fifteen minutes of accumulated browser state. Hand-task cost of 169-303 ms per result is a separate performance finding for TASK-012 and TASK-013, independent of the crash.
