@@ -91,6 +91,6 @@ Not established, and still gating [TASK-024](../tasks/active/TASK-024.md), [TASK
 ## Recommended follow-up
 
 1. Treat P-core placement as a **required setting** for any live LLVC route, not an optimisation. An unpinned worker is a latent sporadic failure: the default mask's 81.49 ms worst call is enough to break the 64 ms input bound.
-2. Investigate whether the same mechanism contributes to [TASK-020](../tasks/active/TASK-020.md)'s unexplained draw-cadence collapse toward 1 Hz. The renderer and tracking workers run unpinned under the same scheduler on the same hybrid host. This is an untested hypothesis; the separate blank-white capture failure is not explained by it.
+2. Investigate whether the same mechanism contributes to [TASK-020](../tasks/archived/TASK-020.md)'s unexplained draw-cadence collapse toward 1 Hz. The renderer and tracking workers run unpinned under the same scheduler on the same hybrid host. This is an untested hypothesis; the separate blank-white capture failure is not explained by it.
 3. Repeat the diagnostic on AC to separate the frequency-cap contribution from placement, now that placement is isolated. Expect a smaller effect than the 2.32x placement ratio.
 4. Only after a combined avatar/OBS paced run and physical audio measurement should an experimental LLVC profile be proposed for the converted-only route.

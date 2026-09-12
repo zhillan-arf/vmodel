@@ -1,6 +1,6 @@
 # Hybrid-core placement does not explain the draw-cadence collapse
 
-2026-09-12. **Hypothesis rejected for the render path.** Confining the entire browser process tree to this host's efficiency cores degrades avatar cadence measurably but nowhere near the collapse toward 1 Hz reported in [TASK-020](../tasks/active/TASK-020.md). The mechanism that resolved the [voice timing discrepancy](voice-llvc-hybrid-cores.md) does not transfer to rendering.
+2026-09-12. **Hypothesis rejected for the render path.** Confining the entire browser process tree to this host's efficiency cores degrades avatar cadence measurably but nowhere near the collapse toward 1 Hz reported in [TASK-020](../tasks/archived/TASK-020.md). The mechanism that resolved the [voice timing discrepancy](voice-llvc-hybrid-cores.md) does not transfer to rendering.
 
 ## Why it was worth testing
 
@@ -36,6 +36,6 @@ Twenty seconds measured per phase, after a three-second settle.
 
 ## What remains unexplained
 
-The collapse toward 1 Hz and the entirely white OBS stills both remain without a demonstrated cause. Two hypotheses have now been handled: [window occlusion is untested](capture-occlusion-investigation.md) because neither probe managed to occlude the window, and core placement is rejected here. Neither this probe nor the short capture controls reproduced the original failure, so the next full soak should carry continuous instrumentation — `visibilitychange`, `freeze`, `resume`, WebGL context-loss events and compositor state — rather than relying on post-hoc reconstruction.
+**Superseded on 2026-09-13:** a mechanism reproducing both symptoms was subsequently found — a minimized window delivers zero animation frames (60.04 fps before, 0.00 fps minimized, 59.91 fps restored). See [minimizing the output window](capture-minimize-cause.md). The rejection of core placement below still stands; it was simply not the cause. At the time of writing, the collapse toward 1 Hz and the entirely white OBS stills both remained without a demonstrated cause. Two hypotheses have now been handled: [window occlusion is untested](capture-occlusion-investigation.md) because neither probe managed to occlude the window, and core placement is rejected here. Neither this probe nor the short capture controls reproduced the original failure, so the next full soak should carry continuous instrumentation — `visibilitychange`, `freeze`, `resume`, WebGL context-loss events and compositor state — rather than relying on post-hoc reconstruction.
 
 This probe used no OBS, no recording, no microphone and no physical camera, and closes no acceptance criterion.

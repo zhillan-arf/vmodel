@@ -487,6 +487,19 @@ try {
       result.sampleCountGatePassed = result.summary.renderFrameIntervalMs.count > 1000 && result.summary.inferenceMs.count > 500;
       assert(result.sampleCountGatePassed, 'Too few real render/inference samples.');
       assert(result.summary.obs.countersValid && result.summary.obs.counters.outputTotalFrames > 25000, 'OBS counters did not cover the phase.');
+      // Private-byte growth alongside a falling working set is ambiguous without a
+      // collection. One forced GC, reported separately, says whether the growth is
+      // retained memory or uncollected garbage. The trend above stays GC-free.
+      try {
+        const beforeGc = await processMemory();
+        await pageCDP.send('HeapProfiler.collectGarbage');
+        await delay(3000);
+        const afterGc = await processMemory();
+        result.forcedGarbageCollection = { beforeGc, afterGc,
+          chromePrivateReclaimedMiB: beforeGc.chromePrivateMiB - afterGc.chromePrivateMiB,
+          jsHeapReclaimedMiB: beforeGc.jsHeapUsedMiB !== null && afterGc.jsHeapUsedMiB !== null ? beforeGc.jsHeapUsedMiB - afterGc.jsHeapUsedMiB : null,
+          boundary: 'One collection of the main page heap only; worker heaps are not attributed and this is not a leak verdict.' };
+      } catch (error) { result.forcedGarbageCollectionError = safeError(error); }
       result.completed = true;
       console.log(JSON.stringify({ phase: phase.id, completed: true, medianCadenceFps: result.summary.medianCadenceFps, frameIntervalP95Ms: result.summary.renderFrameIntervalMs.p95, inferenceP95Ms: result.summary.inferenceMs.p95, renderGatePassed: result.summary.proposedRenderGatePassed }));
     } finally {

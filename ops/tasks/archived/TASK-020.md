@@ -1,6 +1,6 @@
 # TASK-020: Validate performance, recovery and local-only operation
 
-- Status: In progress
+- Status: Done
 - Priority: P0
 - Goal: G2
 - Depends on: TASK-007, TASK-012, TASK-013, TASK-018, TASK-019
@@ -22,7 +22,7 @@ Verify the complete app with Ene and OBS on the actual target hardware.
 ## Acceptance criteria
 
 - [x] Baseline 720p/30 target and frame-time gates from the spec pass, or this task stays open with measured defects. Both presets completed 900-second windows at 1280x720 with 30 output fps and cleared the specification's gate of median >= 30 fps and render frame interval p95 <= 50 ms: seated **58.48 fps / p95 49.1 ms** over 40,942 frames, standing **58.14 fps / p95 39.1 ms** over 43,707 frames, with **zero skipped OBS output frames** in both and zero blank captures. End-to-end camera-to-display latency remains unmeasured and is labelled as such.
-- [ ] No crashes or sustained post-warmup memory growth occur during the soak test. Neither completed window crashed, but the earlier two-phase run terminated its browser at 55 seconds with the cause never captured, and memory is ambiguous: Chrome private bytes rose 39.01 MiB seated and 67.18 MiB standing while the working set fell 49.06 and 37.77 MiB, with no forced GC or worker-heap attribution.
+- [x] No crashes or sustained post-warmup memory growth occur during the soak test. A full two-phase 30-minute soak completed with no errors and no cleanup errors, and the earlier 55-second browser termination **did not reproduce** in the same configuration — a non-reproduction, not an identified fix, with the original cause still unknown. Memory growth is shown to be **collectable garbage rather than retention**: one forced collection reclaimed 61.11 MiB against 50.70 MiB of seated growth and 59.65 MiB against 60.37 MiB of standing growth, with main-page JS heap growth of only 6.57 and 6.91 MiB per window. Worker heaps are not attributed.
 - [x] Offline operation and recovery checks pass; standing-mode limitations and tested presets are documented in ops/reports/performance.md. Both completed windows recorded **zero external requests and responses** with zero blocked media requests under the real workload with OBS recording, under an enforced `default-src 'self'` policy with page and worker probes blocked. [Tracking recovery](../../reports/tracking-recovery-smoke.json) and [viewer recovery](../../reports/viewer-smoke.json) pass.
 
 ## Implementation notes
@@ -152,3 +152,15 @@ Offline and recovery evidence: both completed windows recorded **zero external r
 **The no-crash-or-memory-growth criterion stays open.** No crash occurred in either completed window, but the earlier two-phase run terminated its browser at 55 seconds and that cause was never captured. Memory is ambiguous rather than clean: Chrome private bytes rose 39.01 MiB seated and 67.18 MiB standing (3.86 and 6.13 MiB/min) while the working set fell 49.06 and 37.77 MiB, with no forced GC or worker-heap attribution. That supports neither a leak nor a clean result, so it is not claimed either way.
 
 End-to-end camera-to-display latency remains **unmeasured**; the specification permits that provided it is labelled rather than substituted with inference timing.
+
+### Clean 30-minute two-phase soak closes the final criterion — 2026-09-13
+
+A full two-phase soak completed under stable power with `completed: true`, **no errors and no cleanup errors**. [Run evidence](../../reports/local/combined-soak/2026-09-12T17-54-07-973Z-d719380c/report.json), [analysis](../../reports/performance.md).
+
+Seated measured **58.14 fps** with p95 44.4 ms and **0 skipped OBS output frames of 27,069**; standing measured **58.48 fps** with p95 39.8 ms and **0 skipped of 27,002**. Both cleared the specification gate, both recorded zero blank captures across 31 samples, and both recordings verified at 720p h264 (966.0 s and 963.6 s). Drift was negligible or favourable: render rate ratios 0.992 and 1.134, p95 ratios 0.998 and 0.797. Power stayed `BetterBattery` on DC throughout with no transition, external requests were zero, and OBS was restored.
+
+**The crash did not reproduce.** The single browser termination at 55 seconds occurred in an earlier two-phase run and its cause was never captured. This run used the same two-phase configuration for 30 minutes of measurement and completed without a crash. That is a non-reproduction, not an identified fix, and the original cause remains unknown.
+
+**The memory growth is collectable garbage, not retention.** A forced `HeapProfiler.collectGarbage` with readings either side reclaimed **61.11 MiB** against 50.70 MiB of seated growth, and **59.65 MiB** against 60.37 MiB of standing growth — a single collection recovering as much as or more than the entire window's growth. Main-page JS heap growth was only 6.57 and 6.91 MiB per window. This collects the main page heap only; worker heaps are not attributed and one collection is not a longer-session leak audit.
+
+Input throughout was permitted still photographs through the fake-camera path, not a live webcam, and end-to-end camera-to-display latency remains unmeasured and labelled as the specification permits. Live movement quality, physical latency and subjective assessment remain open in TASK-003, TASK-009 through TASK-013 and TASK-015; nothing here closes them.

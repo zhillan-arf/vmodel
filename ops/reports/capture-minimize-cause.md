@@ -1,6 +1,6 @@
 # Minimizing the output window stops frame delivery, and matches the TASK-020 failure signature
 
-2026-09-13. **A minimized Chrome window delivers zero animation frames.** Measured: 60.04 fps before, **0.00 fps while minimized with `visibilityState` reporting `hidden`**, and 59.91 fps after restoring. This reproduces the signature of [TASK-020](../tasks/active/TASK-020.md)'s long-unexplained failure — draws collapsing toward 1 Hz and entirely white OBS stills — and explains why the earlier occlusion probes found nothing.
+2026-09-13. **A minimized Chrome window delivers zero animation frames.** Measured: 60.04 fps before, **0.00 fps while minimized with `visibilityState` reporting `hidden`**, and 59.91 fps after restoring. This reproduces the signature of [TASK-020](../tasks/archived/TASK-020.md)'s long-unexplained failure — draws collapsing toward 1 Hz and entirely white OBS stills — and explains why the earlier occlusion probes found nothing.
 
 ## How this surfaced
 

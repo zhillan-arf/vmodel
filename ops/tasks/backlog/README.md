@@ -58,7 +58,7 @@ TASK-027's training is conditional: close with evidence that an existing voice f
 | [TASK-017](../active/TASK-017.md) | Set up OBS capture, streaming scenes and virtual camera | G2 | TASK-002, TASK-016 | In progress |
 | [TASK-018](../active/TASK-018.md) | Deliver landscape and portrait recordings with audio | G2 | TASK-007, TASK-017 | In progress |
 | [TASK-019](../archived/TASK-019.md) | Package local launch, offline assets and beginner documentation | G2 | TASK-015, TASK-016, TASK-017, TASK-026 | Done |
-| [TASK-020](../active/TASK-020.md) | Validate performance, recovery and local-only operation | G2 | TASK-007, TASK-012, TASK-013, TASK-018, TASK-019 | In progress |
+| [TASK-020](../archived/TASK-020.md) | Validate performance, recovery and local-only operation | G2 | TASK-007, TASK-012, TASK-013, TASK-018, TASK-019 | Done |
 | [TASK-021](../active/TASK-021.md) | Complete Ene end-to-end acceptance and handoff | G1, G2, G3, G4 | TASK-007, TASK-014, TASK-018, TASK-019, TASK-020, TASK-028, TASK-038 | In progress |
 | [TASK-022](../archived/TASK-022.md) | Audit and provision the open source voice-conversion toolchain | G3 | None | Done |
 | [TASK-023](../active/TASK-023.md) | Audition English character voices and choose contrasting presets | G3 | TASK-022 | In progress |

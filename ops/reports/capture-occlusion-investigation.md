@@ -1,6 +1,6 @@
 # Window-occlusion hypothesis for the draw-cadence collapse: untested, not disproven
 
-2026-09-12. **Inconclusive.** Two probes were built and run to test whether Chrome's Windows occlusion detection explains [TASK-020](../tasks/active/TASK-020.md)'s collapse toward 1 Hz draw delivery and its blank-white OBS stills. Neither probe succeeded in occluding the browser window, so the hypothesis remains open. This record exists so the attempt is not repeated blindly and so no unearned conclusion is carried forward.
+2026-09-12. **Inconclusive.** Two probes were built and run to test whether Chrome's Windows occlusion detection explains [TASK-020](../tasks/archived/TASK-020.md)'s collapse toward 1 Hz draw delivery and its blank-white OBS stills. Neither probe succeeded in occluding the browser window, so the hypothesis remains open. This record exists so the attempt is not repeated blindly and so no unearned conclusion is carried forward.
 
 ## Why the hypothesis was raised
 
