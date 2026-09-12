@@ -82,3 +82,13 @@ The memory sampling supplies the missing context. That run began with **1,468.9 
 **The standing-plus-hands workload cannot be validated on this host while the user's normal working set is loaded.** Two attempts failed in two different ways, both consistent with memory pressure. This is **not** established as a code defect: no Chrome crash event, worker error, queue overflow or capture failure was recorded in either attempt, and hand tracking ran correctly at 169-303 ms per result when it ran. The seated workload passed its full window on the same host under the same load.
 
 Required to close the standing gates: close the editor and other browser windows, then run `node scripts/combined_fixture_soak.mjs --run --quiet-window --phase=standing-hands`. Raising the 90-second preparation timeout would mask the condition and is not recommended. Until then the standing preset's frame-time and stability gates remain **unmeasured**, and no standing acceptance is inferred from the seated pass.
+
+#### Correction to the standing-only entry above
+
+The memory-pressure conclusion recorded immediately above is **wrong**, and is kept visible rather than deleted.
+
+A third attempt failed identically at **1,512.1 MiB free** against 1,468.9 MiB on the previous one, so headroom could not explain the difference. The real cause was a defect in the `--phase=<id>` selector added during this session: the loop iterated `activePhases`, but the camera-start line still tested `phase === phases[0]`, which is always `seated-no-hands`. With a standing-only selection the camera was **never started**, so no tracking result arrived and the 90-second detection wait timed out. Fixed to `activePhases[0]`.
+
+Both standing-only timeouts are artefacts of the diagnostic harness, not findings about the application or the host. They do not support any claim about memory, hand tracking or standing stability, and the statement that the standing workload "cannot be validated on this host while the user's normal working set is loaded" was **not supported by evidence** and is withdrawn.
+
+Unaffected by this bug: the seated 900-second pass, and the 55-second browser termination in the full two-phase soak, which used the unfiltered phase list and did start its camera. That termination remains a real, uncaptured failure.

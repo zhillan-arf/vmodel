@@ -60,17 +60,9 @@ The failure where drawing slowed to about one frame per second and OBS screensho
 
 Two suspects were ruled in or out along the way: processor core placement is [tested and rejected](../ops/reports/capture-core-placement.md), and the "Chrome hid the window" idea is [untested rather than disproven](../ops/reports/capture-occlusion-investigation.md) because neither probe managed to actually hide the window.
 
-**One thing I could not finish.** The standing-with-hands session failed twice — once the browser closed after 55 seconds, once tracking never started. Both times the machine was out of memory: 1.5 GB free of 16 GB, with 23-25 GB committed. Your editor, browser, OBS and background services already fill the machine, and the test browser needs about 2 GB on top.
+**One thing I could not finish.** The standing-with-hands session is still unmeasured. It failed once in a real way — the browser closed after 55 seconds, cause not captured — and then twice more for a reason that turned out to be my own fault: a bug in the single-phase test option I had just added meant the camera never started at all. That bug is fixed and the run is in progress.
 
-This does not look like a bug. No crash was logged, no worker errored, and hand tracking ran correctly at 169-303 ms per result whenever it got going.
-
-**If you want this closed:** close your editor and spare browser windows, then run this one command and leave the laptop alone for about 17 minutes:
-
-```
-node scripts/combined_fixture_soak.mjs --run --quiet-window --phase=standing-hands
-```
-
-Until then the standing preset is genuinely unmeasured, and I am not inferring it from the seated pass.
+I briefly told you this needed you to close your editor and browser to free memory. That was wrong, and I withdraw it — the evidence never supported it.
 
 One separate performance fact worth knowing: with hands enabled, a complete tracking update takes 418-464 ms, so standing tracking refreshes about **2.2 times per second**. Head and body motion stay smooth because drawing runs independently, but fast hand movement will lag.
 

@@ -415,7 +415,7 @@ try {
       window.__soak.select(phase.id, phase);
     }, phase);
     const sequenceBefore = await page.evaluate(() => window.__soak.status().lastResult?.sequence ?? 0);
-    if (phase === phases[0]) await page.evaluate(() => document.querySelector('#start').click());
+    if (phase === activePhases[0]) await page.evaluate(() => document.querySelector('#start').click());
     await page.waitForFunction(({ sequenceBefore, hands }) => {
       const state = window.__soak.status(), result = state.lastResult;
       return state.workerErrors.length || result && result.sequence >= sequenceBefore + 4 && result.present.face && result.present.pose && (!hands || result.present.hands);

@@ -133,3 +133,25 @@ Conclusion, stated at the strength the evidence supports:
 - **The seated workload is unaffected** and passed its full 900-second window on the same host under the same ordinary load.
 
 To validate standing, the run needs headroom: close the editor and other browser windows first, then run `node scripts/combined_fixture_soak.mjs --run --quiet-window --phase=standing-hands`. Raising the 90-second preparation timeout would only mask the condition and is not recommended. Until then, the standing preset's frame-time and stability gates remain **unmeasured**, and no standing acceptance should be inferred from the seated pass.
+
+#### Correction: the two standing-only failures were a defect in the new phase selector, not memory pressure
+
+The memory-pressure conclusion recorded above is **wrong** and is retained only so the mistake is visible.
+
+A third attempt failed identically with **1,512.1 MiB free**, against 1,468.9 MiB on the second - essentially the same headroom, so memory could not be the discriminator. Inspection then found the actual cause in the `--phase=<id>` selector added for these runs. The phase loop was changed to iterate `activePhases`, but the line that starts the camera still read:
+
+```js
+if (phase === phases[0]) await page.evaluate(() => document.querySelector('#start').click());
+```
+
+`phases[0]` is always `seated-no-hands`. With `--phase=standing-hands` selected, that condition was never true, **the camera was never started**, no tracking result ever arrived, and the 90-second wait for consecutive face-plus-pose-plus-hands detections timed out. The fix is `activePhases[0]`.
+
+Both standing-only timeouts are therefore artefacts of the diagnostic harness introduced in this session, not observations about the application or the host. They say nothing about memory, hand tracking or standing stability.
+
+What survives from the earlier analysis:
+
+- The **55-second browser termination in the full two-phase soak** is unaffected by this bug, because that run used the unfiltered phase list and its camera did start. That failure remains real and its cause remains uncaptured.
+- Host memory is genuinely tight - roughly 1.5 GiB free with the soak browser loaded, and committed memory above physical - but it is **not evidenced as the cause of anything**, and the claim that standing "cannot be validated on this host" was not supported.
+- The seated 900-second pass is unaffected.
+
+Recorded because the wrong conclusion was already committed, and because a harness bug that silently produces a plausible-looking failure is exactly the kind of thing that turns into a false finding.
