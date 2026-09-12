@@ -13,7 +13,13 @@ const DIR = path.join(ROOT, 'ops/reports');
 const report = {
   date: new Date().toISOString(), passed: false, status: 'running', readOnly: true,
   question: 'Can every evidence report be parsed, and is any carrying a byte-order mark?',
-  limits: ['Checks that each file parses, not that its contents are correct or current.'],
+  limits: [
+    'Checks that each file parses, not that its contents are correct or current.',
+    'Deliberately does not verify that path fields point at existing files. Of 1028 such fields, '
+      + 'the ones that do not resolve are URL routes, bundle-relative paths, and absences that are '
+      + 'themselves the finding - the two sphere maps recorded as unavailable, for instance. A check '
+      + 'flagging those would be noise, and would pressure someone to "fix" an accurate record.',
+  ],
 };
 
 let exit = 0;
