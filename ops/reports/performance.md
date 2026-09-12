@@ -250,3 +250,38 @@ Power state is now sampled on every memory tick, alongside free and committed me
 Standing still has **no completed 900-second window**. It has now twice been interrupted by a power transition rather than by any application fault, and in between it sustained a passing render gate at 60 fps on AC and 30 fps on battery, with zero dropped OBS output frames and zero blank captures in every attempt.
 
 To measure the standing gate cleanly, leave the charger alone for the duration of the run.
+
+### Standing completes its 900-second window: both presets now pass the specification gate
+
+Under stable power — `BetterBattery` on DC before and after, with no transition — the standing workload completed its full measured window with no errors and no cleanup errors. [Run evidence](local/combined-soak/2026-09-12T17-32-10-491Z-61449bfc/report.json).
+
+The specification's gate is *median render rate at least 30 fps and 95th-percentile render frame interval at most 50 ms*, at 1280x720 with 30 output fps. Both presets clear it:
+
+| Measurement | Seated, no hands | Standing with hands |
+| --- | --- | --- |
+| Measured window | 900 s, 40,942 frames | 900 s, 43,707 frames |
+| Median cadence | **58.48 fps** | **58.14 fps** |
+| Draw interval p50 / p95 / p99 / max | 17.1 / **49.1** / 55.8 / 96.2 ms | 17.2 / **39.1** / 49.1 / **68.0 ms** |
+| Specification gate | **passed** | **passed** |
+| OBS render skipped / total | 0 of 27,002 | **0 of 27,001** |
+| OBS output skipped / total | 0 of 27,002 | **0 of 27,000** |
+| Blank captures | 0 of 31 | **0 of 31** |
+| Recording | 962.5 s, 720p h264 | 963.5 s, 720p h264, 21,146,318 bytes, audio silent at -91 dB |
+
+The standing window had **no stall at all**: its worst draw interval was 68.0 ms, against the 1,017.3 ms and 1,227.2 ms stalls seen in the two runs that contained power transitions. That is consistent with the power-transition explanation and is the first standing window free of one.
+
+Standing inference remains the expensive part: p50 127.3 ms, p95 476.3 ms, and a full three-task cycle at p50 400.1 ms, so complete tracking updates arrive at roughly 2.5 Hz while drawing continues at 58 fps. The specification anticipates this, allowing 10-20 Hz inference interpolated into 30 fps output.
+
+Mild drift across the window: render interval p95 rose 12%, render rate fell 8% and inference rate fell 12% from first five minutes to last. Nothing approaching the earlier collapse.
+
+#### Offline operation and recovery
+
+Both completed 900-second windows recorded **zero external requests and zero external responses**, with zero blocked media requests, under the real workload with OBS recording. The enforced policy is `default-src 'self'` with no remote origins, and both page-level and worker-level external probes are blocked.
+
+Recovery checks pass independently: [tracking recovery](tracking-recovery-smoke.json) confirms stop, restart and a second release with no automatic camera acquisition and no external requests across a 70-second run, and [viewer recovery](viewer-smoke.json) confirms stable GPU resources across reloads, a working avatar after invalid motion, and WebGL context restoration without reload, with geometry, texture and program counts constant at 49/69/7.
+
+#### Acceptance
+
+- **Baseline and frame-time gates: pass.** Both presets measured at 1280x720 with 30 output fps and zero skipped OBS output frames. End-to-end camera-to-display latency remains **unmeasured**, which the specification explicitly permits provided it is labelled rather than substituted with inference timing.
+- **Offline operation and recovery: pass**, with standing limitations and tested presets documented above.
+- **No crashes or sustained memory growth: not closed.** No crash occurred in either completed window, but the earlier two-phase run did terminate its browser at 55 seconds and that cause was never captured. Memory is genuinely ambiguous rather than clean: Chrome private bytes rose 39.01 MiB seated and 67.18 MiB standing (slopes 3.86 and 6.13 MiB/min) while the working set **fell** 49.06 and 37.77 MiB. No forced GC or worker-heap attribution was performed, so this supports neither a leak nor a clean bill of health.

@@ -21,9 +21,9 @@ Verify the complete app with Ene and OBS on the actual target hardware.
 
 ## Acceptance criteria
 
-- [ ] Baseline 720p/30 target and frame-time gates from the spec pass, or this task stays open with measured defects.
-- [ ] No crashes or sustained post-warmup memory growth occur during the soak test.
-- [ ] Offline operation and recovery checks pass; standing-mode limitations and tested presets are documented in ops/reports/performance.md.
+- [x] Baseline 720p/30 target and frame-time gates from the spec pass, or this task stays open with measured defects. Both presets completed 900-second windows at 1280x720 with 30 output fps and cleared the specification's gate of median >= 30 fps and render frame interval p95 <= 50 ms: seated **58.48 fps / p95 49.1 ms** over 40,942 frames, standing **58.14 fps / p95 39.1 ms** over 43,707 frames, with **zero skipped OBS output frames** in both and zero blank captures. End-to-end camera-to-display latency remains unmeasured and is labelled as such.
+- [ ] No crashes or sustained post-warmup memory growth occur during the soak test. Neither completed window crashed, but the earlier two-phase run terminated its browser at 55 seconds with the cause never captured, and memory is ambiguous: Chrome private bytes rose 39.01 MiB seated and 67.18 MiB standing while the working set fell 49.06 and 37.77 MiB, with no forced GC or worker-heap attribution.
+- [x] Offline operation and recovery checks pass; standing-mode limitations and tested presets are documented in ops/reports/performance.md. Both completed windows recorded **zero external requests and responses** with zero blocked media requests under the real workload with OBS recording, under an enforced `default-src 'self'` policy with page and worker probes blocked. [Tracking recovery](../../reports/tracking-recovery-smoke.json) and [viewer recovery](../../reports/viewer-smoke.json) pass.
 
 ## Implementation notes
 
@@ -136,3 +136,19 @@ What differed was the power source. **Both observed whole-system stalls occurred
 **Not established: exact temporal coincidence.** Power was sampled at run start, run end and once at failure, which brackets the transition within the run but does not prove it occurred at the stall instant. Two of two with a plausible mechanism is suggestive, not conclusive. Power state is now sampled on every memory tick so the next occurrence is bracketed to one interval.
 
 Standing still has **no completed 900-second window**, so that gate stays open. It has twice been interrupted by a power transition rather than an application fault, and between interruptions it sustained a passing render gate with zero dropped OBS output frames and zero blank captures in every attempt. Measuring it cleanly requires leaving the charger connected or disconnected for the whole run.
+
+### Standing completes 900 seconds; criteria 1 and 3 close — 2026-09-13
+
+Under stable power (`BetterBattery` on DC before and after, no transition) the standing workload **completed its full 900-second window** with no errors and no cleanup errors. [Run evidence](../../reports/local/combined-soak/2026-09-12T17-32-10-491Z-61449bfc/report.json), [analysis](../../reports/performance.md).
+
+The specification's gate is median render rate at least 30 fps and 95th-percentile render frame interval at most 50 ms. **Both presets now clear it**: seated 58.48 fps with p95 49.1 ms across 40,942 frames, standing 58.14 fps with p95 **39.1 ms** across 43,707 frames. OBS skipped **zero** output frames in both (27,002 and 27,000) and there were **zero blank captures** in both (31 samples each). The standing recording verified at 963.5 s, 1280x720 h264, 21,146,318 bytes with its audio track silent at -91 dB.
+
+The standing window contained **no stall**: worst draw interval 68.0 ms, against 1,017.3 ms and 1,227.2 ms in the two runs that contained power transitions. This is the first standing window free of one, consistent with that explanation.
+
+Standing inference is the expensive part: p50 127.3 ms, p95 476.3 ms, full three-task cycle p50 400.1 ms, so complete tracking updates arrive at roughly 2.5 Hz while drawing continues at 58 fps. The specification anticipates this, allowing 10-20 Hz inference interpolated into 30 fps output. Drift across the window was mild: render interval p95 up 12%, render rate down 8%, inference rate down 12%.
+
+Offline and recovery evidence: both completed windows recorded **zero external requests and responses** with zero blocked media requests under the real workload with OBS recording, under an enforced `default-src 'self'` policy with page and worker probes blocked. [Tracking recovery](../../reports/tracking-recovery-smoke.json) confirms stop, restart and second release with no automatic camera acquisition across 70 seconds; [viewer recovery](../../reports/viewer-smoke.json) confirms stable GPU resources across reloads, a working avatar after invalid motion, and context restoration without reload at constant 49/69/7 geometry/texture/program counts.
+
+**The no-crash-or-memory-growth criterion stays open.** No crash occurred in either completed window, but the earlier two-phase run terminated its browser at 55 seconds and that cause was never captured. Memory is ambiguous rather than clean: Chrome private bytes rose 39.01 MiB seated and 67.18 MiB standing (3.86 and 6.13 MiB/min) while the working set fell 49.06 and 37.77 MiB, with no forced GC or worker-heap attribution. That supports neither a leak nor a clean result, so it is not claimed either way.
+
+End-to-end camera-to-display latency remains **unmeasured**; the specification permits that provided it is labelled rather than substituted with inference timing.
