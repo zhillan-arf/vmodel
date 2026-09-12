@@ -2,6 +2,7 @@ import './style.css';
 import { AvatarViewer } from './viewer';
 import { CameraTracker } from './camera';
 import { defaults, normalizeSettings, readSettings, type Calibration, type TrackingFrame } from './types';
+import { createFreezeNotice } from './freeze-notice';
 import { confidence, Retargeter } from './retarget';
 import { compositionSize } from './composition';
 import { OutputLink, type OutputSnapshot } from './output-link';
@@ -186,6 +187,16 @@ else {
     const file = (e.target as HTMLInputElement).files?.[0]; if (!file || !avatarId) return;
     try { if (file.size > 65536) throw new Error('Settings file is too large.'); settings = parseSettingsFile(await file.text(), avatarId); restoreCalibration(); applySettings(); status('Avatar settings loaded.'); }
     catch (error) { status(String(error)); }
+  });
+  // A hidden window delivers no animation frames, so the avatar stops and any OBS
+  // capture of it goes blank. The warning cannot be read while hidden; report it
+  // on return, with how long the stream was dead.
+  const freeze = createFreezeNotice();
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+      const notice = freeze.visible(performance.now());
+      if (notice) status(notice);
+    } else freeze.hidden(performance.now());
   });
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') { document.title = 'Ene Studio'; document.body.classList.remove('clean'); viewer.setOutputMode(false); }

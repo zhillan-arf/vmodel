@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-12T18:33:16.457Z",
+  "date": "2026-09-12T19:01:49.389Z",
   "scope": "Static served build only; does not scan unrelated files or certify future changes.",
   "checks": {
     "onlyDesignatedFiles": true,
@@ -10,8 +10,8 @@
   "runtimePackages": 16,
   "files": [
     {
-      "path": "assets/index-BfLfAI1m.js",
-      "bytes": 792457
+      "path": "assets/index-BUbwV5i-.js",
+      "bytes": 793126
     },
     {
       "path": "assets/index-DUB0lr6k.css",

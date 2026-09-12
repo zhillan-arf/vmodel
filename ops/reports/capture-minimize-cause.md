@@ -57,3 +57,17 @@ The beginner documentation must state this plainly, and the application should d
 - Minimizing was done programmatically with `ShowWindow`. A user minimizing by hand, switching virtual desktops, or locking the session are similar but not identical actions and were not each measured.
 - It is **not established** that the original soak failure was caused by a minimize event. No visibility state was recorded at that time, which is precisely the gap that has now been closed in the harness. This report shows a mechanism that reproduces the signature, not a log of the original event.
 - One short run on one host, with ambient load recorded rather than controlled.
+
+## Follow-through: the application now reports it
+
+2026-09-13. The recommendation above — that the application should detect this rather than leave the user to discover a frozen stream — is implemented.
+
+[freeze-notice.ts](../../src/freeze-notice.ts) tracks hidden intervals and the studio reports on **return**, since no warning can be read while the window is hidden:
+
+> Output was hidden for 2.5 s, so the avatar stopped and any OBS capture of this window was blank. Keep this window open — covering it with other windows is fine, minimizing it is not.
+
+The message states both halves of the measured result: covering is harmless, minimizing is not. A flicker under a second is ignored, so ordinary window switching does not nag, and a clock that jumps backwards produces nothing.
+
+Six unit tests cover duration reporting, the earliest-moment rule when hidden fires twice, the quiet threshold, non-repetition, backwards clocks and rounding. A [browser check](freeze-notice-smoke.json) drives the real `visibilitychange` event end to end and confirms the message appears, names the remedy, and stays quiet on a flicker.
+
+Visibility is driven through the real event rather than by actually minimizing the window, so this verifies the reporting path, not the frame-delivery measurement, which is recorded above.

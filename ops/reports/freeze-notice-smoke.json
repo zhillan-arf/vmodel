@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-12T19:01:13.132Z",
+  "passed": true,
+  "status": "complete",
+  "question": "Does the studio report that its window was hidden, and stay quiet about a brief flicker?",
+  "obsInvolved": false,
+  "physicalMedia": false,
+  "limits": [
+    "Visibility is driven through the real visibilitychange event, not by actually minimizing the window.",
+    "Verifies the message only; the measured frame-delivery behaviour is recorded separately."
+  ],
+  "statusBefore": "Ene · Cyber legs is ready. Start your camera when you are.",
+  "statusAfterLongHide": "Output was hidden for 2.5 s, so the avatar stopped and any OBS capture of this window was blank. Keep this window open — covering it with other windows is fine, minimizing it is not.",
+  "statusAfterFlicker": "baseline",
+  "checks": {
+    "reportedLongHide": true,
+    "namedTheRemedy": true,
+    "quietOnFlicker": true,
+    "noPageErrors": true
+  },
+  "pageErrors": []
+}
