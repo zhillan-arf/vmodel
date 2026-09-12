@@ -2,7 +2,11 @@ import {ConvertedPlayer} from './player.js';
 const $=id=>document.getElementById(id);
 let lease=null,route=null,naturalRoute=null,profiles=null,naturalProfile=null,state=null,control=null,player=null,microphone=null,liveRequested=false,openingMic=false,connected=false;
 let saved={}; try{saved=JSON.parse(sessionStorage.getItem('ene-voice-owner')||'{}');}catch{}
+let failureNotice=null;
 function message(text){$('message').textContent=text;}
+// Keep a microphone failure visible until the user acts again: the stop that
+// failLive issues pushes state whose generic message would otherwise erase it.
+function clearFailureNotice(){failureNotice=null;}
 function controls(enabled){connected=enabled;document.querySelectorAll('.preset,#reference,#live,#natural,#save,#reset,#copy').forEach(b=>b.disabled=!enabled);}
 async function api(path,data={}) {
   const response=await fetch('/api/'+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
@@ -24,7 +28,7 @@ function syncForm(){
 function gainLabels(){$('input-value').textContent=Number($('input-gain').value).toFixed(2)+'×';$('output-value').textContent=Number($('output-gain').value).toFixed(2)+'×';}
 function applyState(next){
   const old=state;state=next;
-  $('badge').textContent=`${state.mode==='natural'?'NATURAL VOICE TO OBS':'LOCAL CPU'} / ${state.status.toUpperCase()}`;message(state.message);
+  $('badge').textContent=`${state.mode==='natural'?'NATURAL VOICE TO OBS':'LOCAL CPU'} / ${state.status.toUpperCase()}`;message(failureNotice??state.message);
   $('natural-state').textContent=state.mode==='natural'?'ON: your natural speech goes to OBS. Character conversion is stopped.':'Natural voice is off. It never starts as a fallback.';
   document.body.classList.toggle('natural-active',state.mode==='natural');
   $('output-label').textContent=state.mode==='natural'?'Natural output':'Converted output';
@@ -40,7 +44,9 @@ async function closeMicrophone(){
   mic.stream?.getTracks().forEach(t=>t.stop());
   if(mic.ws){mic.ws.onclose=null;mic.ws.onerror=null;mic.ws.close();}mic.node?.disconnect();await mic.context?.close();
 }
-async function failLive(error){liveRequested=false;await closeMicrophone();try{await action('stop');}catch{}message(`Microphone stopped and both routes muted: ${error.message}`);}
+async function failLive(error){liveRequested=false;await closeMicrophone();
+  failureNotice=`Microphone stopped and both routes muted: ${error.message}`;
+  try{await action('stop');}catch{}message(failureNotice);}
 async function openMicrophone(){
   openingMic=true;const epoch=state.epoch,mode=state.mode;
   try{
@@ -96,8 +102,8 @@ async function connect(){
   control.onclose=()=>{controls(false);liveRequested=false;closeMicrophone();player?.flush();message('Controls disconnected. Audio is muted. Reconnect, then start explicitly.');};
   control.onerror=()=>message('The local voice service is unavailable. Audio stays muted.');
 }
-function handle(button,operation){$(button).addEventListener('click',()=>Promise.resolve().then(operation).catch(e=>message(e.message)));}
-document.querySelectorAll('.preset').forEach(b=>b.addEventListener('click',async()=>{try{liveRequested=false;await closeMicrophone();await action('select',{voice:b.dataset.voice});syncForm();}catch(e){message(e.message);}}));
+function handle(button,operation){$(button).addEventListener('click',()=>{clearFailureNotice();return Promise.resolve().then(operation).catch(e=>message(e.message));});}
+document.querySelectorAll('.preset').forEach(b=>b.addEventListener('click',async()=>{try{clearFailureNotice();liveRequested=false;await closeMicrophone();await action('select',{voice:b.dataset.voice});syncForm();}catch(e){message(e.message);}}));
 handle('reference',async()=>{liveRequested=false;await closeMicrophone();if($('monitor').checked)await enableMonitor('converted');await action('reference');});
 handle('live',async()=>{await closeMicrophone();await action('save',{changes:formChanges()});liveRequested='live';await action('start-live');liveRequested='live';if(state.status==='ready'&&!openingMic&&!microphone)await openMicrophone().catch(failLive);});
 handle('natural',async()=>{liveRequested=false;await closeMicrophone();player?.flush();const changes={inputDeviceId:$('device').value,inputGain:Number($('input-gain').value),outputGain:Number($('output-gain').value)};await action('start-natural',{acknowledgeNaturalVoice:true,changes});liveRequested='natural';if(state.status==='natural-ready'&&!openingMic&&!microphone)await openMicrophone().catch(failLive);});

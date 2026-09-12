@@ -45,3 +45,23 @@ Still required: physical device permission/occupied/unplug/recovery and headphon
 
 When completing this task, record changed artifacts, exact validation commands/results or manual evidence, and unresolved limitations. Leave unperformed checks unchecked.
 
+## Microphone failure states and the lost failure reason — 2026-09-13
+
+[mic_failure_smoke.mjs](../../../scripts/voice/mic_failure_smoke.mjs) injects microphone failures the browser cannot be made to produce with a physical device, against an owned studio server on a temporary state directory. [Evidence](../../reports/voice-mic-failure-smoke.json).
+
+All four cases end with the server reporting **`mode: idle` and `muted: true`**, the Stop control available, and no page errors:
+
+| Injected | Result |
+| --- | --- |
+| `NotReadableError`, another application holds the microphone | idle, muted, reason shown |
+| `NotAllowedError`, permission refused | idle, muted, reason shown |
+| `NotFoundError`, no device present | idle, muted, reason shown |
+| Invalid stream mid-open | idle, muted, reason shown |
+
+**Defect found and fixed: the failure reason was being erased.** `failLive` closes the microphone, stops the route and then writes its message — but `action('stop')` pushes new state, and `applyState` unconditionally rendered `state.message` over it. Every microphone failure therefore displayed the generic `Stopped. Output is muted.`, so a user whose microphone was occupied by another application had no way to learn that from the interface. The reason is now held in a sticky `failureNotice` that survives the state push and is cleared when the user next acts. This is the same class of defect as the camera path's raw-exception text, found the same way — by driving the failure rather than reading the code.
+
+**Honest limitation on one case.** The fourth case was written as "microphone removed mid-session" but did not exercise the track-ended path: the synthetic stream is not a real `MediaStream`, so it failed earlier at `createMediaStreamSource`. It is recorded above as an invalid-stream failure, which is what it actually tested. **Physical device removal remains untested.**
+
+Model-load failure and backend loss are covered separately by the fifteen Python studio tests, which pass consistently across three consecutive runs; one earlier `FAILED (failures=1)` did not reproduce and appears to be a flake, recorded here rather than ignored.
+
+**Boundary:** injected exceptions with no real microphone, speaker or OBS. This establishes muted-and-released behaviour and clear reporting, not audio quality, latency or sync. The criterion also names occupied devices and restart, which are covered, but physical device behaviour remains open.

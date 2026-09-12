@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-12T18:52:06.504Z",
+  "passed": true,
+  "status": "complete",
+  "question": "Do occupied, denied, missing and removed microphones leave audio muted with resources released, and can the user restart afterwards?",
+  "physicalMicrophone": false,
+  "physicalSpeaker": false,
+  "obsInvolved": false,
+  "liveAccepted": false,
+  "cases": [
+    {
+      "name": "occupied",
+      "intent": "Another application already holds the microphone.",
+      "injected": "NotReadableError",
+      "message": "Microphone stopped and both routes muted: Injected NotReadableError",
+      "serverMode": "idle",
+      "serverMuted": true,
+      "endedMuted": true,
+      "reachedFailurePath": true,
+      "reportsStoppedAndMuted": true,
+      "stopAvailable": true,
+      "pageErrors": []
+    },
+    {
+      "name": "denied",
+      "intent": "Microphone permission is refused.",
+      "injected": "NotAllowedError",
+      "message": "Microphone stopped and both routes muted: Injected NotAllowedError",
+      "serverMode": "idle",
+      "serverMuted": true,
+      "endedMuted": true,
+      "reachedFailurePath": true,
+      "reportsStoppedAndMuted": true,
+      "stopAvailable": true,
+      "pageErrors": []
+    },
+    {
+      "name": "missing",
+      "intent": "No microphone device is present.",
+      "injected": "NotFoundError",
+      "message": "Microphone stopped and both routes muted: Injected NotFoundError",
+      "serverMode": "idle",
+      "serverMuted": true,
+      "endedMuted": true,
+      "reachedFailurePath": true,
+      "reportsStoppedAndMuted": true,
+      "stopAvailable": true,
+      "pageErrors": []
+    },
+    {
+      "name": "removed-mid-session",
+      "intent": "The microphone is unplugged while live.",
+      "injected": "track ended",
+      "message": "Microphone stopped and both routes muted: Failed to execute 'createMediaStreamSource' on 'AudioContext': parameter 1 is not of type 'MediaStream'.",
+      "serverMode": "idle",
+      "serverMuted": true,
+      "endedMuted": true,
+      "reachedFailurePath": true,
+      "reportsStoppedAndMuted": true,
+      "stopAvailable": true,
+      "pageErrors": []
+    }
+  ],
+  "limits": [
+    "Injected DOMExceptions and a synthetic track end, not a physical device: no real microphone, speaker or OBS is involved.",
+    "Verifies muted state and resource release, not audio quality, latency or sync.",
+    "Model-load and backend-loss failures are covered separately by the Python studio tests, not repeated here.",
+    "One attempt per state on one host; flapping or repeated-failure behaviour is not covered."
+  ],
+  "restartedAfterFailures": true,
+  "serverErrors": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\voice\\venv\\lib\\site-packages\\torch\\nn\\utils\\weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\r\n  WeightNorm.apply(module, name, dim)\r\nC:\\Users\\ASUS\\Documents\\vmodel\\.tools\\voice\\venv\\lib\\site-packages\\torch\\nn\\utils\\weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.\r\n  WeightNorm.apply(module, name, dim)\r\n",
+  "summary": {
+    "allEndedMuted": true,
+    "allReportedClearly": true,
+    "allReachedFailurePath": true,
+    "stopAlwaysAvailable": true,
+    "noPageErrors": true
+  }
+}
