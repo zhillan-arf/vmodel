@@ -101,3 +101,13 @@ Append substantive decisions and checkpoints here while keeping the current chec
 ## Implementation notes
 
 This is a progress and delivery controller, not a background process. Follow the existing authorized scope during implementation sessions. It does not request sub-agent delegation or change child-task dependencies. Keep recordings, model assets and remote credentials in their designated locations outside code distribution as specified in the voice plan.
+
+
+## Session checkpoint — 2026-09-13
+
+- **The LLVC timing discrepancy is resolved**: hybrid-core placement, not power state. Efficiency cores cost 2.32x per neural call and miss 200/200 deadlines where performance cores miss 0/200, measured entirely on battery. [Report](../../reports/voice-llvc-hybrid-cores.md).
+- **The paced proof is not reproducible under load.** One pass on a quiet machine, four reproducible `ingress` failures at roughly 65 ms per 52 ms chunk with an editor and browser open. Combined with the avatar, the **avatar is unaffected** (0.965 and 1.006 draw retention) while the voice fails on its first call. Core separation does not help. Recorded as a measured defect. [Report](../../reports/voice-combined-workload.md).
+- **The OBS route is verified open source.** Every component enumerated with hashes and a known licence, no proprietary virtual-audio product installed, and one gap recorded: this portable OBS distribution ships no CEF licence file, which final packaging must retain. [Evidence](../../reports/voice-obs-route-licences.json).
+- **Microphone failure states end muted with the reason visible.** Occupied, denied, missing and invalid-stream cases all leave the server idle and muted with Stop available. A defect was fixed: the failure reason was being erased by the state push that `failLive` itself triggered. One case labelled "removed mid-session" did not exercise the track-ended path and is recorded as what it actually tested; **physical device removal remains untested**. [Evidence](../../reports/voice-mic-failure-smoke.json).
+- **The avatar never contacts a voice service**, observed while both voice services were listening and available.
+- Still gated on the user: the voice preference in TASK-023, physical microphone and speaker measurement, live sync, and the final recordings. No listening acceptance is claimed anywhere.

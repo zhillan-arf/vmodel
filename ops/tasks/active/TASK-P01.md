@@ -110,3 +110,51 @@ Append substantive checkpoints here. Link actual artifact/report paths when they
 ## Implementation notes
 
 This controller provides workflow ownership and persistent progress tracking. It does not create a background process or automatically run when no implementation session is active. Manage the existing scope autonomously within the user's authorization; this task does not request sub-agent delegation.
+
+
+## Session checkpoint — 2026-09-13
+
+**TASK-020 is complete and archived (22/38).** Three long-open mechanisms were resolved, six defects were found and fixed, and the automatable core of several movement criteria now has deterministic evidence. Every remaining gate needs the operator.
+
+### Resolved mechanisms
+
+| Question | Answer | Evidence |
+| --- | --- | --- |
+| Why did LLVC timing swing between RTF 1.222 and 0.301? | Hybrid-core placement, not power. Efficiency cores cost 2.32x per call and miss 200/200 deadlines; performance cores miss 0/200. All measured on battery. | [hybrid cores](../../reports/voice-llvc-hybrid-cores.md) |
+| What produced 1 Hz draws and blank-white OBS stills? | A minimized window delivers **zero** animation frames: 60.04 fps before, 0.00 minimized, 59.91 restored. Both symptoms follow from one cause. Not proven to be the original event, since no visibility state was recorded then. | [minimize cause](../../reports/capture-minimize-cause.md) |
+| What caused the two whole-system stalls? | Both occurred in runs containing an AC/DC power transition, with every other candidate ruled out by evidence captured at the stall instant. Temporal coincidence is not proven; power is now sampled per tick. | [performance](../../reports/performance.md) |
+
+Two hypotheses were **eliminated**: [hybrid-core placement is rejected](../../reports/capture-core-placement.md) for rendering (efficiency cores cost 13% of cadence, not 98%), and the [occlusion probes](../../reports/capture-occlusion-investigation.md) never established their own condition — a null result whose inverse is useful, since covering the output window measured a flat 60 fps.
+
+### Defects found and fixed
+
+1. **Production typecheck broken** — `scripts/soak-health.mjs` shipped without the `.d.mts` its siblings carry.
+2. **Missing-camera message** was raw exception text; `NotFoundError` and `OverconstrainedError` now read for beginners.
+3. **Microphone failure reason erased** — `applyState` rendered a generic message over `failLive`'s explanation, so an occupied microphone reported nothing useful. Now a sticky notice.
+4. **Draw guard missed lone stalls** — required three consecutive slow draws, so a single 1,227 ms stall that wedged a recording passed unnoticed. `singleStallMs` added.
+5. **No warning for a hidden window** — the studio now reports duration and remedy on return.
+6. Two harness bugs of my own, both caught and corrected in place rather than deleted.
+
+### Where TASK-020 landed
+
+A clean 30-minute two-phase soak: seated **58.14 fps / p95 44.4 ms**, standing **58.48 fps / p95 39.8 ms**, **zero skipped OBS output frames** in both (27,069 and 27,002), zero blank captures, both recordings verified at 720p h264. Memory growth proved collectable — one forced collection reclaimed 61.11 MiB against 50.70 MiB of growth, and 59.65 against 60.37. Offline operation recorded zero external requests under load.
+
+### Criteria closed this session
+
+TASK-020 (all three, archived), TASK-013's seated framing, TASK-015's control availability, TASK-024's laptop verdict, TASK-025's component licensing.
+
+### Evidence added without closing a criterion
+
+Deterministic system-level tests now cover: hidden-limb relaxation and reacquisition (TASK-011), standing occlusion stability (TASK-013), hand identity through crossing, uncertainty and reentry (TASK-012), head noise damping and face loss/recovery (TASK-010), anatomical side and mirror independence (TASK-010/011), denied/missing/busy/overconstrained camera recovery (TASK-009), microphone failure states (TASK-026), avatar independence from the voice service (TASK-024), and beginner-guide accuracy (TASK-018).
+
+Each stops short of its criterion's human half — whether motion *looks* right to a person — and no box was ticked on synthetic evidence alone.
+
+### Verification state
+
+105 unit tests, 15 Python studio tests and 7 paced LLVC tests pass. Production build and typecheck pass. The 33-file bundle audit, docs audit and task audit pass with no errors.
+
+### What remains, and why it cannot be automated
+
+All 14 in-progress and 2 todo tasks gate on four physical acts: **a person moving in front of the camera** (TASK-003/009/010-013/015), **the user listening and stating a voice preference** (TASK-023, which also determines whether TASK-027 needs a trained voice), **the cancelled Virtual Camera permission prompt** (TASK-017), and **two final recordings** (TASK-018, feeding TASK-021/026/028). [Remaining checks](../../../docs/remaining-checks.md) orders them by how much each unblocks; step one alone clears seven tasks.
+
+The local voice path additionally does **not** meet its gates: the paced proof passes on a quiet machine and fails reproducibly under ordinary desktop load, recorded as a measured defect rather than a pass.
