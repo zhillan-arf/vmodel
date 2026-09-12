@@ -92,3 +92,19 @@ A third attempt failed identically at **1,512.1 MiB free** against 1,468.9 MiB o
 Both standing-only timeouts are artefacts of the diagnostic harness, not findings about the application or the host. They do not support any claim about memory, hand tracking or standing stability, and the statement that the standing workload "cannot be validated on this host while the user's normal working set is loaded" was **not supported by evidence** and is withdrawn.
 
 Unaffected by this bug: the seated 900-second pass, and the 55-second browser termination in the full two-phase soak, which used the unfiltered phase list and did start its camera. That termination remains a real, uncaptured failure.
+
+### Standing with hands, corrected harness — 2026-09-12
+
+After both harness bugs were fixed, two further standing-only runs were made. [Run evidence](../../reports/local/combined-soak/2026-09-12T15-02-11-696Z-d86513bb/report.json), [analysis](../../reports/performance.md).
+
+An intermediate run reached **802 of 900 seconds** with zero skipped OBS output frames and zero blank captures before the memory sampler's own PowerShell timeout ended it. That sampler now makes one combined call per tick instead of two, at a 15-second timeout.
+
+The corrected run reached **690 seconds** and is the first capture of this failure class with instrumentation already running. For 689 seconds it was healthy: median cadence **30.03 fps**, draw interval p50/p95/p99 **33.3/34.3/35.5 ms** over 20,641 frames, draw CPU p50 3.7 ms, **render gate passed**, OBS at a constant **30.00 fps** and ~3.5 ms average frame render time, **0 skipped OBS output frames of 20,701**, and **0 blank captures of 23 samples**. Inference p50/p95 was 195.9/331.5 ms, full three-task cycle p50 287.6 ms, per-task p50 face 67.4, pose 69.8, hands 138.6 ms.
+
+Then at **689.4 s** the browser draw loop recorded a single **1,227.2 ms** interval, and at the **690 s** sample OBS fell to **11.72 fps** with average frame render time **60.68 ms**, its skipped render frames going 98 to 137. The owned recording then would not stop. **Browser and OBS stalled at the same moment**, which does not fit either starving the other; a shared cause such as a GPU reset, paging burst or system scheduling event fits better but **is not evidenced and is not recorded as the cause**.
+
+Memory is not implicated: Chrome private bytes rose 39.74 MiB across the window with no exhaustion before the stall.
+
+The fail-fast draw guard did not fire, correctly per its rule — it needs three consecutive draws over 500 ms and this produced exactly one. A single stall over a second, followed by a wedged recording, is worth catching; the guard's shape should be revisited rather than its threshold simply lowered.
+
+Standing remains **unmeasured against the full 900-second gate**, so that criterion stays open. It is no longer unmeasured in character: the workload sustains 30 fps with a passing render gate and no dropped output frames or blank captures for eleven and a half minutes, and its failure is a sudden whole-system stall rather than degradation. Cleanup passed with no cleanup errors in every run.

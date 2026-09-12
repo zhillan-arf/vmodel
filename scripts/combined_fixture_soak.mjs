@@ -136,14 +136,13 @@ async function processMemory() {
   const ids = [...new Set([...processInfo.map(item => Number(item.id)), obsPid])];
   assert(ids.every(id => Number.isInteger(id) && id > 0));
   // Numeric PIDs originate only from this Chrome CDP session and the exact owned OBS executable.
-  const command = `$soakIds=@(${ids.join(',')}); $soakRows=@(foreach($soakId in $soakIds){try{$soakProcess=[Diagnostics.Process]::GetProcessById($soakId);[pscustomobject]@{pid=$soakId;privateBytes=$soakProcess.PrivateMemorySize64;workingSetBytes=$soakProcess.WorkingSet64}}catch{}}); ConvertTo-Json -InputObject $soakRows -Compress`;
-  const rows = JSON.parse((await run('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', command], { windowsHide: true, timeout: 5000 })).stdout.replace(/^\uFEFF/, ''));
+  // One PowerShell invocation per sample. Host memory is gathered inside the same
+  // call: a second spawn per tick pushed this sampler past its timeout under load.
+  const command = `$soakIds=@(${ids.join(',')}); $soakRows=@(foreach($soakId in $soakIds){try{$soakProcess=[Diagnostics.Process]::GetProcessById($soakId);[pscustomobject]@{pid=$soakId;privateBytes=$soakProcess.PrivateMemorySize64;workingSetBytes=$soakProcess.WorkingSet64}}catch{}}); $soakOs=Get-CimInstance Win32_OperatingSystem; ConvertTo-Json -Depth 4 -Compress -InputObject ([pscustomobject]@{rows=$soakRows;system=[pscustomobject]@{freeMiB=[math]::Round($soakOs.FreePhysicalMemory/1KB,1);totalMiB=[math]::Round($soakOs.TotalVisibleMemorySize/1KB,1);committedMiB=[math]::Round(($soakOs.TotalVirtualMemorySize-$soakOs.FreeVirtualMemory)/1KB,1)}})`;
+  const payload = JSON.parse((await run('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', command], { windowsHide: true, timeout: 15000 })).stdout.replace(/^\uFEFF/, ''));
+  const rows = Array.isArray(payload.rows) ? payload.rows : [payload.rows].filter(Boolean);
+  const system = payload.system ?? null;
   const obsRow = rows.find(row => row.pid === obsPid); assert(obsRow, 'Owned OBS process exited.');
-  let system = null;
-  try {
-    const osCommand = '$soakOs=Get-CimInstance Win32_OperatingSystem; [pscustomobject]@{freeMiB=[math]::Round($soakOs.FreePhysicalMemory/1KB,1);totalMiB=[math]::Round($soakOs.TotalVisibleMemorySize/1KB,1);committedMiB=[math]::Round(($soakOs.TotalVirtualMemorySize-$soakOs.FreeVirtualMemory)/1KB,1)} | ConvertTo-Json -Compress';
-    system = JSON.parse((await run('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', osCommand], { windowsHide: true, timeout: 5000 })).stdout.replace(/^\uFEFF/, ''));
-  } catch { system = null; }
   const chrome = rows.filter(row => row.pid !== obsPid);
   const metrics = Object.fromEntries((await pageCDP.send('Performance.getMetrics')).metrics.map(metric => [metric.name, metric.value]));
   return { chromePrivateMiB: chrome.reduce((sum, row) => sum + row.privateBytes, 0) / 1024 ** 2,
