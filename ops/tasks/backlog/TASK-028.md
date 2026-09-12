@@ -33,3 +33,14 @@ This is implementation work, not completed by the research/design document.
 
 When completing this task, record changed artifacts, exact validation commands/results or manual evidence, and unresolved limitations. Leave unperformed checks unchecked.
 
+## Automated guard on unperformed-check claims — 2026-09-13
+
+The fourth criterion — that no unperformed microphone, remote or subjective preference check is marked passed — is now enforced by a check rather than by care alone. [audit_acceptance_claims.py](../../../scripts/audit_acceptance_claims.py) scans every ticked acceptance criterion across all task folders for language that only a person, a device or a remote service can honour, and reports any tick that makes such a claim without disclaiming it. [Evidence](../../reports/acceptance-claims-audit.json).
+
+Current result across **41 tasks and 103 ticked criteria: one tick mentions physical work, and it is defensible.** TASK-025's component criterion contains the word "virtual-microphone" because the criterion is *about documenting that limitation*, not about exercising a microphone; its own text states the limitation is documented, external-call routing is explicitly unsupported, and nothing was installed or re-signed.
+
+That single flag was worth having. The first version of the check reported it as undefended, and the correct response was to teach the check that a criterion can legitimately be about documenting a physical limitation — not to quietly untick a defensible box or loosen the physical-language patterns until nothing matched.
+
+This is a **language scan, not a proof**. It cannot tell whether a check actually happened, only whether a tick claims one; a box could still be wrongly ticked in wording it does not match; and a tick that disclaims in words while overstating elsewhere would pass. It reduces the chance of an accidental overclaim after a long session of synthetic evidence, which is exactly when that mistake is easiest to make.
+
+The criterion itself stays open: it belongs to TASK-028's final handoff, which needs the user's selected voice, actual Ene and the live workload.
