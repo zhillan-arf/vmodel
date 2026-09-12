@@ -1,0 +1,107 @@
+{
+  "date": "2026-09-12T11:00:38.902Z",
+  "phase": "cold",
+  "state": "passed",
+  "platform": "win32",
+  "release": "10.0.26200",
+  "cpu": "12th Gen Intel(R) Core(TM) i7-1255U",
+  "logicalCores": 12,
+  "ramBytes": 16779812864,
+  "headless": true,
+  "errors": [],
+  "scope": "Actual final built showcase over an owned loopback server in installed Windows Chrome. CDP network emulation is not a real mobile-network result. No real Safari/Android/iOS claim.",
+  "browser": "152.0.7977.83",
+  "cold": [
+    {
+      "codec": "webm",
+      "domReadyMs": 353.45859999999993,
+      "posterReadyMs": 848.8600000000001,
+      "animationVisibleMs": 1531.4332,
+      "network": {
+        "mbitPerSecond": 10,
+        "latencyMs": 100,
+        "cacheDisabled": true
+      },
+      "forcedFallback": null,
+      "actual": {
+        "resource": "home-greeting",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          315,
+          420
+        ],
+        "sourceSize": [
+          360,
+          480
+        ],
+        "currentTime": 0.010212,
+        "quality": {
+          "totalVideoFrames": 4,
+          "droppedVideoFrames": 0
+        },
+        "url": "http://127.0.0.1:57316/ene/home-greeting/small.webm",
+        "domElements": 160,
+        "jsHeapBytes": 2980401,
+        "status": "Playing"
+      },
+      "requests": [
+        "/",
+        "/assets/index-DkiiZKZ5.js",
+        "/assets/index-qqzbK_zL.css",
+        "/ene/manifest.json",
+        "/ene/home-greeting/small-poster.webp",
+        "/ene/alpha-probe.webm",
+        "/ene/home-greeting/small.webm"
+      ],
+      "onlySelectedFamilyRequested": true,
+      "withinFourSeconds": true
+    },
+    {
+      "codec": "webp",
+      "domReadyMs": 442.83989999999994,
+      "posterReadyMs": 939.2946000000002,
+      "animationVisibleMs": 1919.8714999999993,
+      "network": {
+        "mbitPerSecond": 10,
+        "latencyMs": 100,
+        "cacheDisabled": true
+      },
+      "forcedFallback": "Abort known-alpha probe to exercise actual animated WebP fallback",
+      "actual": {
+        "resource": "home-greeting",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          315,
+          420
+        ],
+        "sourceSize": [
+          360,
+          480
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:57316/ene/home-greeting/small.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2943049,
+        "status": "Playing"
+      },
+      "requests": [
+        "/",
+        "/assets/index-DkiiZKZ5.js",
+        "/assets/index-qqzbK_zL.css",
+        "/ene/manifest.json",
+        "/ene/home-greeting/small-poster.webp",
+        "/ene/alpha-probe.webm",
+        "/ene/home-greeting/small.webp"
+      ],
+      "onlySelectedFamilyRequested": true,
+      "withinFourSeconds": true
+    }
+  ]
+}

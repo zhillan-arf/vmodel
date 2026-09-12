@@ -1,0 +1,44 @@
+{
+  "date": "2026-09-12T07:35:34.465Z",
+  "input": "Direct animated head/root transforms, with a 10-second resume delta",
+  "passed": true,
+  "results": [
+    {
+      "mode": "full",
+      "steps": 180,
+      "includesResumeDeltaSeconds": 10,
+      "activeJoints": 36,
+      "finite": true,
+      "maxDistance": 1.6266833126531328,
+      "peakAngle": 1.8574703133369175
+    },
+    {
+      "mode": "gentle",
+      "steps": 180,
+      "includesResumeDeltaSeconds": 10,
+      "activeJoints": 36,
+      "finite": true,
+      "maxDistance": 1.6266833126531328,
+      "peakAngle": 1.7291169429082622
+    },
+    {
+      "mode": "off",
+      "steps": 180,
+      "includesResumeDeltaSeconds": 10,
+      "activeJoints": 0,
+      "finite": true,
+      "maxDistance": 1.6266833126531328,
+      "peakAngle": 0
+    },
+    {
+      "mode": "full",
+      "steps": 180,
+      "includesResumeDeltaSeconds": 10,
+      "activeJoints": 36,
+      "finite": true,
+      "maxDistance": 1.6266833126531328,
+      "peakAngle": 1.8574703133369175
+    }
+  ],
+  "errors": []
+}

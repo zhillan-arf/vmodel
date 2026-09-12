@@ -1,0 +1,24 @@
+{
+  "resource": "desk-normal",
+  "mode": "stills",
+  "sourceFps": 24,
+  "previewFps": null,
+  "size": [
+    480,
+    480
+  ],
+  "frames": [
+    {
+      "sourceFrame": 1,
+      "file": "ops\\reports\\local\\web-resources\\desk-normal\\poses\\frame-0001.png",
+      "seconds": 2.3764778999902774
+    },
+    {
+      "sourceFrame": 40,
+      "file": "ops\\reports\\local\\web-resources\\desk-normal\\poses\\frame-0040.png",
+      "seconds": 1.4831690000137314
+    }
+  ],
+  "elapsedSeconds": 3.864940600004047,
+  "scene": "assets/work/ene-web/desk-normal.blend"
+}

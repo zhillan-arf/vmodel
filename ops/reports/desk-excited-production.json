@@ -1,0 +1,5297 @@
+{
+  "schemaVersion": 1,
+  "resource": "desk-excited",
+  "state": "complete",
+  "buildKey": "5838019d4c1b786ab379",
+  "encodeKey": "8d7d34d286a9dc90bfb0",
+  "masterIndex": "assets/work/ene-web/desk-excited/masters/5838019d4c1b786ab379/index.json",
+  "publicResource": {
+    "label": "Excited",
+    "durationSeconds": 3,
+    "fps": 24,
+    "frameCount": 72,
+    "loop": true,
+    "renderSize": {
+      "width": 960,
+      "height": 960
+    },
+    "anchor": {
+      "kind": "desk",
+      "x": 0.5,
+      "y": 0.9222218617796898
+    },
+    "safeRegion": {
+      "x": 0.05,
+      "y": 0.05,
+      "width": 0.9,
+      "height": 0.9
+    },
+    "renditions": {
+      "small": {
+        "width": 480,
+        "height": 480,
+        "webm": {
+          "url": "desk-excited/small.webm",
+          "mime": "video/webm",
+          "codec": "vp9",
+          "width": 480,
+          "height": 480,
+          "bytes": 131856,
+          "sha256": "f437b36b3fa8fa592b5c95becc61a45e5ebc45eb13a3f0dbb1e1ba6163d55984",
+          "durationSeconds": 3.0,
+          "frameCount": 72,
+          "fps": 24
+        },
+        "webp": {
+          "url": "desk-excited/small.webp",
+          "mime": "image/webp",
+          "codec": "webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 1442498,
+          "sha256": "dfbf2b030ab68273d7cc3025a5489954067fea5870326c61fc6908bf4e0c839e",
+          "durationSeconds": 2.999,
+          "frameCount": 72,
+          "fps": 24.008003
+        }
+      },
+      "large": {
+        "width": 960,
+        "height": 960,
+        "webm": {
+          "url": "desk-excited/large.webm",
+          "mime": "video/webm",
+          "codec": "vp9",
+          "width": 960,
+          "height": 960,
+          "bytes": 373723,
+          "sha256": "5cab96be2ac5f8bd187ad32fe8c13e29bb55868b57062c1578757263b6ca5672",
+          "durationSeconds": 3.0,
+          "frameCount": 72,
+          "fps": 24
+        },
+        "webp": {
+          "url": "desk-excited/large.webp",
+          "mime": "image/webp",
+          "codec": "webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 2785680,
+          "sha256": "131ca0d2910e841a660a1aff9d84ce4c1979d50039855530909a5f30e90a0c14",
+          "durationSeconds": 2.999,
+          "frameCount": 72,
+          "fps": 24.008003
+        }
+      }
+    },
+    "posters": {
+      "small": {
+        "webp": {
+          "url": "desk-excited/small-poster.webp",
+          "mime": "image/webp",
+          "codec": "webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 26120,
+          "sha256": "e0b356ae116d5962251d8ac5df0311f34e87bf852cb2843a926950f74366bcc5"
+        },
+        "png": {
+          "url": "desk-excited/small-poster.png",
+          "mime": "image/png",
+          "codec": "png",
+          "width": 480,
+          "height": 480,
+          "bytes": 134341,
+          "sha256": "e1c3c09a2efb0a377bf22985eba5e6bac9f75d91fbd5cb2b3520315211ef1cc7"
+        }
+      },
+      "large": {
+        "webp": {
+          "url": "desk-excited/large-poster.webp",
+          "mime": "image/webp",
+          "codec": "webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 51450,
+          "sha256": "2d2b0b4910da140f3f493cb918cedd768c188bb13a3d2d796644b8fc607ced9b"
+        },
+        "png": {
+          "url": "desk-excited/large-poster.png",
+          "mime": "image/png",
+          "codec": "png",
+          "width": 960,
+          "height": 960,
+          "bytes": 542054,
+          "sha256": "1dffc59dda56c09cf8042266125a449beae8fb10e45bcd1efc353a105b3cfbd7"
+        }
+      }
+    },
+    "bounds": {
+      "x": 0.196875,
+      "y": 0.29791666666666666,
+      "width": 0.7489583333333333,
+      "height": 0.7020833333333333
+    }
+  },
+  "files": [
+    {
+      "arguments": [
+        "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe",
+        "-hide_banner",
+        "-v",
+        "error",
+        "-y",
+        "-threads",
+        "4",
+        "-filter_threads",
+        "2",
+        "-framerate",
+        "24",
+        "-start_number",
+        "1",
+        "-i",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png",
+        "-frames:v",
+        "72",
+        "-an",
+        "-vf",
+        "scale=480:480:flags=lanczos,format=rgba",
+        "-c:v",
+        "libvpx-vp9",
+        "-pix_fmt",
+        "yuva420p",
+        "-b:v",
+        "0",
+        "-crf",
+        "34",
+        "-deadline",
+        "good",
+        "-cpu-used",
+        "2",
+        "-row-mt",
+        "1",
+        "-threads",
+        "4",
+        "-auto-alt-ref",
+        "0",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small.webm"
+      ],
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -v error -y -threads 4 -filter_threads 2 -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png -frames:v 72 -an -vf scale=480:480:flags=lanczos,format=rgba -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 34 -deadline good -cpu-used 2 -row-mt 1 -threads 4 -auto-alt-ref 0 C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small.webm",
+      "seconds": 4.296150599984685,
+      "file": "assets/work/ene-web/desk-excited/encoded/8d7d34d286a9dc90bfb0/small.webm",
+      "sha256": "f437b36b3fa8fa592b5c95becc61a45e5ebc45eb13a3f0dbb1e1ba6163d55984",
+      "bytes": 131856,
+      "codec": "webm",
+      "size": "small",
+      "width": 480,
+      "height": 480,
+      "durationSeconds": 3.0,
+      "frameCount": 72,
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vp9",
+            "codec_long_name": "Google VP9",
+            "profile": "Profile 0",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "vp09.00.21.08",
+            "width": 480,
+            "height": 480,
+            "coded_width": 480,
+            "coded_height": 480,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "1:1",
+            "pix_fmt": "yuv420p",
+            "level": -99,
+            "color_range": "tv",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "field_order": "progressive",
+            "refs": 1,
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "nb_read_frames": "72",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "alpha_mode": "1",
+              "ENCODER": "Lavc63.1.101 libvpx-vp9",
+              "DURATION": "00:00:03.000000000"
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small.webm",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "matroska,webm",
+          "format_long_name": "Matroska / WebM",
+          "start_time": "0.000000",
+          "duration": "3.000000",
+          "size": "131856",
+          "bit_rate": "351616",
+          "probe_score": 100,
+          "tags": {
+            "ENCODER": "Lavf63.1.101"
+          }
+        }
+      },
+      "decoded": {
+        "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -v error -threads 4 -c:v libvpx-vp9 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small.webm -fps_mode passthrough -pix_fmt rgba -f rawvideo pipe:1",
+        "decodedFrameCount": 72,
+        "allFramesTransparent": true,
+        "boundsPixels": [
+          94,
+          142,
+          457,
+          480
+        ],
+        "bounds": {
+          "x": 0.19583333333333333,
+          "y": 0.29583333333333334,
+          "width": 0.75625,
+          "height": 0.7041666666666667
+        },
+        "maximumAdjacentSampleMae255": 0.7247142210468634,
+        "lastAdjacentSampleMae255": 0.7247142210468634,
+        "loopSeamSampleMae255": 0.544741619612608,
+        "frames": [
+          {
+            "frame": 1,
+            "sha256Rgba": "64f855458233c1e745cc437c39560e42e30885d20bd92f13a5948ca674757eac",
+            "transparentPixels": 165618,
+            "opaquePixels": 55058,
+            "partialPixels": 9724,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              445,
+              480
+            ]
+          },
+          {
+            "frame": 2,
+            "sha256Rgba": "b450602a354eee824b9ca5fc997ee0866a621bccda5ccd2c0f6958610732d779",
+            "transparentPixels": 165445,
+            "opaquePixels": 54498,
+            "partialPixels": 10457,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              450,
+              480
+            ]
+          },
+          {
+            "frame": 3,
+            "sha256Rgba": "3333b9b8a586da86148db2ab5895643e8af3b476b747414bcc39b069290118af",
+            "transparentPixels": 165433,
+            "opaquePixels": 54383,
+            "partialPixels": 10584,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              449,
+              480
+            ]
+          },
+          {
+            "frame": 4,
+            "sha256Rgba": "b34ca5e8f0d98f18eb0f7fe22238a77ff5365fb1d54e75b43a09bfacb1104d93",
+            "transparentPixels": 165268,
+            "opaquePixels": 54159,
+            "partialPixels": 10973,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              144,
+              449,
+              480
+            ]
+          },
+          {
+            "frame": 5,
+            "sha256Rgba": "75a2c6aec919e39dde0be39631001c9cdedc92dcacecc90755f5e02482383d7f",
+            "transparentPixels": 165116,
+            "opaquePixels": 54326,
+            "partialPixels": 10958,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              144,
+              449,
+              480
+            ]
+          },
+          {
+            "frame": 6,
+            "sha256Rgba": "deda022027bcb2344d056b0c94ea445b80cf1c0b1cef198ebc576c094ae33902",
+            "transparentPixels": 165056,
+            "opaquePixels": 54314,
+            "partialPixels": 11030,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              142,
+              449,
+              480
+            ]
+          },
+          {
+            "frame": 7,
+            "sha256Rgba": "4a44cac626e144f8883d64602e0215daa4747973cf4ecc436037d1ed5112a47d",
+            "transparentPixels": 165075,
+            "opaquePixels": 54251,
+            "partialPixels": 11074,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              142,
+              449,
+              480
+            ]
+          },
+          {
+            "frame": 8,
+            "sha256Rgba": "dd11aff74863a4780633daf2271ec571cc03e473d8dca0df093ac1d8606c9454",
+            "transparentPixels": 164932,
+            "opaquePixels": 54249,
+            "partialPixels": 11219,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              142,
+              451,
+              480
+            ]
+          },
+          {
+            "frame": 9,
+            "sha256Rgba": "d2b72cd6a1767f6f487ecf6146a91fa5dac625afe9ef4055d03eeaa7876dcbc0",
+            "transparentPixels": 164891,
+            "opaquePixels": 54288,
+            "partialPixels": 11221,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              142,
+              453,
+              480
+            ]
+          },
+          {
+            "frame": 10,
+            "sha256Rgba": "71354a7f42852a0307d1c92e4186c0819263d4f0f7acad6399c48d8fad89068b",
+            "transparentPixels": 164858,
+            "opaquePixels": 54254,
+            "partialPixels": 11288,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              142,
+              454,
+              480
+            ]
+          },
+          {
+            "frame": 11,
+            "sha256Rgba": "ee4da5eb6f54397f70100ad87281528a377e5d907ec1c9cbff0a5eb6fc2bfd43",
+            "transparentPixels": 164975,
+            "opaquePixels": 54362,
+            "partialPixels": 11063,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              143,
+              456,
+              480
+            ]
+          },
+          {
+            "frame": 12,
+            "sha256Rgba": "ddb8cd73ab7d510b3ab14a2e7ac8e2c1892ca5bafddadcb67a0a373805ddca5e",
+            "transparentPixels": 164824,
+            "opaquePixels": 54307,
+            "partialPixels": 11269,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              142,
+              456,
+              480
+            ]
+          },
+          {
+            "frame": 13,
+            "sha256Rgba": "871fbb03757564ab7d8dbc4f3123bc8070d4413091e8fec096a8d987ebd72c3f",
+            "transparentPixels": 164938,
+            "opaquePixels": 54275,
+            "partialPixels": 11187,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              142,
+              457,
+              480
+            ]
+          },
+          {
+            "frame": 14,
+            "sha256Rgba": "291ae790cef493f72f07074458c44767d806247fba740e4d5a587f7afa1a2eec",
+            "transparentPixels": 164844,
+            "opaquePixels": 54296,
+            "partialPixels": 11260,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              142,
+              457,
+              480
+            ]
+          },
+          {
+            "frame": 15,
+            "sha256Rgba": "995dc01eceaf403f7ddbd2de6a19d8ce09f1ea15afe130828759e9872b3c4562",
+            "transparentPixels": 164880,
+            "opaquePixels": 54246,
+            "partialPixels": 11274,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              144,
+              455,
+              480
+            ]
+          },
+          {
+            "frame": 16,
+            "sha256Rgba": "0840d3dbd667336be749417adb6463f93eb8d1b4a06600996f0973d8adb525ba",
+            "transparentPixels": 164881,
+            "opaquePixels": 54181,
+            "partialPixels": 11338,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              142,
+              455,
+              480
+            ]
+          },
+          {
+            "frame": 17,
+            "sha256Rgba": "6d36db5f49c0b42c15ba2adbdeaef72c13aa4e150a469de634f020baff6a4f68",
+            "transparentPixels": 164790,
+            "opaquePixels": 54377,
+            "partialPixels": 11233,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              142,
+              456,
+              480
+            ]
+          },
+          {
+            "frame": 18,
+            "sha256Rgba": "f04403fb346c3d748bcd887f75b72b67f9f281bd23ffcd6f70fcc3b8666636a0",
+            "transparentPixels": 164785,
+            "opaquePixels": 54418,
+            "partialPixels": 11197,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              142,
+              456,
+              480
+            ]
+          },
+          {
+            "frame": 19,
+            "sha256Rgba": "7d715cdc761f2b6b750bef15f76d30e83b8b066448d7dc1da3933f0054368be8",
+            "transparentPixels": 164822,
+            "opaquePixels": 54407,
+            "partialPixels": 11171,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              142,
+              456,
+              480
+            ]
+          },
+          {
+            "frame": 20,
+            "sha256Rgba": "52ea6a502d460d6ea8628260c497f7aa3835bb83500a059e73226429b3f3a1f2",
+            "transparentPixels": 164863,
+            "opaquePixels": 54580,
+            "partialPixels": 10957,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              456,
+              480
+            ]
+          },
+          {
+            "frame": 21,
+            "sha256Rgba": "d10e2ef5f891371b9a3337259a2318ff8cc6326656f72aed58d84198fb8e6025",
+            "transparentPixels": 164870,
+            "opaquePixels": 54513,
+            "partialPixels": 11017,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              144,
+              456,
+              480
+            ]
+          },
+          {
+            "frame": 22,
+            "sha256Rgba": "c8fa1161ebeb67ab3d8f79c31b0171102442b8bd7df7f6c095ff3b818e7b4f45",
+            "transparentPixels": 164874,
+            "opaquePixels": 54351,
+            "partialPixels": 11175,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              142,
+              455,
+              480
+            ]
+          },
+          {
+            "frame": 23,
+            "sha256Rgba": "8cac2f009eaf8cc30b9baba17ec19f6c7d9afb090cf7b4bb86cfa94bf7289c03",
+            "transparentPixels": 164906,
+            "opaquePixels": 54228,
+            "partialPixels": 11266,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              142,
+              456,
+              480
+            ]
+          },
+          {
+            "frame": 24,
+            "sha256Rgba": "441d22ac123764d24224fef4b0a121dc7da0974102761ab84e4f83a67cf201cf",
+            "transparentPixels": 164977,
+            "opaquePixels": 54163,
+            "partialPixels": 11260,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              456,
+              480
+            ]
+          },
+          {
+            "frame": 25,
+            "sha256Rgba": "db62f75fc405a1906dfd161a496ed2ea304b66f93c6726536323f4ee502265ed",
+            "transparentPixels": 164995,
+            "opaquePixels": 54179,
+            "partialPixels": 11226,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              456,
+              480
+            ]
+          },
+          {
+            "frame": 26,
+            "sha256Rgba": "776fee575122c6e57302313589464506bc073a7bf6d6e1fb271fc5ff075cb09a",
+            "transparentPixels": 164987,
+            "opaquePixels": 54189,
+            "partialPixels": 11224,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              455,
+              480
+            ]
+          },
+          {
+            "frame": 27,
+            "sha256Rgba": "6e31280dab6f573f66567cb0c04644618e2fab50945c11e2477df7b1d52ed762",
+            "transparentPixels": 164909,
+            "opaquePixels": 54086,
+            "partialPixels": 11405,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              142,
+              455,
+              480
+            ]
+          },
+          {
+            "frame": 28,
+            "sha256Rgba": "213d42024184107d19eacdc6ad928bc7311cdb0929ed792c21a2908976157b4d",
+            "transparentPixels": 164946,
+            "opaquePixels": 54126,
+            "partialPixels": 11328,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              142,
+              454,
+              480
+            ]
+          },
+          {
+            "frame": 29,
+            "sha256Rgba": "22ffb9d20cf8f7311d9e25ee4581a7f884844a9d9b636ccc3765038444d34e41",
+            "transparentPixels": 164914,
+            "opaquePixels": 54204,
+            "partialPixels": 11282,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              142,
+              453,
+              480
+            ]
+          },
+          {
+            "frame": 30,
+            "sha256Rgba": "92f802785393ec3b03922b27605b97e174294969fb2ebbc1d92501b50fe9fd17",
+            "transparentPixels": 164883,
+            "opaquePixels": 54245,
+            "partialPixels": 11272,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              142,
+              452,
+              480
+            ]
+          },
+          {
+            "frame": 31,
+            "sha256Rgba": "cf748da270d74cb702921093b380af73c649180e8a2d22d8fda9066d95e875ea",
+            "transparentPixels": 165052,
+            "opaquePixels": 54280,
+            "partialPixels": 11068,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              449,
+              480
+            ]
+          },
+          {
+            "frame": 32,
+            "sha256Rgba": "1226fec8be1c020e5245fa93f532a57947eda74a993e76329c3ddff7d9138d28",
+            "transparentPixels": 164981,
+            "opaquePixels": 54118,
+            "partialPixels": 11301,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              449,
+              480
+            ]
+          },
+          {
+            "frame": 33,
+            "sha256Rgba": "d21672163d9b0c654672b44e3c85a9f34a9b7be92d171d4b60571aebe8da2ca0",
+            "transparentPixels": 164926,
+            "opaquePixels": 54374,
+            "partialPixels": 11100,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              449,
+              480
+            ]
+          },
+          {
+            "frame": 34,
+            "sha256Rgba": "0c01dba5148867bbf8e37a561904b6ee45c137eea6d70c618902d5d32d04f764",
+            "transparentPixels": 164940,
+            "opaquePixels": 54215,
+            "partialPixels": 11245,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              449,
+              480
+            ]
+          },
+          {
+            "frame": 35,
+            "sha256Rgba": "94672b3c5d6820bce0e69d55d2becb4896e61149de538ff4e6374627108e4f71",
+            "transparentPixels": 164979,
+            "opaquePixels": 54431,
+            "partialPixels": 10990,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              449,
+              480
+            ]
+          },
+          {
+            "frame": 36,
+            "sha256Rgba": "4bb038f594ecc858fa456d815b3cd2d1147ca5dd640a54b40cc6a6777ad7ac3f",
+            "transparentPixels": 165061,
+            "opaquePixels": 54354,
+            "partialPixels": 10985,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              446,
+              480
+            ]
+          },
+          {
+            "frame": 37,
+            "sha256Rgba": "7bda07110ea3c9e4c007927974f7547768d519e388759ede98ee434105269faf",
+            "transparentPixels": 165246,
+            "opaquePixels": 54758,
+            "partialPixels": 10396,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              445,
+              480
+            ]
+          },
+          {
+            "frame": 38,
+            "sha256Rgba": "ff748c8032df5c239a28c3051feae9d28b5648a55c7e00f23794d634f9aafbb1",
+            "transparentPixels": 165130,
+            "opaquePixels": 54510,
+            "partialPixels": 10760,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              144,
+              445,
+              480
+            ]
+          },
+          {
+            "frame": 39,
+            "sha256Rgba": "4bb287f122ca8156e47280f3e4bc1a11077025347518e8973da0ffb83c666681",
+            "transparentPixels": 165141,
+            "opaquePixels": 54523,
+            "partialPixels": 10736,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              142,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 40,
+            "sha256Rgba": "fbf926d86c3e6021569c68455bc561f5868b1f976b8d525df4c58f2e4afa2e5c",
+            "transparentPixels": 165107,
+            "opaquePixels": 54474,
+            "partialPixels": 10819,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              144,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 41,
+            "sha256Rgba": "393ba3a97919ffa332c878152f9ecbbf19bae4261f35112be4e9898f59ecc32f",
+            "transparentPixels": 165088,
+            "opaquePixels": 54665,
+            "partialPixels": 10647,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              142,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 42,
+            "sha256Rgba": "4f6a290566be32ebdb15aebab414bc6bbfd23d0a69ba9179d5a243ccacbeece6",
+            "transparentPixels": 165084,
+            "opaquePixels": 54452,
+            "partialPixels": 10864,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              448,
+              480
+            ]
+          },
+          {
+            "frame": 43,
+            "sha256Rgba": "5b4b87ad23e6d13111cebfa3f8bf1dc5a50e74a945f697612a5eea94d135295d",
+            "transparentPixels": 165013,
+            "opaquePixels": 54536,
+            "partialPixels": 10851,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              447,
+              480
+            ]
+          },
+          {
+            "frame": 44,
+            "sha256Rgba": "0ce1678f99ae7fb835f5aff94a9b0cdbc62079144b52347d882fa6220329c841",
+            "transparentPixels": 165080,
+            "opaquePixels": 54398,
+            "partialPixels": 10922,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              446,
+              480
+            ]
+          },
+          {
+            "frame": 45,
+            "sha256Rgba": "cc5cd464b0836a3ab7334b399e38d1ad1d04ff4a94fd978723b50c81723bffd8",
+            "transparentPixels": 165067,
+            "opaquePixels": 54369,
+            "partialPixels": 10964,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              445,
+              480
+            ]
+          },
+          {
+            "frame": 46,
+            "sha256Rgba": "57ca35da5e7736b9ad7047ce5ca297914b26bcb6e6eb0c6fecee2246d9fcca12",
+            "transparentPixels": 165002,
+            "opaquePixels": 54389,
+            "partialPixels": 11009,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 47,
+            "sha256Rgba": "d89c402d8ef667614623cecf2cb70eba49b8f750605468035c49ac0fd57b68de",
+            "transparentPixels": 165007,
+            "opaquePixels": 54367,
+            "partialPixels": 11026,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 48,
+            "sha256Rgba": "2353ef6cfb68bb88d841f0901ca766e346a63074cf5801d8c0c8aff24f27ad0a",
+            "transparentPixels": 165060,
+            "opaquePixels": 54254,
+            "partialPixels": 11086,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              143,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 49,
+            "sha256Rgba": "e438a881098328b8c836d6c007184ef61cf346e1f4ab70c75fb68c2c6062cee3",
+            "transparentPixels": 165111,
+            "opaquePixels": 54495,
+            "partialPixels": 10794,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              143,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 50,
+            "sha256Rgba": "511fb1b3cb6ce830c2446d54f3144e31a6860ba0e550347b00765d54de940a4d",
+            "transparentPixels": 164924,
+            "opaquePixels": 54450,
+            "partialPixels": 11026,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              142,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 51,
+            "sha256Rgba": "eca7dba1b0c2df631fa8eacbc10e20f00416f7685b28f67cd87cb6ffa8446a48",
+            "transparentPixels": 164968,
+            "opaquePixels": 54482,
+            "partialPixels": 10950,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              142,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 52,
+            "sha256Rgba": "00a0bfef12ede211cbb28d41166be0901fe8fc440afa5d81ed41f0ed29db354a",
+            "transparentPixels": 164887,
+            "opaquePixels": 54228,
+            "partialPixels": 11285,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              142,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 53,
+            "sha256Rgba": "edad3b8336316beb4abd77769ad8d993694805b48ff1189345c2f0c841d6a627",
+            "transparentPixels": 164966,
+            "opaquePixels": 54349,
+            "partialPixels": 11085,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              142,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 54,
+            "sha256Rgba": "d8c64940e359c900a44c4ac594495116726120543a53055177806c9b65b1595f",
+            "transparentPixels": 164939,
+            "opaquePixels": 54569,
+            "partialPixels": 10892,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 55,
+            "sha256Rgba": "1bcd81faaba9ae2878e9851b24f5c9c4def79116cef83d50febdb8c255bf6700",
+            "transparentPixels": 165015,
+            "opaquePixels": 54324,
+            "partialPixels": 11061,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 56,
+            "sha256Rgba": "3ce36d92a0dcf062319cc333a8b8afa28446ad00c66d578d4b944dadf7c47c1d",
+            "transparentPixels": 164972,
+            "opaquePixels": 54254,
+            "partialPixels": 11174,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              142,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 57,
+            "sha256Rgba": "fc5d4fc091410f7931e3921672be2f5acad6fefa5081015004ba10d11c560131",
+            "transparentPixels": 164956,
+            "opaquePixels": 54272,
+            "partialPixels": 11172,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              144,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 58,
+            "sha256Rgba": "29692358f5cd7340b90676d0d3510a3266d5c336c03e331249dea01923b7c8d0",
+            "transparentPixels": 164855,
+            "opaquePixels": 54228,
+            "partialPixels": 11317,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              143,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 59,
+            "sha256Rgba": "3eb74220c44a6b5b7efb4c7c07445f70fa231ef617fd764b092338f1b04ba735",
+            "transparentPixels": 164904,
+            "opaquePixels": 54108,
+            "partialPixels": 11388,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              96,
+              142,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 60,
+            "sha256Rgba": "a4dd1be4aedc86d3d49dc4d5560a1688638649afbe54d8b0733d952142a23f7c",
+            "transparentPixels": 164973,
+            "opaquePixels": 53842,
+            "partialPixels": 11585,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              97,
+              142,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 61,
+            "sha256Rgba": "af742c0826fc1e9b9f471bf1336887909d1f6a52a9f2c1702523b67f134392b7",
+            "transparentPixels": 164856,
+            "opaquePixels": 54274,
+            "partialPixels": 11270,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              96,
+              143,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 62,
+            "sha256Rgba": "dcb6cdc29e6711867205c88e64b103627e2a7c0532d0094d456229c413160126",
+            "transparentPixels": 164795,
+            "opaquePixels": 54221,
+            "partialPixels": 11384,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              97,
+              142,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 63,
+            "sha256Rgba": "cbabb411e54864cfc4111a98f0d0c42ae93d03db167185fb3b1014cef07a7566",
+            "transparentPixels": 164683,
+            "opaquePixels": 54267,
+            "partialPixels": 11450,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              96,
+              142,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 64,
+            "sha256Rgba": "e980c7fc51b93b68e936b9662730dfc27376efbc1e4c429add80c728d5426db9",
+            "transparentPixels": 164701,
+            "opaquePixels": 54188,
+            "partialPixels": 11511,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              96,
+              142,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 65,
+            "sha256Rgba": "14171c3bbc980a093461e3b50f4cac7d33fbce449a6826bd21add9e719f8cccc",
+            "transparentPixels": 165034,
+            "opaquePixels": 54340,
+            "partialPixels": 11026,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              96,
+              142,
+              445,
+              480
+            ]
+          },
+          {
+            "frame": 66,
+            "sha256Rgba": "88f2a90813e68b95ac1ec1f6aaa31a411ed0e59966fb77f7d7d0d874d303c09e",
+            "transparentPixels": 164964,
+            "opaquePixels": 54206,
+            "partialPixels": 11230,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              96,
+              142,
+              445,
+              480
+            ]
+          },
+          {
+            "frame": 67,
+            "sha256Rgba": "100a5fb63ee2d9d1e8fc55d79731c7e05eee8794e79ed118039a37922eab0992",
+            "transparentPixels": 164662,
+            "opaquePixels": 54194,
+            "partialPixels": 11544,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              96,
+              143,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 68,
+            "sha256Rgba": "da0a934e494e62436ea642e580163c9be62bfae37bf83e451c87bee777c60392",
+            "transparentPixels": 164604,
+            "opaquePixels": 53991,
+            "partialPixels": 11805,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              96,
+              143,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 69,
+            "sha256Rgba": "fa14bf6b0cc72f2f1796b40dd589521f16ce995f23895bb73841302865d2c29b",
+            "transparentPixels": 164842,
+            "opaquePixels": 54264,
+            "partialPixels": 11294,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              142,
+              445,
+              480
+            ]
+          },
+          {
+            "frame": 70,
+            "sha256Rgba": "079357a7e271253b428be8d99e03d19d0e6b7ac2512debd3f716b064fc12728c",
+            "transparentPixels": 164863,
+            "opaquePixels": 54208,
+            "partialPixels": 11329,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              143,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 71,
+            "sha256Rgba": "1dde8a484cf4e9f1af9fef8e663b77fcc9be8096b6cfa316061fb71d66ceb90d",
+            "transparentPixels": 165035,
+            "opaquePixels": 54501,
+            "partialPixels": 10864,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              143,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 72,
+            "sha256Rgba": "a7d393f7aa2cacb468d4b270a0007c8e47b15039d06a7522b947b47e0d8442eb",
+            "transparentPixels": 165071,
+            "opaquePixels": 54318,
+            "partialPixels": 11011,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              142,
+              445,
+              480
+            ]
+          }
+        ]
+      },
+      "budgetBytes": 786432,
+      "withinBudget": true
+    },
+    {
+      "arguments": [
+        "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe",
+        "-hide_banner",
+        "-v",
+        "error",
+        "-y",
+        "-threads",
+        "4",
+        "-filter_threads",
+        "2",
+        "-framerate",
+        "24",
+        "-start_number",
+        "1",
+        "-i",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png",
+        "-frames:v",
+        "72",
+        "-an",
+        "-vf",
+        "scale=480:480:flags=lanczos,format=rgba",
+        "-c:v",
+        "libwebp_anim",
+        "-pix_fmt",
+        "yuva420p",
+        "-quality",
+        "65",
+        "-compression_level",
+        "4",
+        "-loop",
+        "0",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small.webp"
+      ],
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -v error -y -threads 4 -filter_threads 2 -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png -frames:v 72 -an -vf scale=480:480:flags=lanczos,format=rgba -c:v libwebp_anim -pix_fmt yuva420p -quality 65 -compression_level 4 -loop 0 C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small.webp",
+      "seconds": 5.3396937000215985,
+      "webpAnimation": {
+        "alpha": true,
+        "animated": true,
+        "loopCount": 0,
+        "width": 480,
+        "height": 480,
+        "frameCount": 72,
+        "durationMs": 2999
+      },
+      "file": "assets/work/ene-web/desk-excited/encoded/8d7d34d286a9dc90bfb0/small.webp",
+      "sha256": "dfbf2b030ab68273d7cc3025a5489954067fea5870326c61fc6908bf4e0c839e",
+      "bytes": 1442498,
+      "codec": "webp",
+      "size": "small",
+      "width": 480,
+      "height": 480,
+      "durationSeconds": 2.999,
+      "frameCount": 72,
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "webp_anim",
+            "codec_long_name": "Animated WebP",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "width": 480,
+            "height": 480,
+            "coded_width": 350,
+            "coded_height": 329,
+            "has_b_frames": 0,
+            "pix_fmt": "argb",
+            "level": -99,
+            "refs": 1,
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "nb_read_frames": "72",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small.webp",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "webp_anim",
+          "format_long_name": "Animated WebP",
+          "start_time": "0.000000",
+          "size": "1442498",
+          "probe_score": 100
+        }
+      },
+      "decoded": {
+        "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -v error -threads 4 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small.webp -fps_mode passthrough -pix_fmt rgba -f rawvideo pipe:1",
+        "decodedFrameCount": 72,
+        "allFramesTransparent": true,
+        "boundsPixels": [
+          93,
+          145,
+          455,
+          480
+        ],
+        "bounds": {
+          "x": 0.19375,
+          "y": 0.3020833333333333,
+          "width": 0.7541666666666667,
+          "height": 0.6979166666666666
+        },
+        "maximumAdjacentSampleMae255": 1.1822333404807852,
+        "lastAdjacentSampleMae255": 1.146023395992662,
+        "loopSeamSampleMae255": 0.9304348033259476,
+        "frames": [
+          {
+            "frame": 1,
+            "sha256Rgba": "bc48690eed4f3f1538ddb2b31c425355f5d18f4da5079bf375560641c1e9edff",
+            "transparentPixels": 166499,
+            "opaquePixels": 56315,
+            "partialPixels": 7586,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              445,
+              480
+            ]
+          },
+          {
+            "frame": 2,
+            "sha256Rgba": "3c1f554aef0d5337e21866b02d97e0085ebd18c0bfe2f9224a7d01cefe820d5c",
+            "transparentPixels": 166508,
+            "opaquePixels": 56246,
+            "partialPixels": 7646,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              446,
+              480
+            ]
+          },
+          {
+            "frame": 3,
+            "sha256Rgba": "32e8e8a8afbd82ef10d148f9a34d2d361ad9071901995bb62925e0d159e13bbc",
+            "transparentPixels": 166491,
+            "opaquePixels": 56254,
+            "partialPixels": 7655,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              447,
+              480
+            ]
+          },
+          {
+            "frame": 4,
+            "sha256Rgba": "d9082f882e2cda33655190bebf965acb43f581d77314ec985bddfb42a5f3e354",
+            "transparentPixels": 166540,
+            "opaquePixels": 56268,
+            "partialPixels": 7592,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              448,
+              480
+            ]
+          },
+          {
+            "frame": 5,
+            "sha256Rgba": "9c74cd4d314f20320e67c08fd0145ed0337f1e1c96b683078d2b9e01e1d17d92",
+            "transparentPixels": 166518,
+            "opaquePixels": 56285,
+            "partialPixels": 7597,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              448,
+              480
+            ]
+          },
+          {
+            "frame": 6,
+            "sha256Rgba": "49c975c8c89aa0bde5c826309489fbe479e57c9fdc60bf01069f21f7ccd65768",
+            "transparentPixels": 166519,
+            "opaquePixels": 56305,
+            "partialPixels": 7576,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              449,
+              480
+            ]
+          },
+          {
+            "frame": 7,
+            "sha256Rgba": "89ce49be716a77912cdbbfcc3dc1ec40eee239e3ad5fdb362fc298aec2d9f93e",
+            "transparentPixels": 166474,
+            "opaquePixels": 56295,
+            "partialPixels": 7631,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              450,
+              480
+            ]
+          },
+          {
+            "frame": 8,
+            "sha256Rgba": "e77882730987cbf5f3affe5cdfb8067cdbb5173bbff5d9242edc3541b63d9f8b",
+            "transparentPixels": 166514,
+            "opaquePixels": 56264,
+            "partialPixels": 7622,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              93,
+              145,
+              451,
+              480
+            ]
+          },
+          {
+            "frame": 9,
+            "sha256Rgba": "3a0b8166fe532aba1347f7ceecdfe333e019a16cf8c93bcea22870f9f284c436",
+            "transparentPixels": 166516,
+            "opaquePixels": 56313,
+            "partialPixels": 7571,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              93,
+              145,
+              452,
+              480
+            ]
+          },
+          {
+            "frame": 10,
+            "sha256Rgba": "4ec526b8a696bb63fdc39867638792667f7e954d7ff285f6025186a0fbcb4fc0",
+            "transparentPixels": 166533,
+            "opaquePixels": 56282,
+            "partialPixels": 7585,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              93,
+              145,
+              452,
+              480
+            ]
+          },
+          {
+            "frame": 11,
+            "sha256Rgba": "6fac71d824141dad0d68fcd13634e613e7e8b2d7927a774c6850eb58ebd9b031",
+            "transparentPixels": 166520,
+            "opaquePixels": 56274,
+            "partialPixels": 7606,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              93,
+              145,
+              453,
+              480
+            ]
+          },
+          {
+            "frame": 12,
+            "sha256Rgba": "4569d34c577f9c5d8c2efb0429d411e46ef5ee12c7bf0d7a3f7226eba94956f2",
+            "transparentPixels": 166499,
+            "opaquePixels": 56281,
+            "partialPixels": 7620,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              93,
+              145,
+              453,
+              480
+            ]
+          },
+          {
+            "frame": 13,
+            "sha256Rgba": "69f1d7f2178a3dd09284044004d1688999e8a697674ce958de6597da075fa6b6",
+            "transparentPixels": 166498,
+            "opaquePixels": 56313,
+            "partialPixels": 7589,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              93,
+              145,
+              454,
+              480
+            ]
+          },
+          {
+            "frame": 14,
+            "sha256Rgba": "c4da8a0b579962f9ca1800a9bad0834816acbe860a55d533e7cc088cb4e791fd",
+            "transparentPixels": 166490,
+            "opaquePixels": 56315,
+            "partialPixels": 7595,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              93,
+              145,
+              454,
+              480
+            ]
+          },
+          {
+            "frame": 15,
+            "sha256Rgba": "6d449a1f6a11e7d0fce9588e35cd07dd41ad9733996f431234afc97198f1bcf8",
+            "transparentPixels": 166485,
+            "opaquePixels": 56347,
+            "partialPixels": 7568,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              455,
+              480
+            ]
+          },
+          {
+            "frame": 16,
+            "sha256Rgba": "80c755073fe2b755c87be4b0ac99ccdc5991d0178d240f1d2500e35920ffca7f",
+            "transparentPixels": 166516,
+            "opaquePixels": 56328,
+            "partialPixels": 7556,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              455,
+              480
+            ]
+          },
+          {
+            "frame": 17,
+            "sha256Rgba": "9201c06ded502f83666939288a6ecb33b09a25967bb8acc1890a360c178f0da6",
+            "transparentPixels": 166519,
+            "opaquePixels": 56311,
+            "partialPixels": 7570,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              455,
+              480
+            ]
+          },
+          {
+            "frame": 18,
+            "sha256Rgba": "74bf512f8db729614d7e69929e503e8aad0f7d53d0c2cedbba6c2c3c69a766d9",
+            "transparentPixels": 166508,
+            "opaquePixels": 56339,
+            "partialPixels": 7553,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              455,
+              480
+            ]
+          },
+          {
+            "frame": 19,
+            "sha256Rgba": "04b808a4ef4891e5ccbd4af6dec37e1d75fc02aff7b21840464430b94466b716",
+            "transparentPixels": 166525,
+            "opaquePixels": 56299,
+            "partialPixels": 7576,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              455,
+              480
+            ]
+          },
+          {
+            "frame": 20,
+            "sha256Rgba": "d932166894d1c8f2b0cecc601f3117fc22cdb4839c72882852244cf6b0ec3cd2",
+            "transparentPixels": 166553,
+            "opaquePixels": 56378,
+            "partialPixels": 7469,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              455,
+              480
+            ]
+          },
+          {
+            "frame": 21,
+            "sha256Rgba": "482ffc43d599802b4633fe79c6f47340d3b17936ff385516f7d9c9df1e381335",
+            "transparentPixels": 166537,
+            "opaquePixels": 56349,
+            "partialPixels": 7514,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              455,
+              480
+            ]
+          },
+          {
+            "frame": 22,
+            "sha256Rgba": "92fd6716bc05df455495583373553351840c29965e350564e33d3ec58db58bad",
+            "transparentPixels": 166542,
+            "opaquePixels": 56328,
+            "partialPixels": 7530,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              455,
+              480
+            ]
+          },
+          {
+            "frame": 23,
+            "sha256Rgba": "1d669d7490ca9d35050b9e769978aa61f4c4903e7ae699931a66f78ab4d178eb",
+            "transparentPixels": 166574,
+            "opaquePixels": 56371,
+            "partialPixels": 7455,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              455,
+              480
+            ]
+          },
+          {
+            "frame": 24,
+            "sha256Rgba": "f564c5ad3656d9ed2972e39d93a76df4e1a72510dbcd50b5faed1c53442f7070",
+            "transparentPixels": 166551,
+            "opaquePixels": 56282,
+            "partialPixels": 7567,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              454,
+              480
+            ]
+          },
+          {
+            "frame": 25,
+            "sha256Rgba": "cd6f92fcc777ab52e773cd1846774dcf019c819f2bd134d8804b63535fffec61",
+            "transparentPixels": 166591,
+            "opaquePixels": 56290,
+            "partialPixels": 7519,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              454,
+              480
+            ]
+          },
+          {
+            "frame": 26,
+            "sha256Rgba": "615e4a8d99ca8f964c2eed223079bc30142f5178c3af0aff1d2993bb2e57ca7f",
+            "transparentPixels": 166606,
+            "opaquePixels": 56262,
+            "partialPixels": 7532,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              453,
+              480
+            ]
+          },
+          {
+            "frame": 27,
+            "sha256Rgba": "d3104935e2af0fc2cf4e6fc8f37d8f8f67ae3f392a5840c2ececf1a70097639a",
+            "transparentPixels": 166590,
+            "opaquePixels": 56239,
+            "partialPixels": 7571,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              453,
+              480
+            ]
+          },
+          {
+            "frame": 28,
+            "sha256Rgba": "9c2c3151f0a7a5767a7caf01635f351923cf0de28475571c85c538f7e0af2034",
+            "transparentPixels": 166595,
+            "opaquePixels": 56281,
+            "partialPixels": 7524,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              452,
+              480
+            ]
+          },
+          {
+            "frame": 29,
+            "sha256Rgba": "3e30f11b3274b764e54696f8e0b33a332650f67bfe6e57eb182fa263ac8e0318",
+            "transparentPixels": 166583,
+            "opaquePixels": 56264,
+            "partialPixels": 7553,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              452,
+              480
+            ]
+          },
+          {
+            "frame": 30,
+            "sha256Rgba": "09ea83f9fac9ab5e9d5b0af190769dda15a890bd5e65fa3d67c7cebec9e614ef",
+            "transparentPixels": 166581,
+            "opaquePixels": 56288,
+            "partialPixels": 7531,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              451,
+              480
+            ]
+          },
+          {
+            "frame": 31,
+            "sha256Rgba": "183be4267a335056eb67e876216ba68a9dc401857002504462ad8bd3f1a55003",
+            "transparentPixels": 166590,
+            "opaquePixels": 56252,
+            "partialPixels": 7558,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              450,
+              480
+            ]
+          },
+          {
+            "frame": 32,
+            "sha256Rgba": "8684c2e5cd6aa481580d0d0e9358348eb08e37830bf24832fb4581015dc6d45a",
+            "transparentPixels": 166588,
+            "opaquePixels": 56268,
+            "partialPixels": 7544,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              449,
+              480
+            ]
+          },
+          {
+            "frame": 33,
+            "sha256Rgba": "d7a2e7c6676478dc17b1342ba5216ed27b1ce9ff8acd830a5b8d05c0e0387564",
+            "transparentPixels": 166582,
+            "opaquePixels": 56286,
+            "partialPixels": 7532,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              448,
+              480
+            ]
+          },
+          {
+            "frame": 34,
+            "sha256Rgba": "c183e148f3ef9596e285f9fe6cfcbd5b1f8aa8a51ce716407a76985917758bf1",
+            "transparentPixels": 166593,
+            "opaquePixels": 56280,
+            "partialPixels": 7527,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              448,
+              480
+            ]
+          },
+          {
+            "frame": 35,
+            "sha256Rgba": "5c5d422f0ecef500ace8e986f07d66b20d5ac086979a8c0656faf80e1f825327",
+            "transparentPixels": 166568,
+            "opaquePixels": 56319,
+            "partialPixels": 7513,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              447,
+              480
+            ]
+          },
+          {
+            "frame": 36,
+            "sha256Rgba": "c8eaa6ddca6a6a362fd30d03b7efd463f8e89733caae802eb4d7dfb05f74dee6",
+            "transparentPixels": 166533,
+            "opaquePixels": 56307,
+            "partialPixels": 7560,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              446,
+              480
+            ]
+          },
+          {
+            "frame": 37,
+            "sha256Rgba": "6d4f8a12746aa144f337c010ad4e70978cc30474fc5c0759ffc1894f78840abb",
+            "transparentPixels": 166519,
+            "opaquePixels": 56305,
+            "partialPixels": 7576,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              445,
+              480
+            ]
+          },
+          {
+            "frame": 38,
+            "sha256Rgba": "fa586d331c8615bf28f7f21c3c1e5f66ca1e8b0c2e18e3e1c1d2eebdf168a181",
+            "transparentPixels": 166486,
+            "opaquePixels": 56229,
+            "partialPixels": 7685,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 39,
+            "sha256Rgba": "e32fb74206ae1f13a0000208837d9e7f65dc1d277e86ad2627bb1686ad3d9f4e",
+            "transparentPixels": 166534,
+            "opaquePixels": 56256,
+            "partialPixels": 7610,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 40,
+            "sha256Rgba": "550d0093fdf26d4902bc8d270ead88771717101cc592cb83d066475235d8a420",
+            "transparentPixels": 166517,
+            "opaquePixels": 56182,
+            "partialPixels": 7701,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 41,
+            "sha256Rgba": "8d425793a6412f77f2533c67120adbd4a1e97b109205601cc10a122f3a066304",
+            "transparentPixels": 166513,
+            "opaquePixels": 56213,
+            "partialPixels": 7674,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 42,
+            "sha256Rgba": "f7ecedd39ecf6c24a25df8d9d9b76b10fbd7219e8d12fa2616f7320e5a7c4603",
+            "transparentPixels": 166501,
+            "opaquePixels": 56227,
+            "partialPixels": 7672,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 43,
+            "sha256Rgba": "9c79fc05f48935f9f5edf5bb490e9e82eda927c59fb8e60bd8264ba59ee41fbf",
+            "transparentPixels": 166492,
+            "opaquePixels": 56240,
+            "partialPixels": 7668,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 44,
+            "sha256Rgba": "092e5bc22d1c094c60d7e0e1b0281a29a00fe3c83a50e0d720ebe2fee8c57319",
+            "transparentPixels": 166494,
+            "opaquePixels": 56238,
+            "partialPixels": 7668,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 45,
+            "sha256Rgba": "27747b42cbc38eb449cf650c62eb7e477e654738e8ed10636cc6e32b2611a365",
+            "transparentPixels": 166476,
+            "opaquePixels": 56209,
+            "partialPixels": 7715,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 46,
+            "sha256Rgba": "beef157845c065c4e699b572b0c353b450f4d22b5112e294fb033e485e219dcf",
+            "transparentPixels": 166488,
+            "opaquePixels": 56255,
+            "partialPixels": 7657,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              442,
+              480
+            ]
+          },
+          {
+            "frame": 47,
+            "sha256Rgba": "a17df0dce09b9e21c8df2423ea3caa9cd9f5283644c12ba038dbc624b8b90220",
+            "transparentPixels": 166488,
+            "opaquePixels": 56233,
+            "partialPixels": 7679,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 48,
+            "sha256Rgba": "04d7e23b15e6be59ce92351e3d0b2ad1dc30b7f97566fef3ec0052d60243c170",
+            "transparentPixels": 166488,
+            "opaquePixels": 56228,
+            "partialPixels": 7684,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 49,
+            "sha256Rgba": "403bbddcbced08c9b8fbde606dea0cd800bd5e2f21f6ea0cb0249f08b2a403ca",
+            "transparentPixels": 166489,
+            "opaquePixels": 56192,
+            "partialPixels": 7719,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 50,
+            "sha256Rgba": "f5e7dfde7965bb32d1e64869c2dbc826aabf423de3a1d5c943b60b5f6e9f3b46",
+            "transparentPixels": 166502,
+            "opaquePixels": 56176,
+            "partialPixels": 7722,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 51,
+            "sha256Rgba": "7fe91af26c4e03723c31c9d9273d0e728c02730ffb65af8fecb1a6fa19b4ff43",
+            "transparentPixels": 166501,
+            "opaquePixels": 56169,
+            "partialPixels": 7730,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 52,
+            "sha256Rgba": "0f06eb54ff6e6e0109bd8bb51323ade8cead231d1f58ac53ac67599e505c037f",
+            "transparentPixels": 166483,
+            "opaquePixels": 56209,
+            "partialPixels": 7708,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 53,
+            "sha256Rgba": "b82d2e047428986c3cf14f7e1c1aec049c6f626fa6cf0cb1b8c8d3da83cb9d2a",
+            "transparentPixels": 166505,
+            "opaquePixels": 56185,
+            "partialPixels": 7710,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 54,
+            "sha256Rgba": "b704675296266b8c00bfdb2de4866c9994ad41b90fb64a09d75ece01c6841fce",
+            "transparentPixels": 166526,
+            "opaquePixels": 56240,
+            "partialPixels": 7634,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 55,
+            "sha256Rgba": "bdf87d063b26c8d3e54e0ca680f1bbdb2c18fbd8c65cf171cf8c69da43b2a8ba",
+            "transparentPixels": 166538,
+            "opaquePixels": 56244,
+            "partialPixels": 7618,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 56,
+            "sha256Rgba": "bd68f5cb7b6599bb0dd175ee508cbcd65dc1949a876b77a90c447d370cae1aa7",
+            "transparentPixels": 166554,
+            "opaquePixels": 56225,
+            "partialPixels": 7621,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 57,
+            "sha256Rgba": "f3ddfbd542a3af930bbf858c4487f457b430acb6e9937db6c461e10d5ad93782",
+            "transparentPixels": 166530,
+            "opaquePixels": 56206,
+            "partialPixels": 7664,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 58,
+            "sha256Rgba": "a3bce3504cf14f8f838ed8a46792708a2ce7bcea0f5f3d10f0421fb4563abf57",
+            "transparentPixels": 166588,
+            "opaquePixels": 56144,
+            "partialPixels": 7668,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 59,
+            "sha256Rgba": "80c7ba63ddc7a45577788204c9ecf452c3e4805959255c5f796ab47acb9d4a9d",
+            "transparentPixels": 166613,
+            "opaquePixels": 56111,
+            "partialPixels": 7676,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 60,
+            "sha256Rgba": "13c533e0d4663b38a26215b6ce0ea2c47d0f1fab39c4555ee50977f74783ade7",
+            "transparentPixels": 166605,
+            "opaquePixels": 56145,
+            "partialPixels": 7650,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 61,
+            "sha256Rgba": "e0d7dfecf5a16d0ecacbd6265f1ace94e62553cd35bb733ff8719649a9825050",
+            "transparentPixels": 166600,
+            "opaquePixels": 56158,
+            "partialPixels": 7642,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 62,
+            "sha256Rgba": "8acccdf44ede8ea6723fca06b1a92b3c619ef75b51f6485e9bb0e4b94d322b1f",
+            "transparentPixels": 166604,
+            "opaquePixels": 56163,
+            "partialPixels": 7633,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              96,
+              145,
+              443,
+              480
+            ]
+          },
+          {
+            "frame": 63,
+            "sha256Rgba": "18d44ea1a7d6482f6121a98a34a226ddc1f1d2fcaf6f3640eae1804f636da619",
+            "transparentPixels": 166597,
+            "opaquePixels": 56144,
+            "partialPixels": 7659,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              96,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 64,
+            "sha256Rgba": "ba2f08d26ceaed8d39ef72bac51ce39c220c12a9f411857055b08ed185c3b700",
+            "transparentPixels": 166599,
+            "opaquePixels": 56129,
+            "partialPixels": 7672,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              96,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 65,
+            "sha256Rgba": "f39a60df83531c5bc8e807f352c56c4110df183c01b9577287905b34ceeaa1b0",
+            "transparentPixels": 166593,
+            "opaquePixels": 56158,
+            "partialPixels": 7649,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 66,
+            "sha256Rgba": "8a7b85035e621bf15f16847315a27ee08ec2e191cf31826de03722b6afafee6b",
+            "transparentPixels": 166607,
+            "opaquePixels": 56192,
+            "partialPixels": 7601,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 67,
+            "sha256Rgba": "2a02d30195a166cff17d90f324962099089f6d8b89a34600ca6d7690a4d7c48a",
+            "transparentPixels": 166662,
+            "opaquePixels": 56146,
+            "partialPixels": 7592,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 68,
+            "sha256Rgba": "22b324bcbce2a555f2c683a63b4b7931fe76a1413d7426cfa3e0684f5188a5f9",
+            "transparentPixels": 166591,
+            "opaquePixels": 56136,
+            "partialPixels": 7673,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 69,
+            "sha256Rgba": "3f3e612f685487b888297ff24fb6bee18b454c086a05de477bf4ae4ecf976c67",
+            "transparentPixels": 166533,
+            "opaquePixels": 56200,
+            "partialPixels": 7667,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 70,
+            "sha256Rgba": "86ca6bff10056e0f2a631aa877c0f70b75634e2558c899b41617ed2013af2c20",
+            "transparentPixels": 166551,
+            "opaquePixels": 56224,
+            "partialPixels": 7625,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 71,
+            "sha256Rgba": "49f351ef51cb54f525929bc23271b5647e4d924acc14d47475ff39a24d6d816b",
+            "transparentPixels": 166542,
+            "opaquePixels": 56255,
+            "partialPixels": 7603,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              444,
+              480
+            ]
+          },
+          {
+            "frame": 72,
+            "sha256Rgba": "31ce17f0ab991da85ee0338a4b0a13b6b67f4c7431ef95b66a06c4328575ff82",
+            "transparentPixels": 166520,
+            "opaquePixels": 56314,
+            "partialPixels": 7566,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              95,
+              145,
+              444,
+              480
+            ]
+          }
+        ]
+      },
+      "budgetBytes": 1572864,
+      "withinBudget": true
+    },
+    {
+      "arguments": [
+        "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe",
+        "-hide_banner",
+        "-v",
+        "error",
+        "-y",
+        "-threads",
+        "4",
+        "-filter_threads",
+        "2",
+        "-framerate",
+        "24",
+        "-start_number",
+        "1",
+        "-i",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png",
+        "-frames:v",
+        "1",
+        "-an",
+        "-vf",
+        "scale=480:480:flags=lanczos,format=rgba",
+        "-c:v",
+        "libwebp",
+        "-quality",
+        "85",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small-poster.webp"
+      ],
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -v error -y -threads 4 -filter_threads 2 -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png -frames:v 1 -an -vf scale=480:480:flags=lanczos,format=rgba -c:v libwebp -quality 85 C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small-poster.webp",
+      "seconds": 0.30247990001225844,
+      "file": "assets/work/ene-web/desk-excited/encoded/8d7d34d286a9dc90bfb0/small-poster.webp",
+      "sha256": "e0b356ae116d5962251d8ac5df0311f34e87bf852cb2843a926950f74366bcc5",
+      "bytes": 26120,
+      "codec": "poster-webp",
+      "size": "small",
+      "width": 480,
+      "height": 480,
+      "durationSeconds": null,
+      "frameCount": 1,
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "webp",
+            "codec_long_name": "WebP",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "width": 480,
+            "height": 480,
+            "coded_width": 480,
+            "coded_height": 480,
+            "has_b_frames": 0,
+            "pix_fmt": "yuva420p",
+            "level": -99,
+            "color_range": "tv",
+            "color_space": "bt470bg",
+            "refs": 1,
+            "r_frame_rate": "25/1",
+            "avg_frame_rate": "25/1",
+            "time_base": "1/25",
+            "nb_read_frames": "1",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small-poster.webp",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "webp_pipe",
+          "format_long_name": "piped webp sequence",
+          "size": "26120",
+          "probe_score": 99
+        }
+      },
+      "decoded": {
+        "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -v error -threads 4 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small-poster.webp -fps_mode passthrough -pix_fmt rgba -f rawvideo pipe:1",
+        "decodedFrameCount": 1,
+        "allFramesTransparent": true,
+        "boundsPixels": [
+          94,
+          145,
+          445,
+          480
+        ],
+        "bounds": {
+          "x": 0.19583333333333333,
+          "y": 0.3020833333333333,
+          "width": 0.73125,
+          "height": 0.6979166666666666
+        },
+        "maximumAdjacentSampleMae255": 0,
+        "lastAdjacentSampleMae255": 0,
+        "loopSeamSampleMae255": 0.0,
+        "frames": [
+          {
+            "frame": 1,
+            "sha256Rgba": "4bbc534420733c9aa297773e6f52c33859c5495e2ee984f036868cea0dac0b6f",
+            "transparentPixels": 166499,
+            "opaquePixels": 55538,
+            "partialPixels": 8363,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              445,
+              480
+            ]
+          }
+        ]
+      },
+      "budgetBytes": 76800,
+      "withinBudget": true
+    },
+    {
+      "arguments": [
+        "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe",
+        "-hide_banner",
+        "-v",
+        "error",
+        "-y",
+        "-threads",
+        "4",
+        "-filter_threads",
+        "2",
+        "-framerate",
+        "24",
+        "-start_number",
+        "1",
+        "-i",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png",
+        "-frames:v",
+        "1",
+        "-an",
+        "-vf",
+        "scale=480:480:flags=lanczos,format=rgba",
+        "-c:v",
+        "png",
+        "-pix_fmt",
+        "rgba",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small-poster.png"
+      ],
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -v error -y -threads 4 -filter_threads 2 -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png -frames:v 1 -an -vf scale=480:480:flags=lanczos,format=rgba -c:v png -pix_fmt rgba C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small-poster.png",
+      "seconds": 0.2804420000175014,
+      "file": "assets/work/ene-web/desk-excited/encoded/8d7d34d286a9dc90bfb0/small-poster.png",
+      "sha256": "e1c3c09a2efb0a377bf22985eba5e6bac9f75d91fbd5cb2b3520315211ef1cc7",
+      "bytes": 134341,
+      "codec": "poster-png",
+      "size": "small",
+      "width": 480,
+      "height": 480,
+      "durationSeconds": null,
+      "frameCount": 1,
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "png",
+            "codec_long_name": "PNG (Portable Network Graphics) image",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "width": 480,
+            "height": 480,
+            "coded_width": 480,
+            "coded_height": 480,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "1:1",
+            "pix_fmt": "rgba",
+            "level": -99,
+            "color_range": "pc",
+            "color_space": "gbr",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "refs": 1,
+            "r_frame_rate": "25/1",
+            "avg_frame_rate": "25/1",
+            "time_base": "1/25",
+            "nb_read_frames": "1",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small-poster.png",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "png_pipe",
+          "format_long_name": "piped png sequence",
+          "size": "134341",
+          "probe_score": 99
+        }
+      },
+      "decoded": {
+        "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -v error -threads 4 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\small-poster.png -fps_mode passthrough -pix_fmt rgba -f rawvideo pipe:1",
+        "decodedFrameCount": 1,
+        "allFramesTransparent": true,
+        "boundsPixels": [
+          94,
+          145,
+          445,
+          480
+        ],
+        "bounds": {
+          "x": 0.19583333333333333,
+          "y": 0.3020833333333333,
+          "width": 0.73125,
+          "height": 0.6979166666666666
+        },
+        "maximumAdjacentSampleMae255": 0,
+        "lastAdjacentSampleMae255": 0,
+        "loopSeamSampleMae255": 0.0,
+        "frames": [
+          {
+            "frame": 1,
+            "sha256Rgba": "dcf22be811f12e7ec51a599564d7b4784c2cb7753cc704c67964e54f3744f444",
+            "transparentPixels": 166499,
+            "opaquePixels": 55538,
+            "partialPixels": 8363,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              94,
+              145,
+              445,
+              480
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "arguments": [
+        "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe",
+        "-hide_banner",
+        "-v",
+        "error",
+        "-y",
+        "-threads",
+        "4",
+        "-filter_threads",
+        "2",
+        "-framerate",
+        "24",
+        "-start_number",
+        "1",
+        "-i",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png",
+        "-frames:v",
+        "72",
+        "-an",
+        "-vf",
+        "scale=960:960:flags=lanczos,format=rgba",
+        "-c:v",
+        "libvpx-vp9",
+        "-pix_fmt",
+        "yuva420p",
+        "-b:v",
+        "0",
+        "-crf",
+        "34",
+        "-deadline",
+        "good",
+        "-cpu-used",
+        "2",
+        "-row-mt",
+        "1",
+        "-threads",
+        "4",
+        "-auto-alt-ref",
+        "0",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large.webm"
+      ],
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -v error -y -threads 4 -filter_threads 2 -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png -frames:v 72 -an -vf scale=960:960:flags=lanczos,format=rgba -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 34 -deadline good -cpu-used 2 -row-mt 1 -threads 4 -auto-alt-ref 0 C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large.webm",
+      "seconds": 11.576820599992061,
+      "file": "assets/work/ene-web/desk-excited/encoded/8d7d34d286a9dc90bfb0/large.webm",
+      "sha256": "5cab96be2ac5f8bd187ad32fe8c13e29bb55868b57062c1578757263b6ca5672",
+      "bytes": 373723,
+      "codec": "webm",
+      "size": "large",
+      "width": 960,
+      "height": 960,
+      "durationSeconds": 3.0,
+      "frameCount": 72,
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vp9",
+            "codec_long_name": "Google VP9",
+            "profile": "Profile 0",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "vp09.00.31.08",
+            "width": 960,
+            "height": 960,
+            "coded_width": 960,
+            "coded_height": 960,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "1:1",
+            "pix_fmt": "yuv420p",
+            "level": -99,
+            "color_range": "tv",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "field_order": "progressive",
+            "refs": 1,
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "nb_read_frames": "72",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "alpha_mode": "1",
+              "ENCODER": "Lavc63.1.101 libvpx-vp9",
+              "DURATION": "00:00:03.000000000"
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large.webm",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "matroska,webm",
+          "format_long_name": "Matroska / WebM",
+          "start_time": "0.000000",
+          "duration": "3.000000",
+          "size": "373723",
+          "bit_rate": "996594",
+          "probe_score": 100,
+          "tags": {
+            "ENCODER": "Lavf63.1.101"
+          }
+        }
+      },
+      "decoded": {
+        "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -v error -threads 4 -c:v libvpx-vp9 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large.webm -fps_mode passthrough -pix_fmt rgba -f rawvideo pipe:1",
+        "decodedFrameCount": 72,
+        "allFramesTransparent": true,
+        "boundsPixels": [
+          189,
+          286,
+          908,
+          960
+        ],
+        "bounds": {
+          "x": 0.196875,
+          "y": 0.29791666666666666,
+          "width": 0.7489583333333333,
+          "height": 0.7020833333333333
+        },
+        "maximumAdjacentSampleMae255": 0.7320772058823529,
+        "lastAdjacentSampleMae255": 0.5461155311734068,
+        "loopSeamSampleMae255": 0.5772535137101715,
+        "frames": [
+          {
+            "frame": 1,
+            "sha256Rgba": "da3946e222aace3ead9b4a901acd2d55e9c917179c886fde6ae6f04e81e1b78c",
+            "transparentPixels": 672047,
+            "opaquePixels": 225566,
+            "partialPixels": 23987,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              291,
+              888,
+              960
+            ]
+          },
+          {
+            "frame": 2,
+            "sha256Rgba": "97670f18bd918f2be188f0087e48cfb8b543278e6521b15b831927d55a2df005",
+            "transparentPixels": 671098,
+            "opaquePixels": 224179,
+            "partialPixels": 26323,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              292,
+              888,
+              960
+            ]
+          },
+          {
+            "frame": 3,
+            "sha256Rgba": "d9c454ab1c54bb564e6decc10dd0a8d4fd530121f443c3d5feda957e1581695a",
+            "transparentPixels": 670918,
+            "opaquePixels": 224033,
+            "partialPixels": 26649,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              292,
+              890,
+              960
+            ]
+          },
+          {
+            "frame": 4,
+            "sha256Rgba": "233d97fccd4c9a43b8c00f1f6fec29a1785139b82ed1614d8f08ad0848da4e6d",
+            "transparentPixels": 670028,
+            "opaquePixels": 223671,
+            "partialPixels": 27901,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              292,
+              897,
+              960
+            ]
+          },
+          {
+            "frame": 5,
+            "sha256Rgba": "52544fb9904ce7c7095a26da5ea42a2072e9e04b6a4047cb91acbf4d38d7fb8e",
+            "transparentPixels": 670404,
+            "opaquePixels": 223547,
+            "partialPixels": 27649,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              292,
+              897,
+              960
+            ]
+          },
+          {
+            "frame": 6,
+            "sha256Rgba": "ab508c04b13afcfd1da44b38ca92db1899fa09f7718b804f4b868456c12eb0a4",
+            "transparentPixels": 670322,
+            "opaquePixels": 223455,
+            "partialPixels": 27823,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              292,
+              897,
+              960
+            ]
+          },
+          {
+            "frame": 7,
+            "sha256Rgba": "72a2cde54dbd5e4995d74a226f5a9ffcf493247b9e9042f973f2fd163b941106",
+            "transparentPixels": 669958,
+            "opaquePixels": 223401,
+            "partialPixels": 28241,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              292,
+              897,
+              960
+            ]
+          },
+          {
+            "frame": 8,
+            "sha256Rgba": "0377c501fb7cc8d5a6d7139bdecf4f735e0dd52c32a547fcc4d55d218c5c9d56",
+            "transparentPixels": 669774,
+            "opaquePixels": 223014,
+            "partialPixels": 28812,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              289,
+              899,
+              960
+            ]
+          },
+          {
+            "frame": 9,
+            "sha256Rgba": "1d2fb7844870db62e2f7d2f8bbccc8869d0334a501194cd0c021e403ee6b07c9",
+            "transparentPixels": 669831,
+            "opaquePixels": 223346,
+            "partialPixels": 28423,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              189,
+              289,
+              904,
+              960
+            ]
+          },
+          {
+            "frame": 10,
+            "sha256Rgba": "2d7e36faff0c7db32dc834f3c82458fed4a3f25f8a08a5f73fe1843191ff3fdb",
+            "transparentPixels": 669885,
+            "opaquePixels": 223143,
+            "partialPixels": 28572,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              289,
+              905,
+              960
+            ]
+          },
+          {
+            "frame": 11,
+            "sha256Rgba": "74e20e01e7e0810251758f807d13ddbbe6665423f18e81b34812801d99a727ce",
+            "transparentPixels": 669820,
+            "opaquePixels": 223415,
+            "partialPixels": 28365,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              289,
+              904,
+              960
+            ]
+          },
+          {
+            "frame": 12,
+            "sha256Rgba": "2474fba9b96f6a2c6ab6f664a2b3075d54f86c4bef38a86c7fc25a0ec9b4c347",
+            "transparentPixels": 669406,
+            "opaquePixels": 223327,
+            "partialPixels": 28867,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              286,
+              905,
+              960
+            ]
+          },
+          {
+            "frame": 13,
+            "sha256Rgba": "da6ebf3cd6f7b0ad89e6fef2a6f5daa7de13ac9c69c7b021620ac64f73e973a8",
+            "transparentPixels": 669634,
+            "opaquePixels": 223137,
+            "partialPixels": 28829,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              287,
+              905,
+              960
+            ]
+          },
+          {
+            "frame": 14,
+            "sha256Rgba": "7cfc67ce2d762c13862a9a3b25dc48dc58ce89b5e0255e6444df0d6c127bff13",
+            "transparentPixels": 669597,
+            "opaquePixels": 223262,
+            "partialPixels": 28741,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              290,
+              906,
+              960
+            ]
+          },
+          {
+            "frame": 15,
+            "sha256Rgba": "1e2aa737bac5d826f6d4f29f7567c902fb0a3683336599f9ae2f58805522bd1e",
+            "transparentPixels": 669575,
+            "opaquePixels": 223547,
+            "partialPixels": 28478,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              286,
+              907,
+              960
+            ]
+          },
+          {
+            "frame": 16,
+            "sha256Rgba": "101f322f7f18a081aaff780186095f99c61ecd2cc4fa6837609ed8530236e121",
+            "transparentPixels": 669694,
+            "opaquePixels": 223722,
+            "partialPixels": 28184,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              286,
+              907,
+              960
+            ]
+          },
+          {
+            "frame": 17,
+            "sha256Rgba": "54d268e339bbe401f52250a13e6b9d6c37a5c3d9359bab5fd4e57fba3554246f",
+            "transparentPixels": 669723,
+            "opaquePixels": 223959,
+            "partialPixels": 27918,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              288,
+              908,
+              960
+            ]
+          },
+          {
+            "frame": 18,
+            "sha256Rgba": "a0d8c336bb0d9f32c7074f6639e42294be52ff28822198c1f1aaa9efda5376e9",
+            "transparentPixels": 669791,
+            "opaquePixels": 223867,
+            "partialPixels": 27942,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              288,
+              908,
+              960
+            ]
+          },
+          {
+            "frame": 19,
+            "sha256Rgba": "be6c1adfa5ee78d34b07989fc708674bc02451e3d0aa4dd3b6fc73c42bb4a6a3",
+            "transparentPixels": 669885,
+            "opaquePixels": 223748,
+            "partialPixels": 27967,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              908,
+              960
+            ]
+          },
+          {
+            "frame": 20,
+            "sha256Rgba": "de2ee4b8c3732bdcb9eb6f73e61e1322ca6ea8a699f78ee1d331a5df0330e556",
+            "transparentPixels": 669860,
+            "opaquePixels": 224413,
+            "partialPixels": 27327,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              291,
+              908,
+              960
+            ]
+          },
+          {
+            "frame": 21,
+            "sha256Rgba": "6b14a3f83a184bbf4c51a52a743f2c24429809d037716d1fb2594f9aab3754a0",
+            "transparentPixels": 670035,
+            "opaquePixels": 224499,
+            "partialPixels": 27066,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              292,
+              907,
+              960
+            ]
+          },
+          {
+            "frame": 22,
+            "sha256Rgba": "ef3cfd266665122f21540e38e02ec771f7b5ae8e9238671db8f72643e891ec62",
+            "transparentPixels": 670092,
+            "opaquePixels": 223792,
+            "partialPixels": 27716,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              292,
+              907,
+              960
+            ]
+          },
+          {
+            "frame": 23,
+            "sha256Rgba": "e4ad0ef5ea395b349aa06f8345f45df1b2e0d3fc6493e9edcbfb6a98a1dce51b",
+            "transparentPixels": 669798,
+            "opaquePixels": 223606,
+            "partialPixels": 28196,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              292,
+              906,
+              960
+            ]
+          },
+          {
+            "frame": 24,
+            "sha256Rgba": "4ad951d06273b8ef66cfe0653bee4990a14714cc9ac054d867a1e977758c8463",
+            "transparentPixels": 669916,
+            "opaquePixels": 223395,
+            "partialPixels": 28289,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              292,
+              906,
+              960
+            ]
+          },
+          {
+            "frame": 25,
+            "sha256Rgba": "c41d63823ea84907addc05cd5dda3df35b34ad394b87d1978bda1a41944736c4",
+            "transparentPixels": 670264,
+            "opaquePixels": 223266,
+            "partialPixels": 28070,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              905,
+              960
+            ]
+          },
+          {
+            "frame": 26,
+            "sha256Rgba": "a293fdde75d4ad233acaece22c92e46b2222e079600c65f6f52752109e6d34f3",
+            "transparentPixels": 669994,
+            "opaquePixels": 222950,
+            "partialPixels": 28656,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              904,
+              960
+            ]
+          },
+          {
+            "frame": 27,
+            "sha256Rgba": "c39adacda69432999f862ca9fe3637446c62bc93396a6e981520dd84b7268d8e",
+            "transparentPixels": 670068,
+            "opaquePixels": 222993,
+            "partialPixels": 28539,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              902,
+              960
+            ]
+          },
+          {
+            "frame": 28,
+            "sha256Rgba": "9cd89189fbc666a178dbc881344411d0bd762208d95d9ce1ab35f2d13cfe92cc",
+            "transparentPixels": 670276,
+            "opaquePixels": 222972,
+            "partialPixels": 28352,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              905,
+              960
+            ]
+          },
+          {
+            "frame": 29,
+            "sha256Rgba": "d87038f42021f702319807e91148b271396bd4190d9dcb69fda4e902fffdc36b",
+            "transparentPixels": 670313,
+            "opaquePixels": 222850,
+            "partialPixels": 28437,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              904,
+              960
+            ]
+          },
+          {
+            "frame": 30,
+            "sha256Rgba": "a3a88329fae5bf7cc69fb541d847b4c896d2823301f57167d53bb46cad6ca1cd",
+            "transparentPixels": 670131,
+            "opaquePixels": 222730,
+            "partialPixels": 28739,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              292,
+              902,
+              960
+            ]
+          },
+          {
+            "frame": 31,
+            "sha256Rgba": "c533d3d1917c975262999450523a23e77b353e116b965d8fb010da2031298eeb",
+            "transparentPixels": 670547,
+            "opaquePixels": 223394,
+            "partialPixels": 27659,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              292,
+              897,
+              960
+            ]
+          },
+          {
+            "frame": 32,
+            "sha256Rgba": "9ac04999d0e2854de7dff7e29e672afdb00465bd6ba0bc9293e131563b52d65e",
+            "transparentPixels": 670181,
+            "opaquePixels": 223244,
+            "partialPixels": 28175,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              292,
+              897,
+              960
+            ]
+          },
+          {
+            "frame": 33,
+            "sha256Rgba": "92669a39aadcc5691384c469cd2d84dcffc096a6d7952f308d1e99bf1637b577",
+            "transparentPixels": 670307,
+            "opaquePixels": 223290,
+            "partialPixels": 28003,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              292,
+              898,
+              960
+            ]
+          },
+          {
+            "frame": 34,
+            "sha256Rgba": "de401b9145170a80478020029c90014363249da2b1761b8f346634eda12f09ae",
+            "transparentPixels": 670512,
+            "opaquePixels": 223497,
+            "partialPixels": 27591,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              292,
+              897,
+              960
+            ]
+          },
+          {
+            "frame": 35,
+            "sha256Rgba": "97ba69fdf58d87a62ca906bb9b04e00271cd5be063d50a412bbea92fe879d325",
+            "transparentPixels": 670435,
+            "opaquePixels": 223966,
+            "partialPixels": 27199,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              292,
+              891,
+              960
+            ]
+          },
+          {
+            "frame": 36,
+            "sha256Rgba": "d877f424a7832237237e1bf888ff192d9a9719b275e2e91d679d58971cd0f9cc",
+            "transparentPixels": 670610,
+            "opaquePixels": 224338,
+            "partialPixels": 26652,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              292,
+              889,
+              960
+            ]
+          },
+          {
+            "frame": 37,
+            "sha256Rgba": "2d09156ec33810ab5afee30b5acd9d026bfe8c9be8a41794e94490c89b9a7011",
+            "transparentPixels": 671119,
+            "opaquePixels": 225118,
+            "partialPixels": 25363,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              291,
+              888,
+              960
+            ]
+          },
+          {
+            "frame": 38,
+            "sha256Rgba": "a7f7698ece5b554bdc9559a4f69a329509f77ae0a8ec008a49c098a657828e0f",
+            "transparentPixels": 670841,
+            "opaquePixels": 224192,
+            "partialPixels": 26567,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              292,
+              889,
+              960
+            ]
+          },
+          {
+            "frame": 39,
+            "sha256Rgba": "49b64d8ff31587d2dfdc1502ab6797c5980588e96e5f23ba56142346f369c0bc",
+            "transparentPixels": 670689,
+            "opaquePixels": 223996,
+            "partialPixels": 26915,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              889,
+              960
+            ]
+          },
+          {
+            "frame": 40,
+            "sha256Rgba": "3da3b7962b4f639ac3a1b7931f912e8dd2b9c36da82502b6ed6c8202a43a61ad",
+            "transparentPixels": 670656,
+            "opaquePixels": 224124,
+            "partialPixels": 26820,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              885,
+              960
+            ]
+          },
+          {
+            "frame": 41,
+            "sha256Rgba": "538f854017418e4d073053ff89fd9f848f402acafa442921927c7bda16d1226e",
+            "transparentPixels": 670933,
+            "opaquePixels": 224202,
+            "partialPixels": 26465,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 42,
+            "sha256Rgba": "c06438c24a2b9bee7ce135ed7da38f562078068b277e72399e3e5c6145f7d323",
+            "transparentPixels": 670471,
+            "opaquePixels": 224272,
+            "partialPixels": 26857,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              288,
+              885,
+              960
+            ]
+          },
+          {
+            "frame": 43,
+            "sha256Rgba": "82044c9e95e9b19c8b22d4831b4036c3708baaaf51ce625689a992e5241f8441",
+            "transparentPixels": 670497,
+            "opaquePixels": 223997,
+            "partialPixels": 27106,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              291,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 44,
+            "sha256Rgba": "df0883c3b7ef61c0356997281e3f2a01c6c9ab3d39d4c3ec63702c5f5976d4ae",
+            "transparentPixels": 670605,
+            "opaquePixels": 223880,
+            "partialPixels": 27115,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              287,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 45,
+            "sha256Rgba": "4a696b5602c1c57ae9644ef3a6995d44b3efc3d60e611d2163a12928ee8f4822",
+            "transparentPixels": 670633,
+            "opaquePixels": 224087,
+            "partialPixels": 26880,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              290,
+              889,
+              960
+            ]
+          },
+          {
+            "frame": 46,
+            "sha256Rgba": "a702f6e36646efd43f00c1b748152556528445c6e48713bdf179ced159926b1b",
+            "transparentPixels": 670447,
+            "opaquePixels": 223981,
+            "partialPixels": 27172,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              290,
+              885,
+              960
+            ]
+          },
+          {
+            "frame": 47,
+            "sha256Rgba": "d2db9dc6d4a95a54431046179c8f8ad842c5e9adac89649ac2248b1383dd5d90",
+            "transparentPixels": 670693,
+            "opaquePixels": 223910,
+            "partialPixels": 26997,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              290,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 48,
+            "sha256Rgba": "f846c7973c323770dab3856732eadac5deda129700b0945e56f64340483ae9d9",
+            "transparentPixels": 670844,
+            "opaquePixels": 223938,
+            "partialPixels": 26818,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              289,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 49,
+            "sha256Rgba": "ec22fcc06c88188850fe5ed6a9cbb64d538415a6529ffdca527b7f19fbcda277",
+            "transparentPixels": 670862,
+            "opaquePixels": 224001,
+            "partialPixels": 26737,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 50,
+            "sha256Rgba": "8619ed24e94e20c0acfb6aaf0a909637ed39c2c3c34f1ab9eda5e637c7e83d6c",
+            "transparentPixels": 670605,
+            "opaquePixels": 223713,
+            "partialPixels": 27282,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              887,
+              960
+            ]
+          },
+          {
+            "frame": 51,
+            "sha256Rgba": "e2be56b4b0759a4fcd4a6a765cb75c951501988ddfe57b6451e9bf34952499c5",
+            "transparentPixels": 670851,
+            "opaquePixels": 224031,
+            "partialPixels": 26718,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 52,
+            "sha256Rgba": "fe56f144db4d6d349413b62a34786a9fcf563702c2cc95f52b55b957f0fe7636",
+            "transparentPixels": 670592,
+            "opaquePixels": 223924,
+            "partialPixels": 27084,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              292,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 53,
+            "sha256Rgba": "fa08a04810d9ab6d0f500ee4118ff5675f564a471c798349568370452227cd59",
+            "transparentPixels": 670533,
+            "opaquePixels": 224021,
+            "partialPixels": 27046,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 54,
+            "sha256Rgba": "049d16168dc038759013246ff7f39c07351538d2d1bf77d43e2704890b8f274e",
+            "transparentPixels": 670864,
+            "opaquePixels": 224315,
+            "partialPixels": 26421,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              291,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 55,
+            "sha256Rgba": "c8ed1dc7be7732e4ae2da149696aa8bc980cfcb8e9580ffcf74a8c6dd59682b6",
+            "transparentPixels": 671068,
+            "opaquePixels": 223711,
+            "partialPixels": 26821,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 56,
+            "sha256Rgba": "a82079f85dea887f4e907eafd695d6f73c2869dda2374c686fa01564213284ad",
+            "transparentPixels": 671248,
+            "opaquePixels": 223376,
+            "partialPixels": 26976,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              292,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 57,
+            "sha256Rgba": "01fade5e1c4217df8dbd7a6cc55ef90e3dd5fa9fd20b07e6b6de400dfafe9d0c",
+            "transparentPixels": 670582,
+            "opaquePixels": 223385,
+            "partialPixels": 27633,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              292,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 58,
+            "sha256Rgba": "af0f3e4808cef93514513ae58f59339ef3100b92f8ad12953da632d9378fa8fd",
+            "transparentPixels": 670564,
+            "opaquePixels": 222865,
+            "partialPixels": 28171,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              292,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 59,
+            "sha256Rgba": "63bcd380ecdc9a5386160f83a38d4679c9bfee048095af63423e5eeba725cd6b",
+            "transparentPixels": 670811,
+            "opaquePixels": 222598,
+            "partialPixels": 28191,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              292,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 60,
+            "sha256Rgba": "6982e6264eb9ff86b6f04e0654baafe08a2b7eacf1c97fad74101b4cb132b5a6",
+            "transparentPixels": 670835,
+            "opaquePixels": 222586,
+            "partialPixels": 28179,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              292,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 61,
+            "sha256Rgba": "54ac25b9c10258259a543fa29e65e51f03e54223db94429a833ca769fe14b8eb",
+            "transparentPixels": 670882,
+            "opaquePixels": 222906,
+            "partialPixels": 27812,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              292,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 62,
+            "sha256Rgba": "ebaf12e7aaef6b8e14fa86ca145a7a67ac72ad64787158143729b940743f7bc0",
+            "transparentPixels": 670442,
+            "opaquePixels": 222767,
+            "partialPixels": 28391,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              288,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 63,
+            "sha256Rgba": "31af49f239a1d51066a9dee66cc6f8ab9bb280e7272a10ec7710b332ffc11561",
+            "transparentPixels": 670465,
+            "opaquePixels": 222664,
+            "partialPixels": 28471,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              288,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 64,
+            "sha256Rgba": "55e6b4d33df6fcef654ecccf329e48f1145b67125bd7f185919a2b6c3a8b7b39",
+            "transparentPixels": 670535,
+            "opaquePixels": 222650,
+            "partialPixels": 28415,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              288,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 65,
+            "sha256Rgba": "3f9898f9ee1a88afa23eb4d206ee8f1a546174faa8c9f166d9ce115dda7f8a33",
+            "transparentPixels": 670746,
+            "opaquePixels": 222896,
+            "partialPixels": 27958,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              292,
+              887,
+              960
+            ]
+          },
+          {
+            "frame": 66,
+            "sha256Rgba": "6565fdc9a53e1e0aa729c70eabe0876aad491b6d44030b00036e47d4efe0dce2",
+            "transparentPixels": 670394,
+            "opaquePixels": 222837,
+            "partialPixels": 28369,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              292,
+              887,
+              960
+            ]
+          },
+          {
+            "frame": 67,
+            "sha256Rgba": "d26ea67fe23b5d5c1c9e66b58804de263f0bb28f18985457cb4300757e4aadcc",
+            "transparentPixels": 670082,
+            "opaquePixels": 222647,
+            "partialPixels": 28871,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              292,
+              887,
+              960
+            ]
+          },
+          {
+            "frame": 68,
+            "sha256Rgba": "647b708bffa4843bca14486f524d627b01a6785ce2443f6935ee5b6f40d48e37",
+            "transparentPixels": 670181,
+            "opaquePixels": 222884,
+            "partialPixels": 28535,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              292,
+              885,
+              960
+            ]
+          },
+          {
+            "frame": 69,
+            "sha256Rgba": "2a2737338a61563336ddbbed1e57bd79f1cc9d78f7ce6f103ca8b9a4f29ca55d",
+            "transparentPixels": 670435,
+            "opaquePixels": 223377,
+            "partialPixels": 27788,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              190,
+              292,
+              889,
+              960
+            ]
+          },
+          {
+            "frame": 70,
+            "sha256Rgba": "1728054df8e7e2d4ec0acd8eb0e4d02c13118a1977a12730a980bf7fe276c932",
+            "transparentPixels": 670577,
+            "opaquePixels": 223465,
+            "partialPixels": 27558,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              292,
+              885,
+              960
+            ]
+          },
+          {
+            "frame": 71,
+            "sha256Rgba": "beb3ed54bf655cb452c8349fc2b8ebb81427b6b91cf916eb456f3a75e4cb603a",
+            "transparentPixels": 671142,
+            "opaquePixels": 223941,
+            "partialPixels": 26517,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              292,
+              885,
+              960
+            ]
+          },
+          {
+            "frame": 72,
+            "sha256Rgba": "184bbd04bae2c223b2be18843d751ef1e11ce00b6298e168095c1f6aa8ab56a3",
+            "transparentPixels": 671130,
+            "opaquePixels": 224395,
+            "partialPixels": 26075,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              292,
+              887,
+              960
+            ]
+          }
+        ]
+      },
+      "budgetBytes": 1572864,
+      "withinBudget": true
+    },
+    {
+      "arguments": [
+        "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe",
+        "-hide_banner",
+        "-v",
+        "error",
+        "-y",
+        "-threads",
+        "4",
+        "-filter_threads",
+        "2",
+        "-framerate",
+        "24",
+        "-start_number",
+        "1",
+        "-i",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png",
+        "-frames:v",
+        "72",
+        "-an",
+        "-vf",
+        "scale=960:960:flags=lanczos,format=rgba",
+        "-c:v",
+        "libwebp_anim",
+        "-pix_fmt",
+        "yuva420p",
+        "-quality",
+        "65",
+        "-compression_level",
+        "4",
+        "-loop",
+        "0",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large.webp"
+      ],
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -v error -y -threads 4 -filter_threads 2 -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png -frames:v 72 -an -vf scale=960:960:flags=lanczos,format=rgba -c:v libwebp_anim -pix_fmt yuva420p -quality 65 -compression_level 4 -loop 0 C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large.webp",
+      "seconds": 13.894385300023714,
+      "webpAnimation": {
+        "alpha": true,
+        "animated": true,
+        "loopCount": 0,
+        "width": 960,
+        "height": 960,
+        "frameCount": 72,
+        "durationMs": 2999
+      },
+      "file": "assets/work/ene-web/desk-excited/encoded/8d7d34d286a9dc90bfb0/large.webp",
+      "sha256": "131ca0d2910e841a660a1aff9d84ce4c1979d50039855530909a5f30e90a0c14",
+      "bytes": 2785680,
+      "codec": "webp",
+      "size": "large",
+      "width": 960,
+      "height": 960,
+      "durationSeconds": 2.999,
+      "frameCount": 72,
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "webp_anim",
+            "codec_long_name": "Animated WebP",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "width": 960,
+            "height": 960,
+            "coded_width": 692,
+            "coded_height": 665,
+            "has_b_frames": 0,
+            "pix_fmt": "argb",
+            "level": -99,
+            "refs": 1,
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "nb_read_frames": "72",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large.webp",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "webp_anim",
+          "format_long_name": "Animated WebP",
+          "start_time": "0.000000",
+          "size": "2785680",
+          "probe_score": 100
+        }
+      },
+      "decoded": {
+        "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -v error -threads 4 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large.webp -fps_mode passthrough -pix_fmt rgba -f rawvideo pipe:1",
+        "decodedFrameCount": 72,
+        "allFramesTransparent": true,
+        "boundsPixels": [
+          191,
+          294,
+          906,
+          960
+        ],
+        "bounds": {
+          "x": 0.19895833333333332,
+          "y": 0.30625,
+          "width": 0.7447916666666666,
+          "height": 0.69375
+        },
+        "maximumAdjacentSampleMae255": 1.021493709788603,
+        "lastAdjacentSampleMae255": 0.8230514227175245,
+        "loopSeamSampleMae255": 0.7740966796875,
+        "frames": [
+          {
+            "frame": 1,
+            "sha256Rgba": "8624d4a48b0661904dbfb84adcf5a6a25115e9d390eb0fa32d18ab192256f3b3",
+            "transparentPixels": 675083,
+            "opaquePixels": 229576,
+            "partialPixels": 16941,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              886,
+              960
+            ]
+          },
+          {
+            "frame": 2,
+            "sha256Rgba": "617111143f50619bf1d4644bd16c9476f6bb4fe9c2883131cbc5acedc8b34276",
+            "transparentPixels": 675069,
+            "opaquePixels": 229624,
+            "partialPixels": 16907,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              888,
+              960
+            ]
+          },
+          {
+            "frame": 3,
+            "sha256Rgba": "b4296f7891799c6a9ea70b1d19ccbfd6286f5e5f9e06ae8c802c9ba4891e6822",
+            "transparentPixels": 675019,
+            "opaquePixels": 229549,
+            "partialPixels": 17032,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              889,
+              960
+            ]
+          },
+          {
+            "frame": 4,
+            "sha256Rgba": "58ca549a56dce2597ebac4918c135359218b11e2e010e59b2289e0ff621b75ba",
+            "transparentPixels": 674964,
+            "opaquePixels": 229557,
+            "partialPixels": 17079,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              891,
+              960
+            ]
+          },
+          {
+            "frame": 5,
+            "sha256Rgba": "177c171496c1bb2c07d3b2548911aa891253abaa3b7583be6e33406725edc0a2",
+            "transparentPixels": 674980,
+            "opaquePixels": 229560,
+            "partialPixels": 17060,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              893,
+              960
+            ]
+          },
+          {
+            "frame": 6,
+            "sha256Rgba": "e193bb847b01f9f3982dcb36e5c6976f2978bae6ebdc13698cf0fc1b69547427",
+            "transparentPixels": 675056,
+            "opaquePixels": 229481,
+            "partialPixels": 17063,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              894,
+              960
+            ]
+          },
+          {
+            "frame": 7,
+            "sha256Rgba": "f760297713083a7f00c9700b094dc4d41b4eb164b04ad6c18cd756780655fb39",
+            "transparentPixels": 674988,
+            "opaquePixels": 229421,
+            "partialPixels": 17191,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              295,
+              896,
+              960
+            ]
+          },
+          {
+            "frame": 8,
+            "sha256Rgba": "6e10d5d3dc83d40ae2a633a95cda9ceca1da901d4091a43bab1654dbb7d8e439",
+            "transparentPixels": 675004,
+            "opaquePixels": 229428,
+            "partialPixels": 17168,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              295,
+              898,
+              960
+            ]
+          },
+          {
+            "frame": 9,
+            "sha256Rgba": "165b3d6a3b9165ffbd401635113c367c50e0b432235b93450eabf62e1c741379",
+            "transparentPixels": 675001,
+            "opaquePixels": 229456,
+            "partialPixels": 17143,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              295,
+              899,
+              960
+            ]
+          },
+          {
+            "frame": 10,
+            "sha256Rgba": "6089cb76cad1f380c622d0a2372df8fc3f6e810513fda89551a775caa6a08a9a",
+            "transparentPixels": 674989,
+            "opaquePixels": 229470,
+            "partialPixels": 17141,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              295,
+              900,
+              960
+            ]
+          },
+          {
+            "frame": 11,
+            "sha256Rgba": "037b5e5f3b90b07e921c3959dbdbd3d6d3ef37de0e6dba164346f6ccd8758503",
+            "transparentPixels": 674978,
+            "opaquePixels": 229394,
+            "partialPixels": 17228,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              295,
+              901,
+              960
+            ]
+          },
+          {
+            "frame": 12,
+            "sha256Rgba": "e64a7335d23a05c63ca5f2515ca7feac1573c8e09d71ec7c3d8ac47bf7254b4d",
+            "transparentPixels": 675000,
+            "opaquePixels": 229474,
+            "partialPixels": 17126,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              295,
+              903,
+              960
+            ]
+          },
+          {
+            "frame": 13,
+            "sha256Rgba": "c23af47b3b44a7f4ff3bb436413e09a9f40ce9cf0d7268354df31a5e6c01fa41",
+            "transparentPixels": 674998,
+            "opaquePixels": 229529,
+            "partialPixels": 17073,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              295,
+              903,
+              960
+            ]
+          },
+          {
+            "frame": 14,
+            "sha256Rgba": "f1b3e742dd4847cc5883a100a2a8d2355f2565e3238788435eaef259a1fdc935",
+            "transparentPixels": 675002,
+            "opaquePixels": 229523,
+            "partialPixels": 17075,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              295,
+              904,
+              960
+            ]
+          },
+          {
+            "frame": 15,
+            "sha256Rgba": "e8b0d3c06a43f386e42b7404e29d984d27085e3a6fc231d6f127cf5459d77795",
+            "transparentPixels": 674981,
+            "opaquePixels": 229651,
+            "partialPixels": 16968,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              191,
+              294,
+              905,
+              960
+            ]
+          },
+          {
+            "frame": 16,
+            "sha256Rgba": "79465601e1d34e6382c7a8f80d3f7f76d4497e296efcee66182365968c9a5108",
+            "transparentPixels": 675016,
+            "opaquePixels": 229658,
+            "partialPixels": 16926,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              905,
+              960
+            ]
+          },
+          {
+            "frame": 17,
+            "sha256Rgba": "ccf87cf50e510a7850004f2ac89400d1a3f7109ef86388367ccb5f08766e4087",
+            "transparentPixels": 674994,
+            "opaquePixels": 229781,
+            "partialPixels": 16825,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              906,
+              960
+            ]
+          },
+          {
+            "frame": 18,
+            "sha256Rgba": "415f298bce9c1c651d99317d172ec4607a62cfe5b761824129f73d1d211d1b54",
+            "transparentPixels": 674991,
+            "opaquePixels": 229737,
+            "partialPixels": 16872,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              906,
+              960
+            ]
+          },
+          {
+            "frame": 19,
+            "sha256Rgba": "2ac11b5f08b584af418f4f6dcbb171d1a0d45266fc8ef7c39c1c832532c915e8",
+            "transparentPixels": 675045,
+            "opaquePixels": 229753,
+            "partialPixels": 16802,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              906,
+              960
+            ]
+          },
+          {
+            "frame": 20,
+            "sha256Rgba": "13d6388b5e8a08ac268fd2e8c0b0523d6ab830042f4e109bd63f6e43cd35a3f0",
+            "transparentPixels": 675060,
+            "opaquePixels": 229791,
+            "partialPixels": 16749,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              906,
+              960
+            ]
+          },
+          {
+            "frame": 21,
+            "sha256Rgba": "7a7a37c66b7473a8eecd36a8d17e1e39b9b2d780804732ee70bdd023253d17a3",
+            "transparentPixels": 675113,
+            "opaquePixels": 229809,
+            "partialPixels": 16678,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              906,
+              960
+            ]
+          },
+          {
+            "frame": 22,
+            "sha256Rgba": "c265f889938f8ddfc41d923387d25dd852d0fd3c3426ccc04c6dce6a5c7cce0e",
+            "transparentPixels": 675148,
+            "opaquePixels": 229812,
+            "partialPixels": 16640,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              905,
+              960
+            ]
+          },
+          {
+            "frame": 23,
+            "sha256Rgba": "f576c3faceb2af847e1cfed58f14bb315cd5d10eb3cec25edcd2e19678591525",
+            "transparentPixels": 675202,
+            "opaquePixels": 229731,
+            "partialPixels": 16667,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              905,
+              960
+            ]
+          },
+          {
+            "frame": 24,
+            "sha256Rgba": "bfff7881367df7af203c0437176d250a9a1962ce75c3fdf2c6426d97d96911a0",
+            "transparentPixels": 675296,
+            "opaquePixels": 229608,
+            "partialPixels": 16696,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              904,
+              960
+            ]
+          },
+          {
+            "frame": 25,
+            "sha256Rgba": "ab85d3fe5788478a51d6dedfe5fa1c56c03c971084eb514b3401b960d305f171",
+            "transparentPixels": 675291,
+            "opaquePixels": 229624,
+            "partialPixels": 16685,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              903,
+              960
+            ]
+          },
+          {
+            "frame": 26,
+            "sha256Rgba": "a2d7397820cf3bd3caaf07739379c2d49f8cd29600c2bb0dc4733ea927d0e7e5",
+            "transparentPixels": 675325,
+            "opaquePixels": 229507,
+            "partialPixels": 16768,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              903,
+              960
+            ]
+          },
+          {
+            "frame": 27,
+            "sha256Rgba": "f3997dd812cc1a92377ae2e501e45bdab6e63c8c3dc40882084325c1f385a299",
+            "transparentPixels": 675351,
+            "opaquePixels": 229430,
+            "partialPixels": 16819,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              902,
+              960
+            ]
+          },
+          {
+            "frame": 28,
+            "sha256Rgba": "e38d98bc6093ffc5eaf2e4d13ebac7ca45beb4782fa3a3d42313205431b53195",
+            "transparentPixels": 675382,
+            "opaquePixels": 229499,
+            "partialPixels": 16719,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              900,
+              960
+            ]
+          },
+          {
+            "frame": 29,
+            "sha256Rgba": "75ae8e05d6cc016f375db9aa86b9e11a1ef2bef72e8404401a79f9836cd5283d",
+            "transparentPixels": 675372,
+            "opaquePixels": 229502,
+            "partialPixels": 16726,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              899,
+              960
+            ]
+          },
+          {
+            "frame": 30,
+            "sha256Rgba": "0a5864af9bc0abbd44bd915b912fc19d02a51715e376b6433113959a10465202",
+            "transparentPixels": 675380,
+            "opaquePixels": 229530,
+            "partialPixels": 16690,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              898,
+              960
+            ]
+          },
+          {
+            "frame": 31,
+            "sha256Rgba": "d305ba63001b6eb6f6d45b3bde3651109e1af8717c2fc89cada38a42fb0bdcfb",
+            "transparentPixels": 675346,
+            "opaquePixels": 229474,
+            "partialPixels": 16780,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              896,
+              960
+            ]
+          },
+          {
+            "frame": 32,
+            "sha256Rgba": "c162ae28b451588da81ccf8c4fa688d696f952491c1c41aafa842b195eadedcb",
+            "transparentPixels": 675335,
+            "opaquePixels": 229556,
+            "partialPixels": 16709,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              894,
+              960
+            ]
+          },
+          {
+            "frame": 33,
+            "sha256Rgba": "a1f54917e69a4ad322ff989cdc62e848520697ecb7e402dca98285cf8856449f",
+            "transparentPixels": 675302,
+            "opaquePixels": 229567,
+            "partialPixels": 16731,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              893,
+              960
+            ]
+          },
+          {
+            "frame": 34,
+            "sha256Rgba": "8c4aebe3bc8d18e34a174b38fc485bb1f28c35d974348fde6f32a1fb849e93b5",
+            "transparentPixels": 675242,
+            "opaquePixels": 229559,
+            "partialPixels": 16799,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              891,
+              960
+            ]
+          },
+          {
+            "frame": 35,
+            "sha256Rgba": "1f60d181ebbeebbb52b6767f88cfed6b80f9cd7d9e653f196c9a3d1f77c8f309",
+            "transparentPixels": 675190,
+            "opaquePixels": 229624,
+            "partialPixels": 16786,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              889,
+              960
+            ]
+          },
+          {
+            "frame": 36,
+            "sha256Rgba": "3d2f906890e98e29d91f307011248c52d8fab937a1dd5f1ffe4d549280f6c55b",
+            "transparentPixels": 675174,
+            "opaquePixels": 229716,
+            "partialPixels": 16710,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              888,
+              960
+            ]
+          },
+          {
+            "frame": 37,
+            "sha256Rgba": "2e2965e7ca6e8754f64143894f220a4598406cdc9099b441c1e0d5ea11eeaa0d",
+            "transparentPixels": 675113,
+            "opaquePixels": 229564,
+            "partialPixels": 16923,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              886,
+              960
+            ]
+          },
+          {
+            "frame": 38,
+            "sha256Rgba": "17dbdfa5f8090ee3f7bd63ab78baa0339b11289e9ccbf979e54e99616e8f5ea4",
+            "transparentPixels": 675084,
+            "opaquePixels": 229486,
+            "partialPixels": 17030,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 39,
+            "sha256Rgba": "8b1784c350ab591ca85ddd8e56dfd8dd70c360947294e63007f01299ef72c0ce",
+            "transparentPixels": 675077,
+            "opaquePixels": 229478,
+            "partialPixels": 17045,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 40,
+            "sha256Rgba": "40531ebf64962a6971abb43903eeba4c40c8234d1c990520cc83631ba827af44",
+            "transparentPixels": 675052,
+            "opaquePixels": 229396,
+            "partialPixels": 17152,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 41,
+            "sha256Rgba": "d911a320b5c31d535e4093e53739d96b1f9a914e9ece2b6985eb3ad9895f52f0",
+            "transparentPixels": 675036,
+            "opaquePixels": 229471,
+            "partialPixels": 17093,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 42,
+            "sha256Rgba": "59fc35a249a837106c9f58f04fc36eb82de036cdce48febdc81be6954bed81cc",
+            "transparentPixels": 675046,
+            "opaquePixels": 229418,
+            "partialPixels": 17136,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 43,
+            "sha256Rgba": "0ee614c9d75b2a189b0b748defb103034cd5da60f72df24b462b782d72872f33",
+            "transparentPixels": 675019,
+            "opaquePixels": 229491,
+            "partialPixels": 17090,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 44,
+            "sha256Rgba": "2639e5a66a6f797d30614ebb5e89dc48997b1c242357697d9db7a5bcfe1a0d22",
+            "transparentPixels": 675025,
+            "opaquePixels": 229507,
+            "partialPixels": 17068,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 45,
+            "sha256Rgba": "5d2236bdf8004f1e4b5b28351fcb97704a59967ef2e013b11def4072c107beb9",
+            "transparentPixels": 675035,
+            "opaquePixels": 229400,
+            "partialPixels": 17165,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 46,
+            "sha256Rgba": "bd10035d22850a36b619b295a39ace97c6f5cce9c86cef24c2c353f1ab58d170",
+            "transparentPixels": 675035,
+            "opaquePixels": 229454,
+            "partialPixels": 17111,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 47,
+            "sha256Rgba": "34f90cf6a9433cdbf8165e733e0efeaccc5013b256cb473f4866de82680755fc",
+            "transparentPixels": 675039,
+            "opaquePixels": 229418,
+            "partialPixels": 17143,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 48,
+            "sha256Rgba": "941dcf391736ef106332daacba0b914319bd329793a00df2555a511b66e88b72",
+            "transparentPixels": 675027,
+            "opaquePixels": 229342,
+            "partialPixels": 17231,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 49,
+            "sha256Rgba": "2bc8fa5063be882737b04ade6fe5b74f49e37be0c1cd138511b3786793ba1b84",
+            "transparentPixels": 675089,
+            "opaquePixels": 229378,
+            "partialPixels": 17133,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 50,
+            "sha256Rgba": "cfc6ecd92b4e6a4f3f5f134785c652f84e42d42d7272c2aeae2685ae5ef1c20d",
+            "transparentPixels": 675071,
+            "opaquePixels": 229370,
+            "partialPixels": 17159,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              192,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 51,
+            "sha256Rgba": "cc364b158b669c27c806e05395549f4a6a86b294124b9164aa70fff3b035bca3",
+            "transparentPixels": 675074,
+            "opaquePixels": 229322,
+            "partialPixels": 17204,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 52,
+            "sha256Rgba": "c50118fb42f8f2e525f290847bfbd2d3ec72c66096eaf109d94891d67e0e6dc9",
+            "transparentPixels": 675080,
+            "opaquePixels": 229364,
+            "partialPixels": 17156,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 53,
+            "sha256Rgba": "0fad8ea1ab7bdaef6514d05ecedad8058fc0b5a7a1386e7d84d0323446e74809",
+            "transparentPixels": 675120,
+            "opaquePixels": 229391,
+            "partialPixels": 17089,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 54,
+            "sha256Rgba": "2c8a1dcd49d0bdbd109f332ea4c113dfca233ce5d6415997ca80efadd2322224",
+            "transparentPixels": 675151,
+            "opaquePixels": 229457,
+            "partialPixels": 16992,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 55,
+            "sha256Rgba": "cb9462c80e15b637adf0e128b1a3aaffba6a44146c1ffa387ef185c96139b59b",
+            "transparentPixels": 675183,
+            "opaquePixels": 229501,
+            "partialPixels": 16916,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 56,
+            "sha256Rgba": "43268f263f87b924c0cc39aa6ee5846f88ee9749cbdcb382624f93b6094e1bdd",
+            "transparentPixels": 675249,
+            "opaquePixels": 229491,
+            "partialPixels": 16860,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 57,
+            "sha256Rgba": "bbe8397c2bf6557175a0c9d6189fb9c9897cc5f050562e4ddd8563aacfa59cd2",
+            "transparentPixels": 675276,
+            "opaquePixels": 229388,
+            "partialPixels": 16936,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 58,
+            "sha256Rgba": "e91a3e7e0f59be0d656fce0e51545835b78575bdd08deb99cc9e6a1111b7c15e",
+            "transparentPixels": 675368,
+            "opaquePixels": 229257,
+            "partialPixels": 16975,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 59,
+            "sha256Rgba": "6bc63696267eec64df50ca4484ddf8baf098c3fd89bbfc42a5ad7ea32eca6cae",
+            "transparentPixels": 675392,
+            "opaquePixels": 229215,
+            "partialPixels": 16993,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 60,
+            "sha256Rgba": "a8451c3f227a2b22e8ffa5eef1a2a82d720ba249c67f0e3ef56c3d99220a9b97",
+            "transparentPixels": 675470,
+            "opaquePixels": 229322,
+            "partialPixels": 16808,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 61,
+            "sha256Rgba": "51e59546f37a9e517d6b079d3915f97497f8948109ada9b26db35edbb903fddd",
+            "transparentPixels": 675499,
+            "opaquePixels": 229151,
+            "partialPixels": 16950,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 62,
+            "sha256Rgba": "21c64a6112c09a41a727bc93abc179cbbdd8f341cdacd38d418dbea14da85125",
+            "transparentPixels": 675563,
+            "opaquePixels": 229140,
+            "partialPixels": 16897,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 63,
+            "sha256Rgba": "01b9402dc5c88295ee0b7e1e46fdaa8944171f3ec15134ff58481076ec707a3f",
+            "transparentPixels": 675583,
+            "opaquePixels": 229119,
+            "partialPixels": 16898,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 64,
+            "sha256Rgba": "429ce2bb876729c1550bbbdaf435ad7f44b5937fab73fec7e0b3ab2b023aae2e",
+            "transparentPixels": 675565,
+            "opaquePixels": 229065,
+            "partialPixels": 16970,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              294,
+              883,
+              960
+            ]
+          },
+          {
+            "frame": 65,
+            "sha256Rgba": "ea661d2a45079c1e1ed28565a8e8fa839e1939641e540d55b08ff1b002a8bfa2",
+            "transparentPixels": 675535,
+            "opaquePixels": 229135,
+            "partialPixels": 16930,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 66,
+            "sha256Rgba": "895619a17e4ea75883b73b9af5fbc3d1623f7d160fe022b64cd3ac53a4951bdf",
+            "transparentPixels": 675470,
+            "opaquePixels": 229278,
+            "partialPixels": 16852,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 67,
+            "sha256Rgba": "f7e9855134b6f4f785bada180f469e1f8dbf0955b27773b4be2bb4ee41ed68e3",
+            "transparentPixels": 675410,
+            "opaquePixels": 229167,
+            "partialPixels": 17023,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 68,
+            "sha256Rgba": "98c16db1c418686dd5682a3bf3da512791289f7d51f603a3fdeb4ce386867d38",
+            "transparentPixels": 675352,
+            "opaquePixels": 229271,
+            "partialPixels": 16977,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              195,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 69,
+            "sha256Rgba": "cbba2d2455fa1f75fc95bc4a418e750d78a06e4d9992940fc914c742a618f76b",
+            "transparentPixels": 675260,
+            "opaquePixels": 229401,
+            "partialPixels": 16939,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 70,
+            "sha256Rgba": "81443a62f14c57e7e1f95bd37654acc4c03294a5e4891c682ed91fa4b3867dbb",
+            "transparentPixels": 675246,
+            "opaquePixels": 229469,
+            "partialPixels": 16885,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 71,
+            "sha256Rgba": "d25f500fcacc75c241591726ef66c9606db43b5ac025c5cce1407afbf68cf4f0",
+            "transparentPixels": 675187,
+            "opaquePixels": 229565,
+            "partialPixels": 16848,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              194,
+              294,
+              884,
+              960
+            ]
+          },
+          {
+            "frame": 72,
+            "sha256Rgba": "5709341aee08fa299080199983cc08e9bf1be1beb9d8213a90bd6f40ca470c87",
+            "transparentPixels": 675153,
+            "opaquePixels": 229651,
+            "partialPixels": 16796,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              884,
+              960
+            ]
+          }
+        ]
+      },
+      "budgetBytes": 3145728,
+      "withinBudget": true
+    },
+    {
+      "arguments": [
+        "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe",
+        "-hide_banner",
+        "-v",
+        "error",
+        "-y",
+        "-threads",
+        "4",
+        "-filter_threads",
+        "2",
+        "-framerate",
+        "24",
+        "-start_number",
+        "1",
+        "-i",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png",
+        "-frames:v",
+        "1",
+        "-an",
+        "-vf",
+        "scale=960:960:flags=lanczos,format=rgba",
+        "-c:v",
+        "libwebp",
+        "-quality",
+        "85",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large-poster.webp"
+      ],
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -v error -y -threads 4 -filter_threads 2 -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png -frames:v 1 -an -vf scale=960:960:flags=lanczos,format=rgba -c:v libwebp -quality 85 C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large-poster.webp",
+      "seconds": 0.40828309999778867,
+      "file": "assets/work/ene-web/desk-excited/encoded/8d7d34d286a9dc90bfb0/large-poster.webp",
+      "sha256": "2d2b0b4910da140f3f493cb918cedd768c188bb13a3d2d796644b8fc607ced9b",
+      "bytes": 51450,
+      "codec": "poster-webp",
+      "size": "large",
+      "width": 960,
+      "height": 960,
+      "durationSeconds": null,
+      "frameCount": 1,
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "webp",
+            "codec_long_name": "WebP",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "width": 960,
+            "height": 960,
+            "coded_width": 960,
+            "coded_height": 960,
+            "has_b_frames": 0,
+            "pix_fmt": "yuva420p",
+            "level": -99,
+            "color_range": "tv",
+            "color_space": "bt470bg",
+            "refs": 1,
+            "r_frame_rate": "25/1",
+            "avg_frame_rate": "25/1",
+            "time_base": "1/25",
+            "nb_read_frames": "1",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large-poster.webp",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "webp_pipe",
+          "format_long_name": "piped webp sequence",
+          "size": "51450",
+          "probe_score": 99
+        }
+      },
+      "decoded": {
+        "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -v error -threads 4 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large-poster.webp -fps_mode passthrough -pix_fmt rgba -f rawvideo pipe:1",
+        "decodedFrameCount": 1,
+        "allFramesTransparent": true,
+        "boundsPixels": [
+          193,
+          294,
+          886,
+          960
+        ],
+        "bounds": {
+          "x": 0.20104166666666667,
+          "y": 0.30625,
+          "width": 0.721875,
+          "height": 0.69375
+        },
+        "maximumAdjacentSampleMae255": 0,
+        "lastAdjacentSampleMae255": 0,
+        "loopSeamSampleMae255": 0.0,
+        "frames": [
+          {
+            "frame": 1,
+            "sha256Rgba": "554061fa43d090b2da659d8bc54cbc4b6f58515cbadf604fb27fc679d9cdd442",
+            "transparentPixels": 675083,
+            "opaquePixels": 229486,
+            "partialPixels": 17031,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              886,
+              960
+            ]
+          }
+        ]
+      },
+      "budgetBytes": 153600,
+      "withinBudget": true
+    },
+    {
+      "arguments": [
+        "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe",
+        "-hide_banner",
+        "-v",
+        "error",
+        "-y",
+        "-threads",
+        "4",
+        "-filter_threads",
+        "2",
+        "-framerate",
+        "24",
+        "-start_number",
+        "1",
+        "-i",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png",
+        "-frames:v",
+        "1",
+        "-an",
+        "-vf",
+        "scale=960:960:flags=lanczos,format=rgba",
+        "-c:v",
+        "png",
+        "-pix_fmt",
+        "rgba",
+        "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large-poster.png"
+      ],
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -v error -y -threads 4 -filter_threads 2 -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\masters\\5838019d4c1b786ab379\\frame-%04d.png -frames:v 1 -an -vf scale=960:960:flags=lanczos,format=rgba -c:v png -pix_fmt rgba C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large-poster.png",
+      "seconds": 0.30484419999993406,
+      "file": "assets/work/ene-web/desk-excited/encoded/8d7d34d286a9dc90bfb0/large-poster.png",
+      "sha256": "1dffc59dda56c09cf8042266125a449beae8fb10e45bcd1efc353a105b3cfbd7",
+      "bytes": 542054,
+      "codec": "poster-png",
+      "size": "large",
+      "width": 960,
+      "height": 960,
+      "durationSeconds": null,
+      "frameCount": 1,
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "png",
+            "codec_long_name": "PNG (Portable Network Graphics) image",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "width": 960,
+            "height": 960,
+            "coded_width": 960,
+            "coded_height": 960,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "1:1",
+            "pix_fmt": "rgba",
+            "level": -99,
+            "color_range": "pc",
+            "color_space": "gbr",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "refs": 1,
+            "r_frame_rate": "25/1",
+            "avg_frame_rate": "25/1",
+            "time_base": "1/25",
+            "nb_read_frames": "1",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large-poster.png",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "png_pipe",
+          "format_long_name": "piped png sequence",
+          "size": "542054",
+          "probe_score": 99
+        }
+      },
+      "decoded": {
+        "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -v error -threads 4 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-excited\\encoded\\8d7d34d286a9dc90bfb0\\large-poster.png -fps_mode passthrough -pix_fmt rgba -f rawvideo pipe:1",
+        "decodedFrameCount": 1,
+        "allFramesTransparent": true,
+        "boundsPixels": [
+          193,
+          294,
+          886,
+          960
+        ],
+        "bounds": {
+          "x": 0.20104166666666667,
+          "y": 0.30625,
+          "width": 0.721875,
+          "height": 0.69375
+        },
+        "maximumAdjacentSampleMae255": 0,
+        "lastAdjacentSampleMae255": 0,
+        "loopSeamSampleMae255": 0.0,
+        "frames": [
+          {
+            "frame": 1,
+            "sha256Rgba": "55abef99a1fc68c17bc01d99fc221c6d30dbddd7678a719072581d03418ffaf8",
+            "transparentPixels": 675083,
+            "opaquePixels": 229486,
+            "partialPixels": 17031,
+            "cornerAlpha": 0,
+            "boundsPixels": [
+              193,
+              294,
+              886,
+              960
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "visualAcceptance": "Final encoded visual review is recorded separately; automated decode is not subjective acceptance."
+}

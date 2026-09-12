@@ -1,0 +1,180 @@
+{
+  "date": "2026-09-12T09:43:02.996Z",
+  "input": "Actual built studio and tracker with Chromium fake video device. No physical camera, microphone, OBS or shared server is accessed.",
+  "errors": [],
+  "messages": [
+    "W0912 09:43:05.980999 2196592 face_landmarker_graph.cc:180] Sets FaceBlendshapesGraph acceleration to xnnpack by default.",
+    "W0912 09:43:06.055000 2196592 gl_context.cc:1119] OpenGL error checking is disabled",
+    "W0912 09:43:06.304999 2196592 gl_context.cc:1119] OpenGL error checking is disabled",
+    "W0912 09:43:06.496999 2196592 gl_context.cc:1119] OpenGL error checking is disabled",
+    "INFO: Created TensorFlow Lite XNNPACK delegate for CPU.",
+    "W0912 09:43:12.679000 2196592 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.",
+    "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+  ],
+  "externalResponses": [],
+  "server": {
+    "base": "http://127.0.0.1:51531",
+    "port": 51531,
+    "pid": 14300,
+    "isolated": true
+  },
+  "chromeVersion": "152.0.7977.83",
+  "policy": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self' blob: data:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'",
+  "noAutomaticCamera": true,
+  "before": {
+    "status": "Camera active · GPU tracking",
+    "videoDetached": false,
+    "stats": {
+      "fps": 29.98800479808078,
+      "inferenceMs": 17.899999976158142,
+      "sequence": 2,
+      "samples": {
+        "face": {
+          "timestamp": 1789206192686.3,
+          "inferenceMs": 17.899999976158142,
+          "present": false
+        },
+        "pose": {
+          "timestamp": 1789206186502.4,
+          "inferenceMs": 2853.4000000059605,
+          "present": false
+        },
+        "hands": {
+          "timestamp": 1789206186502.4,
+          "inferenceMs": 1026.5999999940395,
+          "present": false
+        }
+      },
+      "drawCalls": 49
+    },
+    "mediaRequests": [
+      {
+        "audio": false,
+        "video": {
+          "width": {
+            "ideal": 640
+          },
+          "height": {
+            "ideal": 480
+          },
+          "frameRate": {
+            "ideal": 30,
+            "max": 30
+          }
+        }
+      }
+    ],
+    "healthChecks": [
+      {
+        "startedAt": 1789206186900,
+        "status": 200,
+        "finishedAt": 1789206186912
+      },
+      {
+        "startedAt": 1789206188409,
+        "status": 200,
+        "finishedAt": 1789206188412
+      },
+      {
+        "startedAt": 1789206189903,
+        "status": 200,
+        "finishedAt": 1789206189908
+      },
+      {
+        "startedAt": 1789206191397,
+        "status": 200,
+        "finishedAt": 1789206191402
+      }
+    ],
+    "tracks": [
+      {
+        "kind": "video",
+        "label": "fake_device_0",
+        "readyState": "live",
+        "stopCalls": 0,
+        "stoppedAt": null
+      }
+    ]
+  },
+  "stopRequestedAt": 1789206192725,
+  "serverExit": {
+    "code": null,
+    "signal": "SIGTERM"
+  },
+  "serverStoppedAt": 1789206192731,
+  "after": {
+    "status": "Local studio server disconnected. Camera stopped; reopen Start VModel.cmd to continue.",
+    "videoDetached": true,
+    "stats": {
+      "fps": 60.00393468424157,
+      "inferenceMs": 0,
+      "sequence": 0,
+      "samples": null,
+      "drawCalls": 49
+    },
+    "mediaRequests": [
+      {
+        "audio": false,
+        "video": {
+          "width": {
+            "ideal": 640
+          },
+          "height": {
+            "ideal": 480
+          },
+          "frameRate": {
+            "ideal": 30,
+            "max": 30
+          }
+        }
+      }
+    ],
+    "healthChecks": [
+      {
+        "startedAt": 1789206186900,
+        "status": 200,
+        "finishedAt": 1789206186912
+      },
+      {
+        "startedAt": 1789206188409,
+        "status": 200,
+        "finishedAt": 1789206188412
+      },
+      {
+        "startedAt": 1789206189903,
+        "status": 200,
+        "finishedAt": 1789206189908
+      },
+      {
+        "startedAt": 1789206191397,
+        "status": 200,
+        "finishedAt": 1789206191402
+      },
+      {
+        "startedAt": 1789206192902,
+        "failed": true,
+        "finishedAt": 1789206193904
+      },
+      {
+        "startedAt": 1789206194402,
+        "failed": true,
+        "finishedAt": 1789206194959
+      }
+    ],
+    "tracks": [
+      {
+        "kind": "video",
+        "label": "fake_device_0",
+        "readyState": "ended",
+        "stopCalls": 1,
+        "stoppedAt": 1789206194959
+      }
+    ]
+  },
+  "observedReleasedAt": 1789206194973,
+  "releaseDelayMs": 2248,
+  "workersAfterStop": 0,
+  "passed": true,
+  "browserClosed": true,
+  "serverStopped": true
+}

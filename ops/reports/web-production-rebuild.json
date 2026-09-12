@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "resource": "desk-confused",
+  "command": "python scripts/produce_web_resources.py desk-confused",
+  "verifiedCachedMasterFrames": 72,
+  "newRenderFrames": 0,
+  "stagedFilesBeforeAfterIdentical": true,
+  "manifestSha256": "423a4ce2916bd4c9f3560fbf871c8c5ba156dbbd739efda29462008f012586a2",
+  "fullBatchRecord": "ops/reports/web-production-batch-full.json",
+  "sourceScope": "Existing accepted scene/cache reopened and verified; this demonstrates resumability and stable output, not a cross-driver fresh-render identity claim."
+}

@@ -1,0 +1,40 @@
+{
+  "date": "2026-09-12T12:32:29.518862+00:00",
+  "passed": true,
+  "baselineHashesVerifiedBeforeApplication": true,
+  "commands": [
+    {
+      "command": "node scripts/voice/test_reconnect.mjs",
+      "exitCode": 0,
+      "passedGroups": 5
+    },
+    {
+      "command": "node scripts/voice/test_pcm.mjs",
+      "exitCode": 0,
+      "passed": "PCM bounds/state and separate natural/converted frame checks"
+    },
+    {
+      "command": "node scripts/voice/test_refresh_receivers.mjs",
+      "exitCode": 0,
+      "passedGroups": 6
+    },
+    {
+      "command": ".tools/voice/venv/Scripts/python.exe scripts/voice/test_launcher_refresh.py",
+      "exitCode": 0,
+      "passedTests": 3
+    }
+  ],
+  "sourceSHA256": {
+    "scripts/voice/launch.py": "fd08f0b2a90a5b11a6f95f06ca911c178adf162a000cf30965728db9163158b8",
+    "scripts/voice/reconnect_browser_smoke.mjs": "8039665d9113ca6f21ffd73661894159331d93fa3e03932b71c6dfb51bfb2d2c",
+    "scripts/voice/refresh_obs_receivers.mjs": "01d83b33163e7ef2c6451650951a6bfcce59be26719931f99dc7bee86b6b5387",
+    "scripts/voice/studio/player.js": "cba8f6f36518933b2091b0ddb8f5d5ef185b8902355d106a5b67920aab378d7a",
+    "scripts/voice/test_launcher_refresh.py": "5c7098ea3d25df509769751a7bc7ba58e05132c0c066c07d0e4d1f02f400931e",
+    "scripts/voice/test_pcm.mjs": "a19755cc29ea6ffd0bc75b640df094d3054ab2cca915fbb373ff84321c0458b1",
+    "scripts/voice/test_reconnect.mjs": "33f03c28e15229b2ce72510ae1e071626ebd07ab825439465fd20f7a8f316efb",
+    "scripts/voice/test_refresh_receivers.mjs": "361df49f52301522e29a56addafc8f28f296666269ac8916353ee9c5d5eca783"
+  },
+  "physicalMedia": false,
+  "OBSContactedByTheseTests": false,
+  "boundary": "Deterministic timers/synthetic PCM, mocked WebSocket/AudioContext and mocked OBS/subprocess tests. Real isolated browser restart and guarded actual OBS refresh are recorded separately."
+}

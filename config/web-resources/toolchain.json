@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "blender": {"version": "5.1.1", "executable": "C:/Program Files/Blender Foundation/Blender 5.1/blender.exe", "mmdTools": "4.5.14"},
+  "notices": [
+    {"file": "libvpx-LICENSE.txt", "url": "https://chromium.googlesource.com/webm/libvpx/+/0cfc6da39/LICENSE?format=TEXT", "sha256": "8267348d5af1262c11d1a08de2f5afc77457755f1ac658627dd9acf71011d615"},
+    {"file": "libvpx-PATENTS.txt", "url": "https://chromium.googlesource.com/webm/libvpx/+/0cfc6da39/PATENTS?format=TEXT", "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c"},
+    {"file": "libwebp-COPYING.txt", "url": "https://chromium.googlesource.com/webm/libwebp/+/94d3c4a/COPYING?format=TEXT", "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf"},
+    {"file": "libwebp-PATENTS.txt", "url": "https://chromium.googlesource.com/webm/libwebp/+/94d3c4a/PATENTS?format=TEXT", "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c"}
+  ],
+  "ffmpeg": {
+    "version": "9.0.1-essentials_build-www.gyan.dev",
+    "url": "https://github.com/GyanD/codexffmpeg/releases/download/9.0.1/ffmpeg-9.0.1-essentials_build.zip",
+    "sha256": "fec81ae03971d9dd4be3ebe02e263bd2ec1d789483f931bdba5f5715e65da2e9",
+    "checksumSource": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip.sha256",
+    "license": "GPL-3.0-or-later",
+    "installDirectory": ".tools/web/ffmpeg-9.0.1-essentials_build",
+    "archiveDirectory": ".tools/downloads"
+  }
+}

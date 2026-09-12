@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-12T10:16:11.043Z",
+  "passed": true,
+  "compared": [
+    "bright",
+    "soft",
+    "cool"
+  ],
+  "saveRestoreReset": true,
+  "monitoringIndependentOfOutput": true,
+  "secondControlWindowRejected": true,
+  "stopAndControllerLossMute": true,
+  "outputSampleRate": 40000,
+  "mobileOverflow": false,
+  "physicalMicrophoneRequests": 0,
+  "externalRequests": [],
+  "browserErrors": [],
+  "privateProductionProfilesModified": false,
+  "boundary": "Converted reference UI and Web Audio receiver only. No live inference, subjective listening, physical latency or OBS acceptance."
+}

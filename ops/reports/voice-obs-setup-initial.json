@@ -1,0 +1,82 @@
+{
+  "date": "2026-09-12T10:40:28.687Z",
+  "passed": true,
+  "attach": true,
+  "collection": "Ene Studio",
+  "inputName": "Ene Converted Voice Bridge",
+  "reusedSource": false,
+  "membership": {
+    "Ene Voice Studio": {
+      "count": 1,
+      "enabled": true
+    },
+    "Ene Landscape": {
+      "count": 1,
+      "enabled": true
+    },
+    "Ene Portrait": {
+      "count": 1,
+      "enabled": true
+    }
+  },
+  "sourceURL": {
+    "origin": "http://127.0.0.1:5082",
+    "path": "/obs",
+    "privateFragmentOmitted": true
+  },
+  "convertedOnly": true,
+  "rerouteAudio": true,
+  "monitorType": "OBS_MONITORING_TYPE_NONE",
+  "syncOffsetMs": 0,
+  "existingSyncPreserved": null,
+  "syncCalibratedByThisSetup": false,
+  "currentScene": "Ene Landscape",
+  "currentScenePreserved": true,
+  "avatarCaptureSettingsPreserved": true,
+  "avatarSceneItemsPreserved": true,
+  "avatarCaptureHash": "b3d87be33243c256c44662e8c633e2885ee9b504d5a2218e3ecebcc6f2292594",
+  "avatarItemsHash": "75b0128affe9f9e80da94eea5baa598edc622eba87a6feb3c67d038d1dd9db29",
+  "sources": [
+    {
+      "name": "Ene Landscape Window",
+      "kind": "window_capture"
+    },
+    {
+      "name": "Ene Portrait Window",
+      "kind": "window_capture"
+    },
+    {
+      "name": "Ene Converted Voice Bridge",
+      "kind": "browser_source"
+    }
+  ],
+  "rawAudioCaptureInputs": [],
+  "beforeVoice": {
+    "mode": "idle",
+    "muted": true,
+    "liveAccepted": false
+  },
+  "afterVoice": {
+    "mode": "idle",
+    "muted": true,
+    "liveAccepted": false
+  },
+  "beforeOutputs": {
+    "recording": false,
+    "streaming": false,
+    "virtualCamera": {
+      "available": false,
+      "active": false
+    }
+  },
+  "afterOutputs": {
+    "recording": false,
+    "streaming": false,
+    "virtualCamera": {
+      "available": false,
+      "active": false
+    }
+  },
+  "startedMedia": false,
+  "note": "Installed without audio playback, physical media or OBS output. Reference transport was tested separately; live quality/latency and physical sync remain unaccepted."
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-12T13:45:44.623Z",
+  "runLabel": "occl-v1",
+  "passed": false,
+  "status": "failed",
+  "question": "Does Chrome native window occlusion explain the observed collapse toward 1 Hz draw delivery and blank captures?",
+  "phaseMs": 12000,
+  "obsInvolved": false,
+  "physicalMedia": false,
+  "liveAccepted": false,
+  "conditions": [
+    {
+      "name": "production-default",
+      "intent": "Reproduces Start VModel.cmd, which launches Chrome with no flags: occlusion detection and renderer backgrounding both active.",
+      "ignoreDefaultArgs": [
+        "--disable-background-timer-throttling",
+        "--disable-backgrounding-occluded-windows",
+        "--disable-renderer-backgrounding"
+      ],
+      "extraArgs": []
+    },
+    {
+      "name": "hardened",
+      "intent": "Proposed fix: keep the anti-throttling switches and also disable native window occlusion calculation.",
+      "ignoreDefaultArgs": [],
+      "extraArgs": [
+        "--disable-features=CalculateNativeWinOcclusion"
+      ]
+    }
+  ],
+  "results": [],
+  "limits": [
+    "A draw-cadence diagnostic only: no OBS, recording, microphone, physical camera or acceptance measurement.",
+    "The occluder is a synthetic opaque topmost window; a real user covering the window with another application is not identical.",
+    "Draw counts come from the owned viewer instrumentation, not from captured video frames.",
+    "Blank-white OBS captures are a separate reported symptom; this probe measures rendering, not capture output.",
+    "Conditions run sequentially and can see different ambient system load, which is recorded but not controlled."
+  ],
+  "server": {
+    "base": "http://127.0.0.1:49768",
+    "port": 49768,
+    "pid": 22164,
+    "owned": true
+  },
+  "error": "page.evaluate: Error: Owned photo fixture unavailable.\n    at Object.prepare (<anonymous>:58:76)\n    at async eval (eval at evaluate (:311:30), <anonymous>:1:15)\n    at async <anonymous>:337:30\n    at C:\\Users\\ASUS\\Documents\\vmodel\\scripts\\capture_occlusion_probe.mjs:95:18"
+}

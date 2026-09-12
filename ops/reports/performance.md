@@ -1,0 +1,66 @@
+# Combined avatar, positive tracking and OBS workload
+
+**The baseline is not accepted.** Both planned 900-second measurement windows ran, but avatar draw/inference delivery fell to approximately 1 Hz and OBS capture became white during the seated phase. The standing phase retained that failure. TASK-020 stays open. A valid 720p30 file and zero OBS encoder skips did not mean the captured avatar remained visible or updated smoothly.
+
+The corrected run is [2026-09-12T11-55-00-927Z-0b91f283](local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/report.json), from 11:55:00 to 12:27:55 UTC on 2026-09-12. The seated window ran 11:56:42–12:11:42 UTC; standing/hands ran 12:12:51–12:27:52 UTC. Each had its own 60-second warm-up. Both recording inspections finished. The final minimum-sample guard rejected standing's 891 draws, so the script exited 1 and `completed` remains false. The report separately records `measurementWindowCompleted: true` for both windows; no interrupted-window summary is substituted for these full measurements.
+
+## Workload and evidence boundaries
+
+The actual production app, actual permitted Ene Cyber legs avatar, installed MediaPipe Tasks Vision 1.0.1 worker and native OBS 32.2.2 Window Capture/recording ran together. Chrome was 152.0.7977.83. The runtime avatar has **112,948 triangles**, following removal of one degenerate triangle from the original 112,949-triangle Cyber legs source. The laptop's identified hardware is an i7-1255U/Iris Xe, but this run recorded the selected MediaPipe `GPU` delegate, not GL vendor/renderer or GPU device execution telemetry. It does not prove that every graph operation ran on Iris Xe.
+
+Input was fixed 640×480 from two [permitted NASA photos](tracking-positive-fixture.md), supplied privately through owned browser routes and a canvas fake camera. The seated preset disabled hands; the standing preset enabled hands and used the previously proven upper-body crop. The latter excludes feet and is a workload/settings label, not proof of full-body standing behavior. Repeated still photos provide positive graph workload, not human motion or live tracking quality. Both phases used Balanced quality, Gentle springs, one landscape Clean view and native 1280×720/30 H.264 MKV recording. No physical camera, microphone, voice producer or public stream was opened.
+
+The [execution plan](combined-fixture-soak-plan.md) describes instrumentation and resource limits. Render intervals are actual viewer draw start-to-start intervals; draw wall duration includes CPU update/submission and is not a GPU timer. Inference duration is worker computation, not complete motion-to-display latency. No temperature, hardware clock or end-to-end latency was measured.
+
+## Recorded results
+
+| Measurement over each 900-second window | Seated / no hands | Standing / hands |
+| --- | ---: | ---: |
+| Observed draw rate, total draws / elapsed time | **2.013 Hz** (1,812 draws) | **0.990 Hz** (891 draws) |
+| Draw interval p50 / p95 / p99 | 37.3 / 1,017.5 / 1,019.1 ms | 1,014.6 / 1,017.7 / 1,018.8 ms |
+| Median instantaneous draw cadence | 26.81 fps | 0.986 fps |
+| CPU draw/submission wall time p50 / p95 | 4.1 / 6.8 ms | 2.3 / 3.5 ms |
+| Observed worker result rate | 1.190 Hz | 0.991 Hz |
+| All worker results: inference p50 / p95 / p99 | 79.3 / 169.0 / 205.6 ms | 55.9 / 184.6 / 196.6 ms |
+| Full enabled-task results: inference p50 / p95 | 96.6 / 192.0 ms | 158.4 / 191.2 ms |
+| Fresh positive face / pose / hand results | 1,071 / 536 / 0 (hands disabled) | 892 / 446 / 446 |
+| OBS render skips / measured frames | 0 / 27,001 | 0 / 27,001 |
+| OBS encode skips / measured frames | 0 / 27,001 | 0 / 27,001 |
+| Spec render gate | **Fail** | **Fail** |
+
+The seated median cadence is misleading in isolation: its initial burst supplied many short intervals, while long later gaps consumed most wall time. The observed rate and timeline expose the failure. OBS's counters were monotonic across every adjacent sample, and its active output cadence stayed 30 Hz; it could encode repeated white content without missing encoder deadlines.
+
+The seated file is 960.9 seconds / 2,856,006 bytes, and standing is 960.7 seconds / 1,948,616 bytes. FFprobe verified 1280×720 H.264 at nominal 30/1 in both. Their single profile-generated audio tracks measured −91 dB maximum and passed the silence check. Format, duration and silence passed; content did not.
+
+## Draw-gap and capture failure
+
+The [saved draw-gap analysis](local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/draw-gap-analysis.json) gives a sharp onset. During the first 30 measured seated seconds, 898 draws arrived (29.93 Hz), with interval median 33.3 ms and p95 36.1 ms, alongside 193 worker results (6.43 Hz). The first interval above 500 ms ended at **+32.641 seconds / 11:57:14.835 UTC**, following intervals of 46.6, 65.5 and 183.8 ms. From the second measured minute onward, draws and worker replies settled at 59–60 per minute. Every standing draw interval was at least 996 ms.
+
+The fake-camera paint timer continued at approximately 30.18 Hz seated and 30.30 Hz standing. The viewer and CameraTracker both schedule through `requestAnimationFrame`; their approximately 1 Hz delivery differs from the still-running canvas paint timer and the much shorter worker computation. This points to an animation-delivery problem worth investigating, but does not identify its browser, compositor, desktop or graphics cause.
+
+Actual visual inspection and [RGB pixel checks](local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/still-pixel-analysis.json) show:
+
+- [Seated start](local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/seated-no-hands-start.png): recognizable Ene Cyber legs against the intended dark background.
+- [Seated end](local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/seated-no-hands-end.png), [standing start](local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/standing-hands-start.png) and [standing end](local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/standing-hands-end.png): every pixel is RGB 255/255/255. These are capture failures, not successful avatar stills.
+
+[Thirteen bounded samples from the saved videos](local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/recording-pixel-analysis.json) confirm this is recorded content, not only an OBS screenshot problem. The seated file has normal dark/colored pixels at file seconds 0, 60 and 90, but is uniformly RGB 253/253/253 at seconds 92, 94, 96, 120, 600 and 950 after video decoding/resizing. Thus its transition occurs between file seconds 90 and 92, around the onset of delayed animation delivery after the one-minute warm-up. Standing samples at 0, 60, 450 and 950 seconds are all uniformly 253/253/253. Sampling does not prove every unsampled frame is white, but the beginning/end stills and widely separated video samples establish a sustained content failure.
+
+All 358 sampled browser states remained visible and focused with unchanged viewport, and no resize/focus/visibility events were recorded. The strict geometry heartbeat checks continued to pass; worker errors and external responses remained empty. No periodic native compositor/GL-context telemetry or contemporaneous input-desktop state was recorded, so those checks cannot establish why the pixels disappeared. The current [post-run desktop check](local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/input-desktop-after.json), at 12:31:38 UTC, found the input and thread desktops both `Default` and the process in the active console session. Current [Balanced power policy](local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/power-policy-after.txt) has AC/DC display and sleep timeouts set to zero (Never). Neither read-only check proves historical desktop/display state, and no setting was changed.
+
+## First-to-last performance and memory
+
+The seated first five minutes averaged 4.057 draws/s and 1.590 inferences/s; the last five averaged 0.990 for both. Standing began and ended near 0.990 for both. Seated full-task inference p95 fell from 200.9 to 93.3 ms while its draw cadence deteriorated. Standing full-task inference p95 was 192.3 then 192.2 ms. These measurements do not support calling the failure increasing inference cost or thermal degradation.
+
+Across 31 process-memory samples per phase, Chrome private-byte medians increased from 1,581.66 to 1,606.54 MiB seated (+24.87 MiB; descriptive slope +1.46 MiB/min), and from 1,713.69 to 1,731.06 MiB standing (+17.37 MiB; +1.73 MiB/min). Main-page JS heap median changes were +1.47 and +1.75 MiB. OBS main-process private-byte changes were approximately −0.02 and −0.03 MiB. No forced GC or worker-heap attribution was performed. This growth is not proof of a leak; the sustained low cadence and failed capture also prevent treating it as a successful full-rate resource soak.
+
+## Restoration and next bounded work
+
+Cleanup passed: the owned recording stopped, fake video track ended, worker count returned to zero, owned Chrome and ephemeral server closed, temporary scene/input were removed, and the original OBS collection/profile/program scene/scene-item enable flags/recording destination were restored. Input-settings hashes confirmed that both production voice bridges were preserved. Voice Studio stayed idle and muted; no shared server was stopped.
+
+The two earlier interrupted runs and their independently reproduced keepalive defect remain in the [heartbeat report](output-layout-heartbeat.md). That fix passed focused tests, an accelerated actual-source browser regression, production build and bundle audit; the corrected 32-minute attempt retained live geometry heartbeats throughout. Fixing that defect did not resolve the later capture/draw failure.
+
+Further work should correlate actual browser canvas pixels versus OBS source pixels, animation timing, GL context/vendor/renderer, browser GPU details and desktop/window state when a failure occurs. Preserve the production profile and exact privacy boundaries. Do not relax cadence/content gates or infer a graphics device, session lock or thermal cause from the selected delegate. A future full baseline under explicitly observed AC power can test stability under declared conditions, with strict native preflight and failure-triggered evidence, even if the earlier cause remains unresolved. Live gestures, physical permission/device checks, standing feet/knees and external latency acceptance remain separate outstanding work.
+
+A subsequent [180-second passive plus 30-second activation diagnostic](capture-animation-diagnostic.md) did not reproduce the failure: paired canvas/OBS images retained Ene, viewer GL identified Iris Xe/D3D11, and no context loss occurred. Its native-window helper matched no window, a preserved limitation now guarded by an exactly-one-match preflight for future runs. This short good result is not an identified fix and does not supersede the failed full measurements.
+
+The later [177-second original-style passive control](capture-passive-control.md) also stayed healthy after a60-second warm-up, with the corrected native preflight and pre/post AC power observations. It used no extra rAF observer, periodic native/GL probes, initial canvas readback or activation. The report verifies that all three tests used the same single Clean-mode viewer; no separate viewer was removed. It documents missing historical Chrome Energy Saver/native state and preserves the original long-run failure as unresolved.

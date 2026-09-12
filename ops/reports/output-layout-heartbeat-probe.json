@@ -1,0 +1,175 @@
+{
+  "startedAt": "2026-09-12T11:46:45.527Z",
+  "noMedia": true,
+  "noOBS": true,
+  "ownedOrigin": "http://127.0.0.1:53841",
+  "cases": [
+    {
+      "id": "routed-keepalive-unread",
+      "route": true,
+      "keepalive": true,
+      "consume": false,
+      "attempts": 500,
+      "payloadBytes": 272,
+      "passed": 240,
+      "failed": 260,
+      "failures": [
+        {
+          "index": 240,
+          "name": "TypeError",
+          "message": "Failed to fetch",
+          "stack": "TypeError: Failed to fetch\n    at eval (eval at evaluate (:311:30), <anonymous>:9:34)\n    at async <anonymous>:337:30",
+          "atMs": 5724.5999999940395
+        },
+        {
+          "index": 241,
+          "name": "TypeError",
+          "message": "Failed to fetch",
+          "stack": "TypeError: Failed to fetch\n    at eval (eval at evaluate (:311:30), <anonymous>:9:34)\n    at async <anonymous>:337:30",
+          "atMs": 5737.5999999940395
+        },
+        {
+          "index": 242,
+          "name": "TypeError",
+          "message": "Failed to fetch",
+          "stack": "TypeError: Failed to fetch\n    at eval (eval at evaluate (:311:30), <anonymous>:9:34)\n    at async <anonymous>:337:30",
+          "atMs": 5749.899999976158
+        },
+        {
+          "index": 243,
+          "name": "TypeError",
+          "message": "Failed to fetch",
+          "stack": "TypeError: Failed to fetch\n    at eval (eval at evaluate (:311:30), <anonymous>:9:34)\n    at async <anonymous>:337:30",
+          "atMs": 5762.899999976158
+        },
+        {
+          "index": 244,
+          "name": "TypeError",
+          "message": "Failed to fetch",
+          "stack": "TypeError: Failed to fetch\n    at eval (eval at evaluate (:311:30), <anonymous>:9:34)\n    at async <anonymous>:337:30",
+          "atMs": 5774.5
+        }
+      ],
+      "lastStatus": 200,
+      "elapsedMs": 8784.799999982119,
+      "online": true,
+      "visibility": "visible",
+      "browserEvents": {
+        "requests": 240,
+        "responses": 240,
+        "finished": 0,
+        "failures": []
+      },
+      "serverPosts": 240,
+      "serverCompletedPosts": 240
+    },
+    {
+      "id": "unrouted-keepalive-unread",
+      "route": false,
+      "keepalive": true,
+      "consume": false,
+      "attempts": 500,
+      "payloadBytes": 272,
+      "passed": 240,
+      "failed": 260,
+      "failures": [
+        {
+          "index": 240,
+          "name": "TypeError",
+          "message": "Failed to fetch",
+          "stack": "TypeError: Failed to fetch\n    at eval (eval at evaluate (:311:30), <anonymous>:9:34)\n    at async <anonymous>:337:30",
+          "atMs": 4210.0999999940395
+        },
+        {
+          "index": 241,
+          "name": "TypeError",
+          "message": "Failed to fetch",
+          "stack": "TypeError: Failed to fetch\n    at eval (eval at evaluate (:311:30), <anonymous>:9:34)\n    at async <anonymous>:337:30",
+          "atMs": 4222
+        },
+        {
+          "index": 242,
+          "name": "TypeError",
+          "message": "Failed to fetch",
+          "stack": "TypeError: Failed to fetch\n    at eval (eval at evaluate (:311:30), <anonymous>:9:34)\n    at async <anonymous>:337:30",
+          "atMs": 4233
+        },
+        {
+          "index": 243,
+          "name": "TypeError",
+          "message": "Failed to fetch",
+          "stack": "TypeError: Failed to fetch\n    at eval (eval at evaluate (:311:30), <anonymous>:9:34)\n    at async <anonymous>:337:30",
+          "atMs": 4246
+        },
+        {
+          "index": 244,
+          "name": "TypeError",
+          "message": "Failed to fetch",
+          "stack": "TypeError: Failed to fetch\n    at eval (eval at evaluate (:311:30), <anonymous>:9:34)\n    at async <anonymous>:337:30",
+          "atMs": 4259.0999999940395
+        }
+      ],
+      "lastStatus": 200,
+      "elapsedMs": 7285.4000000059605,
+      "online": true,
+      "visibility": "visible",
+      "browserEvents": {
+        "requests": 500,
+        "responses": 240,
+        "finished": 0,
+        "failures": []
+      },
+      "serverPosts": 240,
+      "serverCompletedPosts": 240
+    },
+    {
+      "id": "routed-keepalive-consumed",
+      "route": true,
+      "keepalive": true,
+      "consume": true,
+      "attempts": 500,
+      "payloadBytes": 272,
+      "passed": 500,
+      "failed": 0,
+      "failures": [],
+      "lastStatus": 200,
+      "elapsedMs": 11611.800000011921,
+      "online": true,
+      "visibility": "visible",
+      "browserEvents": {
+        "requests": 500,
+        "responses": 500,
+        "finished": 500,
+        "failures": []
+      },
+      "serverPosts": 500,
+      "serverCompletedPosts": 500
+    },
+    {
+      "id": "routed-ordinary-consumed",
+      "route": true,
+      "keepalive": false,
+      "consume": true,
+      "attempts": 500,
+      "payloadBytes": 272,
+      "passed": 500,
+      "failed": 0,
+      "failures": [],
+      "lastStatus": 200,
+      "elapsedMs": 11210.699999988079,
+      "online": true,
+      "visibility": "visible",
+      "browserEvents": {
+        "requests": 500,
+        "responses": 500,
+        "finished": 500,
+        "failures": []
+      },
+      "serverPosts": 500,
+      "serverCompletedPosts": 500
+    }
+  ],
+  "chromeVersion": "152.0.7977.83",
+  "finishedAt": "2026-09-12T11:47:30.251Z",
+  "ownedCleanup": true
+}

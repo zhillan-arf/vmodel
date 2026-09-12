@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "variant": "cyber-legs",
+  "sourceSha256": "226fe9075f25c7dd2e6474fdd6acb77ff71c45900fb2d5c8794e08647aa9dbe4",
+  "humanoid": {
+    "hips": "腰",
+    "spine": "上半身",
+    "chest": "上半身2",
+    "neck": "首",
+    "head": "頭",
+    "leftEye": "左目",
+    "rightEye": "右目",
+    "leftShoulder": "左肩",
+    "leftUpperArm": "左腕",
+    "leftLowerArm": "左ひじ",
+    "leftHand": "左手首",
+    "leftUpperLeg": "左足",
+    "leftLowerLeg": "左ひざ",
+    "leftFoot": "左足首",
+    "leftToes": "左つま先",
+    "leftThumbMetacarpal": "左親指０",
+    "leftThumbProximal": "左親指１",
+    "leftThumbDistal": "左親指２",
+    "leftIndexProximal": "左人指１",
+    "leftIndexIntermediate": "左人指２",
+    "leftIndexDistal": "左人指３",
+    "leftMiddleProximal": "左中指１",
+    "leftMiddleIntermediate": "左中指２",
+    "leftMiddleDistal": "左中指３",
+    "leftRingProximal": "左薬指１",
+    "leftRingIntermediate": "左薬指２",
+    "leftRingDistal": "左薬指３",
+    "leftLittleProximal": "左小指１",
+    "leftLittleIntermediate": "左小指２",
+    "leftLittleDistal": "左小指３",
+    "rightShoulder": "右肩",
+    "rightUpperArm": "右腕",
+    "rightLowerArm": "右ひじ",
+    "rightHand": "右手首",
+    "rightUpperLeg": "右足",
+    "rightLowerLeg": "右ひざ",
+    "rightFoot": "右足首",
+    "rightToes": "右つま先",
+    "rightThumbMetacarpal": "右親指０",
+    "rightThumbProximal": "右親指１",
+    "rightThumbDistal": "右親指２",
+    "rightIndexProximal": "右人指１",
+    "rightIndexIntermediate": "右人指２",
+    "rightIndexDistal": "右人指３",
+    "rightMiddleProximal": "右中指１",
+    "rightMiddleIntermediate": "右中指２",
+    "rightMiddleDistal": "右中指３",
+    "rightRingProximal": "右薬指１",
+    "rightRingIntermediate": "右薬指２",
+    "rightRingDistal": "右薬指３",
+    "rightLittleProximal": "右小指１",
+    "rightLittleIntermediate": "右小指２",
+    "rightLittleDistal": "右小指３"
+  },
+  "expressions": {
+    "blink": "まばたき",
+    "blinkLeft": "ウィンク左",
+    "blinkRight": "ウィンク右",
+    "aa": "あ",
+    "ih": "い",
+    "ou": "う",
+    "oh": "お",
+    "happy": "にこり",
+    "angry": "怒り",
+    "sad": "困る",
+    "surprised": "びっくり"
+  },
+  "expressionBindings": {
+    "blink": {
+      "sourceName": "まばたき",
+      "sourceIndex": 10,
+      "range": [
+        0,
+        1
+      ]
+    },
+    "blinkLeft": {
+      "sourceName": "ウィンク左",
+      "sourceIndex": 11,
+      "range": [
+        0,
+        1
+      ]
+    },
+    "blinkRight": {
+      "sourceName": "ウィンク右",
+      "sourceIndex": 12,
+      "range": [
+        0,
+        1
+      ]
+    },
+    "aa": {
+      "sourceName": "あ",
+      "sourceIndex": 30,
+      "range": [
+        0,
+        1
+      ]
+    },
+    "ih": {
+      "sourceName": "い",
+      "sourceIndex": 31,
+      "range": [
+        0,
+        1
+      ]
+    },
+    "ou": {
+      "sourceName": "う",
+      "sourceIndex": 32,
+      "range": [
+        0,
+        1
+      ]
+    },
+    "oh": {
+      "sourceName": "お",
+      "sourceIndex": 33,
+      "range": [
+        0,
+        1
+      ]
+    },
+    "happy": {
+      "sourceName": "にこり",
+      "sourceIndex": 6,
+      "range": [
+        0,
+        1
+      ]
+    },
+    "angry": {
+      "sourceName": "怒り",
+      "sourceIndex": 7,
+      "range": [
+        0,
+        1
+      ]
+    },
+    "sad": {
+      "sourceName": "困る",
+      "sourceIndex": 5,
+      "range": [
+        0,
+        1
+      ]
+    },
+    "surprised": {
+      "sourceName": "びっくり",
+      "sourceIndex": 18,
+      "range": [
+        0,
+        1
+      ]
+    }
+  },
+  "missingOptionalExpressions": [
+    "ee"
+  ],
+  "expressionPolicy": {
+    "blink": "Use blink OR independent blinkLeft/blinkRight; do not sum both.",
+    "vowels": "Use one vowel at a time; live jaw drives aa.",
+    "manual": "Manual happy/surprised applies a 0.75 minimum; neutral releases the override.",
+    "compatibility": "Mapped MMD shapes; not a full ARKit 52-shape avatar."
+  }
+}

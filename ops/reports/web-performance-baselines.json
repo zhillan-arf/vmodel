@@ -1,0 +1,173 @@
+{
+  "authoringScenes": [
+    {
+      "path": "assets\\work\\ene-web\\home-greeting-authoring.blend",
+      "sha256": "20a5681ce4c7e958c6cb481bb2fcb96531a668aa5890bef0e89b16e95a90bd84",
+      "activeAction": "home-greeting-body-authored",
+      "bodyAnimated": true,
+      "maximumChestQuaternionComponentChange": 0.004979709163308144,
+      "sampledFrames": [
+        1,
+        10,
+        20,
+        37
+      ],
+      "secondaryCurvesExcluded": true,
+      "fcurves": 170
+    },
+    {
+      "path": "assets\\work\\ene-web\\desk-normal-authoring.blend",
+      "sha256": "109af8a80c7cbc4e54f8403ff6bea0810c3011ffe4897fccbe31bd018f555911",
+      "activeAction": "desk-normal-body-authored",
+      "bodyAnimated": true,
+      "maximumChestQuaternionComponentChange": 0.0026076706126332283,
+      "sampledFrames": [
+        1,
+        10,
+        20,
+        37
+      ],
+      "secondaryCurvesExcluded": true,
+      "fcurves": 240
+    },
+    {
+      "path": "assets\\work\\ene-web\\desk-confused-authoring.blend",
+      "sha256": "1584109ca4a08b5db88bdf78ddcb1e61c6aeaaa60b725a44ea4b0ea02554bf0e",
+      "activeAction": "desk-confused-body-authored",
+      "bodyAnimated": true,
+      "maximumChestQuaternionComponentChange": 0.0026076706126332283,
+      "sampledFrames": [
+        1,
+        10,
+        20,
+        37
+      ],
+      "secondaryCurvesExcluded": true,
+      "fcurves": 240
+    },
+    {
+      "path": "assets\\work\\ene-web\\desk-surprised-authoring.blend",
+      "sha256": "bf93a420acc54d2aa7133f6c6aeee1364d80d4d8e83ecce426a6cfac68353f32",
+      "activeAction": "desk-surprised-body-authored",
+      "bodyAnimated": true,
+      "maximumChestQuaternionComponentChange": 0.005235737189650536,
+      "sampledFrames": [
+        1,
+        10,
+        20,
+        37
+      ],
+      "secondaryCurvesExcluded": true,
+      "fcurves": 240
+    },
+    {
+      "path": "assets\\work\\ene-web\\desk-excited-authoring.blend",
+      "sha256": "dd64e77b604b9e7c764e2ba7f5e5c79c94268a9a2429e19430bcc21b02b91223",
+      "activeAction": "desk-excited-body-authored",
+      "bodyAnimated": true,
+      "maximumChestQuaternionComponentChange": 0.00490486528724432,
+      "sampledFrames": [
+        1,
+        10,
+        20,
+        37
+      ],
+      "secondaryCurvesExcluded": true,
+      "fcurves": 240
+    }
+  ],
+  "deskBaseline": {
+    "schemaVersion": 1,
+    "sourceScene": "assets\\work\\ene-web\\desk-normal.blend",
+    "authoringScene": "assets/work/ene-web/desk-normal-authoring.blend",
+    "privatePose": "assets\\work\\ene-web\\desk-baseline-pose.json",
+    "bodyAction": "desk-normal-body-and-secondary-baked",
+    "fps": 24,
+    "frameRange": [
+      1,
+      72
+    ],
+    "loopEndpoint": 73,
+    "seconds": 3,
+    "camera": {
+      "type": "ORTHO",
+      "location": [
+        0.0,
+        -4.0,
+        1.399999976158142
+      ],
+      "rotationQuaternion": [
+        0.7071068286895752,
+        0.7071067690849304,
+        0.0,
+        0.0
+      ],
+      "orthoScale": 0.8999999761581421,
+      "large": [
+        960,
+        960
+      ],
+      "small": [
+        480,
+        480
+      ]
+    },
+    "coordinateConvention": "Normalized image coordinates from top left; x increases right, y down",
+    "deskAnchor": [
+      0.5,
+      0.9222218617796898
+    ],
+    "deskGuideZ": 1.02,
+    "movingBounds": {
+      "minimumUvBottomOrigin": 0.07936174188414413,
+      "maximumUvBottomOrigin": 0.9299135545583397
+    },
+    "safeInset": 0.05,
+    "expressions": {
+      "happy": {
+        "sourceIndex": 6,
+        "blenderKeyBlockIndex": 6,
+        "sourceName": "\u306b\u3053\u308a",
+        "baselineValue": 0.1599999964237213
+      },
+      "blink": {
+        "sourceIndex": 10,
+        "blenderKeyBlockIndex": 10,
+        "sourceName": "\u307e\u3070\u305f\u304d",
+        "baselineValue": 0.0
+      },
+      "omega": {
+        "sourceIndex": 38,
+        "blenderKeyBlockIndex": 38,
+        "sourceName": "\u03c9",
+        "baselineValue": 0.07999999821186066
+      }
+    },
+    "raisedHand": "model left / screen right",
+    "restingHand": "model right / screen left",
+    "referenceComparison": "Original screenshot unavailable; written composition brief followed",
+    "reuse": "Copy this source scene for TASK-033/034/035; preserve camera, resting wrist, desk anchor and lower-body pose. Edit named face keys and small head/hand accents, then re-audit every frame."
+  },
+  "preservedSources": {
+    "ops/resources/ENE/ENE Cyber legs ver.pmx": {
+      "sha256": "226fe9075f25c7dd2e6474fdd6acb77ff71c45900fb2d5c8794e08647aa9dbe4",
+      "unchanged": true
+    },
+    "ops/resources/ENE/ENE normal legs ver.pmx": {
+      "sha256": "1b10578850b2ebd98a87f34099740a87c9589e3b8383aa2cef38d285ef3dfcab",
+      "unchanged": true
+    },
+    "ops/resources/ene.vmd": {
+      "sha256": "d3abdedf45e36a55ad66e2546ec0a562054db8a6c11d4198fa8c6a773f39bea8",
+      "unchanged": true
+    },
+    "assets/avatars/ene.vrm": {
+      "sha256": "3657b97928638e7ada5f6639141fb63f555912049a2c6ec217851001e322cbcb",
+      "unchanged": true
+    },
+    "assets/work/ene/source.blend": {
+      "sha256": "e03272d80f9afdc6a86a956f0b81a8a43b3d0152f4dfc5ae2b71b9a84b9031e8",
+      "unchanged": true
+    }
+  }
+}

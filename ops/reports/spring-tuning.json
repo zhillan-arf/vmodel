@@ -1,0 +1,72 @@
+[
+  {
+    "stiffness": 1,
+    "drag": 0.5,
+    "speed": 0.06,
+    "peakDegrees": 74.30597029247937,
+    "bone": "右髪２"
+  },
+  {
+    "stiffness": 1,
+    "drag": 0.5,
+    "speed": 0.45,
+    "peakDegrees": 150.01522966415268,
+    "bone": "右髪３"
+  },
+  {
+    "stiffness": 2,
+    "drag": 0.65,
+    "speed": 0.06,
+    "peakDegrees": 64.43348934996179,
+    "bone": "左髪５"
+  },
+  {
+    "stiffness": 2,
+    "drag": 0.65,
+    "speed": 0.45,
+    "peakDegrees": 142.08486254166615,
+    "bone": "右髪B3"
+  },
+  {
+    "stiffness": 3,
+    "drag": 0.8,
+    "speed": 0.06,
+    "peakDegrees": 44.634534825370544,
+    "bone": "右髪4B"
+  },
+  {
+    "stiffness": 3,
+    "drag": 0.8,
+    "speed": 0.45,
+    "peakDegrees": 106.6343220975859,
+    "bone": "右髪B3"
+  },
+  {
+    "stiffness": 4,
+    "drag": 0.85,
+    "speed": 0.06,
+    "peakDegrees": 39.73242340625563,
+    "bone": "右髪４"
+  },
+  {
+    "stiffness": 4,
+    "drag": 0.85,
+    "speed": 0.45,
+    "peakDegrees": 90.64171464517649,
+    "bone": "左髪１"
+  },
+  {
+    "stiffness": 6,
+    "drag": 0.9,
+    "speed": 0.06,
+    "peakDegrees": 38.52678144658706,
+    "bone": "右髪B5"
+  },
+  {
+    "stiffness": 6,
+    "drag": 0.9,
+    "speed": 0.45,
+    "peakDegrees": 82.55458473017285,
+    "bone": "左髪4B"
+  }
+]

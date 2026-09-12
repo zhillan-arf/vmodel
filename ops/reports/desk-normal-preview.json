@@ -1,0 +1,194 @@
+{
+  "resource": "desk-normal",
+  "mode": "preview",
+  "sourceFps": 24,
+  "previewFps": 12,
+  "size": [
+    480,
+    480
+  ],
+  "frames": [
+    {
+      "sourceFrame": 1,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0000.png",
+      "seconds": 2.711961599998176
+    },
+    {
+      "sourceFrame": 3,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0001.png",
+      "seconds": 2.1154662999906577
+    },
+    {
+      "sourceFrame": 5,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0002.png",
+      "seconds": 2.268487399996957
+    },
+    {
+      "sourceFrame": 7,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0003.png",
+      "seconds": 2.0799151999817695
+    },
+    {
+      "sourceFrame": 9,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0004.png",
+      "seconds": 1.9689162999857217
+    },
+    {
+      "sourceFrame": 11,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0005.png",
+      "seconds": 2.1515560999978334
+    },
+    {
+      "sourceFrame": 13,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0006.png",
+      "seconds": 2.088543399993796
+    },
+    {
+      "sourceFrame": 15,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0007.png",
+      "seconds": 2.0587656999996398
+    },
+    {
+      "sourceFrame": 17,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0008.png",
+      "seconds": 2.036997399991378
+    },
+    {
+      "sourceFrame": 19,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0009.png",
+      "seconds": 2.0313527999969665
+    },
+    {
+      "sourceFrame": 21,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0010.png",
+      "seconds": 2.097091300005559
+    },
+    {
+      "sourceFrame": 23,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0011.png",
+      "seconds": 2.043949100014288
+    },
+    {
+      "sourceFrame": 25,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0012.png",
+      "seconds": 1.9582777999748942
+    },
+    {
+      "sourceFrame": 27,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0013.png",
+      "seconds": 2.1153497000050265
+    },
+    {
+      "sourceFrame": 29,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0014.png",
+      "seconds": 2.047974399989471
+    },
+    {
+      "sourceFrame": 31,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0015.png",
+      "seconds": 2.015225399984047
+    },
+    {
+      "sourceFrame": 33,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0016.png",
+      "seconds": 2.1448869000014383
+    },
+    {
+      "sourceFrame": 35,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0017.png",
+      "seconds": 1.9717754000157584
+    },
+    {
+      "sourceFrame": 37,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0018.png",
+      "seconds": 1.9954223000095226
+    },
+    {
+      "sourceFrame": 39,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0019.png",
+      "seconds": 2.009823200001847
+    },
+    {
+      "sourceFrame": 41,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0020.png",
+      "seconds": 1.9727284999971744
+    },
+    {
+      "sourceFrame": 43,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0021.png",
+      "seconds": 2.0547175999963656
+    },
+    {
+      "sourceFrame": 45,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0022.png",
+      "seconds": 1.9728918000182603
+    },
+    {
+      "sourceFrame": 47,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0023.png",
+      "seconds": 1.9029465999919921
+    },
+    {
+      "sourceFrame": 49,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0024.png",
+      "seconds": 2.065984999993816
+    },
+    {
+      "sourceFrame": 51,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0025.png",
+      "seconds": 1.973714400024619
+    },
+    {
+      "sourceFrame": 53,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0026.png",
+      "seconds": 2.080601599998772
+    },
+    {
+      "sourceFrame": 55,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0027.png",
+      "seconds": 2.202632500004256
+    },
+    {
+      "sourceFrame": 57,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0028.png",
+      "seconds": 2.013586099987151
+    },
+    {
+      "sourceFrame": 59,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0029.png",
+      "seconds": 1.937906999984989
+    },
+    {
+      "sourceFrame": 61,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0030.png",
+      "seconds": 2.092245700012427
+    },
+    {
+      "sourceFrame": 63,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0031.png",
+      "seconds": 2.0200887999963015
+    },
+    {
+      "sourceFrame": 65,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0032.png",
+      "seconds": 2.1063805999874603
+    },
+    {
+      "sourceFrame": 67,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0033.png",
+      "seconds": 2.0761676999973133
+    },
+    {
+      "sourceFrame": 69,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0034.png",
+      "seconds": 1.9604991000087466
+    },
+    {
+      "sourceFrame": 71,
+      "file": "assets\\work\\ene-web\\desk-normal\\preview-frames\\frame-0035.png",
+      "seconds": 2.2418032999848947
+    }
+  ],
+  "elapsedSeconds": 74.75795539998217,
+  "scene": "assets/work/ene-web/desk-normal.blend"
+}

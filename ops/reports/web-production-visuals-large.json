@@ -1,0 +1,89 @@
+{
+  "date": "2026-09-12T10:56:12.307Z",
+  "state": "passed",
+  "resources": [
+    {
+      "resource": "home-greeting",
+      "rendition": "large",
+      "displayCssWidth": 640,
+      "frames": [
+        1,
+        61,
+        99
+      ],
+      "composites": [
+        "home-greeting-checker.png",
+        "home-greeting-white.png",
+        "home-greeting-black.png"
+      ],
+      "contact": "home-greeting-contact.png"
+    },
+    {
+      "resource": "desk-normal",
+      "rendition": "large",
+      "displayCssWidth": 640,
+      "frames": [
+        1,
+        37,
+        55
+      ],
+      "composites": [
+        "desk-normal-checker.png",
+        "desk-normal-white.png",
+        "desk-normal-black.png"
+      ],
+      "contact": "desk-normal-contact.png"
+    },
+    {
+      "resource": "desk-confused",
+      "rendition": "large",
+      "displayCssWidth": 640,
+      "frames": [
+        1,
+        37,
+        55
+      ],
+      "composites": [
+        "desk-confused-checker.png",
+        "desk-confused-white.png",
+        "desk-confused-black.png"
+      ],
+      "contact": "desk-confused-contact.png"
+    },
+    {
+      "resource": "desk-surprised",
+      "rendition": "large",
+      "displayCssWidth": 640,
+      "frames": [
+        1,
+        37,
+        55
+      ],
+      "composites": [
+        "desk-surprised-checker.png",
+        "desk-surprised-white.png",
+        "desk-surprised-black.png"
+      ],
+      "contact": "desk-surprised-contact.png"
+    },
+    {
+      "resource": "desk-excited",
+      "rendition": "large",
+      "displayCssWidth": 640,
+      "frames": [
+        1,
+        37,
+        55
+      ],
+      "composites": [
+        "desk-excited-checker.png",
+        "desk-excited-white.png",
+        "desk-excited-black.png"
+      ],
+      "contact": "desk-excited-contact.png"
+    }
+  ],
+  "errors": [],
+  "scope": "Matched actual source and final codec frames on three CSS backgrounds; no performance or real-device claim.",
+  "browser": "152.0.7977.83"
+}

@@ -1,0 +1,12 @@
+{
+  "mode": "source",
+  "reopened": true,
+  "armature": "ENE Cyber legs ver_arm",
+  "meshes": 1,
+  "images": [
+    "ops/reports/local/ene-source-front.png",
+    "ops/reports/local/ene-source-side.png",
+    "ops/reports/local/ene-source-back.png"
+  ],
+  "missingImageFiles": []
+}

@@ -1,0 +1,890 @@
+{
+  "date": "2026-09-12T11:00:57.817Z",
+  "phase": "playback",
+  "state": "passed",
+  "platform": "win32",
+  "release": "10.0.26200",
+  "cpu": "12th Gen Intel(R) Core(TM) i7-1255U",
+  "logicalCores": 12,
+  "ramBytes": 16779812864,
+  "headless": true,
+  "errors": [],
+  "scope": "Actual final built showcase over an owned loopback server in installed Windows Chrome. CDP network emulation is not a real mobile-network result. No real Safari/Android/iOS claim.",
+  "browser": "152.0.7977.83",
+  "playback": [
+    {
+      "size": "small",
+      "codec": "webm",
+      "seconds": 61.579668600000005,
+      "beforeState": {
+        "resource": "desk-normal",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          454,
+          454
+        ],
+        "sourceSize": [
+          480,
+          480
+        ],
+        "currentTime": 1.666486,
+        "quality": {
+          "totalVideoFrames": 44,
+          "droppedVideoFrames": 3
+        },
+        "url": "http://127.0.0.1:64378/ene/desk-normal/small.webm",
+        "domElements": 160,
+        "jsHeapBytes": 3088140,
+        "status": "Playing"
+      },
+      "afterState": {
+        "resource": "desk-normal",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          454,
+          454
+        ],
+        "sourceSize": [
+          480,
+          480
+        ],
+        "currentTime": 0.215875,
+        "quality": {
+          "totalVideoFrames": 1521,
+          "droppedVideoFrames": 3
+        },
+        "url": "http://127.0.0.1:64378/ene/desk-normal/small.webm",
+        "domElements": 160,
+        "jsHeapBytes": 2281064,
+        "status": "Playing"
+      },
+      "screenshotHashes": [
+        "8035877fd3379f0aff0e6ff7a4eb1ea83c8088a5746971682a72df21fb724907",
+        "eda5987fbfd9f82eada03d4ac73766773ed8229437e22eb367a719fe481334bd",
+        "7ee0b8a9c19f8c607d713e4b8558ffde82775d7bf7254aa045f4f3dc138ec90b"
+      ],
+      "visiblyChanging": true,
+      "videoFrames": {
+        "total": 1477,
+        "dropped": 0
+      },
+      "cpuCorePercent": 37.309716863270026,
+      "cpuAllCoresPercent": 3.109143071939169,
+      "before": {
+        "cpuSeconds": 9.448883000000002,
+        "workingSetBytes": 724680704,
+        "privateBytes": 462831616,
+        "processes": [
+          {
+            "type": "browser",
+            "id": 32336,
+            "cpuTime": 2.358908
+          },
+          {
+            "type": "renderer",
+            "id": 5168,
+            "cpuTime": 0.139832
+          },
+          {
+            "type": "renderer",
+            "id": 31616,
+            "cpuTime": 1.233966
+          },
+          {
+            "type": "renderer",
+            "id": 25060,
+            "cpuTime": 0.953447
+          },
+          {
+            "type": "GPU",
+            "id": 31052,
+            "cpuTime": 4.204753
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 1808,
+            "cpuTime": 0.462265
+          },
+          {
+            "type": "storage.mojom.StorageService",
+            "id": 28828,
+            "cpuTime": 0.095712
+          }
+        ],
+        "memory": [
+          {
+            "Id": 1808,
+            "WorkingSet64": 40587264,
+            "PrivateMemorySize64": 13852672
+          },
+          {
+            "Id": 5168,
+            "WorkingSet64": 36089856,
+            "PrivateMemorySize64": 19267584
+          },
+          {
+            "Id": 25060,
+            "WorkingSet64": 97312768,
+            "PrivateMemorySize64": 52191232
+          },
+          {
+            "Id": 28828,
+            "WorkingSet64": 20779008,
+            "PrivateMemorySize64": 9621504
+          },
+          {
+            "Id": 31052,
+            "WorkingSet64": 291393536,
+            "PrivateMemorySize64": 276283392
+          },
+          {
+            "Id": 31616,
+            "WorkingSet64": 102961152,
+            "PrivateMemorySize64": 47104000
+          },
+          {
+            "Id": 32336,
+            "WorkingSet64": 135557120,
+            "PrivateMemorySize64": 44511232
+          }
+        ]
+      },
+      "after": {
+        "cpuSeconds": 32.424083,
+        "workingSetBytes": 660066304,
+        "privateBytes": 362639360,
+        "processes": [
+          {
+            "type": "browser",
+            "id": 32336,
+            "cpuTime": 6.803508
+          },
+          {
+            "type": "renderer",
+            "id": 5168,
+            "cpuTime": 0.143702
+          },
+          {
+            "type": "renderer",
+            "id": 31616,
+            "cpuTime": 10.012382
+          },
+          {
+            "type": "renderer",
+            "id": 25060,
+            "cpuTime": 1.093922
+          },
+          {
+            "type": "GPU",
+            "id": 31052,
+            "cpuTime": 13.672425
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 1808,
+            "cpuTime": 0.597528
+          },
+          {
+            "type": "storage.mojom.StorageService",
+            "id": 28828,
+            "cpuTime": 0.100616
+          }
+        ],
+        "memory": [
+          {
+            "Id": 1808,
+            "WorkingSet64": 41140224,
+            "PrivateMemorySize64": 13553664
+          },
+          {
+            "Id": 5168,
+            "WorkingSet64": 35729408,
+            "PrivateMemorySize64": 18849792
+          },
+          {
+            "Id": 25060,
+            "WorkingSet64": 91553792,
+            "PrivateMemorySize64": 44408832
+          },
+          {
+            "Id": 28828,
+            "WorkingSet64": 20672512,
+            "PrivateMemorySize64": 9322496
+          },
+          {
+            "Id": 31052,
+            "WorkingSet64": 226283520,
+            "PrivateMemorySize64": 184279040
+          },
+          {
+            "Id": 31616,
+            "WorkingSet64": 106188800,
+            "PrivateMemorySize64": 48246784
+          },
+          {
+            "Id": 32336,
+            "WorkingSet64": 138498048,
+            "PrivateMemorySize64": 43978752
+          }
+        ]
+      }
+    },
+    {
+      "size": "small",
+      "codec": "webp",
+      "seconds": 61.443041999999984,
+      "beforeState": {
+        "resource": "desk-normal",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          454,
+          454
+        ],
+        "sourceSize": [
+          480,
+          480
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:64378/ene/desk-normal/small.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2378195,
+        "status": "Playing"
+      },
+      "afterState": {
+        "resource": "desk-normal",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          454,
+          454
+        ],
+        "sourceSize": [
+          480,
+          480
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:64378/ene/desk-normal/small.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2573247,
+        "status": "Playing"
+      },
+      "screenshotHashes": [
+        "a9f188de31738217ea649265e562274dca807b98680818b73ef78c26686a7108",
+        "c0e33aaee00e901a645d9d49fa21423adc8453d02f63ba8d1d6861cda9cf5a92",
+        "ceea42dbb81ac1f4022bb68ed94c2878b6c2a75a8a50081c93fdfafa0f9d4858"
+      ],
+      "visiblyChanging": true,
+      "videoFrames": null,
+      "cpuCorePercent": 27.954104225503684,
+      "cpuAllCoresPercent": 2.32950868545864,
+      "before": {
+        "cpuSeconds": 33.90520599999999,
+        "workingSetBytes": 891863040,
+        "privateBytes": 590286848,
+        "processes": [
+          {
+            "type": "browser",
+            "id": 32336,
+            "cpuTime": 6.864018
+          },
+          {
+            "type": "renderer",
+            "id": 5168,
+            "cpuTime": 0.143827
+          },
+          {
+            "type": "renderer",
+            "id": 31616,
+            "cpuTime": 10.673036
+          },
+          {
+            "type": "renderer",
+            "id": 25060,
+            "cpuTime": 1.094964
+          },
+          {
+            "type": "GPU",
+            "id": 31052,
+            "cpuTime": 14.402042
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 1808,
+            "cpuTime": 0.626484
+          },
+          {
+            "type": "storage.mojom.StorageService",
+            "id": 28828,
+            "cpuTime": 0.100835
+          }
+        ],
+        "memory": [
+          {
+            "Id": 1808,
+            "WorkingSet64": 42655744,
+            "PrivateMemorySize64": 15155200
+          },
+          {
+            "Id": 5168,
+            "WorkingSet64": 35729408,
+            "PrivateMemorySize64": 18849792
+          },
+          {
+            "Id": 25060,
+            "WorkingSet64": 91553792,
+            "PrivateMemorySize64": 44408832
+          },
+          {
+            "Id": 28828,
+            "WorkingSet64": 20672512,
+            "PrivateMemorySize64": 9322496
+          },
+          {
+            "Id": 31052,
+            "WorkingSet64": 457125888,
+            "PrivateMemorySize64": 414994432
+          },
+          {
+            "Id": 31616,
+            "WorkingSet64": 105586688,
+            "PrivateMemorySize64": 43630592
+          },
+          {
+            "Id": 32336,
+            "WorkingSet64": 138539008,
+            "PrivateMemorySize64": 43925504
+          }
+        ]
+      },
+      "after": {
+        "cpuSeconds": 51.08105799999999,
+        "workingSetBytes": 869261312,
+        "privateBytes": 567066624,
+        "processes": [
+          {
+            "type": "browser",
+            "id": 32336,
+            "cpuTime": 7.367301
+          },
+          {
+            "type": "renderer",
+            "id": 5168,
+            "cpuTime": 0.145867
+          },
+          {
+            "type": "renderer",
+            "id": 31616,
+            "cpuTime": 14.941607
+          },
+          {
+            "type": "renderer",
+            "id": 25060,
+            "cpuTime": 1.111261
+          },
+          {
+            "type": "GPU",
+            "id": 31052,
+            "cpuTime": 26.737206
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 1808,
+            "cpuTime": 0.673185
+          },
+          {
+            "type": "storage.mojom.StorageService",
+            "id": 28828,
+            "cpuTime": 0.104631
+          }
+        ],
+        "memory": [
+          {
+            "Id": 1808,
+            "WorkingSet64": 42819584,
+            "PrivateMemorySize64": 15114240
+          },
+          {
+            "Id": 5168,
+            "WorkingSet64": 35729408,
+            "PrivateMemorySize64": 18849792
+          },
+          {
+            "Id": 25060,
+            "WorkingSet64": 89726976,
+            "PrivateMemorySize64": 42184704
+          },
+          {
+            "Id": 28828,
+            "WorkingSet64": 20668416,
+            "PrivateMemorySize64": 9302016
+          },
+          {
+            "Id": 31052,
+            "WorkingSet64": 436260864,
+            "PrivateMemorySize64": 394887168
+          },
+          {
+            "Id": 31616,
+            "WorkingSet64": 105242624,
+            "PrivateMemorySize64": 42893312
+          },
+          {
+            "Id": 32336,
+            "WorkingSet64": 138813440,
+            "PrivateMemorySize64": 43835392
+          }
+        ]
+      }
+    },
+    {
+      "size": "large",
+      "codec": "webm",
+      "seconds": 61.51568719999999,
+      "beforeState": {
+        "resource": "desk-normal",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          569,
+          569
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": 1.607152,
+        "quality": {
+          "totalVideoFrames": 42,
+          "droppedVideoFrames": 1
+        },
+        "url": "http://127.0.0.1:64378/ene/desk-normal/large.webm",
+        "domElements": 160,
+        "jsHeapBytes": 2214463,
+        "status": "Playing"
+      },
+      "afterState": {
+        "resource": "desk-normal",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          569,
+          569
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": 2.669003,
+        "quality": {
+          "totalVideoFrames": 1508,
+          "droppedVideoFrames": 1
+        },
+        "url": "http://127.0.0.1:64378/ene/desk-normal/large.webm",
+        "domElements": 160,
+        "jsHeapBytes": 2275516,
+        "status": "Playing"
+      },
+      "screenshotHashes": [
+        "05d0f8655f46fde5d5cf2509092550e7985f3b73510f53d4be843551351ef534",
+        "fbe001aaf199e29e1a017a16f0635dc84b7c6aa6cc6308df02c380b7bdafa4ee",
+        "e587a5f091f592d7adbfce81027956a51dcb4e5890b79982a298d1c10c3debea"
+      ],
+      "visiblyChanging": true,
+      "videoFrames": {
+        "total": 1466,
+        "dropped": 0
+      },
+      "cpuCorePercent": 48.55616893766896,
+      "cpuAllCoresPercent": 4.046347411472413,
+      "before": {
+        "cpuSeconds": 40.495363999999995,
+        "workingSetBytes": 938041344,
+        "privateBytes": 633909248,
+        "processes": [
+          {
+            "type": "browser",
+            "id": 32336,
+            "cpuTime": 8.224635
+          },
+          {
+            "type": "renderer",
+            "id": 18708,
+            "cpuTime": 0.144385
+          },
+          {
+            "type": "renderer",
+            "id": 32364,
+            "cpuTime": 1.604941
+          },
+          {
+            "type": "renderer",
+            "id": 29076,
+            "cpuTime": 1.095846
+          },
+          {
+            "type": "GPU",
+            "id": 31052,
+            "cpuTime": 28.54551
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 1808,
+            "cpuTime": 0.769858
+          },
+          {
+            "type": "storage.mojom.StorageService",
+            "id": 28828,
+            "cpuTime": 0.110189
+          }
+        ],
+        "memory": [
+          {
+            "Id": 1808,
+            "WorkingSet64": 42037248,
+            "PrivateMemorySize64": 13627392
+          },
+          {
+            "Id": 18708,
+            "WorkingSet64": 33054720,
+            "PrivateMemorySize64": 16334848
+          },
+          {
+            "Id": 28828,
+            "WorkingSet64": 21045248,
+            "PrivateMemorySize64": 9314304
+          },
+          {
+            "Id": 29076,
+            "WorkingSet64": 99504128,
+            "PrivateMemorySize64": 54321152
+          },
+          {
+            "Id": 31052,
+            "WorkingSet64": 471449600,
+            "PrivateMemorySize64": 427139072
+          },
+          {
+            "Id": 32336,
+            "WorkingSet64": 141094912,
+            "PrivateMemorySize64": 45137920
+          },
+          {
+            "Id": 32364,
+            "WorkingSet64": 129855488,
+            "PrivateMemorySize64": 68034560
+          }
+        ]
+      },
+      "after": {
+        "cpuSeconds": 70.36502499999999,
+        "workingSetBytes": 741781504,
+        "privateBytes": 433590272,
+        "processes": [
+          {
+            "type": "browser",
+            "id": 32336,
+            "cpuTime": 8.957426
+          },
+          {
+            "type": "renderer",
+            "id": 18708,
+            "cpuTime": 0.148494
+          },
+          {
+            "type": "renderer",
+            "id": 32364,
+            "cpuTime": 21.40746
+          },
+          {
+            "type": "renderer",
+            "id": 29076,
+            "cpuTime": 1.248695
+          },
+          {
+            "type": "GPU",
+            "id": 31052,
+            "cpuTime": 37.691294
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 1808,
+            "cpuTime": 0.79821
+          },
+          {
+            "type": "storage.mojom.StorageService",
+            "id": 28828,
+            "cpuTime": 0.113446
+          }
+        ],
+        "memory": [
+          {
+            "Id": 1808,
+            "WorkingSet64": 42053632,
+            "PrivateMemorySize64": 13635584
+          },
+          {
+            "Id": 18708,
+            "WorkingSet64": 32743424,
+            "PrivateMemorySize64": 15937536
+          },
+          {
+            "Id": 28828,
+            "WorkingSet64": 21045248,
+            "PrivateMemorySize64": 9314304
+          },
+          {
+            "Id": 29076,
+            "WorkingSet64": 93188096,
+            "PrivateMemorySize64": 45985792
+          },
+          {
+            "Id": 31052,
+            "WorkingSet64": 281804800,
+            "PrivateMemorySize64": 236359680
+          },
+          {
+            "Id": 32336,
+            "WorkingSet64": 141221888,
+            "PrivateMemorySize64": 45285376
+          },
+          {
+            "Id": 32364,
+            "WorkingSet64": 129724416,
+            "PrivateMemorySize64": 67072000
+          }
+        ]
+      }
+    },
+    {
+      "size": "large",
+      "codec": "webp",
+      "seconds": 61.534359799999976,
+      "beforeState": {
+        "resource": "desk-normal",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          569,
+          569
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:64378/ene/desk-normal/large.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2378327,
+        "status": "Playing"
+      },
+      "afterState": {
+        "resource": "desk-normal",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          569,
+          569
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:64378/ene/desk-normal/large.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2568803,
+        "status": "Playing"
+      },
+      "screenshotHashes": [
+        "06b65edd3eac02a7f9eb1838ae31336a5124a7716ecd9ec2246eb71419cde798",
+        "28af9f1d4f1c56b7f5a9b56fa9f12dd1cb92f94a9b4e9bab7084054caccc22b3",
+        "96fd73706274050a8e8bb42e8d0829d9fc18c12cb0393e789662a86490eec638"
+      ],
+      "visiblyChanging": true,
+      "videoFrames": null,
+      "cpuCorePercent": 70.16039679346761,
+      "cpuAllCoresPercent": 5.846699732788967,
+      "before": {
+        "cpuSeconds": 72.65219,
+        "workingSetBytes": 1436553216,
+        "privateBytes": 1106767872,
+        "processes": [
+          {
+            "type": "browser",
+            "id": 32336,
+            "cpuTime": 8.998799
+          },
+          {
+            "type": "renderer",
+            "id": 18708,
+            "cpuTime": 0.14865
+          },
+          {
+            "type": "renderer",
+            "id": 32364,
+            "cpuTime": 22.778326
+          },
+          {
+            "type": "renderer",
+            "id": 29076,
+            "cpuTime": 1.249113
+          },
+          {
+            "type": "GPU",
+            "id": 31052,
+            "cpuTime": 38.527448
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 1808,
+            "cpuTime": 0.836321
+          },
+          {
+            "type": "storage.mojom.StorageService",
+            "id": 28828,
+            "cpuTime": 0.113533
+          }
+        ],
+        "memory": [
+          {
+            "Id": 1808,
+            "WorkingSet64": 44867584,
+            "PrivateMemorySize64": 16470016
+          },
+          {
+            "Id": 18708,
+            "WorkingSet64": 32743424,
+            "PrivateMemorySize64": 15937536
+          },
+          {
+            "Id": 28828,
+            "WorkingSet64": 21045248,
+            "PrivateMemorySize64": 9314304
+          },
+          {
+            "Id": 29076,
+            "WorkingSet64": 93192192,
+            "PrivateMemorySize64": 45989888
+          },
+          {
+            "Id": 31052,
+            "WorkingSet64": 979714048,
+            "PrivateMemorySize64": 925667328
+          },
+          {
+            "Id": 32336,
+            "WorkingSet64": 141221888,
+            "PrivateMemorySize64": 45285376
+          },
+          {
+            "Id": 32364,
+            "WorkingSet64": 123768832,
+            "PrivateMemorySize64": 48103424
+          }
+        ]
+      },
+      "after": {
+        "cpuSeconds": 115.82494100000001,
+        "workingSetBytes": 1371545600,
+        "privateBytes": 1032400896,
+        "processes": [
+          {
+            "type": "browser",
+            "id": 32336,
+            "cpuTime": 9.563886
+          },
+          {
+            "type": "renderer",
+            "id": 18708,
+            "cpuTime": 0.150715
+          },
+          {
+            "type": "renderer",
+            "id": 32364,
+            "cpuTime": 48.627928
+          },
+          {
+            "type": "renderer",
+            "id": 29076,
+            "cpuTime": 1.265968
+          },
+          {
+            "type": "GPU",
+            "id": 31052,
+            "cpuTime": 55.253828
+          },
+          {
+            "type": "network.mojom.NetworkService",
+            "id": 1808,
+            "cpuTime": 0.845538
+          },
+          {
+            "type": "storage.mojom.StorageService",
+            "id": 28828,
+            "cpuTime": 0.117078
+          }
+        ],
+        "memory": [
+          {
+            "Id": 1808,
+            "WorkingSet64": 44793856,
+            "PrivateMemorySize64": 16306176
+          },
+          {
+            "Id": 18708,
+            "WorkingSet64": 32743424,
+            "PrivateMemorySize64": 15937536
+          },
+          {
+            "Id": 28828,
+            "WorkingSet64": 21045248,
+            "PrivateMemorySize64": 9314304
+          },
+          {
+            "Id": 29076,
+            "WorkingSet64": 90632192,
+            "PrivateMemorySize64": 42909696
+          },
+          {
+            "Id": 31052,
+            "WorkingSet64": 913940480,
+            "PrivateMemorySize64": 855187456
+          },
+          {
+            "Id": 32336,
+            "WorkingSet64": 141201408,
+            "PrivateMemorySize64": 45211648
+          },
+          {
+            "Id": 32364,
+            "WorkingSet64": 127188992,
+            "PrivateMemorySize64": 47534080
+          }
+        ]
+      }
+    }
+  ]
+}

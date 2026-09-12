@@ -1,0 +1,93 @@
+{
+  "date": "2026-09-12T09:42:09.960Z",
+  "scope": "Private Chrome draft playback on Windows; 12 fps previews, no final rendition or device acceptance claim",
+  "errors": [],
+  "browser": "152.0.7977.83",
+  "initialFrameHashes": [
+    "29b904a356606585eb0324ad29da8e4dde48334bf0b12dabd12cc322e72e9e4d",
+    "4fd4192a363ed1db8cb9de6618ee33d98dfcf1e9b2ce83b10c6532927f28620e"
+  ],
+  "webm": [
+    {
+      "resource": "home-greeting",
+      "size": [
+        360,
+        480
+      ],
+      "duration": 5,
+      "loopResets": 2,
+      "distinctPlaybackTimes": 105,
+      "cornerAlpha": 0,
+      "transparentPixels": 145531,
+      "opaquePixels": 18903,
+      "partialPixels": 8366,
+      "quality": {
+        "totalVideoFrames": 133,
+        "droppedVideoFrames": 0
+      }
+    },
+    {
+      "resource": "desk-normal",
+      "size": [
+        480,
+        480
+      ],
+      "duration": 3,
+      "loopResets": 3,
+      "distinctPlaybackTimes": 100,
+      "cornerAlpha": 0,
+      "transparentPixels": 165744,
+      "opaquePixels": 54330,
+      "partialPixels": 10326,
+      "quality": {
+        "totalVideoFrames": 134,
+        "droppedVideoFrames": 3
+      }
+    }
+  ],
+  "pauseStable": true,
+  "replay": [
+    {
+      "playing": true,
+      "time": 0.305871
+    },
+    {
+      "playing": true,
+      "time": 0.305339
+    }
+  ],
+  "seekTimes": [
+    2.6,
+    0.8
+  ],
+  "seekFrameHashes": [
+    "c1dc15253326335e9f101ebaa3fe94a4eb64b6e9c52471fd1b5a75d2626d51be",
+    "4c95e8c4a6adff375a7585203e92db1331a978f246adfe3c7b34b441e777c9bf"
+  ],
+  "webmPixelsChange": [
+    true,
+    true
+  ],
+  "webpCornerAlpha": [
+    0,
+    0
+  ],
+  "webpHashes": [
+    [
+      "7e9434f83dc2f4cd38ade5f217f24fb490144531833a4b1529acff9b8e28b383",
+      "2944d8d5df6afe157f564e93f66ba295d6d6ffdeadc90d5eaa9339d49121273f",
+      "aeab0a58d2bcb6d885178a2d1b832706ca299e4acf322a251360c76be879ea9e"
+    ],
+    [
+      "f8893637867fd371b8ca35b50cc456d9061397dc733aa5f9823749ffaa3eab55",
+      "bbc5151eb75fa68d123c21a21262dbfed48540742b43681a96b890255fdfc8d4",
+      "4d9ee95f28b04b75bd49dcff2999e55d48ec62478acbcdedefca5bc88548e92b"
+    ]
+  ],
+  "webpChanges": [
+    true,
+    true
+  ],
+  "webpPauseUsesPoster": true,
+  "passed": true
+}

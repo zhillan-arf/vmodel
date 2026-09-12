@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "provider": "directml",
+  "status": "preparation-timeout",
+  "onnxruntime": "1.23.0",
+  "directmlVersion": "1.15.4",
+  "availableProviders": ["DmlExecutionProvider", "CPUExecutionProvider"],
+  "deviceId": 0,
+  "elapsedApproxSeconds": 250,
+  "preparationEvidence": {
+    "processStartedLocal": "2026-09-12T16:10:07+07:00",
+    "encoderProfileCreatedLocal": "2026-09-12T16:10:09+07:00",
+    "generatorProfileCreatedLocal": "2026-09-12T16:12:57+07:00",
+    "meaning": "Encoder session construction returned before generator construction began. Neither session produced a completed profiled conversion report before manual termination.",
+    "observedProcessCpuSecondsAt16_13_42": 207.46875,
+    "observedWorkingSetBytesAt16_13_42": 1116078080,
+    "notPeakMemoryOrThermalEvidence": true
+  },
+  "termination": "Only verified probe parent PID 4040 and its interpreter children were terminated after approximately four minutes; audition server remained running. Future script invocations enforce a 240-second process-tree timeout.",
+  "completedConversions": 0,
+  "actualDirectMLExecution": null,
+  "parityPassed": null,
+  "computeLatencyMs": null,
+  "qualityAccepted": false,
+  "microphoneCaptured": false,
+  "physicalLatencyMeasured": false,
+  "boundary": "DirectML is installed and advertised. No successful model inference/provider profile or GPU speed claim is established. Compilation may succeed with a longer budget; this bounded failure does not prove incompatibility or slow warm inference. DirectML redistributable has separate Microsoft terms and is not the accepted OSS inference baseline."
+}

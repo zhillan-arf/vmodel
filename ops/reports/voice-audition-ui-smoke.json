@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-12T08:42:12.847Z",
+  "passed": true,
+  "players": [
+    {
+      "paused": true,
+      "duration": 8.39665
+    },
+    {
+      "paused": true,
+      "duration": 8.3967
+    },
+    {
+      "paused": true,
+      "duration": 8.3967
+    },
+    {
+      "paused": true,
+      "duration": 8.3967
+    }
+  ],
+  "automaticPlayback": false,
+  "comparedVoices": [
+    "bright",
+    "soft",
+    "cool"
+  ],
+  "simultaneousPlaybackMaximum": 1,
+  "stopRewindsAll": true,
+  "referenceOnlySavePayload": true,
+  "persistedNotesInIsolatedBrowserContext": true,
+  "realUserRatingsWritten": false,
+  "mobileHorizontalOverflow": false,
+  "microphoneRequests": 0,
+  "externalRequests": [],
+  "errors": [],
+  "boundary": "Synthetic browser playback/control verification; no user listening or live-conversation acceptance"
+}

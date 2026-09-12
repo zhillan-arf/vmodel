@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "decision": "TASK-030 measured two-second Ene codec spike; final resources must independently meet byte and visual gates",
+  "fps": 24,
+  "resizeFilter": "scale=WIDTH:HEIGHT:flags=lanczos,format=rgba",
+  "webm": {
+    "encoder": "libvpx-vp9",
+    "pixelFormat": "yuva420p",
+    "crf": 34,
+    "bitrate": 0,
+    "deadline": "good",
+    "cpuUsed": 2,
+    "rowMt": 1,
+    "threads": 4,
+    "autoAltRef": 0
+  },
+  "webp": {
+    "encoder": "libwebp_anim",
+    "pixelFormat": "yuva420p",
+    "quality": 65,
+    "compressionLevel": 4,
+    "loop": 0
+  },
+  "poster": {
+    "encoder": "libwebp",
+    "quality": 85,
+    "pngFallback": true
+  },
+  "desk": {
+    "seconds": 3,
+    "large": [
+      960,
+      960
+    ],
+    "small": [
+      480,
+      480
+    ],
+    "maxWebmBytes": [
+      1572864,
+      786432
+    ],
+    "maxWebpBytes": [
+      3145728,
+      1572864
+    ]
+  },
+  "greeting": {
+    "targetSeconds": 5,
+    "permittedSeconds": [
+      4,
+      6
+    ],
+    "large": [
+      720,
+      960
+    ],
+    "small": [
+      360,
+      480
+    ],
+    "maxWebmBytes": [
+      3145728,
+      1572864
+    ],
+    "maxWebpBytes": [
+      5242880,
+      2621440
+    ]
+  },
+  "transparency": "Require decoded alpha and visual black/white/checkerboard inspection; do not infer from codec metadata",
+  "fallback": "Probe actual local known-alpha WebM; choose animated WebP on codec/alpha rejection; poster is only loading/pause/reduced-motion/error state",
+  "productionLimitations": [
+    "Final 24 fps renditions still require independent encode/visual/size gates",
+    "All five creative source actions accepted in TASK-031 through TASK-035",
+    "Safari/iOS/Android hardware acceptance remains TASK-038"
+  ]
+}

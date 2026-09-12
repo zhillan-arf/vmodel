@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-12T09:53:01.754Z",
+  "scope": "Real Windows start/stop scripts from a different working directory; owned loopback port fixture and actual avatar rendering with external requests blocked. No camera/microphone or OBS access. Camera shutdown is separately measured in server-stop-smoke.json.",
+  "checks": {
+    "idempotentOwnedLaunch": true,
+    "actualAvatarLoadsWithExternalNetworkBlocked": true,
+    "ownedStopReleasesPort": true,
+    "occupiedPortPreservesExistingServer": true,
+    "stalePidDoesNotKillAnotherProcess": true,
+    "restartLeavesStudioReady": true
+  },
+  "errors": [],
+  "studioLeftReady": true
+}

@@ -1,0 +1,152 @@
+{
+  "date": "2026-09-12T13:46:17.220Z",
+  "runLabel": "occl-v2",
+  "passed": true,
+  "status": "complete",
+  "question": "Does Chrome native window occlusion explain the observed collapse toward 1 Hz draw delivery and blank captures?",
+  "phaseMs": 12000,
+  "obsInvolved": false,
+  "physicalMedia": false,
+  "liveAccepted": false,
+  "conditions": [
+    {
+      "name": "production-default",
+      "intent": "Reproduces Start VModel.cmd, which launches Chrome with no flags: occlusion detection and renderer backgrounding both active.",
+      "ignoreDefaultArgs": [
+        "--disable-background-timer-throttling",
+        "--disable-backgrounding-occluded-windows",
+        "--disable-renderer-backgrounding"
+      ],
+      "extraArgs": []
+    },
+    {
+      "name": "hardened",
+      "intent": "Proposed fix: keep the anti-throttling switches and also disable native window occlusion calculation.",
+      "ignoreDefaultArgs": [],
+      "extraArgs": [
+        "--disable-features=CalculateNativeWinOcclusion"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "condition": "production-default",
+      "intent": "Reproduces Start VModel.cmd, which launches Chrome with no flags: occlusion detection and renderer backgrounding both active.",
+      "chromeVersion": "152.0.7977.83",
+      "launchArgs": [],
+      "ignoredDefaultArgs": [
+        "--disable-background-timer-throttling",
+        "--disable-backgrounding-occluded-windows",
+        "--disable-renderer-backgrounding"
+      ],
+      "before": {
+        "draws": 716,
+        "drawsPerSecond": 59.62,
+        "inferences": 0,
+        "intervalMsMax": 72,
+        "durationMs": 12010.3,
+        "visibility": "visible",
+        "contextLost": false,
+        "rendererFrame": 1045
+      },
+      "during": {
+        "draws": 720,
+        "drawsPerSecond": 59.91,
+        "inferences": 0,
+        "intervalMsMax": 19.1,
+        "durationMs": 12017.9,
+        "visibility": "visible",
+        "contextLost": false,
+        "rendererFrame": 1958
+      },
+      "after": {
+        "draws": 719,
+        "drawsPerSecond": 59.89,
+        "inferences": 0,
+        "intervalMsMax": 19.8,
+        "durationMs": 12005,
+        "visibility": "visible",
+        "contextLost": false,
+        "rendererFrame": 2862
+      },
+      "duringToBeforeRatio": 1.005,
+      "recovered": true,
+      "throttledWhileOccluded": false,
+      "visibilityEvents": [],
+      "contextEvents": [],
+      "pageErrors": []
+    },
+    {
+      "condition": "hardened",
+      "intent": "Proposed fix: keep the anti-throttling switches and also disable native window occlusion calculation.",
+      "chromeVersion": "152.0.7977.83",
+      "launchArgs": [
+        "--disable-features=CalculateNativeWinOcclusion"
+      ],
+      "ignoredDefaultArgs": [],
+      "before": {
+        "draws": 720,
+        "drawsPerSecond": 59.95,
+        "inferences": 0,
+        "intervalMsMax": 18.7,
+        "durationMs": 12010.6,
+        "visibility": "visible",
+        "contextLost": false,
+        "rendererFrame": 1059
+      },
+      "during": {
+        "draws": 720,
+        "drawsPerSecond": 59.92,
+        "inferences": 0,
+        "intervalMsMax": 18.4,
+        "durationMs": 12016.5,
+        "visibility": "visible",
+        "contextLost": false,
+        "rendererFrame": 1968
+      },
+      "after": {
+        "draws": 720,
+        "drawsPerSecond": 59.91,
+        "inferences": 0,
+        "intervalMsMax": 20.1,
+        "durationMs": 12017.4,
+        "visibility": "visible",
+        "contextLost": false,
+        "rendererFrame": 2872
+      },
+      "duringToBeforeRatio": 0.999,
+      "recovered": true,
+      "throttledWhileOccluded": false,
+      "visibilityEvents": [],
+      "contextEvents": [],
+      "pageErrors": []
+    }
+  ],
+  "limits": [
+    "A draw-cadence diagnostic only: no OBS, recording, microphone, physical camera or acceptance measurement.",
+    "The occluder is a synthetic opaque topmost window; a real user covering the window with another application is not identical.",
+    "Draw counts come from the owned viewer instrumentation, not from captured video frames.",
+    "Blank-white OBS captures are a separate reported symptom; this probe measures rendering, not capture output.",
+    "Conditions run sequentially and can see different ambient system load, which is recorded but not controlled."
+  ],
+  "fixture": {
+    "id": "portrait",
+    "file": "assets/testing/jsc2021e037768_alt.jpg",
+    "sha256": "7a7536821783691d1c7b58f5ee7cb601abbeaaa2f4703e755a15c5dbb4271b78",
+    "credit": "NASA/Josh Valcarcel",
+    "verified": true
+  },
+  "server": {
+    "base": "http://127.0.0.1:52040",
+    "port": 52040,
+    "pid": 32348,
+    "owned": true
+  },
+  "comparison": {
+    "productionThrottledWhileOccluded": false,
+    "hardenedThrottledWhileOccluded": false,
+    "productionDuringDrawsPerSecond": 59.91,
+    "hardenedDuringDrawsPerSecond": 59.92,
+    "occlusionExplainsCollapse": false
+  }
+}

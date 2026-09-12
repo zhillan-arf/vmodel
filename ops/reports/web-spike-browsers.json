@@ -1,0 +1,807 @@
+{
+  "date": "2026-09-12T08:38:12.369Z",
+  "platform": "win32",
+  "release": "10.0.26200",
+  "cpu": "12th Gen Intel(R) Core(TM) i7-1255U",
+  "logicalCores": 12,
+  "ramBytes": 16779812864,
+  "headless": true,
+  "scope": "Automated desktop engines on this Windows laptop; not actual Safari/iOS/Android hardware",
+  "results": [
+    {
+      "engine": "chrome",
+      "status": "passed",
+      "errors": [],
+      "network": [
+        "/",
+        "/media/ene-spike-480-poster.webp",
+        "/media/alpha-probe.webm",
+        "/media/opaque-probe.webm",
+        "/media/ene-spike-480-q65.webp",
+        "/media/missing-codec.webm",
+        "/media/ene-spike-480-q65.webp",
+        "/media/ene-spike-480-q34.webm",
+        "/media/ene-spike-480-poster.webp",
+        "/media/ene-spike-480-q34.webm",
+        "/media/ene-spike-480-q34.webm",
+        "/media/ene-spike-480-q34.webm",
+        "/media/ene-spike-480-q34.webm",
+        "/media/ene-spike-480-poster.webp",
+        "/media/ene-spike-480-q34.webm",
+        "/media/ene-spike-480-q65.webp",
+        "/media/ene-spike-480-q65.webp",
+        "/media/ene-spike-480-poster.webp",
+        "/media/ene-spike-480-q65.webp",
+        "/media/ene-spike-480-q34.webm",
+        "/media/ene-spike-480-q65.webp"
+      ],
+      "version": "152.0.7977.83",
+      "posterInitial": {
+        "mode": "poster",
+        "userPaused": false,
+        "count": 3,
+        "video": [],
+        "images": [
+          "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+          "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+          "http://127.0.0.1:63449/media/ene-spike-480-poster.webp"
+        ]
+      },
+      "alphaProbe": {
+        "supported": true,
+        "transparentAlpha": 0,
+        "opaqueAlpha": 255
+      },
+      "lostAlpha": {
+        "alpha": {
+          "supported": false,
+          "transparentAlpha": 255,
+          "opaqueAlpha": 255
+        },
+        "mode": "webp"
+      },
+      "codecRejection": {
+        "alpha": {
+          "supported": false,
+          "error": "media rejected"
+        },
+        "mode": "webp"
+      },
+      "autoplayRejection": {
+        "mode": "poster",
+        "userPaused": true,
+        "rejection": "NotAllowedError: Injected autoplay rejection"
+      },
+      "autoplayRejectionKind": "Injected NotAllowedError exercises catch; not a browser policy claim",
+      "playbacks": [
+        {
+          "codec": "webm",
+          "played": {
+            "mode": "webm",
+            "userPaused": false,
+            "rejection": null
+          },
+          "startupMs": 16.60160000000019,
+          "actualAlpha": {
+            "width": 480,
+            "height": 480,
+            "cornerAlpha": 0,
+            "zero": 171584,
+            "full": 48718,
+            "partial": 10098
+          },
+          "durationSeconds": 60.414646399999995,
+          "sourceSize": 480,
+          "displayCssPixels": 320,
+          "activeMedia": 1,
+          "screenshotHashes": [
+            "0a17c708f3bbd3e11d99ce858619e9f2235faeaa8eab4712609e5391007c9514",
+            "d46604cb75ac440edece73501d4956897f8ac7920299a2479564ec9dcb92cddd",
+            "97cb620e93cf54214da743f8ca5e548b0cc31ca383207bf1adabb5f1ff0d0ebf"
+          ],
+          "visuallyChanging": true,
+          "videoFrames": {
+            "total": 1429,
+            "dropped": 0
+          },
+          "cpuCorePercent": 25.836599119779013,
+          "cpuAllCoresPercent": 2.1530499266482512,
+          "processStart": {
+            "cpuSeconds": 4.038242,
+            "processes": [
+              {
+                "type": "browser",
+                "id": 23932,
+                "cpuTime": 1.066461
+              },
+              {
+                "type": "renderer",
+                "id": 27932,
+                "cpuTime": 0.075244
+              },
+              {
+                "type": "renderer",
+                "id": 18072,
+                "cpuTime": 0.435341
+              },
+              {
+                "type": "renderer",
+                "id": 25324,
+                "cpuTime": 0.449878
+              },
+              {
+                "type": "GPU",
+                "id": 9280,
+                "cpuTime": 1.714288
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30916,
+                "cpuTime": 0.241561
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 24204,
+                "cpuTime": 0.055469
+              }
+            ],
+            "memory": [
+              {
+                "Id": 9280,
+                "WorkingSet64": 285986816,
+                "PrivateMemorySize64": 272052224,
+                "PeakWorkingSet64": 306049024
+              },
+              {
+                "Id": 18072,
+                "WorkingSet64": 95395840,
+                "PrivateMemorySize64": 43409408,
+                "PeakWorkingSet64": 101318656
+              },
+              {
+                "Id": 23932,
+                "WorkingSet64": 133394432,
+                "PrivateMemorySize64": 42266624,
+                "PeakWorkingSet64": 133394432
+              },
+              {
+                "Id": 24204,
+                "WorkingSet64": 20783104,
+                "PrivateMemorySize64": 9699328,
+                "PeakWorkingSet64": 20783104
+              },
+              {
+                "Id": 25324,
+                "WorkingSet64": 98770944,
+                "PrivateMemorySize64": 53612544,
+                "PeakWorkingSet64": 98770944
+              },
+              {
+                "Id": 27932,
+                "WorkingSet64": 35987456,
+                "PrivateMemorySize64": 19226624,
+                "PeakWorkingSet64": 35987456
+              },
+              {
+                "Id": 30916,
+                "WorkingSet64": 39194624,
+                "PrivateMemorySize64": 12898304,
+                "PeakWorkingSet64": 39739392
+              }
+            ]
+          },
+          "processEnd": {
+            "cpuSeconds": 19.647332000000002,
+            "processes": [
+              {
+                "type": "browser",
+                "id": 23932,
+                "cpuTime": 2.447073
+              },
+              {
+                "type": "renderer",
+                "id": 27932,
+                "cpuTime": 0.080088
+              },
+              {
+                "type": "renderer",
+                "id": 18072,
+                "cpuTime": 7.936206
+              },
+              {
+                "type": "renderer",
+                "id": 25324,
+                "cpuTime": 0.59068
+              },
+              {
+                "type": "GPU",
+                "id": 9280,
+                "cpuTime": 8.216145
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30916,
+                "cpuTime": 0.318217
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 24204,
+                "cpuTime": 0.058923
+              }
+            ],
+            "memory": [
+              {
+                "Id": 9280,
+                "WorkingSet64": 232591360,
+                "PrivateMemorySize64": 193798144,
+                "PeakWorkingSet64": 306049024
+              },
+              {
+                "Id": 18072,
+                "WorkingSet64": 97513472,
+                "PrivateMemorySize64": 43671552,
+                "PeakWorkingSet64": 101318656
+              },
+              {
+                "Id": 23932,
+                "WorkingSet64": 136925184,
+                "PrivateMemorySize64": 43048960,
+                "PeakWorkingSet64": 139079680
+              },
+              {
+                "Id": 24204,
+                "WorkingSet64": 20742144,
+                "PrivateMemorySize64": 9400320,
+                "PeakWorkingSet64": 20852736
+              },
+              {
+                "Id": 25324,
+                "WorkingSet64": 91623424,
+                "PrivateMemorySize64": 43626496,
+                "PeakWorkingSet64": 100810752
+              },
+              {
+                "Id": 27932,
+                "WorkingSet64": 35700736,
+                "PrivateMemorySize64": 18796544,
+                "PeakWorkingSet64": 36110336
+              },
+              {
+                "Id": 30916,
+                "WorkingSet64": 39661568,
+                "PrivateMemorySize64": 12533760,
+                "PeakWorkingSet64": 40038400
+              }
+            ]
+          },
+          "pause": {
+            "mode": "poster",
+            "userPaused": true,
+            "count": 3,
+            "video": [],
+            "images": [
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp"
+            ]
+          },
+          "resume": {
+            "mode": "webm",
+            "userPaused": false,
+            "rejection": null
+          }
+        },
+        {
+          "codec": "webp",
+          "played": {
+            "mode": "webp",
+            "userPaused": false,
+            "rejection": null
+          },
+          "startupMs": 9.235100000005332,
+          "actualAlpha": {
+            "width": 480,
+            "height": 480,
+            "cornerAlpha": 0,
+            "zero": 173030,
+            "full": 50029,
+            "partial": 7341
+          },
+          "durationSeconds": 60.436881500000005,
+          "sourceSize": 480,
+          "displayCssPixels": 320,
+          "activeMedia": 1,
+          "screenshotHashes": [
+            "3690b79a8ba1991f327e2db70d4a4f2525bee9eb25e54eba3f0f393406d5d92f",
+            "04c63cb9008f6180a6733bbc76b7202fc0cd4cfb2386b6f6a9e2281986bda903",
+            "47298b6bf2a2b39c41490b0a69b795feb55edbe5dde9f9e373a51c404ffd6db3"
+          ],
+          "visuallyChanging": true,
+          "videoFrames": null,
+          "cpuCorePercent": 17.561584477187168,
+          "cpuAllCoresPercent": 1.4634653730989307,
+          "processStart": {
+            "cpuSeconds": 20.580325,
+            "processes": [
+              {
+                "type": "browser",
+                "id": 23932,
+                "cpuTime": 2.505278
+              },
+              {
+                "type": "renderer",
+                "id": 27932,
+                "cpuTime": 0.080245
+              },
+              {
+                "type": "renderer",
+                "id": 18072,
+                "cpuTime": 8.478504
+              },
+              {
+                "type": "renderer",
+                "id": 25324,
+                "cpuTime": 0.590976
+              },
+              {
+                "type": "GPU",
+                "id": 9280,
+                "cpuTime": 8.534659
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30916,
+                "cpuTime": 0.331345
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 24204,
+                "cpuTime": 0.059318
+              }
+            ],
+            "memory": [
+              {
+                "Id": 9280,
+                "WorkingSet64": 354844672,
+                "PrivateMemorySize64": 314695680,
+                "PeakWorkingSet64": 354844672
+              },
+              {
+                "Id": 18072,
+                "WorkingSet64": 101900288,
+                "PrivateMemorySize64": 42455040,
+                "PeakWorkingSet64": 116162560
+              },
+              {
+                "Id": 23932,
+                "WorkingSet64": 137129984,
+                "PrivateMemorySize64": 44060672,
+                "PeakWorkingSet64": 141078528
+              },
+              {
+                "Id": 24204,
+                "WorkingSet64": 20742144,
+                "PrivateMemorySize64": 9400320,
+                "PeakWorkingSet64": 20852736
+              },
+              {
+                "Id": 25324,
+                "WorkingSet64": 91623424,
+                "PrivateMemorySize64": 43626496,
+                "PeakWorkingSet64": 100810752
+              },
+              {
+                "Id": 27932,
+                "WorkingSet64": 35700736,
+                "PrivateMemorySize64": 18796544,
+                "PeakWorkingSet64": 36110336
+              },
+              {
+                "Id": 30916,
+                "WorkingSet64": 39669760,
+                "PrivateMemorySize64": 12541952,
+                "PeakWorkingSet64": 40632320
+              }
+            ]
+          },
+          "processEnd": {
+            "cpuSeconds": 31.193999,
+            "processes": [
+              {
+                "type": "browser",
+                "id": 23932,
+                "cpuTime": 2.708243
+              },
+              {
+                "type": "renderer",
+                "id": 27932,
+                "cpuTime": 0.082056
+              },
+              {
+                "type": "renderer",
+                "id": 18072,
+                "cpuTime": 11.771811
+              },
+              {
+                "type": "renderer",
+                "id": 25324,
+                "cpuTime": 0.605633
+              },
+              {
+                "type": "GPU",
+                "id": 9280,
+                "cpuTime": 15.597343
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30916,
+                "cpuTime": 0.366427
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 24204,
+                "cpuTime": 0.062486
+              }
+            ],
+            "memory": [
+              {
+                "Id": 9280,
+                "WorkingSet64": 330403840,
+                "PrivateMemorySize64": 289488896,
+                "PeakWorkingSet64": 362033152
+              },
+              {
+                "Id": 18072,
+                "WorkingSet64": 101228544,
+                "PrivateMemorySize64": 41402368,
+                "PeakWorkingSet64": 116162560
+              },
+              {
+                "Id": 23932,
+                "WorkingSet64": 137060352,
+                "PrivateMemorySize64": 43655168,
+                "PeakWorkingSet64": 141078528
+              },
+              {
+                "Id": 24204,
+                "WorkingSet64": 20717568,
+                "PrivateMemorySize64": 9375744,
+                "PeakWorkingSet64": 20852736
+              },
+              {
+                "Id": 25324,
+                "WorkingSet64": 90263552,
+                "PrivateMemorySize64": 42180608,
+                "PeakWorkingSet64": 100810752
+              },
+              {
+                "Id": 27932,
+                "WorkingSet64": 35700736,
+                "PrivateMemorySize64": 18800640,
+                "PeakWorkingSet64": 36110336
+              },
+              {
+                "Id": 30916,
+                "WorkingSet64": 39825408,
+                "PrivateMemorySize64": 12521472,
+                "PeakWorkingSet64": 40632320
+              }
+            ]
+          },
+          "pause": {
+            "mode": "poster",
+            "userPaused": true,
+            "count": 3,
+            "video": [],
+            "images": [
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp"
+            ]
+          },
+          "resume": {
+            "mode": "webp",
+            "userPaused": false,
+            "rejection": null
+          }
+        }
+      ],
+      "throttledStartup": [
+        {
+          "codec": "webm",
+          "ms": 154.07070000001113,
+          "played": {
+            "mode": "webm",
+            "userPaused": false,
+            "rejection": null
+          },
+          "mbitPerSecond": 10,
+          "latencyMs": 100,
+          "cacheDisabled": true
+        },
+        {
+          "codec": "webp",
+          "ms": 859.0124000000069,
+          "played": {
+            "mode": "webp",
+            "userPaused": false,
+            "rejection": null
+          },
+          "mbitPerSecond": 10,
+          "latencyMs": 100,
+          "cacheDisabled": true
+        }
+      ]
+    },
+    {
+      "engine": "firefox",
+      "status": "passed",
+      "errors": [],
+      "network": [
+        "/",
+        "/media/ene-spike-480-poster.webp",
+        "/media/alpha-probe.webm",
+        "/media/opaque-probe.webm",
+        "/media/ene-spike-480-q65.webp",
+        "/media/missing-codec.webm",
+        "/media/ene-spike-480-q34.webm",
+        "/media/ene-spike-480-q34.webm",
+        "/media/ene-spike-480-q34.webm",
+        "/media/ene-spike-480-q34.webm"
+      ],
+      "version": "155.0",
+      "posterInitial": {
+        "mode": "poster",
+        "userPaused": false,
+        "count": 3,
+        "video": [],
+        "images": [
+          "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+          "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+          "http://127.0.0.1:63449/media/ene-spike-480-poster.webp"
+        ]
+      },
+      "alphaProbe": {
+        "supported": true,
+        "transparentAlpha": 0,
+        "opaqueAlpha": 255
+      },
+      "lostAlpha": {
+        "alpha": {
+          "supported": false,
+          "transparentAlpha": 255,
+          "opaqueAlpha": 255
+        },
+        "mode": "webp"
+      },
+      "codecRejection": {
+        "alpha": {
+          "supported": false,
+          "error": "media rejected"
+        },
+        "mode": "webp"
+      },
+      "autoplayRejection": {
+        "mode": "poster",
+        "userPaused": true,
+        "rejection": "NotAllowedError: Injected autoplay rejection"
+      },
+      "autoplayRejectionKind": "Injected NotAllowedError exercises catch; not a browser policy claim",
+      "playbacks": [
+        {
+          "codec": "webm",
+          "played": {
+            "mode": "webm",
+            "userPaused": false,
+            "rejection": null
+          },
+          "startupMs": 24.48179999999411,
+          "actualAlpha": {
+            "width": 480,
+            "height": 480,
+            "cornerAlpha": 0,
+            "zero": 171584,
+            "full": 48718,
+            "partial": 10098
+          },
+          "durationSeconds": 10.018418200000015,
+          "sourceSize": 480,
+          "displayCssPixels": 320,
+          "activeMedia": 1,
+          "screenshotHashes": [
+            "e05fd4e9325f7ec87b8909e7bd05824d8ed0f3f885c9515b180567fa1c6e6d8a",
+            "1e0783c1a8084b411b1aa38e82aac6439fc6606e90d399bfb7f94f73a6f3651a",
+            "35bac794c10516e8803c6b10a0d056ecd33cd2f9f2de20a09766cc3c0770dbab"
+          ],
+          "visuallyChanging": true,
+          "videoFrames": {
+            "total": 245,
+            "dropped": 5
+          },
+          "cpuCorePercent": null,
+          "cpuAllCoresPercent": null,
+          "processStart": null,
+          "processEnd": null,
+          "pause": {
+            "mode": "poster",
+            "userPaused": true,
+            "count": 3,
+            "video": [],
+            "images": [
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp"
+            ]
+          },
+          "resume": {
+            "mode": "webm",
+            "userPaused": false,
+            "rejection": null
+          }
+        },
+        {
+          "codec": "webp",
+          "played": {
+            "mode": "webp",
+            "userPaused": false,
+            "rejection": null
+          },
+          "startupMs": 3.8830999999772757,
+          "actualAlpha": {
+            "width": 480,
+            "height": 480,
+            "cornerAlpha": 0,
+            "zero": 173030,
+            "full": 50029,
+            "partial": 7341
+          },
+          "durationSeconds": 10.022632299999998,
+          "sourceSize": 480,
+          "displayCssPixels": 320,
+          "activeMedia": 1,
+          "screenshotHashes": [
+            "b34306fd02c23bfcb8c2a7fbbe76d3ea3d0ca778bbd1731936dcba8e8d982eca",
+            "8d33b5d1979d6e18855bd47bb365887232d8f80b93212c8626edfa664d79a9c0",
+            "1c551c4510a79dfcdbd1a0d49791cc827a3c77f5306a9be49791c8c8350da764"
+          ],
+          "visuallyChanging": true,
+          "videoFrames": null,
+          "cpuCorePercent": null,
+          "cpuAllCoresPercent": null,
+          "processStart": null,
+          "processEnd": null,
+          "pause": {
+            "mode": "poster",
+            "userPaused": true,
+            "count": 3,
+            "video": [],
+            "images": [
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp"
+            ]
+          },
+          "resume": {
+            "mode": "webp",
+            "userPaused": false,
+            "rejection": null
+          }
+        }
+      ]
+    },
+    {
+      "engine": "webkit",
+      "status": "passed",
+      "errors": [],
+      "network": [
+        "/",
+        "/media/ene-spike-480-poster.webp",
+        "/media/ene-spike-480-q65.webp",
+        "/media/ene-spike-480-q65.webp",
+        "/media/ene-spike-480-poster.webp",
+        "/media/ene-spike-480-poster.webp",
+        "/media/ene-spike-480-q65.webp",
+        "/media/ene-spike-480-q65.webp",
+        "/media/ene-spike-480-poster.webp",
+        "/media/ene-spike-480-q65.webp"
+      ],
+      "version": "26.6",
+      "posterInitial": {
+        "mode": "poster",
+        "userPaused": false,
+        "count": 3,
+        "video": [],
+        "images": [
+          "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+          "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+          "http://127.0.0.1:63449/media/ene-spike-480-poster.webp"
+        ]
+      },
+      "alphaProbe": {
+        "supported": false,
+        "error": "timeout loadeddata"
+      },
+      "lostAlpha": {
+        "alpha": {
+          "supported": false,
+          "error": "timeout loadeddata"
+        },
+        "mode": "webp"
+      },
+      "codecRejection": {
+        "alpha": {
+          "supported": false,
+          "error": "media rejected"
+        },
+        "mode": "webp"
+      },
+      "autoplayRejection": {
+        "mode": "poster",
+        "userPaused": true,
+        "rejection": "Error: timeout loadeddata"
+      },
+      "autoplayRejectionKind": "Codec unavailable before injection; actual load/timeout poster path tested",
+      "playbacks": [
+        {
+          "codec": "webm",
+          "supported": false,
+          "played": {
+            "mode": "poster",
+            "userPaused": true,
+            "rejection": "Error: timeout loadeddata"
+          },
+          "startupMs": 8101.76370000001,
+          "note": "Unsupported WebM is bypassed by known-alpha selection; animated WebP is measured below"
+        },
+        {
+          "codec": "webp",
+          "played": {
+            "mode": "webp",
+            "userPaused": false,
+            "rejection": null
+          },
+          "startupMs": 24.787099999986822,
+          "actualAlpha": {
+            "width": 480,
+            "height": 480,
+            "cornerAlpha": 0,
+            "zero": 173030,
+            "full": 50029,
+            "partial": 7341
+          },
+          "durationSeconds": 10.01946299999999,
+          "sourceSize": 480,
+          "displayCssPixels": 320,
+          "activeMedia": 1,
+          "screenshotHashes": [
+            "df41a5f8bd19af4329d85728b1c2ecc24b9a432a53a56764467da7dfd7b2f48f",
+            "9bc879141783bdb8d220ea8b709649ee06acd1c0c44594e3da390c46a9f2aff9",
+            "c025a59cc3d6c1126de7e337c3283e2bce20ebc0c130fca00c38b78a8abd2311"
+          ],
+          "visuallyChanging": true,
+          "videoFrames": null,
+          "cpuCorePercent": null,
+          "cpuAllCoresPercent": null,
+          "processStart": null,
+          "processEnd": null,
+          "pause": {
+            "mode": "poster",
+            "userPaused": true,
+            "count": 3,
+            "video": [],
+            "images": [
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp",
+              "http://127.0.0.1:63449/media/ene-spike-480-poster.webp"
+            ]
+          },
+          "resume": {
+            "mode": "webp",
+            "userPaused": false,
+            "rejection": null
+          }
+        }
+      ]
+    }
+  ]
+}

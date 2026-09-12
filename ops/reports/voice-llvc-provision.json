@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "engine": "LLVC",
+  "sourceRevision": "1627c5d358cf9bb2b92b0ccc513d8b36807c923d",
+  "modelRevision": "ebfe8c0fdeb974a7eeb463b3abbc8ce42a0e3851",
+  "model": "assets/voice/llvc/G_500000.pth",
+  "sourceLicense": "MIT",
+  "checkpointLicense": "MIT (pinned publisher model-card declaration)",
+  "positionalEncodingLicense": "Apache-2.0",
+  "positionalEncodingSource": "SpeechBrain v1.0.3",
+  "positionalEncodingRevision": "31c1e329048c0380dc7f2acbe680c44a036b6286",
+  "runtimePython": ".tools/voice/venv/Scripts/python.exe",
+  "artifacts": [
+    {
+      "path": ".tools/voice/llvc/source/LICENSE",
+      "url": "https://raw.githubusercontent.com/KoeAI/LLVC/1627c5d358cf9bb2b92b0ccc513d8b36807c923d/LICENSE",
+      "sha256": "718657c20ba7035b25bb447d80a53304115b44fea7e684df2a1ca240555eae4b"
+    },
+    {
+      "path": ".tools/voice/llvc/source/README.md",
+      "url": "https://raw.githubusercontent.com/KoeAI/LLVC/1627c5d358cf9bb2b92b0ccc513d8b36807c923d/README.md",
+      "sha256": "0fbaab12f311e64607466a69c97b6a7e9e75e21439e5e547c51486882ccf7126"
+    },
+    {
+      "path": ".tools/voice/llvc/source/model.py",
+      "url": "https://raw.githubusercontent.com/KoeAI/LLVC/1627c5d358cf9bb2b92b0ccc513d8b36807c923d/model.py",
+      "sha256": "b01626c0b0def1aac3c07c597a15529d9eac98f7bd17b241c1a08b88b92dc4b9"
+    },
+    {
+      "path": ".tools/voice/llvc/source/cached_convnet.py",
+      "url": "https://raw.githubusercontent.com/KoeAI/LLVC/1627c5d358cf9bb2b92b0ccc513d8b36807c923d/cached_convnet.py",
+      "sha256": "bcfed708df57cea0449d0f03ef05196d7d3dfb13eb3845161ca1119579f801fe"
+    },
+    {
+      "path": ".tools/voice/llvc/source/infer.py",
+      "url": "https://raw.githubusercontent.com/KoeAI/LLVC/1627c5d358cf9bb2b92b0ccc513d8b36807c923d/infer.py",
+      "sha256": "88c47703bcd52e70b8d45887828353be7b8b742fe3d08f81448808ce3b06934b"
+    },
+    {
+      "path": ".tools/voice/llvc/source/experiments/llvc/config.json",
+      "url": "https://raw.githubusercontent.com/KoeAI/LLVC/1627c5d358cf9bb2b92b0ccc513d8b36807c923d/experiments/llvc/config.json",
+      "sha256": "b5e488ada5267a8c09dd843a547fef8f95e39a49764b99f9bccf6a39be2f256c"
+    },
+    {
+      "path": ".tools/voice/llvc/speechbrain-source/LICENSE",
+      "url": "https://raw.githubusercontent.com/speechbrain/speechbrain/31c1e329048c0380dc7f2acbe680c44a036b6286/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": ".tools/voice/llvc/speechbrain-source/Transformer.py",
+      "url": "https://raw.githubusercontent.com/speechbrain/speechbrain/31c1e329048c0380dc7f2acbe680c44a036b6286/speechbrain/lobes/models/transformer/Transformer.py",
+      "sha256": "77e4b1405ce8e6f4addde0fb6b2fe41f7c092d8f2aa520471c70ac4a78d1783e"
+    },
+    {
+      "path": ".tools/voice/llvc/runtime/cached_convnet.py",
+      "sha256": "bcfed708df57cea0449d0f03ef05196d7d3dfb13eb3845161ca1119579f801fe",
+      "derived": true
+    },
+    {
+      "path": ".tools/voice/llvc/runtime/llvc_position.py",
+      "sha256": "3eb6a3c3d2ccc5459717a910426d18179f6dbd6621a719d96f65de621acef453",
+      "derived": true
+    },
+    {
+      "path": ".tools/voice/llvc/runtime/model.py",
+      "sha256": "9b94e11bbccb4edf15013ff4145b75704522d23e0d3c888ccfad7cd834b882fc",
+      "derived": true
+    },
+    {
+      "path": "assets/voice/llvc/G_500000.pth",
+      "url": "https://huggingface.co/KoeAI/llvc/resolve/ebfe8c0fdeb974a7eeb463b3abbc8ce42a0e3851/models/checkpoints/llvc/G_500000.pth",
+      "sha256": "cceb7ab9621f84d62d283725ae3281cacb04f762d6a088fe3e97c1a29d4b8c0e",
+      "bytes": 39489146
+    },
+    {
+      "path": ".tools/voice/llvc/model-card.md",
+      "url": "https://huggingface.co/KoeAI/llvc/raw/ebfe8c0fdeb974a7eeb463b3abbc8ce42a0e3851/README.md",
+      "sha256": "ccd819b1280cd6ef2ffabb9f6ee31b7e389995894b97dfc9d5f45277feb2ba3b"
+    }
+  ],
+  "modifications": [
+    "Only the LLVC positional-encoding import is redirected to the exact extracted upstream class."
+  ],
+  "notes": [
+    "No trained teacher or auxiliary embedding/F0 checkpoint is used at LLVC inference.",
+    "This is one research target voice, not three distinct timbres or a selected cheerful character.",
+    "The active Voice Studio, its profiles and its OBS routes are unchanged."
+  ],
+  "inferenceRun": false,
+  "liveAccepted": false
+}

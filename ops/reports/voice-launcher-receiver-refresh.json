@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-12T12:30:16.561Z",
+  "passed": true,
+  "launcherExitCode": 0,
+  "existingVoiceServiceIdentityPreserved": true,
+  "refresh": {
+    "refreshed": true,
+    "sources": [
+      "Ene Converted Voice Bridge",
+      "Ene Natural Voice Bridge"
+    ],
+    "settingsAndSyncPreserved": true,
+    "sceneStatePreserved": true,
+    "startedMedia": false
+  },
+  "voice": {
+    "mode": "idle",
+    "muted": true,
+    "producerPresent": false,
+    "outputListeners": 2
+  },
+  "outputs": {
+    "recording": false,
+    "streaming": false,
+    "virtualCamera": {
+      "available": false,
+      "active": false
+    }
+  },
+  "physicalMediaStarted": false,
+  "recordingOrMonitoringStarted": false,
+  "keysOrPrivateURLsLogged": false,
+  "boundary": "Actual existing-service launcher and silent OBS receiver refresh. No producer, microphone, audio playback, recording or CEF restart/reconnection benchmark."
+}

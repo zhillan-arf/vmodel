@@ -1,0 +1,26 @@
+[
+  {
+    "repo": "MMD-Blender/blender_mmd_tools",
+    "version": "v4.5.14",
+    "filename": "mmd_tools-v4.5.14-bl4.2.zip",
+    "url": "https://github.com/MMD-Blender/blender_mmd_tools/releases/download/v4.5.14/mmd_tools-v4.5.14-bl4.2.zip",
+    "sha256": "ed3b78184ae9862be0df04e2e147803d011ad067edd8c31029c92fb719e19a6f",
+    "destination": "mmd"
+  },
+  {
+    "repo": "saturday06/VRM-Addon-for-Blender",
+    "version": "v4.7.1",
+    "filename": "VRM_Addon_for_Blender-4_7_1.zip",
+    "url": "https://github.com/saturday06/VRM-Addon-for-Blender/releases/download/v4.7.1/VRM_Addon_for_Blender-4_7_1.zip",
+    "sha256": "1fba87c3c6b2f995120f76c023bb11ab108b0a4a276872b4c10b20fae73e65ca",
+    "destination": "vrm"
+  },
+  {
+    "repo": "obsproject/obs-studio",
+    "version": "32.2.2",
+    "filename": "OBS-Studio-32.2.2-Windows-x64.zip",
+    "url": "https://github.com/obsproject/obs-studio/releases/download/32.2.2/OBS-Studio-32.2.2-Windows-x64.zip",
+    "sha256": "4d6e40e3ab155f56b30de517380566a206d74b63cdf5ad49aa596924768f97e1",
+    "destination": "obs"
+  }
+]

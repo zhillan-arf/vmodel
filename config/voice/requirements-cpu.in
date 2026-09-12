@@ -1,0 +1,26 @@
+# Windows x64 / CPython 3.10.19. CPU-only; no CUDA or restricted voice engines.
+# deiteris source b9cd071ae2743c146e5d279453a1c0caeb78e854.
+torch @ https://download.pytorch.org/whl/cpu/torch-2.8.0%2Bcpu-cp310-cp310-win_amd64.whl
+torchaudio @ https://download.pytorch.org/whl/cpu/torchaudio-2.8.0%2Bcpu-cp310-cp310-win_amd64.whl
+numpy==1.26.4
+onnxruntime==1.23.2
+librosa==0.11.0
+sounddevice==0.4.7
+uvicorn
+pyOpenSSL
+python-socketio
+fastapi
+python-multipart
+scipy
+python-dotenv
+pydantic-settings
+xxhash
+aiohttp
+certifi
+msgspec
+faiss-cpu
+onnxscript
+onnxsim
+torchcrepe
+torchfcpe
+safetensors

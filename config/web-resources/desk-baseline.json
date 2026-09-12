@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "sourceScene": "assets\\work\\ene-web\\desk-normal.blend",
+  "authoringScene": "assets/work/ene-web/desk-normal-authoring.blend",
+  "privatePose": "assets\\work\\ene-web\\desk-baseline-pose.json",
+  "bodyAction": "desk-normal-body-and-secondary-baked",
+  "fps": 24,
+  "frameRange": [
+    1,
+    72
+  ],
+  "loopEndpoint": 73,
+  "seconds": 3,
+  "camera": {
+    "type": "ORTHO",
+    "location": [
+      0.0,
+      -4.0,
+      1.399999976158142
+    ],
+    "rotationQuaternion": [
+      0.7071068286895752,
+      0.7071067690849304,
+      0.0,
+      0.0
+    ],
+    "orthoScale": 0.8999999761581421,
+    "large": [
+      960,
+      960
+    ],
+    "small": [
+      480,
+      480
+    ]
+  },
+  "coordinateConvention": "Normalized image coordinates from top left; x increases right, y down",
+  "deskAnchor": [
+    0.5,
+    0.9222218617796898
+  ],
+  "deskGuideZ": 1.02,
+  "movingBounds": {
+    "minimumUvBottomOrigin": 0.07936174188414413,
+    "maximumUvBottomOrigin": 0.9299135545583397
+  },
+  "safeInset": 0.05,
+  "expressions": {
+    "happy": {
+      "sourceIndex": 6,
+      "blenderKeyBlockIndex": 6,
+      "sourceName": "\u306b\u3053\u308a",
+      "baselineValue": 0.1599999964237213
+    },
+    "blink": {
+      "sourceIndex": 10,
+      "blenderKeyBlockIndex": 10,
+      "sourceName": "\u307e\u3070\u305f\u304d",
+      "baselineValue": 0.0
+    },
+    "omega": {
+      "sourceIndex": 38,
+      "blenderKeyBlockIndex": 38,
+      "sourceName": "\u03c9",
+      "baselineValue": 0.07999999821186066
+    }
+  },
+  "raisedHand": "model left / screen right",
+  "restingHand": "model right / screen left",
+  "referenceComparison": "Original screenshot unavailable; written composition brief followed",
+  "reuse": "Copy this source scene for TASK-033/034/035; preserve camera, resting wrist, desk anchor and lower-body pose. Edit named face keys and small head/hand accents, then re-audit every frame."
+}

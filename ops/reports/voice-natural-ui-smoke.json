@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-12T11:05:38.851Z",
+  "passed": true,
+  "physicalMicrophoneRequests": 0,
+  "nativeAudioContextsOpened": 0,
+  "monitoringOrRecordingStarted": false,
+  "explicitNaturalActionRequestsMockedMicrophone": true,
+  "sourceModeClearlyLabelled": true,
+  "separateNaturalVMNAOnly": true,
+  "convertedRouteNaturalPackets": 0,
+  "presetChangeFlushesAndStopsTrack": true,
+  "oldInputAfterSwitchDiscarded": true,
+  "mockedOccupiedDeviceMutesBothRoutes": true,
+  "stopReleasesMockedTracks": true,
+  "reloadDoesNotReopenMicrophone": true,
+  "persistedProfileCannotAutoStart": true,
+  "browserErrors": [],
+  "externalRequests": [],
+  "boundary": "Synthetic PCM and mocked browser media/audio classes in an isolated service. No physical microphone, headphone monitoring, OBS recording, inference benchmark or human-quality acceptance."
+}

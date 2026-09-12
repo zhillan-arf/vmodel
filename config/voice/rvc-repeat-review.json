@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "status": "Prepared only; no repeat executed",
+  "benchmarkSource": "scripts/voice/benchmark.py",
+  "presetFile": "config/voice/benchmark-presets.json",
+  "expectedPreset": {
+    "id": "cpu-q8-eager-3t",
+    "threads": 3,
+    "jit": false,
+    "encoder": "q8"
+  },
+  "expectedSettings": {
+    "schemaVersion": 1,
+    "voice": "chihaya-bright",
+    "sampleRate": 48000,
+    "chunkMs": 160,
+    "contextMs": 1600,
+    "crossfadeMs": 40,
+    "solaSearchMs": 10,
+    "warmupChunks": 10,
+    "measurementSeconds": 30,
+    "unsupportedJit": {
+      "sourceRevision": "b9cd071ae2743c146e5d279453a1c0caeb78e854",
+      "firstError": "TextEncoder has no emb_pitch attribute for no-F0 models",
+      "secondErrorAfterUnusedZeroEmbeddingProbe": "Generator.forward uses variable ModuleList indexing, rejected by torch.jit.script",
+      "disposition": "No source patch or JIT preset accepted; optional full ONNX generator export remains untested"
+    }
+  },
+  "expectedResultHashes": {
+    "engineRevision": "b9cd071ae2743c146e5d279453a1c0caeb78e854",
+    "targetSha256": "569257d45848dada4ba604dfb9a60496d3043eb112e82c81d71eb37be942be50",
+    "safeTargetSha256": "ed24cbc42f5b903f5234105d4e02904aac93b0f3f9f6595d3a4ba397bcfd4575",
+    "sourceSha256": "b31133c05e9667a27db5be539ca089aa99e95ca7bef52040c902ff781680873a",
+    "encoderSha256": "74f5b8eb4068060bbc047509f76e52b3baf8a9aac6b5e9daebdf2193c8716023"
+  },
+  "torch": "2.8.0+cpu",
+  "onnxruntime": "1.23.2",
+  "originalEncoder": "assets/voice/pretrained/contentvec-f.onnx",
+  "encoderCacheMetadata": "assets/voice/pretrained/contentvec-f.onnx.xxh128.txt",
+  "expectedEncoderXxh128": "ab288ca5b540a4a15909a40edf875d1e",
+  "files": [
+    {
+      "path": "scripts/voice/benchmark.py",
+      "sha256": "1ca5f6479d1a76cd7f25d2b643368b6243ac19d6d1e4509c09d06a74c54cc949"
+    },
+    {
+      "path": "config/voice/benchmark-presets.json",
+      "sha256": "ad694b9484888f5f9456879218c459efaddcc9c0bc720c2237a347c1cef69ef6"
+    },
+    {
+      "path": "config/voice/assets.json",
+      "sha256": "0914f4fa32d8d9d29a60585870bfffc7fecbbc53deb3d300a62cd11f916ee1a1"
+    },
+    {
+      "path": "ops/reports/local/voice/benchmarks/cpu-q8-eager-3t.json",
+      "sha256": "a3981ede96414044386a7851d60c5b911a727b8974357856ef352254d58b18b2"
+    },
+    {
+      "path": "assets/voice/pretrained/contentvec-f.onnx.xxh128.txt",
+      "sha256": "b48b9b428167c50dcb657a5b97d4987623434292b862dfd65ae3d322e5f71ff4"
+    },
+    {
+      "path": "assets/voice/chihaya/V2-AISO-SYAKITTO.pth",
+      "sha256": "569257d45848dada4ba604dfb9a60496d3043eb112e82c81d71eb37be942be50"
+    },
+    {
+      "path": "assets/voice/pretrained/contentvec-f.onnx",
+      "sha256": "4b31ed3d95a568fab7952de923ff7f7d3d17128ea6fce69f665509d24c3156db"
+    },
+    {
+      "path": "assets/voice/samples/LJ025-0076.wav",
+      "sha256": "b31133c05e9667a27db5be539ca089aa99e95ca7bef52040c902ff781680873a"
+    },
+    {
+      "path": "assets/voice/chihaya/V2-AISO-SYAKITTO.safetensors",
+      "sha256": "ed24cbc42f5b903f5234105d4e02904aac93b0f3f9f6595d3a4ba397bcfd4575"
+    },
+    {
+      "path": "assets/voice/pretrained/contentvec-f.q8.onnx",
+      "sha256": "74f5b8eb4068060bbc047509f76e52b3baf8a9aac6b5e9daebdf2193c8716023"
+    },
+    {
+      "path": "ops/reports/local/voice/benchmarks/cpu-q8-eager-3t-computed.wav",
+      "sha256": "c511c3ac95c7aa252702058164acc37dbb8d18938d1338dc9eb3300474d10a25"
+    },
+    {
+      "path": "ops/reports/local/voice/benchmarks/cpu-q8-eager-3t-deadline.wav",
+      "sha256": "76588c5008529c0888b1b0e3a149d1a72c9ed1ebd262b5bff09417b3c7331bbd"
+    }
+  ],
+  "notes": [
+    "Model hashes copied from already recorded provenance; large models were not reread during preparation. All pins are verified by the released worker.",
+    "Original worker source is imported unchanged; only its private module OUTPUT directory is redirected.",
+    "Old RVC power state unknown; event evidence queried later does not establish earlier AC/DC state.",
+    "Promoted from the reviewed .cache/rvc-repeat preparation without duplicating model assets; execution remains pending root release."
+  ],
+  "launcher": "scripts/voice/repeat_rvc.py",
+  "resultDirectory": "ops/reports/local/voice/rvc-repeat/<unique-label>"
+}

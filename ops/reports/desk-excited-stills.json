@@ -1,0 +1,24 @@
+{
+  "resource": "desk-excited",
+  "mode": "stills",
+  "sourceFps": 24,
+  "previewFps": null,
+  "size": [
+    480,
+    480
+  ],
+  "frames": [
+    {
+      "sourceFrame": 1,
+      "file": "ops\\reports\\local\\web-resources\\desk-excited\\poses\\frame-0001.png",
+      "seconds": 2.8106943999882787
+    },
+    {
+      "sourceFrame": 47,
+      "file": "ops\\reports\\local\\web-resources\\desk-excited\\poses\\frame-0047.png",
+      "seconds": 1.5511351999884937
+    }
+  ],
+  "elapsedSeconds": 4.3695659000077285,
+  "scene": "assets/work/ene-web/desk-excited.blend"
+}

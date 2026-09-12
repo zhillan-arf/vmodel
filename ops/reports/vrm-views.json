@@ -1,0 +1,13 @@
+{
+  "mode": "vrm",
+  "reopened": true,
+  "armature": "Armature",
+  "meshes": 1,
+  "images": [
+    "ops/reports/local/ene-vrm-front.png",
+    "ops/reports/local/ene-vrm-side.png",
+    "ops/reports/local/ene-vrm-back.png"
+  ],
+  "missingImageFiles": [],
+  "avatarSha256": "3657b97928638e7ada5f6639141fb63f555912049a2c6ec217851001e322cbcb"
+}

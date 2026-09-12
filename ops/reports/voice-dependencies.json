@@ -1,0 +1,1646 @@
+[
+  {
+    "name": "aiohappyeyeballs",
+    "version": "2.7.1",
+    "licenseExpression": null,
+    "license": "PSF-2.0",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: Python Software Foundation License"
+    ],
+    "urls": [
+      "Bug Tracker, https://github.com/aio-libs/aiohappyeyeballs/issues",
+      "Changelog, https://github.com/aio-libs/aiohappyeyeballs/blob/main/CHANGELOG.md",
+      "Documentation, https://aiohappyeyeballs.readthedocs.io",
+      "Repository, https://github.com/aio-libs/aiohappyeyeballs"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "aiohappyeyeballs-2.7.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "aiohttp",
+    "version": "3.14.3",
+    "licenseExpression": null,
+    "license": "Apache-2.0 AND MIT",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://github.com/aio-libs/aiohttp",
+      "Chat: Matrix, https://matrix.to/#/#aio-libs:matrix.org",
+      "Chat: Matrix Space, https://matrix.to/#/#aio-libs-space:matrix.org",
+      "CI: GitHub Actions, https://github.com/aio-libs/aiohttp/actions?query=workflow%3ACI",
+      "Coverage: codecov, https://codecov.io/github/aio-libs/aiohttp",
+      "Docs: Changelog, https://docs.aiohttp.org/en/stable/changes.html",
+      "Docs: RTD, https://docs.aiohttp.org",
+      "GitHub: issues, https://github.com/aio-libs/aiohttp/issues",
+      "GitHub: repo, https://github.com/aio-libs/aiohttp"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "aiohttp-3.14.3.dist-info/licenses/LICENSE.txt",
+      "aiohttp-3.14.3.dist-info/licenses/vendor/llhttp/LICENSE"
+    ]
+  },
+  {
+    "name": "aiosignal",
+    "version": "1.4.0",
+    "licenseExpression": null,
+    "license": "Apache 2.0",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ],
+    "urls": [
+      "Chat: Gitter, https://gitter.im/aio-libs/Lobby",
+      "CI: GitHub Actions, https://github.com/aio-libs/aiosignal/actions",
+      "Coverage: codecov, https://codecov.io/github/aio-libs/aiosignal",
+      "Docs: RTD, https://docs.aiosignal.org",
+      "GitHub: issues, https://github.com/aio-libs/aiosignal/issues",
+      "GitHub: repo, https://github.com/aio-libs/aiosignal"
+    ],
+    "homepage": "https://github.com/aio-libs/aiosignal",
+    "licenseFiles": [
+      "aiosignal-1.4.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "annotated-doc",
+    "version": "0.0.5",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://github.com/fastapi/annotated-doc",
+      "Documentation, https://github.com/fastapi/annotated-doc",
+      "Repository, https://github.com/fastapi/annotated-doc",
+      "Issues, https://github.com/fastapi/annotated-doc/issues",
+      "Changelog, https://github.com/fastapi/annotated-doc/release-notes.md"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "annotated_doc-0.0.5.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "annotated-types",
+    "version": "0.8.0",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Homepage, https://github.com/annotated-types/annotated-types",
+      "Source, https://github.com/annotated-types/annotated-types",
+      "Changelog, https://github.com/annotated-types/annotated-types/releases"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "annotated_types-0.8.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "anyio",
+    "version": "4.15.1",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Documentation, https://anyio.readthedocs.io/en/latest/",
+      "Changelog, https://anyio.readthedocs.io/en/stable/versionhistory.html",
+      "Source code, https://github.com/agronholm/anyio",
+      "Issue tracker, https://github.com/agronholm/anyio/issues"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "anyio-4.15.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "async-timeout",
+    "version": "5.0.1",
+    "licenseExpression": null,
+    "license": "Apache 2",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ],
+    "urls": [
+      "Chat: Gitter, https://gitter.im/aio-libs/Lobby",
+      "CI: GitHub Actions, https://github.com/aio-libs/async-timeout/actions",
+      "Coverage: codecov, https://codecov.io/github/aio-libs/async-timeout",
+      "GitHub: issues, https://github.com/aio-libs/async-timeout/issues",
+      "GitHub: repo, https://github.com/aio-libs/async-timeout"
+    ],
+    "homepage": "https://github.com/aio-libs/async-timeout",
+    "licenseFiles": [
+      "async_timeout-5.0.1.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "attrs",
+    "version": "26.1.0",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Documentation, https://www.attrs.org/",
+      "Changelog, https://www.attrs.org/en/stable/changelog.html",
+      "GitHub, https://github.com/python-attrs/attrs",
+      "Funding, https://github.com/sponsors/hynek",
+      "Tidelift, https://tidelift.com/subscription/pkg/pypi-attrs?utm_source=pypi-attrs&utm_medium=pypi"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "attrs-26.1.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "audioread",
+    "version": "3.1.0",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Bug Tracker, https://github.com/beetbox/audioread/issues",
+      "Homepage, https://github.com/beetbox/audioread",
+      "Repository, https://github.com/beetbox/audioread"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "audioread-3.1.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "bidict",
+    "version": "0.23.1",
+    "licenseExpression": null,
+    "license": "MPL 2.0",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+    ],
+    "urls": [
+      "Changelog, https://bidict.readthedocs.io/changelog.html",
+      "Documentation, https://bidict.readthedocs.io",
+      "Funding, https://bidict.readthedocs.io/#sponsoring",
+      "Repository, https://github.com/jab/bidict"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "bidict-0.23.1.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "certifi",
+    "version": "2026.7.22",
+    "licenseExpression": null,
+    "license": "MPL-2.0",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+    ],
+    "urls": [
+      "Source, https://github.com/certifi/python-certifi"
+    ],
+    "homepage": "https://github.com/certifi/python-certifi",
+    "licenseFiles": [
+      "certifi-2026.7.22.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "cffi",
+    "version": "2.1.1",
+    "licenseExpression": "MIT-0",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Documentation, https://cffi.readthedocs.io/",
+      "Changelog, https://cffi.readthedocs.io/en/latest/whatsnew.html",
+      "Download, https://github.com/python-cffi/cffi/releases",
+      "Contact, https://groups.google.com/forum/#!forum/python-cffi",
+      "Source Code, https://github.com/python-cffi/cffi",
+      "Issue Tracker, https://github.com/python-cffi/cffi/issues"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "cffi-2.1.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "charset-normalizer",
+    "version": "3.5.1",
+    "licenseExpression": null,
+    "license": "MIT",
+    "licenseClassifiers": [],
+    "urls": [
+      "Changelog, https://github.com/jawah/charset_normalizer/blob/master/CHANGELOG.md",
+      "Documentation, https://charset-normalizer.readthedocs.io/",
+      "Code, https://github.com/jawah/charset_normalizer",
+      "Issue tracker, https://github.com/jawah/charset_normalizer/issues"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "charset_normalizer-3.5.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "click",
+    "version": "8.5.0",
+    "licenseExpression": "BSD-3-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Changes, https://click.palletsprojects.com/page/changes/",
+      "Chat, https://discord.gg/pallets",
+      "Documentation, https://click.palletsprojects.com/",
+      "Donate, https://palletsprojects.com/donate",
+      "Source, https://github.com/pallets/click/"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "click-8.5.0.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "cloudpickle",
+    "version": "3.1.2",
+    "licenseExpression": null,
+    "license": "BSD-3-Clause",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "urls": [],
+    "homepage": "https://github.com/cloudpipe/cloudpickle",
+    "licenseFiles": [
+      "cloudpickle-3.1.2.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "colorama",
+    "version": "0.4.6",
+    "licenseExpression": null,
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "urls": [
+      "Homepage, https://github.com/tartley/colorama"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "colorama-0.4.6.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "coloredlogs",
+    "version": "15.0.1",
+    "licenseExpression": null,
+    "license": "MIT",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [],
+    "homepage": "https://coloredlogs.readthedocs.io",
+    "licenseFiles": [
+      "coloredlogs-15.0.1.dist-info/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "cryptography",
+    "version": "50.0.1",
+    "licenseExpression": "Apache-2.0 OR BSD-3-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "changelog, https://cryptography.io/en/latest/changelog/",
+      "documentation, https://cryptography.io/",
+      "homepage, https://github.com/pyca/cryptography",
+      "issues, https://github.com/pyca/cryptography/issues",
+      "source, https://github.com/pyca/cryptography/"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "cryptography-50.0.1.dist-info/licenses/LICENSE",
+      "cryptography-50.0.1.dist-info/licenses/LICENSE.APACHE",
+      "cryptography-50.0.1.dist-info/licenses/LICENSE.BSD"
+    ]
+  },
+  {
+    "name": "decorator",
+    "version": "5.3.1",
+    "licenseExpression": null,
+    "license": "BSD-2-Clause",
+    "licenseClassifiers": [],
+    "urls": [],
+    "homepage": null,
+    "licenseFiles": [
+      "decorator-5.3.1.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "einops",
+    "version": "0.8.2",
+    "licenseExpression": null,
+    "license": "MIT",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Homepage, https://github.com/arogozhnikov/einops"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "einops-0.8.2.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "exceptiongroup",
+    "version": "1.3.1",
+    "licenseExpression": null,
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Changelog, https://github.com/agronholm/exceptiongroup/blob/main/CHANGES.rst",
+      "Issue Tracker, https://github.com/agronholm/exceptiongroup/issues",
+      "Source code, https://github.com/agronholm/exceptiongroup"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "exceptiongroup-1.3.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "faiss-cpu",
+    "version": "1.15.0",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://github.com/facebookresearch/faiss",
+      "Documentation, https://github.com/facebookresearch/faiss/wiki",
+      "Repository, https://github.com/facebookresearch/faiss",
+      "Issues, https://github.com/facebookresearch/faiss/issues"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "faiss_cpu-1.15.0.dist-info/licenses/LICENSE",
+      "faiss_cpu-1.15.0.dist-info/licenses/THIRD_PARTY_NOTICES"
+    ]
+  },
+  {
+    "name": "fastapi",
+    "version": "0.141.1",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://github.com/fastapi/fastapi",
+      "Documentation, https://fastapi.tiangolo.com/",
+      "Repository, https://github.com/fastapi/fastapi",
+      "Issues, https://github.com/fastapi/fastapi/issues",
+      "Changelog, https://fastapi.tiangolo.com/release-notes/"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "fastapi-0.141.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "filelock",
+    "version": "3.32.6",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Documentation, https://py-filelock.readthedocs.io",
+      "Homepage, https://github.com/tox-dev/py-filelock",
+      "Source, https://github.com/tox-dev/py-filelock",
+      "Tracker, https://github.com/tox-dev/py-filelock/issues"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "filelock-3.32.6.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "flatbuffers",
+    "version": "25.12.19",
+    "licenseExpression": null,
+    "license": "Apache 2.0",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ],
+    "urls": [
+      "Documentation, https://google.github.io/flatbuffers/",
+      "Source, https://github.com/google/flatbuffers"
+    ],
+    "homepage": "https://google.github.io/flatbuffers/",
+    "licenseFiles": []
+  },
+  {
+    "name": "frozenlist",
+    "version": "1.8.0",
+    "licenseExpression": null,
+    "license": "Apache-2.0",
+    "licenseClassifiers": [],
+    "urls": [
+      "Chat: Matrix, https://matrix.to/#/#aio-libs:matrix.org",
+      "Chat: Matrix Space, https://matrix.to/#/#aio-libs-space:matrix.org",
+      "CI: Github Actions, https://github.com/aio-libs/frozenlist/actions",
+      "Code of Conduct, https://github.com/aio-libs/.github/blob/master/CODE_OF_CONDUCT.md",
+      "Coverage: codecov, https://codecov.io/github/aio-libs/frozenlist",
+      "Docs: Changelog, https://github.com/aio-libs/frozenlist/blob/master/CHANGES.rst#changelog",
+      "Docs: RTD, https://frozenlist.aio-libs.org",
+      "GitHub: issues, https://github.com/aio-libs/frozenlist/issues",
+      "GitHub: repo, https://github.com/aio-libs/frozenlist"
+    ],
+    "homepage": "https://github.com/aio-libs/frozenlist",
+    "licenseFiles": [
+      "frozenlist-1.8.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "fsspec",
+    "version": "2026.7.0",
+    "licenseExpression": "BSD-3-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Changelog, https://filesystem-spec.readthedocs.io/en/latest/changelog.html",
+      "Documentation, https://filesystem-spec.readthedocs.io/en/latest/",
+      "Homepage, https://github.com/fsspec/filesystem_spec"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "fsspec-2026.7.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "h11",
+    "version": "0.16.0",
+    "licenseExpression": null,
+    "license": "MIT",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [],
+    "homepage": "https://github.com/python-hyper/h11",
+    "licenseFiles": [
+      "h11-0.16.0.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "humanfriendly",
+    "version": "10.0",
+    "licenseExpression": null,
+    "license": "MIT",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [],
+    "homepage": "https://humanfriendly.readthedocs.io",
+    "licenseFiles": [
+      "humanfriendly-10.0.dist-info/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "hyper-connections",
+    "version": "0.4.11",
+    "licenseExpression": null,
+    "license": "MIT License\n\nCopyright (c) 2024 Phil Wang\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated document",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Homepage, https://pypi.org/project/hyper-connections/",
+      "Repository, https://github.com/lucidrains/hyper-connections"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "hyper_connections-0.4.11.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "idna",
+    "version": "3.19",
+    "licenseExpression": "BSD-3-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Changelog, https://github.com/kjd/idna/blob/master/HISTORY.md",
+      "Issue tracker, https://github.com/kjd/idna/issues",
+      "Source, https://github.com/kjd/idna"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "idna-3.19.dist-info/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "Jinja2",
+    "version": "3.1.6",
+    "licenseExpression": null,
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "urls": [
+      "Changes, https://jinja.palletsprojects.com/changes/",
+      "Chat, https://discord.gg/pallets",
+      "Documentation, https://jinja.palletsprojects.com/",
+      "Donate, https://palletsprojects.com/donate",
+      "Source, https://github.com/pallets/jinja/"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "jinja2-3.1.6.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "joblib",
+    "version": "1.6.0",
+    "licenseExpression": "BSD-3-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://joblib.readthedocs.io",
+      "Source, https://github.com/joblib/joblib"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "joblib-1.6.0.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "lazy-loader",
+    "version": "0.5",
+    "licenseExpression": "BSD-3-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Home, https://scientific-python.org/specs/spec-0001/",
+      "Source, https://github.com/scientific-python/lazy-loader"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "lazy_loader-0.5.dist-info/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "librosa",
+    "version": "0.11.0",
+    "licenseExpression": null,
+    "license": "ISC",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: ISC License (ISCL)"
+    ],
+    "urls": [
+      "Documentation, https://librosa.org/doc",
+      "Download, https://github.com/librosa/librosa/releases",
+      "Source, https://github.com/librosa/librosa",
+      "Tracker, https://github.com/librosa/librosa/issues",
+      "Discussion forum, https://groups.google.com/g/librosa"
+    ],
+    "homepage": "https://librosa.org",
+    "licenseFiles": [
+      "librosa-0.11.0.dist-info/LICENSE.md"
+    ]
+  },
+  {
+    "name": "llvmlite",
+    "version": "0.49.0",
+    "licenseExpression": null,
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Source, https://github.com/numba/llvmlite"
+    ],
+    "homepage": "http://llvmlite.readthedocs.io",
+    "licenseFiles": [
+      "llvmlite-0.49.0.dist-info/LICENSE",
+      "llvmlite-0.49.0.dist-info/LICENSE.thirdparty"
+    ]
+  },
+  {
+    "name": "local-attention",
+    "version": "1.11.2",
+    "licenseExpression": null,
+    "license": "MIT",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [],
+    "homepage": "https://github.com/lucidrains/local-attention",
+    "licenseFiles": [
+      "local_attention-1.11.2.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "markdown-it-py",
+    "version": "4.2.0",
+    "licenseExpression": null,
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Documentation, https://markdown-it-py.readthedocs.io",
+      "Homepage, https://github.com/executablebooks/markdown-it-py"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "markdown_it_py-4.2.0.dist-info/licenses/LICENSE",
+      "markdown_it_py-4.2.0.dist-info/licenses/LICENSE.markdown-it"
+    ]
+  },
+  {
+    "name": "MarkupSafe",
+    "version": "3.0.3",
+    "licenseExpression": "BSD-3-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Donate, https://palletsprojects.com/donate",
+      "Documentation, https://markupsafe.palletsprojects.com/",
+      "Changes, https://markupsafe.palletsprojects.com/page/changes/",
+      "Source, https://github.com/pallets/markupsafe/",
+      "Chat, https://discord.gg/pallets"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "markupsafe-3.0.3.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "mdurl",
+    "version": "0.1.2",
+    "licenseExpression": null,
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Homepage, https://github.com/executablebooks/mdurl"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "mdurl-0.1.2.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "ml_dtypes",
+    "version": "0.5.4",
+    "licenseExpression": "Apache-2.0",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "homepage, https://github.com/jax-ml/ml_dtypes",
+      "repository, https://github.com/jax-ml/ml_dtypes"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "ml_dtypes-0.5.4.dist-info/licenses/LICENSE",
+      "ml_dtypes-0.5.4.dist-info/licenses/LICENSE.eigen"
+    ]
+  },
+  {
+    "name": "mpmath",
+    "version": "1.3.0",
+    "licenseExpression": null,
+    "license": "BSD",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "urls": [
+      "Source, https://github.com/fredrik-johansson/mpmath",
+      "Tracker, https://github.com/fredrik-johansson/mpmath/issues",
+      "Documentation, http://mpmath.org/doc/current/"
+    ],
+    "homepage": "http://mpmath.org/",
+    "licenseFiles": [
+      "mpmath-1.3.0.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "msgpack",
+    "version": "1.2.2",
+    "licenseExpression": "Apache-2.0",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://msgpack.org/",
+      "Documentation, https://msgpack-python.readthedocs.io/",
+      "Repository, https://github.com/msgpack/msgpack-python/",
+      "Tracker, https://github.com/msgpack/msgpack-python/issues",
+      "Changelog, https://github.com/msgpack/msgpack-python/blob/main/CHANGELOG.md"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "msgpack-1.2.2.dist-info/licenses/COPYING"
+    ]
+  },
+  {
+    "name": "msgspec",
+    "version": "0.21.1",
+    "licenseExpression": "BSD-3-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://jcristharif.com/msgspec/",
+      "Issue Tracker, https://github.com/jcrist/msgspec/issues",
+      "Source, https://github.com/jcrist/msgspec"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "msgspec-0.21.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "multidict",
+    "version": "6.8.0",
+    "licenseExpression": null,
+    "license": "Apache License 2.0",
+    "licenseClassifiers": [],
+    "urls": [
+      "Chat: Matrix, https://matrix.to/#/#aio-libs:matrix.org",
+      "Chat: Matrix Space, https://matrix.to/#/#aio-libs-space:matrix.org",
+      "CI: GitHub, https://github.com/aio-libs/multidict/actions",
+      "Code of Conduct, https://github.com/aio-libs/.github/blob/master/CODE_OF_CONDUCT.md",
+      "Coverage: codecov, https://codecov.io/github/aio-libs/multidict",
+      "Docs: Changelog, https://multidict.aio-libs.org/en/latest/changes/",
+      "Docs: RTD, https://multidict.aio-libs.org",
+      "GitHub: issues, https://github.com/aio-libs/multidict/issues",
+      "GitHub: repo, https://github.com/aio-libs/multidict"
+    ],
+    "homepage": "https://github.com/aio-libs/multidict",
+    "licenseFiles": [
+      "multidict-6.8.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "networkx",
+    "version": "3.4.2",
+    "licenseExpression": null,
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "urls": [
+      "Homepage, https://networkx.org/",
+      "Bug Tracker, https://github.com/networkx/networkx/issues",
+      "Documentation, https://networkx.org/documentation/stable/",
+      "Source Code, https://github.com/networkx/networkx"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "networkx-3.4.2.dist-info/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "numba",
+    "version": "0.67.0",
+    "licenseExpression": null,
+    "license": "BSD",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "urls": [],
+    "homepage": "https://numba.pydata.org",
+    "licenseFiles": [
+      "numba-0.67.0.dist-info/licenses/LICENSE",
+      "numba-0.67.0.dist-info/licenses/LICENSES.third-party"
+    ]
+  },
+  {
+    "name": "numpy",
+    "version": "1.26.4",
+    "licenseExpression": null,
+    "license": "Copyright (c) 2005-2023, NumPy Developers.\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted ",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "urls": [
+      "Homepage, https://numpy.org",
+      "Documentation, https://numpy.org/doc/",
+      "Source, https://github.com/numpy/numpy",
+      "Download, https://pypi.org/project/numpy/#files",
+      "Tracker, https://github.com/numpy/numpy/issues",
+      "Release notes, https://numpy.org/doc/stable/release"
+    ],
+    "homepage": "https://numpy.org",
+    "licenseFiles": [
+      "numpy-1.26.4.dist-info/LICENSE.txt",
+      "numpy/core/include/numpy/random/LICENSE.txt",
+      "numpy/ma/LICENSE",
+      "numpy/random/LICENSE.md"
+    ]
+  },
+  {
+    "name": "onnx",
+    "version": "1.22.0",
+    "licenseExpression": "Apache-2.0",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://onnx.ai/",
+      "Repository, https://github.com/onnx/onnx"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "onnx-1.22.0.dist-info/licenses/LICENSE",
+      "onnx-1.22.0.dist-info/licenses/NOTICE"
+    ]
+  },
+  {
+    "name": "onnx-ir",
+    "version": "1.0.0",
+    "licenseExpression": "Apache-2.0",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://onnx.ai/ir-py",
+      "Issues, https://github.com/onnx/ir-py/issues",
+      "Repository, https://github.com/onnx/ir-py"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "onnx_ir-1.0.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "onnxruntime",
+    "version": "1.23.2",
+    "licenseExpression": null,
+    "license": "MIT License",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [],
+    "homepage": "https://onnxruntime.ai",
+    "licenseFiles": [
+      "onnxruntime/LICENSE",
+      "onnxruntime/ThirdPartyNotices.txt"
+    ]
+  },
+  {
+    "name": "onnxscript",
+    "version": "0.7.2",
+    "licenseExpression": null,
+    "license": "MIT License\n\nCopyright (c) Microsoft Corporation\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated d",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Homepage, https://microsoft.github.io/onnxscript/",
+      "Repository, https://github.com/microsoft/onnxscript"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "onnxscript-0.7.2.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "onnxsim",
+    "version": "0.7.3",
+    "licenseExpression": null,
+    "license": "MIT AND (Apache-2.0 OR BSD-2-Clause)",
+    "licenseClassifiers": [],
+    "urls": [],
+    "homepage": "https://github.com/onnxsim/onnxsim",
+    "licenseFiles": []
+  },
+  {
+    "name": "packaging",
+    "version": "26.3",
+    "licenseExpression": "Apache-2.0 OR BSD-2-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Documentation, https://packaging.pypa.io/",
+      "Source, https://github.com/pypa/packaging"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "packaging-26.3.dist-info/licenses/LICENSE",
+      "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+      "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+      "packaging/licenses/__init__.py",
+      "packaging/licenses/_spdx.py"
+    ]
+  },
+  {
+    "name": "platformdirs",
+    "version": "4.11.8",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Changelog, https://platformdirs.readthedocs.io/en/latest/changelog.html",
+      "Documentation, https://platformdirs.readthedocs.io",
+      "Homepage, https://github.com/tox-dev/platformdirs",
+      "Source, https://github.com/tox-dev/platformdirs",
+      "Tracker, https://github.com/tox-dev/platformdirs/issues"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "platformdirs-4.11.8.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pooch",
+    "version": "1.9.0",
+    "licenseExpression": "BSD-3-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Documentation, https://www.fatiando.org/pooch",
+      "Changelog, https://www.fatiando.org/pooch/latest/changes.html",
+      "Bug Tracker, https://github.com/fatiando/pooch/issues",
+      "Source Code, https://github.com/fatiando/pooch"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "pooch-1.9.0.dist-info/licenses/AUTHORS.md",
+      "pooch-1.9.0.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "propcache",
+    "version": "0.5.2",
+    "licenseExpression": null,
+    "license": "Apache-2.0",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ],
+    "urls": [
+      "Chat: Matrix, https://matrix.to/#/#aio-libs:matrix.org",
+      "Chat: Matrix Space, https://matrix.to/#/#aio-libs-space:matrix.org",
+      "CI: GitHub Workflows, https://github.com/aio-libs/propcache/actions?query=branch:master",
+      "Code of Conduct, https://github.com/aio-libs/.github/blob/master/CODE_OF_CONDUCT.md",
+      "Coverage: codecov, https://codecov.io/github/aio-libs/propcache",
+      "Docs: Changelog, https://propcache.readthedocs.io/en/latest/changes/",
+      "Docs: RTD, https://propcache.readthedocs.io",
+      "GitHub: issues, https://github.com/aio-libs/propcache/issues",
+      "GitHub: repo, https://github.com/aio-libs/propcache"
+    ],
+    "homepage": "https://github.com/aio-libs/propcache",
+    "licenseFiles": [
+      "propcache-0.5.2.dist-info/licenses/LICENSE",
+      "propcache-0.5.2.dist-info/licenses/NOTICE"
+    ]
+  },
+  {
+    "name": "protobuf",
+    "version": "7.36.1",
+    "licenseExpression": null,
+    "license": "3-Clause BSD License",
+    "licenseClassifiers": [],
+    "urls": [],
+    "homepage": "https://developers.google.com/protocol-buffers/",
+    "licenseFiles": [
+      "protobuf-7.36.1.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "pycparser",
+    "version": "3.0",
+    "licenseExpression": "BSD-3-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://github.com/eliben/pycparser"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "pycparser-3.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pydantic",
+    "version": "2.13.5",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://github.com/pydantic/pydantic",
+      "Documentation, https://docs.pydantic.dev",
+      "Funding, https://github.com/sponsors/samuelcolvin",
+      "Source, https://github.com/pydantic/pydantic",
+      "Changelog, https://docs.pydantic.dev/latest/changelog/"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "pydantic-2.13.5.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pydantic-settings",
+    "version": "2.15.0",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Homepage, https://github.com/pydantic/pydantic-settings",
+      "Funding, https://github.com/sponsors/samuelcolvin",
+      "Source, https://github.com/pydantic/pydantic-settings",
+      "Changelog, https://github.com/pydantic/pydantic-settings/releases",
+      "Documentation, https://docs.pydantic.dev/dev-v2/concepts/pydantic_settings/"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "pydantic_settings-2.15.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pydantic_core",
+    "version": "2.46.5",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Funding, https://github.com/sponsors/samuelcolvin",
+      "Homepage, https://github.com/pydantic",
+      "Source, https://github.com/pydantic/pydantic/tree/main/pydantic-core"
+    ],
+    "homepage": "https://github.com/pydantic/pydantic",
+    "licenseFiles": [
+      "pydantic_core-2.46.5.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "Pygments",
+    "version": "2.21.0",
+    "licenseExpression": "BSD-2-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://pygments.org",
+      "Documentation, https://pygments.org/docs",
+      "Source, https://github.com/pygments/pygments",
+      "Bug Tracker, https://github.com/pygments/pygments/issues",
+      "Changelog, https://github.com/pygments/pygments/blob/master/CHANGES"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "pygments-2.21.0.dist-info/licenses/AUTHORS",
+      "pygments-2.21.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pyOpenSSL",
+    "version": "26.4.0",
+    "licenseExpression": null,
+    "license": "Apache License, Version 2.0",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ],
+    "urls": [
+      "Source, https://github.com/pyca/pyopenssl"
+    ],
+    "homepage": "https://pyopenssl.org/",
+    "licenseFiles": [
+      "pyopenssl-26.4.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pyreadline3",
+    "version": "3.5.6",
+    "licenseExpression": null,
+    "license": "BSD",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "urls": [
+      "Homepage, https://github.com/pyreadline3/pyreadline3",
+      "Documentation, https://github.com/pyreadline3/pyreadline3",
+      "Repository, https://github.com/pyreadline3/pyreadline3.git",
+      "Issues, https://github.com/pyreadline3/pyreadline3/issues",
+      "Changelog, https://github.com/pyreadline3/pyreadline3/blob/master/doc/ChangeLog"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "pyreadline3-3.5.6.dist-info/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "python-dotenv",
+    "version": "1.2.3",
+    "licenseExpression": null,
+    "license": "BSD-3-Clause",
+    "licenseClassifiers": [],
+    "urls": [
+      "Source, https://github.com/theskumar/python-dotenv"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "python_dotenv-1.2.3.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "python-engineio",
+    "version": "4.14.0",
+    "licenseExpression": null,
+    "license": "MIT",
+    "licenseClassifiers": [],
+    "urls": [
+      "homepage, https://code.miguelgrinberg.com/miguelgrinberg/python-engineio",
+      "documentation, https://python-engineio.readthedocs.io/",
+      "repository, https://code.miguelgrinberg.com/miguelgrinberg/python-engineio",
+      "issues, https://github.com/miguelgrinberg/python-engineio/issues",
+      "changelog, https://code.miguelgrinberg.com/miguelgrinberg/python-engineio/src/branch/main/CHANGES.md"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "python_engineio-4.14.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "python-multipart",
+    "version": "0.0.32",
+    "licenseExpression": "Apache-2.0",
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ],
+    "urls": [
+      "Homepage, https://github.com/Kludex/python-multipart",
+      "Documentation, https://kludex.github.io/python-multipart/",
+      "Changelog, https://github.com/Kludex/python-multipart/blob/master/CHANGELOG.md",
+      "Source, https://github.com/Kludex/python-multipart"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "python_multipart-0.0.32.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "python-socketio",
+    "version": "5.16.4",
+    "licenseExpression": null,
+    "license": "MIT",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://github.com/miguelgrinberg/python-socketio",
+      "Bug Tracker, https://github.com/miguelgrinberg/python-socketio/issues"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "python_socketio-5.16.4.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "requests",
+    "version": "2.34.2",
+    "licenseExpression": null,
+    "license": "Apache-2.0",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ],
+    "urls": [
+      "Documentation, https://requests.readthedocs.io",
+      "Source, https://github.com/psf/requests"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "requests-2.34.2.dist-info/licenses/LICENSE",
+      "requests-2.34.2.dist-info/licenses/NOTICE"
+    ]
+  },
+  {
+    "name": "resampy",
+    "version": "0.4.3",
+    "licenseExpression": null,
+    "license": "ISC",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: ISC License (ISCL)"
+    ],
+    "urls": [],
+    "homepage": "https://github.com/bmcfee/resampy",
+    "licenseFiles": [
+      "resampy-0.4.3.dist-info/LICENSE.md"
+    ]
+  },
+  {
+    "name": "rich",
+    "version": "15.0.0",
+    "licenseExpression": null,
+    "license": "MIT",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Documentation, https://rich.readthedocs.io/en/latest/",
+      "Homepage, https://github.com/Textualize/rich"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "rich-15.0.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "safetensors",
+    "version": "0.8.0",
+    "licenseExpression": null,
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ],
+    "urls": [
+      "Homepage, https://github.com/huggingface/safetensors",
+      "Source, https://github.com/huggingface/safetensors"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "safetensors-0.8.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "scikit-learn",
+    "version": "1.7.2",
+    "licenseExpression": "BSD-3-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "homepage, https://scikit-learn.org",
+      "source, https://github.com/scikit-learn/scikit-learn",
+      "download, https://pypi.org/project/scikit-learn/#files",
+      "tracker, https://github.com/scikit-learn/scikit-learn/issues",
+      "release notes, https://scikit-learn.org/stable/whats_new"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "scikit_learn-1.7.2.dist-info/licenses/COPYING",
+      "sklearn/externals/array_api_compat/LICENSE",
+      "sklearn/externals/array_api_extra/LICENSE"
+    ]
+  },
+  {
+    "name": "scipy",
+    "version": "1.15.3",
+    "licenseExpression": null,
+    "license": "Copyright (c) 2001-2002 Enthought, Inc. 2003-2024, SciPy Developers.\n All rights reserved.\n\n Redistribution and use in source and binary forms, with or without\n",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "urls": [
+      "homepage, https://scipy.org/",
+      "documentation, https://docs.scipy.org/doc/scipy/",
+      "source, https://github.com/scipy/scipy",
+      "download, https://github.com/scipy/scipy/releases",
+      "tracker, https://github.com/scipy/scipy/issues"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "scipy-1.15.3.dist-info/LICENSE.txt",
+      "scipy/_lib/_uarray/LICENSE",
+      "scipy/fft/_pocketfft/LICENSE.md",
+      "scipy/sparse/linalg/_eigen/arpack/COPYING",
+      "scipy/spatial/qhull_src/COPYING.txt"
+    ]
+  },
+  {
+    "name": "simple-websocket",
+    "version": "1.1.0",
+    "licenseExpression": null,
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Homepage, https://github.com/miguelgrinberg/simple-websocket",
+      "Bug Tracker, https://github.com/miguelgrinberg/simple-websocket/issues"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "simple_websocket-1.1.0.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "sounddevice",
+    "version": "0.4.7",
+    "licenseExpression": null,
+    "license": "MIT",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Source, https://github.com/spatialaudio/python-sounddevice"
+    ],
+    "homepage": "http://python-sounddevice.readthedocs.io/",
+    "licenseFiles": [
+      "sounddevice-0.4.7.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "soundfile",
+    "version": "0.14.0",
+    "licenseExpression": null,
+    "license": "BSD 3-Clause License",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "urls": [],
+    "homepage": "https://github.com/bastibe/python-soundfile",
+    "licenseFiles": [
+      "_soundfile_data/COPYING",
+      "licensing/license_notes.md",
+      "soundfile-0.14.0.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "soxr",
+    "version": "1.1.0",
+    "licenseExpression": "LGPL-2.1-or-later",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://github.com/dofuuz/python-soxr",
+      "Documentation, https://python-soxr.readthedocs.io",
+      "Release Notes, https://github.com/dofuuz/python-soxr/releases",
+      "Source, https://github.com/dofuuz/python-soxr",
+      "Bug Tracker, https://github.com/dofuuz/python-soxr/issues"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "soxr-1.1.0.dist-info/licenses/COPYING.LGPL",
+      "soxr-1.1.0.dist-info/licenses/LICENSE-PFFFT.txt",
+      "soxr-1.1.0.dist-info/licenses/LICENSE-libsoxr.txt",
+      "soxr-1.1.0.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "starlette",
+    "version": "1.6.0",
+    "licenseExpression": "BSD-3-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://github.com/Kludex/starlette",
+      "Documentation, https://starlette.dev/",
+      "Changelog, https://starlette.dev/release-notes/",
+      "Funding, https://github.com/sponsors/Kludex",
+      "Source, https://github.com/Kludex/starlette"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "starlette-1.6.0.dist-info/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "sympy",
+    "version": "1.14.0",
+    "licenseExpression": null,
+    "license": "BSD",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "urls": [
+      "Source, https://github.com/sympy/sympy"
+    ],
+    "homepage": "https://sympy.org",
+    "licenseFiles": [
+      "sympy-1.14.0.dist-info/licenses/AUTHORS",
+      "sympy-1.14.0.dist-info/licenses/LICENSE",
+      "sympy/parsing/latex/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "threadpoolctl",
+    "version": "3.6.0",
+    "licenseExpression": null,
+    "license": "BSD-3-Clause",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "urls": [],
+    "homepage": "https://github.com/joblib/threadpoolctl",
+    "licenseFiles": [
+      "threadpoolctl-3.6.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "torch",
+    "version": "2.8.0+cpu",
+    "licenseExpression": null,
+    "license": "BSD-3-Clause",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "urls": [
+      "Homepage, https://pytorch.org/",
+      "Documentation, https://pytorch.org/docs/",
+      "Source, https://github.com/pytorch/pytorch",
+      "Forum, https://discuss.pytorch.org/"
+    ],
+    "homepage": "https://pytorch.org/",
+    "licenseFiles": [
+      "torch-2.8.0+cpu.dist-info/LICENSE",
+      "torch-2.8.0+cpu.dist-info/NOTICE"
+    ]
+  },
+  {
+    "name": "torch-einops-utils",
+    "version": "0.1.25",
+    "licenseExpression": null,
+    "license": "MIT License\n\nCopyright (c) 2026 Phil Wang\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated document",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [
+      "Homepage, https://pypi.org/project/torch-einops-utils/",
+      "Repository, https://github.com/lucidrains/torch-einops-utils"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "torch_einops_utils-0.1.25.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "torchaudio",
+    "version": "2.8.0+cpu",
+    "licenseExpression": null,
+    "license": "",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "urls": [],
+    "homepage": "https://github.com/pytorch/audio",
+    "licenseFiles": [
+      "torchaudio-2.8.0+cpu.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "torchcrepe",
+    "version": "0.0.24",
+    "licenseExpression": null,
+    "license": "MIT",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [],
+    "homepage": "https://github.com/maxrmorrison/torchcrepe",
+    "licenseFiles": [
+      "torchcrepe-0.0.24.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "torchfcpe",
+    "version": "0.0.4",
+    "licenseExpression": null,
+    "license": "MIT",
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "urls": [],
+    "homepage": "https://github.com/CNChTu/FCPE",
+    "licenseFiles": [
+      "torchfcpe-0.0.4.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "tqdm",
+    "version": "4.70.1",
+    "licenseExpression": null,
+    "license": "MPL-2.0 AND MIT",
+    "licenseClassifiers": [],
+    "urls": [
+      "homepage, https://tqdm.github.io",
+      "repository, https://github.com/tqdm/tqdm",
+      "changelog, https://tqdm.github.io/releases",
+      "wiki, https://github.com/tqdm/tqdm/wiki"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "tqdm-4.70.1.dist-info/licenses/LICENCE"
+    ]
+  },
+  {
+    "name": "typing-inspection",
+    "version": "0.4.4",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://github.com/pydantic/typing-inspection",
+      "Documentation, https://pydantic.github.io/typing-inspection/dev/",
+      "Source, https://github.com/pydantic/typing-inspection",
+      "Changelog, https://github.com/pydantic/typing-inspection/blob/main/HISTORY.md"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "typing_inspection-0.4.4.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "typing_extensions",
+    "version": "4.16.0",
+    "licenseExpression": "PSF-2.0",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Bug Tracker, https://github.com/python/typing_extensions/issues",
+      "Changes, https://github.com/python/typing_extensions/blob/main/CHANGELOG.md",
+      "Documentation, https://typing-extensions.readthedocs.io/",
+      "Home, https://github.com/python/typing_extensions",
+      "Q & A, https://github.com/python/typing/discussions",
+      "Repository, https://github.com/python/typing_extensions"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "typing_extensions-4.16.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "urllib3",
+    "version": "2.7.0",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Changelog, https://github.com/urllib3/urllib3/blob/main/CHANGES.rst",
+      "Documentation, https://urllib3.readthedocs.io",
+      "Code, https://github.com/urllib3/urllib3",
+      "Issue tracker, https://github.com/urllib3/urllib3/issues"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "urllib3-2.7.0.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "uvicorn",
+    "version": "0.52.4",
+    "licenseExpression": "BSD-3-Clause",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Changelog, https://uvicorn.dev/release-notes",
+      "Funding, https://github.com/sponsors/encode",
+      "Homepage, https://uvicorn.dev/",
+      "Source, https://github.com/Kludex/uvicorn"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "uvicorn-0.52.4.dist-info/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "wsproto",
+    "version": "1.3.2",
+    "licenseExpression": "MIT",
+    "license": "",
+    "licenseClassifiers": [],
+    "urls": [
+      "Homepage, https://github.com/python-hyper/wsproto/",
+      "Bug Reports, https://github.com/python-hyper/wsproto/issues",
+      "Source, https://github.com/python-hyper/wsproto/",
+      "Documentation, https://python-hyper.org/"
+    ],
+    "homepage": null,
+    "licenseFiles": [
+      "wsproto-1.3.2.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "xxhash",
+    "version": "4.0.1",
+    "licenseExpression": null,
+    "license": "BSD-2-Clause",
+    "licenseClassifiers": [],
+    "urls": [],
+    "homepage": "https://github.com/ifduyue/python-xxhash",
+    "licenseFiles": [
+      "xxhash-4.0.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "yarl",
+    "version": "1.24.5",
+    "licenseExpression": null,
+    "license": "Apache-2.0",
+    "licenseClassifiers": [],
+    "urls": [
+      "Chat: Matrix, https://matrix.to/#/#aio-libs:matrix.org",
+      "Chat: Matrix Space, https://matrix.to/#/#aio-libs-space:matrix.org",
+      "CI: GitHub Workflows, https://github.com/aio-libs/yarl/actions?query=branch:master",
+      "Code of Conduct, https://github.com/aio-libs/.github/blob/master/CODE_OF_CONDUCT.md",
+      "Coverage: codecov, https://codecov.io/github/aio-libs/yarl",
+      "Docs: Changelog, https://yarl.aio-libs.org/en/latest/changes/",
+      "Docs: RTD, https://yarl.aio-libs.org",
+      "GitHub: issues, https://github.com/aio-libs/yarl/issues",
+      "GitHub: repo, https://github.com/aio-libs/yarl"
+    ],
+    "homepage": "https://github.com/aio-libs/yarl",
+    "licenseFiles": [
+      "yarl-1.24.5.dist-info/licenses/LICENSE",
+      "yarl-1.24.5.dist-info/licenses/NOTICE"
+    ]
+  }
+]

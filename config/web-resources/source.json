@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "variant": "cyber-legs",
+  "source": "assets/work/ene/source.blend",
+  "workspace": "assets/work/ene-web",
+  "privateFrames": "assets/work/ene-web/spike/frames",
+  "privateMedia": "ops/reports/local/web-resource-spike",
+  "publicDirectoryPlanned": "web-showcase/public/ene",
+  "originals": {
+    "ops/resources/ENE/ENE Cyber legs ver.pmx": "226fe9075f25c7dd2e6474fdd6acb77ff71c45900fb2d5c8794e08647aa9dbe4",
+    "ops/resources/ENE/ENE normal legs ver.pmx": "1b10578850b2ebd98a87f34099740a87c9589e3b8383aa2cef38d285ef3dfcab",
+    "ops/resources/ene.vmd": "d3abdedf45e36a55ad66e2546ec0a562054db8a6c11d4198fa8c6a773f39bea8"
+  },
+  "render": {"engine": "BLENDER_EEVEE", "width": 960, "height": 960, "fps": 24, "frames": 48, "colorTransform": "Standard", "exposure": -0.2, "transparent": true, "samples": 32},
+  "spikeOnly": true,
+  "credits": "Ene edit: AuroraYok / yokkaulove (DA), with bundled contributor credits. User stated permission applies to this local project. Preserve supplied character and motion terms; no model redistribution."
+}

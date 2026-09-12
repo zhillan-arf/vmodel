@@ -1,0 +1,59 @@
+{
+  "scope": "In-memory mouth/brow candidates under a diagnostic face camera; accepted scene files unchanged",
+  "candidates": {
+    "excited-wide-ih": {
+      "\u306b\u3053\u308a": 0.9,
+      "\u3044": 0.8,
+      "\u03c9": 0.35,
+      "\u7b11\u3044": 0.15
+    },
+    "excited-open-aa": {
+      "\u306b\u3053\u308a": 0.9,
+      "\u3042": 0.55,
+      "\u03c9": 0.6,
+      "\u7b11\u3044": 0.12
+    },
+    "excited-omega-box": {
+      "\u306b\u3053\u308a": 1,
+      "\u03c9\u25a1": 1,
+      "\u7b11\u3044": 0.3
+    },
+    "excited-open-smile": {
+      "\u306b\u3053\u308a": 0.9,
+      "\u3044": 0.55,
+      "\u03c9\u25a1": 0.45,
+      "\u7b11\u3044": 0.18
+    },
+    "confused-strong": {
+      "\u56f0\u308b": 1,
+      "\u2227": 0.7,
+      "\u3058\u3068\u76ee": 0.18
+    },
+    "surprised-strong": {
+      "\u3073\u3063\u304f\u308a": 0.9,
+      "\u4e0a": 0.65,
+      "\u304a": 0.72,
+      "\u77b3\u5c0f": 0.22
+    },
+    "excited-grin-open": {
+      "\u306b\u3053\u308a": 0.3,
+      "\u3044": 0.95,
+      "\u03c9": 0.7,
+      "\u03c9\u25a1": 0.1,
+      "\u4e0a": 0.45
+    },
+    "excited-grin-laugh": {
+      "\u306b\u3053\u308a": 0.6,
+      "\u3044": 0.85,
+      "\u03c9": 0.65,
+      "\u7b11\u3044": 0.65,
+      "\u4e0a": 0.25
+    },
+    "excited-open-bright": {
+      "\u306b\u3053\u308a": 0.2,
+      "\u3042": 0.45,
+      "\u03c9": 0.9,
+      "\u4e0a": 0.5
+    }
+  }
+}

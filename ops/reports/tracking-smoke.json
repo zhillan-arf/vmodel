@@ -1,0 +1,40 @@
+{
+  "input": "Chromium synthetic fake camera; no real face/gesture acceptance",
+  "samples": [
+    {
+      "fps": 21.997800219978036,
+      "inferenceMs": 49,
+      "drawCalls": 49
+    },
+    {
+      "fps": 59.99803285138188,
+      "inferenceMs": 23.700000017881393,
+      "drawCalls": 49
+    },
+    {
+      "fps": 59.026069847515984,
+      "inferenceMs": 33.900000005960464,
+      "drawCalls": 49
+    },
+    {
+      "fps": 59.98800239952005,
+      "inferenceMs": 37.80000001192093,
+      "drawCalls": 49
+    },
+    {
+      "fps": 59.994000599940094,
+      "inferenceMs": 10.799999982118607,
+      "drawCalls": 49
+    }
+  ],
+  "stopped": true,
+  "errors": [],
+  "messages": [
+    "W0912 06:56:46.928000 2196592 face_landmarker_graph.cc:180] Sets FaceBlendshapesGraph acceleration to xnnpack by default.",
+    "W0912 06:56:47.033999 2196592 gl_context.cc:1119] OpenGL error checking is disabled",
+    "W0912 06:56:47.520000 2196592 gl_context.cc:1119] OpenGL error checking is disabled",
+    "W0912 06:56:47.975000 2196592 gl_context.cc:1119] OpenGL error checking is disabled",
+    "INFO: Created TensorFlow Lite XNNPACK delegate for CPU.",
+    "W0912 06:57:00.515000 2196592 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX."
+  ]
+}

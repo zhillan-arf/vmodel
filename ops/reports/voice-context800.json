@@ -1,0 +1,713 @@
+{
+  "schemaVersion": 1,
+  "contextMs": 800,
+  "chunkMs": 160,
+  "crossfadeMs": 40,
+  "solaSearchMs": 10,
+  "modelArtifacts": [
+    {
+      "path": "assets/voice/onnx/bright-160ms-context800-v1/generator.onnx",
+      "sha256": "29ec35b9270151e890ca531598a088e1582147238d0a77171b78b7fa4f6b60ea",
+      "bytes": 110169944
+    },
+    {
+      "path": "assets/voice/onnx/bright-160ms-context800-v1/encoder.onnx",
+      "sha256": "713c7b040ef6df112c6762d9ac6fd7655e9ea8b52d1b4a01173f62b9907877dd",
+      "bytes": 378550132
+    },
+    {
+      "path": "assets/voice/onnx/bright-160ms-context800-v1/fixture.npz",
+      "sha256": "a224ad98dcc7f7a0a30ff29b88c70676a716a039e20b8b205804844037b92929",
+      "bytes": 444068
+    }
+  ],
+  "sourceOriginalSha256": "b31133c05e9667a27db5be539ca089aa99e95ca7bef52040c902ff781680873a",
+  "backend": "OpenVINO CPU FP32 / 3 threads / 1 stream",
+  "openvino": "2026.3.1-22476-759c5a6ab8c-releases/2026/3",
+  "executionDevices": {
+    "encoder": "['CPU']",
+    "generator": "['CPU']"
+  },
+  "generatorFixtureVsOriginalMaxAbsError": 1.952052116394043e-06,
+  "warmupChunks": 10,
+  "loadAndWarmupSeconds": 5.56001099999412,
+  "blocks": 53,
+  "sourceSecondsBeforeTrailingPad": 8.3966875,
+  "trailingSilencePaddingSeconds": 0.0833125,
+  "inputSeconds": 8.48,
+  "outputSeconds": 8.48,
+  "encoderMs": {
+    "p50": 147.98999999766238,
+    "p95": 165.6531199987512,
+    "max": 181.76690000109375
+  },
+  "generatorMs": {
+    "p50": 219.11700000055134,
+    "p95": 232.4712399917189,
+    "max": 291.3493000087328
+  },
+  "computeMs": {
+    "p50": 367.8344000072684,
+    "p95": 393.3376799803227,
+    "max": 440.27590000769123
+  },
+  "computeRealTimeFactor": 2.247577452822643,
+  "blocksSlowerThan160Ms": 53,
+  "boundaryJump": {
+    "p50": 0.0061002615839242935,
+    "p95": 0.034541141055524346,
+    "max": 0.07183610647916794
+  },
+  "normalizedBoundaryJump": {
+    "p50": 0.8220121267506617,
+    "p95": 1.791171935210179,
+    "max": 2.668167055189983
+  },
+  "boundaryMetricDefinition": "Adjacent-sample jump at each 160 ms join divided by RMS adjacent differences in the surrounding 10 ms, excluding the join. Diagnostic only; not an audibility or word-intelligibility threshold.",
+  "rms": 0.12760256230831146,
+  "peak": 0.8893726468086243,
+  "clippedFraction": 0.0,
+  "allFinite": true,
+  "output": "assets/voice/auditions/context-v1/context800.wav",
+  "outputSha256": "88692ddbed962f6c3b06a3c5aa9113efa25fb9700fe54f0e4595f7c5448f24a0",
+  "sourceReference": "assets/voice/auditions/context-v1/source.wav",
+  "sourceReferenceSha256": "ab6541e7183b15dbcbb28b5d939c46636ba19de310a31914eb893daf8c116daf",
+  "records": [
+    {
+      "encoderMs": 114.60709999664687,
+      "generatorMs": 148.91760001773946,
+      "computeMs": 263.6895000177901,
+      "solaOffsetSamples": 0
+    },
+    {
+      "encoderMs": 94.58249999443069,
+      "generatorMs": 138.193599996157,
+      "computeMs": 232.9396999848541,
+      "solaOffsetSamples": 194
+    },
+    {
+      "encoderMs": 97.0138999982737,
+      "generatorMs": 137.60779998847283,
+      "computeMs": 234.8057999915909,
+      "solaOffsetSamples": 63
+    },
+    {
+      "encoderMs": 95.79900000244379,
+      "generatorMs": 149.26729997387156,
+      "computeMs": 245.2579999808222,
+      "solaOffsetSamples": 102
+    },
+    {
+      "encoderMs": 110.42019998421893,
+      "generatorMs": 173.64100000122562,
+      "computeMs": 284.29319997667335,
+      "solaOffsetSamples": 218
+    },
+    {
+      "encoderMs": 123.9417000033427,
+      "generatorMs": 195.92800000100397,
+      "computeMs": 320.17810002435,
+      "solaOffsetSamples": 58
+    },
+    {
+      "encoderMs": 136.40260000829585,
+      "generatorMs": 206.41640000394545,
+      "computeMs": 343.2553000166081,
+      "solaOffsetSamples": 148
+    },
+    {
+      "encoderMs": 139.29550000466406,
+      "generatorMs": 210.59810000588186,
+      "computeMs": 350.12809999170713,
+      "solaOffsetSamples": 170
+    },
+    {
+      "encoderMs": 168.77419999218546,
+      "generatorMs": 223.31760000088252,
+      "computeMs": 392.3651999793947,
+      "solaOffsetSamples": 2
+    },
+    {
+      "encoderMs": 153.00009999191388,
+      "generatorMs": 228.44149998854846,
+      "computeMs": 381.69909999123774,
+      "solaOffsetSamples": 118
+    },
+    {
+      "encoderMs": 153.32760001183487,
+      "generatorMs": 230.581899988465,
+      "computeMs": 384.18240001192316,
+      "solaOffsetSamples": 106
+    },
+    {
+      "encoderMs": 160.05130001576617,
+      "generatorMs": 230.80819999449886,
+      "computeMs": 391.2887000187766,
+      "solaOffsetSamples": 327
+    },
+    {
+      "encoderMs": 150.5057000031229,
+      "generatorMs": 222.36710001016036,
+      "computeMs": 373.12180001754314,
+      "solaOffsetSamples": 238
+    },
+    {
+      "encoderMs": 148.81549999699928,
+      "generatorMs": 223.23119998327456,
+      "computeMs": 372.4540999974124,
+      "solaOffsetSamples": 150
+    },
+    {
+      "encoderMs": 167.41399999591522,
+      "generatorMs": 227.13559999829158,
+      "computeMs": 394.7963999817148,
+      "solaOffsetSamples": 17
+    },
+    {
+      "encoderMs": 153.79519999260083,
+      "generatorMs": 223.94560000975616,
+      "computeMs": 378.00090000382625,
+      "solaOffsetSamples": 191
+    },
+    {
+      "encoderMs": 150.8927999821026,
+      "generatorMs": 220.0394000101369,
+      "computeMs": 371.18200000259094,
+      "solaOffsetSamples": 191
+    },
+    {
+      "encoderMs": 146.66179998312145,
+      "generatorMs": 219.95080000488088,
+      "computeMs": 366.8550000002142,
+      "solaOffsetSamples": 208
+    },
+    {
+      "encoderMs": 150.70599998580292,
+      "generatorMs": 217.44949999265373,
+      "computeMs": 368.3897999871988,
+      "solaOffsetSamples": 295
+    },
+    {
+      "encoderMs": 149.0260999999009,
+      "generatorMs": 226.84089999529533,
+      "computeMs": 376.13319998490624,
+      "solaOffsetSamples": 272
+    },
+    {
+      "encoderMs": 152.93770001153462,
+      "generatorMs": 228.07029998512007,
+      "computeMs": 381.2831999966875,
+      "solaOffsetSamples": 127
+    },
+    {
+      "encoderMs": 152.35659998143092,
+      "generatorMs": 222.08920001867227,
+      "computeMs": 374.69609998515807,
+      "solaOffsetSamples": 250
+    },
+    {
+      "encoderMs": 150.26320001925342,
+      "generatorMs": 225.44789998210035,
+      "computeMs": 376.16740001249127,
+      "solaOffsetSamples": 381
+    },
+    {
+      "encoderMs": 164.47920000064187,
+      "generatorMs": 219.11700000055134,
+      "computeMs": 383.8441999978386,
+      "solaOffsetSamples": 63
+    },
+    {
+      "encoderMs": 150.96209998591803,
+      "generatorMs": 216.6987000091467,
+      "computeMs": 367.9004999867175,
+      "solaOffsetSamples": 308
+    },
+    {
+      "encoderMs": 142.84110002336092,
+      "generatorMs": 228.8111999805551,
+      "computeMs": 371.8974000075832,
+      "solaOffsetSamples": 264
+    },
+    {
+      "encoderMs": 154.29050000966527,
+      "generatorMs": 224.13529999903403,
+      "computeMs": 378.6994000256527,
+      "solaOffsetSamples": 300
+    },
+    {
+      "encoderMs": 147.3971000232268,
+      "generatorMs": 218.43919999082573,
+      "computeMs": 366.07899999944493,
+      "solaOffsetSamples": 290
+    },
+    {
+      "encoderMs": 145.99550000275485,
+      "generatorMs": 212.36760000465438,
+      "computeMs": 358.5966999817174,
+      "solaOffsetSamples": 317
+    },
+    {
+      "encoderMs": 149.18159999069758,
+      "generatorMs": 213.64570001605898,
+      "computeMs": 363.04939998080954,
+      "solaOffsetSamples": 97
+    },
+    {
+      "encoderMs": 145.45229999930598,
+      "generatorMs": 210.18890000414103,
+      "computeMs": 356.07559999334626,
+      "solaOffsetSamples": 39
+    },
+    {
+      "encoderMs": 141.59750001272187,
+      "generatorMs": 208.206599985715,
+      "computeMs": 350.23410001304,
+      "solaOffsetSamples": 152
+    },
+    {
+      "encoderMs": 160.53350002039224,
+      "generatorMs": 222.87329999380745,
+      "computeMs": 383.6489000241272,
+      "solaOffsetSamples": 192
+    },
+    {
+      "encoderMs": 144.95230000466108,
+      "generatorMs": 221.64360000169836,
+      "computeMs": 366.82970001129434,
+      "solaOffsetSamples": 192
+    },
+    {
+      "encoderMs": 147.29960000840947,
+      "generatorMs": 215.5438000045251,
+      "computeMs": 363.0962000170257,
+      "solaOffsetSamples": 192
+    },
+    {
+      "encoderMs": 152.59460001834668,
+      "generatorMs": 213.91019999282435,
+      "computeMs": 366.81330000283197,
+      "solaOffsetSamples": 116
+    },
+    {
+      "encoderMs": 141.39689999865368,
+      "generatorMs": 206.107299978612,
+      "computeMs": 347.7503999893088,
+      "solaOffsetSamples": 292
+    },
+    {
+      "encoderMs": 141.21169998543337,
+      "generatorMs": 206.07149999705143,
+      "computeMs": 347.5255999946967,
+      "solaOffsetSamples": 273
+    },
+    {
+      "encoderMs": 153.61189999384806,
+      "generatorMs": 229.37690000981092,
+      "computeMs": 383.26620002044365,
+      "solaOffsetSamples": 378
+    },
+    {
+      "encoderMs": 147.98999999766238,
+      "generatorMs": 218.5200999956578,
+      "computeMs": 366.7461999866646,
+      "solaOffsetSamples": 94
+    },
+    {
+      "encoderMs": 146.6867999988608,
+      "generatorMs": 211.66170001379214,
+      "computeMs": 358.6228000058327,
+      "solaOffsetSamples": 26
+    },
+    {
+      "encoderMs": 147.46649999869987,
+      "generatorMs": 208.68009998230264,
+      "computeMs": 356.3908999785781,
+      "solaOffsetSamples": 287
+    },
+    {
+      "encoderMs": 142.83259998774156,
+      "generatorMs": 210.91280001564883,
+      "computeMs": 353.98309997981414,
+      "solaOffsetSamples": 301
+    },
+    {
+      "encoderMs": 146.06369999819435,
+      "generatorMs": 213.28540000831708,
+      "computeMs": 359.5930000010412,
+      "solaOffsetSamples": 278
+    },
+    {
+      "encoderMs": 145.04289999604225,
+      "generatorMs": 234.96579998754896,
+      "computeMs": 380.27059999876656,
+      "solaOffsetSamples": 92
+    },
+    {
+      "encoderMs": 146.50150001398288,
+      "generatorMs": 236.8709000002127,
+      "computeMs": 383.63440000102855,
+      "solaOffsetSamples": 168
+    },
+    {
+      "encoderMs": 152.3211000021547,
+      "generatorMs": 227.30450000381097,
+      "computeMs": 379.8610999947414,
+      "solaOffsetSamples": 31
+    },
+    {
+      "encoderMs": 145.43530001537874,
+      "generatorMs": 222.14299999177456,
+      "computeMs": 367.8344000072684,
+      "solaOffsetSamples": 259
+    },
+    {
+      "encoderMs": 150.36070000496693,
+      "generatorMs": 223.85519999079406,
+      "computeMs": 374.50979999266565,
+      "solaOffsetSamples": 74
+    },
+    {
+      "encoderMs": 148.6931999970693,
+      "generatorMs": 291.3493000087328,
+      "computeMs": 440.27590000769123,
+      "solaOffsetSamples": 120
+    },
+    {
+      "encoderMs": 181.76690000109375,
+      "generatorMs": 223.52010000031441,
+      "computeMs": 405.55569998105057,
+      "solaOffsetSamples": 256
+    },
+    {
+      "encoderMs": 149.54039998701774,
+      "generatorMs": 217.67350001027808,
+      "computeMs": 367.4701999989338,
+      "solaOffsetSamples": 281
+    },
+    {
+      "encoderMs": 147.2572000056971,
+      "generatorMs": 204.72929999232292,
+      "computeMs": 352.2391000005882,
+      "solaOffsetSamples": 156
+    }
+  ],
+  "boundaries": [
+    {
+      "sample": 6400,
+      "jump": 0.011558674275875092,
+      "localDifferenceRms": 0.03558766841888428,
+      "normalizedJump": 0.3247943680890762
+    },
+    {
+      "sample": 12800,
+      "jump": 0.031827230006456375,
+      "localDifferenceRms": 0.03257143869996071,
+      "normalizedJump": 0.977151494585186
+    },
+    {
+      "sample": 19200,
+      "jump": 0.0009722039103507996,
+      "localDifferenceRms": 0.013660615310072899,
+      "normalizedJump": 0.07116838358180891
+    },
+    {
+      "sample": 25600,
+      "jump": 0.0004823543131351471,
+      "localDifferenceRms": 0.004064107779413462,
+      "normalizedJump": 0.11868639792932884
+    },
+    {
+      "sample": 32000,
+      "jump": 0.0005623325705528259,
+      "localDifferenceRms": 0.007643097545951605,
+      "normalizedJump": 0.0735739099458023
+    },
+    {
+      "sample": 38400,
+      "jump": 0.01715433970093727,
+      "localDifferenceRms": 0.01871725171804428,
+      "normalizedJump": 0.9164988513991992
+    },
+    {
+      "sample": 44800,
+      "jump": 0.002815024694427848,
+      "localDifferenceRms": 0.0031854400876909494,
+      "normalizedJump": 0.8837161010516424
+    },
+    {
+      "sample": 51200,
+      "jump": 0.00027318624779582024,
+      "localDifferenceRms": 0.0008091774070635438,
+      "normalizedJump": 0.3376098311829994
+    },
+    {
+      "sample": 57600,
+      "jump": 0.015851259231567383,
+      "localDifferenceRms": 0.022070398554205894,
+      "normalizedJump": 0.718213547101833
+    },
+    {
+      "sample": 64000,
+      "jump": 0.003537297248840332,
+      "localDifferenceRms": 0.0071164644323289394,
+      "normalizedJump": 0.4970582348126362
+    },
+    {
+      "sample": 70400,
+      "jump": 0.006538437679409981,
+      "localDifferenceRms": 0.01652025803923607,
+      "normalizedJump": 0.3957830237203929
+    },
+    {
+      "sample": 76800,
+      "jump": 0.00036500580608844757,
+      "localDifferenceRms": 0.0012522799661383033,
+      "normalizedJump": 0.29147300600362386
+    },
+    {
+      "sample": 83200,
+      "jump": 0.0011711320839822292,
+      "localDifferenceRms": 0.0014987915055826306,
+      "normalizedJump": 0.7813842549948072
+    },
+    {
+      "sample": 89600,
+      "jump": 0.008050091564655304,
+      "localDifferenceRms": 0.006432701833546162,
+      "normalizedJump": 1.2514324109776938
+    },
+    {
+      "sample": 96000,
+      "jump": 0.03471663221716881,
+      "localDifferenceRms": 0.022510362789034843,
+      "normalizedJump": 1.5422511197411635
+    },
+    {
+      "sample": 102400,
+      "jump": 0.0006439406424760818,
+      "localDifferenceRms": 0.002153643174096942,
+      "normalizedJump": 0.29900061914671483
+    },
+    {
+      "sample": 108800,
+      "jump": 0.004581443965435028,
+      "localDifferenceRms": 0.005160044878721237,
+      "normalizedJump": 0.8878690153118207
+    },
+    {
+      "sample": 115200,
+      "jump": 0.006824187934398651,
+      "localDifferenceRms": 0.004046348854899406,
+      "normalizedJump": 1.6865050886889739
+    },
+    {
+      "sample": 121600,
+      "jump": 0.0018166499212384224,
+      "localDifferenceRms": 0.004316797014325857,
+      "normalizedJump": 0.42083283397612425
+    },
+    {
+      "sample": 128000,
+      "jump": 0.008473854511976242,
+      "localDifferenceRms": 0.005955425091087818,
+      "normalizedJump": 1.4228798754697136
+    },
+    {
+      "sample": 134400,
+      "jump": 0.018579620867967606,
+      "localDifferenceRms": 0.01880989782512188,
+      "normalizedJump": 0.9877576710253724
+    },
+    {
+      "sample": 140800,
+      "jump": 0.03439755737781525,
+      "localDifferenceRms": 0.029527314007282257,
+      "normalizedJump": 1.1649402776470577
+    },
+    {
+      "sample": 147200,
+      "jump": 0.07183610647916794,
+      "localDifferenceRms": 0.04464951530098915,
+      "normalizedJump": 1.6088888310412746
+    },
+    {
+      "sample": 153600,
+      "jump": 0.01439407467842102,
+      "localDifferenceRms": 0.014877749606966972,
+      "normalizedJump": 0.967490047801352
+    },
+    {
+      "sample": 160000,
+      "jump": 0.020161688327789307,
+      "localDifferenceRms": 0.01726873591542244,
+      "normalizedJump": 1.1675254301493612
+    },
+    {
+      "sample": 166400,
+      "jump": 0.0018036961555480957,
+      "localDifferenceRms": 0.002323047025129199,
+      "normalizedJump": 0.7764354901286517
+    },
+    {
+      "sample": 172800,
+      "jump": 0.00040525197982788086,
+      "localDifferenceRms": 0.0044935401529073715,
+      "normalizedJump": 0.09018545868910913
+    },
+    {
+      "sample": 179200,
+      "jump": 0.00816961470991373,
+      "localDifferenceRms": 0.0052072154358029366,
+      "normalizedJump": 1.5689027678291174
+    },
+    {
+      "sample": 185600,
+      "jump": 0.002096399664878845,
+      "localDifferenceRms": 0.00828100461512804,
+      "normalizedJump": 0.2531576496224946
+    },
+    {
+      "sample": 192000,
+      "jump": 0.0015789674362167716,
+      "localDifferenceRms": 0.0005917798262089491,
+      "normalizedJump": 2.668167055189983
+    },
+    {
+      "sample": 198400,
+      "jump": 0.0038718730211257935,
+      "localDifferenceRms": 0.004844747018069029,
+      "normalizedJump": 0.7991899281190963
+    },
+    {
+      "sample": 204800,
+      "jump": 0.008670344948768616,
+      "localDifferenceRms": 0.006587211973965168,
+      "normalizedJump": 1.3162389464672877
+    },
+    {
+      "sample": 211200,
+      "jump": 0.006133947521448135,
+      "localDifferenceRms": 0.01094096340239048,
+      "normalizedJump": 0.5606405300750695
+    },
+    {
+      "sample": 217600,
+      "jump": 4.627850285032764e-05,
+      "localDifferenceRms": 0.0005427336436696351,
+      "normalizedJump": 0.08526927230348302
+    },
+    {
+      "sample": 224000,
+      "jump": 0.038924217224121094,
+      "localDifferenceRms": 0.04463536664843559,
+      "normalizedJump": 0.8720487843351307
+    },
+    {
+      "sample": 230400,
+      "jump": 0.006844092160463333,
+      "localDifferenceRms": 0.008101105690002441,
+      "normalizedJump": 0.844834325382227
+    },
+    {
+      "sample": 236800,
+      "jump": 0.009096801280975342,
+      "localDifferenceRms": 0.021238548681139946,
+      "normalizedJump": 0.4283155792586429
+    },
+    {
+      "sample": 243200,
+      "jump": 0.004807606339454651,
+      "localDifferenceRms": 0.014085379429161549,
+      "normalizedJump": 0.3413189089887961
+    },
+    {
+      "sample": 249600,
+      "jump": 0.019261568784713745,
+      "localDifferenceRms": 0.02059580571949482,
+      "normalizedJump": 0.9352180267694912
+    },
+    {
+      "sample": 256000,
+      "jump": 0.010125800967216492,
+      "localDifferenceRms": 0.008792515844106674,
+      "normalizedJump": 1.151638637535521
+    },
+    {
+      "sample": 262400,
+      "jump": 0.025781109929084778,
+      "localDifferenceRms": 0.010579870082437992,
+      "normalizedJump": 2.4368077989804444
+    },
+    {
+      "sample": 268800,
+      "jump": 0.005890220403671265,
+      "localDifferenceRms": 0.016737978905439377,
+      "normalizedJump": 0.35190750549680205
+    },
+    {
+      "sample": 275200,
+      "jump": 0.005634471774101257,
+      "localDifferenceRms": 0.0056420620530843735,
+      "normalizedJump": 0.9986546977130522
+    },
+    {
+      "sample": 281600,
+      "jump": 0.016585394740104675,
+      "localDifferenceRms": 0.030100449919700623,
+      "normalizedJump": 0.5510015559352022
+    },
+    {
+      "sample": 288000,
+      "jump": 0.0008715111762285233,
+      "localDifferenceRms": 0.005484404042363167,
+      "normalizedJump": 0.1589071792480481
+    },
+    {
+      "sample": 294400,
+      "jump": 0.01579561084508896,
+      "localDifferenceRms": 0.008915659971535206,
+      "normalizedJump": 1.77167039742646
+    },
+    {
+      "sample": 300800,
+      "jump": 0.00037756701931357384,
+      "localDifferenceRms": 0.0023684408515691757,
+      "normalizedJump": 0.15941585328737357
+    },
+    {
+      "sample": 307200,
+      "jump": 0.0033022593706846237,
+      "localDifferenceRms": 0.0028195525519549847,
+      "normalizedJump": 1.171199794944395
+    },
+    {
+      "sample": 313600,
+      "jump": 0.006066575646400452,
+      "localDifferenceRms": 0.027985205873847008,
+      "normalizedJump": 0.2167779530994926
+    },
+    {
+      "sample": 320000,
+      "jump": 0.030297541990876198,
+      "localDifferenceRms": 0.016692794859409332,
+      "normalizedJump": 1.815007148056947
+    },
+    {
+      "sample": 326400,
+      "jump": 0.002116556279361248,
+      "localDifferenceRms": 0.003393373219296336,
+      "normalizedJump": 0.6237322400393511
+    },
+    {
+      "sample": 332800,
+      "jump": 0.0005688631208613515,
+      "localDifferenceRms": 0.00037262591649778187,
+      "normalizedJump": 1.5266332685819446
+    }
+  ],
+  "qualityAccepted": false,
+  "microphoneCaptured": false,
+  "physicalLatencyMeasured": false,
+  "boundary": "Unpaced complete English file with startup silence context; no blocks skipped/muted, so slow configurations remain listenable for comparison. Ten-block warmup outside measurements. No real capture/output devices, physical latency, combined workload or five-minute acceptance."
+}

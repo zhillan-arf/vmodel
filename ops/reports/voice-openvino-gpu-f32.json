@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "status": "completed",
+  "openvino": "2026.3.1-22476-759c5a6ab8c-releases/2026/3",
+  "python": "3.10.19",
+  "device": "GPU",
+  "precision": "f32",
+  "availableDevices": {
+    "CPU": "12th Gen Intel(R) Core(TM) i7-1255U",
+    "GPU": "Intel(R) Iris(R) Xe Graphics (iGPU)"
+  },
+  "settings": {
+    "PERFORMANCE_HINT": "LATENCY",
+    "NUM_STREAMS": "1",
+    "PERF_COUNT": true,
+    "INFERENCE_PRECISION_HINT": "f32"
+  },
+  "properties": {
+    "encoder": {
+      "EXECUTION_DEVICES": "['GPU.0']",
+      "INFERENCE_PRECISION_HINT": "<Type: 'float32'>",
+      "NUM_STREAMS": "1",
+      "OPTIMAL_NUMBER_OF_INFER_REQUESTS": "1"
+    },
+    "generator": {
+      "EXECUTION_DEVICES": "['GPU.0']",
+      "INFERENCE_PRECISION_HINT": "<Type: 'float32'>",
+      "NUM_STREAMS": "1",
+      "OPTIMAL_NUMBER_OF_INFER_REQUESTS": "1"
+    }
+  },
+  "modelArtifacts": [
+    {
+      "path": "assets/voice/onnx/bright-160ms-v1/generator.onnx",
+      "sha256": "92a6f3251cc366bb43ccf1773fbc3becbb2b7a68b4bcbad8e2e27d4cc4bd881f",
+      "bytes": 110192832
+    },
+    {
+      "path": "assets/voice/onnx/bright-160ms-v1/encoder.onnx",
+      "sha256": "b6bf6d4c95bf5fb152e1c2f25b1936a00ad23bf066a35e8959c285b0f5fef84e",
+      "bytes": 378550133
+    },
+    {
+      "path": "assets/voice/onnx/bright-160ms-v1/fixture.npz",
+      "sha256": "4dbbcbf8a8ae6906113b8722033e7214704420367f2e4cacf31fb9ad142a47fe",
+      "bytes": 741028
+    }
+  ],
+  "loadSeconds": 9.966868999996223,
+  "compileSeconds": {
+    "encoder": 4.02741640000022,
+    "generator": 5.589806900010444
+  },
+  "warmup": {
+    "encoderMs": 89.76350000011735,
+    "generatorMs": 180.5488999816589,
+    "computeMs": 270.31239998177625
+  },
+  "records": [
+    {
+      "encoderMs": 66.04539998807013,
+      "generatorMs": 154.73360000760294,
+      "computeMs": 220.77899999567308
+    },
+    {
+      "encoderMs": 65.54320000577718,
+      "generatorMs": 156.92300000227988,
+      "computeMs": 222.46620000805706
+    },
+    {
+      "encoderMs": 63.0276000010781,
+      "generatorMs": 156.37379998224787,
+      "computeMs": 219.40139998332597
+    },
+    {
+      "encoderMs": 61.791099986294284,
+      "generatorMs": 151.35810000356287,
+      "computeMs": 213.14919998985715
+    },
+    {
+      "encoderMs": 63.31299999146722,
+      "generatorMs": 152.7883000089787,
+      "computeMs": 216.10130000044592
+    }
+  ],
+  "computeMs": {
+    "p50": 219.40139998332597,
+    "p95": 222.12876000558026
+  },
+  "encoderMs": {
+    "p50": 63.31299999146722,
+    "p95": 65.94495999161154
+  },
+  "generatorMs": {
+    "p50": 154.73360000760294,
+    "p95": 156.81315999827348
+  },
+  "computeRealTimeFactor": 1.364871374971699,
+  "generatorVsEagerMaxAbsError": 0.16768506169319153,
+  "pipelineVsEagerMaxAbsError": 0.1676895171403885,
+  "encoderMaxAbsError": 3.5762786865234375e-06,
+  "parityPassed": false,
+  "profiles": {
+    "encoder": {
+      "executedTypes": {
+        "fully_connected_gpu_bf_tiled__f32": 74,
+        "permute_f_y_axes__f32": 63,
+        "mvn_gpu_bfyx_opt__f32": 27,
+        "eltwise_simple_vload8__f32": 24,
+        "gemm_tiled_opt__f32": 24,
+        "convolution_gpu_bfyx_os_iyx_osv16__f32": 8,
+        "generic_eltwise_ref__f32": 2,
+        "softmax_gpu_bf__f32": 12,
+        "wait_for_events__f32": 1,
+        "reorder_data_fast_b1__f32": 1
+      },
+      "path": "ops/reports/local/voice/openvino/gpu-f32-encoder-profile.json",
+      "sha256": "232999fe43eb84d3197d065377f9b98b9003d71fe2b54f200e75dd65f34939f0"
+    },
+    "generator": {
+      "executedTypes": {
+        "eltwise_blocked_opt__f32": 60,
+        "reorder_data_b_fs_yx_fsv16_fsv32_to_bfyx__f32": 1,
+        "reorder_data_fast_b1__f32": 13,
+        "convolution_gpu_bfyx_os_iyx_osv16__f32": 1,
+        "convolution_gpu_bfyx_f16__f32": 119,
+        "activation_ref__f32": 28,
+        "permute_ref__f32": 43,
+        "eltwise_simple_vload8__f32": 6,
+        "gemm_tiled_opt__f32": 12,
+        "fully_connected_gpu_bf_tiled__f32": 7,
+        "fully_connected_gpu_bfyx_ref__f32": 6,
+        "border_gpu_ref__f32": 24,
+        "reorder_data_bfyx_to_blocked_format__f32": 8,
+        "generic_eltwise_ref__f32": 18,
+        "softmax_gpu_bf__f32": 6,
+        "convolution_gpu_bfyx_f16_1x1__f32": 23,
+        "strided_slice_ref__f32": 4,
+        "gen9_common_conv_bwd_data__f32": 4,
+        "mvn_gpu_b_fs_yx_fsv16__f32": 12,
+        "reorder_data__f32": 1,
+        "wait_for_events__f32": 2
+      },
+      "path": "ops/reports/local/voice/openvino/gpu-f32-generator-profile.json",
+      "sha256": "2e8267cbc5708eb884b3d2fca3999932cae22adeff5680cb39562d0765ab2348"
+    }
+  },
+  "actualExecutionVerified": true,
+  "allFinite": true,
+  "output": "ops/reports/local/voice/openvino/gpu-f32-converted-window.wav",
+  "outputSha256": "4d7e30326a3b0a4816e7a6c8ccd28eef0f11453714242916c096b3b8cddebc59",
+  "outputSeconds": 0.21,
+  "outputRms": 0.033811502158641815,
+  "outputPeak": 0.14230521023273468,
+  "microphoneCaptured": false,
+  "telemetry": "Explicit supported opt-out file in isolated LOCALAPPDATA before import; Python socket connections denied",
+  "qualityAccepted": false,
+  "physicalLatencyMeasured": false,
+  "boundary": "One warmup/five repeated real-speech windows with profiling. Explicit compiled CPU/GPU; no resampling/SOLA/scheduling/device buffers/combined workload. Numerical gate is not listening or sustained live acceptance."
+}

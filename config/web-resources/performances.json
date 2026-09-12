@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "source": "assets/work/ene-web/source.blend",
+  "fps": 24,
+  "secondary": {
+    "method": "Ene-specific damped angular followers, baked to keys",
+    "warmupLoops": 8,
+    "substeps": 10,
+    "frequencyHz": 2.2,
+    "dampingRatio": 0.82,
+    "hairAmplitudeDegrees": 0.65,
+    "skirtAmplitudeDegrees": 0.25
+  },
+  "home-greeting": {
+    "seconds": 5,
+    "large": [
+      720,
+      960
+    ],
+    "small": [
+      360,
+      480
+    ],
+    "camera": {
+      "target": [
+        0,
+        -0.02,
+        0.97
+      ],
+      "orthoScale": 1.95
+    },
+    "reference": {
+      "file": "ops/resources/ene.vmd",
+      "blenderFramesInspected": [
+        120,
+        180,
+        240
+      ],
+      "sourceFps": 30,
+      "policy": "New Ene-specific acknowledgement/raised-palm wave informed by inspected chest-to-overhead gesture; new settled boundaries, hand silhouette and expressions. No unverified source hair/morph channels copied."
+    }
+  },
+  "desk-normal": {
+    "seconds": 3,
+    "large": [
+      960,
+      960
+    ],
+    "small": [
+      480,
+      480
+    ],
+    "camera": {
+      "target": [
+        0,
+        -0.04,
+        1.4
+      ],
+      "orthoScale": 0.9
+    },
+    "raisedWrist": [
+      0.32,
+      -0.19,
+      1.41
+    ],
+    "restingWrist": [
+      -0.15,
+      -0.3,
+      1.07
+    ],
+    "deskGuideZ": 1.02,
+    "expression": {
+      "happy": 0.16,
+      "omega": 0.08
+    },
+    "reference": "Supplied specification: slight forward lean, open palm screen-right, other forearm at a fixed desk line; actual screenshot file not present in current workspace."
+  },
+  "desk-confused": {
+    "seconds": 3,
+    "large": [
+      960,
+      960
+    ],
+    "small": [
+      480,
+      480
+    ],
+    "camera": {
+      "target": [
+        0,
+        -0.04,
+        1.4
+      ],
+      "orthoScale": 0.9
+    },
+    "raisedWrist": [
+      0.32,
+      -0.19,
+      1.41
+    ],
+    "restingWrist": [
+      -0.15,
+      -0.3,
+      1.07
+    ],
+    "deskGuideZ": 1.02,
+    "expression": {
+      "sad": 1.0,
+      "\u2227": 0.7,
+      "\u3058\u3068\u76ee": 0.18
+    },
+    "reference": "Supplied specification: slight forward lean, open palm screen-right, other forearm at a fixed desk line; actual screenshot file not present in current workspace.",
+    "expressionMotion": {
+      "\u2227": 0.06
+    },
+    "performance": {
+      "headTiltDegrees": -7,
+      "headTiltVariationDegrees": 1.2,
+      "palmXMotion": -0.003,
+      "palmTiltVariation": 0.1,
+      "blinkSeconds": 1.8
+    },
+    "baseline": "config/web-resources/desk-baseline.json"
+  },
+  "desk-surprised": {
+    "seconds": 3,
+    "large": [
+      960,
+      960
+    ],
+    "small": [
+      480,
+      480
+    ],
+    "camera": {
+      "target": [
+        0,
+        -0.04,
+        1.4
+      ],
+      "orthoScale": 0.9
+    },
+    "raisedWrist": [
+      0.32,
+      -0.19,
+      1.41
+    ],
+    "restingWrist": [
+      -0.15,
+      -0.3,
+      1.07
+    ],
+    "deskGuideZ": 1.02,
+    "expression": {
+      "surprised": 0.9,
+      "\u4e0a": 0.65,
+      "oh": 0.72,
+      "\u77b3\u5c0f": 0.22
+    },
+    "reference": "Supplied specification: slight forward lean, open palm screen-right, other forearm at a fixed desk line; actual screenshot file not present in current workspace.",
+    "expressionMotion": {
+      "surprised": 0.06,
+      "oh": 0.08
+    },
+    "performance": {
+      "recoilDegrees": -1.2,
+      "headReactionDegrees": 3,
+      "palmBounceMeters": 0.002,
+      "blinkSeconds": 2.3
+    },
+    "baseline": "config/web-resources/desk-baseline.json"
+  },
+  "desk-excited": {
+    "seconds": 3,
+    "large": [
+      960,
+      960
+    ],
+    "small": [
+      480,
+      480
+    ],
+    "camera": {
+      "target": [
+        0,
+        -0.04,
+        1.4
+      ],
+      "orthoScale": 0.9
+    },
+    "raisedWrist": [
+      0.32,
+      -0.19,
+      1.41
+    ],
+    "restingWrist": [
+      -0.15,
+      -0.3,
+      1.07
+    ],
+    "deskGuideZ": 1.02,
+    "expression": {
+      "happy": 0.2,
+      "aa": 0.45,
+      "omega": 0.9,
+      "\u4e0a": 0.5,
+      "\u7b11\u3044": 0
+    },
+    "reference": "Supplied specification: slight forward lean, open palm screen-right, other forearm at a fixed desk line; actual screenshot file not present in current workspace.",
+    "expressionMotion": {
+      "aa": 0.08,
+      "\u7b11\u3044": 0.55
+    },
+    "performance": {
+      "buoyancyDegrees": 0.7,
+      "headBounceDegrees": 2.0,
+      "palmBounceMeters": 0.007,
+      "palmTiltVariation": 0.12,
+      "blinkSeconds": 1.9
+    },
+    "baseline": "config/web-resources/desk-baseline.json"
+  }
+}

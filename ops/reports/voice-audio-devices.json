@@ -1,0 +1,332 @@
+{
+  "devices": [
+    {
+      "name": "Microsoft Sound Mapper - Input",
+      "index": 0,
+      "hostapi": 0,
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_low_input_latency": 0.09,
+      "default_low_output_latency": 0.09,
+      "default_high_input_latency": 0.18,
+      "default_high_output_latency": 0.18,
+      "default_samplerate": 44100.0
+    },
+    {
+      "name": "Microphone Array (Intel\u00ae Smart ",
+      "index": 1,
+      "hostapi": 0,
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_low_input_latency": 0.09,
+      "default_low_output_latency": 0.09,
+      "default_high_input_latency": 0.18,
+      "default_high_output_latency": 0.18,
+      "default_samplerate": 44100.0
+    },
+    {
+      "name": "Microsoft Sound Mapper - Output",
+      "index": 2,
+      "hostapi": 0,
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_low_input_latency": 0.09,
+      "default_low_output_latency": 0.09,
+      "default_high_input_latency": 0.18,
+      "default_high_output_latency": 0.18,
+      "default_samplerate": 44100.0
+    },
+    {
+      "name": "Speakers (Realtek(R) Audio)",
+      "index": 3,
+      "hostapi": 0,
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_low_input_latency": 0.09,
+      "default_low_output_latency": 0.09,
+      "default_high_input_latency": 0.18,
+      "default_high_output_latency": 0.18,
+      "default_samplerate": 44100.0
+    },
+    {
+      "name": "Primary Sound Capture Driver",
+      "index": 4,
+      "hostapi": 1,
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_low_input_latency": 0.12,
+      "default_low_output_latency": 0.0,
+      "default_high_input_latency": 0.24,
+      "default_high_output_latency": 0.0,
+      "default_samplerate": 44100.0
+    },
+    {
+      "name": "Microphone Array (Intel\u00ae Smart Sound Technology for Digital Microphones)",
+      "index": 5,
+      "hostapi": 1,
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_low_input_latency": 0.12,
+      "default_low_output_latency": 0.0,
+      "default_high_input_latency": 0.24,
+      "default_high_output_latency": 0.0,
+      "default_samplerate": 44100.0
+    },
+    {
+      "name": "Primary Sound Driver",
+      "index": 6,
+      "hostapi": 1,
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_low_input_latency": 0.0,
+      "default_low_output_latency": 0.12,
+      "default_high_input_latency": 0.0,
+      "default_high_output_latency": 0.24,
+      "default_samplerate": 44100.0
+    },
+    {
+      "name": "Speakers (Realtek(R) Audio)",
+      "index": 7,
+      "hostapi": 1,
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_low_input_latency": 0.0,
+      "default_low_output_latency": 0.12,
+      "default_high_input_latency": 0.0,
+      "default_high_output_latency": 0.24,
+      "default_samplerate": 44100.0
+    },
+    {
+      "name": "Speakers (Realtek(R) Audio)",
+      "index": 8,
+      "hostapi": 3,
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_low_input_latency": 0.0,
+      "default_low_output_latency": 0.003,
+      "default_high_input_latency": 0.0,
+      "default_high_output_latency": 0.01,
+      "default_samplerate": 48000.0
+    },
+    {
+      "name": "Microphone Array (Intel\u00ae Smart Sound Technology for Digital Microphones)",
+      "index": 9,
+      "hostapi": 3,
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_low_input_latency": 0.002,
+      "default_low_output_latency": 0.0,
+      "default_high_input_latency": 0.01,
+      "default_high_output_latency": 0.0,
+      "default_samplerate": 48000.0
+    },
+    {
+      "name": "Stereo Mix (Realtek HD Audio Stereo input)",
+      "index": 10,
+      "hostapi": 4,
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_low_input_latency": 0.01,
+      "default_low_output_latency": 0.01,
+      "default_high_input_latency": 0.04,
+      "default_high_output_latency": 0.04,
+      "default_samplerate": 48000.0
+    },
+    {
+      "name": "Headphones (Realtek HD Audio 2nd output)",
+      "index": 11,
+      "hostapi": 4,
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_low_input_latency": 0.01,
+      "default_low_output_latency": 0.01,
+      "default_high_input_latency": 0.04,
+      "default_high_output_latency": 0.04,
+      "default_samplerate": 44100.0
+    },
+    {
+      "name": "Microphone 1 (Realtek HD Audio Mic input with SST)",
+      "index": 12,
+      "hostapi": 4,
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_low_input_latency": 0.01,
+      "default_low_output_latency": 0.01,
+      "default_high_input_latency": 0.04,
+      "default_high_output_latency": 0.04,
+      "default_samplerate": 48000.0
+    },
+    {
+      "name": "Microphone 2 (Realtek HD Audio Mic input with SST)",
+      "index": 13,
+      "hostapi": 4,
+      "max_input_channels": 4,
+      "max_output_channels": 0,
+      "default_low_input_latency": 0.01,
+      "default_low_output_latency": 0.01,
+      "default_high_input_latency": 0.04,
+      "default_high_output_latency": 0.04,
+      "default_samplerate": 16000.0
+    },
+    {
+      "name": "Speakers 1 (Realtek HD Audio output with SST)",
+      "index": 14,
+      "hostapi": 4,
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_low_input_latency": 0.01,
+      "default_low_output_latency": 0.01,
+      "default_high_input_latency": 0.04,
+      "default_high_output_latency": 0.04,
+      "default_samplerate": 48000.0
+    },
+    {
+      "name": "Speakers 2 (Realtek HD Audio output with SST)",
+      "index": 15,
+      "hostapi": 4,
+      "max_input_channels": 0,
+      "max_output_channels": 8,
+      "default_low_input_latency": 0.01,
+      "default_low_output_latency": 0.01,
+      "default_high_input_latency": 0.04,
+      "default_high_output_latency": 0.04,
+      "default_samplerate": 44100.0
+    },
+    {
+      "name": "PC Speaker (Realtek HD Audio output with SST)",
+      "index": 16,
+      "hostapi": 4,
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_low_input_latency": 0.01,
+      "default_low_output_latency": 0.01,
+      "default_high_input_latency": 0.04,
+      "default_high_output_latency": 0.04,
+      "default_samplerate": 48000.0
+    },
+    {
+      "name": "Headphones ()",
+      "index": 17,
+      "hostapi": 4,
+      "max_input_channels": 0,
+      "max_output_channels": 2,
+      "default_low_input_latency": 0.01,
+      "default_low_output_latency": 0.01,
+      "default_high_input_latency": 0.08533333333333333,
+      "default_high_output_latency": 0.08533333333333333,
+      "default_samplerate": 44100.0
+    },
+    {
+      "name": "Microphone Array 1 ()",
+      "index": 18,
+      "hostapi": 4,
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_low_input_latency": 0.01,
+      "default_low_output_latency": 0.01,
+      "default_high_input_latency": 0.04,
+      "default_high_output_latency": 0.04,
+      "default_samplerate": 48000.0
+    },
+    {
+      "name": "Microphone Array 2 ()",
+      "index": 19,
+      "hostapi": 4,
+      "max_input_channels": 2,
+      "max_output_channels": 0,
+      "default_low_input_latency": 0.01,
+      "default_low_output_latency": 0.01,
+      "default_high_input_latency": 0.04,
+      "default_high_output_latency": 0.04,
+      "default_samplerate": 48000.0
+    },
+    {
+      "name": "Microphone Array 3 ()",
+      "index": 20,
+      "hostapi": 4,
+      "max_input_channels": 4,
+      "max_output_channels": 0,
+      "default_low_input_latency": 0.01,
+      "default_low_output_latency": 0.01,
+      "default_high_input_latency": 0.04,
+      "default_high_output_latency": 0.04,
+      "default_samplerate": 16000.0
+    },
+    {
+      "name": "Microphone Array 4 ()",
+      "index": 21,
+      "hostapi": 4,
+      "max_input_channels": 4,
+      "max_output_channels": 0,
+      "default_low_input_latency": 0.01,
+      "default_low_output_latency": 0.01,
+      "default_high_input_latency": 0.04,
+      "default_high_output_latency": 0.04,
+      "default_samplerate": 16000.0
+    }
+  ],
+  "hostapis": [
+    {
+      "name": "MME",
+      "devices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "default_input_device": 1,
+      "default_output_device": 3
+    },
+    {
+      "name": "Windows DirectSound",
+      "devices": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "default_input_device": 4,
+      "default_output_device": 6
+    },
+    {
+      "name": "ASIO",
+      "devices": [],
+      "default_input_device": -1,
+      "default_output_device": -1
+    },
+    {
+      "name": "Windows WASAPI",
+      "devices": [
+        8,
+        9
+      ],
+      "default_input_device": 9,
+      "default_output_device": 8
+    },
+    {
+      "name": "Windows WDM-KS",
+      "devices": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "default_input_device": 18,
+      "default_output_device": 14
+    }
+  ],
+  "defaultDevices": [
+    1,
+    3
+  ],
+  "audioDevicesOpened": false,
+  "note": "Device enumeration only; no microphone or playback stream opened"
+}

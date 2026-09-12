@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "runId": "20260912T123054Z-2852",
+  "state": "failed",
+  "record": "Post-run read-only artifact inventory; failed inference report preserved unchanged",
+  "artifacts": [
+    {
+      "path": "ops/reports/voice-llvc-onnx-export.json",
+      "sha256": "95e415d86a7e2e8a48ce933b749a50afb60bbe54d82d5ee66fe22d7f080bfeda",
+      "bytes": 9326
+    },
+    {
+      "path": "ops/reports/local/voice/llvc-onnx/20260912T123054Z-2852/report.json",
+      "sha256": "95e415d86a7e2e8a48ce933b749a50afb60bbe54d82d5ee66fe22d7f080bfeda",
+      "bytes": 9326
+    },
+    {
+      "path": "ops/reports/local/voice/llvc-onnx/20260912T123054Z-2852/worker.log",
+      "sha256": "a378b126d62fa717dface3c361497b3f7d267c25faf8a4f2622a354af4aa084b",
+      "bytes": 4076
+    },
+    {
+      "path": "assets/voice/llvc/onnx-factor4-v1/runs/20260912T123054Z-2852/model.onnx",
+      "sha256": "850f6a0920f29f755b2f9239964b0db40d4ef60a98afb357071a14163c2686b1",
+      "bytes": 14002839
+    },
+    {
+      "path": "assets/voice/llvc/onnx-factor4-v1/runs/20260912T123054Z-2852/fixture.npz",
+      "sha256": "91bea1d9d6168f590ede8e8db63887fbd7024439c8cbfc2b75e06bfdb762b8ce",
+      "bytes": 94077608
+    }
+  ],
+  "provisionManifest": {
+    "path": ".tools/voice/llvc/manifest.json",
+    "sha256": "a1bd8939a3cda93824276795df8892dc06c1dc5f683a70f344a0a3255e8e4eb4",
+    "bytes": 4428
+  },
+  "sourceRevision": "1627c5d358cf9bb2b92b0ccc513d8b36807c923d",
+  "modelRevision": "ebfe8c0fdeb974a7eeb463b3abbc8ce42a0e3851",
+  "checkpointSha256": "cceb7ab9621f84d62d283725ae3281cacb04f762d6a088fe3e97c1a29d4b8c0e",
+  "scripts": [
+    {
+      "path": "scripts/voice/export_llvc_onnx.py",
+      "sha256": "49e36ac0b4275b69e8fce277adbb94bb8591523159edc4347a32d3a0c0624419",
+      "bytes": 14848
+    },
+    {
+      "path": "scripts/voice/llvc_onnx_common.py",
+      "sha256": "9ad5d4bafbd2348137577269156fa0be524df295cad18a35c4d53a00fc182d77",
+      "bytes": 10804
+    }
+  ],
+  "liveAccepted": false,
+  "openvinoExecuted": false,
+  "promotedManifestExists": false
+}

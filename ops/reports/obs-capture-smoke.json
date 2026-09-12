@@ -1,0 +1,141 @@
+{
+  "date": "2026-09-12T09:18:07.307Z",
+  "input": "Visible owned Chrome window with actual Ene and deterministic face frames. No physical camera/microphone or recording/stream was started.",
+  "results": [
+    {
+      "orientation": "Landscape",
+      "video": {
+        "baseHeight": 720,
+        "baseWidth": 1280,
+        "fpsDenominator": 1,
+        "fpsNumerator": 30,
+        "outputHeight": 720,
+        "outputWidth": 1280
+      },
+      "source": {
+        "width": 1628,
+        "height": 1009
+      },
+      "metrics": {
+        "innerWidth": 1086,
+        "innerHeight": 586,
+        "canvas": {
+          "left": 22.104167938232422,
+          "top": 0,
+          "width": 1041.7708740234375,
+          "height": 586
+        },
+        "dpr": 1.5
+      },
+      "crop": {
+        "cropLeft": 33,
+        "cropRight": 33,
+        "cropTop": 131,
+        "cropBottom": 0
+      },
+      "changed": true,
+      "transform": {
+        "alignment": 5,
+        "boundsAlignment": 0,
+        "boundsHeight": 720,
+        "boundsType": "OBS_BOUNDS_SCALE_INNER",
+        "boundsWidth": 1280,
+        "cropBottom": 0,
+        "cropLeft": 33,
+        "cropRight": 33,
+        "cropToBounds": false,
+        "cropTop": 131,
+        "height": 1009,
+        "positionX": 0,
+        "positionY": 0,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "sourceHeight": 1009,
+        "sourceWidth": 1628,
+        "width": 1628
+      },
+      "stats": {
+        "activeFps": 30.000000300000007,
+        "availableDiskSpace": 57560.3828125,
+        "averageFrameRenderTime": 2.9322,
+        "cpuUsage": 0.35234228350600305,
+        "memoryUsage": 279.3828125,
+        "outputSkippedFrames": 0,
+        "outputTotalFrames": 0,
+        "renderSkippedFrames": 8,
+        "renderTotalFrames": 45706,
+        "webSocketSessionIncomingMessages": 13,
+        "webSocketSessionOutgoingMessages": 13
+      }
+    },
+    {
+      "orientation": "Portrait",
+      "video": {
+        "baseHeight": 1280,
+        "baseWidth": 720,
+        "fpsDenominator": 1,
+        "fpsNumerator": 30,
+        "outputHeight": 1280,
+        "outputWidth": 720
+      },
+      "source": {
+        "width": 1628,
+        "height": 1009
+      },
+      "metrics": {
+        "innerWidth": 1086,
+        "innerHeight": 586,
+        "canvas": {
+          "left": 378.1875,
+          "top": 0,
+          "width": 329.625,
+          "height": 586
+        },
+        "dpr": 1.5
+      },
+      "crop": {
+        "cropLeft": 567,
+        "cropRight": 567,
+        "cropTop": 131,
+        "cropBottom": 0
+      },
+      "changed": true,
+      "transform": {
+        "alignment": 5,
+        "boundsAlignment": 0,
+        "boundsHeight": 1280,
+        "boundsType": "OBS_BOUNDS_SCALE_INNER",
+        "boundsWidth": 720,
+        "cropBottom": 0,
+        "cropLeft": 567,
+        "cropRight": 567,
+        "cropToBounds": false,
+        "cropTop": 131,
+        "height": 1793.77783203125,
+        "positionX": 0,
+        "positionY": 0,
+        "rotation": 0,
+        "scaleX": 1.7777777910232544,
+        "scaleY": 1.7777777910232544,
+        "sourceHeight": 1009,
+        "sourceWidth": 1628,
+        "width": 2894.22216796875
+      },
+      "stats": {
+        "activeFps": 30.000000300000007,
+        "availableDiskSpace": 57550.390625,
+        "averageFrameRenderTime": 1.627116,
+        "cpuUsage": 1.436338683492516,
+        "memoryUsage": 286.14453125,
+        "outputSkippedFrames": 0,
+        "outputTotalFrames": 0,
+        "renderSkippedFrames": 9,
+        "renderTotalFrames": 45811,
+        "webSocketSessionIncomingMessages": 24,
+        "webSocketSessionOutgoingMessages": 24
+      }
+    }
+  ],
+  "errors": []
+}

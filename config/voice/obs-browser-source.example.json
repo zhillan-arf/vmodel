@@ -1,0 +1,21 @@
+{
+  "note": "Use the private URL copied by Voice Studio; never publish its fragment keys. This is an example, not the user's OBS configuration.",
+  "sceneName": "Ene Voice Routing Test",
+  "inputName": "Ene Converted Voice Bridge",
+  "inputKind": "browser_source",
+  "inputSettings": {
+    "url": "http://127.0.0.1:5082/obs#route=PRIVATE_ROUTE_ID&key=PRIVATE_OUTPUT_KEY",
+    "width": 16,
+    "height": 16,
+    "fps": 10,
+    "reroute_audio": true,
+    "shutdown": false,
+    "restart_when_active": false,
+    "webpage_control_level": 0
+  },
+  "audioMonitorType": "OBS_MONITORING_TYPE_NONE",
+  "inputAudioSyncOffset": 0,
+  "physicalSyncMeasured": false,
+  "rawMicrophoneSources": [],
+  "desktopAudioSources": []
+}

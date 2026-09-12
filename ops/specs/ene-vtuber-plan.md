@@ -1,6 +1,6 @@
 # Ene VTuber: proposal and implementation plan
 
-Status: proposed; implementation has not started. Research and local inspection: 2026-09-12.
+Status: implementation in progress. Research and initial inspection: 2026-09-12. The reusable Cyber legs avatar, local studio, installed OBS setup, voice controls and five website animations are implemented. Live movement/voice acceptance, combined performance, Virtual Camera registration and final recordings remain open. [TASK-P01](../tasks/active/TASK-P01.md) records current progress; the [acceptance matrix](../reports/acceptance.md) separates delivered components from remaining checks.
 
 ## Recommendation
 
@@ -8,9 +8,15 @@ Prepare **Ene Cyber legs**, the user's selected variant, in **Blender**, using *
 
 The user should eventually open a launcher, select Ene, enable the camera, calibrate, and choose a landscape or portrait output. Blender is an authoring tool used when preparing or repairing the avatar; it should not be required during a normal recording session. This is an avatar preparation workflow plus a purpose-built performance app, not a replacement for Blender.
 
-This document completes the current planning request. Its [implementation backlog](../tasks/backlog/README.md) continues through delivery of both the rigged Ene avatar and a usable camera-to-video workflow.
+This document defines the approved implementation scope. Its [task register](../tasks/backlog/README.md) tracks delivery of the rigged Ene avatar and camera-to-video workflow, including the subsequent voice and website extensions.
 
-## What we actually have
+The user's subsequent voice request adds **G3: live English character voice and voice auditions**. The [voice research and design](voice-conversion-plan.md) selects an open-source RVC baseline, compares laptop and conditional A100 execution, and defines TASK-022 through TASK-028. G1/G2 retain their local operation requirement; G3 may use an explicitly selected remote audio backend if local conversion cannot pass the measured gates. Voice acceptance feeds TASK-021.
+
+The third workstream adds **G4: animated website resources and a simple showcase**, described in the [web-resource research and proposal](web-character-resources-plan.md). Reuse Ene Cyber legs to author a VMD-informed full-body greeting and four desk expression loops, delivered as transparent pre-rendered web media. [TASK-P03](../tasks/archived/TASK-P03.md) coordinates TASK-029 through TASK-038; TASK-021 consumes TASK-038 and now closes G1-G4. This addition does not require Tripo or paid services and does not change the original live kit or voice architecture.
+
+## Initial inspection snapshot
+
+The table below preserves the evidence available during planning. Current installed tools, validated model and application results are recorded in the [toolchain report](../reports/toolchain.md), [avatar validation](../reports/ene-avatar-validation.md) and [acceptance matrix](../reports/acceptance.md).
 
 | Item | Verified finding | Consequence |
 | --- | --- | --- |
@@ -83,6 +89,7 @@ The camera estimates motion and expressions; the renderer draws the avatar. It d
 
 - **G1: Ene Cyber legs avatar.** Editable `.blend`, validated VRM 1.0 export with embedded textures, humanoid mapping, working blinks and mouth movement, stable deformation, and tuned hair/accessory motion where applicable. All final Ene acceptance and recordings use this variant.
 - **G2: Performance program.** Local camera input; head, face, torso, arms, wrists and visible finger tracking; calibration and tracking-loss behavior; seated and standing modes; clean OBS output; a landscape recording with audio, a portrait MP4 with audio, and demonstrated virtual-camera output.
+- **G3: Character voice.** Live English speech with a user-selected cheerful feminine character preset, at least three distinct auditionable timbres, saved settings, open-source conversion and OBS routing, measured latency/lip sync, and a documented laptop-versus-A100 decision. Detailed criteria are in the [voice plan](voice-conversion-plan.md).
 - Standing mode includes visible-body lean, arm gestures, knee bends, and small steps within the camera frame. Occluded legs fall back to a stable pose. This is a required milestone, not something silently deferred after delivering head tracking.
 - The program has usable Start/Stop, Recenter, quality, background, framing, and expression controls, persistent settings, and a beginner quickstart.
 
@@ -110,6 +117,8 @@ Authoritative component references: [MMD Tools](https://github.com/MMD-Blender/b
 TASK-002 records exact versions, download URLs, checksums, licenses, and the supported browser/OS combination. This proposal does not pretend an untested version set is compatible. Use Blender's bundled Python for its scripts rather than assuming the system Python version works with Blender.
 
 Runtime WASM and ML models must be installed locally with recorded checksums. Normal operation should not require CDN requests, a cloud inference account, or an API key. A first-run dependency download must be explicit and finish before offline operation is advertised.
+
+This local requirement applies to the avatar/tracking pipeline and any selected local voice mode. The G3 extension permits explicitly selected remote audio conversion on the user's A100; it must be visibly identified, and its availability must not gate local avatar startup. Audit voice code and checkpoint licenses separately in TASK-022.
 
 ## Architecture
 
@@ -143,6 +152,8 @@ VRM defines a humanoid mapping and required bones; the Blender add-on supports s
 
 The camera controller owns exactly one stream. It handles browser permission, busy/missing devices, resolution changes, stop/restart and disconnect. Use localhost rather than opening an HTML file directly. No microphone permission is needed in the app: OBS owns recording audio.
 
+With G3 enabled, the separate voice client owns microphone capture and OBS captures its converted output. The avatar page still does not capture the microphone. TASK-025 handles isolation, monitoring and measured audio/video alignment; TASK-026 connects voice profiles and controls to the launcher.
+
 MediaPipe offers separate face, pose and hand tasks. Face output includes landmarks, expression coefficients and a transformation matrix; pose and hand outputs provide landmarks used by our own rig solver. These outputs still need calibration and mapping to Ene. Face inference is synchronous, so a worker is the starting architecture. [Face task](https://developers.google.com/edge/mediapipe/solutions/vision/face_landmarker/web_js), [Pose task](https://developers.google.com/edge/mediapipe/solutions/vision/pose_landmarker/web_js), [Hand task](https://developers.google.com/edge/mediapipe/solutions/vision/hand_landmarker/web_js)
 
 Implementation requirements:
@@ -167,6 +178,8 @@ The control page owns inference; the output window receives a timestamped avatar
 Primary OBS integration is **Window Capture** of a clean window with an opaque background, with optional chroma key. Choose a key color absent from Ene's actual textures; do not default blindly to green or blue. A transparent canvas alone does not guarantee alpha preservation through Windows capture. A separate OBS Browser Source/alpha transport is an optional later feature, not a hidden prerequisite. [OBS Window Capture](https://obsproject.com/kb/window-capture-sources)
 
 OBS mixes microphone audio and records a recoverable format such as MKV before remuxing to MP4 where appropriate. Supply landscape and portrait profiles, a recording checklist, and measured encoder settings for this laptop. Virtual-camera output carries the OBS scene to a compatible destination; microphone routing must be configured separately. [OBS Virtual Camera](https://obsproject.com/kb/virtual-camera-guide)
+
+The G3 scene captures converted speech and disables the direct raw microphone. Use the [voice plan's OBS route](voice-conversion-plan.md#integration-architecture) and delay whichever of video/audio arrives first. TASK-028 supplies final portrait/landscape voice clips and validates combined performance. Open-source virtual-microphone routing into call apps is a separate compatibility investigation; OBS recording/livestreaming is the required G3 output.
 
 Acceptance includes a local recording and a virtual-camera consumer check. Public streaming/publishing and entry of account credentials are not required to complete development. The portrait deliverable is intended for short-video upload; confirm platform-specific requirements when publishing instead of treating a fixed spec as permanent.
 
@@ -198,11 +211,15 @@ These are planned paths. Source files already in `ops/resources/` remain intact.
 | 1: prepare Ene | 004-007 | Reproducible `.blend` and validated Ene VRM (G1) |
 | 2: live performance | 008-013 | Face, body, hands, seated and standing behavior on the target laptop |
 | 3: usable studio | 014-018 | Motion compatibility report, simple controls, clean output, OBS, portrait and landscape clips |
-| 4: handoff | 019-021 | Launcher, offline checks, performance/recovery evidence, beginner acceptance (G2) |
+| 4: local app readiness | 019-020 | Launcher, offline checks, performance/recovery evidence (G2); voice controls join packaging through 026 |
+| Voice branch | 022-027 | Auditions, licensed RVC setup, measured local/remote choice, OBS routing and presets; conditional custom training |
+| 5: combined handoff | 028, then 021 | Voice acceptance with Ene (G3), then all G1/G2/G3 evidence and beginner handoff |
 
 The model package is now available. Asset cleanup and runtime work can proceed on separate dependency branches, using a licensed test avatar while Ene is being converted. Do not mark Ene delivery complete merely because a sample works. TASK-003 is an early performance gate before substantial polishing; if the baseline cannot run acceptably, measure lower inference resolution, CPU/GPU delegates and scheduling before reconsidering architecture.
 
 Planning estimate: approximately **30-50 focused engineering/technical-art days**, with staged usable previews earlier. This is an estimate, not a benchmark or delivery promise. Missing texture repairs, substantial weight/shape repair, reference-driven scope changes, or difficult monocular body solving can increase it. Hardware capture checks require a person to perform the gestures; no camera was activated during planning.
+
+That estimate covers the original avatar/application scope. The voice extension has its own additional estimate and conditional training allowance in the voice plan. TASK-022 can start alongside the original work; voice hardware benchmarking joins TASK-003 and routing joins TASK-017.
 
 ## Acceptance and measurements
 
@@ -218,6 +235,7 @@ Planning estimate: approximately **30-50 focused engineering/technical-art days*
 | G2-D output | 60-second landscape and portrait recordings with audio; clean frame; virtual-camera consumer receives animated Ene | 016-018 |
 | G2-E usability | Beginner can launch, load, calibrate, record, stop and restart from the quickstart | 019, 021 |
 | G2-F robustness | Thirty-minute session, camera denial/disconnect and tracking reacquisition exercised; normal runtime works offline | 020 |
+| G3-A through G3-F voice | Licensed live English conversion, three timbres, measured hardware/latency, synced clips and beginner controls; see the voice plan's acceptance table | 022-028, 021 |
 
 Proposed minimum performance gate on this laptop: **1280x720 landscape or 720x1280 portrait at 30 output fps**, with face+upper-body mode and OBS recording. Aim for median render rate at least 30 fps, 95th-percentile render frame interval at most 50 ms, and visible camera-to-avatar response within approximately 200 ms under normal lighting. Measure real end-to-end response using an external high-frame-rate recording of the gesture and display when available; internal inference timing alone is not equivalent. If unavailable, explicitly label end-to-end latency unmeasured and record the observable response test.
 
@@ -242,3 +260,5 @@ Use synthetic landmark fixtures for deterministic coordinate, smoothing, constra
 ## Immediate implementation order
 
 Start TASK-001 (finish the asset audit) and TASK-002 (toolchain), followed by TASK-003 (feasibility) and TASK-004 (Ene import). The character package and pasted X text are now present, so no model-acquisition blocker remains. Cyber legs is the user's selected baseline; both originals are preserved. Remaining tasks have concrete dependency and completion criteria in the backlog; all implementation work is still pending.
+
+Start TASK-022 independently for the voice extension, then TASK-023 auditions and TASK-024 feasibility when their dependencies are available. Final TASK-021 acceptance now depends on TASK-028; research completion does not imply working conversion or an accepted voice.

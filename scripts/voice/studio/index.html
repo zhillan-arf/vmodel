@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ene · Voice Studio</title><link rel="stylesheet" href="/style.css"></head>
+<body><main>
+<header><div><p class="eyebrow">ENE / VOICE STUDIO</p><h1>Your character voice.</h1><p class="intro">Choose a timbre, hear the reference, and send converted audio to OBS.</p></div><a href="http://127.0.0.1:5081/" target="_blank" rel="noopener">Open listening comparison ↗</a></header>
+<section class="notice"><strong>Local CPU · Experimental live conversion</strong><p>The converted reference demo works independently of live inference. This laptop has not met the live timing target. Late conversion is muted and stops after three missed deadlines. English voice quality and lip sync still need review.</p></section>
+<div class="layout"><section class="panel"><p class="eyebrow">01 / CHOOSE A VOICE</p><div id="presets" class="presets">
+<button class="preset" data-voice="bright"><span class="orb">B</span><strong>Bright</strong><small>Clear, forward timbre</small><em>Provisional</em></button>
+<button class="preset" data-voice="soft"><span class="orb">S</span><strong>Soft</strong><small>Gentler reference timbre</small><em>Provisional</em></button>
+<button class="preset" data-voice="cool"><span class="orb">C</span><strong>Cool</strong><small>Lower, composed timbre</small><em>Provisional</em></button></div>
+<p class="fine">CHIHAYA · Japanese-trained voices · Same licensed English reference for all three. Descriptions are provisional; choose by listening.</p>
+<div class="actions"><button id="reference" class="primary">Play converted reference</button><button id="live">Start experimental microphone</button><button id="stop" class="stop">■ Stop / mute</button></div>
+<div class="natural-option"><strong>Your own voice</strong><p>Send your natural speech to OBS through its separate source, using the selected microphone and gain settings. This stops character conversion.</p><button id="natural">Start natural voice → OBS</button><p id="natural-state" aria-live="polite">Natural voice is off. It never starts as a fallback.</p></div>
+<label class="check"><input id="monitor" type="checkbox"> Hear the active voice on this laptop <span>Use headphones</span></label>
+<p class="fine">Monitoring is initially off. OBS receives the active voice route independently. Natural speech requires the explicit action above.</p>
+<div class="meters"><label>Microphone input <meter id="input-meter" min="0" max="0.4" value="0"></meter></label><label><span id="output-label">Converted output</span> <meter id="output-meter" min="0" max="0.4" value="0"></meter></label></div>
+<div class="status" role="status"><span id="badge">CONNECTING</span><p id="message">Connecting to the local voice service…</p><small id="metrics"></small></div>
+</section>
+<aside class="panel"><p class="eyebrow">02 / SETTINGS</p><label>Microphone <select id="device"><option value="default">System default · permission requested only on Start</option></select></label><button id="devices" class="small">Refresh available devices</button>
+<label>Input gain <input id="input-gain" type="range" min="0" max="2" step="0.05" value="1"><output id="input-value">1.00×</output></label>
+<label>Output gain <input id="output-gain" type="range" min="0" max="2" step="0.05" value="1"><output id="output-value">1.00×</output></label>
+<label>Past context <select id="context"><option value="1600">1.6 s · baseline</option><option value="800">0.8 s · experimental quality</option><option value="400">0.4 s · experimental quality</option></select></label>
+<p class="fine">160 ms blocks. All measured contexts missed the live deadline. Changing context or device invalidates sync calibration.</p>
+<label>Pitch <input value="Unavailable for these no-F0 models" disabled></label>
+<div class="actions"><button id="save">Save preset</button><button id="reset">Reset preset</button></div>
+<p id="sync" class="fine">Sync: unmeasured. No offset applied.</p>
+</aside></div>
+<section class="panel route"><div><p class="eyebrow">03 / OBS AUDIO</p><h2>Two separate voice routes</h2><p>Character and natural voice use separate sources in both Ene scenes. Only the explicitly selected mode sends audio. Keep OBS monitoring off when laptop monitoring is on. OBS Virtual Camera carries video; call apps need a separate supported audio input.</p></div><div><label>Private converted-only Browser Source URL <input id="route" type="password" readonly autocomplete="off"></label><button id="copy">Copy converted OBS URL</button><p class="fine">This URL only receives character conversion. Natural voice has a different receiver and private key. Model files are never served.</p></div></section>
+<footer><span>Local conversion only · Remote API not configured · No sync calibration</span><button id="reconnect">Reconnect muted</button></footer>
+</main><script type="module" src="/studio.js"></script></body></html>

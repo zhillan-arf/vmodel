@@ -1,0 +1,891 @@
+[
+  {
+    "package": "aiohappyeyeballs",
+    "version": "2.7.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\aiohappyeyeballs-2.7.1.dist-info\\licenses\\LICENSE",
+    "bytes": 13936,
+    "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+  },
+  {
+    "package": "aiohttp",
+    "version": "3.14.3",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\aiohttp-3.14.3.dist-info\\licenses\\LICENSE.txt",
+    "bytes": 11514,
+    "sha256": "ea195371abbf66a39eef56600955d1137c2c196dc144ffec46b6ea530ce70044"
+  },
+  {
+    "package": "aiohttp",
+    "version": "3.14.3",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\aiohttp-3.14.3.dist-info\\licenses\\vendor\\llhttp\\LICENSE",
+    "bytes": 1091,
+    "sha256": "279012e02a10acfd59a3f2d8f13a497332535d871c2b27c89988985b06a3a438"
+  },
+  {
+    "package": "aiosignal",
+    "version": "1.4.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\aiosignal-1.4.0.dist-info\\licenses\\LICENSE",
+    "bytes": 11332,
+    "sha256": "6fd5243e92dd7f98ec69c7ac377728e74905709ff527a5bf98d6d0263c04f5b6"
+  },
+  {
+    "package": "annotated-doc",
+    "version": "0.0.5",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\annotated_doc-0.0.5.dist-info\\licenses\\LICENSE",
+    "bytes": 1086,
+    "sha256": "fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf"
+  },
+  {
+    "package": "annotated-types",
+    "version": "0.8.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\annotated_types-0.8.0.dist-info\\licenses\\LICENSE",
+    "bytes": 1083,
+    "sha256": "fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d"
+  },
+  {
+    "package": "anyio",
+    "version": "4.15.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\anyio-4.15.1.dist-info\\licenses\\LICENSE",
+    "bytes": 1081,
+    "sha256": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0"
+  },
+  {
+    "package": "async-timeout",
+    "version": "5.0.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\async_timeout-5.0.1.dist-info\\LICENSE",
+    "bytes": 568,
+    "sha256": "e18d7bb8f513e2c46bb585c94b585bd30720dd3ccb21ddb0786f72d16658f92c"
+  },
+  {
+    "package": "attrs",
+    "version": "26.1.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\attrs-26.1.0.dist-info\\licenses\\LICENSE",
+    "bytes": 1109,
+    "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f"
+  },
+  {
+    "package": "audioread",
+    "version": "3.1.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\audioread-3.1.0.dist-info\\licenses\\LICENSE",
+    "bytes": 1063,
+    "sha256": "e00fff68a75a582132842e33426730699255986f1dec362252f7423db027019d"
+  },
+  {
+    "package": "bidict",
+    "version": "0.23.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\bidict-0.23.1.dist-info\\LICENSE",
+    "bytes": 16784,
+    "sha256": "f3f53adcecaa48d73a66e238fa5ba906cb41876783b45d28a1346b3142eebd9a"
+  },
+  {
+    "package": "certifi",
+    "version": "2026.7.22",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\certifi-2026.7.22.dist-info\\licenses\\LICENSE",
+    "bytes": 989,
+    "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+  },
+  {
+    "package": "cffi",
+    "version": "2.1.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\cffi-2.1.1.dist-info\\licenses\\LICENSE",
+    "bytes": 1123,
+    "sha256": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63"
+  },
+  {
+    "package": "charset-normalizer",
+    "version": "3.5.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\charset_normalizer-3.5.1.dist-info\\licenses\\LICENSE",
+    "bytes": 1092,
+    "sha256": "18577485d3704f1a479ded8e573c0976cfed315fd2fd17983fa988da4c2f70d1"
+  },
+  {
+    "package": "click",
+    "version": "8.5.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\click-8.5.0.dist-info\\licenses\\LICENSE.txt",
+    "bytes": 1475,
+    "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
+  },
+  {
+    "package": "cloudpickle",
+    "version": "3.1.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\cloudpickle-3.1.2.dist-info\\licenses\\LICENSE",
+    "bytes": 1754,
+    "sha256": "3029ea34173e9fdc233ad315dc6b100bd1ea71f529b1c1af97664a272fdc55f5"
+  },
+  {
+    "package": "colorama",
+    "version": "0.4.6",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\colorama-0.4.6.dist-info\\licenses\\LICENSE.txt",
+    "bytes": 1491,
+    "sha256": "cac35c02686e5d04a5a7140bfb3b36e73aed496656e891102e428886d7930318"
+  },
+  {
+    "package": "coloredlogs",
+    "version": "15.0.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\coloredlogs-15.0.1.dist-info\\LICENSE.txt",
+    "bytes": 1056,
+    "sha256": "0bef4ffb1855b65570304f2018c6d44e4bab97bd5df8716ecd7800014d717267"
+  },
+  {
+    "package": "cryptography",
+    "version": "50.0.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\cryptography-50.0.1.dist-info\\licenses\\LICENSE",
+    "bytes": 197,
+    "sha256": "3e0c7c091a948b82533ba98fd7cbb40432d6f1a9acbf85f5922d2f99a93ae6bb"
+  },
+  {
+    "package": "cryptography",
+    "version": "50.0.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\cryptography-50.0.1.dist-info\\licenses\\LICENSE.APACHE",
+    "bytes": 11360,
+    "sha256": "aac73b3148f6d1d7111dbca32099f68d26c644c6813ae1e4f05f6579aa2663fe"
+  },
+  {
+    "package": "cryptography",
+    "version": "50.0.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\cryptography-50.0.1.dist-info\\licenses\\LICENSE.BSD",
+    "bytes": 1532,
+    "sha256": "602c4c7482de6479dd2e9793cda275e5e63d773dacd1eca689232ab7008fb4fb"
+  },
+  {
+    "package": "decorator",
+    "version": "5.3.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\decorator-5.3.1.dist-info\\licenses\\LICENSE.txt",
+    "bytes": 1308,
+    "sha256": "bd12cc51405c10872497c10ca21601f1d4abc50496595cc89e89ab5dad24fb62"
+  },
+  {
+    "package": "einops",
+    "version": "0.8.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\einops-0.8.2.dist-info\\licenses\\LICENSE",
+    "bytes": 1073,
+    "sha256": "30d984364296f51ffaecad4b01ee127e95250c5068918d4b66fc96206723e434"
+  },
+  {
+    "package": "exceptiongroup",
+    "version": "1.3.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\exceptiongroup-1.3.1.dist-info\\licenses\\LICENSE",
+    "bytes": 3704,
+    "sha256": "6e5070d765031e0ad403a1cbf90ae6d19a0228f802e320b7acff460aa72ed47c"
+  },
+  {
+    "package": "faiss-cpu",
+    "version": "1.15.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\faiss_cpu-1.15.0.dist-info\\licenses\\LICENSE",
+    "bytes": 1107,
+    "sha256": "f08a94bfb0bdc1d7f1cb59badaf0f8c551b10db871185622dbf1fd036affa9cb"
+  },
+  {
+    "package": "faiss-cpu",
+    "version": "1.15.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\faiss_cpu-1.15.0.dist-info\\licenses\\THIRD_PARTY_NOTICES",
+    "bytes": 22241,
+    "sha256": "c594d026e9be864c12483f7d163f65b000f23909d33b329cdfefd5a9cf53d5f6"
+  },
+  {
+    "package": "fastapi",
+    "version": "0.141.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\fastapi-0.141.1.dist-info\\licenses\\LICENSE",
+    "bytes": 1086,
+    "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e"
+  },
+  {
+    "package": "filelock",
+    "version": "3.32.6",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\filelock-3.32.6.dist-info\\licenses\\LICENSE",
+    "bytes": 1088,
+    "sha256": "608c89d5060ae9921adccf3236695bc654a9946e12323ef6c021dfa04e294d48"
+  },
+  {
+    "package": "frozenlist",
+    "version": "1.8.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\frozenlist-1.8.0.dist-info\\licenses\\LICENSE",
+    "bytes": 11332,
+    "sha256": "6fd5243e92dd7f98ec69c7ac377728e74905709ff527a5bf98d6d0263c04f5b6"
+  },
+  {
+    "package": "fsspec",
+    "version": "2026.7.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\fsspec-2026.7.0.dist-info\\licenses\\LICENSE",
+    "bytes": 1513,
+    "sha256": "2dc35496ce53a7307915c008a844aad53e772b49b34cdd00445067691407ec94"
+  },
+  {
+    "package": "h11",
+    "version": "0.16.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\h11-0.16.0.dist-info\\licenses\\LICENSE.txt",
+    "bytes": 1124,
+    "sha256": "37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361"
+  },
+  {
+    "package": "humanfriendly",
+    "version": "10.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\humanfriendly-10.0.dist-info\\LICENSE.txt",
+    "bytes": 1056,
+    "sha256": "4ac48f4117809f2734066150450f120b3bb110ac1d3b32170795e0560dbbc1f5"
+  },
+  {
+    "package": "hyper-connections",
+    "version": "0.4.11",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\hyper_connections-0.4.11.dist-info\\licenses\\LICENSE",
+    "bytes": 1066,
+    "sha256": "13b4464bb9292484ad939cdaffee0356158401a99feb9114d0234c2f6e66ab87"
+  },
+  {
+    "package": "idna",
+    "version": "3.19",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\idna-3.19.dist-info\\licenses\\LICENSE.md",
+    "bytes": 1541,
+    "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+  },
+  {
+    "package": "Jinja2",
+    "version": "3.1.6",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\jinja2-3.1.6.dist-info\\licenses\\LICENSE.txt",
+    "bytes": 1475,
+    "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b"
+  },
+  {
+    "package": "joblib",
+    "version": "1.6.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\joblib-1.6.0.dist-info\\licenses\\LICENSE.txt",
+    "bytes": 1527,
+    "sha256": "42612911c1872c5e4b43f6ae0e8ee59467cd350332241cf72ce90640264fae6a"
+  },
+  {
+    "package": "lazy-loader",
+    "version": "0.5",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\lazy_loader-0.5.dist-info\\licenses\\LICENSE.md",
+    "bytes": 1539,
+    "sha256": "797b6937a4f976836efbbbb3ae333d7866ddc3eb3cb152972b2be348d3529372"
+  },
+  {
+    "package": "librosa",
+    "version": "0.11.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\librosa-0.11.0.dist-info\\LICENSE.md",
+    "bytes": 766,
+    "sha256": "1746ca32b53fa31941c38b63a986e4126ab998e81a2f73a566000847a588e2a3"
+  },
+  {
+    "package": "llvmlite",
+    "version": "0.49.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\llvmlite-0.49.0.dist-info\\LICENSE",
+    "bytes": 1309,
+    "sha256": "7d6aa93e52a7ae9a995ff6a40c0ea5628311cdf1bd8dcd29c8ce9181f4af3a81"
+  },
+  {
+    "package": "llvmlite",
+    "version": "0.49.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\llvmlite-0.49.0.dist-info\\LICENSE.thirdparty",
+    "bytes": 12786,
+    "sha256": "7b564c7af9ab446d245ba66adc8cda2f61d1d162f842899557499e80b715993a"
+  },
+  {
+    "package": "local-attention",
+    "version": "1.11.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\local_attention-1.11.2.dist-info\\licenses\\LICENSE",
+    "bytes": 1066,
+    "sha256": "02cf6ed7df17f94fafa61e67a089ee51faac006db35ffa173c70e6763c253cf6"
+  },
+  {
+    "package": "markdown-it-py",
+    "version": "4.2.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\markdown_it_py-4.2.0.dist-info\\licenses\\LICENSE",
+    "bytes": 1078,
+    "sha256": "4a2260d6e2cd0f5a151a1e86dbfe7d3ed552b1e2beabf9941c1ba5c49cbce484"
+  },
+  {
+    "package": "markdown-it-py",
+    "version": "4.2.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\markdown_it_py-4.2.0.dist-info\\licenses\\LICENSE.markdown-it",
+    "bytes": 1073,
+    "sha256": "792c48c5a849a15fdf9e37e8bcf9e6d1dd13b32b46c642a748a0a46a9919d473"
+  },
+  {
+    "package": "MarkupSafe",
+    "version": "3.0.3",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\markupsafe-3.0.3.dist-info\\licenses\\LICENSE.txt",
+    "bytes": 1503,
+    "sha256": "4631ec0db5fd90a547e336817264c6798214338146f8ac94b4a57f96ee8c9ec4"
+  },
+  {
+    "package": "mdurl",
+    "version": "0.1.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\mdurl-0.1.2.dist-info\\LICENSE",
+    "bytes": 2338,
+    "sha256": "7c605df6e28667a9603118e98274f64a49ce3eed0d26fccce9534a345e0ef955"
+  },
+  {
+    "package": "ml_dtypes",
+    "version": "0.5.4",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\ml_dtypes-0.5.4.dist-info\\licenses\\LICENSE",
+    "bytes": 11560,
+    "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5"
+  },
+  {
+    "package": "ml_dtypes",
+    "version": "0.5.4",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\ml_dtypes-0.5.4.dist-info\\licenses\\LICENSE.eigen",
+    "bytes": 17099,
+    "sha256": "9221c2f936159b8446d329249fb4c0f25be510f447383a0f13336ac7985668a3"
+  },
+  {
+    "package": "mpmath",
+    "version": "1.3.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\mpmath-1.3.0.dist-info\\LICENSE",
+    "bytes": 1537,
+    "sha256": "c26cae81da4508e5e249985777a33821f183223ebb74d7f8cfbf90fe7eef2fb7"
+  },
+  {
+    "package": "msgpack",
+    "version": "1.2.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\msgpack-1.2.2.dist-info\\licenses\\COPYING",
+    "bytes": 628,
+    "sha256": "4fbdff42eba4593c16f7a7ea7078883b2b734870a1e2b636284ce2dce62bf4f7"
+  },
+  {
+    "package": "msgspec",
+    "version": "0.21.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\msgspec-0.21.1.dist-info\\licenses\\LICENSE",
+    "bytes": 1498,
+    "sha256": "6fde8b6723885e8508808f65ac372feb97d3eee2eab2b91d34d796b75b7ac734"
+  },
+  {
+    "package": "multidict",
+    "version": "6.8.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\multidict-6.8.0.dist-info\\licenses\\LICENSE",
+    "bytes": 11313,
+    "sha256": "2e4be5fc6c4c72a466fcb665d726e049a6891981fe536c4f04b6366749461d23"
+  },
+  {
+    "package": "networkx",
+    "version": "3.4.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\networkx-3.4.2.dist-info\\LICENSE.txt",
+    "bytes": 1763,
+    "sha256": "5b433b90f755eb9bbd06feff1d1a4f5f232c5208a185694199e45fa95d762792"
+  },
+  {
+    "package": "numba",
+    "version": "0.67.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\numba-0.67.0.dist-info\\licenses\\LICENSE",
+    "bytes": 1310,
+    "sha256": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c"
+  },
+  {
+    "package": "numba",
+    "version": "0.67.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\numba-0.67.0.dist-info\\licenses\\LICENSES.third-party",
+    "bytes": 26891,
+    "sha256": "e5ea3f50f1c1aa518a86903b85dfd40c4765589998eb683b9382d111d91bb9ee"
+  },
+  {
+    "package": "numpy",
+    "version": "1.26.4",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\numpy-1.26.4.dist-info\\LICENSE.txt",
+    "bytes": 48688,
+    "sha256": "e261222a74adff28f88160dac1c5cb302d93b67e9ca989eb83bf311e11a9970a"
+  },
+  {
+    "package": "numpy",
+    "version": "1.26.4",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\numpy\\core\\include\\numpy\\random\\LICENSE.txt",
+    "bytes": 1039,
+    "sha256": "d544761558b510866c21f7e8a2d5716fca76e0b98117e3b6b86314db7244d150"
+  },
+  {
+    "package": "numpy",
+    "version": "1.26.4",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\numpy\\ma\\LICENSE",
+    "bytes": 1616,
+    "sha256": "d78dbb208b80d92b4d333e41a4baae50d12444f46e53199fa7726a91de6e2da7"
+  },
+  {
+    "package": "numpy",
+    "version": "1.26.4",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\numpy\\random\\LICENSE.md",
+    "bytes": 3582,
+    "sha256": "b4bc2f4fa1c95778f1ed3dd8f14706bece399475b978f9f34b5d3cd72521b48a"
+  },
+  {
+    "package": "onnx",
+    "version": "1.22.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\onnx-1.22.0.dist-info\\licenses\\LICENSE",
+    "bytes": 11560,
+    "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5"
+  },
+  {
+    "package": "onnx",
+    "version": "1.22.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\onnx-1.22.0.dist-info\\licenses\\NOTICE",
+    "bytes": 2192,
+    "sha256": "62c2c7bb3be2833f5e2c8a2576ac10666cf26aa09b7b631b55fed77bc7dc91c7"
+  },
+  {
+    "package": "onnxruntime",
+    "version": "1.23.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\onnxruntime\\LICENSE",
+    "bytes": 1094,
+    "sha256": "c250d6278f0b47a6439fb7592b08b58a55eb9f535aa49a1db63211c3f982b674"
+  },
+  {
+    "package": "onnxruntime",
+    "version": "1.23.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\onnxruntime\\ThirdPartyNotices.txt",
+    "bytes": 333022,
+    "sha256": "e00f828e0a33de591a355ae6606d2625f5758da7d2c844db7821c9dd3e3647b6"
+  },
+  {
+    "package": "onnxscript",
+    "version": "0.7.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\onnxscript-0.7.2.dist-info\\licenses\\LICENSE",
+    "bytes": 1073,
+    "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c"
+  },
+  {
+    "package": "onnx-ir",
+    "version": "1.0.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\onnx_ir-1.0.0.dist-info\\licenses\\LICENSE",
+    "bytes": 11358,
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "package": "packaging",
+    "version": "26.3",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\packaging-26.3.dist-info\\licenses\\LICENSE",
+    "bytes": 197,
+    "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+  },
+  {
+    "package": "packaging",
+    "version": "26.3",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\packaging-26.3.dist-info\\licenses\\LICENSE.APACHE",
+    "bytes": 10174,
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+  },
+  {
+    "package": "packaging",
+    "version": "26.3",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\packaging-26.3.dist-info\\licenses\\LICENSE.BSD",
+    "bytes": 1344,
+    "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+  },
+  {
+    "package": "platformdirs",
+    "version": "4.11.8",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\platformdirs-4.11.8.dist-info\\licenses\\LICENSE",
+    "bytes": 1089,
+    "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+  },
+  {
+    "package": "pooch",
+    "version": "1.9.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\pooch-1.9.0.dist-info\\licenses\\AUTHORS.md",
+    "bytes": 3225,
+    "sha256": "6400dc5b23d3c56c955ab82c44fe49db242d4d9a6d9b80f5575d8b9ccdbc4631"
+  },
+  {
+    "package": "pooch",
+    "version": "1.9.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\pooch-1.9.0.dist-info\\licenses\\LICENSE.txt",
+    "bytes": 1496,
+    "sha256": "af0482d59fc7a9d68d9f64682c74ce6e8a4684406bb3a21a191ae329950916b4"
+  },
+  {
+    "package": "propcache",
+    "version": "0.5.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\propcache-0.5.2.dist-info\\licenses\\LICENSE",
+    "bytes": 11358,
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "package": "propcache",
+    "version": "0.5.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\propcache-0.5.2.dist-info\\licenses\\NOTICE",
+    "bytes": 609,
+    "sha256": "56d6ac6c8105c0a51304c21db060e361af9a8ea0af9a75c239c28b5d13693838"
+  },
+  {
+    "package": "protobuf",
+    "version": "7.36.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\protobuf-7.36.1.dist-info\\LICENSE",
+    "bytes": 1732,
+    "sha256": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d"
+  },
+  {
+    "package": "pycparser",
+    "version": "3.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\pycparser-3.0.dist-info\\licenses\\LICENSE",
+    "bytes": 1543,
+    "sha256": "0c846399369ea76ddd7b5c44fe6d16497415fcf015f5cbb508c24bf98b81c5b1"
+  },
+  {
+    "package": "pydantic",
+    "version": "2.13.5",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\pydantic-2.13.5.dist-info\\licenses\\LICENSE",
+    "bytes": 1129,
+    "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3"
+  },
+  {
+    "package": "pydantic_core",
+    "version": "2.46.5",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\pydantic_core-2.46.5.dist-info\\licenses\\LICENSE",
+    "bytes": 1101,
+    "sha256": "fbe7f615f18d135c07000e5a86325db27f42c7729699ef166ac1f7a3f4586bf4"
+  },
+  {
+    "package": "pydantic-settings",
+    "version": "2.15.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\pydantic_settings-2.15.0.dist-info\\licenses\\LICENSE",
+    "bytes": 1103,
+    "sha256": "eb355a753e020346d33d83bf9769135b89fc610568ac531a01c295bcee7fd998"
+  },
+  {
+    "package": "Pygments",
+    "version": "2.21.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\pygments-2.21.0.dist-info\\licenses\\AUTHORS",
+    "bytes": 11048,
+    "sha256": "71a83872ad82f57be692cf827e048e2cd51d45169cfa1ea3f28706d97a872c0f"
+  },
+  {
+    "package": "Pygments",
+    "version": "2.21.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\pygments-2.21.0.dist-info\\licenses\\LICENSE",
+    "bytes": 1331,
+    "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+  },
+  {
+    "package": "pyOpenSSL",
+    "version": "26.4.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\pyopenssl-26.4.0.dist-info\\licenses\\LICENSE",
+    "bytes": 11358,
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "package": "pyreadline3",
+    "version": "3.5.6",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\pyreadline3-3.5.6.dist-info\\licenses\\LICENSE.md",
+    "bytes": 2250,
+    "sha256": "8fc4d8de61b40533023b16e64528d13371a2e9c68677df79ed5e93ba570471bd"
+  },
+  {
+    "package": "python-dotenv",
+    "version": "1.2.3",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\python_dotenv-1.2.3.dist-info\\licenses\\LICENSE",
+    "bytes": 1556,
+    "sha256": "80619b7049f08c81683ad0e01f08f257a840652dd71ee83146d36658c7d2c2b9"
+  },
+  {
+    "package": "python-engineio",
+    "version": "4.14.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\python_engineio-4.14.0.dist-info\\licenses\\LICENSE",
+    "bytes": 1082,
+    "sha256": "c9e97d3dbc1fbbcdb4f7808b282cd646db887aff4f5313fe6bbe8d4c31405a9c"
+  },
+  {
+    "package": "python-multipart",
+    "version": "0.0.32",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\python_multipart-0.0.32.dist-info\\licenses\\LICENSE.txt",
+    "bytes": 11358,
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "package": "python-socketio",
+    "version": "5.16.4",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\python_socketio-5.16.4.dist-info\\licenses\\LICENSE",
+    "bytes": 1082,
+    "sha256": "c9e97d3dbc1fbbcdb4f7808b282cd646db887aff4f5313fe6bbe8d4c31405a9c"
+  },
+  {
+    "package": "requests",
+    "version": "2.34.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\requests-2.34.2.dist-info\\licenses\\LICENSE",
+    "bytes": 10142,
+    "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+  },
+  {
+    "package": "requests",
+    "version": "2.34.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\requests-2.34.2.dist-info\\licenses\\NOTICE",
+    "bytes": 38,
+    "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc"
+  },
+  {
+    "package": "resampy",
+    "version": "0.4.3",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\resampy-0.4.3.dist-info\\LICENSE.md",
+    "bytes": 743,
+    "sha256": "9c21cf3da6675e5b28ba7bda19c7b1a8da9772a5244c59648435f412a6738886"
+  },
+  {
+    "package": "rich",
+    "version": "15.0.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\rich-15.0.0.dist-info\\licenses\\LICENSE",
+    "bytes": 1056,
+    "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15"
+  },
+  {
+    "package": "safetensors",
+    "version": "0.8.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\safetensors-0.8.0.dist-info\\licenses\\LICENSE",
+    "bytes": 11558,
+    "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+  },
+  {
+    "package": "scikit-learn",
+    "version": "1.7.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\scikit_learn-1.7.2.dist-info\\licenses\\COPYING",
+    "bytes": 2628,
+    "sha256": "1b74e02d0cb8e6502091124787fc91695b9dd92c9cb146d9d34830f9a300ab3c"
+  },
+  {
+    "package": "scikit-learn",
+    "version": "1.7.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\sklearn\\externals\\array_api_compat\\LICENSE",
+    "bytes": 1118,
+    "sha256": "464569596b7e6162762669e4e4d1fe8d2618c03901ca7ba36e2603415fb6865d"
+  },
+  {
+    "package": "scikit-learn",
+    "version": "1.7.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\sklearn\\externals\\array_api_extra\\LICENSE",
+    "bytes": 1118,
+    "sha256": "8b2e8a4aa8a98ed811f17be2807b1eb90dcb021c1e5a0304d784d0a24f4ee907"
+  },
+  {
+    "package": "scipy",
+    "version": "1.15.3",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\scipy-1.15.3.dist-info\\LICENSE.txt",
+    "bytes": 46763,
+    "sha256": "f250e7cef15fbd99e8680093d112d7aa7579535b99995268df6c89ac926eb607"
+  },
+  {
+    "package": "scipy",
+    "version": "1.15.3",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\scipy\\_lib\\_uarray\\LICENSE",
+    "bytes": 1543,
+    "sha256": "e4c4acc31e8287066d7c995d26e3ef902ca1977ee187b260b11c278366503811"
+  },
+  {
+    "package": "scipy",
+    "version": "1.15.3",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\scipy\\fft\\_pocketfft\\LICENSE.md",
+    "bytes": 1523,
+    "sha256": "c04661685cff9d8035fe1c4c3ab357e7f7633cafc06a73e9d90c3c5fede8a86a"
+  },
+  {
+    "package": "scipy",
+    "version": "1.15.3",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\scipy\\sparse\\linalg\\_eigen\\arpack\\COPYING",
+    "bytes": 1937,
+    "sha256": "fcb3c6c7de1460cf7d0863c3c5996e518eb8015a2eced36911f3da178440b3df"
+  },
+  {
+    "package": "scipy",
+    "version": "1.15.3",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\scipy\\spatial\\qhull_src\\COPYING.txt",
+    "bytes": 1673,
+    "sha256": "962452e737df7c743a3dc2744232071028b8c0450e7674a55057c330ea1977eb"
+  },
+  {
+    "package": "simple-websocket",
+    "version": "1.1.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\simple_websocket-1.1.0.dist-info\\LICENSE",
+    "bytes": 1072,
+    "sha256": "4b8abadcc5e3dd29c71905b84952945699f0a7ba41e6af99eaba46faabe95bb7"
+  },
+  {
+    "package": "sounddevice",
+    "version": "0.4.7",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\sounddevice-0.4.7.dist-info\\LICENSE",
+    "bytes": 1063,
+    "sha256": "e217f072c28beaf7d06879366dc3f230495589825af7c67509043dcbfd7812e5"
+  },
+  {
+    "package": "soundfile",
+    "version": "0.14.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\_soundfile_data\\COPYING",
+    "bytes": 26518,
+    "sha256": "ad01ea5cd2755f6048383c8d54c88459cd6fcb17757c5c8892f8c5ea060f6140"
+  },
+  {
+    "package": "soundfile",
+    "version": "0.14.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\licensing\\license_notes.md",
+    "bytes": 2631,
+    "sha256": "35630e1f59b5c54b0bcbe2ec173bcf5a63b727a6e2f7834ca6d35a1af91a2b5f"
+  },
+  {
+    "package": "soundfile",
+    "version": "0.14.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\soundfile-0.14.0.dist-info\\LICENSE",
+    "bytes": 1512,
+    "sha256": "0dd2e411fed553ba891845077e5a32c5b726d1bbc46ff31a2118ae1ccf816752"
+  },
+  {
+    "package": "soxr",
+    "version": "1.1.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\soxr-1.1.0.dist-info\\licenses\\COPYING.LGPL",
+    "bytes": 26934,
+    "sha256": "317dfba8116739654c8c2d8acbc9c7edfcf34e3932e7a4b15307435228f98c3a"
+  },
+  {
+    "package": "soxr",
+    "version": "1.1.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\soxr-1.1.0.dist-info\\licenses\\LICENSE-PFFFT.txt",
+    "bytes": 2174,
+    "sha256": "7847a2f45a0da613240a7e542980677c16613b1c8258190c15f8bf275032bb2d"
+  },
+  {
+    "package": "soxr",
+    "version": "1.1.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\soxr-1.1.0.dist-info\\licenses\\LICENSE-libsoxr.txt",
+    "bytes": 1047,
+    "sha256": "73b946c198ad27fc2ae7bea2de6ec6d1b6c0733340d1759a450150271347e5af"
+  },
+  {
+    "package": "soxr",
+    "version": "1.1.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\soxr-1.1.0.dist-info\\licenses\\LICENSE.txt",
+    "bytes": 728,
+    "sha256": "16ce7f03077f25fac6a9b89fdf6136927595f6b85db9197381ee99c1ecba357b"
+  },
+  {
+    "package": "starlette",
+    "version": "1.6.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\starlette-1.6.0.dist-info\\licenses\\LICENSE.md",
+    "bytes": 1518,
+    "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf"
+  },
+  {
+    "package": "sympy",
+    "version": "1.14.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\sympy-1.14.0.dist-info\\licenses\\AUTHORS",
+    "bytes": 55779,
+    "sha256": "82b1038521b0696c63c90b31ed4a0a2c9c4c16871c648b157b07ca44b6f18f8d"
+  },
+  {
+    "package": "sympy",
+    "version": "1.14.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\sympy-1.14.0.dist-info\\licenses\\LICENSE",
+    "bytes": 7885,
+    "sha256": "07a5e9819f727b4986ad2829c7a29a6320d42575f720eb24d71b7fef573a0286"
+  },
+  {
+    "package": "sympy",
+    "version": "1.14.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\sympy\\parsing\\latex\\LICENSE.txt",
+    "bytes": 1075,
+    "sha256": "007bc30a58fa40a996e772047120de4eaf31f5110e4f9c3b5f93fcdfbe2eaca1"
+  },
+  {
+    "package": "threadpoolctl",
+    "version": "3.6.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\threadpoolctl-3.6.0.dist-info\\licenses\\LICENSE",
+    "bytes": 1507,
+    "sha256": "81ac619075248b06e53660b652d10e485f4675f5d0ae0f97ea22370da1f7e23b"
+  },
+  {
+    "package": "torch",
+    "version": "2.8.0+cpu",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\torch-2.8.0+cpu.dist-info\\LICENSE",
+    "bytes": 506902,
+    "sha256": "d61701e874c39a858d92c47c2cbf3bd8b9e498032a18ae42832fba591752ce1f"
+  },
+  {
+    "package": "torch",
+    "version": "2.8.0+cpu",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\torch-2.8.0+cpu.dist-info\\NOTICE",
+    "bytes": 24088,
+    "sha256": "1c3dec6c0342c7ed9e12af59b296c7bb1d394af5cf881db74191cc8299efce5c"
+  },
+  {
+    "package": "torchaudio",
+    "version": "2.8.0+cpu",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\torchaudio-2.8.0+cpu.dist-info\\licenses\\LICENSE",
+    "bytes": 1363,
+    "sha256": "32638e179931bfe551eabf67b0e67a13b483e166b58dd7263634ab7f89f396f5"
+  },
+  {
+    "package": "torchcrepe",
+    "version": "0.0.24",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\torchcrepe-0.0.24.dist-info\\licenses\\LICENSE",
+    "bytes": 1090,
+    "sha256": "2e1d0b22e64e0f0937cb213dbe45b0b02c97d278c4db8bae926ae031325b2417"
+  },
+  {
+    "package": "torchfcpe",
+    "version": "0.0.4",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\torchfcpe-0.0.4.dist-info\\LICENSE",
+    "bytes": 1065,
+    "sha256": "a7bc5dbde7b601271495b838ac903ad57657b791b14a9f9de70f35300ae8d4d8"
+  },
+  {
+    "package": "torch-einops-utils",
+    "version": "0.1.25",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\torch_einops_utils-0.1.25.dist-info\\licenses\\LICENSE",
+    "bytes": 1066,
+    "sha256": "7ba00e17b67c10574adc875c2f4c747cbc38718ed0d1dd24351d28d139817b03"
+  },
+  {
+    "package": "tqdm",
+    "version": "4.70.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\tqdm-4.70.1.dist-info\\licenses\\LICENCE",
+    "bytes": 1985,
+    "sha256": "fcff87c3a47ce8028a8512aa182d4fcf0ad1c90544ee75cf9b343684cac194de"
+  },
+  {
+    "package": "typing_extensions",
+    "version": "4.16.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\typing_extensions-4.16.0.dist-info\\licenses\\LICENSE",
+    "bytes": 13936,
+    "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+  },
+  {
+    "package": "typing-inspection",
+    "version": "0.4.4",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\typing_inspection-0.4.4.dist-info\\licenses\\LICENSE",
+    "bytes": 1090,
+    "sha256": "804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3"
+  },
+  {
+    "package": "urllib3",
+    "version": "2.7.0",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\urllib3-2.7.0.dist-info\\licenses\\LICENSE.txt",
+    "bytes": 1093,
+    "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+  },
+  {
+    "package": "uvicorn",
+    "version": "0.52.4",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\uvicorn-0.52.4.dist-info\\licenses\\LICENSE.md",
+    "bytes": 1526,
+    "sha256": "efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371"
+  },
+  {
+    "package": "wsproto",
+    "version": "1.3.2",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\wsproto-1.3.2.dist-info\\licenses\\LICENSE",
+    "bytes": 1093,
+    "sha256": "c0329a8dbf3437b095f7f5cf4257d6bb855e07120cae8786586073ff7a699959"
+  },
+  {
+    "package": "xxhash",
+    "version": "4.0.1",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\xxhash-4.0.1.dist-info\\licenses\\LICENSE",
+    "bytes": 1313,
+    "sha256": "b76e99529f3e47372029e11914a8f4b95d6313463ed5a1a5c9afe96c3e015114"
+  },
+  {
+    "package": "yarl",
+    "version": "1.24.5",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\yarl-1.24.5.dist-info\\licenses\\LICENSE",
+    "bytes": 11358,
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "package": "yarl",
+    "version": "1.24.5",
+    "path": ".tools\\voice\\venv\\lib\\site-packages\\yarl-1.24.5.dist-info\\licenses\\NOTICE",
+    "bytes": 609,
+    "sha256": "56d6ac6c8105c0a51304c21db060e361af9a8ea0af9a75c239c28b5d13693838"
+  }
+]

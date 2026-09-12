@@ -1,0 +1,4088 @@
+{
+  "date": "2026-09-12T10:13:01.123Z",
+  "timestampMode": "Epoch milliseconds (normal TrackingFrame contract)",
+  "input": "Two NASA-credited real-person photos, repeated as still frames. Ordinary canvas resizing/letterboxing and two stated upper-body crops only. No camera, image generation, identity/sensitive-trait analysis, training, public redistribution or movement test.",
+  "terms": {
+    "source": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "basis": "NASA permits factual informational uses subject to its media guidelines. Files and technical outputs are private test artifacts, imply no NASA endorsement, and are not used as promotional imagery. Photographs retain their publisher content; models are only run for inference, not trained."
+  },
+  "fixtures": [
+    {
+      "id": "portrait",
+      "file": "assets/testing/jsc2021e037768_alt.jpg",
+      "sha256": "7a7536821783691d1c7b58f5ee7cb601abbeaaa2f4703e755a15c5dbb4271b78",
+      "url": "https://images-assets.nasa.gov/image/jsc2021e037768_alt/jsc2021e037768_alt~orig.jpg",
+      "metadata": "https://images-api.nasa.gov/search?nasa_id=jsc2021e037768_alt",
+      "sourcePage": "https://www.nasa.gov/image-article/spacex-crew-4-mission-specialist-jessica-watkins/",
+      "credit": "NASA/Josh Valcarcel",
+      "usage": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "bytes": 1634876
+    },
+    {
+      "id": "full-body",
+      "file": "assets/testing/jsc2026e002116.jpg",
+      "sha256": "194f6ba51f7bdeb090c9a47e7ab69d3fa191fbb6240cd4b6f118a215bc27caf0",
+      "url": "https://images-assets.nasa.gov/image/jsc2026e002116/jsc2026e002116~medium.jpg",
+      "metadata": "https://images-api.nasa.gov/search?nasa_id=jsc2026e002116",
+      "sourcePage": "https://images.nasa.gov/details/jsc2026e002116",
+      "credit": "NASA/Robert Markowitz",
+      "usage": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "bytes": 122603
+    }
+  ],
+  "variants": [
+    {
+      "id": "portrait-full",
+      "fixture": "portrait"
+    },
+    {
+      "id": "body-full",
+      "fixture": "full-body"
+    },
+    {
+      "id": "body-upper-crop",
+      "fixture": "full-body",
+      "crop": {
+        "x": 130,
+        "y": 60,
+        "width": 670,
+        "height": 690
+      }
+    },
+    {
+      "id": "body-face-hand-crop",
+      "fixture": "full-body",
+      "crop": {
+        "x": 150,
+        "y": 75,
+        "width": 520,
+        "height": 400
+      }
+    }
+  ],
+  "results": [
+    {
+      "delegate": "GPU",
+      "initializationMs": 1070.5,
+      "measurements": [
+        {
+          "variant": "portrait-full",
+          "originalSize": {
+            "width": 4453,
+            "height": 6680
+          },
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 4453,
+            "height": 6680
+          },
+          "inputSize": {
+            "width": 640,
+            "height": 480
+          },
+          "frames": [
+            {
+              "sequence": 1,
+              "timestamp": 1789207983613,
+              "inferenceMs": 18789.80000001192,
+              "roundTripMs": 18790.899999976158,
+              "samples": {
+                "face": {
+                  "timestamp": 1789207983613,
+                  "inferenceMs": 6356,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789207983613,
+                  "inferenceMs": 9251.5,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789207983613,
+                  "inferenceMs": 3182.100000023842,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 2,
+              "timestamp": 1789208002404.3,
+              "inferenceMs": 35.70000001788139,
+              "roundTripMs": 47.30000001192093,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208002404.3,
+                  "inferenceMs": 35.60000002384186,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789207983613,
+                  "inferenceMs": 9251.5,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789207983613,
+                  "inferenceMs": 3182.100000023842,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 3,
+              "timestamp": 1789208002451.8,
+              "inferenceMs": 109.2000000178814,
+              "roundTripMs": 110,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208002451.8,
+                  "inferenceMs": 34.70000001788139,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208002451.8,
+                  "inferenceMs": 27,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208002451.8,
+                  "inferenceMs": 47.400000005960464,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 4,
+              "timestamp": 1789208002562.3,
+              "inferenceMs": 38.599999994039536,
+              "roundTripMs": 40.80000001192093,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208002562.3,
+                  "inferenceMs": 38.5,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208002451.8,
+                  "inferenceMs": 27,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208002451.8,
+                  "inferenceMs": 47.400000005960464,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 5,
+              "timestamp": 1789208002603.2002,
+              "inferenceMs": 114.40000000596046,
+              "roundTripMs": 115.40000000596046,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208002603.2002,
+                  "inferenceMs": 33.80000001192093,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208002603.2002,
+                  "inferenceMs": 31.19999998807907,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208002603.2002,
+                  "inferenceMs": 49.30000001192093,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 6,
+              "timestamp": 1789208002719,
+              "inferenceMs": 34.30000001192093,
+              "roundTripMs": 35.30000001192093,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208002719,
+                  "inferenceMs": 34.20000001788139,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208002603.2002,
+                  "inferenceMs": 31.19999998807907,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208002603.2002,
+                  "inferenceMs": 49.30000001192093,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 7,
+              "timestamp": 1789208002754.6,
+              "inferenceMs": 132.80000001192093,
+              "roundTripMs": 133.7999999821186,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208002754.6,
+                  "inferenceMs": 35.20000001788139,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208002754.6,
+                  "inferenceMs": 32.5,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208002754.6,
+                  "inferenceMs": 65,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 8,
+              "timestamp": 1789208002888.6,
+              "inferenceMs": 41.599999994039536,
+              "roundTripMs": 42.19999998807907,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208002888.6,
+                  "inferenceMs": 41.400000005960464,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208002754.6,
+                  "inferenceMs": 32.5,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208002754.6,
+                  "inferenceMs": 65,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 9,
+              "timestamp": 1789208002931.1,
+              "inferenceMs": 111.7999999821186,
+              "roundTripMs": 112.7999999821186,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208002931.1,
+                  "inferenceMs": 34.39999997615814,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208002931.1,
+                  "inferenceMs": 32,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208002931.1,
+                  "inferenceMs": 45.30000001192093,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 10,
+              "timestamp": 1789208003044,
+              "inferenceMs": 41.099999994039536,
+              "roundTripMs": 42,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208003044,
+                  "inferenceMs": 41.099999994039536,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208002931.1,
+                  "inferenceMs": 32,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208002931.1,
+                  "inferenceMs": 45.30000001192093,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 11,
+              "timestamp": 1789208003086.1,
+              "inferenceMs": 134.09999999403954,
+              "roundTripMs": 134.7999999821186,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208003086.1,
+                  "inferenceMs": 36.80000001192093,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208003086.1,
+                  "inferenceMs": 35.69999998807907,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208003086.1,
+                  "inferenceMs": 61.599999994039536,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            }
+          ]
+        },
+        {
+          "variant": "body-full",
+          "originalSize": {
+            "width": 1024,
+            "height": 1280
+          },
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1280
+          },
+          "inputSize": {
+            "width": 640,
+            "height": 480
+          },
+          "frames": [
+            {
+              "sequence": 12,
+              "timestamp": 1789208003231.9001,
+              "inferenceMs": 35,
+              "roundTripMs": 35.80000001192093,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208003231.9001,
+                  "inferenceMs": 35,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208003086.1,
+                  "inferenceMs": 35.69999998807907,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208003086.1,
+                  "inferenceMs": 61.599999994039536,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 13,
+              "timestamp": 1789208003267.9001,
+              "inferenceMs": 159.90000000596046,
+              "roundTripMs": 160.7000000178814,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208003267.9001,
+                  "inferenceMs": 15.300000011920929,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208003267.9001,
+                  "inferenceMs": 36.5,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208003267.9001,
+                  "inferenceMs": 108.09999999403954,
+                  "present": true
+                }
+              },
+              "warm": false,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.92529296875
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.88885498046875
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 14,
+              "timestamp": 1789208003428.9001,
+              "inferenceMs": 14.199999988079071,
+              "roundTripMs": 15.099999994039536,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208003428.9001,
+                  "inferenceMs": 14.199999988079071,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208003267.9001,
+                  "inferenceMs": 36.5,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208003267.9001,
+                  "inferenceMs": 108.09999999403954,
+                  "present": true
+                }
+              },
+              "warm": false,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.92529296875
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.88885498046875
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 15,
+              "timestamp": 1789208003444.2002,
+              "inferenceMs": 128,
+              "roundTripMs": 128.69999998807907,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208003444.2002,
+                  "inferenceMs": 16.19999998807907,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208003444.2002,
+                  "inferenceMs": 40.60000002384186,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208003444.2002,
+                  "inferenceMs": 71.19999998807907,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.998046875
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.96588134765625
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 16,
+              "timestamp": 1789208003573,
+              "inferenceMs": 16.80000001192093,
+              "roundTripMs": 17.700000017881393,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208003573,
+                  "inferenceMs": 16.80000001192093,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208003444.2002,
+                  "inferenceMs": 40.60000002384186,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208003444.2002,
+                  "inferenceMs": 71.19999998807907,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.998046875
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.96588134765625
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 17,
+              "timestamp": 1789208003590.9001,
+              "inferenceMs": 110.59999999403954,
+              "roundTripMs": 111.40000000596046,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208003590.9001,
+                  "inferenceMs": 16.299999982118607,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208003590.9001,
+                  "inferenceMs": 34.20000001788139,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208003590.9001,
+                  "inferenceMs": 60.099999994039536,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.984375
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.98089599609375
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 18,
+              "timestamp": 1789208003702.4001,
+              "inferenceMs": 11.800000011920929,
+              "roundTripMs": 12.400000005960464,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208003702.4001,
+                  "inferenceMs": 11.700000017881393,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208003590.9001,
+                  "inferenceMs": 34.20000001788139,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208003590.9001,
+                  "inferenceMs": 60.099999994039536,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.984375
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.98089599609375
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 19,
+              "timestamp": 1789208003715,
+              "inferenceMs": 97.19999998807907,
+              "roundTripMs": 98,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208003715,
+                  "inferenceMs": 15.699999988079071,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208003715,
+                  "inferenceMs": 34.30000001192093,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208003715,
+                  "inferenceMs": 47.19999998807907,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.98095703125
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9860916137695312
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 20,
+              "timestamp": 1789208003813.2002,
+              "inferenceMs": 14.099999994039536,
+              "roundTripMs": 14.900000005960464,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208003813.2002,
+                  "inferenceMs": 14,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208003715,
+                  "inferenceMs": 34.30000001192093,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208003715,
+                  "inferenceMs": 47.19999998807907,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.98095703125
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9860916137695312
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 21,
+              "timestamp": 1789208003828.1,
+              "inferenceMs": 97.90000000596046,
+              "roundTripMs": 98.7999999821186,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208003828.1,
+                  "inferenceMs": 10.5,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208003828.1,
+                  "inferenceMs": 28.600000023841858,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208003828.1,
+                  "inferenceMs": 58.79999998211861,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.98291015625
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9891204833984375
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 22,
+              "timestamp": 1789208003927.1,
+              "inferenceMs": 16.30000001192093,
+              "roundTripMs": 17.099999994039536,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208003927.1,
+                  "inferenceMs": 16.30000001192093,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208003828.1,
+                  "inferenceMs": 28.600000023841858,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208003828.1,
+                  "inferenceMs": 58.79999998211861,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.98291015625
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9891204833984375
+                  }
+                ],
+                "finite": true
+              }
+            }
+          ]
+        },
+        {
+          "variant": "body-upper-crop",
+          "originalSize": {
+            "width": 1024,
+            "height": 1280
+          },
+          "crop": {
+            "x": 130,
+            "y": 60,
+            "width": 670,
+            "height": 690
+          },
+          "inputSize": {
+            "width": 640,
+            "height": 480
+          },
+          "frames": [
+            {
+              "sequence": 23,
+              "timestamp": 1789208003952.4001,
+              "inferenceMs": 172.69999998807907,
+              "roundTripMs": 173.30000001192093,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208003952.4001,
+                  "inferenceMs": 65,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208003952.4001,
+                  "inferenceMs": 39.400000005960464,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208003952.4001,
+                  "inferenceMs": 68.19999998807907,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 24,
+              "timestamp": 1789208004125.8,
+              "inferenceMs": 38,
+              "roundTripMs": 38.400000005960464,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208004125.8,
+                  "inferenceMs": 37.900000005960464,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208003952.4001,
+                  "inferenceMs": 39.400000005960464,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208003952.4001,
+                  "inferenceMs": 68.19999998807907,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 25,
+              "timestamp": 1789208004164.5,
+              "inferenceMs": 157.90000000596046,
+              "roundTripMs": 158.7000000178814,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208004164.5,
+                  "inferenceMs": 35.900000005960464,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208004164.5,
+                  "inferenceMs": 32.79999998211861,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208004164.5,
+                  "inferenceMs": 89.10000002384186,
+                  "present": true
+                }
+              },
+              "warm": false,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9853515625
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.967529296875
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 26,
+              "timestamp": 1789208004323.3,
+              "inferenceMs": 35.19999998807907,
+              "roundTripMs": 36.099999994039536,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208004323.3,
+                  "inferenceMs": 35.19999998807907,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208004164.5,
+                  "inferenceMs": 32.79999998211861,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208004164.5,
+                  "inferenceMs": 89.10000002384186,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9853515625
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.967529296875
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 27,
+              "timestamp": 1789208004359.5,
+              "inferenceMs": 132.40000000596046,
+              "roundTripMs": 133.30000001192093,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208004359.5,
+                  "inferenceMs": 34.5,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208004359.5,
+                  "inferenceMs": 32.900000005960464,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208004359.5,
+                  "inferenceMs": 64.89999997615814,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9638671875
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9882049560546875
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 28,
+              "timestamp": 1789208004493.1,
+              "inferenceMs": 35.599999994039536,
+              "roundTripMs": 36.599999994039536,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208004493.1,
+                  "inferenceMs": 35.599999994039536,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208004359.5,
+                  "inferenceMs": 32.900000005960464,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208004359.5,
+                  "inferenceMs": 64.89999997615814,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9638671875
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9882049560546875
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 29,
+              "timestamp": 1789208004529.9001,
+              "inferenceMs": 144.09999999403954,
+              "roundTripMs": 144.80000001192093,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208004529.9001,
+                  "inferenceMs": 37.599999994039536,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208004529.9001,
+                  "inferenceMs": 37.900000005960464,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208004529.9001,
+                  "inferenceMs": 68.59999999403954,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9541015625
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9886703491210938
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 30,
+              "timestamp": 1789208004674.8,
+              "inferenceMs": 38.599999994039536,
+              "roundTripMs": 39.5,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208004674.8,
+                  "inferenceMs": 38.5,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208004529.9001,
+                  "inferenceMs": 37.900000005960464,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208004529.9001,
+                  "inferenceMs": 68.59999999403954,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9541015625
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9886703491210938
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 31,
+              "timestamp": 1789208004714.4001,
+              "inferenceMs": 127.19999998807907,
+              "roundTripMs": 128.2000000178814,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208004714.4001,
+                  "inferenceMs": 31.299999982118607,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208004714.4001,
+                  "inferenceMs": 38.599999994039536,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208004714.4001,
+                  "inferenceMs": 57.20000001788139,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.96435546875
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9900131225585938
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 32,
+              "timestamp": 1789208004842.8,
+              "inferenceMs": 39.89999997615814,
+              "roundTripMs": 40.900000005960464,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208004842.8,
+                  "inferenceMs": 39.79999998211861,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208004714.4001,
+                  "inferenceMs": 38.599999994039536,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208004714.4001,
+                  "inferenceMs": 57.20000001788139,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.96435546875
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9900131225585938
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 33,
+              "timestamp": 1789208004883.8,
+              "inferenceMs": 129.59999999403954,
+              "roundTripMs": 130.80000001192093,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208004883.8,
+                  "inferenceMs": 33,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208004883.8,
+                  "inferenceMs": 31.899999976158142,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208004883.8,
+                  "inferenceMs": 64.60000002384186,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9697265625
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9914321899414062
+                  }
+                ],
+                "finite": true
+              }
+            }
+          ]
+        },
+        {
+          "variant": "body-face-hand-crop",
+          "originalSize": {
+            "width": 1024,
+            "height": 1280
+          },
+          "crop": {
+            "x": 150,
+            "y": 75,
+            "width": 520,
+            "height": 400
+          },
+          "inputSize": {
+            "width": 640,
+            "height": 480
+          },
+          "frames": [
+            {
+              "sequence": 34,
+              "timestamp": 1789208005015.1,
+              "inferenceMs": 34.5,
+              "roundTripMs": 35.69999998807907,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208005015.1,
+                  "inferenceMs": 34.5,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208004883.8,
+                  "inferenceMs": 31.899999976158142,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208004883.8,
+                  "inferenceMs": 64.60000002384186,
+                  "present": true
+                }
+              },
+              "warm": false,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9697265625
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9914321899414062
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 35,
+              "timestamp": 1789208005051.1,
+              "inferenceMs": 154.80000001192093,
+              "roundTripMs": 155.5,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208005051.1,
+                  "inferenceMs": 54.5,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208005051.1,
+                  "inferenceMs": 36.5,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208005051.1,
+                  "inferenceMs": 63.70000001788139,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 36,
+              "timestamp": 1789208005206.7002,
+              "inferenceMs": 35.19999998807907,
+              "roundTripMs": 35.900000005960464,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208005206.7002,
+                  "inferenceMs": 35.19999998807907,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208005051.1,
+                  "inferenceMs": 36.5,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208005051.1,
+                  "inferenceMs": 63.70000001788139,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 37,
+              "timestamp": 1789208005242.8,
+              "inferenceMs": 170.59999999403954,
+              "roundTripMs": 171.80000001192093,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208005242.8,
+                  "inferenceMs": 37.19999998807907,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208005242.8,
+                  "inferenceMs": 36.80000001192093,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208005242.8,
+                  "inferenceMs": 96.59999999403954,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.98779296875
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9832763671875
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 38,
+              "timestamp": 1789208005414.7002,
+              "inferenceMs": 43,
+              "roundTripMs": 43.599999994039536,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208005414.7002,
+                  "inferenceMs": 43,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208005242.8,
+                  "inferenceMs": 36.80000001192093,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208005242.8,
+                  "inferenceMs": 96.59999999403954,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.98779296875
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9832763671875
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 39,
+              "timestamp": 1789208005458.6,
+              "inferenceMs": 151.30000001192093,
+              "roundTripMs": 152.2999999821186,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208005458.6,
+                  "inferenceMs": 36.400000005960464,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208005458.6,
+                  "inferenceMs": 45,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208005458.6,
+                  "inferenceMs": 69.7999999821186,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.935546875
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.978179931640625
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 40,
+              "timestamp": 1789208005611,
+              "inferenceMs": 37.900000005960464,
+              "roundTripMs": 38.80000001192093,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208005611,
+                  "inferenceMs": 37.900000005960464,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208005458.6,
+                  "inferenceMs": 45,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208005458.6,
+                  "inferenceMs": 69.7999999821186,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.935546875
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.978179931640625
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 41,
+              "timestamp": 1789208005650,
+              "inferenceMs": 151.40000000596046,
+              "roundTripMs": 152.2000000178814,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208005650,
+                  "inferenceMs": 36.69999998807907,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208005650,
+                  "inferenceMs": 39.80000001192093,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208005650,
+                  "inferenceMs": 74.7999999821186,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.958984375
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9806060791015625
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 42,
+              "timestamp": 1789208005802.6,
+              "inferenceMs": 39.599999994039536,
+              "roundTripMs": 40.39999997615814,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208005802.6,
+                  "inferenceMs": 39.599999994039536,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208005650,
+                  "inferenceMs": 39.80000001192093,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208005650,
+                  "inferenceMs": 74.7999999821186,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.958984375
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9806060791015625
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 43,
+              "timestamp": 1789208005843,
+              "inferenceMs": 161.40000000596046,
+              "roundTripMs": 162,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208005843,
+                  "inferenceMs": 39.099999994039536,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208005843,
+                  "inferenceMs": 40,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208005843,
+                  "inferenceMs": 82.19999998807907,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9677734375
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9690399169921875
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 44,
+              "timestamp": 1789208006005.2002,
+              "inferenceMs": 41.70000001788139,
+              "roundTripMs": 42.400000005960464,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208006005.2002,
+                  "inferenceMs": 41.70000001788139,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208005843,
+                  "inferenceMs": 40,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208005843,
+                  "inferenceMs": 82.19999998807907,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9677734375
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9690399169921875
+                  }
+                ],
+                "finite": true
+              }
+            }
+          ]
+        }
+      ],
+      "mediaRequests": 0,
+      "summary": [
+        {
+          "variant": "portrait-full",
+          "warmFullFrames": 4,
+          "medianFullMs": 123.6000000089407,
+          "minFullMs": 111.7999999821186,
+          "maxFullMs": 134.09999999403954,
+          "medianTaskMs": {
+            "face": 34.79999999701977,
+            "pose": 32.25,
+            "hands": 55.45000000298023
+          },
+          "positiveWarmFrames": {
+            "face": 4,
+            "pose": 4,
+            "hands": 0
+          },
+          "positiveAllWarmFrames": 0
+        },
+        {
+          "variant": "body-full",
+          "warmFullFrames": 4,
+          "medianFullMs": 104.25,
+          "minFullMs": 97.19999998807907,
+          "maxFullMs": 128,
+          "medianTaskMs": {
+            "face": 15.949999988079071,
+            "pose": 34.25000001490116,
+            "hands": 59.44999998807907
+          },
+          "positiveWarmFrames": {
+            "face": 0,
+            "pose": 4,
+            "hands": 4
+          },
+          "positiveAllWarmFrames": 0
+        },
+        {
+          "variant": "body-upper-crop",
+          "warmFullFrames": 4,
+          "medianFullMs": 131,
+          "minFullMs": 127.19999998807907,
+          "maxFullMs": 144.09999999403954,
+          "medianTaskMs": {
+            "face": 33.75,
+            "pose": 35.400000005960464,
+            "hands": 64.75
+          },
+          "positiveWarmFrames": {
+            "face": 4,
+            "pose": 4,
+            "hands": 4
+          },
+          "positiveAllWarmFrames": 4
+        },
+        {
+          "variant": "body-face-hand-crop",
+          "warmFullFrames": 4,
+          "medianFullMs": 156.40000000596046,
+          "minFullMs": 151.30000001192093,
+          "maxFullMs": 170.59999999403954,
+          "medianTaskMs": {
+            "face": 36.94999998807907,
+            "pose": 39.900000005960464,
+            "hands": 78.49999998509884
+          },
+          "positiveWarmFrames": {
+            "face": 4,
+            "pose": 4,
+            "hands": 4
+          },
+          "positiveAllWarmFrames": 4
+        }
+      ]
+    },
+    {
+      "delegate": "CPU",
+      "initializationMs": 1679.5999999940395,
+      "measurements": [
+        {
+          "variant": "portrait-full",
+          "originalSize": {
+            "width": 4453,
+            "height": 6680
+          },
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 4453,
+            "height": 6680
+          },
+          "inputSize": {
+            "width": 640,
+            "height": 480
+          },
+          "frames": [
+            {
+              "sequence": 1,
+              "timestamp": 1789208008414.4001,
+              "inferenceMs": 1170.2000000178814,
+              "roundTripMs": 1171.0999999940395,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208008414.4001,
+                  "inferenceMs": 400,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208008414.4001,
+                  "inferenceMs": 420.40000000596046,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208008414.4001,
+                  "inferenceMs": 349.5,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 2,
+              "timestamp": 1789208009585.8,
+              "inferenceMs": 63.099999994039536,
+              "roundTripMs": 70.19999998807907,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208009585.8,
+                  "inferenceMs": 63.099999994039536,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208008414.4001,
+                  "inferenceMs": 420.40000000596046,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208008414.4001,
+                  "inferenceMs": 349.5,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 3,
+              "timestamp": 1789208009656.1,
+              "inferenceMs": 374.2000000178814,
+              "roundTripMs": 374.89999997615814,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208009656.1,
+                  "inferenceMs": 53.5,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208009656.1,
+                  "inferenceMs": 85.2000000178814,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208009656.1,
+                  "inferenceMs": 235.39999997615814,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 4,
+              "timestamp": 1789208010031.1,
+              "inferenceMs": 61.099999994039536,
+              "roundTripMs": 61.79999998211861,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208010031.1,
+                  "inferenceMs": 61,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208009656.1,
+                  "inferenceMs": 85.2000000178814,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208009656.1,
+                  "inferenceMs": 235.39999997615814,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 5,
+              "timestamp": 1789208010093,
+              "inferenceMs": 348.69999998807907,
+              "roundTripMs": 349.30000001192093,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208010093,
+                  "inferenceMs": 62,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208010093,
+                  "inferenceMs": 67.59999999403954,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208010093,
+                  "inferenceMs": 219.09999999403954,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 6,
+              "timestamp": 1789208010442.3,
+              "inferenceMs": 48.400000005960464,
+              "roundTripMs": 49.099999994039536,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208010442.3,
+                  "inferenceMs": 48.30000001192093,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208010093,
+                  "inferenceMs": 67.59999999403954,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208010093,
+                  "inferenceMs": 219.09999999403954,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 7,
+              "timestamp": 1789208010491.6,
+              "inferenceMs": 414.59999999403954,
+              "roundTripMs": 415.59999999403954,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208010491.6,
+                  "inferenceMs": 63.89999997615814,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208010491.6,
+                  "inferenceMs": 104.80000001192093,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208010491.6,
+                  "inferenceMs": 245.90000000596046,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 8,
+              "timestamp": 1789208010907.3,
+              "inferenceMs": 51.70000001788139,
+              "roundTripMs": 52.19999998807907,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208010907.3,
+                  "inferenceMs": 51.599999994039536,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208010491.6,
+                  "inferenceMs": 104.80000001192093,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208010491.6,
+                  "inferenceMs": 245.90000000596046,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 9,
+              "timestamp": 1789208010959.7002,
+              "inferenceMs": 353.59999999403954,
+              "roundTripMs": 354.09999999403954,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208010959.7002,
+                  "inferenceMs": 54.80000001192093,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208010959.7002,
+                  "inferenceMs": 75.69999998807907,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208010959.7002,
+                  "inferenceMs": 223,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 10,
+              "timestamp": 1789208011314,
+              "inferenceMs": 53.29999998211861,
+              "roundTripMs": 53.80000001192093,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208011314,
+                  "inferenceMs": 53.099999994039536,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208010959.7002,
+                  "inferenceMs": 75.69999998807907,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208010959.7002,
+                  "inferenceMs": 223,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 11,
+              "timestamp": 1789208011368.1,
+              "inferenceMs": 342.30000001192093,
+              "roundTripMs": 342.7999999821186,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208011368.1,
+                  "inferenceMs": 51.599999994039536,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208011368.1,
+                  "inferenceMs": 72.59999999403954,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208011368.1,
+                  "inferenceMs": 218,
+                  "present": false
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            }
+          ]
+        },
+        {
+          "variant": "body-full",
+          "originalSize": {
+            "width": 1024,
+            "height": 1280
+          },
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1280
+          },
+          "inputSize": {
+            "width": 640,
+            "height": 480
+          },
+          "frames": [
+            {
+              "sequence": 12,
+              "timestamp": 1789208011722.1,
+              "inferenceMs": 53.5,
+              "roundTripMs": 54.099999994039536,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208011722.1,
+                  "inferenceMs": 53.5,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208011368.1,
+                  "inferenceMs": 72.59999999403954,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208011368.1,
+                  "inferenceMs": 218,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 13,
+              "timestamp": 1789208011776.4001,
+              "inferenceMs": 369.09999999403954,
+              "roundTripMs": 369.80000001192093,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208011776.4001,
+                  "inferenceMs": 18.799999982118607,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208011776.4001,
+                  "inferenceMs": 104.5,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208011776.4001,
+                  "inferenceMs": 245.80000001192093,
+                  "present": true
+                }
+              },
+              "warm": false,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.902409017086029
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 14,
+              "timestamp": 1789208012146.3,
+              "inferenceMs": 17.400000005960464,
+              "roundTripMs": 18.19999998807907,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208012146.3,
+                  "inferenceMs": 17.400000005960464,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208011776.4001,
+                  "inferenceMs": 104.5,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208011776.4001,
+                  "inferenceMs": 245.80000001192093,
+                  "present": true
+                }
+              },
+              "warm": false,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.902409017086029
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 15,
+              "timestamp": 1789208012164.7002,
+              "inferenceMs": 418.5,
+              "roundTripMs": 419.40000000596046,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208012164.7002,
+                  "inferenceMs": 17.30000001192093,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208012164.7002,
+                  "inferenceMs": 124.30000001192093,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208012164.7002,
+                  "inferenceMs": 276.89999997615814,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9974759221076965
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.902409017086029
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 16,
+              "timestamp": 1789208012584.3,
+              "inferenceMs": 19.30000001192093,
+              "roundTripMs": 20.099999994039536,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208012584.3,
+                  "inferenceMs": 19.30000001192093,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208012164.7002,
+                  "inferenceMs": 124.30000001192093,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208012164.7002,
+                  "inferenceMs": 276.89999997615814,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9974759221076965
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.902409017086029
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 17,
+              "timestamp": 1789208012604.6,
+              "inferenceMs": 282.80000001192093,
+              "roundTripMs": 283.59999999403954,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208012604.6,
+                  "inferenceMs": 18.5,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208012604.6,
+                  "inferenceMs": 83,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208012604.6,
+                  "inferenceMs": 181.30000001192093,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9897618293762207
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9974759221076965
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 18,
+              "timestamp": 1789208012888.3,
+              "inferenceMs": 16.30000001192093,
+              "roundTripMs": 17,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208012888.3,
+                  "inferenceMs": 16.30000001192093,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208012604.6,
+                  "inferenceMs": 83,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208012604.6,
+                  "inferenceMs": 181.30000001192093,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9897618293762207
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9974759221076965
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 19,
+              "timestamp": 1789208012905.4001,
+              "inferenceMs": 235,
+              "roundTripMs": 235.5,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208012905.4001,
+                  "inferenceMs": 13.799999982118607,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208012905.4001,
+                  "inferenceMs": 83.40000000596046,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208012905.4001,
+                  "inferenceMs": 137.80000001192093,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9824276566505432
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 20,
+              "timestamp": 1789208013141,
+              "inferenceMs": 16,
+              "roundTripMs": 16.700000017881393,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208013141,
+                  "inferenceMs": 15.900000005960464,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208012905.4001,
+                  "inferenceMs": 83.40000000596046,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208012905.4001,
+                  "inferenceMs": 137.80000001192093,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9824276566505432
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 21,
+              "timestamp": 1789208013157.8,
+              "inferenceMs": 303.7000000178814,
+              "roundTripMs": 304.40000000596046,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208013157.8,
+                  "inferenceMs": 15.900000005960464,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208013157.8,
+                  "inferenceMs": 70,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208013157.8,
+                  "inferenceMs": 217.80000001192093,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9816309809684753
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.902409017086029
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 22,
+              "timestamp": 1789208013462.4001,
+              "inferenceMs": 18,
+              "roundTripMs": 18.599999994039536,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208013462.4001,
+                  "inferenceMs": 18,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208013157.8,
+                  "inferenceMs": 70,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208013157.8,
+                  "inferenceMs": 217.80000001192093,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9816309809684753
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.902409017086029
+                  }
+                ],
+                "finite": true
+              }
+            }
+          ]
+        },
+        {
+          "variant": "body-upper-crop",
+          "originalSize": {
+            "width": 1024,
+            "height": 1280
+          },
+          "crop": {
+            "x": 130,
+            "y": 60,
+            "width": 670,
+            "height": 690
+          },
+          "inputSize": {
+            "width": 640,
+            "height": 480
+          },
+          "frames": [
+            {
+              "sequence": 23,
+              "timestamp": 1789208013482,
+              "inferenceMs": 246.90000000596046,
+              "roundTripMs": 247.5,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208013482,
+                  "inferenceMs": 22.30000001192093,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208013482,
+                  "inferenceMs": 75.7999999821186,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208013482,
+                  "inferenceMs": 148.80000001192093,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 24,
+              "timestamp": 1789208013729.6,
+              "inferenceMs": 14,
+              "roundTripMs": 14.599999994039536,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208013729.6,
+                  "inferenceMs": 14,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208013482,
+                  "inferenceMs": 75.7999999821186,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208013482,
+                  "inferenceMs": 148.80000001192093,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 25,
+              "timestamp": 1789208013744.3,
+              "inferenceMs": 339.30000001192093,
+              "roundTripMs": 340,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208013744.3,
+                  "inferenceMs": 15.300000011920929,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208013744.3,
+                  "inferenceMs": 88.2999999821186,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208013744.3,
+                  "inferenceMs": 235.7000000178814,
+                  "present": true
+                }
+              },
+              "warm": false,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9885998964309692
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9655190110206604
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 26,
+              "timestamp": 1789208014084.4001,
+              "inferenceMs": 17.399999976158142,
+              "roundTripMs": 18,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208014084.4001,
+                  "inferenceMs": 17.399999976158142,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208013744.3,
+                  "inferenceMs": 88.2999999821186,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208013744.3,
+                  "inferenceMs": 235.7000000178814,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9885998964309692
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9655190110206604
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 27,
+              "timestamp": 1789208014102.6,
+              "inferenceMs": 257.69999998807907,
+              "roundTripMs": 258.39999997615814,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208014102.6,
+                  "inferenceMs": 19.5,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208014102.6,
+                  "inferenceMs": 89.69999998807907,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208014102.6,
+                  "inferenceMs": 148.40000000596046,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9627043008804321
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9913142919540405
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 28,
+              "timestamp": 1789208014361.2002,
+              "inferenceMs": 13.5,
+              "roundTripMs": 14.400000005960464,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208014361.2002,
+                  "inferenceMs": 13.5,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208014102.6,
+                  "inferenceMs": 89.69999998807907,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208014102.6,
+                  "inferenceMs": 148.40000000596046,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9627043008804321
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9913142919540405
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 29,
+              "timestamp": 1789208014375.8,
+              "inferenceMs": 253.40000000596046,
+              "roundTripMs": 254.09999999403954,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208014375.8,
+                  "inferenceMs": 17.200000017881393,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208014375.8,
+                  "inferenceMs": 66.59999999403954,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208014375.8,
+                  "inferenceMs": 169.5,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9570640921592712
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9906811714172363
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 30,
+              "timestamp": 1789208014630.1,
+              "inferenceMs": 15.599999994039536,
+              "roundTripMs": 16.299999982118607,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208014630.1,
+                  "inferenceMs": 15.5,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208014375.8,
+                  "inferenceMs": 66.59999999403954,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208014375.8,
+                  "inferenceMs": 169.5,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9570640921592712
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9906811714172363
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 31,
+              "timestamp": 1789208014646.6,
+              "inferenceMs": 270.59999999403954,
+              "roundTripMs": 271.69999998807907,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208014646.6,
+                  "inferenceMs": 24.099999994039536,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208014646.6,
+                  "inferenceMs": 86.80000001192093,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208014646.6,
+                  "inferenceMs": 159.69999998807907,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9646225571632385
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9917696118354797
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 32,
+              "timestamp": 1789208014918.5,
+              "inferenceMs": 15.200000017881393,
+              "roundTripMs": 16.100000023841858,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208014918.5,
+                  "inferenceMs": 15.200000017881393,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208014646.6,
+                  "inferenceMs": 86.80000001192093,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208014646.6,
+                  "inferenceMs": 159.69999998807907,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9646225571632385
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9917696118354797
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 33,
+              "timestamp": 1789208014934.8,
+              "inferenceMs": 247,
+              "roundTripMs": 247.5,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208014934.8,
+                  "inferenceMs": 16.599999994039536,
+                  "present": false
+                },
+                "pose": {
+                  "timestamp": 1789208014934.8,
+                  "inferenceMs": 71.40000000596046,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208014934.8,
+                  "inferenceMs": 159,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 0,
+                "blendshapeCount": 0,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9697712659835815
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.992128312587738
+                  }
+                ],
+                "finite": true
+              }
+            }
+          ]
+        },
+        {
+          "variant": "body-face-hand-crop",
+          "originalSize": {
+            "width": 1024,
+            "height": 1280
+          },
+          "crop": {
+            "x": 150,
+            "y": 75,
+            "width": 520,
+            "height": 400
+          },
+          "inputSize": {
+            "width": 640,
+            "height": 480
+          },
+          "frames": [
+            {
+              "sequence": 34,
+              "timestamp": 1789208015182.6,
+              "inferenceMs": 66.19999998807907,
+              "roundTripMs": 67.09999999403954,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208015182.6,
+                  "inferenceMs": 66.19999998807907,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208014934.8,
+                  "inferenceMs": 71.40000000596046,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208014934.8,
+                  "inferenceMs": 159,
+                  "present": true
+                }
+              },
+              "warm": false,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9697712659835815
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.992128312587738
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 35,
+              "timestamp": 1789208015249.9001,
+              "inferenceMs": 305.89999997615814,
+              "roundTripMs": 306.5,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208015249.9001,
+                  "inferenceMs": 63.5,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208015249.9001,
+                  "inferenceMs": 107.5,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208015249.9001,
+                  "inferenceMs": 134.89999997615814,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 36,
+              "timestamp": 1789208015556.6,
+              "inferenceMs": 48.099999994039536,
+              "roundTripMs": 48.79999998211861,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208015556.6,
+                  "inferenceMs": 48,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208015249.9001,
+                  "inferenceMs": 107.5,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208015249.9001,
+                  "inferenceMs": 134.89999997615814,
+                  "present": false
+                }
+              },
+              "warm": false,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 37,
+              "timestamp": 1789208015605.6,
+              "inferenceMs": 269.69999998807907,
+              "roundTripMs": 270.39999997615814,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208015605.6,
+                  "inferenceMs": 49.19999998807907,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208015605.6,
+                  "inferenceMs": 69.5,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208015605.6,
+                  "inferenceMs": 151,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9899566173553467
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 38,
+              "timestamp": 1789208015876.1,
+              "inferenceMs": 47.70000001788139,
+              "roundTripMs": 48.29999998211861,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208015876.1,
+                  "inferenceMs": 47.70000001788139,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208015605.6,
+                  "inferenceMs": 69.5,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208015605.6,
+                  "inferenceMs": 151,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9899566173553467
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 39,
+              "timestamp": 1789208015924.5,
+              "inferenceMs": 256,
+              "roundTripMs": 256.60000002384186,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208015924.5,
+                  "inferenceMs": 46.900000005960464,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208015924.5,
+                  "inferenceMs": 62.29999998211861,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208015924.5,
+                  "inferenceMs": 146.7000000178814,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.939548134803772
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 40,
+              "timestamp": 1789208016181.3,
+              "inferenceMs": 55.79999998211861,
+              "roundTripMs": 56.599999994039536,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208016181.3,
+                  "inferenceMs": 55.79999998211861,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208015924.5,
+                  "inferenceMs": 62.29999998211861,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208015924.5,
+                  "inferenceMs": 146.7000000178814,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.939548134803772
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 41,
+              "timestamp": 1789208016238.1,
+              "inferenceMs": 305.2999999821186,
+              "roundTripMs": 305.89999997615814,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208016238.1,
+                  "inferenceMs": 58.79999998211861,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208016238.1,
+                  "inferenceMs": 89.30000001192093,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208016238.1,
+                  "inferenceMs": 157.19999998807907,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.959295928478241
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 42,
+              "timestamp": 1789208016544.1,
+              "inferenceMs": 52.5,
+              "roundTripMs": 53.39999997615814,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208016544.1,
+                  "inferenceMs": 52.5,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208016238.1,
+                  "inferenceMs": 89.30000001192093,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208016238.1,
+                  "inferenceMs": 157.19999998807907,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.959295928478241
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 43,
+              "timestamp": 1789208016597.6,
+              "inferenceMs": 283.90000000596046,
+              "roundTripMs": 284.5,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208016597.6,
+                  "inferenceMs": 47.5,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208016597.6,
+                  "inferenceMs": 76.09999999403954,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208016597.6,
+                  "inferenceMs": 160.2000000178814,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": true,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9650560617446899
+                  }
+                ],
+                "finite": true
+              }
+            },
+            {
+              "sequence": 44,
+              "timestamp": 1789208016882.2002,
+              "inferenceMs": 52.099999994039536,
+              "roundTripMs": 52.79999998211861,
+              "samples": {
+                "face": {
+                  "timestamp": 1789208016882.2002,
+                  "inferenceMs": 52.099999994039536,
+                  "present": true
+                },
+                "pose": {
+                  "timestamp": 1789208016597.6,
+                  "inferenceMs": 76.09999999403954,
+                  "present": true
+                },
+                "hands": {
+                  "timestamp": 1789208016597.6,
+                  "inferenceMs": 160.2000000178814,
+                  "present": true
+                }
+              },
+              "warm": true,
+              "allTasksFresh": false,
+              "outputs": {
+                "faceMatrixValues": 16,
+                "blendshapeCount": 52,
+                "posePoints": 33,
+                "poseImagePoints": 33,
+                "hands": [
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9650560617446899
+                  }
+                ],
+                "finite": true
+              }
+            }
+          ]
+        }
+      ],
+      "mediaRequests": 0,
+      "summary": [
+        {
+          "variant": "portrait-full",
+          "warmFullFrames": 4,
+          "medianFullMs": 351.1499999910593,
+          "minFullMs": 342.30000001192093,
+          "maxFullMs": 414.59999999403954,
+          "medianTaskMs": {
+            "face": 58.400000005960464,
+            "pose": 74.1499999910593,
+            "hands": 221.04999999701977
+          },
+          "positiveWarmFrames": {
+            "face": 4,
+            "pose": 4,
+            "hands": 0
+          },
+          "positiveAllWarmFrames": 0
+        },
+        {
+          "variant": "body-full",
+          "warmFullFrames": 4,
+          "medianFullMs": 293.25000001490116,
+          "minFullMs": 235,
+          "maxFullMs": 418.5,
+          "medianTaskMs": {
+            "face": 16.600000008940697,
+            "pose": 83.20000000298023,
+            "hands": 199.55000001192093
+          },
+          "positiveWarmFrames": {
+            "face": 0,
+            "pose": 4,
+            "hands": 4
+          },
+          "positiveAllWarmFrames": 0
+        },
+        {
+          "variant": "body-upper-crop",
+          "warmFullFrames": 4,
+          "medianFullMs": 255.54999999701977,
+          "minFullMs": 247,
+          "maxFullMs": 270.59999999403954,
+          "medianTaskMs": {
+            "face": 18.350000008940697,
+            "pose": 79.1000000089407,
+            "hands": 159.34999999403954
+          },
+          "positiveWarmFrames": {
+            "face": 0,
+            "pose": 4,
+            "hands": 4
+          },
+          "positiveAllWarmFrames": 0
+        },
+        {
+          "variant": "body-face-hand-crop",
+          "warmFullFrames": 4,
+          "medianFullMs": 276.79999999701977,
+          "minFullMs": 256,
+          "maxFullMs": 305.2999999821186,
+          "medianTaskMs": {
+            "face": 48.349999994039536,
+            "pose": 72.79999999701977,
+            "hands": 154.09999999403954
+          },
+          "positiveWarmFrames": {
+            "face": 4,
+            "pose": 4,
+            "hands": 4
+          },
+          "positiveAllWarmFrames": 4
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "messages": [
+    {
+      "type": "warning",
+      "text": "W0912 10:13:02.724000 2196592 face_landmarker_graph.cc:180] Sets FaceBlendshapesGraph acceleration to xnnpack by default."
+    },
+    {
+      "type": "log",
+      "text": "I0912 10:13:02.820999 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:02.823000 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+    },
+    {
+      "type": "log",
+      "text": "Graph successfully started running."
+    },
+    {
+      "type": "log",
+      "text": "I0912 10:13:03.120000 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:03.120999 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+    },
+    {
+      "type": "log",
+      "text": "Graph successfully started running."
+    },
+    {
+      "type": "log",
+      "text": "I0912 10:13:03.447000 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:03.448999 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+    },
+    {
+      "type": "log",
+      "text": "Graph successfully started running."
+    },
+    {
+      "type": "error",
+      "text": "INFO: Created TensorFlow Lite XNNPACK delegate for CPU."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:19.214000 2196592 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:22.400000 2196592 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:26.926000 2196592 face_landmarker_graph.cc:180] Sets FaceBlendshapesGraph acceleration to xnnpack by default."
+    },
+    {
+      "type": "log",
+      "text": "I0912 10:13:27.064000 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:27.067000 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+    },
+    {
+      "type": "log",
+      "text": "Graph successfully started running."
+    },
+    {
+      "type": "log",
+      "text": "I0912 10:13:27.616999 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:27.619000 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+    },
+    {
+      "type": "log",
+      "text": "Graph successfully started running."
+    },
+    {
+      "type": "log",
+      "text": "I0912 10:13:28.147000 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:28.148999 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+    },
+    {
+      "type": "log",
+      "text": "Graph successfully started running."
+    },
+    {
+      "type": "error",
+      "text": "INFO: Created TensorFlow Lite XNNPACK delegate for CPU."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:28.508000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:28.567000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+    },
+    {
+      "type": "error",
+      "text": "INFO: Created TensorFlow Lite XNNPACK delegate for CPU."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:29.023000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:29.067000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:29.223000 2196592 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX."
+    },
+    {
+      "type": "error",
+      "text": "INFO: Created TensorFlow Lite XNNPACK delegate for CPU."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:29.265999 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:29.295000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:13:29.494000 2196592 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX."
+    }
+  ],
+  "externalRequests": [],
+  "externalResponses": [],
+  "runtimeResponses": [
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.js?task=face-GPU",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.wasm",
+      "status": 200
+    },
+    {
+      "path": "/runtime/face_landmarker.task",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.js?task=pose-GPU",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.wasm",
+      "status": 200
+    },
+    {
+      "path": "/runtime/pose_landmarker_lite.task",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.js?task=hands-GPU",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.wasm",
+      "status": 200
+    },
+    {
+      "path": "/runtime/hand_landmarker.task",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.js?task=face-CPU",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.wasm",
+      "status": 200
+    },
+    {
+      "path": "/runtime/face_landmarker.task",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.js?task=pose-CPU",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.wasm",
+      "status": 200
+    },
+    {
+      "path": "/runtime/pose_landmarker_lite.task",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.js?task=hands-CPU",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.wasm",
+      "status": 200
+    },
+    {
+      "path": "/runtime/hand_landmarker.task",
+      "status": 200
+    }
+  ],
+  "worker": {
+    "path": "/assets/tracking.worker-a-4NTgbs.js",
+    "sha256": "37be54510b10b1a4748eed2c952fbd5b319d2b33373c592a80596191b8734686"
+  },
+  "sdk": "1.0.1",
+  "server": {
+    "base": "http://127.0.0.1:59197",
+    "pid": 25648,
+    "isolated": true
+  },
+  "chromeVersion": "152.0.7977.83",
+  "coverage": [
+    {
+      "delegate": "GPU",
+      "face": true,
+      "pose": true,
+      "hands": true,
+      "simultaneous": true
+    },
+    {
+      "delegate": "CPU",
+      "face": true,
+      "pose": true,
+      "hands": true,
+      "simultaneous": true
+    }
+  ],
+  "passed": true,
+  "browserClosed": true,
+  "serverExit": {
+    "code": null,
+    "signal": "SIGTERM"
+  },
+  "serverStopped": true
+}

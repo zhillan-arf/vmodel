@@ -1,0 +1,34 @@
+{
+  "startedAt": "2026-09-12T11:53:22.091Z",
+  "sourceSHA256": "1dbf09294d1955b633b30644d1b47153821b57671440b1be2364c73a0be74e6b",
+  "actualSource": "src/output-layout.ts",
+  "cadenceOverrideMs": 10,
+  "normalCadenceMs": 1500,
+  "noMedia": true,
+  "noOBS": true,
+  "completed": true,
+  "chromeVersion": "152.0.7977.83",
+  "beforeStop": {
+    "posts": 500,
+    "payloadBytes": 117000,
+    "requests": 501,
+    "finished": 500,
+    "failures": [],
+    "activeLayouts": 1
+  },
+  "afterStop": {
+    "posts": 502,
+    "payloadBytes": 117294,
+    "requests": 502,
+    "finished": 501,
+    "expectedPendingAbort": [
+      {
+        "errorText": "net::ERR_ABORTED",
+        "duringStop": true
+      }
+    ],
+    "activeLayouts": 0
+  },
+  "finishedAt": "2026-09-12T11:53:34.601Z",
+  "ownedCleanup": true
+}

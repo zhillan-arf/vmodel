@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "sampleRate": 40000,
+  "seconds": 0.21,
+  "reference": "Exact eager float waveform, same cached real-speech features and explicit seeded noise",
+  "referenceStats": {
+    "rms": 0.04590074416042236,
+    "peak": 0.2025260031223297,
+    "dcMean": 0.00012761260061165694,
+    "spectralBandPowerFraction": {
+      "0-300Hz": 0.1197799902777571,
+      "300-1000Hz": 0.8367493716703014,
+      "1000-4000Hz": 0.03991443255891768,
+      "4000-20001Hz": 0.003556205493023639
+    }
+  },
+  "results": [
+    {
+      "rms": 0.04590059807343637,
+      "peak": 0.202545166015625,
+      "dcMean": 0.00011224292573474702,
+      "spectralBandPowerFraction": {
+        "0-300Hz": 0.11977491032302105,
+        "300-1000Hz": 0.8367563037938586,
+        "1000-4000Hz": 0.03991258462157899,
+        "4000-20001Hz": 0.0035562012615414956
+      },
+      "path": "ops/reports/local/voice/openvino/cpu-f32-converted-window.wav",
+      "sha256": "8443e67b899e7679d0edc79465da50c8737ef248f99b3f8fa3651d734d43af44",
+      "rmseVsReference": 1.7741632353206763e-05,
+      "zeroLagCorrelation": 0.9999999813638549,
+      "spectralConvergence": 0.0003697202952776276,
+      "bestOffsetSamplesWithin2_5ms": 0,
+      "bestOffsetCorrelation": 0.9999999813638549
+    },
+    {
+      "rms": 0.03381151495147734,
+      "peak": 0.142333984375,
+      "dcMean": 0.00018916175478980656,
+      "spectralBandPowerFraction": {
+        "0-300Hz": 0.22848048962680007,
+        "300-1000Hz": 0.7422582954383464,
+        "1000-4000Hz": 0.02555177320995645,
+        "4000-20001Hz": 0.003709441724897364
+      },
+      "path": "ops/reports/local/voice/openvino/gpu-f32-accuracy-converted-window.wav",
+      "sha256": "4d7e30326a3b0a4816e7a6c8ccd28eef0f11453714242916c096b3b8cddebc59",
+      "rmseVsReference": 0.03592003421099381,
+      "zeroLagCorrelation": 0.6314017981620912,
+      "spectralConvergence": 0.5348374750409287,
+      "bestOffsetSamplesWithin2_5ms": 0,
+      "bestOffsetCorrelation": 0.6314017981620912
+    },
+    {
+      "rms": 0.03381151495147734,
+      "peak": 0.142333984375,
+      "dcMean": 0.00018916175478980656,
+      "spectralBandPowerFraction": {
+        "0-300Hz": 0.22848048962680007,
+        "300-1000Hz": 0.7422582954383464,
+        "1000-4000Hz": 0.02555177320995645,
+        "4000-20001Hz": 0.003709441724897364
+      },
+      "path": "ops/reports/local/voice/openvino/gpu-f32-converted-window.wav",
+      "sha256": "4d7e30326a3b0a4816e7a6c8ccd28eef0f11453714242916c096b3b8cddebc59",
+      "rmseVsReference": 0.03592003421099381,
+      "zeroLagCorrelation": 0.6314017981620912,
+      "spectralConvergence": 0.5348374750409287,
+      "bestOffsetSamplesWithin2_5ms": 0,
+      "bestOffsetCorrelation": 0.6314017981620912
+    },
+    {
+      "rms": 0.045900722350651096,
+      "peak": 0.202545166015625,
+      "dcMean": 0.0001122102283296131,
+      "spectralBandPowerFraction": {
+        "0-300Hz": 0.11977616739947676,
+        "300-1000Hz": 0.8367547443529157,
+        "1000-4000Hz": 0.03991283905566377,
+        "4000-20001Hz": 0.003556249191943722
+      },
+      "path": "ops/reports/local/voice/onnx/cpu-converted-window.wav",
+      "sha256": "beb754cfae8cba75198706a002197a8ac75063c6c6dcb5eeaf5c3523c50b489f",
+      "rmseVsReference": 1.7742847776825094e-05,
+      "zeroLagCorrelation": 0.9999999815898705,
+      "spectralConvergence": 0.00036957675558577205,
+      "bestOffsetSamplesWithin2_5ms": 0,
+      "bestOffsetCorrelation": 0.9999999815898705
+    }
+  ],
+  "boundary": "210 ms fixture, stored PCM16 outputs vs float eager reference. Numeric amplitude/correlation/Hann-FFT diagnostics only. Numerical mismatch is not proof of audible failure or intelligibility; listening remains unperformed."
+}

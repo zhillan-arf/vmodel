@@ -1,0 +1,45 @@
+{
+  "resource": "desk-surprised",
+  "previewOnly": true,
+  "sourceFps": 24,
+  "previewFps": 12,
+  "seconds": 3,
+  "frames": 36,
+  "files": [
+    {
+      "file": "ops\\reports\\local\\web-resources\\desk-surprised\\desk-surprised-preview.webm",
+      "bytes": 104984,
+      "sha256": "3767a34ae5f5f7ca3f1dd6424049f71f4c7ef8c660b7feae7219afd61c31f697",
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -v error -y -framerate 12 -start_number 0 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-surprised\\preview-frames\\frame-%04d.png -frames:v 36 -an -vf format=rgba -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 28 -auto-alt-ref 0 -threads 4 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\reports\\local\\web-resources\\desk-surprised\\desk-surprised-preview.webm"
+    },
+    {
+      "file": "ops\\reports\\local\\web-resources\\desk-surprised\\desk-surprised-preview.webp",
+      "bytes": 684170,
+      "sha256": "b55155cc70d3108db12815857e8723c392d328d8c372164d7eafd2c210169f80",
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -v error -y -framerate 12 -start_number 0 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\desk-surprised\\preview-frames\\frame-%04d.png -frames:v 36 -an -vf format=rgba -c:v libwebp_anim -pix_fmt yuva420p -quality 80 -compression_level 4 -loop 0 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\reports\\local\\web-resources\\desk-surprised\\desk-surprised-preview.webp"
+    }
+  ],
+  "webp": {
+    "alpha": true,
+    "animated": true,
+    "loopCount": 0,
+    "width": 480,
+    "height": 480,
+    "frameCount": 36,
+    "durationMs": 2999
+  },
+  "contactSheetPreviewFrames": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    19,
+    20,
+    21,
+    24,
+    28,
+    32,
+    35
+  ]
+}

@@ -1,0 +1,94 @@
+[
+  {
+    "scene": "assets\\work\\ene-web\\source.blend",
+    "sha256": "6c9541fa2fdddd71eb26a8c8fa220fc850356ca146416aa7a4c40b2e1945911a",
+    "reopened": true,
+    "bones": 241,
+    "vertices": 63278,
+    "triangles": 112948,
+    "samples": [
+      {
+        "frame": 1,
+        "leftHandQuaternion": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "blink": 0.0,
+        "evaluatedVertices": 63278,
+        "finite": true
+      },
+      {
+        "frame": 12,
+        "leftHandQuaternion": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "blink": 0.0,
+        "evaluatedVertices": 63278,
+        "finite": true
+      },
+      {
+        "frame": 23,
+        "leftHandQuaternion": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "blink": 0.0,
+        "evaluatedVertices": 63278,
+        "finite": true
+      }
+    ]
+  },
+  {
+    "scene": "assets\\work\\ene-web\\alpha-spike.blend",
+    "sha256": "04353a956f8d5bab53e79dc13f787ba5fa7d91d2b40cab773e380570e9484c79",
+    "reopened": true,
+    "bones": 241,
+    "vertices": 63278,
+    "triangles": 112948,
+    "samples": [
+      {
+        "frame": 1,
+        "leftHandQuaternion": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "blink": 0.0,
+        "evaluatedVertices": 63278,
+        "finite": true
+      },
+      {
+        "frame": 12,
+        "leftHandQuaternion": [
+          0.997605562210083,
+          0.06909579783678055,
+          0.002994179492816329,
+          1.7725869838614017e-07
+        ],
+        "blink": 0.0,
+        "evaluatedVertices": 63278,
+        "finite": true
+      },
+      {
+        "frame": 23,
+        "leftHandQuaternion": [
+          0.9998367428779602,
+          0.018051106482744217,
+          0.0007822219631634653,
+          4.6308393564231665e-08
+        ],
+        "blink": 1.0,
+        "evaluatedVertices": 63278,
+        "finite": true
+      }
+    ]
+  }
+]

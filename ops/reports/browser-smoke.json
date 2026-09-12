@@ -1,0 +1,53 @@
+{
+  "diagnostics": {
+    "stats": {
+      "fps": 59.99400059993999,
+      "inferenceMs": 0,
+      "drawCalls": 49
+    },
+    "meta": {
+      "metaVersion": "1",
+      "name": "Ene — Cyber legs",
+      "version": "0.1.0",
+      "authors": [
+        "yokkaulove (DA) / AuroraYok (user attribution)"
+      ],
+      "copyrightInformation": "Original character: Kagerou Project. Preserve bundled Ene and contributor readmes.",
+      "thirdPartyLicenses": "Local user-authorized conversion. Original model redistribution prohibited. See source package Readmes.",
+      "licenseUrl": "https://vrm.dev/licenses/1.0/",
+      "avatarPermission": "onlySeparatelyLicensedPerson",
+      "allowExcessivelyViolentUsage": false,
+      "allowExcessivelySexualUsage": false,
+      "commercialUsage": "personalNonProfit",
+      "allowPoliticalOrReligiousUsage": false,
+      "allowAntisocialOrHateUsage": false,
+      "creditNotation": "required",
+      "allowRedistribution": false,
+      "modification": "allowModification"
+    },
+    "expressions": [
+      "aa",
+      "angry",
+      "blink",
+      "blinkLeft",
+      "blinkRight",
+      "ee",
+      "happy",
+      "ih",
+      "lookDown",
+      "lookLeft",
+      "lookRight",
+      "lookUp",
+      "neutral",
+      "oh",
+      "ou",
+      "relaxed",
+      "sad",
+      "surprised"
+    ],
+    "status": "Ene is ready. Start your camera when you are."
+  },
+  "errors": [],
+  "messages": [],
+  "externalRequests": []
+}

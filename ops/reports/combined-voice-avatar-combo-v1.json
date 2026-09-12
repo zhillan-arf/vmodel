@@ -1,0 +1,133 @@
+{
+  "date": "2026-09-12T14:02:34.444Z",
+  "runLabel": "combo-v1",
+  "passed": false,
+  "status": "failed",
+  "question": "Does the paced LLVC pipeline still meet every deadline while the avatar renders and tracks, and what does each workload cost the other?",
+  "voiceRunLabel": "combined-combo-v1",
+  "voiceAffinityMask": "F",
+  "voiceTimerResolutionMs": 1,
+  "obsInvolved": false,
+  "physicalMedia": false,
+  "microphoneInvolved": false,
+  "liveAccepted": false,
+  "limits": [
+    "A synthetic combined measurement: a permitted still drives tracking and a licensed file drives the converter.",
+    "No microphone, speaker, WebAudio sink, OBS or physical device, so this is not measured acoustic latency or sync.",
+    "No listening acceptance: numerical completeness is not a quality verdict.",
+    "Thirty seconds of paced voice against a continuously rendering avatar; not a five-minute or thirty-minute soak.",
+    "Ambient system load is recorded, not controlled.",
+    "The avatar is unpinned, as recommended; only the voice inference thread is pinned to performance cores."
+  ],
+  "fixture": {
+    "id": "portrait",
+    "file": "assets/testing/jsc2021e037768_alt.jpg",
+    "sha256": "7a7536821783691d1c7b58f5ee7cb601abbeaaa2f4703e755a15c5dbb4271b78",
+    "credit": "NASA/Josh Valcarcel",
+    "verified": true
+  },
+  "server": {
+    "base": "http://127.0.0.1:64477",
+    "port": 64477,
+    "pid": 23936,
+    "owned": true
+  },
+  "chromeVersion": "152.0.7977.83",
+  "trackingPrepared": {
+    "delegate": "GPU",
+    "workerErrors": [],
+    "present": {
+      "face": true,
+      "pose": true,
+      "hands": false
+    }
+  },
+  "avatarBefore": {
+    "tag": "avatar-alone-before",
+    "draws": 993,
+    "drawsPerSecond": 49.63,
+    "drawIntervalMedianMs": 16.7,
+    "drawIntervalP95Ms": 42.3,
+    "drawIntervalMaxMs": 56.8,
+    "inferences": 134,
+    "inferencesPerSecond": 6.7,
+    "inferenceMedianMs": 153.30000001192093,
+    "inferenceP95Ms": 216.7999999821186,
+    "durationMs": 20007,
+    "workerErrors": [],
+    "overflow": false,
+    "delegate": "GPU"
+  },
+  "avatarDuring": {
+    "tag": "avatar-with-voice",
+    "draws": 1438,
+    "drawsPerSecond": 47.91,
+    "drawIntervalMedianMs": 16.9,
+    "drawIntervalP95Ms": 43.3,
+    "drawIntervalMaxMs": 63.8,
+    "inferences": 194,
+    "inferencesPerSecond": 6.46,
+    "inferenceMedianMs": 147.40000000596046,
+    "inferenceP95Ms": 215.2000000178814,
+    "durationMs": 30016.8,
+    "workerErrors": [],
+    "overflow": false,
+    "delegate": "GPU"
+  },
+  "voiceProcess": {
+    "ok": false,
+    "stderr": ""
+  },
+  "avatarAfter": {
+    "tag": "avatar-alone-after",
+    "draws": 975,
+    "drawsPerSecond": 48.71,
+    "drawIntervalMedianMs": 16.9,
+    "drawIntervalP95Ms": 42,
+    "drawIntervalMaxMs": 58.7,
+    "inferences": 134,
+    "inferencesPerSecond": 6.69,
+    "inferenceMedianMs": 145.5,
+    "inferenceP95Ms": 208.90000000596046,
+    "durationMs": 20018.3,
+    "workerErrors": [],
+    "overflow": false,
+    "delegate": "GPU"
+  },
+  "voiceReport": "ops\\reports\\llvc-paced-combined-combo-v1.json",
+  "voice": {
+    "passed": false,
+    "status": "failed",
+    "failure": {
+      "stage": "ingress",
+      "type": "Full",
+      "message": "",
+      "atMs": 145.19849998760037
+    },
+    "forwardCallCount": 1,
+    "expectedNeuralCalls": 577,
+    "computeDeadlineMisses": 1,
+    "medianMs": 122.3689,
+    "p95Ms": 122.3689,
+    "maxMs": 122.3689,
+    "computeRtf": 0.004078963333333333,
+    "consumedInputPackets": 4,
+    "expectedInputPackets": 1875,
+    "inputHighWaterPackets": 4,
+    "modeledSignalStartEstimateMs": null,
+    "software350msBudgetMet": false,
+    "completedWithoutLoss": false
+  },
+  "comparison": {
+    "avatarDrawsBefore": 49.63,
+    "avatarDrawsDuring": 47.91,
+    "avatarDrawsAfter": 48.71,
+    "avatarDrawRetention": 0.965,
+    "avatarInferenceRetention": 0.964,
+    "avatarRecovered": true,
+    "voicePassedUnderCombinedLoad": false,
+    "voiceDeadlineMisses": 1,
+    "bothSubsystemsHealthy": false
+  },
+  "pageErrors": []
+}

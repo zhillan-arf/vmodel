@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-12T12:29:10.079Z",
+  "passed": true,
+  "receivers": [
+    {
+      "kind": "converted",
+      "reconnectedWithoutNavigation": true,
+      "freshEpoch": true,
+      "mutedWithoutProducer": true,
+      "oneMockAudioContext": true,
+      "outputOnlySockets": 2,
+      "replacedIdentityStopsRetries": true
+    },
+    {
+      "kind": "natural",
+      "reconnectedWithoutNavigation": true,
+      "freshEpoch": true,
+      "mutedWithoutProducer": true,
+      "oneMockAudioContext": true,
+      "outputOnlySockets": 2,
+      "replacedIdentityStopsRetries": true
+    }
+  ],
+  "physicalMicrophoneRequests": 0,
+  "nativeAudioContextsOpened": 0,
+  "producerActivated": false,
+  "OBSContacted": false,
+  "monitoringOrRecordingStarted": false,
+  "browserErrors": [],
+  "externalRequests": [],
+  "boundary": "Real local WebSockets and an owned service restart, with mocked Web Audio. No physical media, neural inference, audio playback/quality or live latency acceptance."
+}

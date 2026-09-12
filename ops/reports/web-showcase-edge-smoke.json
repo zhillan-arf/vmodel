@@ -1,0 +1,72 @@
+{
+  "draft": false,
+  "engine": "edge",
+  "base": "http://127.0.0.1:4180",
+  "startedAt": "2026-09-12T10:56:29.821Z",
+  "cases": [
+    {
+      "name": "initial-selected-only",
+      "pass": true,
+      "format": "webm",
+      "requests": [
+        "/ene/manifest.json",
+        "/ene/home-greeting/large-poster.webp",
+        "/ene/alpha-probe.webm",
+        "/ene/home-greeting/large.webm"
+      ]
+    },
+    {
+      "name": "controls-pause-switch-offscreen-replay",
+      "pass": true,
+      "visibilityEvent": "synthetic",
+      "offscreen": "real scroll + IntersectionObserver"
+    },
+    {
+      "name": "reduced-motion-mobile-explicit-play",
+      "pass": true,
+      "viewport": "390x844"
+    },
+    {
+      "name": "failed-alpha-animated-webp-and-poster-pause",
+      "pass": true
+    },
+    {
+      "name": "data-saving-poster-default",
+      "pass": true,
+      "preference": "simulated navigator.connection.saveData"
+    },
+    {
+      "name": "missing-animation-usable-poster",
+      "pass": true
+    },
+    {
+      "name": "missing-manifest-explained-reload",
+      "pass": true
+    },
+    {
+      "name": "png-poster-fallback",
+      "pass": true
+    },
+    {
+      "name": "retain-still-through-delayed-or-missing-state",
+      "pass": true
+    },
+    {
+      "name": "rejected-autoplay-explicit-retry",
+      "pass": true,
+      "policy": "simulated NotAllowedError on actual animation video"
+    },
+    {
+      "name": "cancelled-pending-play-resumes-onscreen",
+      "pass": true,
+      "promiseTiming": "controlled AbortError; actual video and IntersectionObserver"
+    }
+  ],
+  "externalRequests": [],
+  "pageErrors": [],
+  "testsPhysicalDevices": false,
+  "finalFamilies": [],
+  "browser": "152.0.4191.66",
+  "pass": true,
+  "finishedAt": "2026-09-12T10:56:53.717Z"
+}

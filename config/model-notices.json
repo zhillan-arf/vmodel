@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "auditedOn": "2026-09-12",
+  "report": "ops/reports/model-notices.md",
+  "license": "Apache-2.0",
+  "licenseText": "config/notices/Apache-2.0.txt",
+  "licenseTextSource": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+  "attribution": "MediaPipe model authors at Google. Model-author lists and recommended research citations are provided in the linked publisher model cards.",
+  "verificationBasis": "Explicit model-card licenses linked by the official model download tables; upstream /latest/ and pinned /1/ MD5, ETag and lengths match the local files on the audit date. SHA-256 values were independently recomputed locally, not obtained from a publisher SHA-256 list.",
+  "modifications": "None to the downloaded task bundles.",
+  "packaging": "Include the Apache-2.0 text and this attribution/provenance inventory with redistributed model files. Preserve any upstream notices supplied with a future model revision and identify modifications. The Ene character and any future voice model have separate terms.",
+  "models": [
+    {
+      "name": "face_landmarker.task",
+      "url": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task",
+      "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+      "bytes": 3758596,
+      "publisherMd5": "b0e7274907a1644404fef66b28dd6d85",
+      "overview": "https://developers.google.com/edge/mediapipe/solutions/vision/face_landmarker#models",
+      "modelCards": [
+        {
+          "name": "MediaPipe BlazeFace Model Card (Short Range)",
+          "url": "https://storage.googleapis.com/mediapipe-assets/MediaPipe%20BlazeFace%20Model%20Card%20%28Short%20Range%29.pdf",
+          "licensePage": 1
+        },
+        {
+          "name": "MediaPipe Face Mesh V2",
+          "url": "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20MediaPipe%20Face%20Mesh%20V2.pdf",
+          "licensePage": 1
+        },
+        {
+          "name": "Blendshape V2",
+          "url": "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20Blendshape%20V2.pdf",
+          "licensePage": 1
+        }
+      ],
+      "auxiliaryMetadataSource": "https://github.com/google-ai-edge/mediapipe/blob/master/mediapipe/tasks/cc/vision/face_geometry/data/geometry_pipeline_metadata_landmarks.pbtxt"
+    },
+    {
+      "name": "pose_landmarker_lite.task",
+      "url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task",
+      "sha256": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a",
+      "bytes": 5777746,
+      "publisherMd5": "04a75ddf7c811ac7a1a4523266dd7d88",
+      "overview": "https://developers.google.com/edge/mediapipe/solutions/vision/pose_landmarker#models",
+      "modelCards": [
+        {
+          "name": "BlazePose GHUM 3D, linked from the Lite model row",
+          "url": "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20BlazePose%20GHUM%203D.pdf",
+          "licensePage": 2
+        }
+      ]
+    },
+    {
+      "name": "hand_landmarker.task",
+      "url": "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
+      "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1",
+      "bytes": 7819105,
+      "publisherMd5": "15318430ea3851670fe9914116a9cfad",
+      "overview": "https://developers.google.com/edge/mediapipe/solutions/vision/hand_landmarker#models",
+      "modelCards": [
+        {
+          "name": "Hand Tracking (Lite/Full), October 2021",
+          "url": "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20Hand%20Tracking%20%28Lite_Full%29%20with%20Fairness%20Oct%202021.pdf",
+          "licensePage": 2
+        }
+      ]
+    }
+  ]
+}

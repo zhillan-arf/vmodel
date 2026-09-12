@@ -1,0 +1,6 @@
+# Optional isolated ONNX/DirectML probe; does not modify the CPU baseline.
+# Keep the first available pinned DirectML release on the tested 1.23 line.
+onnxruntime-directml==1.23.0
+numpy==1.26.4
+scipy==1.15.3
+soundfile==0.14.0

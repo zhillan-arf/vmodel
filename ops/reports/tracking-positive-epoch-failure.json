@@ -1,0 +1,176 @@
+{
+  "date": "2026-09-12T10:08:06.984Z",
+  "input": "Two NASA-credited real-person photos, repeated as still frames. Ordinary canvas resizing/letterboxing and one stated upper-body crop only. No camera, image generation, identity/sensitive-trait analysis, training, public redistribution or movement test.",
+  "terms": {
+    "source": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "basis": "NASA permits factual informational uses subject to its media guidelines. Files and technical outputs are private test artifacts, imply no NASA endorsement, and are not used as promotional imagery. Photographs retain their publisher content; models are only run for inference, not trained."
+  },
+  "fixtures": [
+    {
+      "id": "portrait",
+      "file": "assets/testing/jsc2021e037768_alt.jpg",
+      "sha256": "7a7536821783691d1c7b58f5ee7cb601abbeaaa2f4703e755a15c5dbb4271b78",
+      "url": "https://images-assets.nasa.gov/image/jsc2021e037768_alt/jsc2021e037768_alt~orig.jpg",
+      "metadata": "https://images-api.nasa.gov/search?nasa_id=jsc2021e037768_alt",
+      "sourcePage": "https://www.nasa.gov/image-article/spacex-crew-4-mission-specialist-jessica-watkins/",
+      "credit": "NASA/Josh Valcarcel",
+      "usage": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "bytes": 1634876
+    },
+    {
+      "id": "full-body",
+      "file": "assets/testing/jsc2026e002116.jpg",
+      "sha256": "194f6ba51f7bdeb090c9a47e7ab69d3fa191fbb6240cd4b6f118a215bc27caf0",
+      "url": "https://images-assets.nasa.gov/image/jsc2026e002116/jsc2026e002116~medium.jpg",
+      "metadata": "https://images-api.nasa.gov/search?nasa_id=jsc2026e002116",
+      "sourcePage": "https://images.nasa.gov/details/jsc2026e002116",
+      "credit": "NASA/Robert Markowitz",
+      "usage": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "bytes": 122603
+    }
+  ],
+  "variants": [
+    {
+      "id": "portrait-full",
+      "fixture": "portrait"
+    },
+    {
+      "id": "body-full",
+      "fixture": "full-body"
+    },
+    {
+      "id": "body-upper-crop",
+      "fixture": "full-body",
+      "crop": {
+        "x": 130,
+        "y": 60,
+        "width": 670,
+        "height": 690
+      }
+    }
+  ],
+  "results": [],
+  "errors": [
+    "Error: page.evaluate: Error: Error: Encountered multiple errors: INVALID_ARGUMENT: Graph has errors: \nPacket timestamp mismatch on a calculator receiving from stream \"free_memory\". Current minimum expected timestamp is 2147483647001 but received 2147483647000. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.; Adding proto packet of type mediapipe.NormalizedRect to stream norm_rect was not ok\n=== Source Location Trace: ===\nthird_party/mediapipe/framework/input_stream_manager.cc:159\n, INVALID_ARGUMENT: CalculatorGraph::Run() failed: \nPacket timestamp mismatch on a calculator receiving from stream \"free_memory\". Current minimum expected timestamp is 2147483647001 but received 2147483647000. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.; WaitUntilIdle failed\n=== Source Location Trace: ===\nthird_party/mediapipe/framework/input_stream_manager.cc:159\nresearch/drishti/app/pursuit/wasm/graph_utils.cc:196\n\n    at Worker.receive (eval at evaluate (:311:30), <anonymous>:5:83)"
+  ],
+  "messages": [
+    {
+      "type": "warning",
+      "text": "W0912 10:08:08.700000 2196592 face_landmarker_graph.cc:180] Sets FaceBlendshapesGraph acceleration to xnnpack by default."
+    },
+    {
+      "type": "log",
+      "text": "I0912 10:08:08.780999 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:08:08.784999 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+    },
+    {
+      "type": "log",
+      "text": "Graph successfully started running."
+    },
+    {
+      "type": "log",
+      "text": "I0912 10:08:09.139000 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:08:09.140000 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+    },
+    {
+      "type": "log",
+      "text": "Graph successfully started running."
+    },
+    {
+      "type": "log",
+      "text": "I0912 10:08:09.372999 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:08:09.374000 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+    },
+    {
+      "type": "log",
+      "text": "Graph successfully started running."
+    },
+    {
+      "type": "error",
+      "text": "INFO: Created TensorFlow Lite XNNPACK delegate for CPU."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:08:24.652000 2196592 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 10:08:28.444999 2196592 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX."
+    },
+    {
+      "type": "error",
+      "text": "E0912 10:08:28.740000 2196592 gl_graph_runner_internal_image.cc:68] Adding Image to stream image_in was not ok: INVALID_ARGUMENT: Graph has errors: \nPacket timestamp mismatch on a calculator receiving from stream \"free_memory\". Current minimum expected timestamp is 2147483647001 but received 2147483647000. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment. [type.googleapis.com/mediapipe.StatusList='status { code: 3 message: \"Packet timestamp mismatch on a calculator receiving from stream \\\"free_memory\\\". Current minimum expected timestamp is 2147483647001 but received 2147483647000. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.\" }']\n=== Source Location Trace: ===\nthird_party/mediapipe/framework/input_stream_manager.cc:159"
+    },
+    {
+      "type": "error",
+      "text": "E0912 10:08:28.751000 2196592 calculator_graph.cc:945] INVALID_ARGUMENT: CalculatorGraph::Run() failed: \nPacket timestamp mismatch on a calculator receiving from stream \"free_memory\". Current minimum expected timestamp is 2147483647001 but received 2147483647000. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.\n=== Source Location Trace: ===\nthird_party/mediapipe/framework/input_stream_manager.cc:159"
+    }
+  ],
+  "externalRequests": [],
+  "externalResponses": [],
+  "runtimeResponses": [
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.js?task=face-GPU",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.wasm",
+      "status": 200
+    },
+    {
+      "path": "/runtime/face_landmarker.task",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.js?task=pose-GPU",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.wasm",
+      "status": 200
+    },
+    {
+      "path": "/runtime/pose_landmarker_lite.task",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.js?task=hands-GPU",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.wasm",
+      "status": 200
+    },
+    {
+      "path": "/runtime/hand_landmarker.task",
+      "status": 200
+    }
+  ],
+  "worker": {
+    "path": "/assets/tracking.worker-CssJ7G00.js",
+    "sha256": "9f7cc66943114fc084e9384158b93302f415bd40a083d6331dd5ba399c6e64e8"
+  },
+  "sdk": "1.0.1",
+  "server": {
+    "base": "http://127.0.0.1:49711",
+    "pid": 25632,
+    "isolated": true
+  },
+  "chromeVersion": "152.0.7977.83",
+  "passed": false,
+  "browserClosed": true,
+  "serverExit": {
+    "code": null,
+    "signal": "SIGTERM"
+  },
+  "serverStopped": true
+}

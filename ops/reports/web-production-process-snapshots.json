@@ -1,0 +1,74 @@
+{
+  "scope": "Read-only owned Blender process snapshots; observed OS peak at snapshot time, not a continuous whole-batch peak sampler.",
+  "samples": [
+    {
+      "date": "2026-09-12T10:38:27Z",
+      "renderCheckpoint": {
+        "resource": "desk-normal",
+        "frame": 61,
+        "seconds": 4.515458999987459
+      },
+      "processes": [
+        {
+          "Id": 21648,
+          "WorkingSet64": 2316582912,
+          "PrivateMemorySize64": 2385932288,
+          "PeakWorkingSet64": 2373337088,
+          "CPU": 212.765625
+        }
+      ]
+    },
+    {
+      "date": "2026-09-12T10:44:44Z",
+      "renderCheckpoint": {
+        "resource": "desk-confused",
+        "frame": 72,
+        "seconds": 3.1423585999873467
+      },
+      "processes": [
+        {
+          "Id": 24848,
+          "WorkingSet64": 165818368,
+          "PrivateMemorySize64": 252919808,
+          "PeakWorkingSet64": 165818368,
+          "CPU": 2.40625
+        }
+      ]
+    },
+    {
+      "date": "2026-09-12T10:48:57Z",
+      "batchCheckpoint": {
+        "state": "running",
+        "selected": [
+          "home-greeting",
+          "desk-normal",
+          "desk-confused",
+          "desk-surprised",
+          "desk-excited"
+        ],
+        "completed": [
+          "home-greeting",
+          "desk-normal",
+          "desk-confused"
+        ],
+        "startedUtc": "2026-09-12T10:28:24Z",
+        "resource": "desk-surprised",
+        "stage": "render"
+      },
+      "renderCheckpoint": {
+        "resource": "desk-surprised",
+        "frame": 69,
+        "seconds": 3.8081408999860287
+      },
+      "processes": [
+        {
+          "Id": 24848,
+          "WorkingSet64": 2335051776,
+          "PrivateMemorySize64": 2438926336,
+          "PeakWorkingSet64": 2372968448,
+          "CPU": 247.796875
+        }
+      ]
+    }
+  ]
+}

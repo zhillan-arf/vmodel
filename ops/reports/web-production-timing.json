@@ -1,0 +1,37 @@
+{
+  "mode": "timing-spike",
+  "state": "complete",
+  "resources": [
+    {
+      "resource": "home-greeting",
+      "index": "assets/work/ene-web/home-greeting/masters/6b08cda64e40155eb074/index.json",
+      "cachedFrames": 2,
+      "frameCount": 120,
+      "state": "partial",
+      "frameRenderSeconds": [
+        9.038146199978655,
+        3.146335800003726
+      ]
+    },
+    {
+      "resource": "desk-normal",
+      "index": "assets/work/ene-web/desk-normal/masters/a021ba16d9c562bb3f68/index.json",
+      "cachedFrames": 2,
+      "frameCount": 72,
+      "state": "partial",
+      "frameRenderSeconds": [
+        4.769787899975199,
+        3.7833531000069343
+      ]
+    }
+  ],
+  "framesRendered": 4,
+  "pauseFile": "assets/work/ene-web/production.pause",
+  "cpuThreads": 4,
+  "lastFrame": {
+    "resource": "desk-normal",
+    "frame": 37,
+    "seconds": 3.7833531000069343
+  },
+  "elapsedSeconds": 24.671323100017617
+}

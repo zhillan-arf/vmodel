@@ -1,0 +1,194 @@
+{
+  "resource": "desk-excited",
+  "mode": "preview",
+  "sourceFps": 24,
+  "previewFps": 12,
+  "size": [
+    480,
+    480
+  ],
+  "frames": [
+    {
+      "sourceFrame": 1,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0000.png",
+      "seconds": 2.316071200009901
+    },
+    {
+      "sourceFrame": 3,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0001.png",
+      "seconds": 1.4505227000045124
+    },
+    {
+      "sourceFrame": 5,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0002.png",
+      "seconds": 1.4685553000017535
+    },
+    {
+      "sourceFrame": 7,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0003.png",
+      "seconds": 1.3936662999913096
+    },
+    {
+      "sourceFrame": 9,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0004.png",
+      "seconds": 1.3968458000163082
+    },
+    {
+      "sourceFrame": 11,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0005.png",
+      "seconds": 1.3852342999889515
+    },
+    {
+      "sourceFrame": 13,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0006.png",
+      "seconds": 1.3843204000149854
+    },
+    {
+      "sourceFrame": 15,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0007.png",
+      "seconds": 1.4006769000261556
+    },
+    {
+      "sourceFrame": 17,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0008.png",
+      "seconds": 1.3766512000001967
+    },
+    {
+      "sourceFrame": 19,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0009.png",
+      "seconds": 1.3817675999889616
+    },
+    {
+      "sourceFrame": 21,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0010.png",
+      "seconds": 1.4133663999964483
+    },
+    {
+      "sourceFrame": 23,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0011.png",
+      "seconds": 1.3957185999897774
+    },
+    {
+      "sourceFrame": 25,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0012.png",
+      "seconds": 1.3665588000149
+    },
+    {
+      "sourceFrame": 27,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0013.png",
+      "seconds": 1.4075901999894995
+    },
+    {
+      "sourceFrame": 29,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0014.png",
+      "seconds": 1.3777594999992289
+    },
+    {
+      "sourceFrame": 31,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0015.png",
+      "seconds": 1.4183182000124361
+    },
+    {
+      "sourceFrame": 33,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0016.png",
+      "seconds": 1.5295050000131596
+    },
+    {
+      "sourceFrame": 35,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0017.png",
+      "seconds": 1.566826399997808
+    },
+    {
+      "sourceFrame": 37,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0018.png",
+      "seconds": 1.6829457999847364
+    },
+    {
+      "sourceFrame": 39,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0019.png",
+      "seconds": 1.7771868999989238
+    },
+    {
+      "sourceFrame": 41,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0020.png",
+      "seconds": 1.6764452000206802
+    },
+    {
+      "sourceFrame": 43,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0021.png",
+      "seconds": 1.7894854999904055
+    },
+    {
+      "sourceFrame": 45,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0022.png",
+      "seconds": 1.7282847999886144
+    },
+    {
+      "sourceFrame": 47,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0023.png",
+      "seconds": 1.717772000003606
+    },
+    {
+      "sourceFrame": 49,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0024.png",
+      "seconds": 1.7084111000003759
+    },
+    {
+      "sourceFrame": 51,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0025.png",
+      "seconds": 1.6779203999903984
+    },
+    {
+      "sourceFrame": 53,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0026.png",
+      "seconds": 1.7637273000145797
+    },
+    {
+      "sourceFrame": 55,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0027.png",
+      "seconds": 1.6745911999896634
+    },
+    {
+      "sourceFrame": 57,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0028.png",
+      "seconds": 1.670671100000618
+    },
+    {
+      "sourceFrame": 59,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0029.png",
+      "seconds": 1.650117399985902
+    },
+    {
+      "sourceFrame": 61,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0030.png",
+      "seconds": 1.7389039999980014
+    },
+    {
+      "sourceFrame": 63,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0031.png",
+      "seconds": 1.6223968999984208
+    },
+    {
+      "sourceFrame": 65,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0032.png",
+      "seconds": 1.6437604999809992
+    },
+    {
+      "sourceFrame": 67,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0033.png",
+      "seconds": 1.6763334999850485
+    },
+    {
+      "sourceFrame": 69,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0034.png",
+      "seconds": 1.663000100001227
+    },
+    {
+      "sourceFrame": 71,
+      "file": "assets\\work\\ene-web\\desk-excited\\preview-frames\\frame-0035.png",
+      "seconds": 1.6656491000030655
+    }
+  ],
+  "elapsedSeconds": 57.079616600007284,
+  "scene": "assets/work/ene-web/desk-excited.blend"
+}

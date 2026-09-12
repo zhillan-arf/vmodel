@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ene rendered resource manifest",
+  "type": "object",
+  "required": ["schemaVersion", "character", "credits", "probes", "resources"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "character": {"type": "object", "required": ["id", "variant", "sourceRevision"], "properties": {"id": {"const": "ene"}, "variant": {"const": "cyber-legs"}, "sourceRevision": {"type": "string"}}},
+    "credits": {"type": "array", "items": {"type": "object", "required": ["name", "url"], "properties": {"name": {"type": "string"}, "url": {"type": "string"}}}},
+    "probes": {"type": "object", "required": ["webmAlpha"], "properties": {"webmAlpha": {"allOf": [{"$ref": "#/$defs/asset"}, {"type": "object", "required": ["transparentPixel", "opaquePixel"], "properties": {"transparentPixel": {"const": [0,0]}, "opaquePixel": {"const": [24,24]}}}]}}},
+    "resources": {"type": "object", "required": ["home-greeting", "desk-normal", "desk-confused", "desk-surprised", "desk-excited"], "additionalProperties": false, "properties": {"home-greeting": {"$ref": "#/$defs/resource"}, "desk-normal": {"$ref": "#/$defs/resource"}, "desk-confused": {"$ref": "#/$defs/resource"}, "desk-surprised": {"$ref": "#/$defs/resource"}, "desk-excited": {"$ref": "#/$defs/resource"}}}
+  },
+  "$defs": {
+    "asset": {"type": "object", "required": ["url", "mime", "codec", "width", "height", "bytes", "sha256"], "properties": {"url": {"type": "string", "description": "Relative to the manifest's directory; no private source paths"}, "mime": {"type": "string"}, "codec": {"type": "string"}, "width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1}, "bytes": {"type": "integer", "minimum": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "durationSeconds": {"type": "number", "exclusiveMinimum": 0}, "frameCount": {"type": "integer", "minimum": 1}, "fps": {"type": "number", "exclusiveMinimum": 0}}},
+    "size": {"type": "object", "required": ["width", "height"], "properties": {"width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1}}},
+    "region": {"type": "object", "required": ["x", "y", "width", "height"], "description": "Normalized image coordinates with origin at top-left", "properties": {"x": {"type": "number", "minimum": 0, "maximum": 1}, "y": {"type": "number", "minimum": 0, "maximum": 1}, "width": {"type": "number", "minimum": 0, "maximum": 1}, "height": {"type": "number", "minimum": 0, "maximum": 1}}},
+    "rendition": {"allOf": [{"$ref": "#/$defs/size"}, {"type": "object", "required": ["webm", "webp"], "properties": {"webm": {"$ref": "#/$defs/asset"}, "webp": {"$ref": "#/$defs/asset"}}}]},
+    "posters": {"type": "object", "required": ["webp", "png"], "properties": {"webp": {"$ref": "#/$defs/asset"}, "png": {"$ref": "#/$defs/asset"}}},
+    "resource": {"type": "object", "required": ["label", "durationSeconds", "fps", "frameCount", "loop", "renderSize", "bounds", "anchor", "safeRegion", "renditions", "posters"], "properties": {"label": {"type": "string"}, "durationSeconds": {"type": "number", "exclusiveMinimum": 0}, "fps": {"const": 24}, "frameCount": {"type": "integer", "minimum": 1}, "loop": {"const": true}, "renderSize": {"$ref": "#/$defs/size"}, "bounds": {"$ref": "#/$defs/region"}, "safeRegion": {"$ref": "#/$defs/region"}, "anchor": {"type": "object", "required": ["kind", "x", "y"], "properties": {"kind": {"enum": ["foot", "desk"]}, "x": {"type": "number", "minimum": 0, "maximum": 1}, "y": {"type": "number", "minimum": 0, "maximum": 1}}}, "renditions": {"type": "object", "required": ["small", "large"], "properties": {"small": {"$ref": "#/$defs/rendition"}, "large": {"$ref": "#/$defs/rendition"}}}, "posters": {"type": "object", "required": ["small", "large"], "properties": {"small": {"$ref": "#/$defs/posters"}, "large": {"$ref": "#/$defs/posters"}}}}}
+  }
+}

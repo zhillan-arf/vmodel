@@ -1,0 +1,24 @@
+{
+  "resource": "desk-surprised",
+  "mode": "stills",
+  "sourceFps": 24,
+  "previewFps": null,
+  "size": [
+    480,
+    480
+  ],
+  "frames": [
+    {
+      "sourceFrame": 1,
+      "file": "ops\\reports\\local\\web-resources\\desk-surprised\\poses\\frame-0001.png",
+      "seconds": 2.5194024000084028
+    },
+    {
+      "sourceFrame": 40,
+      "file": "ops\\reports\\local\\web-resources\\desk-surprised\\poses\\frame-0040.png",
+      "seconds": 1.5213129999756347
+    }
+  ],
+  "elapsedSeconds": 4.047363699995913,
+  "scene": "assets/work/ene-web/desk-surprised.blend"
+}

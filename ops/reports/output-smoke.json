@@ -1,0 +1,459 @@
+{
+  "date": "2026-09-12T08:44:38.751Z",
+  "base": "http://127.0.0.1:4173/",
+  "input": "Synthetic camera plus injected tracking frames; production build and actual Ene VRM. Render samples are headless observations under concurrent local work, not real gesture/OBS performance acceptance.",
+  "checks": {
+    "portrait": {
+      "width": 720,
+      "height": 1280,
+      "cssWidth": 720,
+      "cssHeight": 1280,
+      "aspect": 0.5625,
+      "state": {
+        "avatarId": "3657b97928638e7ada5f6639141fb63f555912049a2c6ec217851001e322cbcb",
+        "settings": {
+          "version": 1,
+          "mode": "seated",
+          "quality": "balanced",
+          "framing": "body",
+          "orientation": "portrait",
+          "background": "#00ff00",
+          "mirror": true,
+          "hands": true,
+          "smoothing": 14,
+          "springMotion": "gentle",
+          "captureResolution": "640x480",
+          "zoom": 0.95,
+          "headRange": 1,
+          "mouthGain": 1.8
+        },
+        "calibration": {
+          "version": 1,
+          "head": [
+            0,
+            0.1246747333852277,
+            0,
+            0.9921976672293291
+          ],
+          "root": [
+            0.5,
+            -0.5,
+            0
+          ]
+        },
+        "expression": "happy"
+      },
+      "happy": 0.7499999999989557,
+      "cameraRequests": 0,
+      "videoCount": 0,
+      "controls": 0
+    },
+    "landscape": {
+      "width": 1280,
+      "height": 720,
+      "cssWidth": 1280,
+      "cssHeight": 720,
+      "aspect": 1.7777777777777777,
+      "state": {
+        "avatarId": "3657b97928638e7ada5f6639141fb63f555912049a2c6ec217851001e322cbcb",
+        "settings": {
+          "version": 1,
+          "mode": "seated",
+          "quality": "balanced",
+          "framing": "body",
+          "orientation": "landscape",
+          "background": "#00ff00",
+          "mirror": true,
+          "hands": true,
+          "smoothing": 14,
+          "springMotion": "gentle",
+          "captureResolution": "640x480",
+          "zoom": 0.95,
+          "headRange": 1,
+          "mouthGain": 1.8
+        },
+        "calibration": {
+          "version": 1,
+          "head": [
+            0,
+            0.1246747333852277,
+            0,
+            0.9921976672293291
+          ],
+          "root": [
+            0.5,
+            -0.5,
+            0
+          ]
+        },
+        "expression": "happy"
+      },
+      "happy": 0.7499999999999496,
+      "cameraRequests": 0,
+      "videoCount": 0,
+      "controls": 0
+    },
+    "resizeKeepsComposition": true,
+    "outputReloadRestoresCalibration": true,
+    "reopenSharesSingleCamera": true,
+    "controllerRestartRestoresScopedCalibration": true,
+    "cleanContainsNoControls": true,
+    "cleanSpaceStopsCamera": true,
+    "escapeReturnsControls": true,
+    "resetClearsSavedCalibration": true
+  },
+  "measurements": {
+    "dualControl": [
+      {
+        "fps": 59.99400059993999,
+        "inferenceMs": 1,
+        "sequence": 100062,
+        "samples": {
+          "face": {
+            "timestamp": 1789202663886.2,
+            "inferenceMs": 1,
+            "present": true
+          },
+          "pose": {
+            "timestamp": 1789202663886.2,
+            "inferenceMs": 1,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202663886.2,
+            "inferenceMs": 1,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      },
+      {
+        "fps": 60.00983767830792,
+        "inferenceMs": 1,
+        "sequence": 100126,
+        "samples": {
+          "face": {
+            "timestamp": 1789202664908.9,
+            "inferenceMs": 1,
+            "present": true
+          },
+          "pose": {
+            "timestamp": 1789202664908.9,
+            "inferenceMs": 1,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202664908.9,
+            "inferenceMs": 1,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      },
+      {
+        "fps": 59.98200539838053,
+        "inferenceMs": 1,
+        "sequence": 100189,
+        "samples": {
+          "face": {
+            "timestamp": 1789202665916.0999,
+            "inferenceMs": 1,
+            "present": true
+          },
+          "pose": {
+            "timestamp": 1789202665916.0999,
+            "inferenceMs": 1,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202665916.0999,
+            "inferenceMs": 1,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      },
+      {
+        "fps": 60.00393468424157,
+        "inferenceMs": 92.80000001192093,
+        "sequence": 77,
+        "samples": {
+          "face": {
+            "timestamp": 1789202666832.2,
+            "inferenceMs": 41.599999994039536,
+            "present": false
+          },
+          "pose": {
+            "timestamp": 1789202666832.2,
+            "inferenceMs": 26,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202666832.2,
+            "inferenceMs": 25.200000017881393,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      },
+      {
+        "fps": 60.00393468424157,
+        "inferenceMs": 1,
+        "sequence": 100315,
+        "samples": {
+          "face": {
+            "timestamp": 1789202667939,
+            "inferenceMs": 1,
+            "present": true
+          },
+          "pose": {
+            "timestamp": 1789202667939,
+            "inferenceMs": 1,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202667939,
+            "inferenceMs": 1,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      }
+    ],
+    "dualOutput": [
+      {
+        "fps": 60.00983767830792,
+        "inferenceMs": 11.400000005960464,
+        "sequence": 106,
+        "samples": {
+          "face": {
+            "timestamp": 1789202668931.0999,
+            "inferenceMs": 11.400000005960464,
+            "present": false
+          },
+          "pose": {
+            "timestamp": 1789202668866.3,
+            "inferenceMs": 23.5,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202668866.3,
+            "inferenceMs": 21.599999994039536,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      },
+      {
+        "fps": 59.99400059993999,
+        "inferenceMs": 1,
+        "sequence": 100441,
+        "samples": {
+          "face": {
+            "timestamp": 1789202669949.2,
+            "inferenceMs": 1,
+            "present": true
+          },
+          "pose": {
+            "timestamp": 1789202669949.2,
+            "inferenceMs": 1,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202669949.2,
+            "inferenceMs": 1,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      },
+      {
+        "fps": 59.994000599940094,
+        "inferenceMs": 1,
+        "sequence": 100503,
+        "samples": {
+          "face": {
+            "timestamp": 1789202670940.5,
+            "inferenceMs": 1,
+            "present": true
+          },
+          "pose": {
+            "timestamp": 1789202670940.5,
+            "inferenceMs": 1,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202670940.5,
+            "inferenceMs": 1,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      },
+      {
+        "fps": 60.01574183392356,
+        "inferenceMs": 1,
+        "sequence": 100566,
+        "samples": {
+          "face": {
+            "timestamp": 1789202671951.3,
+            "inferenceMs": 1,
+            "present": true
+          },
+          "pose": {
+            "timestamp": 1789202671951.3,
+            "inferenceMs": 1,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202671951.3,
+            "inferenceMs": 1,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      },
+      {
+        "fps": 59.994000599940094,
+        "inferenceMs": 1,
+        "sequence": 100629,
+        "samples": {
+          "face": {
+            "timestamp": 1789202672956.5999,
+            "inferenceMs": 1,
+            "present": true
+          },
+          "pose": {
+            "timestamp": 1789202672956.5999,
+            "inferenceMs": 1,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202672956.5999,
+            "inferenceMs": 1,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      }
+    ],
+    "singleClean": [
+      {
+        "fps": 51.150895140665035,
+        "inferenceMs": 9.799999982118607,
+        "sequence": 180,
+        "samples": {
+          "face": {
+            "timestamp": 1789202674514.4,
+            "inferenceMs": 9.799999982118607,
+            "present": false
+          },
+          "pose": {
+            "timestamp": 1789202674449,
+            "inferenceMs": 25.700000017881393,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202674449,
+            "inferenceMs": 21.299999982118607,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      },
+      {
+        "fps": 59.99803285138188,
+        "inferenceMs": 1,
+        "sequence": 100781,
+        "samples": {
+          "face": {
+            "timestamp": 1789202675532.5,
+            "inferenceMs": 1,
+            "present": true
+          },
+          "pose": {
+            "timestamp": 1789202675532.5,
+            "inferenceMs": 1,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202675532.5,
+            "inferenceMs": 1,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      },
+      {
+        "fps": 59.98200539838053,
+        "inferenceMs": 1,
+        "sequence": 100844,
+        "samples": {
+          "face": {
+            "timestamp": 1789202676539.9,
+            "inferenceMs": 1,
+            "present": true
+          },
+          "pose": {
+            "timestamp": 1789202676539.9,
+            "inferenceMs": 1,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202676539.9,
+            "inferenceMs": 1,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      },
+      {
+        "fps": 60.02164715143171,
+        "inferenceMs": 1,
+        "sequence": 100907,
+        "samples": {
+          "face": {
+            "timestamp": 1789202677548.5999,
+            "inferenceMs": 1,
+            "present": true
+          },
+          "pose": {
+            "timestamp": 1789202677548.5999,
+            "inferenceMs": 1,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202677548.5999,
+            "inferenceMs": 1,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      },
+      {
+        "fps": 60.00393468424146,
+        "inferenceMs": 1,
+        "sequence": 100971,
+        "samples": {
+          "face": {
+            "timestamp": 1789202678572.0999,
+            "inferenceMs": 1,
+            "present": true
+          },
+          "pose": {
+            "timestamp": 1789202678572.0999,
+            "inferenceMs": 1,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789202678572.0999,
+            "inferenceMs": 1,
+            "present": false
+          }
+        },
+        "drawCalls": 49
+      }
+    ]
+  },
+  "errors": []
+}

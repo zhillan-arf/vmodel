@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "voice": "chihaya-bright",
+  "sampleRate": 48000,
+  "chunkMs": 160,
+  "contextMs": 1600,
+  "crossfadeMs": 40,
+  "solaSearchMs": 10,
+  "warmupChunks": 10,
+  "measurementSeconds": 30,
+  "presets": [
+    {
+      "id": "cpu-fp32-eager-4t",
+      "threads": 4,
+      "jit": false,
+      "encoder": "fp32"
+    },
+    {
+      "id": "cpu-q8-eager-3t",
+      "threads": 3,
+      "jit": false,
+      "encoder": "q8"
+    },
+    {
+      "id": "cpu-q8-eager-1t",
+      "threads": 1,
+      "jit": false,
+      "encoder": "q8"
+    }
+  ],
+  "boundary": "Paced public-domain file replay; no microphone, speaker, OBS or network audio; no subjective quality acceptance",
+  "unsupportedJit": {
+    "sourceRevision": "b9cd071ae2743c146e5d279453a1c0caeb78e854",
+    "firstError": "TextEncoder has no emb_pitch attribute for no-F0 models",
+    "secondErrorAfterUnusedZeroEmbeddingProbe": "Generator.forward uses variable ModuleList indexing, rejected by torch.jit.script",
+    "disposition": "No source patch or JIT preset accepted; optional full ONNX generator export remains untested"
+  }
+}

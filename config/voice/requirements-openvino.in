@@ -1,0 +1,5 @@
+# Separate Intel CPU/GPU inference experiment; no baseline package replacement.
+openvino==2026.3.1
+numpy==1.26.4
+soundfile==0.14.0
+scipy==1.15.3

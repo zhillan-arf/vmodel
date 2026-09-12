@@ -1,0 +1,23 @@
+{
+  "note": "Separate explicit-natural receiver. Keys differ from the converted route. Silent until Start natural voice is deliberately used.",
+  "sceneNames": ["Ene Landscape", "Ene Portrait", "Ene Voice Studio"],
+  "inputName": "Ene Natural Voice Bridge",
+  "inputKind": "browser_source",
+  "inputSettings": {
+    "url": "http://127.0.0.1:5082/obs-natural#route=PRIVATE_NATURAL_ROUTE_ID&key=PRIVATE_NATURAL_OUTPUT_KEY",
+    "width": 16,
+    "height": 16,
+    "fps": 10,
+    "reroute_audio": true,
+    "shutdown": false,
+    "restart_when_active": false,
+    "webpage_control_level": 0
+  },
+  "audioMonitorType": "OBS_MONITORING_TYPE_NONE",
+  "recordingTrack": 1,
+  "existingSyncOffsetMustBePreserved": true,
+  "expectedPCMKind": "VMNA",
+  "naturalModeAutomaticStart": false,
+  "naturalModeAutomaticFallback": false,
+  "physicalSyncMeasured": false
+}

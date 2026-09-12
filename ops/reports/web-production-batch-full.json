@@ -1,0 +1,20 @@
+{
+  "state": "complete",
+  "selected": [
+    "home-greeting",
+    "desk-normal",
+    "desk-confused",
+    "desk-surprised",
+    "desk-excited"
+  ],
+  "completed": [
+    "home-greeting",
+    "desk-normal",
+    "desk-confused",
+    "desk-surprised",
+    "desk-excited"
+  ],
+  "startedUtc": "2026-09-12T10:28:24Z",
+  "resource": "desk-excited",
+  "stage": "encode"
+}

@@ -1,0 +1,102 @@
+{
+  "date": "2026-09-12T10:01:40.529Z",
+  "scope": "Four simultaneous private 480px/12fps draft videos displayed at 320 CSS px in desktop Chrome; no final performance/device acceptance claim",
+  "errors": [],
+  "browser": "152.0.7977.83",
+  "webm": [
+    {
+      "resource": "normal",
+      "size": [
+        480,
+        480
+      ],
+      "duration": 3,
+      "loopResets": 3,
+      "cornerAlpha": 0,
+      "transparentPixels": 165671,
+      "opaquePixels": 54382,
+      "frames": 121,
+      "droppedFrames": 0
+    },
+    {
+      "resource": "confused",
+      "size": [
+        480,
+        480
+      ],
+      "duration": 3,
+      "loopResets": 3,
+      "cornerAlpha": 0,
+      "transparentPixels": 165205,
+      "opaquePixels": 54442,
+      "frames": 121,
+      "droppedFrames": 0
+    },
+    {
+      "resource": "surprised",
+      "size": [
+        480,
+        480
+      ],
+      "duration": 3,
+      "loopResets": 3,
+      "cornerAlpha": 0,
+      "transparentPixels": 165770,
+      "opaquePixels": 54215,
+      "frames": 121,
+      "droppedFrames": 0
+    },
+    {
+      "resource": "excited",
+      "size": [
+        480,
+        480
+      ],
+      "duration": 3,
+      "loopResets": 3,
+      "cornerAlpha": 0,
+      "transparentPixels": 165551,
+      "opaquePixels": 54446,
+      "frames": 121,
+      "droppedFrames": 3
+    }
+  ],
+  "pauseStable": true,
+  "replay": true,
+  "webpCornerAlpha": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "webpHashes": [
+    [
+      "452b27e8d638ae796d001a2c5016b963e547b16a3ca609c701ff764d2c0922bc",
+      "1d753e39d30cb0ddc8445031f1c9f83fc3c757ea961f2a60dd9d6e8698689eee",
+      "c48eb9908c540e8f5e4a3ab87c9d2cbe6efde5248c24031b53afa8091bfffdf0"
+    ],
+    [
+      "a7ad15296798149209d29df3c8b9d03df414abac338bebdd95cf42265fdf07e3",
+      "8a10165c771c5a0defba78b28a60646c52473dc77b37a506833a37ec1ff7c786",
+      "7547696e708da52c8229b4043b771cc7737bfbf20cf8671d7974f3a574ffb4a1"
+    ],
+    [
+      "c1730feb5832a65118c5c6d54d0fc52ac3b7e19d396eb4fe451a296511b24f1a",
+      "61f5260d20ada67e20cd6b72b3eb72ad88f514e09f70a8c1c1ceba566889f946",
+      "64b9147f0b2e9b97b7b1c61812030db9826198ab4f7044ba424fc34a3ba93743"
+    ],
+    [
+      "aebd25c5a85c9e831abf306e85331e8e0ac525b95457de74accdb6f32396839e",
+      "ae9982f61fc33a318fd8f4ce55cf851e1aa409de9f84fb60cb4f09c1472ee175",
+      "4d8e9aa695454335bf0cc8560b8c015e11cf4560846182a52253c00727c21895"
+    ]
+  ],
+  "webpChanges": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "webpPauseUsesPoster": true,
+  "passed": true
+}

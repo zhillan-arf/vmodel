@@ -1,0 +1,109 @@
+{
+  "date": "2026-09-12T13:49:39.756Z",
+  "runLabel": "real-v1",
+  "passed": true,
+  "status": "complete",
+  "question": "Does a real, non-automated Chrome window throttle frame delivery when occluded, and do launcher flags prevent it?",
+  "chromePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "phaseMs": 10000,
+  "automationAttached": false,
+  "obsInvolved": false,
+  "physicalMedia": false,
+  "liveAccepted": false,
+  "conditions": [
+    {
+      "name": "launcher-default",
+      "args": [],
+      "intent": "Exactly what Start VModel.cmd passes today: no flags."
+    },
+    {
+      "name": "hardened",
+      "intent": "Proposed launcher flags for a window that must keep rendering while OBS captures it.",
+      "args": [
+        "--disable-features=CalculateNativeWinOcclusion",
+        "--disable-backgrounding-occluded-windows",
+        "--disable-renderer-backgrounding",
+        "--disable-background-timer-throttling"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "condition": "launcher-default",
+      "intent": "Exactly what Start VModel.cmd passes today: no flags.",
+      "args": [],
+      "before": {
+        "samples": 21,
+        "framesPerSecond": 60.02,
+        "beaconGapMaxMs": 508,
+        "visibility": "visible",
+        "hiddenTransitions": 0
+      },
+      "during": {
+        "samples": 20,
+        "framesPerSecond": 59.99,
+        "beaconGapMaxMs": 512,
+        "visibility": "visible",
+        "hiddenTransitions": 0
+      },
+      "after": {
+        "samples": 20,
+        "framesPerSecond": 59.99,
+        "beaconGapMaxMs": 505,
+        "visibility": "visible",
+        "hiddenTransitions": 0
+      },
+      "duringToBeforeRatio": 1,
+      "throttledWhileOccluded": false,
+      "recovered": true
+    },
+    {
+      "condition": "hardened",
+      "intent": "Proposed launcher flags for a window that must keep rendering while OBS captures it.",
+      "args": [
+        "--disable-features=CalculateNativeWinOcclusion",
+        "--disable-backgrounding-occluded-windows",
+        "--disable-renderer-backgrounding",
+        "--disable-background-timer-throttling"
+      ],
+      "before": {
+        "samples": 20,
+        "framesPerSecond": 59.97,
+        "beaconGapMaxMs": 513,
+        "visibility": "visible",
+        "hiddenTransitions": 0
+      },
+      "during": {
+        "samples": 20,
+        "framesPerSecond": 60.06,
+        "beaconGapMaxMs": 513,
+        "visibility": "visible",
+        "hiddenTransitions": 0
+      },
+      "after": {
+        "samples": 20,
+        "framesPerSecond": 59.94,
+        "beaconGapMaxMs": 505,
+        "visibility": "visible",
+        "hiddenTransitions": 0
+      },
+      "duringToBeforeRatio": 1.002,
+      "throttledWhileOccluded": false,
+      "recovered": true
+    }
+  ],
+  "limits": [
+    "A synthetic WebGL page, not the avatar runtime: it shows scheduler behaviour, not application performance.",
+    "The occluder is an opaque topmost form; a user covering the window with another application is similar but not identical.",
+    "Frame counts arrive by beacon every 500 ms and can be delayed by the same throttling being measured.",
+    "No OBS capture output is inspected here, so the separate blank-white capture symptom is untested.",
+    "One short run per condition on one host; ambient load is recorded, not controlled."
+  ],
+  "comparison": {
+    "launcherThrottledWhileOccluded": false,
+    "hardenedThrottledWhileOccluded": false,
+    "launcherDuringFps": 59.99,
+    "hardenedDuringFps": 60.06,
+    "flagsPreventThrottling": false
+  }
+}

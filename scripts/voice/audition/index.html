@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ene · Voice comparison</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <main>
+    <header><a class="brand" href="/">ENE <span>VOICE STUDIO</span></a><span class="local"><i></i> Local listening room</span></header>
+    <section class="intro">
+      <p class="eyebrow">REFERENCE PREVIEW / 01</p>
+      <h1>Find Ene’s voice.</h1>
+      <p class="lead">One English line. Three character voices.<br>Listen for the tone you’d like to try with your own voice.</p>
+      <p class="context">These clips use a public-domain English speaker. Your microphone is off. Your own speech and live conversation still need a separate audition.</p>
+    </section>
+    <section class="reference" aria-labelledby="reference-title">
+      <div><p class="eyebrow">START HERE</p><h2 id="reference-title">The original English performance</h2><p>Linda Johnson · LJ Speech · Source reference, not a trained control voice</p></div>
+      <audio id="source-audio" controls preload="metadata" aria-label="Original English source reference"></audio>
+      <blockquote id="transcript"></blockquote>
+    </section>
+    <div class="section-line"><h2>Try the three candidates</h2><span>Same line · Level matched</span></div>
+    <section class="voices" aria-label="Character voice candidates">
+      <article class="voice bright" data-voice="bright">
+        <div class="voice-top"><span class="number">01</span><span class="tag">CRISP</span></div>
+        <div class="wave" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+        <h3>Bright</h3><p class="description">A cheerful starting point.<br>Listen for clarity and energy.</p>
+        <audio controls preload="metadata" aria-label="Bright character candidate"></audio>
+        <p class="model">CHIHAYA · SYAKITTO</p>
+        <button class="compare" data-compare="bright">Compare with original</button>
+        <fieldset><legend>Your first impression</legend><label>English clarity<select data-score="intelligibility" aria-label="Bright English clarity"></select></label><label>Natural sound<select data-score="naturalness" aria-label="Bright natural sound"></select></label><label>Fit for Ene<select data-score="characterFit" aria-label="Bright fit for Ene"></select></label></fieldset>
+      </article>
+      <article class="voice soft" data-voice="soft">
+        <div class="voice-top"><span class="number">02</span><span class="tag">GENTLE</span></div>
+        <div class="wave" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+        <h3>Soft</h3><p class="description">A softer character tone.<br>Listen for warmth and detail.</p>
+        <audio controls preload="metadata" aria-label="Soft character candidate"></audio>
+        <p class="model">CHIHAYA · HOWATTO</p>
+        <button class="compare" data-compare="soft">Compare with original</button>
+        <fieldset><legend>Your first impression</legend><label>English clarity<select data-score="intelligibility" aria-label="Soft English clarity"></select></label><label>Natural sound<select data-score="naturalness" aria-label="Soft natural sound"></select></label><label>Fit for Ene<select data-score="characterFit" aria-label="Soft fit for Ene"></select></label></fieldset>
+      </article>
+      <article class="voice cool" data-voice="cool">
+        <div class="voice-top"><span class="number">03</span><span class="tag">COMPOSED</span></div>
+        <div class="wave" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+        <h3>Cool</h3><p class="description">A cooler alternative.<br>Listen for contrast and presence.</p>
+        <audio controls preload="metadata" aria-label="Cool character candidate"></audio>
+        <p class="model">CHIHAYA · KAKKOII</p>
+        <button class="compare" data-compare="cool">Compare with original</button>
+        <fieldset><legend>Your first impression</legend><label>English clarity<select data-score="intelligibility" aria-label="Cool English clarity"></select></label><label>Natural sound<select data-score="naturalness" aria-label="Cool natural sound"></select></label><label>Fit for Ene<select data-score="characterFit" aria-label="Cool fit for Ene"></select></label></fieldset>
+      </article>
+    </section>
+    <form id="feedback" class="feedback">
+      <div><p class="eyebrow">WHAT WOULD YOU TRY NEXT?</p><h2>Your listening notes</h2><p>This saves a first impression on this laptop. It does not select a live default.</p></div>
+      <label>Candidate to try with my own voice<select id="preference"><option value="">I haven’t chosen yet</option><option value="bright">Bright</option><option value="soft">Soft</option><option value="cool">Cool</option><option value="none">None of these — try another voice</option></select></label>
+      <label>What stood out?<textarea id="notes" rows="3" maxlength="2000" placeholder="Words that were hard to understand, a tone you liked, or something to change…"></textarea></label>
+      <div class="actions"><button id="save" type="submit">Save this comparison</button><button id="export" type="button">Export notes</button><button id="stop" type="button">Stop all audio</button></div>
+      <p id="status" role="status" aria-live="polite">Loading the reference clips…</p>
+    </form>
+    <footer>Three separately trained CHIHAYA v2 models, with creator MIT terms. English fit is being evaluated.<br>Reference input: public-domain LJ Speech. No microphone access, model upload or cloud conversion.</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿{
+    "date":  "2026-09-12T09:24:17.8437576Z",
+    "registrations":  [
+                          {
+                              "usesProjectModule":  false,
+                              "registered":  false,
+                              "bits":  "32",
+                              "expectedSha256":  "E9513840E2B96DB8CEEB41CF6F5FDB85E58FE7DC44B6B9AFB62B198C5505AA88"
+                          },
+                          {
+                              "usesProjectModule":  false,
+                              "registered":  false,
+                              "bits":  "64",
+                              "expectedSha256":  "0DCDE4A969A7CE45A39472D39BD15F5BFFF242A06449B27C61E20E667358EC34"
+                          }
+                      ],
+    "detail":  "This command cannot be run due to the error: The operation was canceled by the user.",
+    "obsVersion":  "32.2.2",
+    "state":  "not-installed"
+}

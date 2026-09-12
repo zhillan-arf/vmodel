@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "runId": "20260912T123054Z-2852",
+  "state": "failed",
+  "date": "2026-09-12T12:30:54Z",
+  "liveAccepted": false,
+  "qualityAccepted": false,
+  "physicalAudio": false,
+  "networkInference": false,
+  "stage": "worker-failed",
+  "elapsedSeconds": 24.36166189998039,
+  "hardware": {
+    "os": "Windows-10-10.0.26200-SP0",
+    "python": "3.10.19",
+    "cpu": "12th Gen Intel(R) Core(TM) i7-1255U",
+    "logicalProcessors": 12,
+    "architecture": "unavailable"
+  },
+  "torch": "2.8.0+cpu",
+  "onnx": "1.22.0",
+  "onnxruntime": "1.23.2",
+  "provisionManifest": {
+    "path": ".tools/voice/llvc/manifest.json",
+    "sha256": "a1bd8939a3cda93824276795df8892dc06c1dc5f683a70f344a0a3255e8e4eb4",
+    "bytes": 4428
+  },
+  "sourceRevision": "1627c5d358cf9bb2b92b0ccc513d8b36807c923d",
+  "modelRevision": "ebfe8c0fdeb974a7eeb463b3abbc8ce42a0e3851",
+  "checkpointSha256": "cceb7ab9621f84d62d283725ae3281cacb04f762d6a088fe3e97c1a29d4b8c0e",
+  "waveformLimit": {
+    "maxAbs": 0.0001,
+    "rmse": 1e-05
+  },
+  "recurrentStateLimit": {
+    "maxAbs": 0.0005,
+    "rmse": 5e-05
+  },
+  "upstreamPreparationParity": {
+    "maxAbs": 0.0,
+    "rmse": 0.0,
+    "passed": true
+  },
+  "functionalWrapperMaxAbsErrors": {
+    "converted_waveform": 0.0,
+    "encoder_state_out": 0.0,
+    "decoder_state_out": 0.0,
+    "output_state_out": 0.0,
+    "prenet_state_out": 0.0
+  },
+  "source": {
+    "id": "ljspeech-sample",
+    "path": "assets/voice/samples/LJ025-0076.wav",
+    "url": "https://keithito.com/LJ-Speech-Dataset/LJ025-0076.wav",
+    "sha256": "b31133c05e9667a27db5be539ca089aa99e95ca7bef52040c902ff781680873a",
+    "bytes": 370336,
+    "license": "Public Domain (publisher declaration)",
+    "terms": "https://keithito.com/LJ-Speech-Dataset/",
+    "role": "English licensed conversion smoke input; not a trained target"
+  },
+  "sourceResampledSamples": 134347,
+  "sourceResampledRate": 16000,
+  "inputNames": [
+    "waveform",
+    "encoder_state",
+    "decoder_state",
+    "output_state",
+    "prenet_state"
+  ],
+  "inputShapes": [
+    [
+      1,
+      1,
+      864
+    ],
+    [
+      1,
+      512,
+      510
+    ],
+    [
+      1,
+      2,
+      13,
+      256
+    ],
+    [
+      1,
+      512,
+      4
+    ],
+    [
+      1,
+      1,
+      24
+    ]
+  ],
+  "outputNames": [
+    "converted_waveform",
+    "encoder_state_out",
+    "decoder_state_out",
+    "output_state_out",
+    "prenet_state_out"
+  ],
+  "outputShapes": [
+    [
+      1,
+      1,
+      832
+    ],
+    [
+      1,
+      512,
+      510
+    ],
+    [
+      1,
+      2,
+      13,
+      256
+    ],
+    [
+      1,
+      512,
+      4
+    ],
+    [
+      1,
+      1,
+      24
+    ]
+  ],
+  "chunkFactor": 4,
+  "chunkSamples": 832,
+  "chunkMs": 52,
+  "sampleRate": 16000,
+  "learnedStateFingerprint": "b759dd4230ffdafa08f9fe0655044d84c6e18bcd82550c3bb6389863eaf092bd",
+  "evaluationMode": true,
+  "threads": 1,
+  "interopThreads": 1,
+  "parityFixture": {
+    "speechBlocks": 64,
+    "silenceBlocksIncludingPartial": 16,
+    "finalBlockPaddingSamples": 17,
+    "parityInputSamples": 66543,
+    "fullReferenceSeconds": 30,
+    "fullReferenceBlocks": 577,
+    "originalSamples": 480000
+  },
+  "scripts": [
+    {
+      "path": "scripts/voice/export_llvc_onnx.py",
+      "sha256": "49e36ac0b4275b69e8fce277adbb94bb8591523159edc4347a32d3a0c0624419",
+      "bytes": 14848
+    },
+    {
+      "path": "scripts/voice/llvc_onnx_common.py",
+      "sha256": "9ad5d4bafbd2348137577269156fa0be524df295cad18a35c4d53a00fc182d77",
+      "bytes": 10804
+    }
+  ],
+  "exportSeconds": 1.9327238000114448,
+  "onnxParity": {
+    "passed": false,
+    "blocks": 80,
+    "recurrentFeedback": "Own previous outputs; zero states at reset",
+    "worst": {
+      "converted_waveform": {
+        "maxAbs": 7.491558790206909e-06,
+        "worstBlockRmse": 1.4748135023009185e-06
+      },
+      "encoder_state_out": {
+        "maxAbs": 0.001379251480102539,
+        "worstBlockRmse": 2.211857217249358e-05
+      },
+      "decoder_state_out": {
+        "maxAbs": 0.005023956298828125,
+        "worstBlockRmse": 9.600032104252762e-05
+      },
+      "output_state_out": {
+        "maxAbs": 2.950429916381836e-06,
+        "worstBlockRmse": 7.290635860519744e-08
+      },
+      "prenet_state_out": {
+        "maxAbs": 1.043081283569336e-07,
+        "worstBlockRmse": 4.355945456493303e-08
+      }
+    },
+    "firstFailures": [
+      {
+        "block": 66,
+        "output": "encoder_state_out",
+        "maxAbs": 0.0006151199340820312,
+        "rmse": 9.256568649103699e-06,
+        "passed": false
+      },
+      {
+        "block": 66,
+        "output": "decoder_state_out",
+        "maxAbs": 0.0005151033401489258,
+        "rmse": 1.025264716208413e-05,
+        "passed": false
+      },
+      {
+        "block": 67,
+        "output": "encoder_state_out",
+        "maxAbs": 0.0013790130615234375,
+        "rmse": 1.4678583269081375e-05,
+        "passed": false
+      },
+      {
+        "block": 67,
+        "output": "decoder_state_out",
+        "maxAbs": 0.005023956298828125,
+        "rmse": 9.600032104252762e-05,
+        "passed": false
+      },
+      {
+        "block": 68,
+        "output": "encoder_state_out",
+        "maxAbs": 0.001379251480102539,
+        "rmse": 2.1165299586973632e-05,
+        "passed": false
+      },
+      {
+        "block": 69,
+        "output": "encoder_state_out",
+        "maxAbs": 0.001379251480102539,
+        "rmse": 2.1877009865945426e-05,
+        "passed": false
+      },
+      {
+        "block": 70,
+        "output": "encoder_state_out",
+        "maxAbs": 0.001379251480102539,
+        "rmse": 2.211857217249358e-05,
+        "passed": false
+      },
+      {
+        "block": 71,
+        "output": "encoder_state_out",
+        "maxAbs": 0.001379251480102539,
+        "rmse": 2.195133934943101e-05,
+        "passed": false
+      },
+      {
+        "block": 72,
+        "output": "encoder_state_out",
+        "maxAbs": 0.001379251480102539,
+        "rmse": 1.9532275729678576e-05,
+        "passed": false
+      },
+      {
+        "block": 73,
+        "output": "encoder_state_out",
+        "maxAbs": 0.0005116462707519531,
+        "rmse": 1.4120146573072488e-05,
+        "passed": false
+      }
+    ]
+  },
+  "onnxResetParity": {
+    "passed": false,
+    "blocks": 80,
+    "recurrentFeedback": "Own previous outputs; zero states at reset",
+    "worst": {
+      "converted_waveform": {
+        "maxAbs": 7.491558790206909e-06,
+        "worstBlockRmse": 1.4748135023009185e-06
+      },
+      "encoder_state_out": {
+        "maxAbs": 0.001379251480102539,
+        "worstBlockRmse": 2.211857217249358e-05
+      },
+      "decoder_state_out": {
+        "maxAbs": 0.005023956298828125,
+        "worstBlockRmse": 9.600032104252762e-05
+      },
+      "output_state_out": {
+        "maxAbs": 2.950429916381836e-06,
+        "worstBlockRmse": 7.290635860519744e-08
+      },
+      "prenet_state_out": {
+        "maxAbs": 1.043081283569336e-07,
+        "worstBlockRmse": 4.355945456493303e-08
+      }
+    },
+    "firstFailures": [
+      {
+        "block": 66,
+        "output": "encoder_state_out",
+        "maxAbs": 0.0006151199340820312,
+        "rmse": 9.256568649103699e-06,
+        "passed": false
+      },
+      {
+        "block": 66,
+        "output": "decoder_state_out",
+        "maxAbs": 0.0005151033401489258,
+        "rmse": 1.025264716208413e-05,
+        "passed": false
+      },
+      {
+        "block": 67,
+        "output": "encoder_state_out",
+        "maxAbs": 0.0013790130615234375,
+        "rmse": 1.4678583269081375e-05,
+        "passed": false
+      },
+      {
+        "block": 67,
+        "output": "decoder_state_out",
+        "maxAbs": 0.005023956298828125,
+        "rmse": 9.600032104252762e-05,
+        "passed": false
+      },
+      {
+        "block": 68,
+        "output": "encoder_state_out",
+        "maxAbs": 0.001379251480102539,
+        "rmse": 2.1165299586973632e-05,
+        "passed": false
+      },
+      {
+        "block": 69,
+        "output": "encoder_state_out",
+        "maxAbs": 0.001379251480102539,
+        "rmse": 2.1877009865945426e-05,
+        "passed": false
+      },
+      {
+        "block": 70,
+        "output": "encoder_state_out",
+        "maxAbs": 0.001379251480102539,
+        "rmse": 2.211857217249358e-05,
+        "passed": false
+      },
+      {
+        "block": 71,
+        "output": "encoder_state_out",
+        "maxAbs": 0.001379251480102539,
+        "rmse": 2.195133934943101e-05,
+        "passed": false
+      },
+      {
+        "block": 72,
+        "output": "encoder_state_out",
+        "maxAbs": 0.001379251480102539,
+        "rmse": 1.9532275729678576e-05,
+        "passed": false
+      },
+      {
+        "block": 73,
+        "output": "encoder_state_out",
+        "maxAbs": 0.0005116462707519531,
+        "rmse": 1.4120146573072488e-05,
+        "passed": false
+      }
+    ]
+  },
+  "errorType": "ValueError",
+  "error": "ONNX waveform/recurrent-state parity failed; no OpenVINO measurement allowed",
+  "workerExitCode": 1,
+  "budgetSeconds": 180
+}

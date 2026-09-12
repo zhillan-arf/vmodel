@@ -1,0 +1,11 @@
+# Tools, libraries and character terms
+
+The app uses Three.js and three-vrm (MIT) and MediaPipe Tasks Vision (Apache-2.0). `npm run build` gathers the installed runtime packages' license/notice files into `public/notices/`, which Vite copies into the local build. `/notices/index.json` identifies versions and retained texts. Exact tracking-model provenance and the publisher's Apache-2.0 statements are in [model notices](../ops/reports/model-notices.md); that manifest and license text are also included in the build.
+
+The tooling distributions retain their own notices: Blender and MMD Tools, VRM add-on, OBS and FFmpeg are installed under the documented local toolchain paths. Their licenses do not transfer to Ene. The [toolchain report](../ops/reports/toolchain.md), [website toolchain](../ops/reports/web-resource-toolchain.md), [voice toolchain](../ops/reports/voice-toolchain.md) and [voice models](../ops/reports/voice-models.md) record the separate tools and model terms. Experimental acceleration backends are identified separately; installed Windows platform components are not described as open-source libraries.
+
+The isolated LLVC experiment retains KoeAI's MIT source/license, the publisher's MIT checkpoint declaration, and SpeechBrain's Apache-2.0 source/license for its positional encoding. The [provisioning inventory](../ops/reports/voice-llvc-provision.json) pins their revisions and hashes; the [experiment report](../ops/reports/voice-llvc-plan.md) describes the separate runtime copy. These experimental files are outside the served app and voice catalog. LLVC is not an accepted live voice preset.
+
+Ene Cyber legs comes from the user's permitted local AuroraYok model package. Keep the original credits/readmes and source package private. The software notices do not authorize redistributing the PMX, derived VRM, voice weights or rendered media beyond their own terms. No public upload or distribution is performed by these launchers.
+
+The local app serves only its generated build, designated runtime files, prepared avatar and notices. Source PMX/Blender files, reference downloads, private tool configuration and recordings are outside that directory. `node scripts/audit_bundle.mjs` verifies this file boundary and the prepared avatar/runtime/notice hashes after a build.

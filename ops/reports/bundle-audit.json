@@ -1,0 +1,145 @@
+{
+  "date": "2026-09-12T14:14:21.928Z",
+  "scope": "Static served build only; does not scan unrelated files or certify future changes.",
+  "checks": {
+    "onlyDesignatedFiles": true,
+    "avatarMatchesPreparedArtifact": true,
+    "runtimeHashesMatch": true,
+    "noticesPresent": true
+  },
+  "runtimePackages": 16,
+  "files": [
+    {
+      "path": "assets/index-B4y_brVs.js",
+      "bytes": 792255
+    },
+    {
+      "path": "assets/index-DUB0lr6k.css",
+      "bytes": 5265
+    },
+    {
+      "path": "assets/tracking.worker-a-4NTgbs.js",
+      "bytes": 155643
+    },
+    {
+      "path": "avatars/ene.vrm",
+      "bytes": 87635112
+    },
+    {
+      "path": "index.html",
+      "bytes": 739
+    },
+    {
+      "path": "notices/Apache-2.0.txt",
+      "bytes": 11358
+    },
+    {
+      "path": "notices/index.json",
+      "bytes": 5589
+    },
+    {
+      "path": "notices/mediapipe__tasks-vision.txt",
+      "bytes": 11478
+    },
+    {
+      "path": "notices/pixiv__three-vrm-core.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__three-vrm-materials-hdr-emissive-multiplier.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__three-vrm-materials-mtoon.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__three-vrm-materials-v0compat.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__three-vrm-node-constraint.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__three-vrm-springbone.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__three-vrm.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__types-vrm-0.0.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__types-vrmc-materials-hdr-emissive-multiplier-1.0.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__types-vrmc-materials-mtoon-1.0.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__types-vrmc-node-constraint-1.0.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__types-vrmc-springbone-1.0.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__types-vrmc-springbone-extended-collider-1.0.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__types-vrmc-vrm-1.0.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/three.txt",
+      "bytes": 1092
+    },
+    {
+      "path": "notices/tracking-models.json",
+      "bytes": 3816
+    },
+    {
+      "path": "runtime/face_landmarker.task",
+      "bytes": 3758596
+    },
+    {
+      "path": "runtime/hand_landmarker.task",
+      "bytes": 7819105
+    },
+    {
+      "path": "runtime/pose_landmarker_lite.task",
+      "bytes": 5777746
+    },
+    {
+      "path": "runtime/wasm/vision_wasm_internal.js",
+      "bytes": 323377
+    },
+    {
+      "path": "runtime/wasm/vision_wasm_internal.wasm",
+      "bytes": 11756954
+    },
+    {
+      "path": "runtime/wasm/vision_wasm_module_internal.js",
+      "bytes": 323415
+    },
+    {
+      "path": "runtime/wasm/vision_wasm_module_internal.wasm",
+      "bytes": 11756972
+    },
+    {
+      "path": "runtime/wasm/vision_wasm_nosimd_internal.js",
+      "bytes": 323180
+    },
+    {
+      "path": "runtime/wasm/vision_wasm_nosimd_internal.wasm",
+      "bytes": 10960242
+    }
+  ]
+}

@@ -1,0 +1,3081 @@
+{
+  "date": "2026-09-12T11:05:39.750Z",
+  "phase": "lifecycle",
+  "state": "passed",
+  "platform": "win32",
+  "release": "10.0.26200",
+  "cpu": "12th Gen Intel(R) Core(TM) i7-1255U",
+  "logicalCores": 12,
+  "ramBytes": 16779812864,
+  "headless": true,
+  "errors": [],
+  "scope": "Actual final built showcase over an owned loopback server in installed Windows Chrome. CDP network emulation is not a real mobile-network result. No real Safari/Android/iOS claim.",
+  "browser": "152.0.7977.83",
+  "lifecycle": {
+    "warmupSwitches": [
+      {
+        "resource": "home-greeting",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          450,
+          600
+        ],
+        "sourceSize": [
+          720,
+          960
+        ],
+        "currentTime": 0.210609,
+        "quality": {
+          "totalVideoFrames": 129,
+          "droppedVideoFrames": 2
+        },
+        "url": "http://127.0.0.1:49385/ene/home-greeting/large.webm",
+        "domElements": 160,
+        "jsHeapBytes": 3166210,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-normal",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": 0.281398,
+        "quality": {
+          "totalVideoFrames": 83,
+          "droppedVideoFrames": 3
+        },
+        "url": "http://127.0.0.1:49385/ene/desk-normal/large.webm",
+        "domElements": 160,
+        "jsHeapBytes": 3316525,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-confused",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": 0.159216,
+        "quality": {
+          "totalVideoFrames": 80,
+          "droppedVideoFrames": 1
+        },
+        "url": "http://127.0.0.1:49385/ene/desk-confused/large.webm",
+        "domElements": 160,
+        "jsHeapBytes": 2944286,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-surprised",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": 0.163421,
+        "quality": {
+          "totalVideoFrames": 80,
+          "droppedVideoFrames": 1
+        },
+        "url": "http://127.0.0.1:49385/ene/desk-surprised/large.webm",
+        "domElements": 160,
+        "jsHeapBytes": 3085718,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-excited",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": 0.159721,
+        "quality": {
+          "totalVideoFrames": 80,
+          "droppedVideoFrames": 1
+        },
+        "url": "http://127.0.0.1:49385/ene/desk-excited/large.webm",
+        "domElements": 160,
+        "jsHeapBytes": 3206430,
+        "status": "Playing"
+      },
+      {
+        "resource": "home-greeting",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          450,
+          600
+        ],
+        "sourceSize": [
+          720,
+          960
+        ],
+        "currentTime": 0.183734,
+        "quality": {
+          "totalVideoFrames": 129,
+          "droppedVideoFrames": 1
+        },
+        "url": "http://127.0.0.1:49385/ene/home-greeting/large.webm",
+        "domElements": 160,
+        "jsHeapBytes": 3317374,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-normal",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": 0.141987,
+        "quality": {
+          "totalVideoFrames": 80,
+          "droppedVideoFrames": 1
+        },
+        "url": "http://127.0.0.1:49385/ene/desk-normal/large.webm",
+        "domElements": 160,
+        "jsHeapBytes": 3434858,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-confused",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": 0.139552,
+        "quality": {
+          "totalVideoFrames": 80,
+          "droppedVideoFrames": 1
+        },
+        "url": "http://127.0.0.1:49385/ene/desk-confused/large.webm",
+        "domElements": 160,
+        "jsHeapBytes": 2343175,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-surprised",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": 0.175865,
+        "quality": {
+          "totalVideoFrames": 80,
+          "droppedVideoFrames": 1
+        },
+        "url": "http://127.0.0.1:49385/ene/desk-surprised/large.webm",
+        "domElements": 160,
+        "jsHeapBytes": 2485902,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-excited",
+        "format": "webm",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": 0.141904,
+        "quality": {
+          "totalVideoFrames": 80,
+          "droppedVideoFrames": 1
+        },
+        "url": "http://127.0.0.1:49385/ene/desk-excited/large.webm",
+        "domElements": 160,
+        "jsHeapBytes": 2599377,
+        "status": "Playing"
+      },
+      {
+        "resource": "home-greeting",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          450,
+          600
+        ],
+        "sourceSize": [
+          720,
+          960
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:49385/ene/home-greeting/large.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2714132,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-normal",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:49385/ene/desk-normal/large.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2821960,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-confused",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:49385/ene/desk-confused/large.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2929654,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-surprised",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:49385/ene/desk-surprised/large.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2440392,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-excited",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:49385/ene/desk-excited/large.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2548746,
+        "status": "Playing"
+      },
+      {
+        "resource": "home-greeting",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          450,
+          600
+        ],
+        "sourceSize": [
+          720,
+          960
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:49385/ene/home-greeting/large.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2656390,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-normal",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:49385/ene/desk-normal/large.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2765299,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-confused",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:49385/ene/desk-confused/large.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2449021,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-surprised",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:49385/ene/desk-surprised/large.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2557441,
+        "status": "Playing"
+      },
+      {
+        "resource": "desk-excited",
+        "format": "webp",
+        "playing": true,
+        "activeAnimationElements": 1,
+        "transitionCanvases": 0,
+        "cssSize": [
+          545,
+          545
+        ],
+        "sourceSize": [
+          960,
+          960
+        ],
+        "currentTime": null,
+        "quality": null,
+        "url": "http://127.0.0.1:49385/ene/desk-excited/large.webp",
+        "domElements": 160,
+        "jsHeapBytes": 2665079,
+        "status": "Playing"
+      }
+    ],
+    "warmupSeconds": 74.7421719,
+    "samples": [
+      {
+        "seconds": 1.9372030999999987,
+        "actual": {
+          "resource": "desk-excited",
+          "format": "webp",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": null,
+          "quality": null,
+          "url": "http://127.0.0.1:49385/ene/desk-excited/large.webp",
+          "domElements": 160,
+          "jsHeapBytes": 2665079,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 67.33780300000001,
+          "workingSetBytes": 1572933632,
+          "privateBytes": 1210589184,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 7.361079
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.137083
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 31.012215
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.096796
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 26.59944
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.026927
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.104263
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138719232,
+              "PrivateMemorySize64": 45666304
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 1013510144,
+              "PrivateMemorySize64": 953143296
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32870400,
+              "PrivateMemorySize64": 15953920
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20639744,
+              "PrivateMemorySize64": 9306112
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 88395776,
+              "PrivateMemorySize64": 40136704
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 223711232,
+              "PrivateMemorySize64": 118824960
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55087104,
+              "PrivateMemorySize64": 27557888
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 32.37841650000001,
+        "actual": {
+          "resource": "desk-normal",
+          "format": "webm",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": 0.359032,
+          "quality": {
+            "totalVideoFrames": 13,
+            "droppedVideoFrames": 1
+          },
+          "url": "http://127.0.0.1:49385/ene/desk-normal/large.webm",
+          "domElements": 160,
+          "jsHeapBytes": 2366706,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 90.857153,
+          "workingSetBytes": 1521000448,
+          "privateBytes": 1180139520,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 7.472853
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.137407
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 45.556694
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.10526
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 35.41767
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.061877
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.105392
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138584064,
+              "PrivateMemorySize64": 45518848
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 965292032,
+              "PrivateMemorySize64": 914358272
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32870400,
+              "PrivateMemorySize64": 15953920
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20639744,
+              "PrivateMemorySize64": 9306112
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 87003136,
+              "PrivateMemorySize64": 38682624
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 221536256,
+              "PrivateMemorySize64": 128770048
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55074816,
+              "PrivateMemorySize64": 27549696
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 62.6340598,
+        "actual": {
+          "resource": "desk-confused",
+          "format": "webp",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": null,
+          "quality": null,
+          "url": "http://127.0.0.1:49385/ene/desk-confused/large.webp",
+          "domElements": 160,
+          "jsHeapBytes": 2473765,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 105.465791,
+          "workingSetBytes": 1460994048,
+          "privateBytes": 1117437952,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 7.686514
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.139007
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 55.393068
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.112628
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 39.922901
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.103872
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.107801
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138846208,
+              "PrivateMemorySize64": 45330432
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 932298752,
+              "PrivateMemorySize64": 879247360
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32874496,
+              "PrivateMemorySize64": 15958016
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20619264,
+              "PrivateMemorySize64": 9285632
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 87023616,
+              "PrivateMemorySize64": 38682624
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 194277376,
+              "PrivateMemorySize64": 101502976
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55054336,
+              "PrivateMemorySize64": 27430912
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 92.12138530000001,
+        "actual": {
+          "resource": "desk-surprised",
+          "format": "webm",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": 0.393564,
+          "quality": {
+            "totalVideoFrames": 14,
+            "droppedVideoFrames": 1
+          },
+          "url": "http://127.0.0.1:49385/ene/desk-surprised/large.webm",
+          "domElements": 160,
+          "jsHeapBytes": 2377797,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 128.043944,
+          "workingSetBytes": 1530142720,
+          "privateBytes": 1182908416,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 7.780669
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.139214
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 69.281693
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.118593
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 48.469141
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.145803
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.108831
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138809344,
+              "PrivateMemorySize64": 45301760
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 968806400,
+              "PrivateMemorySize64": 912678912
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32874496,
+              "PrivateMemorySize64": 15958016
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20619264,
+              "PrivateMemorySize64": 9285632
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 87023616,
+              "PrivateMemorySize64": 38682624
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 226959360,
+              "PrivateMemorySize64": 133591040
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55050240,
+              "PrivateMemorySize64": 27410432
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 122.18735280000001,
+        "actual": {
+          "resource": "desk-excited",
+          "format": "webp",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": null,
+          "quality": null,
+          "url": "http://127.0.0.1:49385/ene/desk-excited/large.webp",
+          "domElements": 160,
+          "jsHeapBytes": 2504982,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 142.82168399999998,
+          "workingSetBytes": 1477132288,
+          "privateBytes": 1187016704,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 7.943501
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.139865
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 79.322761
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.124414
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 52.947806
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.232786
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.110551
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 137879552,
+              "PrivateMemorySize64": 45301760
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 965996544,
+              "PrivateMemorySize64": 943165440
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 31944704,
+              "PrivateMemorySize64": 15958016
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20533248,
+              "PrivateMemorySize64": 9285632
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83668992,
+              "PrivateMemorySize64": 38682624
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 182145024,
+              "PrivateMemorySize64": 107180032
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 54964224,
+              "PrivateMemorySize64": 27443200
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 152.19029859999998,
+        "actual": {
+          "resource": "home-greeting",
+          "format": "webm",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            450,
+            600
+          ],
+          "sourceSize": [
+            720,
+            960
+          ],
+          "currentTime": 0.368302,
+          "quality": {
+            "totalVideoFrames": 13,
+            "droppedVideoFrames": 1
+          },
+          "url": "http://127.0.0.1:49385/ene/home-greeting/large.webm",
+          "domElements": 160,
+          "jsHeapBytes": 2616810,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 164.89727599999998,
+          "workingSetBytes": 1494315008,
+          "privateBytes": 1205772288,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 8.044818
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.139979
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 92.776043
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.129745
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 61.426126
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.269097
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.111468
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 137859072,
+              "PrivateMemorySize64": 45281280
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 940032000,
+              "PrivateMemorySize64": 919244800
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 31944704,
+              "PrivateMemorySize64": 15958016
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20533248,
+              "PrivateMemorySize64": 9285632
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83668992,
+              "PrivateMemorySize64": 38682624
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 225341440,
+              "PrivateMemorySize64": 149913600
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 54935552,
+              "PrivateMemorySize64": 27406336
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 182.10099300000002,
+        "actual": {
+          "resource": "desk-normal",
+          "format": "webp",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": null,
+          "quality": null,
+          "url": "http://127.0.0.1:49385/ene/desk-normal/large.webp",
+          "domElements": 160,
+          "jsHeapBytes": 2747295,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 177.899045,
+          "workingSetBytes": 1522384896,
+          "privateBytes": 1230630912,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 8.202676
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.141518
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 100.49436
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.137212
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 66.498189
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.310908
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.114182
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 137969664,
+              "PrivateMemorySize64": 45309952
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 976683008,
+              "PrivateMemorySize64": 952455168
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 31944704,
+              "PrivateMemorySize64": 15958016
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20533248,
+              "PrivateMemorySize64": 9285632
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83668992,
+              "PrivateMemorySize64": 38682624
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 216625152,
+              "PrivateMemorySize64": 141524992
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 54960128,
+              "PrivateMemorySize64": 27414528
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 212.01772509999998,
+        "actual": {
+          "resource": "desk-confused",
+          "format": "webm",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": 0.419665,
+          "quality": {
+            "totalVideoFrames": 14,
+            "droppedVideoFrames": 1
+          },
+          "url": "http://127.0.0.1:49385/ene/desk-confused/large.webm",
+          "domElements": 160,
+          "jsHeapBytes": 2315979,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 199.123461,
+          "workingSetBytes": 1475743744,
+          "privateBytes": 1189052416,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 8.295036
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.141625
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 113.527795
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.142181
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 74.541951
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.359812
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.115061
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 137916416,
+              "PrivateMemorySize64": 45268992
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 916889600,
+              "PrivateMemorySize64": 895840256
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 31944704,
+              "PrivateMemorySize64": 15958016
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20533248,
+              "PrivateMemorySize64": 9285632
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83668992,
+              "PrivateMemorySize64": 38682624
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 229838848,
+              "PrivateMemorySize64": 156585984
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 54951936,
+              "PrivateMemorySize64": 27430912
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 242.0143689,
+        "actual": {
+          "resource": "desk-surprised",
+          "format": "webp",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": null,
+          "quality": null,
+          "url": "http://127.0.0.1:49385/ene/desk-surprised/large.webp",
+          "domElements": 160,
+          "jsHeapBytes": 2440499,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 213.48519900000002,
+          "workingSetBytes": 1399103488,
+          "privateBytes": 1106374656,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 8.449113
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.14362
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 123.325045
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.149149
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 78.901216
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.399513
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.117543
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138256384,
+              "PrivateMemorySize64": 45281280
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 867098624,
+              "PrivateMemorySize64": 843567104
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32149504,
+              "PrivateMemorySize64": 16084992
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20684800,
+              "PrivateMemorySize64": 9363456
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83832832,
+              "PrivateMemorySize64": 38723584
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 201998336,
+              "PrivateMemorySize64": 125865984
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55083008,
+              "PrivateMemorySize64": 27488256
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 272.65315649999997,
+        "actual": {
+          "resource": "desk-excited",
+          "format": "webm",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": 0.372385,
+          "quality": {
+            "totalVideoFrames": 13,
+            "droppedVideoFrames": 1
+          },
+          "url": "http://127.0.0.1:49385/ene/desk-excited/large.webm",
+          "domElements": 160,
+          "jsHeapBytes": 2552767,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 235.24567900000002,
+          "workingSetBytes": 1537544192,
+          "privateBytes": 1247399936,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 8.55777
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.143768
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 136.59322
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.154221
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 87.228808
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.449409
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.118483
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138223616,
+              "PrivateMemorySize64": 45260800
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 950874112,
+              "PrivateMemorySize64": 930828288
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32149504,
+              "PrivateMemorySize64": 16084992
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20684800,
+              "PrivateMemorySize64": 9363456
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83832832,
+              "PrivateMemorySize64": 38723584
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 256712704,
+              "PrivateMemorySize64": 179740672
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55066624,
+              "PrivateMemorySize64": 27398144
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 302.253295,
+        "actual": {
+          "resource": "home-greeting",
+          "format": "webp",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            450,
+            600
+          ],
+          "sourceSize": [
+            720,
+            960
+          ],
+          "currentTime": null,
+          "quality": null,
+          "url": "http://127.0.0.1:49385/ene/home-greeting/large.webp",
+          "domElements": 160,
+          "jsHeapBytes": 2673755,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 251.068295,
+          "workingSetBytes": 1798832128,
+          "privateBytes": 1507049472,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 8.716482
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.145393
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 147.482198
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.160673
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 91.939276
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.503109
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.121164
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138227712,
+              "PrivateMemorySize64": 45232128
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 1236918272,
+              "PrivateMemorySize64": 1215283200
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32149504,
+              "PrivateMemorySize64": 16084992
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20684800,
+              "PrivateMemorySize64": 9363456
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83832832,
+              "PrivateMemorySize64": 38723584
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 231878656,
+              "PrivateMemorySize64": 154910720
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55140352,
+              "PrivateMemorySize64": 27451392
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 331.96727799999996,
+        "actual": {
+          "resource": "desk-normal",
+          "format": "webm",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": 0.412241,
+          "quality": {
+            "totalVideoFrames": 14,
+            "droppedVideoFrames": 2
+          },
+          "url": "http://127.0.0.1:49385/ene/desk-normal/large.webm",
+          "domElements": 160,
+          "jsHeapBytes": 2319797,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 273.063356,
+          "workingSetBytes": 1544048640,
+          "privateBytes": 1235800064,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 8.810641
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.14647
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 154.942613
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.166109
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 106.337791
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.537166
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.122566
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138203136,
+              "PrivateMemorySize64": 45207552
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 957767680,
+              "PrivateMemorySize64": 927891456
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32149504,
+              "PrivateMemorySize64": 16015360
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20713472,
+              "PrivateMemorySize64": 9326592
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83841024,
+              "PrivateMemorySize64": 38686720
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 256253952,
+              "PrivateMemorySize64": 171253760
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55119872,
+              "PrivateMemorySize64": 27418624
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 362.27980729999996,
+        "actual": {
+          "resource": "desk-confused",
+          "format": "webp",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": null,
+          "quality": null,
+          "url": "http://127.0.0.1:49385/ene/desk-confused/large.webp",
+          "domElements": 160,
+          "jsHeapBytes": 2444148,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 287.66311799999994,
+          "workingSetBytes": 1934761984,
+          "privateBytes": 1637949440,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 8.960283
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.147192
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 164.81844
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.17191
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 110.860668
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.580252
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.124373
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138194944,
+              "PrivateMemorySize64": 45195264
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 1380220928,
+              "PrivateMemorySize64": 1356529664
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32149504,
+              "PrivateMemorySize64": 16015360
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20713472,
+              "PrivateMemorySize64": 9326592
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83841024,
+              "PrivateMemorySize64": 38686720
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 224534528,
+              "PrivateMemorySize64": 144797696
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55107584,
+              "PrivateMemorySize64": 27398144
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 391.99108409999997,
+        "actual": {
+          "resource": "desk-surprised",
+          "format": "webm",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": 0.370113,
+          "quality": {
+            "totalVideoFrames": 13,
+            "droppedVideoFrames": 1
+          },
+          "url": "http://127.0.0.1:49385/ene/desk-surprised/large.webm",
+          "domElements": 160,
+          "jsHeapBytes": 2559290,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 309.461832,
+          "workingSetBytes": 1543794688,
+          "privateBytes": 1251676160,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 9.051857
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.147292
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 178.1713
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.176968
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 119.157578
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.63139
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.125447
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138182656,
+              "PrivateMemorySize64": 45158400
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 938598400,
+              "PrivateMemorySize64": 917782528
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32149504,
+              "PrivateMemorySize64": 16015360
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20713472,
+              "PrivateMemorySize64": 9326592
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83841024,
+              "PrivateMemorySize64": 38686720
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 275193856,
+              "PrivateMemorySize64": 197292032
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55115776,
+              "PrivateMemorySize64": 27414528
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 421.98345259999996,
+        "actual": {
+          "resource": "desk-excited",
+          "format": "webp",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": null,
+          "quality": null,
+          "url": "http://127.0.0.1:49385/ene/desk-excited/large.webp",
+          "domElements": 160,
+          "jsHeapBytes": 2676274,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 323.702547,
+          "workingSetBytes": 1444864000,
+          "privateBytes": 1151582208,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 9.193997
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.148677
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 187.864791
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.184036
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 123.51763
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.665481
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.127935
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138174464,
+              "PrivateMemorySize64": 45146112
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 864096256,
+              "PrivateMemorySize64": 840380416
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32149504,
+              "PrivateMemorySize64": 16015360
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20713472,
+              "PrivateMemorySize64": 9326592
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83841024,
+              "PrivateMemorySize64": 38686720
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 250798080,
+              "PrivateMemorySize64": 174669824
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55091200,
+              "PrivateMemorySize64": 27357184
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 452.34053909999994,
+        "actual": {
+          "resource": "home-greeting",
+          "format": "webm",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            450,
+            600
+          ],
+          "sourceSize": [
+            720,
+            960
+          ],
+          "currentTime": 0.448282,
+          "quality": {
+            "totalVideoFrames": 15,
+            "droppedVideoFrames": 1
+          },
+          "url": "http://127.0.0.1:49385/ene/home-greeting/large.webm",
+          "domElements": 160,
+          "jsHeapBytes": 2332599,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 346.03158199999996,
+          "workingSetBytes": 1569337344,
+          "privateBytes": 1250988032,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 9.302328
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.148787
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 201.458734
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.18954
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 132.104745
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.698482
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.128966
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138153984,
+              "PrivateMemorySize64": 45129728
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 968806400,
+              "PrivateMemorySize64": 934330368
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32149504,
+              "PrivateMemorySize64": 16015360
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20713472,
+              "PrivateMemorySize64": 9326592
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83841024,
+              "PrivateMemorySize64": 38686720
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 270569472,
+              "PrivateMemorySize64": 180121600
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55103488,
+              "PrivateMemorySize64": 27377664
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 482.22029870000006,
+        "actual": {
+          "resource": "desk-normal",
+          "format": "webp",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": null,
+          "quality": null,
+          "url": "http://127.0.0.1:49385/ene/desk-normal/large.webp",
+          "domElements": 160,
+          "jsHeapBytes": 2455654,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 358.889579,
+          "workingSetBytes": 1542647808,
+          "privateBytes": 1249325056,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 9.443783
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.149469
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 209.106146
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.196531
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 137.12995
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.733287
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.130413
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138133504,
+              "PrivateMemorySize64": 45101056
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 977059840,
+              "PrivateMemorySize64": 953786368
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32149504,
+              "PrivateMemorySize64": 16019456
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20713472,
+              "PrivateMemorySize64": 9326592
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83841024,
+              "PrivateMemorySize64": 38686720
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 235659264,
+              "PrivateMemorySize64": 159047680
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55091200,
+              "PrivateMemorySize64": 27357184
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 512.0054625,
+        "actual": {
+          "resource": "desk-confused",
+          "format": "webm",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": 0.378701,
+          "quality": {
+            "totalVideoFrames": 13,
+            "droppedVideoFrames": 1
+          },
+          "url": "http://127.0.0.1:49385/ene/desk-confused/large.webm",
+          "domElements": 160,
+          "jsHeapBytes": 2566497,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 380.743975,
+          "workingSetBytes": 1549660160,
+          "privateBytes": 1246711808,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 9.534225
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.149599
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 222.568342
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.201641
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 145.393276
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.765445
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.131447
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138166272,
+              "PrivateMemorySize64": 45129728
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 924360704,
+              "PrivateMemorySize64": 895590400
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32149504,
+              "PrivateMemorySize64": 16019456
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20713472,
+              "PrivateMemorySize64": 9326592
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83841024,
+              "PrivateMemorySize64": 38686720
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 295325696,
+              "PrivateMemorySize64": 214581248
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55103488,
+              "PrivateMemorySize64": 27377664
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 541.989157,
+        "actual": {
+          "resource": "desk-surprised",
+          "format": "webp",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": null,
+          "quality": null,
+          "url": "http://127.0.0.1:49385/ene/desk-surprised/large.webp",
+          "domElements": 160,
+          "jsHeapBytes": 2683091,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 395.69707400000004,
+          "workingSetBytes": 1569796096,
+          "privateBytes": 1276903424,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 9.693077
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.152057
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 232.830669
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.20953
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 149.855015
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.821734
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.134992
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138178560,
+              "PrivateMemorySize64": 45162496
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 969752576,
+              "PrivateMemorySize64": 946036736
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32186368,
+              "PrivateMemorySize64": 16084992
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20787200,
+              "PrivateMemorySize64": 9404416
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83881984,
+              "PrivateMemorySize64": 38760448
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 269807616,
+              "PrivateMemorySize64": 194039808
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55201792,
+              "PrivateMemorySize64": 27414528
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 572.0980133999999,
+        "actual": {
+          "resource": "desk-excited",
+          "format": "webm",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            545,
+            545
+          ],
+          "sourceSize": [
+            960,
+            960
+          ],
+          "currentTime": 0.426846,
+          "quality": {
+            "totalVideoFrames": 15,
+            "droppedVideoFrames": 2
+          },
+          "url": "http://127.0.0.1:49385/ene/desk-excited/large.webm",
+          "domElements": 160,
+          "jsHeapBytes": 2352342,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 417.23723699999994,
+          "workingSetBytes": 1588604928,
+          "privateBytes": 1274212352,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 9.79034
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.15214
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 246.102259
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.214929
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 157.991523
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.849872
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.136174
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138158080,
+              "PrivateMemorySize64": 45142016
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 960626688,
+              "PrivateMemorySize64": 928153600
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32186368,
+              "PrivateMemorySize64": 16084992
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20787200,
+              "PrivateMemorySize64": 9404416
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83881984,
+              "PrivateMemorySize64": 38760448
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 297750528,
+              "PrivateMemorySize64": 209231872
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55214080,
+              "PrivateMemorySize64": 27435008
+            }
+          ]
+        }
+      },
+      {
+        "seconds": 602.2091910999999,
+        "actual": {
+          "resource": "home-greeting",
+          "format": "webp",
+          "playing": true,
+          "activeAnimationElements": 1,
+          "transitionCanvases": 0,
+          "cssSize": [
+            450,
+            600
+          ],
+          "sourceSize": [
+            720,
+            960
+          ],
+          "currentTime": null,
+          "quality": null,
+          "url": "http://127.0.0.1:49385/ene/home-greeting/large.webp",
+          "domElements": 160,
+          "jsHeapBytes": 2444964,
+          "status": "Playing"
+        },
+        "process": {
+          "cpuSeconds": 432.781053,
+          "workingSetBytes": 1581268992,
+          "privateBytes": 1289990144,
+          "processes": [
+            {
+              "type": "browser",
+              "id": 5296,
+              "cpuTime": 9.930987
+            },
+            {
+              "type": "renderer",
+              "id": 23280,
+              "cpuTime": 0.153658
+            },
+            {
+              "type": "renderer",
+              "id": 30932,
+              "cpuTime": 256.875217
+            },
+            {
+              "type": "renderer",
+              "id": 25732,
+              "cpuTime": 1.221503
+            },
+            {
+              "type": "GPU",
+              "id": 22860,
+              "cpuTime": 162.577475
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "id": 31628,
+              "cpuTime": 1.883361
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "id": 24628,
+              "cpuTime": 0.138852
+            }
+          ],
+          "memory": [
+            {
+              "Id": 5296,
+              "WorkingSet64": 138072064,
+              "PrivateMemorySize64": 44998656
+            },
+            {
+              "Id": 22860,
+              "WorkingSet64": 1000972288,
+              "PrivateMemorySize64": 979222528
+            },
+            {
+              "Id": 23280,
+              "WorkingSet64": 32153600,
+              "PrivateMemorySize64": 16019456
+            },
+            {
+              "Id": 24628,
+              "WorkingSet64": 20754432,
+              "PrivateMemorySize64": 9338880
+            },
+            {
+              "Id": 25732,
+              "WorkingSet64": 83849216,
+              "PrivateMemorySize64": 38694912
+            },
+            {
+              "Id": 30932,
+              "WorkingSet64": 250298368,
+              "PrivateMemorySize64": 174366720
+            },
+            {
+              "Id": 31628,
+              "WorkingSet64": 55169024,
+              "PrivateMemorySize64": 27348992
+            }
+          ]
+        }
+      }
+    ],
+    "requests": [
+      {
+        "at": 1789211140995,
+        "path": "/"
+      },
+      {
+        "at": 1789211141042,
+        "path": "/assets/index-DkiiZKZ5.js"
+      },
+      {
+        "at": 1789211141042,
+        "path": "/assets/index-qqzbK_zL.css"
+      },
+      {
+        "at": 1789211141064,
+        "path": "/ene/manifest.json"
+      },
+      {
+        "at": 1789211141389,
+        "path": "/ene/home-greeting/large-poster.webp"
+      },
+      {
+        "at": 1789211141656,
+        "path": "/ene/alpha-probe.webm"
+      },
+      {
+        "at": 1789211142120,
+        "path": "/ene/home-greeting/large.webm"
+      },
+      {
+        "at": 1789211147834,
+        "path": "/ene/desk-normal/large-poster.webp"
+      },
+      {
+        "at": 1789211147842,
+        "path": "/ene/desk-normal/large.webm"
+      },
+      {
+        "at": 1789211151278,
+        "path": "/ene/desk-confused/large-poster.webp"
+      },
+      {
+        "at": 1789211151284,
+        "path": "/ene/desk-confused/large.webm"
+      },
+      {
+        "at": 1789211154578,
+        "path": "/ene/desk-surprised/large-poster.webp"
+      },
+      {
+        "at": 1789211154583,
+        "path": "/ene/desk-surprised/large.webm"
+      },
+      {
+        "at": 1789211157871,
+        "path": "/ene/desk-excited/large-poster.webp"
+      },
+      {
+        "at": 1789211157892,
+        "path": "/ene/desk-excited/large.webm"
+      },
+      {
+        "at": 1789211161217,
+        "path": "/ene/home-greeting/large.webm"
+      },
+      {
+        "at": 1789211166521,
+        "path": "/ene/desk-normal/large.webm"
+      },
+      {
+        "at": 1789211173108,
+        "path": "/ene/desk-surprised/large-poster.webp"
+      },
+      {
+        "at": 1789211173118,
+        "path": "/ene/desk-surprised/large.webm"
+      },
+      {
+        "at": 1789211176431,
+        "path": "/ene/desk-excited/large-poster.webp"
+      },
+      {
+        "at": 1789211176439,
+        "path": "/ene/desk-excited/large.webm"
+      },
+      {
+        "at": 1789211179726,
+        "path": "/ene/home-greeting/large-poster.webp"
+      },
+      {
+        "at": 1789211179733,
+        "path": "/ene/home-greeting/large.webm"
+      },
+      {
+        "at": 1789211179827,
+        "path": "/ene/home-greeting/large.webp"
+      },
+      {
+        "at": 1789211185051,
+        "path": "/ene/desk-normal/large-poster.webp"
+      },
+      {
+        "at": 1789211185051,
+        "path": "/ene/desk-normal/large.webp"
+      },
+      {
+        "at": 1789211188356,
+        "path": "/ene/desk-confused/large.webp"
+      },
+      {
+        "at": 1789211191688,
+        "path": "/ene/desk-surprised/large.webp"
+      },
+      {
+        "at": 1789211195090,
+        "path": "/ene/desk-excited/large-poster.webp"
+      },
+      {
+        "at": 1789211195090,
+        "path": "/ene/desk-excited/large.webp"
+      },
+      {
+        "at": 1789211198371,
+        "path": "/ene/home-greeting/large-poster.webp"
+      },
+      {
+        "at": 1789211198371,
+        "path": "/ene/home-greeting/large.webp"
+      },
+      {
+        "at": 1789211203720,
+        "path": "/ene/desk-normal/large-poster.webp"
+      },
+      {
+        "at": 1789211203723,
+        "path": "/ene/desk-normal/large.webp"
+      },
+      {
+        "at": 1789211207008,
+        "path": "/ene/desk-confused/large-poster.webp"
+      },
+      {
+        "at": 1789211207008,
+        "path": "/ene/desk-confused/large.webp"
+      },
+      {
+        "at": 1789211210410,
+        "path": "/ene/desk-surprised/large-poster.webp"
+      },
+      {
+        "at": 1789211210410,
+        "path": "/ene/desk-surprised/large.webp"
+      },
+      {
+        "at": 1789211213752,
+        "path": "/ene/desk-excited/large-poster.webp"
+      },
+      {
+        "at": 1789211213753,
+        "path": "/ene/desk-excited/large.webp"
+      },
+      {
+        "at": 1789211247115,
+        "path": "/ene/desk-normal/large-poster.webp"
+      },
+      {
+        "at": 1789211247115,
+        "path": "/ene/desk-normal/large.webp"
+      },
+      {
+        "at": 1789211247253,
+        "path": "/ene/desk-normal/large.webm"
+      },
+      {
+        "at": 1789211277106,
+        "path": "/ene/desk-confused/large-poster.webp"
+      },
+      {
+        "at": 1789211277113,
+        "path": "/ene/desk-confused/large.webm"
+      },
+      {
+        "at": 1789211277204,
+        "path": "/ene/desk-confused/large.webp"
+      },
+      {
+        "at": 1789211307102,
+        "path": "/ene/desk-surprised/large-poster.webp"
+      },
+      {
+        "at": 1789211307102,
+        "path": "/ene/desk-surprised/large.webp"
+      },
+      {
+        "at": 1789211307232,
+        "path": "/ene/desk-surprised/large.webm"
+      },
+      {
+        "at": 1789211337116,
+        "path": "/ene/desk-excited/large-poster.webp"
+      },
+      {
+        "at": 1789211337123,
+        "path": "/ene/desk-excited/large.webm"
+      },
+      {
+        "at": 1789211337238,
+        "path": "/ene/desk-excited/large.webp"
+      },
+      {
+        "at": 1789211367108,
+        "path": "/ene/home-greeting/large-poster.webp"
+      },
+      {
+        "at": 1789211367108,
+        "path": "/ene/home-greeting/large.webp"
+      },
+      {
+        "at": 1789211367249,
+        "path": "/ene/home-greeting/large.webm"
+      },
+      {
+        "at": 1789211397114,
+        "path": "/ene/desk-normal/large-poster.webp"
+      },
+      {
+        "at": 1789211397125,
+        "path": "/ene/desk-normal/large.webm"
+      },
+      {
+        "at": 1789211397236,
+        "path": "/ene/desk-normal/large.webp"
+      },
+      {
+        "at": 1789211427104,
+        "path": "/ene/desk-confused/large-poster.webp"
+      },
+      {
+        "at": 1789211427104,
+        "path": "/ene/desk-confused/large.webp"
+      },
+      {
+        "at": 1789211427225,
+        "path": "/ene/desk-confused/large.webm"
+      },
+      {
+        "at": 1789211457106,
+        "path": "/ene/desk-surprised/large-poster.webp"
+      },
+      {
+        "at": 1789211457112,
+        "path": "/ene/desk-surprised/large.webm"
+      },
+      {
+        "at": 1789211457207,
+        "path": "/ene/desk-surprised/large.webp"
+      },
+      {
+        "at": 1789211487115,
+        "path": "/ene/desk-excited/large-poster.webp"
+      },
+      {
+        "at": 1789211487115,
+        "path": "/ene/desk-excited/large.webp"
+      },
+      {
+        "at": 1789211487260,
+        "path": "/ene/desk-excited/large.webm"
+      },
+      {
+        "at": 1789211517119,
+        "path": "/ene/home-greeting/large-poster.webp"
+      },
+      {
+        "at": 1789211517127,
+        "path": "/ene/home-greeting/large.webm"
+      },
+      {
+        "at": 1789211517236,
+        "path": "/ene/home-greeting/large.webp"
+      },
+      {
+        "at": 1789211547103,
+        "path": "/ene/desk-normal/large-poster.webp"
+      },
+      {
+        "at": 1789211547104,
+        "path": "/ene/desk-normal/large.webp"
+      },
+      {
+        "at": 1789211547242,
+        "path": "/ene/desk-normal/large.webm"
+      },
+      {
+        "at": 1789211577108,
+        "path": "/ene/desk-confused/large-poster.webp"
+      },
+      {
+        "at": 1789211577115,
+        "path": "/ene/desk-confused/large.webm"
+      },
+      {
+        "at": 1789211577212,
+        "path": "/ene/desk-confused/large.webp"
+      },
+      {
+        "at": 1789211607103,
+        "path": "/ene/desk-surprised/large-poster.webp"
+      },
+      {
+        "at": 1789211607103,
+        "path": "/ene/desk-surprised/large.webp"
+      },
+      {
+        "at": 1789211607242,
+        "path": "/ene/desk-surprised/large.webm"
+      },
+      {
+        "at": 1789211637114,
+        "path": "/ene/desk-excited/large-poster.webp"
+      },
+      {
+        "at": 1789211637122,
+        "path": "/ene/desk-excited/large.webm"
+      },
+      {
+        "at": 1789211637210,
+        "path": "/ene/desk-excited/large.webp"
+      },
+      {
+        "at": 1789211667104,
+        "path": "/ene/home-greeting/large-poster.webp"
+      },
+      {
+        "at": 1789211667105,
+        "path": "/ene/home-greeting/large.webp"
+      },
+      {
+        "at": 1789211667265,
+        "path": "/ene/home-greeting/large.webm"
+      },
+      {
+        "at": 1789211697116,
+        "path": "/ene/desk-normal/large-poster.webp"
+      },
+      {
+        "at": 1789211697126,
+        "path": "/ene/desk-normal/large.webm"
+      },
+      {
+        "at": 1789211697216,
+        "path": "/ene/desk-normal/large.webp"
+      },
+      {
+        "at": 1789211727104,
+        "path": "/ene/desk-confused/large-poster.webp"
+      },
+      {
+        "at": 1789211727104,
+        "path": "/ene/desk-confused/large.webp"
+      },
+      {
+        "at": 1789211727221,
+        "path": "/ene/desk-confused/large.webm"
+      },
+      {
+        "at": 1789211757116,
+        "path": "/ene/desk-surprised/large-poster.webp"
+      },
+      {
+        "at": 1789211757123,
+        "path": "/ene/desk-surprised/large.webm"
+      },
+      {
+        "at": 1789211757215,
+        "path": "/ene/desk-surprised/large.webp"
+      },
+      {
+        "at": 1789211787109,
+        "path": "/ene/desk-excited/large-poster.webp"
+      },
+      {
+        "at": 1789211787110,
+        "path": "/ene/desk-excited/large.webp"
+      },
+      {
+        "at": 1789211787239,
+        "path": "/ene/desk-excited/large.webm"
+      },
+      {
+        "at": 1789211817109,
+        "path": "/ene/home-greeting/large-poster.webp"
+      },
+      {
+        "at": 1789211817119,
+        "path": "/ene/home-greeting/large.webm"
+      },
+      {
+        "at": 1789211817216,
+        "path": "/ene/home-greeting/large.webp"
+      }
+    ],
+    "plannedSeconds": 600,
+    "state": "passed",
+    "memoryMethod": "Sum of owned browser-process working set/private bytes; JS heap reported separately. Warm-up plays a complete loop after each of 20 switches. No forced GC or cache clearing after warm-up.",
+    "privateMemoryMonotonicallyIncreasing": false,
+    "privateBytesStart": 1210589184,
+    "privateBytesEnd": 1289990144,
+    "privateBytesPeak": 1637949440,
+    "earlyPrivateBytesMedian": 1182908416,
+    "latePrivateBytesMedian": 1274212352,
+    "privateGrowthBytes": 91303936,
+    "materialGrowthNeedsReview": false,
+    "domElementsRange": [
+      160,
+      160
+    ]
+  }
+}

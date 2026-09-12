@@ -1,0 +1,64 @@
+{
+  "draft": true,
+  "engine": "webkit",
+  "base": "http://127.0.0.1:5180",
+  "startedAt": "2026-09-12T10:41:11.062Z",
+  "cases": [
+    {
+      "name": "initial-selected-only",
+      "pass": true,
+      "format": "webp",
+      "requests": [
+        "/ene/manifest.json",
+        "/ene/home-greeting/large-poster.webp",
+        "/ene/home-greeting/large.webp"
+      ]
+    },
+    {
+      "name": "controls-pause-switch-offscreen-replay",
+      "pass": true,
+      "visibilityEvent": "synthetic",
+      "offscreen": "real scroll + IntersectionObserver"
+    },
+    {
+      "name": "reduced-motion-mobile-explicit-play",
+      "pass": true,
+      "viewport": "390x844"
+    },
+    {
+      "name": "failed-alpha-animated-webp-and-poster-pause",
+      "pass": true
+    },
+    {
+      "name": "data-saving-poster-default",
+      "pass": true,
+      "preference": "simulated navigator.connection.saveData"
+    },
+    {
+      "name": "missing-animation-usable-poster",
+      "pass": true
+    },
+    {
+      "name": "missing-manifest-explained-reload",
+      "pass": true
+    },
+    {
+      "name": "png-poster-fallback",
+      "pass": true
+    },
+    {
+      "name": "retain-still-through-delayed-or-missing-state",
+      "pass": true
+    }
+  ],
+  "externalRequests": [],
+  "pageErrors": [],
+  "testsPhysicalDevices": false,
+  "finalFamilies": [
+    "home-greeting",
+    "desk-normal"
+  ],
+  "browser": "26.6",
+  "pass": true,
+  "finishedAt": "2026-09-12T10:41:39.742Z"
+}

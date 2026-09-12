@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "python": "3.10.19",
+  "platform": "windows-x86_64",
+  "engine": {
+    "name": "deiteris/voice-changer",
+    "path": ".tools/voice/deiteris",
+    "url": "https://github.com/deiteris/voice-changer.git",
+    "revision": "b9cd071ae2743c146e5d279453a1c0caeb78e854",
+    "license": "MIT",
+    "mode": "CPU FP32 RVC v2 no-F0 file-conversion adapter; live client acceptance remains separate"
+  },
+  "assets": [
+    {
+      "path": "assets/voice/chihaya/V2-AISO-HOWATTO.pth",
+      "url": "https://huggingface.co/wok000/vcclient_model/resolve/c46962577db8cf3fba2b3fc3526af98eb6611840/rvc_v2_chihaya_jinja/V2-AISO-HOWATTO.pth",
+      "sha256": "8fc32652b8ec472615af3f6661a50a195dd54990e0f517bd0dbd66db59813146",
+      "bytes": 55074309,
+      "id": "chihaya-soft",
+      "license": "MIT",
+      "style": "soft / gentle (candidate, unauditioned)",
+      "terms": "https://huggingface.co/wok000/vcclient_model/blob/c46962577db8cf3fba2b3fc3526af98eb6611840/rvc_v2_chihaya_jinja/description.txt",
+      "creatorSource": "https://note.com/aisoiikei_turuno/n/n262c358700a5"
+    },
+    {
+      "path": "assets/voice/chihaya/V2-AISO-KAKKOII.pth",
+      "url": "https://huggingface.co/wok000/vcclient_model/resolve/c46962577db8cf3fba2b3fc3526af98eb6611840/rvc_v2_chihaya_jinja/V2-AISO-KAKKOII.pth",
+      "sha256": "ae33b60655a59ecb37135892ed4a95ba326b412d6589dea251fced95e18aef31",
+      "bytes": 55074309,
+      "id": "chihaya-cool",
+      "license": "MIT",
+      "style": "cool / lower (candidate, unauditioned)",
+      "terms": "https://huggingface.co/wok000/vcclient_model/blob/c46962577db8cf3fba2b3fc3526af98eb6611840/rvc_v2_chihaya_jinja/description.txt",
+      "creatorSource": "https://note.com/aisoiikei_turuno/n/n262c358700a5"
+    },
+    {
+      "path": "assets/voice/chihaya/V2-AISO-SYAKITTO.pth",
+      "url": "https://huggingface.co/wok000/vcclient_model/resolve/c46962577db8cf3fba2b3fc3526af98eb6611840/rvc_v2_chihaya_jinja/V2-AISO-SYAKITTO.pth",
+      "sha256": "569257d45848dada4ba604dfb9a60496d3043eb112e82c81d71eb37be942be50",
+      "bytes": 55074757,
+      "id": "chihaya-bright",
+      "license": "MIT",
+      "style": "crisp / bright (candidate, unauditioned)",
+      "terms": "https://huggingface.co/wok000/vcclient_model/blob/c46962577db8cf3fba2b3fc3526af98eb6611840/rvc_v2_chihaya_jinja/description.txt",
+      "creatorSource": "https://note.com/aisoiikei_turuno/n/n262c358700a5"
+    },
+    {
+      "path": "assets/voice/chihaya/description.txt",
+      "url": "https://huggingface.co/wok000/vcclient_model/resolve/c46962577db8cf3fba2b3fc3526af98eb6611840/rvc_v2_chihaya_jinja/description.txt",
+      "sha256": "7d84b5e3c30a47589c57d68c49ed79e86c6ca2469dd119887ddfc3f851f06b1c",
+      "bytes": 5501,
+      "id": "chihaya-terms",
+      "license": "Publisher terms",
+      "terms": "https://huggingface.co/wok000/vcclient_model/blob/c46962577db8cf3fba2b3fc3526af98eb6611840/rvc_v2_chihaya_jinja/description.txt",
+      "creatorSource": "https://note.com/aisoiikei_turuno/n/n262c358700a5"
+    },
+    {
+      "path": "assets/voice/pretrained/contentvec-f.onnx",
+      "url": "https://huggingface.co/wok000/weights_gpl/resolve/c2f3e4a8884dba0995347dfe24dc0ad40acb9eb7/content-vec/contentvec-f.onnx",
+      "sha256": "4b31ed3d95a568fab7952de923ff7f7d3d17128ea6fce69f665509d24c3156db",
+      "bytes": 378550151,
+      "id": "contentvec-onnx",
+      "license": "GPL-3.0",
+      "role": "content encoder; exact exporter-distributed weights",
+      "terms": "https://huggingface.co/wok000/weights_gpl/blob/c2f3e4a8884dba0995347dfe24dc0ad40acb9eb7/README.md"
+    },
+    {
+      "id": "ljspeech-sample",
+      "path": "assets/voice/samples/LJ025-0076.wav",
+      "url": "https://keithito.com/LJ-Speech-Dataset/LJ025-0076.wav",
+      "sha256": "b31133c05e9667a27db5be539ca089aa99e95ca7bef52040c902ff781680873a",
+      "bytes": 370336,
+      "license": "Public Domain (publisher declaration)",
+      "terms": "https://keithito.com/LJ-Speech-Dataset/",
+      "role": "English licensed conversion smoke input; not a trained target"
+    }
+  ],
+  "optionalComponents": {
+    "pitchEstimator": "Not required or loaded for no-F0 catalog. torchcrepe/torchfcpe dependencies contain the enumerated MIT estimator weights; these are inactive, not target voices.",
+    "retrievalIndex": "Not required: creator specifies ratio 0; dummy index omitted",
+    "pretrainedGenerator": "Not required for inference: target checkpoint contains generator. Applio training pretrained assets require their own later pin/audit",
+    "beatrice": "Excluded; closed inference library not installed",
+    "routing": "No routing installed by TASK022; existing OBS GPL-2.0-or-later will own required recording output"
+  },
+  "bundledOptionalEstimatorAssets": [
+    {
+      "package": "torchcrepe",
+      "version": "0.0.24",
+      "path": ".tools\\voice\\venv\\lib\\site-packages\\torchcrepe\\assets\\full.pth",
+      "sha256": "133225604dedd2e4005f8bbd1bd0a2ec073ba8b7a6cd31ff6d5edbbfa3539986",
+      "bytes": 88991291,
+      "license": "MIT (package/repository license; bundled estimator weights)",
+      "active": false,
+      "role": "optional pitch estimator; not loaded in no-F0 smoke conversion"
+    },
+    {
+      "package": "torchcrepe",
+      "version": "0.0.24",
+      "path": ".tools\\voice\\venv\\lib\\site-packages\\torchcrepe\\assets\\tiny.pth",
+      "sha256": "d4993eea36ed1a0ad9ac549c740dae5265b049ce72004f00c2f59e01c0be8432",
+      "bytes": 1962363,
+      "license": "MIT (package/repository license; bundled estimator weights)",
+      "active": false,
+      "role": "optional pitch estimator; not loaded in no-F0 smoke conversion"
+    },
+    {
+      "package": "torchfcpe",
+      "version": "0.0.4",
+      "path": ".tools\\voice\\venv\\lib\\site-packages\\torchfcpe\\assets\\fcpe_c_v001.pt",
+      "sha256": "b9aeaeb673436eeda50ceafd632aa681aa63417e52eae4207503d180c9b10015",
+      "bytes": 43363260,
+      "license": "MIT (package/repository license; bundled estimator weights)",
+      "active": false,
+      "role": "optional pitch estimator; not loaded in no-F0 smoke conversion"
+    }
+  ]
+}

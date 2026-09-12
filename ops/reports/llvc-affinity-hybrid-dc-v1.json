@@ -1,0 +1,73 @@
+{
+  "date": "2026-09-12T13:37:08Z",
+  "runLabel": "hybrid-dc-v1",
+  "passed": false,
+  "status": "failed",
+  "stage": "diagnostic-evidence",
+  "diagnostic": true,
+  "paced": false,
+  "question": "Does hybrid P-core/E-core scheduling explain the unexplained LLVC per-call timing discrepancy?",
+  "callsPerCondition": 200,
+  "internalChunkSamples": 832,
+  "internalChunkMs": 52,
+  "conditions": [
+    {
+      "name": "default-fff",
+      "mask": "FFF",
+      "intent": "Current worker setting: every logical CPU, P-core or E-core."
+    },
+    {
+      "name": "p-cores-00f",
+      "mask": "F",
+      "intent": "Only the two measured 100%-frequency physical cores and their threads."
+    },
+    {
+      "name": "e-cores-ff0",
+      "mask": "FF0",
+      "intent": "Only the eight measured 50-70%-frequency efficiency cores."
+    }
+  ],
+  "codeSha256": {
+    "probe_llvc_affinity.py": "8018fdf74b61680d547e98924237a2530abc48e872bdf86d09add385301e03fd"
+  },
+  "baselineSha256": {
+    "llvc_stream_adapter.py": "78ce4fb5ac60307ee984ebe28f7f3800f82ae2ff21ac009a2b863f4fb28a4816",
+    "probe_llvc_stream_adapter.py": "b6b3b9f9fe664a880577e6bdaee572838586f1b6d209983eb02fa0c87d4cb1b4"
+  },
+  "llvcManifestSha256": "a1bd8939a3cda93824276795df8892dc06c1dc5f683a70f344a0a3255e8e4eb4",
+  "log": {
+    "path": "ops/reports/local/voice/llvc/llvc-affinity-hybrid-dc-v1.log",
+    "sha256": "a12b86d1b2aad2d613e7709f33ad4ef048de298712755cdc8004aa9c53d91ed1",
+    "bytes": 1682
+  },
+  "physicalMedia": false,
+  "networkInference": false,
+  "liveAccepted": false,
+  "limits": [
+    "A timing diagnostic only: no microphone, speaker, OBS, paced pipeline or listening acceptance.",
+    "Each condition sets only its own child process affinity; no global power, priority or scheduler setting changes.",
+    "Ambient system load is recorded, not controlled; conditions run sequentially and can see different contention.",
+    "Per-call Windows CPU readings are coarse; use aggregate CPU/wall totals rather than single-call ratios.",
+    "GetCurrentProcessorNumber samples are taken outside timed regions and can change between samples.",
+    "Core-kind labels come from measured percentage-of-maximum-frequency counters on this host, not a vendor topology API."
+  ],
+  "results": [],
+  "completed": "2026-09-12T13:37:09Z",
+  "errorType": "OSError",
+  "error": "SetProcessAffinityMask failed for mask FF0",
+  "failures": [
+    {
+      "condition": "default-fff",
+      "reason": "exit-1"
+    },
+    {
+      "condition": "p-cores-00f",
+      "reason": "exit-1"
+    },
+    {
+      "condition": "e-cores-ff0",
+      "reason": "exit-1"
+    }
+  ],
+  "comparison": null
+}

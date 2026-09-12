@@ -1,0 +1,443 @@
+{
+  "date": "2026-09-12T13:53:11.565Z",
+  "runLabel": "cores-v1",
+  "passed": true,
+  "status": "complete",
+  "question": "Does confining the browser process tree to efficiency cores reproduce a draw-cadence collapse?",
+  "phaseMs": 20000,
+  "phases": [
+    {
+      "name": "default-fff",
+      "mask": "FFF",
+      "intent": "Unchanged scheduler behaviour, the current production setting."
+    },
+    {
+      "name": "e-cores-ff0",
+      "mask": "FF0",
+      "intent": "Confined to the measured 50-70% efficiency cores."
+    },
+    {
+      "name": "p-cores-00f",
+      "mask": "F",
+      "intent": "Confined to the measured 100% performance cores."
+    },
+    {
+      "name": "restored-fff",
+      "mask": "FFF",
+      "intent": "Returned to the original mask to show the effect is reversible."
+    }
+  ],
+  "obsInvolved": false,
+  "physicalMedia": false,
+  "liveAccepted": false,
+  "results": [
+    {
+      "phase": "default-fff",
+      "intent": "Unchanged scheduler behaviour, the current production setting.",
+      "requestedMask": "FFF",
+      "draws": 1176,
+      "drawsPerSecond": 58.78,
+      "drawIntervalMedianMs": 16,
+      "drawIntervalP95Ms": 29,
+      "drawIntervalMaxMs": 50.2,
+      "inferences": 180,
+      "inferencesPerSecond": 9,
+      "inferenceMedianMs": 119.5,
+      "inferenceP95Ms": 153.40000000596046,
+      "durationMs": 20006.3,
+      "visibility": "visible",
+      "delegate": "GPU",
+      "workerErrors": [],
+      "overflow": false
+    },
+    {
+      "phase": "e-cores-ff0",
+      "intent": "Confined to the measured 50-70% efficiency cores.",
+      "requestedMask": "FF0",
+      "draws": 1023,
+      "drawsPerSecond": 51.11,
+      "drawIntervalMedianMs": 16.7,
+      "drawIntervalP95Ms": 37,
+      "drawIntervalMaxMs": 53.9,
+      "inferences": 137,
+      "inferencesPerSecond": 6.84,
+      "inferenceMedianMs": 127.59999999403954,
+      "inferenceP95Ms": 211.19999998807907,
+      "durationMs": 20017.3,
+      "visibility": "visible",
+      "delegate": "GPU",
+      "workerErrors": [],
+      "overflow": false
+    },
+    {
+      "phase": "p-cores-00f",
+      "intent": "Confined to the measured 100% performance cores.",
+      "requestedMask": "F",
+      "draws": 1180,
+      "drawsPerSecond": 58.95,
+      "drawIntervalMedianMs": 15.7,
+      "drawIntervalP95Ms": 28.5,
+      "drawIntervalMaxMs": 50.4,
+      "inferences": 180,
+      "inferencesPerSecond": 8.99,
+      "inferenceMedianMs": 120.19999998807907,
+      "inferenceP95Ms": 152.40000000596046,
+      "durationMs": 20016.6,
+      "visibility": "visible",
+      "delegate": "GPU",
+      "workerErrors": [],
+      "overflow": false
+    },
+    {
+      "phase": "restored-fff",
+      "intent": "Returned to the original mask to show the effect is reversible.",
+      "requestedMask": "FFF",
+      "draws": 1168,
+      "drawsPerSecond": 58.38,
+      "drawIntervalMedianMs": 16.2,
+      "drawIntervalP95Ms": 30.1,
+      "drawIntervalMaxMs": 46.7,
+      "inferences": 176,
+      "inferencesPerSecond": 8.8,
+      "inferenceMedianMs": 117.40000000596046,
+      "inferenceP95Ms": 154.2000000178814,
+      "durationMs": 20008,
+      "visibility": "visible",
+      "delegate": "GPU",
+      "workerErrors": [],
+      "overflow": false
+    }
+  ],
+  "affinityChanges": [
+    {
+      "phase": "default-fff",
+      "requestedMask": "FFF",
+      "changes": [
+        {
+          "pid": 23276,
+          "before": 4095,
+          "after": 4095
+        },
+        {
+          "pid": 22044,
+          "before": 4095,
+          "after": 4095
+        },
+        {
+          "pid": 14940,
+          "before": 4095,
+          "after": 4095
+        },
+        {
+          "pid": 21132,
+          "before": 4095,
+          "after": 4095
+        },
+        {
+          "pid": 8772,
+          "before": 4095,
+          "after": 4095
+        },
+        {
+          "pid": 29016,
+          "before": 4095,
+          "after": 4095
+        },
+        {
+          "pid": 17308,
+          "before": 4095,
+          "after": 4095
+        },
+        {
+          "pid": 28240,
+          "before": 4095,
+          "after": 4095
+        },
+        {
+          "pid": 16364,
+          "before": 4095,
+          "after": 4095
+        }
+      ]
+    },
+    {
+      "phase": "e-cores-ff0",
+      "requestedMask": "FF0",
+      "changes": [
+        {
+          "pid": 23276,
+          "before": 4095,
+          "after": 4080
+        },
+        {
+          "pid": 22044,
+          "before": 4095,
+          "after": 4080
+        },
+        {
+          "pid": 14940,
+          "before": 4095,
+          "after": 4080
+        },
+        {
+          "pid": 21132,
+          "before": 4095,
+          "after": 4080
+        },
+        {
+          "pid": 8772,
+          "before": 4095,
+          "after": 4080
+        },
+        {
+          "pid": 29016,
+          "before": 4095,
+          "after": 4080
+        },
+        {
+          "pid": 17308,
+          "before": 4095,
+          "after": 4080
+        },
+        {
+          "pid": 28240,
+          "before": 4095,
+          "after": 4080
+        },
+        {
+          "pid": 16364,
+          "before": 4095,
+          "after": 4080
+        }
+      ]
+    },
+    {
+      "phase": "p-cores-00f",
+      "requestedMask": "F",
+      "changes": [
+        {
+          "pid": 23276,
+          "before": 4080,
+          "after": 15
+        },
+        {
+          "pid": 22044,
+          "before": 4080,
+          "after": 15
+        },
+        {
+          "pid": 14940,
+          "before": 4080,
+          "after": 15
+        },
+        {
+          "pid": 21132,
+          "before": 4080,
+          "after": 15
+        },
+        {
+          "pid": 8772,
+          "before": 4080,
+          "after": 15
+        },
+        {
+          "pid": 29016,
+          "before": 4080,
+          "after": 15
+        },
+        {
+          "pid": 17308,
+          "before": 4080,
+          "after": 15
+        },
+        {
+          "pid": 28240,
+          "before": 4080,
+          "after": 15
+        },
+        {
+          "pid": 16364,
+          "before": 4080,
+          "after": 15
+        }
+      ]
+    },
+    {
+      "phase": "restored-fff",
+      "requestedMask": "FFF",
+      "changes": [
+        {
+          "pid": 23276,
+          "before": 15,
+          "after": 4095
+        },
+        {
+          "pid": 22044,
+          "before": 15,
+          "after": 4095
+        },
+        {
+          "pid": 14940,
+          "before": 15,
+          "after": 4095
+        },
+        {
+          "pid": 21132,
+          "before": 15,
+          "after": 4095
+        },
+        {
+          "pid": 8772,
+          "before": 15,
+          "after": 4095
+        },
+        {
+          "pid": 29016,
+          "before": 15,
+          "after": 4095
+        },
+        {
+          "pid": 17308,
+          "before": 15,
+          "after": 4095
+        },
+        {
+          "pid": 28240,
+          "before": 15,
+          "after": 4095
+        },
+        {
+          "pid": 16364,
+          "before": 15,
+          "after": 4095
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "A cadence diagnostic only: no OBS, recording, microphone, physical camera or acceptance measurement.",
+    "Affinity is applied to the owned Chrome process tree; per-thread placement inside those processes is not controlled.",
+    "Forcing every browser process onto efficiency cores is more severe than an occasional scheduler migration.",
+    "A permitted still image drives tracking, so this is not live camera quality or physical latency.",
+    "Phases run sequentially within one session and can see different ambient load, which is recorded but not controlled.",
+    "Blank-white OBS captures are a separate unexplained symptom and are not measured here."
+  ],
+  "fixture": {
+    "id": "portrait",
+    "file": "assets/testing/jsc2021e037768_alt.jpg",
+    "sha256": "7a7536821783691d1c7b58f5ee7cb601abbeaaa2f4703e755a15c5dbb4271b78",
+    "credit": "NASA/Josh Valcarcel",
+    "verified": true
+  },
+  "server": {
+    "base": "http://127.0.0.1:49318",
+    "port": 49318,
+    "pid": 31472,
+    "owned": true
+  },
+  "chromeVersion": "152.0.7977.83",
+  "trackingPrepared": {
+    "delegate": "GPU",
+    "workerErrors": [],
+    "present": {
+      "face": true,
+      "pose": true,
+      "hands": false
+    }
+  },
+  "ownedProcesses": [
+    {
+      "id": 23276,
+      "type": "browser"
+    },
+    {
+      "id": 22044,
+      "type": "renderer"
+    },
+    {
+      "id": 14940,
+      "type": "renderer"
+    },
+    {
+      "id": 21132,
+      "type": "renderer"
+    },
+    {
+      "id": 8772,
+      "type": "GPU"
+    },
+    {
+      "id": 29016,
+      "type": "network.mojom.NetworkService"
+    },
+    {
+      "id": 17308,
+      "type": "storage.mojom.StorageService"
+    },
+    {
+      "id": 28240,
+      "type": "audio.mojom.AudioService"
+    },
+    {
+      "id": 16364,
+      "type": "video_capture.mojom.VideoCaptureService"
+    }
+  ],
+  "comparison": {
+    "defaultDrawsPerSecond": 58.78,
+    "eCoreDrawsPerSecond": 51.11,
+    "pCoreDrawsPerSecond": 58.95,
+    "restoredDrawsPerSecond": 58.38,
+    "eCoreToDefaultRatio": 0.87,
+    "eCoreCollapsedTowardOneHz": false,
+    "reversible": true
+  },
+  "pageErrors": [],
+  "finalRestore": [
+    {
+      "pid": 23276,
+      "before": 4095,
+      "after": 4095
+    },
+    {
+      "pid": 22044,
+      "before": 4095,
+      "after": 4095
+    },
+    {
+      "pid": 14940,
+      "before": 4095,
+      "after": 4095
+    },
+    {
+      "pid": 21132,
+      "before": 4095,
+      "after": 4095
+    },
+    {
+      "pid": 8772,
+      "before": 4095,
+      "after": 4095
+    },
+    {
+      "pid": 29016,
+      "before": 4095,
+      "after": 4095
+    },
+    {
+      "pid": 17308,
+      "before": 4095,
+      "after": 4095
+    },
+    {
+      "pid": 28240,
+      "before": 4095,
+      "after": 4095
+    },
+    {
+      "pid": 16364,
+      "before": 4095,
+      "after": 4095
+    }
+  ]
+}

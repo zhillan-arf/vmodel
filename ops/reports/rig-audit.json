@@ -1,0 +1,1506 @@
+{
+  "mesh": "ENE Cyber legs ver_mesh",
+  "vertices": 63278,
+  "unweightedVertices": [],
+  "weightedGroups": 120,
+  "visibility": [
+    {
+      "name": "ENE Cyber legs ver_mesh",
+      "type": "MESH",
+      "visible": true,
+      "hideViewport": false,
+      "hideRender": false,
+      "hidden": false,
+      "selected": false,
+      "collections": [
+        {
+          "name": "Collection",
+          "hideViewport": false,
+          "hideRender": false
+        }
+      ]
+    },
+    {
+      "name": "ENE Cyber legs ver_arm",
+      "type": "ARMATURE",
+      "visible": true,
+      "hideViewport": false,
+      "hideRender": false,
+      "hidden": false,
+      "selected": false,
+      "collections": [
+        {
+          "name": "Collection",
+          "hideViewport": false,
+          "hideRender": false
+        }
+      ]
+    },
+    {
+      "name": "ENE Cyber legs ver_arm",
+      "type": "ARMATURE",
+      "visible": true,
+      "hideViewport": false,
+      "hideRender": false,
+      "hidden": false,
+      "selected": false,
+      "collections": [
+        {
+          "name": "Collection",
+          "hideViewport": false,
+          "hideRender": false
+        }
+      ]
+    },
+    {
+      "name": "ENE Cyber legs ver",
+      "type": "EMPTY",
+      "visible": true,
+      "hideViewport": false,
+      "hideRender": true,
+      "hidden": false,
+      "selected": false,
+      "collections": [
+        {
+          "name": "Collection",
+          "hideViewport": false,
+          "hideRender": false
+        }
+      ]
+    }
+  ],
+  "humanoid": {
+    "hips": "腰",
+    "spine": "上半身",
+    "chest": "上半身2",
+    "neck": "首",
+    "head": "頭",
+    "leftEye": "左目",
+    "rightEye": "右目",
+    "leftShoulder": "左肩",
+    "leftUpperArm": "左腕",
+    "leftLowerArm": "左ひじ",
+    "leftHand": "左手首",
+    "leftUpperLeg": "左足",
+    "leftLowerLeg": "左ひざ",
+    "leftFoot": "左足首",
+    "leftToes": "左つま先",
+    "leftThumbMetacarpal": "左親指０",
+    "leftThumbProximal": "左親指１",
+    "leftThumbDistal": "左親指２",
+    "leftIndexProximal": "左人指１",
+    "leftIndexIntermediate": "左人指２",
+    "leftIndexDistal": "左人指３",
+    "leftMiddleProximal": "左中指１",
+    "leftMiddleIntermediate": "左中指２",
+    "leftMiddleDistal": "左中指３",
+    "leftRingProximal": "左薬指１",
+    "leftRingIntermediate": "左薬指２",
+    "leftRingDistal": "左薬指３",
+    "leftLittleProximal": "左小指１",
+    "leftLittleIntermediate": "左小指２",
+    "leftLittleDistal": "左小指３",
+    "rightShoulder": "右肩",
+    "rightUpperArm": "右腕",
+    "rightLowerArm": "右ひじ",
+    "rightHand": "右手首",
+    "rightUpperLeg": "右足",
+    "rightLowerLeg": "右ひざ",
+    "rightFoot": "右足首",
+    "rightToes": "右つま先",
+    "rightThumbMetacarpal": "右親指０",
+    "rightThumbProximal": "右親指１",
+    "rightThumbDistal": "右親指２",
+    "rightIndexProximal": "右人指１",
+    "rightIndexIntermediate": "右人指２",
+    "rightIndexDistal": "右人指３",
+    "rightMiddleProximal": "右中指１",
+    "rightMiddleIntermediate": "右中指２",
+    "rightMiddleDistal": "右中指３",
+    "rightRingProximal": "右薬指１",
+    "rightRingIntermediate": "右薬指２",
+    "rightRingDistal": "右薬指３",
+    "rightLittleProximal": "右小指１",
+    "rightLittleIntermediate": "右小指２",
+    "rightLittleDistal": "右小指３"
+  },
+  "weightedHelpers": [
+    {
+      "name": "前髪３",
+      "vertices": 281,
+      "parent": "頭",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "前髪２",
+      "vertices": 84,
+      "parent": "頭",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "前髪１",
+      "vertices": 239,
+      "parent": "頭",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "後ろ髪",
+      "vertices": 150,
+      "parent": "頭",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "右髪下",
+      "vertices": 169,
+      "parent": "頭",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "左髪下",
+      "vertices": 174,
+      "parent": "頭",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "左髪１",
+      "vertices": 106,
+      "parent": "頭",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "左髪２",
+      "vertices": 122,
+      "parent": "左髪１",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "左髪３",
+      "vertices": 127,
+      "parent": "左髪２",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "左髪４",
+      "vertices": 85,
+      "parent": "左髪３",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "左髪５",
+      "vertices": 11,
+      "parent": "左髪４",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "右髪１",
+      "vertices": 105,
+      "parent": "頭",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "右髪２",
+      "vertices": 120,
+      "parent": "右髪１",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "右髪３",
+      "vertices": 127,
+      "parent": "右髪２",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "右髪４",
+      "vertices": 85,
+      "parent": "右髪３",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "右髪５",
+      "vertices": 11,
+      "parent": "右髪４",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "左髪B1",
+      "vertices": 95,
+      "parent": "頭",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "左髪B2",
+      "vertices": 105,
+      "parent": "左髪B1",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "左髪B3",
+      "vertices": 105,
+      "parent": "左髪B2",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "左髪4B",
+      "vertices": 90,
+      "parent": "左髪B3",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "左髪B5",
+      "vertices": 40,
+      "parent": "左髪4B",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "右髪B1",
+      "vertices": 95,
+      "parent": "頭",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "右髪B2",
+      "vertices": 105,
+      "parent": "右髪B1",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "右髪B3",
+      "vertices": 105,
+      "parent": "右髪B2",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "右髪4B",
+      "vertices": 90,
+      "parent": "右髪B3",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "右髪B5",
+      "vertices": 40,
+      "parent": "右髪4B",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "新規ボーン1",
+      "vertices": 108,
+      "parent": "頭",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "右眉",
+      "vertices": 53,
+      "parent": "頭",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "左眉",
+      "vertices": 53,
+      "parent": "頭",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "headphone",
+      "vertices": 4596,
+      "parent": "頭",
+      "nearestHumanoidAncestor": "頭"
+    },
+    {
+      "name": "下半身",
+      "vertices": 1478,
+      "parent": "腰",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_0_1",
+      "vertices": 65,
+      "parent": "下半身",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_1_1",
+      "vertices": 107,
+      "parent": "スカート_0_1",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_0_7",
+      "vertices": 64,
+      "parent": "下半身",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_1_7",
+      "vertices": 127,
+      "parent": "スカート_0_7",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_0_0",
+      "vertices": 56,
+      "parent": "下半身",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_0_2",
+      "vertices": 36,
+      "parent": "下半身",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_1_2",
+      "vertices": 88,
+      "parent": "スカート_0_2",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_1_0",
+      "vertices": 148,
+      "parent": "スカート_0_0",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "左腕捩",
+      "vertices": 83,
+      "parent": "左腕",
+      "nearestHumanoidAncestor": "左腕"
+    },
+    {
+      "name": "スカート_1_3",
+      "vertices": 89,
+      "parent": "スカート_0_3",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "左腕捩2",
+      "vertices": 13,
+      "parent": "左腕",
+      "nearestHumanoidAncestor": "左腕"
+    },
+    {
+      "name": "スカート_0_3",
+      "vertices": 41,
+      "parent": "下半身",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_1_4",
+      "vertices": 96,
+      "parent": "スカート_0_4",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_1_5",
+      "vertices": 89,
+      "parent": "スカート_0_5",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "左手捩",
+      "vertices": 416,
+      "parent": "左ひじ",
+      "nearestHumanoidAncestor": "左ひじ"
+    },
+    {
+      "name": "左手捩2",
+      "vertices": 45,
+      "parent": "左ひじ",
+      "nearestHumanoidAncestor": "左ひじ"
+    },
+    {
+      "name": "左手捩3",
+      "vertices": 114,
+      "parent": "左ひじ",
+      "nearestHumanoidAncestor": "左ひじ"
+    },
+    {
+      "name": "左腕捩3",
+      "vertices": 13,
+      "parent": "左腕",
+      "nearestHumanoidAncestor": "左腕"
+    },
+    {
+      "name": "スカート_0_4",
+      "vertices": 31,
+      "parent": "下半身",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_0_6",
+      "vertices": 39,
+      "parent": "下半身",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_1_6",
+      "vertices": 85,
+      "parent": "スカート_0_6",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "右腕捩",
+      "vertices": 83,
+      "parent": "右腕",
+      "nearestHumanoidAncestor": "右腕"
+    },
+    {
+      "name": "右腕捩2",
+      "vertices": 13,
+      "parent": "右腕",
+      "nearestHumanoidAncestor": "右腕"
+    },
+    {
+      "name": "右手捩1",
+      "vertices": 13,
+      "parent": "右ひじ",
+      "nearestHumanoidAncestor": "右ひじ"
+    },
+    {
+      "name": "右手捩2",
+      "vertices": 51,
+      "parent": "右ひじ",
+      "nearestHumanoidAncestor": "右ひじ"
+    },
+    {
+      "name": "右手捩3",
+      "vertices": 114,
+      "parent": "右ひじ",
+      "nearestHumanoidAncestor": "右ひじ"
+    },
+    {
+      "name": "右手捩",
+      "vertices": 406,
+      "parent": "右ひじ",
+      "nearestHumanoidAncestor": "右ひじ"
+    },
+    {
+      "name": "スカート_0_5",
+      "vertices": 35,
+      "parent": "下半身",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "右腕捩3",
+      "vertices": 13,
+      "parent": "右腕",
+      "nearestHumanoidAncestor": "右腕"
+    },
+    {
+      "name": "スカート_2_1",
+      "vertices": 56,
+      "parent": "スカート_1_1",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_2_0",
+      "vertices": 75,
+      "parent": "スカート_1_0",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_2_2",
+      "vertices": 36,
+      "parent": "スカート_1_2",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_2_3",
+      "vertices": 48,
+      "parent": "スカート_1_3",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_2_4",
+      "vertices": 58,
+      "parent": "スカート_1_4",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_2_7",
+      "vertices": 56,
+      "parent": "スカート_1_7",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_2_6",
+      "vertices": 36,
+      "parent": "スカート_1_6",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "スカート_2_5",
+      "vertices": 48,
+      "parent": "スカート_1_5",
+      "nearestHumanoidAncestor": "腰"
+    },
+    {
+      "name": "左足D",
+      "vertices": 494,
+      "parent": "左足",
+      "nearestHumanoidAncestor": "左足"
+    },
+    {
+      "name": "右足D",
+      "vertices": 494,
+      "parent": "右足",
+      "nearestHumanoidAncestor": "右足"
+    },
+    {
+      "name": "左ひざD",
+      "vertices": 194,
+      "parent": "左ひざ",
+      "nearestHumanoidAncestor": "左ひざ"
+    },
+    {
+      "name": "右ひざD",
+      "vertices": 194,
+      "parent": "右ひざ",
+      "nearestHumanoidAncestor": "右ひざ"
+    },
+    {
+      "name": "ﾈｸﾀｲ2",
+      "vertices": 3,
+      "parent": "ﾈｸﾀｲ",
+      "nearestHumanoidAncestor": "首"
+    },
+    {
+      "name": "ﾈｸﾀｲ",
+      "vertices": 70,
+      "parent": "首",
+      "nearestHumanoidAncestor": "首"
+    }
+  ],
+  "springs": [
+    {
+      "name": "前髪２-2830d42c43934ce1baa538690fbe96a4",
+      "joints": [
+        {
+          "bone": "前髪２",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "前髪３-c8c3fa09626c4b35a4a8a01498d42998",
+      "joints": [
+        {
+          "bone": "前髪３",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "前髪１-550305334eab4be2adcdc3ed2812e960",
+      "joints": [
+        {
+          "bone": "前髪１",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "右髪下-4c7b5e6c64c9455fb5ae7c6d62ec66c7",
+      "joints": [
+        {
+          "bone": "右髪下",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "左髪下-182f3194a1094440afc2a679bc7a3f0e",
+      "joints": [
+        {
+          "bone": "左髪下",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "後ろ髪-8d6a79d910dc4402b1f818ff2652ca5b",
+      "joints": [
+        {
+          "bone": "後ろ髪",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "左髪１-21e6e736c1b6483ea096d6850ca754df",
+      "joints": [
+        {
+          "bone": "左髪１",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "左髪２",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "左髪３",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "左髪４",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "左髪５",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "左髪６",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "左髪B1-b8e261510fc545f5ab2afff4c0d2f48d",
+      "joints": [
+        {
+          "bone": "左髪B1",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "左髪B2",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "左髪B3",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "左髪4B",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "左髪B5",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "左髪B6",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "右髪１-c2e8ce945d9e430781b3d8e6710e3d87",
+      "joints": [
+        {
+          "bone": "右髪１",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "右髪２",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "右髪３",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "右髪４",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "右髪５",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "右髪６",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "右髪B1-1f3ffa71379f41f69fc8d5cff3dbd694",
+      "joints": [
+        {
+          "bone": "右髪B1",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "右髪B2",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "右髪B3",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "右髪4B",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "右髪B5",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "右髪B6",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "スカート_0_0-bd10e62beda3497eaed321fb98691930",
+      "joints": [
+        {
+          "bone": "スカート_0_0",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_1_0",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_2_0",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "スカート_0_1-f5cd37808a054079bed8dd64f217e9f4",
+      "joints": [
+        {
+          "bone": "スカート_0_1",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_1_1",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_2_1",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "スカート_0_2-e6846f7d2b0b4dd88a0a70af2d8510af",
+      "joints": [
+        {
+          "bone": "スカート_0_2",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_1_2",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_2_2",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "スカート_0_3-779e03768a5d44c4bd8e3dd4bd0b6430",
+      "joints": [
+        {
+          "bone": "スカート_0_3",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_1_3",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_2_3",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "スカート_0_4-3e9efe57ce784f659d697378b0e92d5f",
+      "joints": [
+        {
+          "bone": "スカート_0_4",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_1_4",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_2_4",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "スカート_0_5-de16e6e28db446478df9fcc77084d604",
+      "joints": [
+        {
+          "bone": "スカート_0_5",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_1_5",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_2_5",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "スカート_0_6-5db23968369f4cc181126785900f6621",
+      "joints": [
+        {
+          "bone": "スカート_0_6",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_1_6",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_2_6",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "スカート_0_7-529552214268410d812ea1ea67fb88d7",
+      "joints": [
+        {
+          "bone": "スカート_0_7",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_1_7",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        },
+        {
+          "bone": "スカート_2_7",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    },
+    {
+      "name": "ﾈｸﾀｲ-cfbea28af76f4687bcd492e3312b1238",
+      "joints": [
+        {
+          "bone": "ﾈｸﾀｲ",
+          "stiffness": 3.0,
+          "dragForce": 0.800000011920929,
+          "gravityPower": 0.0,
+          "hitRadius": 0.0
+        }
+      ]
+    }
+  ],
+  "colliders": 17,
+  "expressions": {
+    "happy": [
+      "にこり"
+    ],
+    "angry": [
+      "怒り"
+    ],
+    "sad": [
+      "困る"
+    ],
+    "surprised": [
+      "びっくり"
+    ],
+    "aa": [
+      "あ"
+    ],
+    "ih": [
+      "い"
+    ],
+    "ou": [
+      "う"
+    ],
+    "oh": [
+      "お"
+    ],
+    "blink": [
+      "まばたき"
+    ],
+    "blinkLeft": [
+      "ウィンク左"
+    ],
+    "blinkRight": [
+      "ウィンク右"
+    ]
+  },
+  "shapeKeys": [
+    "Basis",
+    "真面目",
+    "困る",
+    "にこり",
+    "怒り",
+    "上",
+    "下",
+    "まばたき",
+    "ウィンク左",
+    "ウィンク右",
+    "笑い",
+    "笑い左",
+    "笑い右",
+    "はぅ",
+    "なごみ",
+    "びっくり",
+    "じと目",
+    "優しい",
+    "猫目",
+    "瞳小",
+    "恐ろしい",
+    "○",
+    "○2",
+    "○ ○",
+    "笑い目",
+    "スダー",
+    "はぁと",
+    "あ",
+    "い",
+    "う",
+    "お",
+    "▲",
+    "▲2",
+    "∧",
+    "∧2",
+    "ω",
+    "ω□",
+    "はんっ！",
+    "ぺろっ",
+    "ぺろっ2",
+    "lll",
+    "汗",
+    "anger mark",
+    "照れ",
+    "照れ2",
+    "照れ3"
+  ],
+  "sourceMorphs": [
+    {
+      "index": 0,
+      "name": "toon調整",
+      "english": "",
+      "type": "MaterialMorph",
+      "offsets": 1
+    },
+    {
+      "index": 1,
+      "name": "黒化",
+      "english": "黒化",
+      "type": "MaterialMorph",
+      "offsets": 1
+    },
+    {
+      "index": 2,
+      "name": "白化",
+      "english": "白化",
+      "type": "MaterialMorph",
+      "offsets": 1
+    },
+    {
+      "index": 3,
+      "name": "透過",
+      "english": "透過",
+      "type": "MaterialMorph",
+      "offsets": 1
+    },
+    {
+      "index": 4,
+      "name": "真面目",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 106
+    },
+    {
+      "index": 5,
+      "name": "困る",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 106
+    },
+    {
+      "index": 6,
+      "name": "にこり",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 106
+    },
+    {
+      "index": 7,
+      "name": "怒り",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 110
+    },
+    {
+      "index": 8,
+      "name": "上",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 106
+    },
+    {
+      "index": 9,
+      "name": "下",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 106
+    },
+    {
+      "index": 10,
+      "name": "まばたき",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 5752
+    },
+    {
+      "index": 11,
+      "name": "ウィンク左",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 2877
+    },
+    {
+      "index": 12,
+      "name": "ウィンク右",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 2875
+    },
+    {
+      "index": 13,
+      "name": "笑い",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 5936
+    },
+    {
+      "index": 14,
+      "name": "笑い左",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 2969
+    },
+    {
+      "index": 15,
+      "name": "笑い右",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 2967
+    },
+    {
+      "index": 16,
+      "name": "はぅ",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 6390
+    },
+    {
+      "index": 17,
+      "name": "なごみ",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 5968
+    },
+    {
+      "index": 18,
+      "name": "びっくり",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 2190
+    },
+    {
+      "index": 19,
+      "name": "じと目",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 5367
+    },
+    {
+      "index": 20,
+      "name": "優しい",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 936
+    },
+    {
+      "index": 21,
+      "name": "猫目",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 3616
+    },
+    {
+      "index": 22,
+      "name": "瞳小",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 3616
+    },
+    {
+      "index": 23,
+      "name": "恐ろしい",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 3666
+    },
+    {
+      "index": 24,
+      "name": "○",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 5812
+    },
+    {
+      "index": 25,
+      "name": "○2",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 5903
+    },
+    {
+      "index": 26,
+      "name": "○ ○",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 5909
+    },
+    {
+      "index": 27,
+      "name": "笑い目",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 1132
+    },
+    {
+      "index": 28,
+      "name": "スダー",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 8
+    },
+    {
+      "index": 29,
+      "name": "はぁと",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 8
+    },
+    {
+      "index": 30,
+      "name": "あ",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 2785
+    },
+    {
+      "index": 31,
+      "name": "い",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 2388
+    },
+    {
+      "index": 32,
+      "name": "う",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 2785
+    },
+    {
+      "index": 33,
+      "name": "お",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 2853
+    },
+    {
+      "index": 34,
+      "name": "▲",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 2417
+    },
+    {
+      "index": 35,
+      "name": "▲2",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 2417
+    },
+    {
+      "index": 36,
+      "name": "∧",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 1607
+    },
+    {
+      "index": 37,
+      "name": "∧2",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 1607
+    },
+    {
+      "index": 38,
+      "name": "ω",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 1503
+    },
+    {
+      "index": 39,
+      "name": "ω□",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 2789
+    },
+    {
+      "index": 40,
+      "name": "はんっ！",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 2441
+    },
+    {
+      "index": 41,
+      "name": "ぺろっ",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 1685
+    },
+    {
+      "index": 42,
+      "name": "ぺろっ2",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 1691
+    },
+    {
+      "index": 43,
+      "name": "lll",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 4
+    },
+    {
+      "index": 44,
+      "name": "汗",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 4
+    },
+    {
+      "index": 45,
+      "name": "anger mark",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 4
+    },
+    {
+      "index": 46,
+      "name": "照れ",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 70
+    },
+    {
+      "index": 47,
+      "name": "照れ2",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 70
+    },
+    {
+      "index": 48,
+      "name": "照れ3",
+      "english": "",
+      "type": "VertexMorph",
+      "offsets": 70
+    },
+    {
+      "index": 49,
+      "name": "toon調整",
+      "english": "",
+      "type": "MaterialMorph",
+      "offsets": 1
+    }
+  ],
+  "meshValidation": {
+    "changed": false,
+    "before": {
+      "vertices": 63278,
+      "edges": 175735,
+      "polygons": 112948,
+      "loops": 338844
+    },
+    "after": {
+      "vertices": 63278,
+      "edges": 175735,
+      "polygons": 112948,
+      "loops": 338844
+    }
+  }
+}

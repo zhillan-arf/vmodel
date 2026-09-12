@@ -1,0 +1,452 @@
+{
+  "date": "2026-09-12T09:42:56.607Z",
+  "input": "Seven 640 × 480 synthetic geometric bitmaps sent directly to the built tracking worker; no person, camera, microphone or gesture-quality test.",
+  "errors": [],
+  "messages": [
+    {
+      "type": "warning",
+      "text": "W0912 09:42:57.444000 2196592 face_landmarker_graph.cc:180] Sets FaceBlendshapesGraph acceleration to xnnpack by default."
+    },
+    {
+      "type": "log",
+      "text": "I0912 09:42:57.505999 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+    },
+    {
+      "type": "warning",
+      "text": "W0912 09:42:57.507000 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+    },
+    {
+      "type": "log",
+      "text": "Graph successfully started running."
+    },
+    {
+      "type": "log",
+      "text": "I0912 09:42:57.670000 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+    },
+    {
+      "type": "warning",
+      "text": "W0912 09:42:57.670000 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+    },
+    {
+      "type": "log",
+      "text": "Graph successfully started running."
+    },
+    {
+      "type": "log",
+      "text": "I0912 09:42:57.812999 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+    },
+    {
+      "type": "warning",
+      "text": "W0912 09:42:57.812999 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+    },
+    {
+      "type": "log",
+      "text": "Graph successfully started running."
+    },
+    {
+      "type": "error",
+      "text": "INFO: Created TensorFlow Lite XNNPACK delegate for CPU."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 09:42:57.848000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 09:42:57.876999 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+    },
+    {
+      "type": "error",
+      "text": "INFO: Created TensorFlow Lite XNNPACK delegate for CPU."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 09:42:58.000999 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 09:42:58.022000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+    },
+    {
+      "type": "error",
+      "text": "INFO: Created TensorFlow Lite XNNPACK delegate for CPU."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 09:42:58.065999 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 09:42:58.086000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+    },
+    {
+      "type": "warning",
+      "text": "W0912 09:42:58.127000 2196592 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX."
+    }
+  ],
+  "externalRequests": [],
+  "externalResponses": [],
+  "runtimeResponses": [
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.js?task=face-CPU",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.wasm",
+      "status": 200
+    },
+    {
+      "path": "/runtime/face_landmarker.task",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.js?task=pose-CPU",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.wasm",
+      "status": 200
+    },
+    {
+      "path": "/runtime/pose_landmarker_lite.task",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.js?task=hands-CPU",
+      "status": 200
+    },
+    {
+      "path": "/runtime/wasm/vision_wasm_module_internal.wasm",
+      "status": 200
+    },
+    {
+      "path": "/runtime/hand_landmarker.task",
+      "status": 200
+    }
+  ],
+  "worker": {
+    "path": "/assets/tracking.worker-CssJ7G00.js",
+    "sha256": "9f7cc66943114fc084e9384158b93302f415bd40a083d6331dd5ba399c6e64e8"
+  },
+  "sdk": "1.0.1",
+  "runtimeAssets": [
+    {
+      "name": "face_landmarker.task",
+      "url": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task",
+      "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+      "bytes": 3758596,
+      "checksumSource": "Recorded on first retrieval from versioned upstream URL"
+    },
+    {
+      "name": "pose_landmarker_lite.task",
+      "url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task",
+      "sha256": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a",
+      "bytes": 5777746,
+      "checksumSource": "Recorded on first retrieval from versioned upstream URL"
+    },
+    {
+      "name": "hand_landmarker.task",
+      "url": "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
+      "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1",
+      "bytes": 7819105,
+      "checksumSource": "Recorded on first retrieval from versioned upstream URL"
+    },
+    {
+      "name": "wasm/vision_wasm_internal.js",
+      "source": "@mediapipe/tasks-vision@1.0.1",
+      "sha256": "e170ee67dd4e16c1a6fcd8840a206687e5a59b22c20e4a902bc445b095454d73",
+      "bytes": 323377
+    },
+    {
+      "name": "wasm/vision_wasm_internal.wasm",
+      "source": "@mediapipe/tasks-vision@1.0.1",
+      "sha256": "8da277a733926eacd0474b8704b36742d6ec3231c57a860c5b889dff8f1df886",
+      "bytes": 11756954
+    },
+    {
+      "name": "wasm/vision_wasm_module_internal.js",
+      "source": "@mediapipe/tasks-vision@1.0.1",
+      "sha256": "da8934057f147b622e82cfb4c0dbd85461c598e268588b5a8ba9ca963a8ff82d",
+      "bytes": 323415
+    },
+    {
+      "name": "wasm/vision_wasm_module_internal.wasm",
+      "source": "@mediapipe/tasks-vision@1.0.1",
+      "sha256": "2dabd8e23c60984628beb7bb338764c81a08e6837145273f59578684b5d53c1b",
+      "bytes": 11756972
+    },
+    {
+      "name": "wasm/vision_wasm_nosimd_internal.js",
+      "source": "@mediapipe/tasks-vision@1.0.1",
+      "sha256": "e81d715a3d42cc3373602eb2f7aff795d164934db680e32496b65dab537f9658",
+      "bytes": 323180
+    },
+    {
+      "name": "wasm/vision_wasm_nosimd_internal.wasm",
+      "source": "@mediapipe/tasks-vision@1.0.1",
+      "sha256": "a28483cd42e74e855bf5ebdb6b40d9b66a5b49e35e95020bc97669e6822a3192",
+      "bytes": 10960242
+    }
+  ],
+  "server": {
+    "base": "http://127.0.0.1:53390",
+    "pid": 11980,
+    "isolated": true
+  },
+  "chromeVersion": "152.0.7977.83",
+  "measurement": {
+    "ready": {
+      "type": "ready",
+      "delegate": "CPU"
+    },
+    "initializationMs": 633.0999999940395,
+    "frames": [
+      {
+        "version": 1,
+        "sequence": 1,
+        "timestamp": 1789206177816.5999,
+        "inputSize": {
+          "width": 640,
+          "height": 480
+        },
+        "face": {},
+        "faceMatrix": null,
+        "pose": [],
+        "poseImage": [],
+        "hands": [],
+        "inferenceMs": 311.59999999403954,
+        "samples": {
+          "face": {
+            "timestamp": 1789206177816.5999,
+            "inferenceMs": 113.19999998807907,
+            "present": false
+          },
+          "pose": {
+            "timestamp": 1789206177816.5999,
+            "inferenceMs": 123.5,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789206177816.5999,
+            "inferenceMs": 74.90000000596046,
+            "present": false
+          }
+        },
+        "roundTripMs": 312.5,
+        "sentTimestamp": 1789206177816.5999
+      },
+      {
+        "version": 1,
+        "sequence": 2,
+        "timestamp": 1789206178129.0999,
+        "inputSize": {
+          "width": 640,
+          "height": 480
+        },
+        "face": {},
+        "faceMatrix": null,
+        "pose": [],
+        "poseImage": [],
+        "hands": [],
+        "inferenceMs": 10.400000005960464,
+        "samples": {
+          "face": {
+            "timestamp": 1789206178129.0999,
+            "inferenceMs": 10.300000011920929,
+            "present": false
+          },
+          "pose": {
+            "timestamp": 1789206177816.5999,
+            "inferenceMs": 123.5,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789206177816.5999,
+            "inferenceMs": 74.90000000596046,
+            "present": false
+          }
+        },
+        "roundTripMs": 12.199999988079071,
+        "sentTimestamp": 1789206178129.0999
+      },
+      {
+        "version": 1,
+        "sequence": 3,
+        "timestamp": 1789206178141.5,
+        "inputSize": {
+          "width": 640,
+          "height": 480
+        },
+        "face": {},
+        "faceMatrix": null,
+        "pose": [],
+        "poseImage": [],
+        "hands": [],
+        "inferenceMs": 54.69999998807907,
+        "samples": {
+          "face": {
+            "timestamp": 1789206178141.5,
+            "inferenceMs": 6.199999988079071,
+            "present": false
+          },
+          "pose": {
+            "timestamp": 1789206178141.5,
+            "inferenceMs": 19.200000017881393,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789206178141.5,
+            "inferenceMs": 29.19999998807907,
+            "present": false
+          }
+        },
+        "roundTripMs": 56.60000002384186,
+        "sentTimestamp": 1789206178141.5
+      },
+      {
+        "version": 1,
+        "sequence": 4,
+        "timestamp": 1789206178198.2,
+        "inputSize": {
+          "width": 640,
+          "height": 480
+        },
+        "face": {},
+        "faceMatrix": null,
+        "pose": [],
+        "poseImage": [],
+        "hands": [],
+        "inferenceMs": 7.700000017881393,
+        "samples": {
+          "face": {
+            "timestamp": 1789206178198.2,
+            "inferenceMs": 7.700000017881393,
+            "present": false
+          },
+          "pose": {
+            "timestamp": 1789206178141.5,
+            "inferenceMs": 19.200000017881393,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789206178141.5,
+            "inferenceMs": 29.19999998807907,
+            "present": false
+          }
+        },
+        "roundTripMs": 8,
+        "sentTimestamp": 1789206178198.2
+      },
+      {
+        "version": 1,
+        "sequence": 5,
+        "timestamp": 1789206178206.2998,
+        "inputSize": {
+          "width": 640,
+          "height": 480
+        },
+        "face": {},
+        "faceMatrix": null,
+        "pose": [],
+        "poseImage": [],
+        "hands": [],
+        "inferenceMs": 51.30000001192093,
+        "samples": {
+          "face": {
+            "timestamp": 1789206178206.2998,
+            "inferenceMs": 5.200000017881393,
+            "present": false
+          },
+          "pose": {
+            "timestamp": 1789206178206.2998,
+            "inferenceMs": 17.19999998807907,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789206178206.2998,
+            "inferenceMs": 28.900000005960464,
+            "present": false
+          }
+        },
+        "roundTripMs": 51.5,
+        "sentTimestamp": 1789206178206.2998
+      },
+      {
+        "version": 1,
+        "sequence": 6,
+        "timestamp": 1789206178257.9,
+        "inputSize": {
+          "width": 640,
+          "height": 480
+        },
+        "face": {},
+        "faceMatrix": null,
+        "pose": [],
+        "poseImage": [],
+        "hands": [],
+        "inferenceMs": 5.200000017881393,
+        "samples": {
+          "face": {
+            "timestamp": 1789206178257.9,
+            "inferenceMs": 5.200000017881393,
+            "present": false
+          },
+          "pose": {
+            "timestamp": 1789206178206.2998,
+            "inferenceMs": 17.19999998807907,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789206178206.2998,
+            "inferenceMs": 28.900000005960464,
+            "present": false
+          }
+        },
+        "roundTripMs": 5.300000011920929,
+        "sentTimestamp": 1789206178257.9
+      },
+      {
+        "version": 1,
+        "sequence": 7,
+        "timestamp": 1789206178263.2998,
+        "inputSize": {
+          "width": 640,
+          "height": 480
+        },
+        "face": {},
+        "faceMatrix": null,
+        "pose": [],
+        "poseImage": [],
+        "hands": [],
+        "inferenceMs": 50.5,
+        "samples": {
+          "face": {
+            "timestamp": 1789206178263.2998,
+            "inferenceMs": 6.5,
+            "present": false
+          },
+          "pose": {
+            "timestamp": 1789206178263.2998,
+            "inferenceMs": 17.099999994039536,
+            "present": false
+          },
+          "hands": {
+            "timestamp": 1789206178263.2998,
+            "inferenceMs": 26.80000001192093,
+            "present": false
+          }
+        },
+        "roundTripMs": 50.599999994039536,
+        "sentTimestamp": 1789206178263.2998
+      }
+    ],
+    "mediaRequests": 0
+  },
+  "passed": true,
+  "browserClosed": true,
+  "serverExit": {
+    "code": null,
+    "signal": "SIGTERM"
+  },
+  "serverStopped": true
+}

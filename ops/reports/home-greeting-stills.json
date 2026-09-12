@@ -1,0 +1,19 @@
+{
+  "resource": "home-greeting",
+  "mode": "stills",
+  "sourceFps": 24,
+  "previewFps": null,
+  "size": [
+    360,
+    480
+  ],
+  "frames": [
+    {
+      "sourceFrame": 60,
+      "file": "ops\\reports\\local\\web-resources\\home-greeting\\poses\\frame-0060.png",
+      "seconds": 2.207818099996075
+    }
+  ],
+  "elapsedSeconds": 2.211053700011689,
+  "scene": "assets/work/ene-web/home-greeting.blend"
+}
