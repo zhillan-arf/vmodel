@@ -43,6 +43,69 @@ function settle(solver: Retargeter, data: TrackingFrame, seconds = 1) {
   for (let i = 0; i < seconds*60; i++) solver.update(data, defaults, 1/60, data.timestamp + i*3);
 }
 
+describe('seated framing does not invent foot tracking', () => {
+  // TASK-013: seated must stay stable and must not fabricate leg or foot motion,
+  // even when the camera can see the legs. Standing solves them; seated must not.
+  const withLegs = (now: number, bend: number) => {
+    const data = frame(0, now);
+    const pose = data.pose.map(point => ({ ...point }));
+    // Hips, knees, ankles and toes all clearly visible and moving.
+    const place = (index: number, x: number, y: number) => { pose[index] = { x, y, z: 0, visibility: 1 }; };
+    place(23, .1, 0); place(24, -.1, 0);
+    place(25, .1 + bend, -.4); place(26, -.1 - bend, -.4);
+    place(27, .1 + bend * 2, -.8); place(28, -.1 - bend * 2, -.8);
+    place(31, .1 + bend * 2, -.9); place(32, -.1 - bend * 2, -.9);
+    return { ...data, pose, poseImage: pose };
+  };
+  const legBones = ['leftUpperLeg','leftLowerLeg','leftFoot','leftToes','rightUpperLeg','rightLowerLeg','rightFoot','rightToes'];
+
+  it('leaves leg and foot bones at rest in seated mode while standing drives them', () => {
+    const seated = rig();
+    let clock = 1000;
+    for (let i = 0; i < 240; i++) {
+      seated.solver.update(withLegs(clock, 0.15 * Math.sin(i / 20)), defaults, 1/60, clock);
+      clock += 16;
+    }
+    for (const name of legBones) {
+      const rotation = seated.nodes.get(name)!.quaternion.angleTo(new Quaternion());
+      expect(rotation).toBeLessThan(1e-6);
+    }
+
+    // The same visible legs in standing mode must actually move something,
+    // otherwise the seated result above would prove nothing.
+    const standing = rig();
+    clock = 1000;
+    for (let i = 0; i < 240; i++) {
+      standing.solver.update(withLegs(clock, 0.15 * Math.sin(i / 20)), { ...defaults, mode: 'standing' }, 1/60, clock);
+      clock += 16;
+    }
+    const standingMoved = legBones.some(name => standing.nodes.get(name)!.quaternion.angleTo(new Quaternion()) > 0.01);
+    expect(standingMoved).toBe(true);
+  });
+
+  it('keeps seated framing stable when legs appear and disappear', () => {
+    const { solver, nodes, scene } = rig();
+    let clock = 1000;
+    const hips = nodes.get('hips')!;
+    for (let i = 0; i < 120; i++) { solver.update(withLegs(clock, 0), defaults, 1/60, clock); clock += 16; }
+    const hipsRest = hips.position.clone();
+    const rootRest = scene.position.clone();
+    let worstHips = 0, worstRoot = 0;
+    for (let phase = 0; phase < 4; phase++) {
+      for (let i = 0; i < 120; i++) {
+        const data = phase % 2 === 0 ? withLegs(clock, 0.2) : frame(0, clock);
+        solver.update(data, defaults, 1/60, clock);
+        clock += 16;
+        worstHips = Math.max(worstHips, hips.position.distanceTo(hipsRest));
+        worstRoot = Math.max(worstRoot, scene.position.distanceTo(rootRest));
+      }
+    }
+    // Seated never applies grounding, so neither the hips nor the root may drift.
+    expect(worstHips).toBeLessThan(1e-6);
+    expect(worstRoot).toBeLessThan(1e-6);
+  });
+});
+
 describe('head noise damping, loss and recovery', () => {
   // TASK-010: noise must be damped without a long lag, and losing then regaining
   // the face must not produce an abrupt extreme rotation. Both are measurable.
