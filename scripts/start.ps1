@@ -5,13 +5,13 @@ $studioUrl = 'http://127.0.0.1:4173'
 $voicePython = Join-Path $projectRoot '.tools/voice/venv/Scripts/python.exe'
 $voiceLauncher = Join-Path $PSScriptRoot 'voice/launch.py'
 if ($StopVoice) {
-    if (-not (Test-Path -LiteralPath $voicePython)) { Write-Warning 'Voice environment is absent; no voice service was stopped.'; exit 1 }
+    if (-not (Test-Path -LiteralPath $voicePython)) { Write-Warning 'Voice environment is absent, so there was no voice service to stop.'; exit 1 }
     & $voicePython $voiceLauncher --stop
     exit $LASTEXITCODE
 }
 function Start-OptionalVoice {
     if (-not $Voice) { return }
-    if (-not (Test-Path -LiteralPath $voicePython)) { Write-Warning 'Voice environment is missing. Avatar startup will continue; see docs/voice-setup.md.'; return }
+    if (-not (Test-Path -LiteralPath $voicePython)) { Write-Warning 'Voice environment is missing. Avatar startup will continue; run Setup Voice.cmd to add the character voice.'; return }
     try {
         if ($NoBrowser) { & $voicePython $voiceLauncher --no-browser }
         else { & $voicePython $voiceLauncher }
@@ -39,7 +39,10 @@ if ($existing -and $existing.application -eq 'vmodel') {
 if (-not (Test-Path -LiteralPath (Join-Path $projectRoot 'dist/index.html'))) {
     throw 'The local app build is missing. Run Setup VModel.cmd first.'
 }
-$nodeCommand = Get-Command node -ErrorAction Stop
+# A raw 'term is not recognized' error is the first thing a new user would
+# see here, so name the missing program and the fix instead.
+$nodeCommand = Get-Command node -ErrorAction SilentlyContinue
+if (-not $nodeCommand) { throw 'Node.js was not found. Install Node.js from nodejs.org, then run Setup VModel.cmd before starting the studio.' }
 $logFolder = Join-Path $projectRoot '.cache'
 New-Item -ItemType Directory -Force -Path $logFolder | Out-Null
 $serverScript = Join-Path $PSScriptRoot 'server.mjs'

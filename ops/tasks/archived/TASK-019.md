@@ -38,3 +38,17 @@ Packaging acceptance: all four task criteria have component evidence. This task 
 2026-09-12 voice packaging checkpoint: [Start Voice Studio.cmd](../../../Start%20Voice%20Studio.cmd) / [Stop Voice Studio.cmd](../../../Stop%20Voice%20Studio.cmd) and optional `Start VModel.cmd -Voice`, `-NoBrowser -Voice`, and `-StopVoice` are implemented and the no-browser start/stop/restart path was exercised. Default avatar launch remains independent of local/remote voice. Three provisional presets, saved settings, comparison, monitoring and explicit mute/reconnect are available locally; [UI and state evidence](../../reports/voice-routing.md) records the exact limits. Production [OBS attachment](../../reports/voice-obs-setup.json) is now installed in both existing Ene scenes and verified idempotent, so setup no longer asks the user to add sources or private URLs manually. [Voice quickstart](../../../docs/voice-quickstart.md), [OBS instructions](../../../docs/obs-setup.md) and the main quickstart were updated. No physical media or OBS output was started by this installation. The dependent live-quality/device/sync acceptance in TASK-026 remains open.
 
 2026-09-12 natural-voice packaging: Voice Studio now includes the explicit **Start natural voice → OBS** action and clear natural-speech state. A separate saved profile and natural-only receiver preserve the converted-only source contract. The natural source is [installed silently in both Ene scenes](../../reports/voice-obs-natural-setup.json), with existing avatar/converted settings and calibration preserved. [Mocked workflow evidence](../../reports/voice-natural-ui-smoke.json) verifies track release, Stop, occupied-device failure and no microphone reopening on reload; physical device and timing acceptance remains open. The quickstarts describe both installed routes and deliberate mode selection.
+
+## Launcher guards completed — 2026-09-13
+
+A pass over all twelve launchers, asking what each shows a user whose machine is not already set up.
+
+- **Setup VModel.cmd** is the first thing anyone runs, and it called `npm.cmd` with no check. A machine without Node.js got a raw *"is not recognized"*. It now names Node.js and nodejs.org, states that nothing was changed, and on success points at **Setup Voice.cmd** as well, so the split between studio and voice provisioning is visible at the moment it matters.
+- **Stop Voice Studio.cmd** had no guard while its Start counterpart did, so stopping a voice service that was never installed produced a path error. It now says there is nothing to stop and exits cleanly.
+- **start.ps1** used `Get-Command node -ErrorAction Stop`, whose failure is a raw PowerShell *"term is not recognized"*. It now names Node.js and the setup step, matching the guards it already had for Chrome and the missing build. Its voice warnings now name **Setup Voice.cmd** instead of only a document.
+
+The four launchers still without an inline guard — `Start VModel.cmd`, `Stop VModel.cmd`, `Start OBS.cmd`, `Install OBS Camera.cmd` — delegate to PowerShell scripts that check internally, and those were read to confirm it rather than assumed. `stop.ps1` already handled a missing pid file, an already-stopped server and a mismatched process.
+
+Verified: all four PowerShell launchers parse, and `start.ps1` still starts and reuses a running studio (exit 0, `/health` 200).
+
+This is the sixth handoff gap found by walking the user's journey rather than testing code, and it closes the first-run path: every launcher now fails with a sentence naming what is missing and what to run.
