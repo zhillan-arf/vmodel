@@ -1,8 +1,8 @@
 {
-  "date": "2026-09-12T18:32:18.571Z",
+  "date": "2026-09-12T18:35:58.830Z",
   "passed": true,
   "status": "complete",
-  "question": "Does the app report denied, missing and busy camera states clearly, release resources, and recover on retry?",
+  "question": "Does the app report denied, missing and busy camera states clearly, release resources, recover on retry, and keep Stop and Recenter available throughout?",
   "physicalCamera": false,
   "cases": [
     {
@@ -18,7 +18,82 @@
       "recoveredOnRetry": true,
       "recoveredStatus": "Camera active · GPU tracking",
       "statusAfterStop": "Camera stopped",
-      "pageErrors": []
+      "pageErrors": [],
+      "controlAvailability": [
+        {
+          "where": "before-start",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        },
+        {
+          "where": "after-failure",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        },
+        {
+          "where": "while-running",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        },
+        {
+          "where": "after-stop",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        }
+      ],
+      "stopAndRecenterAlwaysAvailable": true
     },
     {
       "name": "missing",
@@ -33,7 +108,82 @@
       "recoveredOnRetry": true,
       "recoveredStatus": "Camera active · GPU tracking",
       "statusAfterStop": "Camera stopped",
-      "pageErrors": []
+      "pageErrors": [],
+      "controlAvailability": [
+        {
+          "where": "before-start",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        },
+        {
+          "where": "after-failure",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        },
+        {
+          "where": "while-running",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        },
+        {
+          "where": "after-stop",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        }
+      ],
+      "stopAndRecenterAlwaysAvailable": true
     },
     {
       "name": "busy",
@@ -48,7 +198,82 @@
       "recoveredOnRetry": true,
       "recoveredStatus": "Camera active · GPU tracking",
       "statusAfterStop": "Camera stopped",
-      "pageErrors": []
+      "pageErrors": [],
+      "controlAvailability": [
+        {
+          "where": "before-start",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        },
+        {
+          "where": "after-failure",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        },
+        {
+          "where": "while-running",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        },
+        {
+          "where": "after-stop",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        }
+      ],
+      "stopAndRecenterAlwaysAvailable": true
     },
     {
       "name": "overconstrained",
@@ -63,7 +288,82 @@
       "recoveredOnRetry": true,
       "recoveredStatus": "Camera active · GPU tracking",
       "statusAfterStop": "Camera stopped",
-      "pageErrors": []
+      "pageErrors": [],
+      "controlAvailability": [
+        {
+          "where": "before-start",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        },
+        {
+          "where": "after-failure",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        },
+        {
+          "where": "while-running",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        },
+        {
+          "where": "after-stop",
+          "stop": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "recenter": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          },
+          "start": {
+            "present": true,
+            "disabled": false,
+            "hidden": false
+          }
+        }
+      ],
+      "stopAndRecenterAlwaysAvailable": true
     }
   ],
   "limits": [
@@ -72,14 +372,15 @@
     "One attempt per state on one host; no repeated-failure or flapping-device behaviour is covered."
   ],
   "server": {
-    "base": "http://127.0.0.1:61368",
-    "port": 61368,
+    "base": "http://127.0.0.1:62228",
+    "port": 62228,
     "owned": true
   },
   "chromeVersion": "152.0.7977.83",
   "summary": {
     "allMessagesClear": true,
     "allRecovered": true,
-    "noPageErrors": true
+    "noPageErrors": true,
+    "stopAndRecenterAlwaysAvailable": true
   }
 }

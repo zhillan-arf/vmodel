@@ -30,7 +30,7 @@ const CASES = [
 
 const report = {
   date: new Date().toISOString(), passed: false, status: 'running',
-  question: 'Does the app report denied, missing and busy camera states clearly, release resources, and recover on retry?',
+  question: 'Does the app report denied, missing and busy camera states clearly, release resources, recover on retry, and keep Stop and Recenter available throughout?',
   physicalCamera: false, cases: [],
   limits: [
     'Injected DOMExceptions, not a physical device: the browser permission UI and OS camera privacy setting are untouched.',
@@ -59,11 +59,20 @@ try {
       };
     }, testCase.error);
     const page = await context.newPage();
+    // TASK-015: Stop and Recenter must never become unavailable, in any state.
+    const controls = async where => page.evaluate(label => {
+      const check = selector => {
+        const element = document.querySelector(selector);
+        return element ? { present: true, disabled: element.disabled === true, hidden: element.hidden === true } : { present: false };
+      };
+      return { where: label, stop: check('#stop'), recenter: check('#calibrate'), start: check('#start') };
+    }, where);
     const errors = [];
     page.on('pageerror', error => errors.push(String(error)));
     await page.goto(server.base);
     await page.waitForFunction(() => !!window.__vmodel, undefined, { timeout: 90000 });
 
+    const controlsBeforeStart = await controls('before-start');
     await page.locator('#start').click();
     await page.waitForFunction(expected => new RegExp(expected, 'i').test(document.querySelector('#status')?.textContent ?? ''),
       testCase.expect.source, { timeout: 30000 }).catch(() => {});
@@ -73,20 +82,28 @@ try {
       running: Boolean(window.__vmodel.camera?.running),
     })).catch(() => null);
 
+    const controlsAfterFailure = await controls('after-failure');
     // Retry: the same control must recover without a reload.
     await page.locator('#start').click();
     const recovered = await page.waitForFunction(() => /camera active/i.test(document.querySelector('#status')?.textContent ?? ''),
       undefined, { timeout: 90000 }).then(() => true).catch(() => false);
     const recoveredStatus = await page.textContent('#status');
+    const controlsWhileRunning = await controls('while-running');
     await page.locator('#stop').click();
     await sleep(1000);
     const afterStop = await page.textContent('#status');
+    const controlsAfterStop = await controls('after-stop');
+    const available = [controlsBeforeStart, controlsAfterFailure, controlsWhileRunning, controlsAfterStop];
+    const alwaysAvailable = available.every(entry =>
+      entry.stop.present && !entry.stop.disabled && !entry.stop.hidden &&
+      entry.recenter.present && !entry.recenter.disabled && !entry.recenter.hidden);
 
     report.cases.push({
       name: testCase.name, injectedError: testCase.error, intent: testCase.intent,
       failureStatus, messageMatchedExpectation: testCase.expect.test(failureStatus ?? ''),
       releasedOnFailure: afterFailure, recoveredOnRetry: recovered, recoveredStatus,
       statusAfterStop: afterStop, pageErrors: errors,
+      controlAvailability: available, stopAndRecenterAlwaysAvailable: alwaysAvailable,
     });
     console.log(JSON.stringify({ case: testCase.name, message: failureStatus, recovered }));
     await context.close();
@@ -96,8 +113,9 @@ try {
     allMessagesClear: report.cases.every(entry => entry.messageMatchedExpectation),
     allRecovered: report.cases.every(entry => entry.recoveredOnRetry),
     noPageErrors: report.cases.every(entry => entry.pageErrors.length === 0),
+    stopAndRecenterAlwaysAvailable: report.cases.every(entry => entry.stopAndRecenterAlwaysAvailable),
   };
-  report.passed = report.summary.allMessagesClear && report.summary.allRecovered && report.summary.noPageErrors;
+  report.passed = report.summary.allMessagesClear && report.summary.allRecovered && report.summary.noPageErrors && report.summary.stopAndRecenterAlwaysAvailable;
   report.status = report.passed ? 'complete' : 'failed';
 } catch (error) {
   report.status = 'failed'; report.error = String(error?.stack ?? error); exit = 1;

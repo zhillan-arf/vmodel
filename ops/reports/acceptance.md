@@ -1,6 +1,6 @@
 # Ene Studio delivery evidence
 
-Checkpoint: 2026-09-12. **Overall release remains in progress.** This report maps the agreed G1-G4 requirements to actual artifacts and measured evidence. It does not replace the outstanding operator checks. [TASK-P01](../tasks/active/TASK-P01.md) owns delivery; [TASK-021](../tasks/active/TASK-021.md) is the final acceptance gate.
+Checkpoint: 2026-09-13. **Overall release remains in progress.** TASK-020 is now complete and archived; both soak presets pass the specification's frame-time gate. This report maps the agreed G1-G4 requirements to actual artifacts and measured evidence. It does not replace the outstanding operator checks. [TASK-P01](../tasks/active/TASK-P01.md) owns delivery; [TASK-021](../tasks/active/TASK-021.md) is the final acceptance gate.
 
 ## Available kit
 
@@ -28,7 +28,7 @@ The final VRM SHA-256 is `3657b97928638e7ada5f6639141fb63f555912049a2c6ec2178510
 | G2-C standing | Bounded root/knees, hidden-leg fallback and framing guidance implemented; deterministic fixtures pass | Head-to-feet camera framing, knee bends and small steps pending. A cropped still-photo workload cannot accept standing movement. |
 | G2-D output | [Clean output](studio-output.md), [native OBS capture](obs-capture.md), two [10.566-second MP4 fixtures](obs-recording.md) with prerecorded audio | Required 60-second live landscape/portrait clips remain open. Virtual Camera registration was canceled at Windows confirmation; no consumer test. |
 | G2-E usability | [Launcher ownership/restart](launcher-smoke.json), [bundle audit](bundle-audit.json), local quickstarts and installed OBS routes | Packaged launch accepted in TASK-019; a person following launch/calibrate/record/stop/restart remains pending. |
-| G2-F robustness | [Camera/recovery/network](camera-reliability.md), [server-loss camera release](server-stop.md), [feasibility](feasibility.md), [heartbeat repair](output-layout-heartbeat.md), [combined performance](performance.md), [short diagnostic](capture-animation-diagnostic.md), [passive control](capture-passive-control.md) | The heartbeat repair passes regression/browser/build checks. Both corrected 900-second windows were observed, but render/capture acceptance failed: seated median cadence 26.81 fps with 1,017.5 ms interval p95; standing/hands only 891 draws in 900 seconds. Later stills and sampled recording frames are white. Two subsequent short checks stayed healthy; the 177-second passive control measured 57.82 draws/s after warm-up, retained Ene in recorded samples and verified its native window at both endpoints under AC power. It used the same single viewer in Clean mode. Exact OBS restoration passed. The earlier cause, full-session stability and physical device/reacquisition checks remain open. |
+| G2-F robustness | [Camera/recovery/network](camera-reliability.md), [server-loss camera release](server-stop.md), [feasibility](feasibility.md), [heartbeat repair](output-layout-heartbeat.md), [combined performance](performance.md), [denied/missing/busy camera recovery](camera-denial-smoke.json), [minimize mechanism](capture-minimize-cause.md) | **Accepted in TASK-020.** A clean 30-minute two-phase soak completed with no errors: seated **58.14 fps / p95 44.4 ms** with **0 skipped OBS output frames of 27,069**, standing **58.48 fps / p95 39.8 ms** with **0 of 27,002**, zero blank captures in both, and both recordings verified at 720p h264. Memory growth is collectable garbage, not retention: one forced collection reclaimed 61.11 and 59.65 MiB against 50.70 and 60.37 MiB of growth. Offline operation recorded zero external requests under load. The earlier 1 Hz-and-white-stills failure now has a reproducing mechanism — **a minimized window delivers zero animation frames** (60.04 fps before, 0.00 minimized, 59.91 restored) — though it is not proven to be what happened originally. Denied, missing, busy and overconstrained camera states all report clearly and recover on retry. Physical device and reacquisition checks remain open. |
 
 OBS captures the content of its selected window. Exact-title matching does not prevent a later tab change in that window; [measured lifecycle behavior](obs-window-lifecycle.md) informs the dedicated-window instructions. Camera frames stay within the local tracking app. Component recordings contain actual Ene and prerecorded test audio, without physical camera or microphone input.
 
@@ -66,3 +66,26 @@ The isolated final website build has 45 files and 11,725 bytes of gzipped JS/CSS
 - Complete combined avatar/OBS measurements and address any unmet gates. Website performance/handoff is complete for the documented local Windows scope, with real Safari/mobile gaps retained.
 
 These are explicit open acceptance rows, not waived requirements. The task register remains authoritative for lifecycle state; this matrix will be updated as new evidence arrives.
+
+
+## 2026-09-13 addendum: resolved mechanisms and their limits
+
+Three long-open questions were closed, and each is recorded with what it does **not** establish.
+
+**The draw-cadence collapse and white captures have a reproducing mechanism.** A minimized Chrome window delivers zero animation frames, measured at 60.04 fps before, **0.00 fps minimized with `visibilityState` reporting `hidden`**, and 59.91 fps after restoring. Both original symptoms follow from that one cause. It is **not** established that the original failure was a minimize event, because no visibility state was recorded at the time; the harness now captures it. [Report](capture-minimize-cause.md).
+
+Two hypotheses were eliminated along the way: [hybrid-core placement is rejected](capture-core-placement.md) for the render path (efficiency cores cost 13% of cadence, not 98%), and the [occlusion probes](capture-occlusion-investigation.md) never established their own condition — a null result that, inverted, usefully shows **covering the output window is harmless at a full 60 fps**.
+
+**The LLVC voice timing discrepancy is explained.** This host is a hybrid i7-1255U; efficiency cores cost **2.32x** per neural call and miss 200/200 deadlines where performance cores miss 0/200, all measured on battery. Power state was a red herring. [Report](voice-llvc-hybrid-cores.md).
+
+**Local LLVC does not meet the voice gates under ordinary load.** The paced proof passed once on a quiet machine and failed reproducibly four times under an open editor and browser, at roughly 65 ms per 52 ms chunk. Combined with the avatar, the **avatar is unaffected** (0.965 and 1.006 draw retention) while the voice fails on its first call. Pinning selects the performance cores but cannot reserve them. Recorded as a measured defect, not a pass. [Report](voice-combined-workload.md).
+
+### Defects found and fixed
+
+- The production typecheck was broken: `scripts/soak-health.mjs` shipped without the `.d.mts` declaration its sibling modules carry.
+- A missing camera fell through to raw exception text. `NotFoundError` and `OverconstrainedError` now give beginner-usable messages.
+- The fail-fast draw guard required three consecutive slow draws, so a lone 1,227 ms stall that wedged a recording passed unnoticed. It now also fails on a single gap over a second.
+
+### Still gated on the operator
+
+Nothing above touches live camera quality, voice preference, OBS Virtual Camera registration or the final recordings. Those remain the gate on the sixteen open tasks, listed for the user in [remaining checks](../../docs/remaining-checks.md).

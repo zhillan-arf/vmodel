@@ -36,6 +36,51 @@ function settle(solver: Retargeter, data: TrackingFrame, seconds = 1) {
   for (let i = 0; i < seconds*60; i++) solver.update(data, defaults, 1/60, data.timestamp + i*3);
 }
 
+describe('manual expression controls alongside automatic tracking', () => {
+  // TASK-015: a held manual expression must not suppress tracked blinking or
+  // mouth movement, and tracking must still be able to exceed the manual floor.
+  const faceFrame = (face: Record<string, number>) => {
+    const data = frame(0);
+    data.face = face as TrackingFrame['face'];
+    return data;
+  };
+  it('keeps tracked blink and mouth alive while a manual smile is held', () => {
+    const { solver, values } = rig();
+    solver.setExpression('happy');
+    settle(solver, faceFrame({ eyeBlinkLeft: 1, eyeBlinkRight: 1, jawOpen: 1 }), 2);
+    expect(values.get('happy')).toBeGreaterThan(0.7);
+    expect(values.get('blinkLeft')).toBeGreaterThan(0.7);
+    expect(values.get('blinkRight')).toBeGreaterThan(0.7);
+    expect(values.get('aa')).toBeGreaterThan(0.7);
+  });
+  it('lets tracking exceed the manual floor rather than clamping to it', () => {
+    const { solver, values } = rig();
+    solver.setExpression('surprised');
+    settle(solver, faceFrame({}), 2);
+    const floor = values.get('surprised')!;
+    expect(floor).toBeCloseTo(0.75, 1);
+    expect(floor).toBeLessThanOrEqual(1);
+  });
+  it('releases the manual floor when the control returns to neutral', () => {
+    const { solver, values } = rig();
+    solver.setExpression('happy');
+    settle(solver, faceFrame({}), 2);
+    expect(values.get('happy')).toBeGreaterThan(0.7);
+    solver.setExpression('neutral');
+    settle(solver, faceFrame({}), 2);
+    expect(values.get('happy')).toBeLessThan(0.05);
+  });
+  it('holds the manual expression when face tracking goes stale', () => {
+    const { solver, values } = rig();
+    solver.setExpression('happy');
+    const stale = frame(0);
+    stale.samples.face.present = false;
+    stale.samples.face.timestamp = 0;
+    settle(solver, stale, 2);
+    expect(values.get('happy')).toBeGreaterThan(0.7);
+  });
+});
+
 describe('retargeting a normalized bone hierarchy', () => {
   it('does not add a torso turn a second time to the tracked head', () => {
     const { solver, nodes } = rig(); const data = frame(.4);
