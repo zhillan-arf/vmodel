@@ -5,13 +5,21 @@
 // silently, and the person who discovers it is the user, mid-recording.
 //
 // Checks every relative link, every named launcher, and every loopback address
-// in docs/ against the actual repository and configuration. Reads only.
+// against the actual repository and configuration. Reads only.
+//
+// Reports and specifications are included, not just the user guides: they carry
+// several hundred cross-links that nothing else verified, and a report whose
+// evidence link has rotted is a record that cannot be checked.
 import { readFile, readdir, access, mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname).replace(/^\/(\w:)/, '$1'), '..');
-const DOCS = path.join(ROOT, 'docs');
+const SCANNED = [
+  { label: 'docs', dir: path.join(ROOT, 'docs'), userFacing: true },
+  { label: 'ops/reports', dir: path.join(ROOT, 'ops/reports'), userFacing: false },
+  { label: 'ops/specs', dir: path.join(ROOT, 'ops/specs'), userFacing: false },
+];
 const exists = async file => access(file).then(() => true).catch(() => false);
 
 // Addresses the guides may legitimately name, and where each is defined.
@@ -31,42 +39,45 @@ const report = {
   limits: [
     'Checks that referenced targets exist, not that the instructions are correct or complete.',
     'A person following the guide end to end is a separate check this cannot replace.',
+    'A link can resolve to a file whose contents no longer support the claim made around it.',
     'Only relative links are resolved; external URLs are listed, not fetched.',
   ],
 };
 
 let exit = 0;
 try {
-  const names = (await readdir(DOCS)).filter(name => name.endsWith('.md'));
   const externalLinks = new Set();
   const launchers = new Set();
   const ports = new Set();
 
-  for (const name of names) {
-    const file = path.join(DOCS, name);
-    const text = await readFile(file, 'utf8');
-    const entry = { file: 'docs/' + name, links: 0, launchers: [], ports: [] };
+  for (const area of SCANNED) {
+    const names = (await readdir(area.dir)).filter(name => name.endsWith('.md'));
+    for (const name of names) {
+      const file = path.join(area.dir, name);
+      const text = await readFile(file, 'utf8');
+      const label = area.label + '/' + name;
+      const entry = { file: label, links: 0, launchers: [], ports: [] };
 
-    for (const match of text.matchAll(/\[([^\]]*)\]\(([^)\s]+)\)/g)) {
-      const target = decodeURIComponent(match[2].split('#')[0]);
-      if (!target || target.startsWith('http')) { if (target) externalLinks.add(target); continue; }
-      entry.links++;
-      const resolved = path.resolve(path.dirname(file), target);
-      if (!(await exists(resolved))) {
-        report.brokenLinks.push({ file: 'docs/' + name, text: match[1], target });
+      for (const match of text.matchAll(/\[([^\]]*)\]\(([^)\s]+)\)/g)) {
+        const target = decodeURIComponent(match[2].split('#')[0]);
+        if (!target || target.startsWith('http')) { if (target) externalLinks.add(target); continue; }
+        entry.links++;
+        if (!(await exists(path.resolve(path.dirname(file), target)))) {
+          report.brokenLinks.push({ file: label, text: match[1], target });
+        }
       }
-    }
 
-    // Named launchers the guides tell the user to double-click.
-    for (const match of text.matchAll(/\*\*([A-Za-z][A-Za-z0-9 ]*\.cmd)\*\*/g)) {
-      entry.launchers.push(match[1]);
-      launchers.add(match[1]);
+      // Launchers and addresses are only promises to the user in the guides.
+      if (area.userFacing) {
+        for (const match of text.matchAll(/\*\*([A-Za-z][A-Za-z0-9 ]*\.cmd)\*\*/g)) {
+          entry.launchers.push(match[1]); launchers.add(match[1]);
+        }
+        for (const match of text.matchAll(/127\.0\.0\.1:(\d{4,5})/g)) {
+          entry.ports.push(Number(match[1])); ports.add(Number(match[1]));
+        }
+      }
+      report.files.push(entry);
     }
-    for (const match of text.matchAll(/127\.0\.0\.1:(\d{4,5})/g)) {
-      entry.ports.push(Number(match[1]));
-      ports.add(Number(match[1]));
-    }
-    report.files.push(entry);
   }
 
   for (const launcher of [...launchers].sort()) {
