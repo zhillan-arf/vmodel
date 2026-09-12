@@ -9,9 +9,10 @@ export interface CaptureInspection {
 interface Render { atMs: number; intervalMs: number; drawMs?: number }
 export interface SustainedGapFailure { kind: 'sustained-draw-gaps'; thresholdMs: number; consecutive: number; observedAtMs: number; drawIntervals: { atMs: number; intervalMs: number }[] }
 export interface StalledDrawFailure { kind: 'no-completed-viewer-draw'; stalledMs: number; lastDrawAtMs: number; observedAtMs: number }
-export type DrawHealthFailure = SustainedGapFailure | StalledDrawFailure;
+export interface SingleStallFailure { kind: 'single-draw-stall'; singleStallMs: number; observedAtMs: number; drawIntervals: { atMs: number; intervalMs: number }[] }
+export type DrawHealthFailure = SustainedGapFailure | StalledDrawFailure | SingleStallFailure;
 export interface DrawHealthGuard { observe(renders: Render[], nowMs: number): DrawHealthFailure | null }
 
 export function inspectCapturePixels(capture: CapturePixels): CaptureInspection;
 export function inspectCapturePNG(bytes: Buffer, expectedWidth: number, expectedHeight: number): CaptureInspection;
-export function createDrawHealthGuard(options?: { thresholdMs?: number; consecutive?: number; stalledMs?: number }): DrawHealthGuard;
+export function createDrawHealthGuard(options?: { thresholdMs?: number; consecutive?: number; stalledMs?: number; singleStallMs?: number }): DrawHealthGuard;

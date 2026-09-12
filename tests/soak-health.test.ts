@@ -43,6 +43,18 @@ describe('owned soak failure evidence', () => {
       { atMs: 2316, intervalMs: 500 }, { atMs: 2916, intervalMs: 600 },
     ], 3000)).toBeNull();
   });
+  it('treats one gap over a second as a failure, since a lone stall wedged OBS without a streak', () => {
+    const guard = createDrawHealthGuard();
+    const failure = guard.observe([{ atMs: 689400, intervalMs: 1227.2 }], 690000);
+    expect(failure).toMatchObject({ kind: 'single-draw-stall', singleStallMs: 1000, observedAtMs: 690000 });
+    if (failure?.kind !== 'single-draw-stall') throw new Error('Expected a single-draw-stall failure.');
+    expect(failure.drawIntervals).toEqual([{ atMs: 689400, intervalMs: 1227.2 }]);
+    expect(guard.observe([], 700000)).toBe(failure);
+  });
+  it('keeps the streak rule reachable and rejects a single-stall trigger below it', () => {
+    expect(createDrawHealthGuard().observe([{ atMs: 600, intervalMs: 999 }], 700)).toBeNull();
+    expect(() => createDrawHealthGuard({ singleStallMs: 400 })).toThrow();
+  });
   it('detects a complete draw stall without requiring another completed frame', () => {
     const guard = createDrawHealthGuard();
     expect(guard.observe([{ atMs: 100, intervalMs: 16 }], 100)).toBeNull();

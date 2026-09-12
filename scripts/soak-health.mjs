@@ -42,8 +42,12 @@ export function inspectCapturePNG(bytes, expectedWidth, expectedHeight) {
 
 // Feed each drained draw exactly once. A streak can span two five-second drains;
 // sparse unrelated slow frames must not accumulate into a sustained-gap failure.
-export function createDrawHealthGuard({ thresholdMs = 500, consecutive = 3, stalledMs = 2500 } = {}) {
+// A single very long gap is also a failure on its own: an observed stall of over
+// a second left OBS wedged while producing only one slow draw, so the streak rule
+// never fired. singleStallMs catches that shape without lowering thresholdMs.
+export function createDrawHealthGuard({ thresholdMs = 500, consecutive = 3, stalledMs = 2500, singleStallMs = 1000 } = {}) {
   assert(thresholdMs > 0 && Number.isInteger(consecutive) && consecutive > 0 && stalledMs > thresholdMs);
+  assert(singleStallMs > thresholdMs, 'A single-stall trigger below the streak threshold would make the streak rule unreachable.');
   let slow = [], lastDrawAtMs = 0, failure = null;
   return {
     observe(renders, nowMs) {
@@ -52,6 +56,11 @@ export function createDrawHealthGuard({ thresholdMs = 500, consecutive = 3, stal
       for (const render of renders) {
         assert(Number.isFinite(render.atMs) && Number.isFinite(render.intervalMs) && render.atMs >= lastDrawAtMs && render.intervalMs >= 0, 'Invalid/nonmonotonic draw telemetry.');
         lastDrawAtMs = render.atMs;
+        if (render.intervalMs > singleStallMs) {
+          failure = { kind: 'single-draw-stall', singleStallMs, observedAtMs: nowMs,
+            drawIntervals: [{ atMs: render.atMs, intervalMs: render.intervalMs }] };
+          return failure;
+        }
         if (render.intervalMs > thresholdMs) slow.push({ atMs: render.atMs, intervalMs: render.intervalMs });
         else slow = [];
         if (slow.length >= consecutive) {
