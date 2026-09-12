@@ -59,3 +59,27 @@ Microsoft's SysVAD sample is a bounded open-source candidate investigation, not 
 [check_remote.py](../../scripts/voice/check_remote.py) requires an explicit base URL and requests only its model list and OpenAPI schema. It does not follow redirects, use discovered proxy settings, scan the VPN, upload audio or log response secrets/authorization headers. Two [owned localhost mock tests](../../scripts/voice/test_remote.py) pass URL credential rejection, model-list interpretation, redirect refusal and key omission. No actual A100 endpoint has been supplied or contacted. RVC compatibility remains unverified even if a future vLLM model list succeeds.
 
 Remaining gates: viable measured live backend, English/user timbre acceptance, actual microphone/device/monitor recovery in both explicit voice modes, physical latency/combined workload/soak, and both orientations' measured <=80 ms residual lip sync. The [quickstart](../../docs/voice-quickstart.md) states these limits.
+
+## Converted-voice OBS route: component licence audit
+
+2026-09-13. [audit_obs_route.py](../../scripts/voice/audit_obs_route.py) walks the actual route end to end and records what is installed, with hashes. It reads only: it starts nothing, installs nothing and changes no OBS setting. [Evidence](voice-obs-route-licences.json).
+
+| Component | Licence | Licence text shipped |
+| --- | --- | --- |
+| Voice Studio loopback server, receiver page, PCM player and AudioWorklet | Project source | n/a |
+| OBS Studio | GPL-2.0-or-later | yes, `data/obs-studio/license/gplv2.txt` |
+| OBS Browser Source plugin | GPL-2.0-or-later, within the OBS distribution | yes, via the same file |
+| OBS Browser helper process | GPL-2.0-or-later, within the OBS distribution | yes, via the same file |
+| Chromium Embedded Framework (`libcef.dll`) | BSD-3-Clause over Chromium BSD | **no** |
+
+Every component is present, every one has a known open-source licence, and the loopback server's only third-party imports are `aiohttp`, `numpy` and `soundfile`, all three covered by the 127-entry [licence inventory](voice-license-inventory.json). Its other imports are this project's own sibling modules.
+
+**No proprietary virtual-audio product is involved.** A scan of the Windows driver directory and both program-files trees found no VB-CABLE, Voicemeeter, Synchronous Audio Router or Virtual Audio Cable. The converted route reaches OBS through its own loopback Browser Source, not through a third-party audio device.
+
+### One gap worth fixing before distribution
+
+**This portable OBS distribution ships no separate CEF licence or credits file.** OBS's own GPLv2 text is present, but `libcef.dll` carries its own BSD terms and Chromium's upstream notices, and neither is retained anywhere under `.tools/obs`. The component is correctly licensed; what is missing is the retained notice.
+
+This is recorded rather than papered over, and the licence text is **not** reproduced here from memory. Final packaging should retain CEF's own `LICENSE.txt` and Chromium credits from the upstream CEF binary distribution matching this OBS build, in the same way [third-party notices](../../docs/third-party-notices.md) already requires for the other bundled tools.
+
+The proprietary-audio check is a name scan of driver and program directories, not an exhaustive audit, and this inventory establishes nothing about audio quality, routing correctness, latency or sync.

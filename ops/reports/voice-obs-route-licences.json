@@ -1,0 +1,126 @@
+{
+  "date": "2026-09-12T18:58:10Z",
+  "question": "Does the required converted-voice OBS route use approved open-source components only?",
+  "readOnly": true,
+  "startedNothing": true,
+  "changedNoObsSetting": true,
+  "components": [
+    {
+      "component": "Voice Studio loopback server (this project)",
+      "path": "scripts/voice/studio_server.py",
+      "present": true,
+      "bytes": 30991,
+      "sha256": "6d6cbeaae5d937c6562bf619e7239eef165a9c4ae3e0d7c06b11402d88c0d39a",
+      "licence": "Project source",
+      "licenceFilePresent": false,
+      "licenceFile": null,
+      "note": "Serves the control API and the converted PCM route on loopback only."
+    },
+    {
+      "component": "Converted OBS receiver page (this project)",
+      "path": "scripts/voice/studio/obs.html",
+      "present": true,
+      "bytes": 294,
+      "sha256": "e9bd84013d96750821fe9a93059df92d7026f9790580842118da3173301f3bf7",
+      "licence": "Project source",
+      "licenceFilePresent": false,
+      "licenceFile": null,
+      "note": null
+    },
+    {
+      "component": "Converted PCM player (this project)",
+      "path": "scripts/voice/studio/player.js",
+      "present": true,
+      "bytes": 8858,
+      "sha256": "cba8f6f36518933b2091b0ddb8f5d5ef185b8902355d106a5b67920aab378d7a",
+      "licence": "Project source",
+      "licenceFilePresent": false,
+      "licenceFile": null,
+      "note": null
+    },
+    {
+      "component": "Bounded PCM AudioWorklet (this project)",
+      "path": "scripts/voice/studio/pcm-player.js",
+      "present": true,
+      "bytes": 2032,
+      "sha256": "04dcd4ea41147d94629c235fd062437c64641ecb8b111e6482f71385a825213d",
+      "licence": "Project source",
+      "licenceFilePresent": false,
+      "licenceFile": null,
+      "note": null
+    },
+    {
+      "component": "OBS Studio",
+      "path": ".tools/obs/bin/64bit/obs64.exe",
+      "present": true,
+      "bytes": 5589776,
+      "sha256": "e79066670cd8e8b95662f4cd417c4fa6f5b0c77e856a7b41c7de0e00059ba6f2",
+      "licence": "GPL-2.0-or-later",
+      "licenceFilePresent": true,
+      "licenceFile": ".tools/obs/data/obs-studio/license/gplv2.txt",
+      "note": "Portable install under .tools/obs; its own licence text ships with the distribution."
+    },
+    {
+      "component": "OBS Browser Source plugin",
+      "path": ".tools/obs/obs-plugins/64bit/obs-browser.dll",
+      "present": true,
+      "bytes": 816912,
+      "sha256": "58848667d5a2b133f002b19e8a652cf0941e5c3baf890e0db5f6611ec2a47799",
+      "licence": "GPL-2.0-or-later",
+      "licenceFilePresent": true,
+      "licenceFile": ".tools/obs/data/obs-studio/license/gplv2.txt",
+      "note": "Part of the OBS distribution and covered by its licence."
+    },
+    {
+      "component": "Chromium Embedded Framework",
+      "path": ".tools/obs/obs-plugins/64bit/libcef.dll",
+      "present": true,
+      "bytes": 214001712,
+      "sha256": "cd6dff1047a96f808997eef79bec92c585e3455eae9be807bb7d3a3e3dadb39b",
+      "licence": "BSD-3-Clause (CEF) over Chromium BSD",
+      "licenceFilePresent": false,
+      "licenceFile": null,
+      "note": "CEF carries its own BSD terms, but this portable OBS distribution ships no separate CEF licence or credits file."
+    },
+    {
+      "component": "OBS Browser helper process",
+      "path": ".tools/obs/obs-plugins/64bit/obs-browser-page.exe",
+      "present": true,
+      "bytes": 562960,
+      "sha256": "3e82ef738e1b91bb99e4fb30948cbc4c2ae3b2e60e4b3f783ba6dd7da4b3ee08",
+      "licence": "GPL-2.0-or-later",
+      "licenceFilePresent": true,
+      "licenceFile": ".tools/obs/data/obs-studio/license/gplv2.txt",
+      "note": null
+    }
+  ],
+  "serverThirdPartyImports": [
+    "aiohttp",
+    "numpy",
+    "soundfile"
+  ],
+  "serverProjectModules": [
+    "live_rvc",
+    "natural_pcm",
+    "profiles"
+  ],
+  "importsNotInLicenceInventory": [],
+  "licenceInventoryEntries": 127,
+  "proprietaryVirtualAudioFound": [],
+  "missingLicenceFiles": [
+    "Chromium Embedded Framework"
+  ],
+  "checks": {
+    "allComponentsPresent": true,
+    "noProprietaryVirtualAudioInRoute": true,
+    "allServerImportsLicensed": true,
+    "everyComponentHasKnownLicence": true
+  },
+  "limits": [
+    "A static inventory: it reads installed files and does not start OBS, capture audio or verify runtime behaviour.",
+    "Proprietary virtual-audio detection is a name scan of driver and program directories, not an exhaustive audit.",
+    "Licence identification for OBS and CEF comes from their published terms; only OBS ships its text in this distribution.",
+    "It does not establish audio quality, routing correctness, latency or sync, which are separate criteria."
+  ],
+  "passed": true
+}

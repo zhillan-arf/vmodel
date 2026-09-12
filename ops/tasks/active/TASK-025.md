@@ -24,7 +24,7 @@ Capture only the converted voice with the avatar in OBS using an open-source aud
 
 - [ ] A local test recording contains converted speech and avatar video without raw voice, doubled audio, unrelated application sound or feedback.
 - [ ] Monitoring, mute and restart are verified; both output orientations meet the measured <=80 ms residual sync target.
-- [ ] The required OBS route uses approved open-source components; virtual-microphone support or its specific limitation is documented independently.
+- [x] The required OBS route uses approved open-source components; virtual-microphone support or its specific limitation is documented independently. Every route component is enumerated with hashes and a known open-source licence in [voice-obs-route-licences.json](../../reports/voice-obs-route-licences.json) — OBS and its Browser Source under GPL-2.0-or-later, CEF under BSD-3-Clause, the bridge as project source — and the server's only third-party imports (`aiohttp`, `numpy`, `soundfile`) are covered by the 127-entry licence inventory. **No proprietary virtual-audio product is involved**: no VB-CABLE, Voicemeeter, Synchronous Audio Router or Virtual Audio Cable is installed. The virtual-microphone limitation is documented independently in [voice routing](../../reports/voice-routing.md) and [the quickstart](../../../docs/voice-quickstart.md): stock SysVAD is MS-PL, returns a generated tone rather than real application audio, and requires development test signing, so external-call routing is explicitly unsupported and nothing was installed or re-signed. One gap is recorded: this portable OBS distribution ships no separate CEF licence or credits file, which final packaging must retain.
 
 ## Implementation notes
 
