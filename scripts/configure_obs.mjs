@@ -47,5 +47,12 @@ try {
   await obs.request('SetSceneItemTransform',{sceneName,sceneItemId,sceneItemTransform:{positionX:0,positionY:0,alignment:5,boundsType:'OBS_BOUNDS_SCALE_INNER',boundsAlignment:0,boundsWidth:width,boundsHeight:height,...crop}});
   console.log(JSON.stringify({profile:'Ene '+orientation,scene:sceneName,video:await obs.request('GetVideoSettings'),attached:attach,
     crop,capture:'Windows Graphics Capture; title used to attach, cursor/audio off. Keep this window on Ene. Reattach after resizing; stop recording and disable the source before changing or closing it.'}));
-} catch(error) { console.error(error.message); process.exitCode=1; }
+} catch(error) {
+  // 'Local OBS connection closed.' is accurate but leaves the user nowhere.
+  const unreachable = /connection closed|ECONNREFUSED|failed to connect|timed out/i.test(error.message);
+  console.error(unreachable
+    ? 'Could not reach OBS. Open Start OBS.cmd, leave it running, then try this again. Details: ' + error.message
+    : error.message);
+  process.exitCode=1;
+}
 finally { obs.close(); }

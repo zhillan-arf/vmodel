@@ -38,3 +38,16 @@ The voice extension joins this working OBS baseline in TASK-025, which replaces 
 2026-09-12 explicit natural-voice extension: **Ene Natural Voice Bridge**, at the separate local `/obs-natural` receiver, is also [installed and repeat-verified](../../reports/voice-obs-natural-setup.json) in both Ene scenes. Its route/key/frame kind are separate from converted speech, and the existing converted-source settings and calibration remain unchanged. Both bridges are silent with monitoring off until a deliberate Voice Studio action. The [mode tests](../../reports/voice-natural-mode.md) used synthetic PCM and mocked microphone APIs only; this setup does not establish physical audio or virtual-camera acceptance.
 
 When completing this task, record changed artifact paths, exact validation commands/results or manual evidence, and any unresolved limitation in the task or its linked report. Leave unperformed checks unchecked.
+
+## Launcher failure messages — 2026-09-13
+
+Continuing the walk through the user's journey reached the OBS launchers, and found two rough edges rather than defects in the capture path itself.
+
+- **`node` was not guarded.** Both Attach launchers called `node scripts\configure_obs.mjs` directly, so on a machine where setup had not run the user would see Windows' raw *"'node' is not recognized as an internal or external command"*. They now check first and say **"Node.js was not found. Run Setup VModel.cmd first."**, matching the guard the other launchers already had.
+- **An unreachable OBS said only "Local OBS connection closed."** Accurate, and it leaves the user nowhere. Connection failures now read **"Could not reach OBS. Open Start OBS.cmd, leave it running, then try this again."** with the original detail appended. Genuine OBS API errors — a rejected request, a bad scene item — pass through **unchanged**, so the fix does not mask real faults.
+
+Both message branches were exercised directly. `--attach` was deliberately **not** run: it mutates the OBS scene configuration, and re-running it would have changed the user's installed setup for no verification gain.
+
+Checked while here: `Attach OBS Landscape.cmd` and `Attach OBS Portrait.cmd` are not duplicates — Portrait passes `--portrait` and the script selects 720x1280 accordingly.
+
+Nothing about capture, recording or Virtual Camera acceptance changes; those still need the administrator prompt and the operator.
