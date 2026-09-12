@@ -12,6 +12,6 @@ The recording path has passed short local tests. Your final camera/voice perform
 
 For the final check, record at least one minute in each orientation: speak, blink, turn your head and raise/bend each arm while showing your hands. The [movement checklist](live-check.md) also covers standing. Keep raw webcam footage out of these recordings.
 
-Keep the Ene output window visible and dedicated to the avatar. Reattach after resizing. Before leaving Clean view or changing/closing the captured window, stop recording and disable its source with the eye icon in OBS. See [OBS setup](obs-setup.md) for the measured window limitations.
+Keep the Ene output window visible and dedicated to the avatar. Reattach after resizing. **Never minimize it while recording.** A minimized window produces no frames at all — measured at 60 frames per second normally and 0 while minimized — so the avatar freezes and the recording goes blank until you restore it. Covering it with other windows is fine; the studio also tells you afterwards if its window was hidden. Before leaving Clean view or changing/closing the captured window, stop recording and disable its source with the eye icon in OBS. See [OBS setup](obs-setup.md) for the measured window limitations.
 
 The [recording report](../ops/reports/obs-recording.md) links the short landscape/portrait MP4 fixtures and the tested encoder settings. Those clips use prerecorded reference audio; they do not certify live voice performance.

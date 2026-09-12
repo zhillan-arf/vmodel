@@ -34,3 +34,15 @@ Portrait baseline is 720x1280; 1080x1920 is conditional on measured headroom. No
 These recordings establish G2's output baseline. TASK-028 additionally requires portrait/landscape clips with the selected G3 voice, no raw microphone leakage and measured lip sync before the combined handoff.
 
 When completing this task, record changed artifact paths, exact validation commands/results or manual evidence, and any unresolved limitation in the task or its linked report. Leave unperformed checks unchecked.
+
+## Beginner instruction accuracy — 2026-09-13
+
+[audit_docs.mjs](../../../scripts/audit_docs.mjs) checks that the guides still describe what is installed, since a broken instruction is discovered by the user mid-recording. [Evidence](../../reports/docs-audit.json).
+
+Across all 12 guides: **every relative link resolves**, **every named launcher exists** (`Attach OBS Landscape.cmd`, `Attach OBS Portrait.cmd`, `Install OBS Camera.cmd`, `Setup VModel.cmd`, `Start OBS.cmd`, `Start VModel.cmd`, `Start Voice Studio.cmd`, `Stop VModel.cmd`, `Stop Voice Studio.cmd`), and every loopback address the guides name is a configured port.
+
+One discrepancy was investigated and proved to be the **auditor's** fault, not the documentation's: port 5180 in the showcase guide looked unknown, but `web-showcase/vite.config.ts` pins exactly `port: 5180, strictPort: true`. The known-port list was incomplete and was corrected.
+
+[docs/recording.md](../../../docs/recording.md) now also carries the measured minimize result, because that guide is what someone follows while actually recording: a minimized window produces no frames at all (60 fps normally, 0 while minimized), so the avatar freezes and the recording goes blank until it is restored, while covering it is harmless.
+
+**Boundary:** this verifies that referenced targets exist, not that the instructions are correct or complete. A person following the guide end to end is a separate check it cannot replace, so the criterion stays open.

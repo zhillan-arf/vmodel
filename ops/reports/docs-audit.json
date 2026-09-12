@@ -1,0 +1,170 @@
+{
+  "date": "2026-09-12T19:07:22.889Z",
+  "passed": true,
+  "status": "complete",
+  "question": "Do the beginner guides reference launchers, links and local addresses that actually exist?",
+  "readOnly": true,
+  "files": [
+    {
+      "file": "docs/avatar-conversion.md",
+      "links": 8,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "docs/live-check.md",
+      "links": 1,
+      "launchers": [
+        "Start VModel.cmd"
+      ],
+      "ports": []
+    },
+    {
+      "file": "docs/obs-setup.md",
+      "links": 7,
+      "launchers": [
+        "Start VModel.cmd",
+        "Start OBS.cmd",
+        "Attach OBS Landscape.cmd",
+        "Attach OBS Portrait.cmd",
+        "Start Voice Studio.cmd",
+        "Start Voice Studio.cmd",
+        "Install OBS Camera.cmd"
+      ],
+      "ports": []
+    },
+    {
+      "file": "docs/quickstart.md",
+      "links": 9,
+      "launchers": [
+        "Start VModel.cmd",
+        "Stop VModel.cmd",
+        "Setup VModel.cmd",
+        "Start OBS.cmd",
+        "Attach OBS Landscape.cmd",
+        "Attach OBS Portrait.cmd",
+        "Start Voice Studio.cmd"
+      ],
+      "ports": [
+        5082
+      ]
+    },
+    {
+      "file": "docs/recording.md",
+      "links": 3,
+      "launchers": [
+        "Start VModel.cmd",
+        "Start OBS.cmd",
+        "Attach OBS Landscape.cmd",
+        "Attach OBS Portrait.cmd"
+      ],
+      "ports": []
+    },
+    {
+      "file": "docs/remaining-checks.md",
+      "links": 7,
+      "launchers": [
+        "Install OBS Camera.cmd"
+      ],
+      "ports": [
+        5081
+      ]
+    },
+    {
+      "file": "docs/third-party-notices.md",
+      "links": 7,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "docs/voice-audition-passage.md",
+      "links": 0,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "docs/voice-llvc-onnx-plan.md",
+      "links": 2,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "docs/voice-quickstart.md",
+      "links": 11,
+      "launchers": [
+        "Start Voice Studio.cmd"
+      ],
+      "ports": [
+        5082,
+        5081
+      ]
+    },
+    {
+      "file": "docs/voice-setup.md",
+      "links": 7,
+      "launchers": [
+        "Start Voice Studio.cmd"
+      ],
+      "ports": [
+        5081
+      ]
+    },
+    {
+      "file": "docs/web-showcase.md",
+      "links": 3,
+      "launchers": [],
+      "ports": [
+        5180,
+        4180
+      ]
+    }
+  ],
+  "brokenLinks": [],
+  "missingLaunchers": [],
+  "unknownPorts": [],
+  "limits": [
+    "Checks that referenced targets exist, not that the instructions are correct or complete.",
+    "A person following the guide end to end is a separate check this cannot replace.",
+    "Only relative links are resolved; external URLs are listed, not fetched."
+  ],
+  "referencedLaunchers": [
+    "Attach OBS Landscape.cmd",
+    "Attach OBS Portrait.cmd",
+    "Install OBS Camera.cmd",
+    "Setup VModel.cmd",
+    "Start OBS.cmd",
+    "Start VModel.cmd",
+    "Start Voice Studio.cmd",
+    "Stop VModel.cmd"
+  ],
+  "referencedPorts": [
+    {
+      "port": 4180,
+      "purpose": "Website showcase production preview"
+    },
+    {
+      "port": 5081,
+      "purpose": "Audition listening room (scripts/voice/serve_auditions.py)"
+    },
+    {
+      "port": 5082,
+      "purpose": "Voice Studio (scripts/voice/studio_server.py default)"
+    },
+    {
+      "port": 5180,
+      "purpose": "Website showcase dev server (web-showcase/vite.config.ts, strictPort)"
+    }
+  ],
+  "externalLinks": [
+    "http://127.0.0.1:5081/",
+    "https://data.keithito.com/data/speech/LJSpeech-1.1.tar.bz2",
+    "https://github.com/IAHispano/Applio/blob/7b9f3fa0dde9f90946a5302b4ce4ab3410f12bb8/README.md",
+    "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/tree/81eed5e8f68b6bed1789f682fe78cdd324495afc",
+    "https://keithito.com/LJ-Speech-Dataset/"
+  ],
+  "checks": {
+    "everyRelativeLinkResolves": true,
+    "everyNamedLauncherExists": true,
+    "everyLocalAddressIsKnown": true
+  }
+}
