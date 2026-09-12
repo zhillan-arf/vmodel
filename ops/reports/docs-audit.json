@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-12T19:49:55.390Z",
+  "date": "2026-09-12T19:52:13.048Z",
   "passed": true,
   "status": "complete",
   "question": "Do the beginner guides reference launchers, links and local addresses that actually exist?",
@@ -115,7 +115,9 @@
     {
       "file": "docs/web-showcase.md",
       "links": 3,
-      "launchers": [],
+      "launchers": [
+        "Start Web Showcase.cmd"
+      ],
       "ports": [
         5180,
         4180
@@ -482,6 +484,7 @@
     "Start VModel.cmd",
     "Start Voice Auditions.cmd",
     "Start Voice Studio.cmd",
+    "Start Web Showcase.cmd",
     "Stop VModel.cmd"
   ],
   "referencedPorts": [

@@ -38,3 +38,10 @@ The [launch/integration guide](../../../docs/web-showcase.md), [rebuild guide](.
 
 Limits: actual macOS Safari, iOS Safari and Android Chrome were unavailable and remain explicitly untested/unpassed. Windows Playwright WebKit is supplementary engine coverage. Narrow viewports, network throttling, visibility/data-saving/autoplay failure injections retain their simulation labels. The original screenshot attachment was unavailable, so written-brief composition is delivered without a direct attachment comparison. No public deployment is included.
 
+## Launcher consistency — 2026-09-13
+
+The showcase guide told the user to open a terminal and run `npm run web:dev`, the only place in an otherwise `.cmd`-driven kit that required a developer command. **Start Web Showcase.cmd** now wraps it, guarding on both the installed dependencies and the media package with messages naming the setup step, and opening the page. The npm command is still documented for anyone who prefers it.
+
+Verified: both guard paths resolve, and `web:dev` serves `http://127.0.0.1:5180/` with HTTP 200.
+
+This changes no media, manifest or acceptance evidence; G4 remains accepted as recorded. It removes a friction point found by asking how a beginner would open the showcase after a reboot, the same question that found the missing listening-room launcher.

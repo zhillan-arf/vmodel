@@ -6,13 +6,13 @@ All five final 24 fps media families are installed and the player/layout pass th
 
 ## Open locally
 
-From the project folder, run:
+Double-click **Start Web Showcase.cmd**. It opens **http://127.0.0.1:5180/** in your browser. Leave that window open while using the page; **Ctrl+C** in it stops the server.
+
+If you would rather run it yourself, the launcher is a thin wrapper around:
 
 ```powershell
 npm run web:dev
-```
-
-Open **http://127.0.0.1:5180/**. Leave that terminal open while using the page; **Ctrl+C** stops this server. It is separate from the webcam studio on port 4173. The installed Node/npm dependencies are shared, but its media directory and build are isolated.
+``` It is separate from the webcam studio on port 4173. The installed Node/npm dependencies are shared, but its media directory and build are isolated.
 
 Build and check the installed final package with:
 
