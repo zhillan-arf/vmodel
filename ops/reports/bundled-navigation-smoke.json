@@ -1,13 +1,15 @@
 {
-  "generatedAt": "2026-10-04T12:14:23.934Z",
-  "browser": "153.0.8010.12",
+  "generatedAt": "2026-10-04T14:31:40.046Z",
+  "browser": "154.0.4258.53",
+  "platform": "win32",
+  "browserChannel": "msedge",
   "results": [
     {
       "model": "ene",
       "errors": [],
       "externalRequests": [],
-      "bytes": 87635472,
-      "sha256": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+      "bytes": 87635112,
+      "sha256": "3657b97928638e7ada5f6639141fb63f555912049a2c6ec217851001e322cbcb",
       "checks": [
         {
           "view": "library",
@@ -83,6 +85,6 @@
   ],
   "limits": [
     "Actual bundled model files and simulated camera input.",
-    "Screenshots require human review. No physical camera or target-laptop acceptance."
+    "Screenshots require human review. No physical camera test or performance acceptance."
   ]
 }

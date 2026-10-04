@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-04T12:17:04.842Z",
-  "browser": "153.0.8010.12",
+  "generatedAt": "2026-10-04T14:34:31.102Z",
+  "browser": "154.0.4258.53",
   "sourceHash": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
   "hash": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
   "bytes": 55715860,
-  "inspectionMs": 347.1000003814697,
-  "preparationMs": 2019.1999998092651,
+  "inspectionMs": 140.5,
+  "preparationMs": 2062.3000000044703,
   "resources": {
     "geometryBytes": 19891256,
     "textureBytes": 777344342,
@@ -96,8 +96,10 @@
   },
   "errors": [],
   "externalRequests": [],
+  "platform": "win32",
+  "browserChannel": "msedge",
   "limits": [
-    "Linux Chromium only. No physical camera or target-laptop acceptance.",
-    "Sequential single-model check; no physical comparison."
+    "No physical camera test or human appearance review.",
+    "This single-model check does not measure memory across model changes."
   ]
 }

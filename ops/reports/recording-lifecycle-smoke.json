@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T12:20:01.797Z",
-  "browser": "153.0.8010.12",
+  "generatedAt": "2026-10-04T14:38:06.413Z",
+  "browser": "154.0.4258.53",
   "checks": {
     "defaultExport": {
       "videoOffByDefault": true,

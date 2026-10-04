@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-04T12:54:12.191Z",
+  "date": "2026-10-04T14:38:09.244Z",
   "scope": "Static served build only; does not scan unrelated files or certify future changes.",
   "checks": {
     "onlyDesignatedFiles": true,
@@ -11,8 +11,8 @@
   "runtimePackages": 16,
   "files": [
     {
-      "path": "assets/index-DcEWyb9r.js",
-      "bytes": 1073208
+      "path": "assets/index-DDaFZKi3.js",
+      "bytes": 1073628
     },
     {
       "path": "assets/index-DIiSsBGA.css",
@@ -28,7 +28,7 @@
     },
     {
       "path": "avatars/ene.vrm",
-      "bytes": 87635472
+      "bytes": 87635112
     },
     {
       "path": "avatars/rei-notices/log.txt",
@@ -36,7 +36,7 @@
     },
     {
       "path": "avatars/rei-notices/provenance.json",
-      "bytes": 701
+      "bytes": 721
     },
     {
       "path": "avatars/rei-notices/readme.txt",
@@ -48,11 +48,11 @@
     },
     {
       "path": "avatars/thumbnails/07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735.png",
-      "bytes": 36347
+      "bytes": 36129
     },
     {
-      "path": "avatars/thumbnails/dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc.png",
-      "bytes": 36341
+      "path": "avatars/thumbnails/3657b97928638e7ada5f6639141fb63f555912049a2c6ec217851001e322cbcb.png",
+      "bytes": 35988
     },
     {
       "path": "avatars/thumbnails/manifest.json",
@@ -60,7 +60,7 @@
     },
     {
       "path": "index.html",
-      "bytes": 725
+      "bytes": 736
     },
     {
       "path": "notices/Apache-2.0.txt",

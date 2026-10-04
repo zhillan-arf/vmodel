@@ -88,6 +88,6 @@ try{
   await page.reload();await page.waitForFunction(hash=>window.__vmodel?.getState().avatarId===hash,hashes[1]);
   checks.readyWaitsForSelectionSave=true;checks.studioReloadKeepsSelection=true;
   assert.deepEqual(errors,[]);
-  const report={visualStates,generatedAt:new Date().toISOString(),browser:browser.version(),fixtureHashes:hashes,checks,errors,limits:['Synthetic models only.','The deadline test triggers the timer callbacks after candidate preparation.','No Windows release-browser or physical camera acceptance.']};
+  const report={visualStates,generatedAt:new Date().toISOString(),browser:browser.version(),platform:process.platform,browserChannel:process.env.VMODEL_BROWSER??'chromium',fixtureHashes:hashes,checks,errors,limits:['Synthetic models only.','The deadline test triggers the timer callbacks after candidate preparation.','No physical camera test or human review.']};
   await writeFile('ops/reports/output-failure-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await browser?.close();await server.close();}

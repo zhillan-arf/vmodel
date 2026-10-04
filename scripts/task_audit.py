@@ -33,7 +33,7 @@ def audit():
     for number in CONTROLLER_SCOPES['TASK-P01']:
         if f'TASK-{number:03}' not in tasks:
             errors.append(f'TASK-{number:03}: missing')
-    for path in (ROOT / 'ops').rglob('*.md'):
+    for path in [*(ROOT / 'ops').rglob('*.md'), *(ROOT / 'docs').rglob('*.md')]:
         for target in re.findall(r'\]\(([^)]+TASK-[^)]*\.md)(?:#[^)]*)?\)', path.read_text(encoding='utf-8')):
             if not (path.parent / target).resolve().is_file():
                 errors.append(f'{path.relative_to(ROOT)}: broken task link {target}')

@@ -58,6 +58,6 @@ try {
   assert.equal(result.images,result.closed);assert.deepEqual(errors,[]);assert.deepEqual(externalRequests,[]);
   await writeFile('ops/reports/diagnostic-camera-smoke.json',JSON.stringify({generatedAt:new Date().toISOString(),browser:browser.version(),
     input:'Chromium fake camera; installed tracking worker and models.',durationMs:70000,stopped,
-    ...result,errors,externalRequests,limits:['Linux Chromium only. No physical camera, gesture, or target-laptop acceptance.']},null,2)+'\n');
+    ...result,errors,externalRequests,platform:process.platform,browserChannel:process.env.VMODEL_BROWSER??'chromium',limits:['No physical camera or gesture test. Performance acceptance requires separate measurements.']},null,2)+'\n');
   console.log(JSON.stringify({frames:result.frames,images:result.images,restart:true,diagnosticsOff:result.diagnosticsOff,released:result.released}));
 } finally {await browser?.close();await server.close();}

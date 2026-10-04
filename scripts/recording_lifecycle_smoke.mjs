@@ -26,7 +26,9 @@ try{
       click('record-trace');const discardRejected=confirmations===1&&inspector.recorder===original&&!inspector.recording;
       allowDiscard=true;window.MediaRecorder=undefined;inspector.element.querySelector('#record-video').checked=true;click('record-trace');
       const unsupportedText=inspector.element.querySelector('#trace-state').textContent.includes('Trace recording remains available');receive();
-      await new Promise(resolve=>setTimeout(resolve,80));const visibleRecording=inspector.element.querySelector('#inspector-state').textContent==='Recording trace';
+      const deadline=performance.now()+3000;
+      while(inspector.element.querySelector('#inspector-state').textContent!=='Recording trace'&&performance.now()<deadline)await new Promise(resolve=>setTimeout(resolve,20));
+      const visibleRecording=inspector.element.querySelector('#inspector-state').textContent==='Recording trace';
       camera=null;inspector.apply(null,.016,performance.timeOrigin+performance.now());
       const unsupportedTrace=await importTrace(inspector.recorder.export()),cameraLossStops=!inspector.recording&&demand==='inspect';
       camera=stream;inspector.element.querySelector('#record-video').checked=false;click('record-trace');receive();const hiddenRecorder=inspector.recorder;inspector.setVisible(false);

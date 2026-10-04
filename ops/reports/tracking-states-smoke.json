@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T12:56:13.293Z",
-  "browser": "153.0.8010.12",
+  "generatedAt": "2026-10-04T14:32:19.191Z",
+  "browser": "154.0.4258.53",
   "visualStates": [
     {
       "state": "camera-stopped",
@@ -9,7 +9,7 @@
         "height": 844
       },
       "path": "ops/reports/local/visual-states/tracking/camera-stopped-390.png",
-      "sha256": "da8a42e60320238381c709b52263974b8263d4b19c7dcdf4e9daa03e4dec56b6",
+      "sha256": "042ea0daa51cf3140c8fe1fbde0773cadb1d543cf772f2edfe9c64a0b9abd3b3",
       "horizontalOverflow": false
     },
     {
@@ -19,7 +19,7 @@
         "height": 1024
       },
       "path": "ops/reports/local/visual-states/tracking/camera-stopped-768.png",
-      "sha256": "18b09afddc2294c2f62a33f9d9ba517b7bd437b70872da7002fd05f29aaff722",
+      "sha256": "4d3cc3f4c98f2dab95195fe090a2f9c3ac1e3152a58e610d75eba2dae9b78ba1",
       "horizontalOverflow": false
     },
     {
@@ -29,7 +29,7 @@
         "height": 900
       },
       "path": "ops/reports/local/visual-states/tracking/camera-stopped-1440.png",
-      "sha256": "664312a9abb52050c3fe4a5e7681f5c734e6a6fbd20dc1f512495fb88733bf46",
+      "sha256": "d3506a2b25fd2a0dfd6ea57012b9d9cbc9f0e875d79ccce867a8a5c472008abd",
       "horizontalOverflow": false
     },
     {
@@ -39,7 +39,7 @@
         "height": 844
       },
       "path": "ops/reports/local/visual-states/tracking/valid-390.png",
-      "sha256": "9bbdf6afccfec3ed2f471dfe3956ff5089a1c4c95f204866f86f0324ffa043c9",
+      "sha256": "2a48d4288547f279699a1e59a3e38b02995856e34c67439f59c541704899794a",
       "horizontalOverflow": false
     },
     {
@@ -49,7 +49,7 @@
         "height": 1024
       },
       "path": "ops/reports/local/visual-states/tracking/valid-768.png",
-      "sha256": "55d0451d99766d79007e9844880361f80ad540511bf7d123b2aff4f6f1f7a353",
+      "sha256": "8f919f37c434ab469763859411ff43316257e2531778f431979ea7350fd3a21f",
       "horizontalOverflow": false
     },
     {
@@ -59,7 +59,7 @@
         "height": 900
       },
       "path": "ops/reports/local/visual-states/tracking/valid-1440.png",
-      "sha256": "bad5ed366d27a1f5ca5636e5b217ac59265a62fcc38e69a1d042c6965dfecac4",
+      "sha256": "94505ba9fbc2277febabfeeacacd8d137133bfff419fcb6a9cfc8e59b1914aac",
       "horizontalOverflow": false
     },
     {
@@ -69,7 +69,7 @@
         "height": 844
       },
       "path": "ops/reports/local/visual-states/tracking/low-confidence-390.png",
-      "sha256": "0afaabbdeed24282718faaa08dd992c1702fd0bf01a0eb2057d930e629763464",
+      "sha256": "17daf26b1923153ec22f9c92934b85507b2bac78e745ad900a3e14032076db62",
       "horizontalOverflow": false
     },
     {
@@ -79,7 +79,7 @@
         "height": 1024
       },
       "path": "ops/reports/local/visual-states/tracking/low-confidence-768.png",
-      "sha256": "2e65470b6c60c6bd5c89b971495fc854c00f86b3ef379dd60b8fa74f0c45d465",
+      "sha256": "5367a4ba376dcc140e3bfe82e10ff24a8b2a987a114e83815658fdcfd8a0f5d4",
       "horizontalOverflow": false
     },
     {
@@ -89,7 +89,7 @@
         "height": 900
       },
       "path": "ops/reports/local/visual-states/tracking/low-confidence-1440.png",
-      "sha256": "ed33ba7e5b050bcb672938cf70db5cd25c0a157576aaf13dc8ed364004a9d7c0",
+      "sha256": "e6fd98a254a4dc81b4f2af3acb9bac8727d4e078e27b1a87be5cabe4e788e600",
       "horizontalOverflow": false
     },
     {
@@ -99,7 +99,7 @@
         "height": 844
       },
       "path": "ops/reports/local/visual-states/tracking/stale-390.png",
-      "sha256": "bca304823e9622147ab5ca347161d4e7b59e56e40e7a2059695f2833f9c12ad6",
+      "sha256": "03d07c467e95723d79bd331542e772531e13c71d610f86fb27f50b7276168608",
       "horizontalOverflow": false
     },
     {
@@ -109,7 +109,7 @@
         "height": 1024
       },
       "path": "ops/reports/local/visual-states/tracking/stale-768.png",
-      "sha256": "7a5acd04944896a5e4e18e91f94dc279efd18e2a3eed5874858f97982c27f149",
+      "sha256": "c00ac902620c68ba5440d3d2cc304d76e21c9b3634b67d1499b6a6bf153adeb3",
       "horizontalOverflow": false
     },
     {
@@ -119,7 +119,7 @@
         "height": 900
       },
       "path": "ops/reports/local/visual-states/tracking/stale-1440.png",
-      "sha256": "3921d4e0eb7ef88a35a738793188237d446e890978043d26939e1f8b6be3d761",
+      "sha256": "5d68e8b19190a6e139813e00f1f65c33f76a1c8457483f54c5b041753782f629",
       "horizontalOverflow": false
     },
     {
@@ -129,7 +129,7 @@
         "height": 844
       },
       "path": "ops/reports/local/visual-states/tracking/disabled-hands-390.png",
-      "sha256": "24f681c10481aa654fbdaa031c44a4fcb2a2ef53d60d69d7350798f407b9e2eb",
+      "sha256": "2370aac52c9e92c2adb04706cdde4520bfc2825c58dd495b36bd27044501e3fa",
       "horizontalOverflow": false
     },
     {
@@ -139,7 +139,7 @@
         "height": 1024
       },
       "path": "ops/reports/local/visual-states/tracking/disabled-hands-768.png",
-      "sha256": "daa4abfc23dae4c6e9ffb05587d8a871627e3ec78e2793d5e696c564e667a5fa",
+      "sha256": "f7dd1e0585467245e044dbec173f0159c6aaba6a134db878866662685f6d4385",
       "horizontalOverflow": false
     },
     {
@@ -149,7 +149,7 @@
         "height": 900
       },
       "path": "ops/reports/local/visual-states/tracking/disabled-hands-1440.png",
-      "sha256": "d7b8fad0dbd7149c91ce671c2de496fbd8886e826768c0c7c73f7218effd552e",
+      "sha256": "722370e0e102200541d900c6683658b62319fccfaab082a9c7351baf92984e5e",
       "horizontalOverflow": false
     },
     {
@@ -159,7 +159,7 @@
         "height": 844
       },
       "path": "ops/reports/local/visual-states/tracking/paused-390.png",
-      "sha256": "3435caf98cfb63c9d1068b247c492e003240c861eb44b81b2e6ec03cf4037975",
+      "sha256": "6c45be9fc7d467b73e0243ed264469cc63f355afe24ace9fa6473f79448cded3",
       "horizontalOverflow": false
     },
     {
@@ -169,7 +169,7 @@
         "height": 1024
       },
       "path": "ops/reports/local/visual-states/tracking/paused-768.png",
-      "sha256": "dfa08d2f2fd7321704a3462a3c049560c9e348d73156935a104842d90a383056",
+      "sha256": "c1a3bfe8a18530627bbd60ab15ad77bb79389527616876d15b6035649a5d51af",
       "horizontalOverflow": false
     },
     {
@@ -179,7 +179,7 @@
         "height": 900
       },
       "path": "ops/reports/local/visual-states/tracking/paused-1440.png",
-      "sha256": "7e67a96aff94b6dbd5c1a2a46045e939bf562f1a6ba37a355f90017bb4425386",
+      "sha256": "4a7a6afa5da6d86271cf005eaa2db7da12f61c57c1bb6e03122a0ca2543b5a10",
       "horizontalOverflow": false
     },
     {
@@ -189,7 +189,7 @@
         "height": 844
       },
       "path": "ops/reports/local/visual-states/tracking/trace-limit-390.png",
-      "sha256": "3c5bc79d70b983b5e06c9b8a6eeeeb5a95c3376e1de7085235a0b16e64b1dee1",
+      "sha256": "bb6d18b746af14f41de9d506831a6b903072fbb167f4230f935b0848594f7200",
       "horizontalOverflow": false
     },
     {
@@ -199,7 +199,7 @@
         "height": 1024
       },
       "path": "ops/reports/local/visual-states/tracking/trace-limit-768.png",
-      "sha256": "882d592415d3e0d5ff9a2811d6e5ed3baadc9141f13c74684ce91a5edcafd196",
+      "sha256": "97843e35a5e338677882a7806fece6db4da4efe8fe1cbd739eedcb40d3780c44",
       "horizontalOverflow": false
     },
     {
@@ -209,7 +209,7 @@
         "height": 900
       },
       "path": "ops/reports/local/visual-states/tracking/trace-limit-1440.png",
-      "sha256": "ae32e03c0785fcff3690d4237f3798ac1b14791d19ed5e5a11c194a1f7a8de5e",
+      "sha256": "b7a0c699bfe6b8006a66f0f275728827be9dc539b4b3f2ed40eb8b06073abc91",
       "horizontalOverflow": false
     },
     {
@@ -219,7 +219,7 @@
         "height": 844
       },
       "path": "ops/reports/local/visual-states/tracking/replay-390.png",
-      "sha256": "fe25fadcce750e58fe1b02270da82e1e3d77e3ee9adb36cdfde5c36a303210ce",
+      "sha256": "c92422a29223f32229be5084ed088a12cbd261d728bb97bc5e81cf5e8baea7b7",
       "horizontalOverflow": false
     },
     {
@@ -229,7 +229,7 @@
         "height": 1024
       },
       "path": "ops/reports/local/visual-states/tracking/replay-768.png",
-      "sha256": "cac45a4c50ba9c7f522bc639ecb3ef1e7d59fdfe82cb18a6585583be03d11f80",
+      "sha256": "1065bfc8964fede1a8b23fe74643c868a10120ff6693149383bb4f1e931a6ab9",
       "horizontalOverflow": false
     },
     {
@@ -239,7 +239,7 @@
         "height": 900
       },
       "path": "ops/reports/local/visual-states/tracking/replay-1440.png",
-      "sha256": "fda1ce064ee2f61c3e2430f853ca4ed10ca0d62a1cf9eb36b0027831df9fe489",
+      "sha256": "ff7e352475005997ce0031e3839ed66feaf90a151985c997201fe28e0091b0c0",
       "horizontalOverflow": false
     },
     {
@@ -249,7 +249,7 @@
         "height": 844
       },
       "path": "ops/reports/local/visual-states/tracking/permission-failure-390.png",
-      "sha256": "83be4c1b394fdd67aaf07d72db08ca693e830b3931c395592f05709d6e04bf3a",
+      "sha256": "120b9824a07adeb2c953125ebc56e80a4b5f297bb6dc01b1d54f459e91171938",
       "horizontalOverflow": false
     },
     {
@@ -259,7 +259,7 @@
         "height": 1024
       },
       "path": "ops/reports/local/visual-states/tracking/permission-failure-768.png",
-      "sha256": "c97dee231fdc14d72f8deb64c31def8c67e7f89f8204c7f808eb147fce57bafb",
+      "sha256": "de2e074290e24af7a5217ddfde8f5a276e209cf07b619e29b695257127e4eb8c",
       "horizontalOverflow": false
     },
     {
@@ -269,7 +269,7 @@
         "height": 900
       },
       "path": "ops/reports/local/visual-states/tracking/permission-failure-1440.png",
-      "sha256": "297bdee8c3f7740512272067e4a3816d3c921151e934134dbb14ab51d8929f4a",
+      "sha256": "2b346ef9cd35cd5614bf9c8d18e6e0271e29371f517bd88603c447a1dc18e55a",
       "horizontalOverflow": false
     }
   ],

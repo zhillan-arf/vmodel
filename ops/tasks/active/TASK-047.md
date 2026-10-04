@@ -32,12 +32,12 @@ These paths identify implementation work. They do not claim that new modules or 
 
 ## Acceptance criteria
 
-- [ ] All mandatory L13 correctness cases pass with linked evidence.
-- [ ] No stale commit, leaked owned resource, blank committed avatar, or renderer crash occurs.
-- [ ] Memory meets the L13 post-cleanup criterion.
-- [ ] Backup restore passes in a fresh profile.
+- [x] All mandatory L13 correctness cases pass with linked evidence.
+- [x] No stale commit, leaked owned resource, blank committed avatar, or renderer crash occurs.
+- [x] Memory meets the L13 post-cleanup criterion.
+- [x] Backup restore passes in a fresh profile.
 - [ ] Library screenshots and human review satisfy U07 and U08.
-- [ ] No unperformed browser or physical check is marked passed.
+- [x] No unperformed browser or physical check is marked passed.
 
 ## Verification
 
@@ -58,3 +58,11 @@ Date: 2026-10-04. Synthetic lifecycle checks and actual Ene and Rei load checks 
 Evidence: [implementation record](../../reports/studio-implementation.md) and [task report](../../reports/library-acceptance.md).
 
 Acceptance remains open until all required checks have direct evidence.
+
+## Windows measurements
+
+Chrome and Edge pass the software matrix and both L13 memory conditions.
+Each browser completed 20 measured model changes with output closed and 20 with output open.
+Graphics counts remain stable for each model. Disposal leaves zero owned geometries and textures.
+See [the Windows record](../../reports/windows-continuation.md), [Chrome measurements](../../reports/windows-library-chrome.json), and [Edge measurements](../../reports/windows-library-msedge.json).
+Human appearance and guide review remain under [TASK-061](../backlog/TASK-061.md).

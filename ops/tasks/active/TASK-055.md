@@ -31,9 +31,9 @@ These paths identify implementation work. They do not claim that new modules or 
 
 ## Acceptance criteria
 
-- [ ] Inspector-off and default-on results satisfy T12 limits.
-- [ ] Required trace, transform, reason, and lifecycle fixtures pass.
-- [ ] No extra camera, inference backlog, or unbounded resource growth occurs.
+- [x] Inspector-off and default-on results satisfy T12 limits in the Windows fixture measurements.
+- [x] Required trace, transform, reason, and lifecycle fixtures pass.
+- [x] No extra camera, inference backlog, or unbounded resource growth occurs in the resource tests and measured intervals.
 - [ ] All U07 tracking states have reviewed screenshots.
 - [ ] Human review confirms readable reasons and distinct raw versus constrained layers.
 - [x] Live motion quality remains unclaimed by these component tests.
@@ -52,7 +52,8 @@ Keep personal recordings under `ops/reports/local/`. Do not mark unperformed che
 
 ## Current checkpoint
 
-Date: 2026-10-04. Browser and unit checks pass. Nine tracking states have test images. Measured overhead, process memory, and human review remain open.
+Date: 2026-10-04. Windows software checks pass. The default overlay and the reference comparison with changed mode order meet T12 speed limits.
+Nine tracking states have test images. TASK-061 owns human review and physical tests.
 
 Evidence: [implementation record](../../reports/studio-implementation.md) and [task report](../../reports/tracking-inspector-acceptance.md).
 

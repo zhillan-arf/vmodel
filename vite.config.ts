@@ -24,7 +24,9 @@ export default defineConfig({
       });
     },
   }],
-  server: { host: '127.0.0.1', port: 5173, strictPort: true },
+  server: { host: '127.0.0.1', port: 5173, strictPort: true,
+    watch: { ignored: ['**/.tools/**', '**/.cache/**', '**/assets/**', '**/ops/resources/**', '**/ops/reports/**'] } },
+  optimizeDeps: { entries: ['index.html'] },
   worker: { format: 'es' },
   build: { target: 'es2022' },
 });

@@ -2,7 +2,8 @@
 
 Date: 2026-10-04. Status: In progress.
 
-Browser and unit checks pass. Required tracking states now have test images. Measured overhead, process memory, and human review remain open.
+Windows software checks and the measured default-mode limits pass. Required tracking states have test images.
+Human review remains open in TASK-061.
 
 See the [shared implementation record](studio-implementation.md) for files, commands, results, requirement mapping, and remaining checks.
 See the [browser results](studio-features-smoke.json) for synthetic test results.
@@ -88,3 +89,34 @@ All 12 control combinations pass after this change.
 The repeated 27 image captures and 24 accessibility cases also pass.
 Type checking and both task audits pass.
 Native browser zoom and human review remain open.
+
+## Windows software evidence
+
+All 310 unit tests pass on the laptop.
+Installed Chrome and Edge pass the inspector, trace, transform, camera recovery, recording, and replay checks.
+The solver comparison preserves 720 baseline updates.
+Canonical, Ene, and Rei replay checks pass for 52 bones.
+The additional combined test passes in both browsers with a simulated camera.
+See [the Windows record](windows-continuation.md) for commands, versions, fixture limits, and linked results.
+[TASK-061](../tasks/backlog/TASK-061.md) owns human readability, native zoom, screen-reader, and physical tests.
+
+## Windows performance evidence
+
+The [Windows report](windows-continuation.md) records the fixed fixture, model hashes, power checks, render dimensions, and sample protocol.
+The default overlay retains 100.03% of renderer FPS and 104.5% of useful pose rate.
+Its median p95 capture-to-use age is 17.1 milliseconds below the inspector-off value.
+These values meet the default-mode T12 limits.
+
+The first sequential reference comparison fails the 5% task-rate limit.
+The unchanged reference later produces lower rates, which shows variation over time.
+The [comparison with changed mode order](windows-tracking-chrome-alternating.json) retains at least 96.8% of each task rate and 99.97% of renderer FPS.
+It has three 60-second samples per mode and meets the inspector-off T12 limits.
+Both results remain recorded.
+These fixture measurements do not establish physical motion quality or the later 15 Hz correction target.
+
+The [measurement summary](windows-tracking-summary.json) checks three samples per mode, equal render dimensions, power, and camera and frame counts.
+Dense-face samples contain 478 points.
+The optional video repeat exports three nonempty WebM files.
+Recording costs include the automatic stop within each measurement interval.
+The [Windows report](windows-continuation.md) records active durations and memory ranges.
+The resource tests and measured intervals show no unbounded growth.

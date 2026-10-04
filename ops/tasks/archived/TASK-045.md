@@ -1,10 +1,10 @@
 # TASK-045: Build library cards and entry management
 
-- Status: In progress
+- Status: Done
 - Priority: P0
 - Owner: Codex (implementing assistant)
 - Goal: G5
-- Parent controller: [TASK-P04](TASK-P04.md)
+- Parent controller: [TASK-P04](../active/TASK-P04.md)
 - Depends on: TASK-043, TASK-044
 - Estimate: 2-3 days
 - Specification: [Studio product specification](../../specs/studio-product-spec.md)
@@ -36,8 +36,8 @@ These paths identify implementation work. They do not claim that new modules or 
 - [x] Removal never deletes bundled sources or an active local entry.
 - [x] Removal and orphan-byte cleanup occur in one transaction.
 - [x] A remote deletion preserves current decoded bytes and shows the missing saved state.
-- [ ] Cards and details pass required viewport, zoom, keyboard, and contrast checks.
-- [ ] No action silently changes the current performance model.
+- [x] Cards and details pass automated viewport, CSS zoom, keyboard, and contrast checks.
+- [x] No action silently changes the current performance model.
 
 ## Verification
 
@@ -59,4 +59,9 @@ Actual bundled thumbnails now pass image and layout checks. The full accessibili
 
 Evidence: [implementation record](../../reports/studio-implementation.md) and [task report](../../reports/library-interface.md).
 
-Acceptance remains open until all required checks have direct evidence.
+## Windows software acceptance
+
+Installed Chrome and Edge pass the card, management, thumbnail, selection, and 24 layout and contrast cases.
+See [the Windows record](../../reports/windows-continuation.md).
+At the user's request, [TASK-061](../backlog/TASK-061.md) now owns native browser zoom and human keyboard and appearance review.
+TASK-047 and TASK-048 retain all G5 release requirements.

@@ -11,6 +11,7 @@
 import { spawn } from 'node:child_process';
 import path from 'node:path';
 import process from 'node:process';
+import { mkdirSync, writeFileSync } from 'node:fs';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname).replace(/^\/(\w:)/, '$1'), '..');
 const VOICE_PYTHON = path.join(ROOT, '.tools/voice/venv/Scripts/python.exe');
@@ -22,6 +23,7 @@ const CHECKS = [
   { name: 'solver baseline comparison', command: 'node scripts/solver_baseline_check.mjs' },
   { name: 'production build and typecheck', command: 'npm run build --silent' },
   { name: 'synthetic library and inspector checks', command: 'node scripts/studio_features_smoke.mjs' },
+  { name: 'combined tracking library and output checks', command: 'node scripts/combined_studio_smoke.mjs' },
   { name: 'bundled model navigation with live output', command: 'node scripts/bundled_navigation_smoke.mjs' },
   { name: 'inspector pause with live output', command: 'node scripts/inspector_live_smoke.mjs' },
   { name: 'tracking visual states', command: 'node scripts/tracking_states_smoke.mjs' },
@@ -57,6 +59,8 @@ const CHECKS = [
 ];
 
 const NOT_COVERED = [
+  'Model appearance, diagnostic clarity, native zoom, and screen-reader review (TASK-061).',
+  'Windows memory and inspector performance (separate measurement scripts).',
   'Live camera quality, gestures and standing movement (needs a person).',
   'Voice preference and listening acceptance (needs the user).',
   'OBS Virtual Camera registration and consumer test (needs an administrator prompt).',
@@ -69,9 +73,16 @@ const NOT_COVERED = [
 // to spawn a .cmd shim without a shell at all. Every command here is static.
 const run = (check) => new Promise(resolve => {
   const started = Date.now();
-  const child = spawn(check.command, { cwd: ROOT, shell: true, stdio: 'ignore' });
+  let output = '';
+  const child = spawn(check.command, { cwd: ROOT, shell: true, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] });
+  for (const stream of [child.stdout, child.stderr]) stream.on('data', chunk => { output = (output + chunk).slice(-200000); });
   child.on('error', () => resolve({ ...check, code: null, failed: !check.optional, skipped: check.optional, ms: Date.now() - started }));
-  child.on('close', code => resolve({ ...check, code, failed: code !== 0, skipped: false, ms: Date.now() - started }));
+  child.on('close', code => {
+    mkdirSync(path.join(ROOT, 'ops/reports/local/verify'), { recursive: true });
+    writeFileSync(path.join(ROOT, 'ops/reports/local/verify', check.name.replaceAll(' ', '-') + '.log'), output);
+    if (code !== 0) console.error(output.slice(-4000));
+    resolve({ ...check, code, failed: code !== 0, skipped: false, ms: Date.now() - started });
+  });
 });
 
 const results = [];
@@ -84,6 +95,11 @@ for (const check of CHECKS) {
 
 const failed = results.filter(result => result.failed && !result.skipped);
 const skipped = results.filter(result => result.skipped);
+mkdirSync(path.join(ROOT, 'ops/reports'), { recursive: true });
+writeFileSync(path.join(ROOT, `ops/reports/verify-${process.env.VMODEL_BROWSER ?? process.platform}.json`),
+  JSON.stringify({ date: new Date().toISOString(), platform: process.platform,
+    browserChannel: process.env.VMODEL_BROWSER ?? null, results, failed: failed.length,
+    notCovered: NOT_COVERED }, null, 2) + '\n');
 console.log('');
 if (skipped.length) console.log(`${skipped.length} optional check(s) skipped: ${skipped.map(s => s.name).join(', ')}`);
 console.log(failed.length ? `${failed.length} check(s) FAILED: ${failed.map(f => f.name).join(', ')}`

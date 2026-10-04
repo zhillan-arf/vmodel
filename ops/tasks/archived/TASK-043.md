@@ -1,10 +1,10 @@
 # TASK-043: Build the import preview and save flow
 
-- Status: In progress
+- Status: Done
 - Priority: P0
 - Owner: Codex (implementing assistant)
 - Goal: G5
-- Parent controller: [TASK-P04](TASK-P04.md)
+- Parent controller: [TASK-P04](../active/TASK-P04.md)
 - Depends on: TASK-041, TASK-042
 - Estimate: 2-3 days
 - Specification: [Studio product specification](../../specs/studio-product-spec.md)
@@ -37,7 +37,7 @@ These paths identify implementation work. They do not claim that new modules or 
 - [x] Cancel, timeout, and invalid input leave the previous model and output intact.
 - [x] Save retries and duplicate files cannot create duplicate bytes.
 - [x] Terms acknowledgment records metadata and attachment digests.
-- [ ] Modal focus, error announcements, and reduced motion meet U05 and U06.
+- [x] Automated focus, error-announcement attributes, and reduced-motion checks pass on Chrome and Edge.
 
 ## Verification
 
@@ -59,4 +59,10 @@ Browser checks cover cancellation and timeout during inspection and preview. Acc
 
 Evidence: [implementation record](../../reports/studio-implementation.md) and [task report](../../reports/library-import.md).
 
-Acceptance remains open until all required checks have direct evidence.
+## Windows software acceptance
+
+Installed Chrome and Edge pass the import, cancellation, timeout, error-state, focus, and panel-motion checks.
+Import uses an inline panel. Browser confirmation handles destructive actions.
+See [the Windows record](../../reports/windows-continuation.md).
+At the user's request, [TASK-061](../backlog/TASK-061.md) now owns human focus, screen-reader, and preview-motion checks.
+The U05 and U06 release requirements remain unchanged under TASK-047 and TASK-048.

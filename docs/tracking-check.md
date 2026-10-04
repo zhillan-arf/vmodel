@@ -2,6 +2,7 @@
 
 These checks need a person, the actual camera, and the prepared Ene and Rei models.
 Synthetic fixtures cannot establish physical tracking quality.
+Record human results under [TASK-061](../ops/tasks/backlog/TASK-061.md).
 
 Before a correction experiment, complete the inspector acceptance checks in TASK-055.
 Keep the existing scheduler, confidence thresholds, and smoothing until diagnosis identifies the first failed stage.

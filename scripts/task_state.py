@@ -1,4 +1,4 @@
-"""Move a task with its lifecycle and preserve Markdown links throughout ops."""
+"""Move a task and preserve links in ops and docs."""
 import argparse
 from collections import Counter
 import os
@@ -42,7 +42,7 @@ def transition(task_id, status):
     if source != target and target.exists():
         raise ValueError(f'Destination already exists: {target}')
     edits = []
-    for path in (ROOT / 'ops').rglob('*.md'):
+    for path in [*(ROOT / 'ops').rglob('*.md'), *(ROOT / 'docs').rglob('*.md')]:
         old = path.read_text(encoding='utf-8')
         output = target if path.resolve() == source else path
         def fix_link(match):

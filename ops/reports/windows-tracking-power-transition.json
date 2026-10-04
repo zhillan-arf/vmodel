@@ -1,0 +1,417 @@
+{
+  "date": "2026-10-04T14:55:06.991Z",
+  "channel": "chrome",
+  "modesRequested": [
+    "baseline",
+    "off",
+    "overlay",
+    "estimated",
+    "record",
+    "dense",
+    "video"
+  ],
+  "protocol": {
+    "warmupSeconds": 30,
+    "sampleSeconds": 60,
+    "repetitions": 3
+  },
+  "modes": [
+    {
+      "mode": "baseline",
+      "samples": [
+        {
+          "seconds": 60.02170000000298,
+          "fps": 29.972493281595,
+          "taskHz": {
+            "face": 4.864907191898689,
+            "pose": 2.4324535959493443,
+            "hands": 2.4324535959493443
+          },
+          "presentSamples": {
+            "face": 292,
+            "pose": 146,
+            "hands": 146
+          },
+          "usefulPoseHz": 2.4324535959493443,
+          "p95AgeMs": 361.300048828125,
+          "usefulSamples": 146,
+          "cameraRequests": 1,
+          "maxInFlight": 1,
+          "delegates": [
+            "GPU"
+          ],
+          "maxFacePoints": 0,
+          "renderSize": {
+            "width": 752,
+            "height": 423
+          },
+          "settings": {
+            "version": 1,
+            "mode": "seated",
+            "quality": "balanced",
+            "framing": "body",
+            "orientation": "landscape",
+            "background": "#182339",
+            "mirror": true,
+            "hands": true,
+            "smoothing": 14,
+            "springMotion": "gentle",
+            "captureResolution": "640x480",
+            "zoom": 1,
+            "headRange": 1,
+            "mouthGain": 1.8
+          },
+          "privateBytes": 1784602624
+        },
+        {
+          "seconds": 60.01520000000298,
+          "fps": 29.959077033816612,
+          "taskHz": {
+            "face": 4.782121862461272,
+            "pose": 2.3993921539875376,
+            "hands": 2.3993921539875376
+          },
+          "presentSamples": {
+            "face": 287,
+            "pose": 144,
+            "hands": 144
+          },
+          "usefulPoseHz": 2.382729708473735,
+          "p95AgeMs": 393.5,
+          "usefulSamples": 143,
+          "cameraRequests": 1,
+          "maxInFlight": 1,
+          "delegates": [
+            "GPU"
+          ],
+          "maxFacePoints": 0,
+          "renderSize": {
+            "width": 752,
+            "height": 423
+          },
+          "settings": {
+            "version": 1,
+            "mode": "seated",
+            "quality": "balanced",
+            "framing": "body",
+            "orientation": "landscape",
+            "background": "#182339",
+            "mirror": true,
+            "hands": true,
+            "smoothing": 14,
+            "springMotion": "gentle",
+            "captureResolution": "640x480",
+            "zoom": 1,
+            "headRange": 1,
+            "mouthGain": 1.8
+          },
+          "privateBytes": 1807360000
+        },
+        {
+          "seconds": 60.01810000000149,
+          "fps": 35.20604617606934,
+          "taskHz": {
+            "face": 5.548326254912964,
+            "pose": 2.782493947659054,
+            "hands": 2.782493947659054
+          },
+          "presentSamples": {
+            "face": 333,
+            "pose": 167,
+            "hands": 167
+          },
+          "usefulPoseHz": 2.782493947659054,
+          "p95AgeMs": 390.699951171875,
+          "usefulSamples": 167,
+          "cameraRequests": 1,
+          "maxInFlight": 1,
+          "delegates": [
+            "GPU"
+          ],
+          "maxFacePoints": 0,
+          "renderSize": {
+            "width": 752,
+            "height": 423
+          },
+          "settings": {
+            "version": 1,
+            "mode": "seated",
+            "quality": "balanced",
+            "framing": "body",
+            "orientation": "landscape",
+            "background": "#182339",
+            "mirror": true,
+            "hands": true,
+            "smoothing": 14,
+            "springMotion": "gentle",
+            "captureResolution": "640x480",
+            "zoom": 1,
+            "headRange": 1,
+            "mouthGain": 1.8
+          },
+          "privateBytes": 1821478912
+        }
+      ],
+      "memoryBefore": 1767911424,
+      "memoryAfter": 667963392
+    },
+    {
+      "mode": "off",
+      "samples": [
+        {
+          "seconds": 60.01489999999851,
+          "fps": 59.75182829597465,
+          "taskHz": {
+            "face": 8.547877277143055,
+            "pose": 4.265607374168854,
+            "hands": 4.265607374168854
+          },
+          "presentSamples": {
+            "face": 513,
+            "pose": 256,
+            "hands": 256
+          },
+          "usefulPoseHz": 4.265607374168854,
+          "p95AgeMs": 259.89990234375,
+          "usefulSamples": 256,
+          "cameraRequests": 1,
+          "maxInFlight": 1,
+          "delegates": [
+            "GPU"
+          ],
+          "maxFacePoints": 0,
+          "renderSize": {
+            "width": 990,
+            "height": 557
+          },
+          "settings": {
+            "version": 1,
+            "mode": "seated",
+            "quality": "balanced",
+            "framing": "body",
+            "orientation": "landscape",
+            "background": "#182339",
+            "mirror": true,
+            "hands": true,
+            "smoothing": 14,
+            "springMotion": "gentle",
+            "captureResolution": "640x480",
+            "zoom": 1,
+            "headRange": 1,
+            "mouthGain": 1.8
+          },
+          "privateBytes": 1993351168
+        },
+        {
+          "seconds": 60.0075,
+          "fps": 59.90917801941424,
+          "taskHz": {
+            "face": 8.76557097029538,
+            "pose": 4.38278548514769,
+            "hands": 4.38278548514769
+          },
+          "presentSamples": {
+            "face": 526,
+            "pose": 263,
+            "hands": 263
+          },
+          "usefulPoseHz": 4.38278548514769,
+          "p95AgeMs": 247.5,
+          "usefulSamples": 263,
+          "cameraRequests": 1,
+          "maxInFlight": 1,
+          "delegates": [
+            "GPU"
+          ],
+          "maxFacePoints": 0,
+          "renderSize": {
+            "width": 990,
+            "height": 557
+          },
+          "settings": {
+            "version": 1,
+            "mode": "seated",
+            "quality": "balanced",
+            "framing": "body",
+            "orientation": "landscape",
+            "background": "#182339",
+            "mirror": true,
+            "hands": true,
+            "smoothing": 14,
+            "springMotion": "gentle",
+            "captureResolution": "640x480",
+            "zoom": 1,
+            "headRange": 1,
+            "mouthGain": 1.8
+          },
+          "privateBytes": 1968250880
+        },
+        {
+          "seconds": 60.01489999999851,
+          "fps": 59.85180346880673,
+          "taskHz": {
+            "face": 9.03109061249812,
+            "pose": 4.51554530624906,
+            "hands": 4.51554530624906
+          },
+          "presentSamples": {
+            "face": 542,
+            "pose": 271,
+            "hands": 271
+          },
+          "usefulPoseHz": 4.51554530624906,
+          "p95AgeMs": 246.60009765625,
+          "usefulSamples": 271,
+          "cameraRequests": 1,
+          "maxInFlight": 1,
+          "delegates": [
+            "GPU"
+          ],
+          "maxFacePoints": 0,
+          "renderSize": {
+            "width": 990,
+            "height": 557
+          },
+          "settings": {
+            "version": 1,
+            "mode": "seated",
+            "quality": "balanced",
+            "framing": "body",
+            "orientation": "landscape",
+            "background": "#182339",
+            "mirror": true,
+            "hands": true,
+            "smoothing": 14,
+            "springMotion": "gentle",
+            "captureResolution": "640x480",
+            "zoom": 1,
+            "headRange": 1,
+            "mouthGain": 1.8
+          },
+          "privateBytes": 2006130688
+        }
+      ],
+      "memoryBefore": 2152701952,
+      "memoryAfter": 664469504
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "A repeated public NASA photograph supplies the camera stream. No physical camera is used.",
+    "Useful pose samples have an accepted spine or arm goal at first use.",
+    "These measurements do not establish physical motion quality.",
+    "The pinned baseline uses the same installed dependencies, model files, and camera fixture."
+  ],
+  "fixtureHash": "194f6ba51f7bdeb090c9a47e7ab69d3fa191fbb6240cd4b6f118a215bc27caf0",
+  "fixtureCrop": {
+    "x": 150,
+    "y": 75,
+    "width": 520,
+    "height": 400
+  },
+  "inputSize": {
+    "width": 640,
+    "height": 480
+  },
+  "modelHash": "3657b97928638e7ada5f6639141fb63f555912049a2c6ec217851001e322cbcb",
+  "runtimeAssets": [
+    {
+      "name": "face_landmarker.task",
+      "url": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task",
+      "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+      "bytes": 3758596,
+      "checksumSource": "Recorded on first retrieval from versioned upstream URL"
+    },
+    {
+      "name": "pose_landmarker_lite.task",
+      "url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task",
+      "sha256": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a",
+      "bytes": 5777746,
+      "checksumSource": "Recorded on first retrieval from versioned upstream URL"
+    },
+    {
+      "name": "hand_landmarker.task",
+      "url": "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
+      "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1",
+      "bytes": 7819105,
+      "checksumSource": "Recorded on first retrieval from versioned upstream URL"
+    },
+    {
+      "name": "wasm/vision_wasm_internal.js",
+      "source": "@mediapipe/tasks-vision@1.0.1",
+      "sha256": "e170ee67dd4e16c1a6fcd8840a206687e5a59b22c20e4a902bc445b095454d73",
+      "bytes": 323377
+    },
+    {
+      "name": "wasm/vision_wasm_internal.wasm",
+      "source": "@mediapipe/tasks-vision@1.0.1",
+      "sha256": "8da277a733926eacd0474b8704b36742d6ec3231c57a860c5b889dff8f1df886",
+      "bytes": 11756954
+    },
+    {
+      "name": "wasm/vision_wasm_module_internal.js",
+      "source": "@mediapipe/tasks-vision@1.0.1",
+      "sha256": "da8934057f147b622e82cfb4c0dbd85461c598e268588b5a8ba9ca963a8ff82d",
+      "bytes": 323415
+    },
+    {
+      "name": "wasm/vision_wasm_module_internal.wasm",
+      "source": "@mediapipe/tasks-vision@1.0.1",
+      "sha256": "2dabd8e23c60984628beb7bb338764c81a08e6837145273f59578684b5d53c1b",
+      "bytes": 11756972
+    },
+    {
+      "name": "wasm/vision_wasm_nosimd_internal.js",
+      "source": "@mediapipe/tasks-vision@1.0.1",
+      "sha256": "e81d715a3d42cc3373602eb2f7aff795d164934db680e32496b65dab537f9658",
+      "bytes": 323180
+    },
+    {
+      "name": "wasm/vision_wasm_nosimd_internal.wasm",
+      "source": "@mediapipe/tasks-vision@1.0.1",
+      "sha256": "a28483cd42e74e855bf5ebdb6b40d9b66a5b49e35e95020bc97669e6822a3192",
+      "bytes": 10960242
+    }
+  ],
+  "workerHashes": {
+    "current": "c69d02081206a79ff6d6928376b159e19b08b28b84fb81b3cc0593be3f364c15",
+    "baseline": "37be54510b10b1a4748eed2c952fbd5b319d2b33373c592a80596191b8734686"
+  },
+  "baselineCommit": "da48542e991aa202a1b9eaafc1a4f1cbb22ef7b9",
+  "hardware": {
+    "power": [
+      {
+        "PowerOnline": false,
+        "RemainingCapacity": 5072
+      }
+    ],
+    "cpu": "12th Gen Intel(R) Core(TM) i7-1255U",
+    "ram": 16779804672,
+    "obs": []
+  },
+  "browser": "154.0.8037.97",
+  "graphics": [
+    {
+      "vendorId": 32902,
+      "deviceId": 18088,
+      "subSysId": 668799043,
+      "revision": 12,
+      "vendorString": "",
+      "deviceString": "Intel(R) Iris(R) Xe Graphics",
+      "driverVendor": "Intel",
+      "driverVersion": "31.0.101.4255"
+    },
+    {
+      "vendorId": 5140,
+      "deviceId": 140,
+      "subSysId": 0,
+      "revision": 0,
+      "vendorString": "",
+      "deviceString": "Microsoft Basic Render Driver",
+      "driverVendor": "",
+      "driverVersion": "10.0.26100.9278"
+    }
+  ],
+  "validForComparison": false,
+  "excludedReason": "The laptop changed from battery power to AC power during the baseline samples."
+}

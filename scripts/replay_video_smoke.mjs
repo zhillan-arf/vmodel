@@ -19,19 +19,27 @@ try{
       try{
         video.start(stream,'video-fixture',(blob,mapping)=>finish({blob,mapping}),10);
         const audioTracks=native.stream.getAudioTracks().length;window.MediaRecorder=Original;
-        await new Promise(resolve=>setTimeout(resolve,1250));
+        await new Promise((resolve,reject)=>{
+          let chunks=0;
+          const timeout=setTimeout(()=>reject(new Error('The recorder did not supply two video chunks within 10 seconds.')),10000);
+          native.addEventListener('dataavailable',function receive(event){
+            if(event.data.size>0&&++chunks>=2){clearTimeout(timeout);native.removeEventListener('dataavailable',receive);resolve();}
+          });
+        });
         if(mode==='camera loss'){stream.getVideoTracks()[0].stop();stream.getVideoTracks()[0].dispatchEvent(new Event('ended'));}
         else if(mode==='recorder error')native.dispatchEvent(new Event('error'));
         else if(mode==='size limit'){const oversized=new Blob(['oversized']);Object.defineProperty(oversized,'size',{value:64*1048576+1});native.dispatchEvent(new BlobEvent('dataavailable',{data:oversized}));}
         else if(mode==='duration limit')deadline();else video.stop();
         const{blob,mapping}=await stopped,url=URL.createObjectURL(blob),player=document.createElement('video');player.muted=true;player.src=url;document.body.append(player);
         try{
-          await new Promise((resolve,reject)=>{player.onloadeddata=resolve;player.onerror=()=>reject(new Error('Video playback failed'));});await player.play();
-          await new Promise(resolve=>setTimeout(resolve,100));
-          return{mode,payload:Array.from(new Uint8Array(await blob.arrayBuffer())),bytes:blob.size,audioTracks,width:player.videoWidth,height:player.videoHeight,advanced:player.currentTime>0,mapping,active:video.active};
+          await new Promise((resolve,reject)=>{player.onloadeddata=resolve;player.onerror=()=>reject(new Error(`Video playback failed: ${mode}, ${blob.size} bytes, ${blob.type}, ${player.error?.message}`));});await player.play();
+          const playbackDeadline=performance.now()+5000;
+          while(player.currentTime===0&&performance.now()<playbackDeadline)await new Promise(resolve=>setTimeout(resolve,20));
+          return{mode,payload:Array.from(new Uint8Array(await blob.arrayBuffer())),bytes:blob.size,audioTracks,width:player.videoWidth,height:player.videoHeight,advanced:player.currentTime>0,currentTime:player.currentTime,duration:player.duration,drawnFrames:frame,mapping,active:video.active};
         }finally{player.pause();player.remove();URL.revokeObjectURL(url);}
       }finally{window.MediaRecorder=Original;window.setTimeout=originalTimeout;video.stop();clearInterval(timer);stream.getTracks().forEach(track=>track.stop());canvas.remove();}
     },mode);
+    if(!result.advanced){await writeFile('ops/reports/local/replay-video-failure.webm',Buffer.from(result.payload));console.error({...result,payload:undefined});}
     assert(result.bytes>0);assert.equal(result.audioTracks,0);assert.equal(result.width,160);assert.equal(result.height,120);assert(result.advanced);assert.equal(result.active,false);if(!videoBytes){videoBytes=result.payload;videoMapping=result.mapping;}delete result.payload;checks.video.push(result);
   }
   checks.videoCleanup=await page.evaluate(async({videoBytes,videoMapping})=>{
@@ -111,6 +119,6 @@ try{
   await page.waitForFunction(()=>document.body.innerText.includes('Unsupported trace format'));
   assert.deepEqual(await page.evaluate(()=>window.__vmodel.getState()),before);assert.deepEqual(await output.evaluate(()=>window.__vmodel.getState()),peerBefore);checks.invalidTraceIsolation=true;
   assert.deepEqual(errors,[]);
-  const report={generatedAt:new Date().toISOString(),browser:browser.version(),checks,errors,limits:['Canvas video source only.','Camera loss and recorder error use injected events.','The size gate uses an overridden Blob.size.','The duration callback runs after 1.25 seconds; unit tests check the 60-second timer.','No physical video timing or Windows release-browser acceptance.']};
+  const report={generatedAt:new Date().toISOString(),browser:browser.version(),platform:process.platform,browserChannel:process.env.VMODEL_BROWSER??'chromium',checks,errors,limits:['Canvas video source only.','Camera loss and recorder error use injected events.','The size gate uses an overridden Blob.size.','The test waits for encoded data before each stop condition. Unit tests check the 60-second timer.','No physical video timing or human review.']};
   await writeFile('ops/reports/replay-video-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await browser?.close();await server.close();}

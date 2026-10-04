@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T12:17:32.832Z",
-  "browser": "153.0.8010.12",
+  "generatedAt": "2026-10-04T14:35:21.113Z",
+  "browser": "154.0.4258.53",
   "checks": {
     "twoTabDuplicateRace": {
       "models": 1,
@@ -107,9 +107,11 @@
     "9bc3e4e7f1fb38e886e6c326b61aed7944abf47f5058905fc41e9d2e57c4d525",
     "24f1a27a1785ea9a2411104217b372db7de7d5a26b8c6478050cfb373943bd99"
   ],
+  "platform": "win32",
+  "browserChannel": "msedge",
   "limits": [
     "Synthetic models only.",
     "The blocked-upgrade test changes the requested version through a test wrapper.",
-    "No physical camera or Windows browser acceptance."
+    "No physical camera test or human review."
   ]
 }

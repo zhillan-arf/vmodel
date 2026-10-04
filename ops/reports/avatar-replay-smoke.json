@@ -1,9 +1,9 @@
 {
   "tracePath": "ops/reports/local/avatar-comparison-trace.json",
   "baselineCommit": "da48542e991aa202a1b9eaafc1a4f1cbb22ef7b9",
-  "generatedAt": "2026-10-04T12:10:03.013Z",
-  "browser": "153.0.8010.12",
-  "traceHash": "54752572df3fb8d540b48f78ebd482727828ebb97a5e3671c2c2d19ffee81628",
+  "generatedAt": "2026-10-04T14:28:48.247Z",
+  "browser": "154.0.4258.53",
+  "traceHash": "68cf2c99c0cefcb3f6e3f496f1bd9733ec6956395e5fc7232faa695b08c9ce4b",
   "samples": 120,
   "results": [
     {
@@ -21,7 +21,7 @@
     },
     {
       "id": "ene",
-      "hash": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+      "hash": "3657b97928638e7ada5f6639141fb63f555912049a2c6ec217851001e322cbcb",
       "baselineAngle": 4.2146848510894035e-8,
       "baselinePosition": 0,
       "goalsEqual": true,

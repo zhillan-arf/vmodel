@@ -3,7 +3,7 @@
 - Status: In progress
 - Priority: P0
 - Goal: G1, G2, G3, G4, G5, G6
-- Depends on: TASK-007, TASK-014, TASK-018, TASK-019, TASK-020, TASK-028, TASK-038, TASK-048, TASK-060
+- Depends on: TASK-007, TASK-014, TASK-018, TASK-019, TASK-020, TASK-028, TASK-038, TASK-048, TASK-060, TASK-061
 - Estimate: M (1-2 days)
 - Specification: [Ene VTuber plan](../../specs/ene-vtuber-plan.md)
 
@@ -54,3 +54,10 @@ When completing this task, record changed artifact paths, exact validation comma
 Date: 2026-10-04. The [implementation record](../../reports/studio-implementation.md) supplies initial code and synthetic evidence.
 P04 and P05 remain open. Their release handoffs require real models, target-laptop measurements, physical diagnosis, and human review.
 No earlier physical acceptance changed.
+
+## Windows continuation
+
+The [Windows report](../../reports/windows-continuation.md) supplies Chrome and Edge software checks and actual-model memory measurements.
+It also records inspector speed comparisons on the laptop.
+[TASK-061](../backlog/TASK-061.md) collects human review, physical gestures, voice preference, and final recordings.
+The G5 and G6 release gates remain open for their required human and physical evidence.

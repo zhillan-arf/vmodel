@@ -53,6 +53,6 @@ try{
   await page.locator('#stop').click();
   await context.close();
   }
-  const report={generatedAt:new Date().toISOString(),browser:browser.version(),results,limits:['Actual bundled model files and simulated camera input.','Screenshots require human review. No physical camera or target-laptop acceptance.']};
+  const report={generatedAt:new Date().toISOString(),browser:browser.version(),platform:process.platform,browserChannel:process.env.VMODEL_BROWSER??'chromium',results,limits:['Actual bundled model files and simulated camera input.','Screenshots require human review. No physical camera test or performance acceptance.']};
   await writeFile('ops/reports/bundled-navigation-smoke.json',JSON.stringify(report,null,2)+'\n');
 }finally{await browser?.close();await server.close();}

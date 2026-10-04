@@ -19,8 +19,8 @@
     "duration": "0s",
     "animations": 0
   },
-  "generatedAt": "2026-10-04T12:56:13.474Z",
-  "browser": "153.0.8010.12",
+  "generatedAt": "2026-10-04T14:34:46.910Z",
+  "browser": "154.0.4258.53",
   "cases": [
     {
       "width": 390,
@@ -226,7 +226,7 @@
       "required": 3
     },
     {
-      "text": "1 saved models · http://127.0.0.1:41541 · 0 / 10240 MiB used",
+      "text": "1 saved models · http://127.0.0.1:52511 · 0 / 10240 MiB used",
       "foreground": "rgb(169, 184, 207)",
       "background": [
         12,

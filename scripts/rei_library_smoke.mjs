@@ -107,7 +107,8 @@ try {
   assert.equal(result.disposedResources.geometries,0);assert.equal(result.disposedResources.textures,0);
   const report = { generatedAt: new Date().toISOString(), browser: browser.version(), sourceHash,
     ...result, errors, externalRequests,
-    limits: ['Linux Chromium only. No physical camera or target-laptop acceptance.', 'Sequential single-model check; no physical comparison.'] };
+    platform: process.platform, browserChannel: process.env.VMODEL_BROWSER ?? 'chromium',
+    limits: ['No physical camera test or human appearance review.', 'This single-model check does not measure memory across model changes.'] };
   await writeFile(`ops/reports/${modelId}-library-smoke.json`, JSON.stringify(report, null, 2) + '\n');
   console.log(JSON.stringify(report, null, 2));
 } catch (error) {

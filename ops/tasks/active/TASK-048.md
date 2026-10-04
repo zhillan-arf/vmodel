@@ -51,7 +51,8 @@ Keep personal recordings under `ops/reports/local/`. Do not mark unperformed che
 
 ## Current checkpoint
 
-Date: 2026-10-04. The library guide and requirement map exist. Actual G5 acceptance and human handoff remain open.
+Date: 2026-10-04. The guide links passing Chrome and Edge software checks and target-laptop memory results.
+TASK-061 owns human guide and appearance review. Final G5 acceptance remains open.
 
 Evidence: [implementation record](../../reports/studio-implementation.md) and [task report](../../reports/library-handoff.md).
 

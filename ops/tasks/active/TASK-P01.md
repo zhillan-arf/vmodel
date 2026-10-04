@@ -4,7 +4,7 @@
 - Priority: P0
 - Owner: Codex (implementing assistant)
 - Goal: G1, G2, G3, G4, G5, G6
-- Depends on: None to start; completion requires TASK-001 through TASK-060, including the TASK-021 acceptance gate.
+- Depends on: None to start; completion requires TASK-001 through TASK-061, including the TASK-021 acceptance gate.
 - Estimate: Ongoing throughout implementation; included in delivery coordination.
 - Specification: [Ene VTuber plan](../../specs/ene-vtuber-plan.md)
 - Voice specification: [Live English character voice](../../specs/voice-conversion-plan.md)
@@ -17,7 +17,9 @@
 
 Own the work from the current plan through delivery of the user's **Ene Cyber legs** avatar and working webcam-to-recording/streaming program. Maintain an accurate, resumable account of what is finished, what is active, what is blocked, and what should happen next.
 
-This controller owns TASK-001 through TASK-060 across G1 through G6. It runs throughout their implementation; it is not a prerequisite that must finish before child tasks can start. Creating this document does not start implementation or complete any child task.
+This controller owns TASK-001 through TASK-061 across G1 through G6.
+Children can start before this controller finishes.
+TASK-061 collects the tests that need a person.
 
 ## Work
 
@@ -41,17 +43,17 @@ TASK-P04 maintains G5. TASK-P05 maintains G6. Both controllers supply evidence t
 
 ## Current checkpoint
 
-Date: 2026-10-04. P04 and P05 software implementation and synthetic checks are in progress.
+Date: 2026-10-04. Windows software checks, model memory tests, and inspector speed comparisons pass. Human acceptance remains open.
 
-- Scope: 60 implementation tasks, TASK-001 through TASK-060.
-- Progress: 32/60 Done; 22 In progress; 1 Blocked; 0 Ready; 5 Todo.
+- Scope: 61 tasks, TASK-001 through TASK-061.
+- Progress: 36/61 Done; 18 In progress; 1 Blocked; 1 Ready; 5 Todo.
 - G5: [P04](TASK-P04.md) has library, preparation, selection, and backup code with synthetic browser evidence.
 - G6: [P05](TASK-P05.md) has diagnostic, shared-solver, inspector, and replay code with component evidence.
 - Storage and backup: TASK-041, TASK-044, and TASK-046 passed their software acceptance checks.
 - Evidence: [implementation record](../../reports/studio-implementation.md) maps requirements and remaining checks.
 - Blocker: TASK-056 needs actual camera movements after inspector acceptance.
-- Model files: prepared Ene and Rei are available. Earlier private recordings and Windows voice artifacts remain absent.
-- Device work: target-laptop measurements and human acceptance remain open.
+- Model files: prepared Ene and Rei are available. The Windows reports record their actual hashes.
+- Device work: Chrome and Edge pass model memory tests. Inspector speed comparisons pass. Human acceptance remains open in TASK-061.
 - Corrections: TASK-057 through TASK-059 await physical diagnosis. Existing tracking thresholds remain unchanged.
 - Replay: TASK-053 passed its recording and replay software checks.
 - Release: TASK-041, TASK-044, and TASK-046 have complete storage, selection, and backup evidence. P04, P05, and TASK-021 remain open.
@@ -59,10 +61,10 @@ Date: 2026-10-04. P04 and P05 software implementation and synthetic checks are i
 
 ### Next actions
 
-1. Complete the remaining software failure matrices.
-2. Complete the remaining visual-state and accessibility checks.
-3. Run target-laptop measurements and human visual review.
-4. Perform physical diagnosis before correction experiments.
+1. Complete the human library and inspector checks in TASK-061.
+2. Record those results in TASK-047, TASK-048, and TASK-055.
+3. After inspector acceptance, perform the physical diagnosis for TASK-056.
+4. Use the diagnosis to select and test correction experiments.
 
 ## Historical checkpoint
 
@@ -204,3 +206,11 @@ Structural inspection and combined Ene/Rei browser selection checks pass.
 A reload persistence race was reproduced and corrected. Physical and target-laptop acceptance remain open.
 
 2026-10-04 preparation checkpoint: TASK-040 is archived. Resource ownership, late cleanup, native-model behavior, and failure regressions pass.
+
+## Windows continuation
+
+Chrome and Edge pass the software checks. Both browsers pass L13 memory cleanup with output closed and open.
+See [the Windows record](../../reports/windows-continuation.md).
+TASK-039, TASK-043, TASK-045, and TASK-051 have complete software evidence.
+[TASK-061](../backlog/TASK-061.md) owns their transferred human checks and the other physical acceptance tests.
+The release requirements remain unchanged.

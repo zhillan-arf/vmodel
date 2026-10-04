@@ -2,12 +2,21 @@
 
 Date: 2026-10-04. Status: In progress.
 
-Synthetic lifecycle checks and actual Ene and Rei load checks pass. Target-laptop memory, target browsers, and human review remain open.
+Chrome and Edge pass the software matrix and target-laptop memory checks.
+Human review remains open under [TASK-061](../tasks/backlog/TASK-061.md).
 
 See the [shared implementation record](studio-implementation.md) for files, commands, results, requirement mapping, and remaining checks.
 See the [browser results](studio-features-smoke.json) for synthetic test results.
 
 This record does not close the task acceptance criteria.
+
+## Windows acceptance checks
+
+Both browsers completed 20 measured Ene/Rei changes after five warm-up changes, with output closed and open.
+All four conditions pass the L13 cleanup limit.
+Graphics counts remain stable for each model. Disposal leaves zero owned geometries and textures.
+Both browsers also pass the storage, failure, selection, and fresh-profile restore checks.
+See [the Windows record](windows-continuation.md), [Chrome measurements](windows-library-chrome.json), and [Edge measurements](windows-library-msedge.json).
 
 ## Actual model checks
 
@@ -15,7 +24,7 @@ The [Ene report](ene-library-smoke.json) and [Rei report](rei-library-smoke.json
 The checks preserve the active model after failed replacement or cancellation.
 Exported bytes and terms retain their original hashes.
 The [decoder failure report](avatar-decoder-failure-smoke.json) checks cleanup after partial decoder allocation.
-These results do not establish the target-laptop memory limit or Windows browser acceptance.
+These component checks do not establish memory acceptance or human appearance review.
 
 ## Library visual-state evidence
 

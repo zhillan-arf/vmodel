@@ -5,14 +5,14 @@ import { fileURLToPath } from 'node:url';
 import { once } from 'node:events';
 import assert from 'node:assert/strict';
 
-export async function startIsolatedStudioServer() {
+export async function startIsolatedStudioServer({ workspaceRoot = fileURLToPath(new URL('..', import.meta.url)) } = {}) {
   const reservation = createServer();
   reservation.listen(0, '127.0.0.1'); await once(reservation, 'listening');
   const port = reservation.address().port;
   await new Promise((resolve, reject) => reservation.close(error => error ? reject(error) : resolve()));
   assert(![4173, 5173, 5081].includes(port));
   const child = spawn(process.execPath, ['scripts/server.mjs'], {
-    cwd: fileURLToPath(new URL('..', import.meta.url)), env: { ...process.env, VMODEL_PORT: String(port) },
+    cwd: workspaceRoot, env: { ...process.env, VMODEL_PORT: String(port) },
     windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'],
   });
   const base = `http://127.0.0.1:${port}`;

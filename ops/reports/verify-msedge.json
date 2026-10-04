@@ -1,0 +1,316 @@
+{
+  "date": "2026-10-04T14:41:22.308Z",
+  "platform": "win32",
+  "browserChannel": "msedge",
+  "results": [
+    {
+      "name": "unit tests",
+      "command": "npm test --silent",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 12890
+    },
+    {
+      "name": "native avatar replay and baseline comparison",
+      "command": "node scripts/avatar_replay_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 9600
+    },
+    {
+      "name": "solver baseline comparison",
+      "command": "node scripts/solver_baseline_check.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 5370
+    },
+    {
+      "name": "production build and typecheck",
+      "command": "npm run build --silent",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 7379
+    },
+    {
+      "name": "synthetic library and inspector checks",
+      "command": "node scripts/studio_features_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 50958
+    },
+    {
+      "name": "bundled model navigation with live output",
+      "command": "node scripts/bundled_navigation_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 109856
+    },
+    {
+      "name": "inspector pause with live output",
+      "command": "node scripts/inspector_live_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 26671
+    },
+    {
+      "name": "tracking visual states",
+      "command": "node scripts/tracking_states_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 10849
+    },
+    {
+      "name": "tracking overlay coordinates and labels",
+      "command": "node scripts/tracking_overlay_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 14429
+    },
+    {
+      "name": "import cancellation and timeout checks",
+      "command": "node scripts/import_lifecycle_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 67340
+    },
+    {
+      "name": "pinned public VRM fixture",
+      "command": "python scripts/provision_import_fixture.py",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 607
+    },
+    {
+      "name": "licensed VRM import check",
+      "command": "node scripts/licensed_import_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 8492
+    },
+    {
+      "name": "import metadata and version checks",
+      "command": "node scripts/import_metadata_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 9907
+    },
+    {
+      "name": "decoder failure cleanup",
+      "command": "node scripts/avatar_decoder_failure_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 3784
+    },
+    {
+      "name": "rebuilt Ene library checks",
+      "command": "node scripts/rei_library_smoke.mjs --ene",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 12890
+    },
+    {
+      "name": "native Rei library checks",
+      "command": "node scripts/rei_library_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 14372
+    },
+    {
+      "name": "bundled library thumbnails",
+      "command": "node scripts/library_thumbnail_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 6261
+    },
+    {
+      "name": "studio text contrast and scaled layout",
+      "command": "node scripts/studio_accessibility_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 9529
+    },
+    {
+      "name": "library management across tabs",
+      "command": "node scripts/library_management_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 19312
+    },
+    {
+      "name": "browser storage checks",
+      "command": "node scripts/library_storage_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 14839
+    },
+    {
+      "name": "output failure and recovery checks",
+      "command": "node scripts/output_failure_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 24886
+    },
+    {
+      "name": "replay isolation and video checks",
+      "command": "node scripts/replay_video_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 20229
+    },
+    {
+      "name": "installed tracking worker function checks",
+      "command": "node scripts/tracking_positive_fixture_smoke.mjs --functional",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 12958
+    },
+    {
+      "name": "diagnostic camera recovery",
+      "command": "node scripts/diagnostic_camera_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 102311
+    },
+    {
+      "name": "recording lifecycle checks",
+      "command": "node scripts/recording_lifecycle_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 5033
+    },
+    {
+      "name": "runtime bundle audit",
+      "command": "node scripts/audit_bundle.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 2336
+    },
+    {
+      "name": "model selection and output synchronization",
+      "command": "node scripts/model_selection_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 113292
+    },
+    {
+      "name": "avatar load failure handling",
+      "command": "node scripts/avatar_load_failure_smoke.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 15999
+    },
+    {
+      "name": "beginner documentation",
+      "command": "node scripts/audit_docs.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 1214
+    },
+    {
+      "name": "evidence reports readable",
+      "command": "node scripts/audit_reports_readable.mjs",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 1118
+    },
+    {
+      "name": "task register",
+      "command": "python scripts/task_audit.py",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 548
+    },
+    {
+      "name": "acceptance claims",
+      "command": "python scripts/audit_acceptance_claims.py",
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 236
+    },
+    {
+      "name": "voice OBS route licences",
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\voice\\venv\\Scripts\\python.exe scripts/voice/audit_obs_route.py",
+      "optional": true,
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 926
+    },
+    {
+      "name": "voice service-down message",
+      "command": "node scripts/voice/service_down_smoke.mjs",
+      "optional": true,
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 40180
+    },
+    {
+      "name": "voice studio tests",
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\voice\\venv\\Scripts\\python.exe scripts/voice/test_studio.py",
+      "optional": true,
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 17022
+    },
+    {
+      "name": "voice paced LLVC tests",
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\voice\\venv\\Scripts\\python.exe scripts/voice/test_llvc_paced.py",
+      "optional": true,
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 2075
+    },
+    {
+      "name": "voice LLVC chunker tests",
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\voice\\venv\\Scripts\\python.exe scripts/voice/test_llvc_chunker.py",
+      "optional": true,
+      "code": 0,
+      "failed": false,
+      "skipped": false,
+      "ms": 342
+    }
+  ],
+  "failed": 0,
+  "notCovered": [
+    "Live camera quality, gestures and standing movement (needs a person).",
+    "Voice preference and listening acceptance (needs the user).",
+    "OBS Virtual Camera registration and consumer test (needs an administrator prompt).",
+    "Final landscape and portrait recordings with audio (needs the operator).",
+    "Combined OBS soaks and physical audio latency or sync (needs devices and time)."
+  ]
+}

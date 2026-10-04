@@ -1,10 +1,10 @@
 # TASK-039: Define shared studio views and model contracts
 
-- Status: In progress
+- Status: Done
 - Priority: P0
 - Owner: Codex (implementing assistant)
 - Goal: G5
-- Parent controller: [TASK-P04](TASK-P04.md)
+- Parent controller: [TASK-P04](../active/TASK-P04.md)
 - Depends on: None
 - Estimate: 1-2 days
 - Specification: [Studio product specification](../../specs/studio-product-spec.md)
@@ -34,7 +34,7 @@ These paths identify implementation work. They do not claim that new modules or 
 - [x] Bundled Ene and Rei still load through the existing path.
 - [x] All three views preserve active model, camera, settings, and output state.
 - [x] Type definitions separate entry identity from asset hash.
-- [ ] Keyboard navigation, focus visibility, and required viewport sizes pass.
+- [x] Keyboard navigation, focus visibility, and required viewport sizes pass.
 - [x] The implementation records any difference from the selected visual design.
 
 ## Verification
@@ -55,4 +55,9 @@ Date: 2026-10-04. Shared types, navigation, and responsive tokens are implemente
 
 Evidence: [implementation record](../../reports/studio-implementation.md) and [task report](../../reports/studio-view-contracts.md).
 
-Acceptance remains open until all required checks have direct evidence.
+## Windows software acceptance
+
+Installed Chrome and Edge pass navigation, visible focus, and the three required viewport sizes.
+See [the Windows record](../../reports/windows-continuation.md).
+Human layout and appearance review belong to [TASK-061](../backlog/TASK-061.md).
+TASK-047 and TASK-048 retain G5 release acceptance.

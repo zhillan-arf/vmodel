@@ -32,7 +32,7 @@ These paths identify implementation work. They do not claim that new modules or 
 
 ## Acceptance criteria
 
-- [ ] Combined interactions preserve clean output and committed selection.
+- [x] Combined interactions preserve clean output and committed selection.
 - [ ] One elbow demonstration and canonical/Ene/Rei replay have linked evidence.
 - [ ] Every L, T, and U requirement has a passing result or an explicit allowed limitation.
 - [ ] No required physical or visual check remains unperformed.
@@ -53,7 +53,8 @@ Keep personal recordings under `ops/reports/local/`. Do not mark unperformed che
 
 ## Current checkpoint
 
-Date: 2026-10-04. Guides, a requirement map, and synthetic combined checks exist. The G5 handoff and physical G6 acceptance remain open.
+Date: 2026-10-04. Installed Chrome and Edge pass the combined interaction test with simulated inputs.
+The G5 handoff and physical G6 acceptance remain open.
 
 Evidence: [implementation record](../../reports/studio-implementation.md) and [task report](../../reports/studio-evolution-acceptance.md).
 

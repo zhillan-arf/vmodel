@@ -1,0 +1,172 @@
+{
+  "date": "2026-10-04T14:12:56.490Z",
+  "platform": "win32",
+  "browser": "154.0.8037.97",
+  "command": "npm run verify",
+  "initialFailedChecks": [
+    "replay isolation and video checks",
+    "recording lifecycle checks"
+  ],
+  "otherChecksPassed": true,
+  "retests": [
+    {
+      "command": "node scripts/replay_video_smoke.mjs",
+      "passed": true,
+      "report": "local/windows/chrome/replay-video-smoke.json",
+      "sha256": "d03a49b882a3678d52774cf2a84ed1a6247caaf8bd10e781d868e0cced7b94f6",
+      "browser": "154.0.8037.97",
+      "checks": {
+        "video": [
+          {
+            "mode": "stop",
+            "bytes": 9324,
+            "audioTracks": 0,
+            "width": 160,
+            "height": 120,
+            "advanced": true,
+            "currentTime": 0.024298,
+            "duration": null,
+            "drawnFrames": 87,
+            "mapping": {
+              "traceId": "video-fixture",
+              "startOffsetMs": 10,
+              "stopOffsetMs": 2796.2999999970198,
+              "mimeType": "video/webm;codecs=vp9"
+            },
+            "active": false
+          },
+          {
+            "mode": "camera loss",
+            "bytes": 10889,
+            "audioTracks": 0,
+            "width": 160,
+            "height": 120,
+            "advanced": true,
+            "currentTime": 0.02178,
+            "duration": 2.027,
+            "drawnFrames": 64,
+            "mapping": {
+              "traceId": "video-fixture",
+              "startOffsetMs": 10,
+              "stopOffsetMs": 2051.60000000149,
+              "mimeType": "video/webm;codecs=vp9"
+            },
+            "active": false
+          },
+          {
+            "mode": "recorder error",
+            "bytes": 9469,
+            "audioTracks": 0,
+            "width": 160,
+            "height": 120,
+            "advanced": true,
+            "currentTime": 0.02243,
+            "duration": 2.046,
+            "drawnFrames": 64,
+            "mapping": {
+              "traceId": "video-fixture",
+              "startOffsetMs": 10,
+              "stopOffsetMs": 2066.39999999851,
+              "mimeType": "video/webm;codecs=vp9"
+            },
+            "active": false
+          },
+          {
+            "mode": "size limit",
+            "bytes": 9519,
+            "audioTracks": 0,
+            "width": 160,
+            "height": 120,
+            "advanced": true,
+            "currentTime": 0.03423,
+            "duration": 2.062,
+            "drawnFrames": 65,
+            "mapping": {
+              "traceId": "video-fixture",
+              "startOffsetMs": 10,
+              "stopOffsetMs": 2088.2999999970198,
+              "mimeType": "video/webm;codecs=vp9"
+            },
+            "active": false
+          },
+          {
+            "mode": "duration limit",
+            "bytes": 7368,
+            "audioTracks": 0,
+            "width": 160,
+            "height": 120,
+            "advanced": true,
+            "currentTime": 0.019058,
+            "duration": 2.024,
+            "drawnFrames": 63,
+            "mapping": {
+              "traceId": "video-fixture",
+              "startOffsetMs": 10,
+              "stopOffsetMs": 2046.5,
+              "mimeType": "video/webm;codecs=vp9"
+            },
+            "active": false
+          }
+        ],
+        "videoCleanup": {
+          "created": 2,
+          "released": 2,
+          "time": 0.2,
+          "sourceReleased": true,
+          "cancelled": true,
+          "noFrame": true
+        },
+        "replayUsesRecordedMirror": true,
+        "replayIsolation": {
+          "liveStateUnchanged": true,
+          "peerStateUnchanged": true,
+          "liveModelUnchanged": true,
+          "noPublishedFrames": true
+        },
+        "comparisonFieldsFollowReplay": true,
+        "comparisonReturnsAfterNavigation": true,
+        "recordedVideoImport": true,
+        "wrongVideoRejected": true,
+        "invalidTraceIsolation": true
+      }
+    },
+    {
+      "command": "node scripts/recording_lifecycle_smoke.mjs",
+      "passed": true,
+      "report": "local/windows/chrome/recording-lifecycle-smoke.json",
+      "sha256": "b3232f4a78f0758c0ad6a42b6e8b4a6166256b3183437f5438f5ff5b376af283",
+      "browser": "154.0.8037.97",
+      "checks": {
+        "defaultExport": {
+          "videoOffByDefault": true,
+          "noVideo": true,
+          "noDeviceId": true,
+          "noAbsolutePath": true,
+          "samples": 1,
+          "applies": 1
+        },
+        "discardRejected": true,
+        "unsupportedText": true,
+        "visibleRecording": true,
+        "unsupportedTraceUsable": true,
+        "cameraLossStops": true,
+        "hiddenStops": true,
+        "disposed": {
+          "traceCleared": true,
+          "replayCleared": true,
+          "videoCleared": true,
+          "lateImageClosed": true,
+          "demandOff": true
+        }
+      }
+    }
+  ],
+  "logs": "ops/reports/local/windows/chrome/verify",
+  "limits": [
+    "The full run had two failed test fixtures. Both passed after timing corrections.",
+    "No physical camera or human acceptance."
+  ],
+  "checksRun": 37,
+  "checksPassedInOriginalRun": 35,
+  "checksPassedAfterRepairs": 37
+}

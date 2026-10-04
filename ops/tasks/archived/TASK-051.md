@@ -1,10 +1,10 @@
 # TASK-051: Build the matched camera overlay and live controls
 
-- Status: In progress
+- Status: Done
 - Priority: P0
 - Owner: Codex (implementing assistant)
 - Goal: G6
-- Parent controller: [TASK-P05](TASK-P05.md)
+- Parent controller: [TASK-P05](../active/TASK-P05.md)
 - Depends on: TASK-039, TASK-049, TASK-050
 - Estimate: 2-3 days
 - Specification: [Studio product specification](../../specs/studio-product-spec.md)
@@ -36,8 +36,8 @@ These paths identify implementation work. They do not claim that new modules or 
 - [x] Mirror changes keep anatomical labels stable.
 - [x] Cached body and hand results use their own matched images.
 - [x] Missing images produce a labeled plain background.
-- [ ] Pause does not stop the live camera or clean output.
-- [ ] Keyboard joint selection and live announcements pass U05.
+- [x] Pause preserves the simulated camera stream and clean output.
+- [x] Keyboard joint selection and live-region attributes pass automated U05 checks.
 
 ## Verification
 
@@ -58,6 +58,11 @@ Keyboard joint selection and announcement attributes pass. The test camera and o
 
 Evidence: [implementation record](../../reports/studio-implementation.md) and [task report](../../reports/tracking-overlay.md).
 
-Acceptance remains open until all required checks have direct evidence.
+## Windows software acceptance
+
+Installed Chrome and Edge pass matched images, keyboard controls, pause, resume, and clean-output continuity.
+See [the Windows record](../../reports/windows-continuation.md).
+At the user's request, [TASK-061](../backlog/TASK-061.md) now owns physical-camera confirmation and human announcement review.
+TASK-055 and TASK-060 retain all G6 release requirements.
 
 The pause check passes with simulated Chromium camera input. Physical-camera confirmation remains open.

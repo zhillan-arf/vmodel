@@ -53,9 +53,10 @@ Keep personal recordings under `ops/reports/local/`. Do not mark unperformed che
 
 ## Current checkpoint
 
-Date: 2026-10-04. Physical diagnosis is unavailable in this environment.
-TASK-055 still needs measured overhead and human review. No scheduler or motion correction is eligible yet.
-The baseline schedule and thresholds remain unchanged. No experiment verdict has been invented.
+Date: 2026-10-04. Windows software checks and inspector speed measurements have results.
+TASK-055 still needs human review under [TASK-061](../backlog/TASK-061.md).
+Physical diagnosis needs a person to perform the required gestures.
+The baseline schedule and thresholds remain unchanged. No correction has a physical verdict.
 
 Required action: complete inspector acceptance, then perform the [physical protocol](../../../docs/tracking-check.md) on the target laptop.
 The operator supplies the gestures. Codex records the failed stage and evaluates eligible corrections.

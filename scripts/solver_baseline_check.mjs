@@ -37,8 +37,8 @@ it('preserves the committed solver across motion and rig variants',()=>{
   writeFileSync(${JSON.stringify(report)},JSON.stringify({cases,updates,maxQuaternionDifferenceRadians:maxAngle,maxPositionDifference:maxPosition,acceptedGoalSetsEqual:true,expressionValuesEqual:true}));
 });`);
   const config=path.join(directory,'vitest.config.mjs');
-  await writeFile(config,'export default '+JSON.stringify({test:{include:[path.relative(root,path.join(directory,'baseline.parity.ts'))]}}));
-  execFileSync('npx',['vitest','run','--config',config,'--reporter=dot'],{stdio:'inherit'});
+  await writeFile(config,'export default '+JSON.stringify({test:{include:[path.relative(root,path.join(directory,'baseline.parity.ts')).split(path.sep).join('/')]}}));
+  execFileSync(process.execPath,[path.join(root,'node_modules/vitest/vitest.mjs'),'run','--config',config,'--reporter=dot'],{stdio:'inherit'});
   const result={generatedAt:new Date().toISOString(),baselineCommit:commit,...JSON.parse(await readFile(report,'utf8')),limits:['Synthetic motion and canonical rig variants only.','No physical camera or actual-model acceptance.']};
   await writeFile('ops/reports/solver-baseline.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
 }finally{await rm(directory,{recursive:true,force:true});}

@@ -32,15 +32,15 @@ This controller is a coordination record, not a background process. It does not 
 
 ## Current checkpoint
 
-Date: 2026-10-04. Software implementation and synthetic verification are in progress.
+Date: 2026-10-04. Windows software checks and model memory tests pass. Human acceptance remains open.
 
 - Scope: Ten implementation tasks, TASK-039 through TASK-048.
-- Progress: 5/10 Done; 5 In progress; 0 Blocked; 0 Ready; 0 Todo.
+- Progress: 8/10 Done; 2 In progress; 0 Blocked; 0 Ready; 0 Todo.
 - Evidence: [implementation record](../../reports/studio-implementation.md) and [browser checks](../../reports/studio-features-smoke.json).
 - Completed checks: unit suite, production build, and synthetic storage/selection/navigation tests.
-- Model assets: Rei passes the revised import limits and browser preparation. Ene has a new Linux rebuild. Combined model selection checks pass.
-- Physical evidence: camera gestures, target-laptop measurements, and human review remain open. Actual-model browser images are available.
-- Acceptance: TASK-040, TASK-041, TASK-042, TASK-044, and TASK-046 are complete. Controller release acceptance remains open.
+- Model assets: local Ene and Rei pass Chrome and Edge selection and memory tests. The Windows reports record their actual hashes.
+- Physical evidence: camera gestures and human review remain open. Actual-model browser images are available.
+- Acceptance: TASK-039 through TASK-046 have complete software evidence. Human checks now belong to TASK-061. Controller release acceptance remains open.
 - Coordination: both controllers use the same viewer preparation boundary and MotionSolver.
 - Corrections: the tracker schedule and thresholds remain unchanged pending physical diagnosis.
 
@@ -74,8 +74,16 @@ If a model exceeds a selected ceiling, record its measured resources. Change the
 
 ## Next action
 
-Complete the remaining software failure matrices in the [implementation record](../../reports/studio-implementation.md).
-Use the prepared Ene and Rei files for target-laptop acceptance. Both models already pass local Chromium checks.
-Do not close physical or human review criteria with synthetic evidence.
+Complete the human library checks in [TASK-061](../backlog/TASK-061.md).
+Record the findings in TASK-047 and TASK-048 before the G5 handoff.
+The [Windows report](../../reports/windows-continuation.md) supplies software and memory evidence.
 
 2026-10-04 preparation checkpoint: TASK-040 is complete. Both model versions and injected decoder failures have passing cleanup evidence.
+
+## Windows continuation
+
+Chrome and Edge pass the software checks. Both browsers pass L13 memory cleanup with output closed and open.
+See [the Windows record](../../reports/windows-continuation.md).
+TASK-039, TASK-043, TASK-045, and TASK-051 have complete software evidence.
+[TASK-061](../backlog/TASK-061.md) owns their transferred human checks and the other physical acceptance tests.
+The release requirements remain unchanged.

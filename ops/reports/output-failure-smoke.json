@@ -7,7 +7,7 @@
         "height": 844
       },
       "path": "ops/reports/local/visual-states/output/mismatch-studio-390.png",
-      "sha256": "32696e6e05b9b2bf3b7131cf9e8104d30da568920d24101990ae97eb1407ae3d",
+      "sha256": "aff6fde65a35fadf19b48530945b1d0d5b58876a33defa8beb5d6f94baaf98e0",
       "horizontalOverflow": false
     },
     {
@@ -17,7 +17,7 @@
         "height": 1024
       },
       "path": "ops/reports/local/visual-states/output/mismatch-studio-768.png",
-      "sha256": "e6be65540537cb1cc7834116358fd308523d2e5dfa78fe43279a583aa18d270e",
+      "sha256": "174cb38ab12542b01bc41e0bd689d56140ce0a334faa0e32e0fb83ee71e3552f",
       "horizontalOverflow": false
     },
     {
@@ -27,7 +27,7 @@
         "height": 900
       },
       "path": "ops/reports/local/visual-states/output/mismatch-studio-1440.png",
-      "sha256": "8355ab39f5b2e3d3251c950f582ed573581302d12c801b95bb58643881cbe1af",
+      "sha256": "b29c2682d07ef98c5815008704f64a8986e8118a605dd08fbdc428c0ce430b7b",
       "horizontalOverflow": false
     },
     {
@@ -37,7 +37,7 @@
         "height": 844
       },
       "path": "ops/reports/local/visual-states/output/mismatch-clean-output-390.png",
-      "sha256": "45774d719358514890f36f466d243cc0210b15e5dde68711a41bcae8f7a9fd56",
+      "sha256": "e08778ee951674939869f06ef76db20112e3339543790a2d41576d7d33671ae1",
       "horizontalOverflow": false
     },
     {
@@ -47,7 +47,7 @@
         "height": 1024
       },
       "path": "ops/reports/local/visual-states/output/mismatch-clean-output-768.png",
-      "sha256": "8b3a4cc45d62629405fc77f450e21f3da8cde58f25673cc9352cbf6afba5362f",
+      "sha256": "0b53f8b709fc420cdc3f534b2c1f2fe5bc59b1fb50d7bef2cb9b6f47f7f5529f",
       "horizontalOverflow": false
     },
     {
@@ -57,12 +57,14 @@
         "height": 900
       },
       "path": "ops/reports/local/visual-states/output/mismatch-clean-output-1440.png",
-      "sha256": "b78403f2c195168f0f9ecda5dac97d54acf66b4eb7bdcc4eb2bd7f944998f572",
+      "sha256": "73820bfd6b7bb8d1a6d4f12b8d2b0fd12735e04e5c9e117cf77248e5192f0ccb",
       "horizontalOverflow": false
     }
   ],
-  "generatedAt": "2026-10-04T12:43:16.000Z",
-  "browser": "153.0.8010.12",
+  "generatedAt": "2026-10-04T14:35:45.742Z",
+  "browser": "154.0.4258.53",
+  "platform": "win32",
+  "browserChannel": "msedge",
   "fixtureHashes": [
     "3c28e5c65fe07caec323a115c76bd51a94ccbb396a9e55886301063a1ca9f33b",
     "09c84774cfe89af2260a176c3c06162abd2297f41189af309fb76227c6931d7c"
@@ -86,6 +88,6 @@
   "limits": [
     "Synthetic models only.",
     "The deadline test triggers the timer callbacks after candidate preparation.",
-    "No Windows release-browser or physical camera acceptance."
+    "No physical camera test or human review."
   ]
 }

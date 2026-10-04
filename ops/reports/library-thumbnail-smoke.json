@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-10-04T12:38:11.468Z",
-  "browser": "153.0.8010.12",
+  "generatedAt": "2026-10-04T14:34:37.261Z",
+  "browser": "154.0.4258.53",
   "manifest": {
     "ene": {
-      "modelHash": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
-      "rendererHash": "b7b706ae82af12b76c73b1f88ad351ba45f63eedf87f7ff8c17224f857dd2adb",
-      "thumbnailHash": "7cb4693df71b0b42f4b3989b1acfebdf1f1ffa828d565e0e22a6450dc7ed2cfd",
+      "modelHash": "3657b97928638e7ada5f6639141fb63f555912049a2c6ec217851001e322cbcb",
+      "rendererHash": "7f347561263036cc81db5e18acb6d4302ccd46312243e85e7f6fe30b772bc8ed",
+      "thumbnailHash": "4a6d5e821f45c2b0e67de117ac499ccb7e3a2ce8fa836a6cf650fd8b3cc2434a",
       "width": 320,
       "height": 320
     },
     "rei": {
       "modelHash": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
-      "rendererHash": "b7b706ae82af12b76c73b1f88ad351ba45f63eedf87f7ff8c17224f857dd2adb",
-      "thumbnailHash": "06e185ef74e0f38e34d1a8e94f6f51e8ea41d5ba7648a9754b3390d9e46fbb72",
+      "rendererHash": "7f347561263036cc81db5e18acb6d4302ccd46312243e85e7f6fe30b772bc8ed",
+      "thumbnailHash": "8d48fdc0b62ed2bff3d6607bd4693bdd5eaf79a06be4740246c6fb84f9150095",
       "width": 320,
       "height": 320
     }
@@ -22,7 +22,7 @@
       "entry": "ene",
       "width": 320,
       "height": 320,
-      "foreground": 15010,
+      "foreground": 15111,
       "minY": 26,
       "maxY": 290
     },
@@ -30,7 +30,7 @@
       "entry": "rei",
       "width": 320,
       "height": 320,
-      "foreground": 12179,
+      "foreground": 12249,
       "minY": 28,
       "maxY": 297
     }

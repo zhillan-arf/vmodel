@@ -1,0 +1,159 @@
+{
+  "date": "2026-10-04T16:04:47.884Z",
+  "modes": [
+    {
+      "mode": "baseline",
+      "source": "windows-tracking-chrome-alternating.json",
+      "samples": 3,
+      "medianFps": 59.99110131997236,
+      "medianUsefulPoseHz": 4.73167724629713,
+      "medianP95AgeMs": 228.5,
+      "privateMiB": [
+        1698.88671875,
+        1771.015625,
+        1741.015625
+      ],
+      "recordingSeconds": []
+    },
+    {
+      "mode": "off",
+      "source": "windows-tracking-chrome-alternating.json",
+      "samples": 3,
+      "medianFps": 59.97603624892603,
+      "medianUsefulPoseHz": 4.582004552012794,
+      "medianP95AgeMs": 213.699951171875,
+      "privateMiB": [
+        1888.33203125,
+        1895.9296875,
+        1892.4921875
+      ],
+      "recordingSeconds": []
+    },
+    {
+      "mode": "overlay",
+      "source": "windows-tracking-chrome.json",
+      "samples": 3,
+      "medianFps": 59.98900201629701,
+      "medianUsefulPoseHz": 5.032284940637367,
+      "medianP95AgeMs": 197,
+      "privateMiB": [
+        1992.62890625,
+        1994.10546875,
+        1989.79296875
+      ],
+      "recordingSeconds": []
+    },
+    {
+      "mode": "estimated",
+      "source": "windows-tracking-chrome.json",
+      "samples": 3,
+      "medianFps": 59.982305219957134,
+      "medianUsefulPoseHz": 5.015245680390556,
+      "medianP95AgeMs": 197.39990234375,
+      "privateMiB": [
+        1951.2421875,
+        1965.20703125,
+        1975.265625
+      ],
+      "recordingSeconds": []
+    },
+    {
+      "mode": "record",
+      "source": "windows-tracking-chrome-optional.json",
+      "samples": 3,
+      "medianFps": 59.9754365675201,
+      "medianUsefulPoseHz": 4.949348335802576,
+      "medianP95AgeMs": 197.300048828125,
+      "privateMiB": [
+        2008.33984375,
+        2006.078125,
+        2096.6015625
+      ],
+      "recordingSeconds": [
+        51.685,
+        50.73260000000149,
+        49.95079999999702
+      ]
+    },
+    {
+      "mode": "dense",
+      "source": "windows-tracking-chrome-optional.json",
+      "samples": 3,
+      "medianFps": 59.995100400135485,
+      "medianUsefulPoseHz": 4.332943368430282,
+      "medianP95AgeMs": 243.400146484375,
+      "privateMiB": [
+        1951.0625,
+        1933.19140625,
+        1938.5390625
+      ],
+      "recordingSeconds": []
+    },
+    {
+      "mode": "video",
+      "source": "windows-tracking-chrome-video.json",
+      "samples": 3,
+      "medianFps": 59.99736751345282,
+      "medianUsefulPoseHz": 5.248311793040166,
+      "medianP95AgeMs": 180.400146484375,
+      "privateMiB": [
+        2013.03125,
+        2022.5234375,
+        2042.38671875
+      ],
+      "recordingSeconds": [
+        48.63989999999851,
+        48.60779999999702,
+        48.6385
+      ]
+    }
+  ],
+  "defaultComparison": {
+    "fpsRatio": 1.0003211923882556,
+    "usefulPoseRatio": 1.0450018529876892,
+    "additionalP95AgeMs": -17.10009765625
+  },
+  "defaultLimitsPassed": true,
+  "offComparison": {
+    "fpsRatio": 0.9997488782383578,
+    "taskHzRatios": {
+      "face": 0.9700758208689945,
+      "pose": 0.9683679409026756,
+      "hands": 0.9683679409026756
+    }
+  },
+  "offLimitsPassed": true,
+  "requiredLimitsPassed": true,
+  "sourceResults": [
+    {
+      "file": "windows-tracking-chrome.json",
+      "completed": false,
+      "errors": [
+        "AssertionError [ERR_ASSERTION]: Dense face points were not exercised."
+      ]
+    },
+    {
+      "file": "windows-tracking-chrome-alternating.json",
+      "completed": true,
+      "errors": []
+    },
+    {
+      "file": "windows-tracking-chrome-optional.json",
+      "completed": false,
+      "errors": [
+        "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded."
+      ]
+    },
+    {
+      "file": "windows-tracking-chrome-video.json",
+      "completed": true,
+      "errors": []
+    }
+  ],
+  "limits": [
+    "Static photo input and a headless Windows browser only.",
+    "The initial and optional runs stopped on test errors. Only their completed modes are used.",
+    "Recording costs include the automatic stop within each 60-second sample.",
+    "Human review and physical motion acceptance remain open."
+  ]
+}

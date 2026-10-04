@@ -1,6 +1,6 @@
 {
   "mode": "CPU function checks; no performance acceptance",
-  "date": "2026-10-04T12:18:14.404Z",
+  "date": "2026-10-04T14:36:07.418Z",
   "timestampMode": "Epoch milliseconds (normal TrackingFrame contract)",
   "input": "Two NASA-credited real-person photos, repeated as still frames. Ordinary canvas resizing/letterboxing and two stated upper-body crops only. No camera, image generation, identity/sensitive-trait analysis, training, public redistribution or movement test.",
   "terms": {
@@ -64,7 +64,7 @@
   "results": [
     {
       "delegate": "CPU",
-      "initializationMs": 984.4000005722046,
+      "initializationMs": 1166.4000000059605,
       "measurements": [
         {
           "variant": "portrait-full",
@@ -90,9 +90,9 @@
                   "face": {
                     "sampleSequence": 1,
                     "captureSequence": 1,
-                    "sampleTimeMs": 5.800048828125,
-                    "startedAtMs": 6.10009765625,
-                    "finishedAtMs": 205,
+                    "sampleTimeMs": 100.60009765625,
+                    "startedAtMs": 101.099853515625,
+                    "finishedAtMs": 309.5,
                     "state": "new",
                     "present": true,
                     "observationPoints": 478
@@ -100,9 +100,9 @@
                   "pose": {
                     "sampleSequence": 1,
                     "captureSequence": 1,
-                    "sampleTimeMs": 5.800048828125,
-                    "startedAtMs": 205,
-                    "finishedAtMs": 481.300048828125,
+                    "sampleTimeMs": 100.60009765625,
+                    "startedAtMs": 309.5,
+                    "finishedAtMs": 551.300048828125,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -110,9 +110,9 @@
                   "hands": {
                     "sampleSequence": 1,
                     "captureSequence": 1,
-                    "sampleTimeMs": 5.800048828125,
-                    "startedAtMs": 481.300048828125,
-                    "finishedAtMs": 680.300048828125,
+                    "sampleTimeMs": 100.60009765625,
+                    "startedAtMs": 551.300048828125,
+                    "finishedAtMs": 726.800048828125,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -120,23 +120,23 @@
                 }
               },
               "sequence": 1,
-              "timestamp": 1791116296109.2,
-              "inferenceMs": 674.4000005722046,
-              "roundTripMs": 676.6000003814697,
+              "timestamp": 1791124570726.8,
+              "inferenceMs": 626,
+              "roundTripMs": 627.6000000014901,
               "samples": {
                 "face": {
-                  "timestamp": 1791116296109.2,
-                  "inferenceMs": 198.9000005722046,
+                  "timestamp": 1791124570726.8,
+                  "inferenceMs": 208.5,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116296109.2,
-                  "inferenceMs": 276.29999923706055,
+                  "timestamp": 1791124570726.8,
+                  "inferenceMs": 241.79999999701977,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116296109.2,
-                  "inferenceMs": 199,
+                  "timestamp": 1791124570726.8,
+                  "inferenceMs": 175.5,
                   "present": false
                 }
               },
@@ -154,23 +154,23 @@
             {
               "diagnostics": null,
               "sequence": 2,
-              "timestamp": 1791116296786.0999,
-              "inferenceMs": 39.19999980926514,
-              "roundTripMs": 44.30000019073486,
+              "timestamp": 1791124571354.6,
+              "inferenceMs": 32.19999999552965,
+              "roundTripMs": 36.600000001490116,
               "samples": {
                 "face": {
-                  "timestamp": 1791116296786.0999,
-                  "inferenceMs": 39.19999980926514,
+                  "timestamp": 1791124571354.6,
+                  "inferenceMs": 32.100000001490116,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116296109.2,
-                  "inferenceMs": 276.29999923706055,
+                  "timestamp": 1791124570726.8,
+                  "inferenceMs": 241.79999999701977,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116296109.2,
-                  "inferenceMs": 199,
+                  "timestamp": 1791124570726.8,
+                  "inferenceMs": 175.5,
                   "present": false
                 }
               },
@@ -192,9 +192,9 @@
                   "face": {
                     "sampleSequence": 3,
                     "captureSequence": 3,
-                    "sampleTimeMs": 727.10009765625,
-                    "startedAtMs": 729.10009765625,
-                    "finishedAtMs": 765.800048828125,
+                    "sampleTimeMs": 765.199951171875,
+                    "startedAtMs": 765.699951171875,
+                    "finishedAtMs": 796.39990234375,
                     "state": "new",
                     "present": true,
                     "observationPoints": 478
@@ -202,9 +202,9 @@
                   "pose": {
                     "sampleSequence": 2,
                     "captureSequence": 3,
-                    "sampleTimeMs": 727.10009765625,
-                    "startedAtMs": 765.800048828125,
-                    "finishedAtMs": 815.199951171875,
+                    "sampleTimeMs": 765.199951171875,
+                    "startedAtMs": 796.39990234375,
+                    "finishedAtMs": 840.800048828125,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -212,9 +212,9 @@
                   "hands": {
                     "sampleSequence": 2,
                     "captureSequence": 3,
-                    "sampleTimeMs": 727.10009765625,
-                    "startedAtMs": 815.199951171875,
-                    "finishedAtMs": 966.199951171875,
+                    "sampleTimeMs": 765.199951171875,
+                    "startedAtMs": 840.800048828125,
+                    "finishedAtMs": 962.300048828125,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -222,23 +222,23 @@
                 }
               },
               "sequence": 3,
-              "timestamp": 1791116296830.5,
-              "inferenceMs": 237.10000038146973,
-              "roundTripMs": 240.30000019073486,
+              "timestamp": 1791124571391.4,
+              "inferenceMs": 196.80000000447035,
+              "roundTripMs": 197.80000000447035,
               "samples": {
                 "face": {
-                  "timestamp": 1791116296830.5,
-                  "inferenceMs": 36.69999980926514,
+                  "timestamp": 1791124571391.4,
+                  "inferenceMs": 30.80000000447035,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116296830.5,
-                  "inferenceMs": 49.40000057220459,
+                  "timestamp": 1791124571391.4,
+                  "inferenceMs": 44.399999998509884,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116296830.5,
-                  "inferenceMs": 151,
+                  "timestamp": 1791124571391.4,
+                  "inferenceMs": 121.5,
                   "present": false
                 }
               },
@@ -256,23 +256,23 @@
             {
               "diagnostics": null,
               "sequence": 4,
-              "timestamp": 1791116297071.2,
-              "inferenceMs": 34.89999961853027,
-              "roundTripMs": 35.40000057220459,
+              "timestamp": 1791124571589.4,
+              "inferenceMs": 29.200000002980232,
+              "roundTripMs": 29.600000001490116,
               "samples": {
                 "face": {
-                  "timestamp": 1791116297071.2,
-                  "inferenceMs": 34.80000019073486,
+                  "timestamp": 1791124571589.4,
+                  "inferenceMs": 29.200000002980232,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116296830.5,
-                  "inferenceMs": 49.40000057220459,
+                  "timestamp": 1791124571391.4,
+                  "inferenceMs": 44.399999998509884,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116296830.5,
-                  "inferenceMs": 151,
+                  "timestamp": 1791124571391.4,
+                  "inferenceMs": 121.5,
                   "present": false
                 }
               },
@@ -294,9 +294,9 @@
                   "face": {
                     "sampleSequence": 5,
                     "captureSequence": 5,
-                    "sampleTimeMs": 1003.300048828125,
-                    "startedAtMs": 1003.5,
-                    "finishedAtMs": 1036.800048828125,
+                    "sampleTimeMs": 992.900146484375,
+                    "startedAtMs": 993,
+                    "finishedAtMs": 1029.5,
                     "state": "new",
                     "present": true,
                     "observationPoints": 478
@@ -304,9 +304,9 @@
                   "pose": {
                     "sampleSequence": 3,
                     "captureSequence": 5,
-                    "sampleTimeMs": 1003.300048828125,
-                    "startedAtMs": 1036.800048828125,
-                    "finishedAtMs": 1083.699951171875,
+                    "sampleTimeMs": 992.900146484375,
+                    "startedAtMs": 1029.5,
+                    "finishedAtMs": 1063.699951171875,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -314,9 +314,9 @@
                   "hands": {
                     "sampleSequence": 3,
                     "captureSequence": 5,
-                    "sampleTimeMs": 1003.300048828125,
-                    "startedAtMs": 1083.699951171875,
-                    "finishedAtMs": 1227.199951171875,
+                    "sampleTimeMs": 992.900146484375,
+                    "startedAtMs": 1063.699951171875,
+                    "finishedAtMs": 1179.300048828125,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -324,23 +324,23 @@
                 }
               },
               "sequence": 5,
-              "timestamp": 1791116297106.7,
-              "inferenceMs": 223.89999961853027,
-              "roundTripMs": 225.20000076293945,
+              "timestamp": 1791124571619.1,
+              "inferenceMs": 186.39999999850988,
+              "roundTripMs": 187.10000000149012,
               "samples": {
                 "face": {
-                  "timestamp": 1791116297106.7,
-                  "inferenceMs": 33.39999961853027,
+                  "timestamp": 1791124571619.1,
+                  "inferenceMs": 36.5,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116297106.7,
-                  "inferenceMs": 46.90000057220459,
+                  "timestamp": 1791124571619.1,
+                  "inferenceMs": 34.19999999552965,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116297106.7,
-                  "inferenceMs": 143.5,
+                  "timestamp": 1791124571619.1,
+                  "inferenceMs": 115.70000000298023,
                   "present": false
                 }
               },
@@ -358,23 +358,23 @@
             {
               "diagnostics": null,
               "sequence": 6,
-              "timestamp": 1791116297331.9,
-              "inferenceMs": 33.10000038146973,
-              "roundTripMs": 33.69999980926514,
+              "timestamp": 1791124571806.3,
+              "inferenceMs": 38.600000001490116,
+              "roundTripMs": 39,
               "samples": {
                 "face": {
-                  "timestamp": 1791116297331.9,
-                  "inferenceMs": 33.10000038146973,
+                  "timestamp": 1791124571806.3,
+                  "inferenceMs": 38.399999998509884,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116297106.7,
-                  "inferenceMs": 46.90000057220459,
+                  "timestamp": 1791124571619.1,
+                  "inferenceMs": 34.19999999552965,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116297106.7,
-                  "inferenceMs": 143.5,
+                  "timestamp": 1791124571619.1,
+                  "inferenceMs": 115.70000000298023,
                   "present": false
                 }
               },
@@ -396,9 +396,9 @@
                   "face": {
                     "sampleSequence": 7,
                     "captureSequence": 7,
-                    "sampleTimeMs": 1262.199951171875,
-                    "startedAtMs": 1262.60009765625,
-                    "finishedAtMs": 1296.89990234375,
+                    "sampleTimeMs": 1219.199951171875,
+                    "startedAtMs": 1219.89990234375,
+                    "finishedAtMs": 1272.699951171875,
                     "state": "new",
                     "present": true,
                     "observationPoints": 478
@@ -406,9 +406,9 @@
                   "pose": {
                     "sampleSequence": 4,
                     "captureSequence": 7,
-                    "sampleTimeMs": 1262.199951171875,
-                    "startedAtMs": 1296.89990234375,
-                    "finishedAtMs": 1342.699951171875,
+                    "sampleTimeMs": 1219.199951171875,
+                    "startedAtMs": 1272.699951171875,
+                    "finishedAtMs": 1358.699951171875,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -416,9 +416,9 @@
                   "hands": {
                     "sampleSequence": 4,
                     "captureSequence": 7,
-                    "sampleTimeMs": 1262.199951171875,
-                    "startedAtMs": 1342.699951171875,
-                    "finishedAtMs": 1484.89990234375,
+                    "sampleTimeMs": 1219.199951171875,
+                    "startedAtMs": 1358.800048828125,
+                    "finishedAtMs": 1608.300048828125,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -426,23 +426,23 @@
                 }
               },
               "sequence": 7,
-              "timestamp": 1791116297365.5999,
-              "inferenceMs": 222.30000019073486,
-              "roundTripMs": 223.89999961853027,
+              "timestamp": 1791124571845.4,
+              "inferenceMs": 388.6000000014901,
+              "roundTripMs": 390.20000000298023,
               "samples": {
                 "face": {
-                  "timestamp": 1791116297365.5999,
-                  "inferenceMs": 34.30000019073486,
+                  "timestamp": 1791124571845.4,
+                  "inferenceMs": 52.899999998509884,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116297365.5999,
-                  "inferenceMs": 45.80000019073486,
+                  "timestamp": 1791124571845.4,
+                  "inferenceMs": 86.10000000149012,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116297365.5999,
-                  "inferenceMs": 142.19999980926514,
+                  "timestamp": 1791124571845.4,
+                  "inferenceMs": 249.5,
                   "present": false
                 }
               },
@@ -460,23 +460,23 @@
             {
               "diagnostics": null,
               "sequence": 8,
-              "timestamp": 1791116297589.5999,
-              "inferenceMs": 32.5,
-              "roundTripMs": 32.89999961853027,
+              "timestamp": 1791124572235.8,
+              "inferenceMs": 63.100000001490116,
+              "roundTripMs": 63.5,
               "samples": {
                 "face": {
-                  "timestamp": 1791116297589.5999,
-                  "inferenceMs": 32.40000057220459,
+                  "timestamp": 1791124572235.8,
+                  "inferenceMs": 63,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116297365.5999,
-                  "inferenceMs": 45.80000019073486,
+                  "timestamp": 1791124571845.4,
+                  "inferenceMs": 86.10000000149012,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116297365.5999,
-                  "inferenceMs": 142.19999980926514,
+                  "timestamp": 1791124571845.4,
+                  "inferenceMs": 249.5,
                   "present": false
                 }
               },
@@ -498,9 +498,9 @@
                   "face": {
                     "sampleSequence": 9,
                     "captureSequence": 9,
-                    "sampleTimeMs": 1519.199951171875,
-                    "startedAtMs": 1519.300048828125,
-                    "finishedAtMs": 1551.300048828125,
+                    "sampleTimeMs": 1673.300048828125,
+                    "startedAtMs": 1673.599853515625,
+                    "finishedAtMs": 1731.39990234375,
                     "state": "new",
                     "present": true,
                     "observationPoints": 478
@@ -508,9 +508,9 @@
                   "pose": {
                     "sampleSequence": 5,
                     "captureSequence": 9,
-                    "sampleTimeMs": 1519.199951171875,
-                    "startedAtMs": 1551.300048828125,
-                    "finishedAtMs": 1595.60009765625,
+                    "sampleTimeMs": 1673.300048828125,
+                    "startedAtMs": 1731.39990234375,
+                    "finishedAtMs": 1807.599853515625,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -518,9 +518,9 @@
                   "hands": {
                     "sampleSequence": 5,
                     "captureSequence": 9,
-                    "sampleTimeMs": 1519.199951171875,
-                    "startedAtMs": 1595.60009765625,
-                    "finishedAtMs": 1736.10009765625,
+                    "sampleTimeMs": 1673.300048828125,
+                    "startedAtMs": 1807.599853515625,
+                    "finishedAtMs": 2033.599853515625,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -528,23 +528,23 @@
                 }
               },
               "sequence": 9,
-              "timestamp": 1791116297622.5999,
-              "inferenceMs": 216.80000019073486,
-              "roundTripMs": 218.19999980926514,
+              "timestamp": 1791124572299.5,
+              "inferenceMs": 360.1000000014901,
+              "roundTripMs": 361.5,
               "samples": {
                 "face": {
-                  "timestamp": 1791116297622.5999,
-                  "inferenceMs": 32,
+                  "timestamp": 1791124572299.5,
+                  "inferenceMs": 57.80000000447035,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116297622.5999,
-                  "inferenceMs": 44.30000019073486,
+                  "timestamp": 1791124572299.5,
+                  "inferenceMs": 76.19999999552965,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116297622.5999,
-                  "inferenceMs": 140.5,
+                  "timestamp": 1791124572299.5,
+                  "inferenceMs": 226,
                   "present": false
                 }
               },
@@ -562,23 +562,23 @@
             {
               "diagnostics": null,
               "sequence": 10,
-              "timestamp": 1791116297840.9,
-              "inferenceMs": 32.5,
-              "roundTripMs": 32.89999961853027,
+              "timestamp": 1791124572661.1,
+              "inferenceMs": 56.100000001490116,
+              "roundTripMs": 56.69999999552965,
               "samples": {
                 "face": {
-                  "timestamp": 1791116297840.9,
-                  "inferenceMs": 32.5,
+                  "timestamp": 1791124572661.1,
+                  "inferenceMs": 55.899999998509884,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116297622.5999,
-                  "inferenceMs": 44.30000019073486,
+                  "timestamp": 1791124572299.5,
+                  "inferenceMs": 76.19999999552965,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116297622.5999,
-                  "inferenceMs": 140.5,
+                  "timestamp": 1791124572299.5,
+                  "inferenceMs": 226,
                   "present": false
                 }
               },
@@ -600,9 +600,9 @@
                   "face": {
                     "sampleSequence": 11,
                     "captureSequence": 11,
-                    "sampleTimeMs": 1770.5,
-                    "startedAtMs": 1770.60009765625,
-                    "finishedAtMs": 1802.60009765625,
+                    "sampleTimeMs": 2091.699951171875,
+                    "startedAtMs": 2091.89990234375,
+                    "finishedAtMs": 2140.39990234375,
                     "state": "new",
                     "present": true,
                     "observationPoints": 478
@@ -610,9 +610,9 @@
                   "pose": {
                     "sampleSequence": 6,
                     "captureSequence": 11,
-                    "sampleTimeMs": 1770.5,
-                    "startedAtMs": 1802.60009765625,
-                    "finishedAtMs": 1846.5,
+                    "sampleTimeMs": 2091.699951171875,
+                    "startedAtMs": 2140.39990234375,
+                    "finishedAtMs": 2202.699951171875,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -620,9 +620,9 @@
                   "hands": {
                     "sampleSequence": 6,
                     "captureSequence": 11,
-                    "sampleTimeMs": 1770.5,
-                    "startedAtMs": 1846.60009765625,
-                    "finishedAtMs": 1986.89990234375,
+                    "sampleTimeMs": 2091.699951171875,
+                    "startedAtMs": 2202.699951171875,
+                    "finishedAtMs": 2432.199951171875,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -630,23 +630,23 @@
                 }
               },
               "sequence": 11,
-              "timestamp": 1791116297873.9,
-              "inferenceMs": 216.30000019073486,
-              "roundTripMs": 217.5,
+              "timestamp": 1791124572717.9,
+              "inferenceMs": 340.29999999701977,
+              "roundTripMs": 341.8999999985099,
               "samples": {
                 "face": {
-                  "timestamp": 1791116297873.9,
-                  "inferenceMs": 32,
+                  "timestamp": 1791124572717.9,
+                  "inferenceMs": 48.5,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116297873.9,
-                  "inferenceMs": 44,
+                  "timestamp": 1791124572717.9,
+                  "inferenceMs": 62.29999999701977,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116297873.9,
-                  "inferenceMs": 140.30000019073486,
+                  "timestamp": 1791124572717.9,
+                  "inferenceMs": 229.5,
                   "present": false
                 }
               },
@@ -687,9 +687,9 @@
                   "face": {
                     "sampleSequence": 12,
                     "captureSequence": 12,
-                    "sampleTimeMs": 1991.5,
-                    "startedAtMs": 1991.699951171875,
-                    "finishedAtMs": 2018.300048828125,
+                    "sampleTimeMs": 2441.800048828125,
+                    "startedAtMs": 2442,
+                    "finishedAtMs": 2486.199951171875,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -697,9 +697,9 @@
                   "pose": {
                     "sampleSequence": 6,
                     "captureSequence": 11,
-                    "sampleTimeMs": 1770.5,
-                    "startedAtMs": 1802.60009765625,
-                    "finishedAtMs": 1846.5,
+                    "sampleTimeMs": 2091.699951171875,
+                    "startedAtMs": 2140.39990234375,
+                    "finishedAtMs": 2202.699951171875,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -707,9 +707,9 @@
                   "hands": {
                     "sampleSequence": 6,
                     "captureSequence": 11,
-                    "sampleTimeMs": 1770.5,
-                    "startedAtMs": 1846.60009765625,
-                    "finishedAtMs": 1986.89990234375,
+                    "sampleTimeMs": 2091.699951171875,
+                    "startedAtMs": 2202.699951171875,
+                    "finishedAtMs": 2432.199951171875,
                     "state": "cached",
                     "present": false,
                     "observationPoints": 0
@@ -717,23 +717,23 @@
                 }
               },
               "sequence": 12,
-              "timestamp": 1791116298094.9,
-              "inferenceMs": 26.59999942779541,
-              "roundTripMs": 27.09999942779541,
+              "timestamp": 1791124573068,
+              "inferenceMs": 44.29999999701977,
+              "roundTripMs": 44.899999998509884,
               "samples": {
                 "face": {
-                  "timestamp": 1791116298094.9,
-                  "inferenceMs": 26.59999942779541,
+                  "timestamp": 1791124573068,
+                  "inferenceMs": 44.19999999552965,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116297873.9,
-                  "inferenceMs": 44,
+                  "timestamp": 1791124572717.9,
+                  "inferenceMs": 62.29999999701977,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116297873.9,
-                  "inferenceMs": 140.30000019073486,
+                  "timestamp": 1791124572717.9,
+                  "inferenceMs": 229.5,
                   "present": false
                 }
               },
@@ -751,23 +751,23 @@
             {
               "diagnostics": null,
               "sequence": 13,
-              "timestamp": 1791116298122.0999,
-              "inferenceMs": 194.19999980926514,
-              "roundTripMs": 194.5999994277954,
+              "timestamp": 1791124573113,
+              "inferenceMs": 334.59999999403954,
+              "roundTripMs": 335.20000000298023,
               "samples": {
                 "face": {
-                  "timestamp": 1791116298122.0999,
-                  "inferenceMs": 9.800000190734863,
+                  "timestamp": 1791124573113,
+                  "inferenceMs": 13.199999995529652,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116298122.0999,
-                  "inferenceMs": 43.19999980926514,
+                  "timestamp": 1791124573113,
+                  "inferenceMs": 67.30000000447035,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116298122.0999,
-                  "inferenceMs": 141.19999980926514,
+                  "timestamp": 1791124573113,
+                  "inferenceMs": 254.09999999403954,
                   "present": true
                 }
               },
@@ -782,7 +782,7 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9127788543701172
+                    "score": 0.902409017086029
                   }
                 ],
                 "finite": true
@@ -795,9 +795,9 @@
                   "face": {
                     "sampleSequence": 14,
                     "captureSequence": 14,
-                    "sampleTimeMs": 2213.5,
-                    "startedAtMs": 2213.60009765625,
-                    "finishedAtMs": 2223.60009765625,
+                    "sampleTimeMs": 2822.400146484375,
+                    "startedAtMs": 2822.599853515625,
+                    "finishedAtMs": 2836.699951171875,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -805,9 +805,9 @@
                   "pose": {
                     "sampleSequence": 7,
                     "captureSequence": 13,
-                    "sampleTimeMs": 2018.699951171875,
-                    "startedAtMs": 2028.5,
-                    "finishedAtMs": 2071.699951171875,
+                    "sampleTimeMs": 2486.800048828125,
+                    "startedAtMs": 2500.199951171875,
+                    "finishedAtMs": 2567.5,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -815,9 +815,9 @@
                   "hands": {
                     "sampleSequence": 7,
                     "captureSequence": 13,
-                    "sampleTimeMs": 2018.699951171875,
-                    "startedAtMs": 2071.699951171875,
-                    "finishedAtMs": 2212.89990234375,
+                    "sampleTimeMs": 2486.800048828125,
+                    "startedAtMs": 2567.5,
+                    "finishedAtMs": 2821.599853515625,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -825,23 +825,23 @@
                 }
               },
               "sequence": 14,
-              "timestamp": 1791116298316.9,
-              "inferenceMs": 10,
-              "roundTripMs": 10.5,
+              "timestamp": 1791124573448.6,
+              "inferenceMs": 14.100000001490116,
+              "roundTripMs": 15,
               "samples": {
                 "face": {
-                  "timestamp": 1791116298316.9,
-                  "inferenceMs": 10,
+                  "timestamp": 1791124573448.6,
+                  "inferenceMs": 14.100000001490116,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116298122.0999,
-                  "inferenceMs": 43.19999980926514,
+                  "timestamp": 1791124573113,
+                  "inferenceMs": 67.30000000447035,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116298122.0999,
-                  "inferenceMs": 141.19999980926514,
+                  "timestamp": 1791124573113,
+                  "inferenceMs": 254.09999999403954,
                   "present": true
                 }
               },
@@ -856,7 +856,7 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9127788543701172
+                    "score": 0.902409017086029
                   }
                 ],
                 "finite": true
@@ -865,23 +865,23 @@
             {
               "diagnostics": null,
               "sequence": 15,
-              "timestamp": 1791116298327.5,
-              "inferenceMs": 192.39999961853027,
-              "roundTripMs": 192.9000005722046,
+              "timestamp": 1791124573463.8,
+              "inferenceMs": 392.6000000014901,
+              "roundTripMs": 393.20000000298023,
               "samples": {
                 "face": {
-                  "timestamp": 1791116298327.5,
-                  "inferenceMs": 9.09999942779541,
+                  "timestamp": 1791124573463.8,
+                  "inferenceMs": 13.399999998509884,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116298327.5,
-                  "inferenceMs": 42.90000057220459,
+                  "timestamp": 1791124573463.8,
+                  "inferenceMs": 103.60000000149012,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116298327.5,
-                  "inferenceMs": 140.39999961853027,
+                  "timestamp": 1791124573463.8,
+                  "inferenceMs": 275.6000000014901,
                   "present": true
                 }
               },
@@ -896,12 +896,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9976801872253418
+                    "score": 0.9974759221076965
                   },
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9127788543701172
+                    "score": 0.902409017086029
                   }
                 ],
                 "finite": true
@@ -914,9 +914,9 @@
                   "face": {
                     "sampleSequence": 16,
                     "captureSequence": 16,
-                    "sampleTimeMs": 2417.10009765625,
-                    "startedAtMs": 2417.199951171875,
-                    "finishedAtMs": 2427.10009765625,
+                    "sampleTimeMs": 3231,
+                    "startedAtMs": 3231.099853515625,
+                    "finishedAtMs": 3249.800048828125,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -924,9 +924,9 @@
                   "pose": {
                     "sampleSequence": 8,
                     "captureSequence": 15,
-                    "sampleTimeMs": 2224.10009765625,
-                    "startedAtMs": 2233.300048828125,
-                    "finishedAtMs": 2276.199951171875,
+                    "sampleTimeMs": 2837.60009765625,
+                    "startedAtMs": 2851.199951171875,
+                    "finishedAtMs": 2954.800048828125,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -934,9 +934,9 @@
                   "hands": {
                     "sampleSequence": 8,
                     "captureSequence": 15,
-                    "sampleTimeMs": 2224.10009765625,
-                    "startedAtMs": 2276.199951171875,
-                    "finishedAtMs": 2416.5,
+                    "sampleTimeMs": 2837.60009765625,
+                    "startedAtMs": 2954.800048828125,
+                    "finishedAtMs": 3230.39990234375,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -944,23 +944,23 @@
                 }
               },
               "sequence": 16,
-              "timestamp": 1791116298520.5,
-              "inferenceMs": 10,
-              "roundTripMs": 10.5,
+              "timestamp": 1791124573857.2,
+              "inferenceMs": 18.700000002980232,
+              "roundTripMs": 19.599999994039536,
               "samples": {
                 "face": {
-                  "timestamp": 1791116298520.5,
-                  "inferenceMs": 9.899999618530273,
+                  "timestamp": 1791124573857.2,
+                  "inferenceMs": 18.700000002980232,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116298327.5,
-                  "inferenceMs": 42.90000057220459,
+                  "timestamp": 1791124573463.8,
+                  "inferenceMs": 103.60000000149012,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116298327.5,
-                  "inferenceMs": 140.39999961853027,
+                  "timestamp": 1791124573463.8,
+                  "inferenceMs": 275.6000000014901,
                   "present": true
                 }
               },
@@ -975,12 +975,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9976801872253418
+                    "score": 0.9974759221076965
                   },
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9127788543701172
+                    "score": 0.902409017086029
                   }
                 ],
                 "finite": true
@@ -989,23 +989,23 @@
             {
               "diagnostics": null,
               "sequence": 17,
-              "timestamp": 1791116298531.2,
-              "inferenceMs": 141.89999961853027,
-              "roundTripMs": 142.30000019073486,
+              "timestamp": 1791124573876.9,
+              "inferenceMs": 293.1000000014901,
+              "roundTripMs": 294,
               "samples": {
                 "face": {
-                  "timestamp": 1791116298531.2,
-                  "inferenceMs": 9.100000381469727,
+                  "timestamp": 1791124573876.9,
+                  "inferenceMs": 18.30000000447035,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116298531.2,
-                  "inferenceMs": 42.69999980926514,
+                  "timestamp": 1791124573876.9,
+                  "inferenceMs": 126.5,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116298531.2,
-                  "inferenceMs": 90.09999942779541,
+                  "timestamp": 1791124573876.9,
+                  "inferenceMs": 148.29999999701977,
                   "present": true
                 }
               },
@@ -1020,7 +1020,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9916912317276001
+                    "score": 0.9897618293762207
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9974759221076965
                   }
                 ],
                 "finite": true
@@ -1033,9 +1038,9 @@
                   "face": {
                     "sampleSequence": 18,
                     "captureSequence": 18,
-                    "sampleTimeMs": 2570.199951171875,
-                    "startedAtMs": 2570.39990234375,
-                    "finishedAtMs": 2580.699951171875,
+                    "sampleTimeMs": 3544.800048828125,
+                    "startedAtMs": 3545.199951171875,
+                    "finishedAtMs": 3560.199951171875,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -1043,9 +1048,9 @@
                   "pose": {
                     "sampleSequence": 9,
                     "captureSequence": 17,
-                    "sampleTimeMs": 2427.800048828125,
-                    "startedAtMs": 2437,
-                    "finishedAtMs": 2479.699951171875,
+                    "sampleTimeMs": 3250.699951171875,
+                    "startedAtMs": 3269.39990234375,
+                    "finishedAtMs": 3395.89990234375,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -1053,9 +1058,9 @@
                   "hands": {
                     "sampleSequence": 9,
                     "captureSequence": 17,
-                    "sampleTimeMs": 2427.800048828125,
-                    "startedAtMs": 2479.699951171875,
-                    "finishedAtMs": 2569.699951171875,
+                    "sampleTimeMs": 3250.699951171875,
+                    "startedAtMs": 3395.89990234375,
+                    "finishedAtMs": 3544.199951171875,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -1063,23 +1068,23 @@
                 }
               },
               "sequence": 18,
-              "timestamp": 1791116298673.5999,
-              "inferenceMs": 10.300000190734863,
-              "roundTripMs": 10.899999618530273,
+              "timestamp": 1791124574171,
+              "inferenceMs": 15,
+              "roundTripMs": 16.100000001490116,
               "samples": {
                 "face": {
-                  "timestamp": 1791116298673.5999,
-                  "inferenceMs": 10.300000190734863,
+                  "timestamp": 1791124574171,
+                  "inferenceMs": 15,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116298531.2,
-                  "inferenceMs": 42.69999980926514,
+                  "timestamp": 1791124573876.9,
+                  "inferenceMs": 126.5,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116298531.2,
-                  "inferenceMs": 90.09999942779541,
+                  "timestamp": 1791124573876.9,
+                  "inferenceMs": 148.29999999701977,
                   "present": true
                 }
               },
@@ -1094,7 +1099,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9916912317276001
+                    "score": 0.9897618293762207
+                  },
+                  {
+                    "points": 21,
+                    "worldPoints": 21,
+                    "score": 0.9974759221076965
                   }
                 ],
                 "finite": true
@@ -1103,23 +1113,23 @@
             {
               "diagnostics": null,
               "sequence": 19,
-              "timestamp": 1791116298684.7,
-              "inferenceMs": 233.4000005722046,
-              "roundTripMs": 233.9000005722046,
+              "timestamp": 1791124574187.2,
+              "inferenceMs": 241.20000000298023,
+              "roundTripMs": 241.69999999552965,
               "samples": {
                 "face": {
-                  "timestamp": 1791116298684.7,
-                  "inferenceMs": 9.600000381469727,
+                  "timestamp": 1791124574187.2,
+                  "inferenceMs": 15.899999998509884,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116298684.7,
-                  "inferenceMs": 52.19999980926514,
+                  "timestamp": 1791124574187.2,
+                  "inferenceMs": 83.40000000596046,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116298684.7,
-                  "inferenceMs": 171.60000038146973,
+                  "timestamp": 1791124574187.2,
+                  "inferenceMs": 141.89999999850988,
                   "present": true
                 }
               },
@@ -1134,12 +1144,7 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9806579351425171
-                  },
-                  {
-                    "points": 21,
-                    "worldPoints": 21,
-                    "score": 0.9127788543701172
+                    "score": 0.9824276566505432
                   }
                 ],
                 "finite": true
@@ -1152,9 +1157,9 @@
                   "face": {
                     "sampleSequence": 20,
                     "captureSequence": 20,
-                    "sampleTimeMs": 2815.300048828125,
-                    "startedAtMs": 2815.39990234375,
-                    "finishedAtMs": 2825.300048828125,
+                    "sampleTimeMs": 3802.800048828125,
+                    "startedAtMs": 3803,
+                    "finishedAtMs": 3820.39990234375,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -1162,9 +1167,9 @@
                   "pose": {
                     "sampleSequence": 10,
                     "captureSequence": 19,
-                    "sampleTimeMs": 2581.300048828125,
-                    "startedAtMs": 2590.89990234375,
-                    "finishedAtMs": 2643.10009765625,
+                    "sampleTimeMs": 3561,
+                    "startedAtMs": 3577.099853515625,
+                    "finishedAtMs": 3660.5,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -1172,9 +1177,9 @@
                   "hands": {
                     "sampleSequence": 10,
                     "captureSequence": 19,
-                    "sampleTimeMs": 2581.300048828125,
-                    "startedAtMs": 2643.10009765625,
-                    "finishedAtMs": 2814.699951171875,
+                    "sampleTimeMs": 3561,
+                    "startedAtMs": 3660.5,
+                    "finishedAtMs": 3802.39990234375,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -1182,23 +1187,23 @@
                 }
               },
               "sequence": 20,
-              "timestamp": 1791116298918.7,
-              "inferenceMs": 10,
-              "roundTripMs": 10.40000057220459,
+              "timestamp": 1791124574429,
+              "inferenceMs": 17.399999998509884,
+              "roundTripMs": 18.299999997019768,
               "samples": {
                 "face": {
-                  "timestamp": 1791116298918.7,
-                  "inferenceMs": 10,
+                  "timestamp": 1791124574429,
+                  "inferenceMs": 17.399999998509884,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116298684.7,
-                  "inferenceMs": 52.19999980926514,
+                  "timestamp": 1791124574187.2,
+                  "inferenceMs": 83.40000000596046,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116298684.7,
-                  "inferenceMs": 171.60000038146973,
+                  "timestamp": 1791124574187.2,
+                  "inferenceMs": 141.89999999850988,
                   "present": true
                 }
               },
@@ -1213,12 +1218,7 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9806579351425171
-                  },
-                  {
-                    "points": 21,
-                    "worldPoints": 21,
-                    "score": 0.9127788543701172
+                    "score": 0.9824276566505432
                   }
                 ],
                 "finite": true
@@ -1227,23 +1227,23 @@
             {
               "diagnostics": null,
               "sequence": 21,
-              "timestamp": 1791116298929.2,
-              "inferenceMs": 141,
-              "roundTripMs": 141.4000005722046,
+              "timestamp": 1791124574447.5,
+              "inferenceMs": 308.5,
+              "roundTripMs": 309.20000000298023,
               "samples": {
                 "face": {
-                  "timestamp": 1791116298929.2,
-                  "inferenceMs": 9,
+                  "timestamp": 1791124574447.5,
+                  "inferenceMs": 13.599999994039536,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116298929.2,
-                  "inferenceMs": 42.69999980926514,
+                  "timestamp": 1791124574447.5,
+                  "inferenceMs": 67.40000000596046,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116298929.2,
-                  "inferenceMs": 89.19999980926514,
+                  "timestamp": 1791124574447.5,
+                  "inferenceMs": 227.5,
                   "present": true
                 }
               },
@@ -1258,12 +1258,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9828099608421326
+                    "score": 0.9816309809684753
                   },
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9976801872253418
+                    "score": 0.902409017086029
                   }
                 ],
                 "finite": true
@@ -1276,9 +1276,9 @@
                   "face": {
                     "sampleSequence": 22,
                     "captureSequence": 22,
-                    "sampleTimeMs": 2967.39990234375,
-                    "startedAtMs": 2967.39990234375,
-                    "finishedAtMs": 2977.300048828125,
+                    "sampleTimeMs": 4130.699951171875,
+                    "startedAtMs": 4130.89990234375,
+                    "finishedAtMs": 4149.099853515625,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -1286,9 +1286,9 @@
                   "pose": {
                     "sampleSequence": 11,
                     "captureSequence": 21,
-                    "sampleTimeMs": 2825.800048828125,
-                    "startedAtMs": 2834.89990234375,
-                    "finishedAtMs": 2877.60009765625,
+                    "sampleTimeMs": 3821.300048828125,
+                    "startedAtMs": 3835.099853515625,
+                    "finishedAtMs": 3902.5,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -1296,9 +1296,9 @@
                   "hands": {
                     "sampleSequence": 11,
                     "captureSequence": 21,
-                    "sampleTimeMs": 2825.800048828125,
-                    "startedAtMs": 2877.60009765625,
-                    "finishedAtMs": 2966.800048828125,
+                    "sampleTimeMs": 3821.300048828125,
+                    "startedAtMs": 3902.5,
+                    "finishedAtMs": 4130,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -1306,23 +1306,23 @@
                 }
               },
               "sequence": 22,
-              "timestamp": 1791116299070.7998,
-              "inferenceMs": 9.899999618530273,
-              "roundTripMs": 10.300000190734863,
+              "timestamp": 1791124574756.9,
+              "inferenceMs": 18.19999999552965,
+              "roundTripMs": 19.100000001490116,
               "samples": {
                 "face": {
-                  "timestamp": 1791116299070.7998,
-                  "inferenceMs": 9.899999618530273,
+                  "timestamp": 1791124574756.9,
+                  "inferenceMs": 18.19999999552965,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116298929.2,
-                  "inferenceMs": 42.69999980926514,
+                  "timestamp": 1791124574447.5,
+                  "inferenceMs": 67.40000000596046,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116298929.2,
-                  "inferenceMs": 89.19999980926514,
+                  "timestamp": 1791124574447.5,
+                  "inferenceMs": 227.5,
                   "present": true
                 }
               },
@@ -1337,12 +1337,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9828099608421326
+                    "score": 0.9816309809684753
                   },
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9976801872253418
+                    "score": 0.902409017086029
                   }
                 ],
                 "finite": true
@@ -1374,9 +1374,9 @@
                   "face": {
                     "sampleSequence": 23,
                     "captureSequence": 23,
-                    "sampleTimeMs": 2981.60009765625,
-                    "startedAtMs": 2981.699951171875,
-                    "finishedAtMs": 2991,
+                    "sampleTimeMs": 4155.800048828125,
+                    "startedAtMs": 4156.199951171875,
+                    "finishedAtMs": 4180.599853515625,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -1384,9 +1384,9 @@
                   "pose": {
                     "sampleSequence": 12,
                     "captureSequence": 23,
-                    "sampleTimeMs": 2981.60009765625,
-                    "startedAtMs": 2991,
-                    "finishedAtMs": 3034.5,
+                    "sampleTimeMs": 4155.800048828125,
+                    "startedAtMs": 4180.599853515625,
+                    "finishedAtMs": 4257.800048828125,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -1394,9 +1394,9 @@
                   "hands": {
                     "sampleSequence": 12,
                     "captureSequence": 23,
-                    "sampleTimeMs": 2981.60009765625,
-                    "startedAtMs": 3034.5,
-                    "finishedAtMs": 3123.800048828125,
+                    "sampleTimeMs": 4155.800048828125,
+                    "startedAtMs": 4257.800048828125,
+                    "finishedAtMs": 4420.099853515625,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -1404,23 +1404,23 @@
                 }
               },
               "sequence": 23,
-              "timestamp": 1791116299085,
-              "inferenceMs": 142.0999994277954,
-              "roundTripMs": 142.4000005722046,
+              "timestamp": 1791124574782,
+              "inferenceMs": 264,
+              "roundTripMs": 264.79999999701977,
               "samples": {
                 "face": {
-                  "timestamp": 1791116299085,
-                  "inferenceMs": 9.300000190734863,
+                  "timestamp": 1791124574782,
+                  "inferenceMs": 24.5,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116299085,
-                  "inferenceMs": 43.5,
+                  "timestamp": 1791124574782,
+                  "inferenceMs": 77.20000000298023,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116299085,
-                  "inferenceMs": 89.29999923706055,
+                  "timestamp": 1791124574782,
+                  "inferenceMs": 162.29999999701977,
                   "present": false
                 }
               },
@@ -1438,23 +1438,23 @@
             {
               "diagnostics": null,
               "sequence": 24,
-              "timestamp": 1791116299227.4,
-              "inferenceMs": 9.800000190734863,
-              "roundTripMs": 10.09999942779541,
+              "timestamp": 1791124575046.9,
+              "inferenceMs": 14.799999997019768,
+              "roundTripMs": 15.700000002980232,
               "samples": {
                 "face": {
-                  "timestamp": 1791116299227.4,
-                  "inferenceMs": 9.800000190734863,
+                  "timestamp": 1791124575046.9,
+                  "inferenceMs": 14.699999995529652,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116299085,
-                  "inferenceMs": 43.5,
+                  "timestamp": 1791124574782,
+                  "inferenceMs": 77.20000000298023,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116299085,
-                  "inferenceMs": 89.29999923706055,
+                  "timestamp": 1791124574782,
+                  "inferenceMs": 162.29999999701977,
                   "present": false
                 }
               },
@@ -1476,9 +1476,9 @@
                   "face": {
                     "sampleSequence": 25,
                     "captureSequence": 25,
-                    "sampleTimeMs": 3134.10009765625,
-                    "startedAtMs": 3134.199951171875,
-                    "finishedAtMs": 3143.199951171875,
+                    "sampleTimeMs": 4436.400146484375,
+                    "startedAtMs": 4436.699951171875,
+                    "finishedAtMs": 4457.5,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -1486,9 +1486,9 @@
                   "pose": {
                     "sampleSequence": 13,
                     "captureSequence": 25,
-                    "sampleTimeMs": 3134.10009765625,
-                    "startedAtMs": 3143.199951171875,
-                    "finishedAtMs": 3186.10009765625,
+                    "sampleTimeMs": 4436.400146484375,
+                    "startedAtMs": 4457.5,
+                    "finishedAtMs": 4533.800048828125,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -1496,9 +1496,9 @@
                   "hands": {
                     "sampleSequence": 13,
                     "captureSequence": 25,
-                    "sampleTimeMs": 3134.10009765625,
-                    "startedAtMs": 3186.10009765625,
-                    "finishedAtMs": 3327.10009765625,
+                    "sampleTimeMs": 4436.400146484375,
+                    "startedAtMs": 4533.800048828125,
+                    "finishedAtMs": 4764.5,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -1506,23 +1506,23 @@
                 }
               },
               "sequence": 25,
-              "timestamp": 1791116299237.5,
-              "inferenceMs": 192.89999961853027,
-              "roundTripMs": 193.5,
+              "timestamp": 1791124575062.6,
+              "inferenceMs": 327.8999999985099,
+              "roundTripMs": 328.8999999985099,
               "samples": {
                 "face": {
-                  "timestamp": 1791116299237.5,
-                  "inferenceMs": 9,
+                  "timestamp": 1791124575062.6,
+                  "inferenceMs": 20.80000000447035,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116299237.5,
-                  "inferenceMs": 42.89999961853027,
+                  "timestamp": 1791124575062.6,
+                  "inferenceMs": 76.29999999701977,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116299237.5,
-                  "inferenceMs": 141,
+                  "timestamp": 1791124575062.6,
+                  "inferenceMs": 230.79999999701977,
                   "present": true
                 }
               },
@@ -1537,12 +1537,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9887086153030396
+                    "score": 0.9885998964309692
                   },
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9633872509002686
+                    "score": 0.9655190110206604
                   }
                 ],
                 "finite": true
@@ -1551,23 +1551,23 @@
             {
               "diagnostics": null,
               "sequence": 26,
-              "timestamp": 1791116299431.0999,
-              "inferenceMs": 10,
-              "roundTripMs": 10.59999942779541,
+              "timestamp": 1791124575391.5,
+              "inferenceMs": 14.200000002980232,
+              "roundTripMs": 15.100000001490116,
               "samples": {
                 "face": {
-                  "timestamp": 1791116299431.0999,
-                  "inferenceMs": 10,
+                  "timestamp": 1791124575391.5,
+                  "inferenceMs": 14.200000002980232,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116299237.5,
-                  "inferenceMs": 42.89999961853027,
+                  "timestamp": 1791124575062.6,
+                  "inferenceMs": 76.29999999701977,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116299237.5,
-                  "inferenceMs": 141,
+                  "timestamp": 1791124575062.6,
+                  "inferenceMs": 230.79999999701977,
                   "present": true
                 }
               },
@@ -1582,12 +1582,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9887086153030396
+                    "score": 0.9885998964309692
                   },
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9633872509002686
+                    "score": 0.9655190110206604
                   }
                 ],
                 "finite": true
@@ -1600,9 +1600,9 @@
                   "face": {
                     "sampleSequence": 27,
                     "captureSequence": 27,
-                    "sampleTimeMs": 3338.300048828125,
-                    "startedAtMs": 3338.39990234375,
-                    "finishedAtMs": 3347.39990234375,
+                    "sampleTimeMs": 4780.5,
+                    "startedAtMs": 4780.699951171875,
+                    "finishedAtMs": 4793.5,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -1610,9 +1610,9 @@
                   "pose": {
                     "sampleSequence": 14,
                     "captureSequence": 27,
-                    "sampleTimeMs": 3338.300048828125,
-                    "startedAtMs": 3347.39990234375,
-                    "finishedAtMs": 3390.39990234375,
+                    "sampleTimeMs": 4780.5,
+                    "startedAtMs": 4793.5,
+                    "finishedAtMs": 4867.800048828125,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -1620,9 +1620,9 @@
                   "hands": {
                     "sampleSequence": 14,
                     "captureSequence": 27,
-                    "sampleTimeMs": 3338.300048828125,
-                    "startedAtMs": 3390.39990234375,
-                    "finishedAtMs": 3479.89990234375,
+                    "sampleTimeMs": 4780.5,
+                    "startedAtMs": 4867.800048828125,
+                    "finishedAtMs": 5027.89990234375,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -1630,23 +1630,23 @@
                 }
               },
               "sequence": 27,
-              "timestamp": 1791116299441.7,
-              "inferenceMs": 141.5,
-              "roundTripMs": 142,
+              "timestamp": 1791124575406.7,
+              "inferenceMs": 247.20000000298023,
+              "roundTripMs": 248,
               "samples": {
                 "face": {
-                  "timestamp": 1791116299441.7,
-                  "inferenceMs": 9,
+                  "timestamp": 1791124575406.7,
+                  "inferenceMs": 12.800000004470348,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116299441.7,
-                  "inferenceMs": 43,
+                  "timestamp": 1791124575406.7,
+                  "inferenceMs": 74.29999999701977,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116299441.7,
-                  "inferenceMs": 89.5,
+                  "timestamp": 1791124575406.7,
+                  "inferenceMs": 160.10000000149012,
                   "present": true
                 }
               },
@@ -1661,12 +1661,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.960338830947876
+                    "score": 0.9627043008804321
                   },
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9911362528800964
+                    "score": 0.9913142919540405
                   }
                 ],
                 "finite": true
@@ -1675,23 +1675,23 @@
             {
               "diagnostics": null,
               "sequence": 28,
-              "timestamp": 1791116299583.7998,
-              "inferenceMs": 9.899999618530273,
-              "roundTripMs": 10.399999618530273,
+              "timestamp": 1791124575654.8,
+              "inferenceMs": 18.600000001490116,
+              "roundTripMs": 19.400000005960464,
               "samples": {
                 "face": {
-                  "timestamp": 1791116299583.7998,
-                  "inferenceMs": 9.899999618530273,
+                  "timestamp": 1791124575654.8,
+                  "inferenceMs": 18.600000001490116,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116299441.7,
-                  "inferenceMs": 43,
+                  "timestamp": 1791124575406.7,
+                  "inferenceMs": 74.29999999701977,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116299441.7,
-                  "inferenceMs": 89.5,
+                  "timestamp": 1791124575406.7,
+                  "inferenceMs": 160.10000000149012,
                   "present": true
                 }
               },
@@ -1706,12 +1706,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.960338830947876
+                    "score": 0.9627043008804321
                   },
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9911362528800964
+                    "score": 0.9913142919540405
                   }
                 ],
                 "finite": true
@@ -1724,9 +1724,9 @@
                   "face": {
                     "sampleSequence": 29,
                     "captureSequence": 29,
-                    "sampleTimeMs": 3491,
-                    "startedAtMs": 3491,
-                    "finishedAtMs": 3500.199951171875,
+                    "sampleTimeMs": 5048.199951171875,
+                    "startedAtMs": 5048.39990234375,
+                    "finishedAtMs": 5068.699951171875,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -1734,9 +1734,9 @@
                   "pose": {
                     "sampleSequence": 15,
                     "captureSequence": 29,
-                    "sampleTimeMs": 3491,
-                    "startedAtMs": 3500.199951171875,
-                    "finishedAtMs": 3543.10009765625,
+                    "sampleTimeMs": 5048.199951171875,
+                    "startedAtMs": 5068.699951171875,
+                    "finishedAtMs": 5172.099853515625,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -1744,9 +1744,9 @@
                   "hands": {
                     "sampleSequence": 15,
                     "captureSequence": 29,
-                    "sampleTimeMs": 3491,
-                    "startedAtMs": 3543.10009765625,
-                    "finishedAtMs": 3632.699951171875,
+                    "sampleTimeMs": 5048.199951171875,
+                    "startedAtMs": 5172.099853515625,
+                    "finishedAtMs": 5347.599853515625,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -1754,23 +1754,23 @@
                 }
               },
               "sequence": 29,
-              "timestamp": 1791116299594.4,
-              "inferenceMs": 141.69999980926514,
-              "roundTripMs": 142.0999994277954,
+              "timestamp": 1791124575674.4,
+              "inferenceMs": 299.19999999552965,
+              "roundTripMs": 300.1000000014901,
               "samples": {
                 "face": {
-                  "timestamp": 1791116299594.4,
-                  "inferenceMs": 9.199999809265137,
+                  "timestamp": 1791124575674.4,
+                  "inferenceMs": 20.299999997019768,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116299594.4,
-                  "inferenceMs": 42.89999961853027,
+                  "timestamp": 1791124575674.4,
+                  "inferenceMs": 103.39999999850988,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116299594.4,
-                  "inferenceMs": 89.60000038146973,
+                  "timestamp": 1791124575674.4,
+                  "inferenceMs": 175.5,
                   "present": true
                 }
               },
@@ -1785,12 +1785,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9546726942062378
+                    "score": 0.9570640921592712
                   },
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9908345341682434
+                    "score": 0.9906811714172363
                   }
                 ],
                 "finite": true
@@ -1799,23 +1799,23 @@
             {
               "diagnostics": null,
               "sequence": 30,
-              "timestamp": 1791116299736.5999,
-              "inferenceMs": 10,
-              "roundTripMs": 10.399999618530273,
+              "timestamp": 1791124575974.7,
+              "inferenceMs": 22.200000002980232,
+              "roundTripMs": 23.399999998509884,
               "samples": {
                 "face": {
-                  "timestamp": 1791116299736.5999,
-                  "inferenceMs": 9.90000057220459,
+                  "timestamp": 1791124575974.7,
+                  "inferenceMs": 22.200000002980232,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116299594.4,
-                  "inferenceMs": 42.89999961853027,
+                  "timestamp": 1791124575674.4,
+                  "inferenceMs": 103.39999999850988,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116299594.4,
-                  "inferenceMs": 89.60000038146973,
+                  "timestamp": 1791124575674.4,
+                  "inferenceMs": 175.5,
                   "present": true
                 }
               },
@@ -1830,12 +1830,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9546726942062378
+                    "score": 0.9570640921592712
                   },
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9908345341682434
+                    "score": 0.9906811714172363
                   }
                 ],
                 "finite": true
@@ -1848,9 +1848,9 @@
                   "face": {
                     "sampleSequence": 31,
                     "captureSequence": 31,
-                    "sampleTimeMs": 3643.699951171875,
-                    "startedAtMs": 3643.800048828125,
-                    "finishedAtMs": 3652.699951171875,
+                    "sampleTimeMs": 5372.199951171875,
+                    "startedAtMs": 5372.5,
+                    "finishedAtMs": 5393.199951171875,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -1858,9 +1858,9 @@
                   "pose": {
                     "sampleSequence": 16,
                     "captureSequence": 31,
-                    "sampleTimeMs": 3643.699951171875,
-                    "startedAtMs": 3652.699951171875,
-                    "finishedAtMs": 3695.5,
+                    "sampleTimeMs": 5372.199951171875,
+                    "startedAtMs": 5393.199951171875,
+                    "finishedAtMs": 5532,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -1868,9 +1868,9 @@
                   "hands": {
                     "sampleSequence": 16,
                     "captureSequence": 31,
-                    "sampleTimeMs": 3643.699951171875,
-                    "startedAtMs": 3695.60009765625,
-                    "finishedAtMs": 3785.89990234375,
+                    "sampleTimeMs": 5372.199951171875,
+                    "startedAtMs": 5532,
+                    "finishedAtMs": 5725.199951171875,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -1878,23 +1878,23 @@
                 }
               },
               "sequence": 31,
-              "timestamp": 1791116299747.0999,
-              "inferenceMs": 142.10000038146973,
-              "roundTripMs": 142.5999994277954,
+              "timestamp": 1791124575998.4,
+              "inferenceMs": 352.79999999701977,
+              "roundTripMs": 353.8999999985099,
               "samples": {
                 "face": {
-                  "timestamp": 1791116299747.0999,
-                  "inferenceMs": 8.90000057220459,
+                  "timestamp": 1791124575998.4,
+                  "inferenceMs": 20.69999999552965,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116299747.0999,
-                  "inferenceMs": 42.89999961853027,
+                  "timestamp": 1791124575998.4,
+                  "inferenceMs": 138.80000000447035,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116299747.0999,
-                  "inferenceMs": 90.30000019073486,
+                  "timestamp": 1791124575998.4,
+                  "inferenceMs": 193.29999999701977,
                   "present": true
                 }
               },
@@ -1909,12 +1909,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9639450907707214
+                    "score": 0.9646225571632385
                   },
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9911618232727051
+                    "score": 0.9917696118354797
                   }
                 ],
                 "finite": true
@@ -1923,23 +1923,23 @@
             {
               "diagnostics": null,
               "sequence": 32,
-              "timestamp": 1791116299889.9,
-              "inferenceMs": 10,
-              "roundTripMs": 10.399999618530273,
+              "timestamp": 1791124576352.5,
+              "inferenceMs": 16.399999998509884,
+              "roundTripMs": 17.299999997019768,
               "samples": {
                 "face": {
-                  "timestamp": 1791116299889.9,
-                  "inferenceMs": 10,
+                  "timestamp": 1791124576352.5,
+                  "inferenceMs": 16.399999998509884,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116299747.0999,
-                  "inferenceMs": 42.89999961853027,
+                  "timestamp": 1791124575998.4,
+                  "inferenceMs": 138.80000000447035,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116299747.0999,
-                  "inferenceMs": 90.30000019073486,
+                  "timestamp": 1791124575998.4,
+                  "inferenceMs": 193.29999999701977,
                   "present": true
                 }
               },
@@ -1954,12 +1954,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9639450907707214
+                    "score": 0.9646225571632385
                   },
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9911618232727051
+                    "score": 0.9917696118354797
                   }
                 ],
                 "finite": true
@@ -1972,9 +1972,9 @@
                   "face": {
                     "sampleSequence": 33,
                     "captureSequence": 33,
-                    "sampleTimeMs": 3797.10009765625,
-                    "startedAtMs": 3797.10009765625,
-                    "finishedAtMs": 3806,
+                    "sampleTimeMs": 5743.699951171875,
+                    "startedAtMs": 5744,
+                    "finishedAtMs": 5761.800048828125,
                     "state": "new",
                     "present": false,
                     "observationPoints": 0
@@ -1982,9 +1982,9 @@
                   "pose": {
                     "sampleSequence": 17,
                     "captureSequence": 33,
-                    "sampleTimeMs": 3797.10009765625,
-                    "startedAtMs": 3806,
-                    "finishedAtMs": 3848.89990234375,
+                    "sampleTimeMs": 5743.699951171875,
+                    "startedAtMs": 5761.800048828125,
+                    "finishedAtMs": 5849.699951171875,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -1992,9 +1992,9 @@
                   "hands": {
                     "sampleSequence": 17,
                     "captureSequence": 33,
-                    "sampleTimeMs": 3797.10009765625,
-                    "startedAtMs": 3848.89990234375,
-                    "finishedAtMs": 3939,
+                    "sampleTimeMs": 5743.699951171875,
+                    "startedAtMs": 5849.699951171875,
+                    "finishedAtMs": 6017.099853515625,
                     "state": "new",
                     "present": true,
                     "observationPoints": 0
@@ -2002,23 +2002,23 @@
                 }
               },
               "sequence": 33,
-              "timestamp": 1791116299900.5,
-              "inferenceMs": 141.9000005722046,
-              "roundTripMs": 142.30000019073486,
+              "timestamp": 1791124576369.9,
+              "inferenceMs": 273.09999999403954,
+              "roundTripMs": 274,
               "samples": {
                 "face": {
-                  "timestamp": 1791116299900.5,
-                  "inferenceMs": 8.90000057220459,
+                  "timestamp": 1791124576369.9,
+                  "inferenceMs": 17.799999997019768,
                   "present": false
                 },
                 "pose": {
-                  "timestamp": 1791116299900.5,
-                  "inferenceMs": 42.89999961853027,
+                  "timestamp": 1791124576369.9,
+                  "inferenceMs": 87.89999999850988,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116299900.5,
-                  "inferenceMs": 90.10000038146973,
+                  "timestamp": 1791124576369.9,
+                  "inferenceMs": 167.39999999850988,
                   "present": true
                 }
               },
@@ -2033,12 +2033,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9703701138496399
+                    "score": 0.9697712659835815
                   },
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9919111728668213
+                    "score": 0.992128312587738
                   }
                 ],
                 "finite": true
@@ -2070,9 +2070,9 @@
                   "face": {
                     "sampleSequence": 34,
                     "captureSequence": 34,
-                    "sampleTimeMs": 3943.199951171875,
-                    "startedAtMs": 3943.300048828125,
-                    "finishedAtMs": 3982.699951171875,
+                    "sampleTimeMs": 6018,
+                    "startedAtMs": 6018.300048828125,
+                    "finishedAtMs": 6095.300048828125,
                     "state": "new",
                     "present": true,
                     "observationPoints": 478
@@ -2080,9 +2080,9 @@
                   "pose": {
                     "sampleSequence": 17,
                     "captureSequence": 33,
-                    "sampleTimeMs": 3797.10009765625,
-                    "startedAtMs": 3806,
-                    "finishedAtMs": 3848.89990234375,
+                    "sampleTimeMs": 5743.699951171875,
+                    "startedAtMs": 5761.800048828125,
+                    "finishedAtMs": 5849.699951171875,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -2090,9 +2090,9 @@
                   "hands": {
                     "sampleSequence": 17,
                     "captureSequence": 33,
-                    "sampleTimeMs": 3797.10009765625,
-                    "startedAtMs": 3848.89990234375,
-                    "finishedAtMs": 3939,
+                    "sampleTimeMs": 5743.699951171875,
+                    "startedAtMs": 5849.699951171875,
+                    "finishedAtMs": 6017.099853515625,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -2100,23 +2100,23 @@
                 }
               },
               "sequence": 34,
-              "timestamp": 1791116300046.5999,
-              "inferenceMs": 39.40000057220459,
-              "roundTripMs": 40.19999980926514,
+              "timestamp": 1791124576644.2,
+              "inferenceMs": 77.10000000149012,
+              "roundTripMs": 79.5,
               "samples": {
                 "face": {
-                  "timestamp": 1791116300046.5999,
-                  "inferenceMs": 39.40000057220459,
+                  "timestamp": 1791124576644.2,
+                  "inferenceMs": 77.10000000149012,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116299900.5,
-                  "inferenceMs": 42.89999961853027,
+                  "timestamp": 1791124576369.9,
+                  "inferenceMs": 87.89999999850988,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116299900.5,
-                  "inferenceMs": 90.10000038146973,
+                  "timestamp": 1791124576369.9,
+                  "inferenceMs": 167.39999999850988,
                   "present": true
                 }
               },
@@ -2131,12 +2131,12 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9703701138496399
+                    "score": 0.9697712659835815
                   },
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9919111728668213
+                    "score": 0.992128312587738
                   }
                 ],
                 "finite": true
@@ -2145,23 +2145,23 @@
             {
               "diagnostics": null,
               "sequence": 35,
-              "timestamp": 1791116300086.9,
-              "inferenceMs": 165.19999980926514,
-              "roundTripMs": 165.5999994277954,
+              "timestamp": 1791124576723.9,
+              "inferenceMs": 361.29999999701977,
+              "roundTripMs": 362.30000000447035,
               "samples": {
                 "face": {
-                  "timestamp": 1791116300086.9,
-                  "inferenceMs": 31.90000057220459,
+                  "timestamp": 1791124576723.9,
+                  "inferenceMs": 71.70000000298023,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116300086.9,
-                  "inferenceMs": 44.29999923706055,
+                  "timestamp": 1791124576723.9,
+                  "inferenceMs": 127.29999999701977,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116300086.9,
-                  "inferenceMs": 89,
+                  "timestamp": 1791124576723.9,
+                  "inferenceMs": 162.29999999701977,
                   "present": false
                 }
               },
@@ -2183,9 +2183,9 @@
                   "face": {
                     "sampleSequence": 36,
                     "captureSequence": 36,
-                    "sampleTimeMs": 4149.300048828125,
-                    "startedAtMs": 4149.5,
-                    "finishedAtMs": 4181.39990234375,
+                    "sampleTimeMs": 6460.10009765625,
+                    "startedAtMs": 6460.800048828125,
+                    "finishedAtMs": 6515.89990234375,
                     "state": "new",
                     "present": true,
                     "observationPoints": 478
@@ -2193,9 +2193,9 @@
                   "pose": {
                     "sampleSequence": 18,
                     "captureSequence": 35,
-                    "sampleTimeMs": 3983.5,
-                    "startedAtMs": 4015.5,
-                    "finishedAtMs": 4059.800048828125,
+                    "sampleTimeMs": 6097.699951171875,
+                    "startedAtMs": 6170,
+                    "finishedAtMs": 6297.300048828125,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -2203,9 +2203,9 @@
                   "hands": {
                     "sampleSequence": 18,
                     "captureSequence": 35,
-                    "sampleTimeMs": 3983.5,
-                    "startedAtMs": 4059.800048828125,
-                    "finishedAtMs": 4148.800048828125,
+                    "sampleTimeMs": 6097.699951171875,
+                    "startedAtMs": 6297.300048828125,
+                    "finishedAtMs": 6459.599853515625,
                     "state": "cached",
                     "present": false,
                     "observationPoints": 0
@@ -2213,23 +2213,23 @@
                 }
               },
               "sequence": 36,
-              "timestamp": 1791116300252.7,
-              "inferenceMs": 31.899999618530273,
-              "roundTripMs": 33.20000076293945,
+              "timestamp": 1791124577086.3,
+              "inferenceMs": 55.100000001490116,
+              "roundTripMs": 57.100000001490116,
               "samples": {
                 "face": {
-                  "timestamp": 1791116300252.7,
-                  "inferenceMs": 31.899999618530273,
+                  "timestamp": 1791124577086.3,
+                  "inferenceMs": 55.100000001490116,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116300086.9,
-                  "inferenceMs": 44.29999923706055,
+                  "timestamp": 1791124576723.9,
+                  "inferenceMs": 127.29999999701977,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116300086.9,
-                  "inferenceMs": 89,
+                  "timestamp": 1791124576723.9,
+                  "inferenceMs": 162.29999999701977,
                   "present": false
                 }
               },
@@ -2247,23 +2247,23 @@
             {
               "diagnostics": null,
               "sequence": 37,
-              "timestamp": 1791116300285.9,
-              "inferenceMs": 179,
-              "roundTripMs": 179.19999980926514,
+              "timestamp": 1791124577143.6,
+              "inferenceMs": 355.19999999552965,
+              "roundTripMs": 355.8999999985099,
               "samples": {
                 "face": {
-                  "timestamp": 1791116300285.9,
-                  "inferenceMs": 31.199999809265137,
+                  "timestamp": 1791124577143.6,
+                  "inferenceMs": 47.899999998509884,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116300285.9,
-                  "inferenceMs": 48,
+                  "timestamp": 1791124577143.6,
+                  "inferenceMs": 97.69999999552965,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116300285.9,
-                  "inferenceMs": 99.69999980926514,
+                  "timestamp": 1791124577143.6,
+                  "inferenceMs": 209.60000000149012,
                   "present": true
                 }
               },
@@ -2278,7 +2278,7 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9911354780197144
+                    "score": 0.9899566173553467
                   }
                 ],
                 "finite": true
@@ -2291,9 +2291,9 @@
                   "face": {
                     "sampleSequence": 38,
                     "captureSequence": 38,
-                    "sampleTimeMs": 4361.89990234375,
-                    "startedAtMs": 4362,
-                    "finishedAtMs": 4395.699951171875,
+                    "sampleTimeMs": 6873.400146484375,
+                    "startedAtMs": 6873.699951171875,
+                    "finishedAtMs": 6941.89990234375,
                     "state": "new",
                     "present": true,
                     "observationPoints": 478
@@ -2301,9 +2301,9 @@
                   "pose": {
                     "sampleSequence": 19,
                     "captureSequence": 37,
-                    "sampleTimeMs": 4182.5,
-                    "startedAtMs": 4213.89990234375,
-                    "finishedAtMs": 4261.89990234375,
+                    "sampleTimeMs": 6517.400146484375,
+                    "startedAtMs": 6565.39990234375,
+                    "finishedAtMs": 6663.099853515625,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -2311,9 +2311,9 @@
                   "hands": {
                     "sampleSequence": 19,
                     "captureSequence": 37,
-                    "sampleTimeMs": 4182.5,
-                    "startedAtMs": 4261.89990234375,
-                    "finishedAtMs": 4361.60009765625,
+                    "sampleTimeMs": 6517.400146484375,
+                    "startedAtMs": 6663.099853515625,
+                    "finishedAtMs": 6872.599853515625,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -2321,23 +2321,23 @@
                 }
               },
               "sequence": 38,
-              "timestamp": 1791116300465.2998,
-              "inferenceMs": 33.69999980926514,
-              "roundTripMs": 34.69999980926514,
+              "timestamp": 1791124577499.6,
+              "inferenceMs": 68.30000000447035,
+              "roundTripMs": 70.19999999552965,
               "samples": {
                 "face": {
-                  "timestamp": 1791116300465.2998,
-                  "inferenceMs": 33.69999980926514,
+                  "timestamp": 1791124577499.6,
+                  "inferenceMs": 68.20000000298023,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116300285.9,
-                  "inferenceMs": 48,
+                  "timestamp": 1791124577143.6,
+                  "inferenceMs": 97.69999999552965,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116300285.9,
-                  "inferenceMs": 99.69999980926514,
+                  "timestamp": 1791124577143.6,
+                  "inferenceMs": 209.60000000149012,
                   "present": true
                 }
               },
@@ -2352,7 +2352,7 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9911354780197144
+                    "score": 0.9899566173553467
                   }
                 ],
                 "finite": true
@@ -2361,23 +2361,23 @@
             {
               "diagnostics": null,
               "sequence": 39,
-              "timestamp": 1791116300500,
-              "inferenceMs": 176.10000038146973,
-              "roundTripMs": 176.69999980926514,
+              "timestamp": 1791124577569.8,
+              "inferenceMs": 328.79999999701977,
+              "roundTripMs": 329.6000000014901,
               "samples": {
                 "face": {
-                  "timestamp": 1791116300500,
-                  "inferenceMs": 33.30000019073486,
+                  "timestamp": 1791124577569.8,
+                  "inferenceMs": 57.79999999701977,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116300500,
-                  "inferenceMs": 45.10000038146973,
+                  "timestamp": 1791124577569.8,
+                  "inferenceMs": 84.10000000149012,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116300500,
-                  "inferenceMs": 97.69999980926514,
+                  "timestamp": 1791124577569.8,
+                  "inferenceMs": 186.89999999850988,
                   "present": true
                 }
               },
@@ -2392,7 +2392,7 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.940657913684845
+                    "score": 0.939548134803772
                   }
                 ],
                 "finite": true
@@ -2405,9 +2405,9 @@
                   "face": {
                     "sampleSequence": 40,
                     "captureSequence": 40,
-                    "sampleTimeMs": 4573.5,
-                    "startedAtMs": 4573.60009765625,
-                    "finishedAtMs": 4607,
+                    "sampleTimeMs": 7273.60009765625,
+                    "startedAtMs": 7273.800048828125,
+                    "finishedAtMs": 7347.39990234375,
                     "state": "new",
                     "present": true,
                     "observationPoints": 478
@@ -2415,9 +2415,9 @@
                   "pose": {
                     "sampleSequence": 20,
                     "captureSequence": 39,
-                    "sampleTimeMs": 4396.60009765625,
-                    "startedAtMs": 4430.10009765625,
-                    "finishedAtMs": 4475.199951171875,
+                    "sampleTimeMs": 6943.60009765625,
+                    "startedAtMs": 7001.800048828125,
+                    "finishedAtMs": 7085.89990234375,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -2425,9 +2425,9 @@
                   "hands": {
                     "sampleSequence": 20,
                     "captureSequence": 39,
-                    "sampleTimeMs": 4396.60009765625,
-                    "startedAtMs": 4475.199951171875,
-                    "finishedAtMs": 4572.89990234375,
+                    "sampleTimeMs": 6943.60009765625,
+                    "startedAtMs": 7085.89990234375,
+                    "finishedAtMs": 7272.800048828125,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -2435,23 +2435,23 @@
                 }
               },
               "sequence": 40,
-              "timestamp": 1791116300676.9,
-              "inferenceMs": 33.40000057220459,
-              "roundTripMs": 34.69999980926514,
+              "timestamp": 1791124577899.8,
+              "inferenceMs": 73.60000000149012,
+              "roundTripMs": 75.30000000447035,
               "samples": {
                 "face": {
-                  "timestamp": 1791116300676.9,
-                  "inferenceMs": 33.40000057220459,
+                  "timestamp": 1791124577899.8,
+                  "inferenceMs": 73.60000000149012,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116300500,
-                  "inferenceMs": 45.10000038146973,
+                  "timestamp": 1791124577569.8,
+                  "inferenceMs": 84.10000000149012,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116300500,
-                  "inferenceMs": 97.69999980926514,
+                  "timestamp": 1791124577569.8,
+                  "inferenceMs": 186.89999999850988,
                   "present": true
                 }
               },
@@ -2466,7 +2466,7 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.940657913684845
+                    "score": 0.939548134803772
                   }
                 ],
                 "finite": true
@@ -2475,23 +2475,23 @@
             {
               "diagnostics": null,
               "sequence": 41,
-              "timestamp": 1791116300711.7998,
-              "inferenceMs": 178.19999980926514,
-              "roundTripMs": 178.60000038146973,
+              "timestamp": 1791124577975.4,
+              "inferenceMs": 393.19999999552965,
+              "roundTripMs": 394.20000000298023,
               "samples": {
                 "face": {
-                  "timestamp": 1791116300711.7998,
-                  "inferenceMs": 32.10000038146973,
+                  "timestamp": 1791124577975.4,
+                  "inferenceMs": 59.29999999701977,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116300711.7998,
-                  "inferenceMs": 45.5,
+                  "timestamp": 1791124577975.4,
+                  "inferenceMs": 103.89999999850988,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116300711.7998,
-                  "inferenceMs": 100.59999942779541,
+                  "timestamp": 1791124577975.4,
+                  "inferenceMs": 230,
                   "present": true
                 }
               },
@@ -2506,7 +2506,7 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9626373052597046
+                    "score": 0.959295928478241
                   }
                 ],
                 "finite": true
@@ -2519,9 +2519,9 @@
                   "face": {
                     "sampleSequence": 42,
                     "captureSequence": 42,
-                    "sampleTimeMs": 4787.10009765625,
-                    "startedAtMs": 4787.10009765625,
-                    "finishedAtMs": 4819,
+                    "sampleTimeMs": 7743.60009765625,
+                    "startedAtMs": 7743.89990234375,
+                    "finishedAtMs": 7801.5,
                     "state": "new",
                     "present": true,
                     "observationPoints": 478
@@ -2529,9 +2529,9 @@
                   "pose": {
                     "sampleSequence": 21,
                     "captureSequence": 41,
-                    "sampleTimeMs": 4608.39990234375,
-                    "startedAtMs": 4640.5,
-                    "finishedAtMs": 4686,
+                    "sampleTimeMs": 7349.199951171875,
+                    "startedAtMs": 7408.699951171875,
+                    "finishedAtMs": 7512.599853515625,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -2539,9 +2539,9 @@
                   "hands": {
                     "sampleSequence": 21,
                     "captureSequence": 41,
-                    "sampleTimeMs": 4608.39990234375,
-                    "startedAtMs": 4686,
-                    "finishedAtMs": 4786.5,
+                    "sampleTimeMs": 7349.199951171875,
+                    "startedAtMs": 7512.599853515625,
+                    "finishedAtMs": 7742.599853515625,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -2549,23 +2549,23 @@
                 }
               },
               "sequence": 42,
-              "timestamp": 1791116300890.5,
-              "inferenceMs": 31.90000057220459,
-              "roundTripMs": 33.10000038146973,
+              "timestamp": 1791124578369.8,
+              "inferenceMs": 57.79999999701977,
+              "roundTripMs": 59.5,
               "samples": {
                 "face": {
-                  "timestamp": 1791116300890.5,
-                  "inferenceMs": 31.90000057220459,
+                  "timestamp": 1791124578369.8,
+                  "inferenceMs": 57.70000000298023,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116300711.7998,
-                  "inferenceMs": 45.5,
+                  "timestamp": 1791124577975.4,
+                  "inferenceMs": 103.89999999850988,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116300711.7998,
-                  "inferenceMs": 100.59999942779541,
+                  "timestamp": 1791124577975.4,
+                  "inferenceMs": 230,
                   "present": true
                 }
               },
@@ -2580,7 +2580,7 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9626373052597046
+                    "score": 0.959295928478241
                   }
                 ],
                 "finite": true
@@ -2589,23 +2589,23 @@
             {
               "diagnostics": null,
               "sequence": 43,
-              "timestamp": 1791116300923.7998,
-              "inferenceMs": 175.89999961853027,
-              "roundTripMs": 176.39999961853027,
+              "timestamp": 1791124578429.4,
+              "inferenceMs": 390.79999999701977,
+              "roundTripMs": 391.80000000447035,
               "samples": {
                 "face": {
-                  "timestamp": 1791116300923.7998,
-                  "inferenceMs": 31.399999618530273,
+                  "timestamp": 1791124578429.4,
+                  "inferenceMs": 55.29999999701977,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116300923.7998,
-                  "inferenceMs": 44.89999961853027,
+                  "timestamp": 1791124578429.4,
+                  "inferenceMs": 132,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116300923.7998,
-                  "inferenceMs": 99.60000038146973,
+                  "timestamp": 1791124578429.4,
+                  "inferenceMs": 203.39999999850988,
                   "present": true
                 }
               },
@@ -2620,7 +2620,7 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9658048748970032
+                    "score": 0.9650560617446899
                   }
                 ],
                 "finite": true
@@ -2633,9 +2633,9 @@
                   "face": {
                     "sampleSequence": 44,
                     "captureSequence": 44,
-                    "sampleTimeMs": 4997,
-                    "startedAtMs": 4997.10009765625,
-                    "finishedAtMs": 5029.39990234375,
+                    "sampleTimeMs": 8195.10009765625,
+                    "startedAtMs": 8196,
+                    "finishedAtMs": 8254.89990234375,
                     "state": "new",
                     "present": true,
                     "observationPoints": 478
@@ -2643,9 +2643,9 @@
                   "pose": {
                     "sampleSequence": 22,
                     "captureSequence": 43,
-                    "sampleTimeMs": 4820.39990234375,
-                    "startedAtMs": 4851.89990234375,
-                    "finishedAtMs": 4896.800048828125,
+                    "sampleTimeMs": 7803.199951171875,
+                    "startedAtMs": 7858.699951171875,
+                    "finishedAtMs": 7990.699951171875,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -2653,9 +2653,9 @@
                   "hands": {
                     "sampleSequence": 22,
                     "captureSequence": 43,
-                    "sampleTimeMs": 4820.39990234375,
-                    "startedAtMs": 4896.800048828125,
-                    "finishedAtMs": 4996.39990234375,
+                    "sampleTimeMs": 7803.199951171875,
+                    "startedAtMs": 7990.699951171875,
+                    "finishedAtMs": 8194.099853515625,
                     "state": "cached",
                     "present": true,
                     "observationPoints": 0
@@ -2663,23 +2663,23 @@
                 }
               },
               "sequence": 44,
-              "timestamp": 1791116301100.4,
-              "inferenceMs": 32.30000019073486,
-              "roundTripMs": 33.79999923706055,
+              "timestamp": 1791124578821.3,
+              "inferenceMs": 58.899999998509884,
+              "roundTripMs": 61.20000000298023,
               "samples": {
                 "face": {
-                  "timestamp": 1791116301100.4,
-                  "inferenceMs": 32.30000019073486,
+                  "timestamp": 1791124578821.3,
+                  "inferenceMs": 58.899999998509884,
                   "present": true
                 },
                 "pose": {
-                  "timestamp": 1791116300923.7998,
-                  "inferenceMs": 44.89999961853027,
+                  "timestamp": 1791124578429.4,
+                  "inferenceMs": 132,
                   "present": true
                 },
                 "hands": {
-                  "timestamp": 1791116300923.7998,
-                  "inferenceMs": 99.60000038146973,
+                  "timestamp": 1791124578429.4,
+                  "inferenceMs": 203.39999999850988,
                   "present": true
                 }
               },
@@ -2694,7 +2694,7 @@
                   {
                     "points": 21,
                     "worldPoints": 21,
-                    "score": 0.9658048748970032
+                    "score": 0.9650560617446899
                   }
                 ],
                 "finite": true
@@ -2708,13 +2708,13 @@
         {
           "variant": "portrait-full",
           "warmFullFrames": 4,
-          "medianFullMs": 219.55000019073486,
-          "minFullMs": 216.30000019073486,
-          "maxFullMs": 223.89999961853027,
+          "medianFullMs": 350.19999999925494,
+          "minFullMs": 186.39999999850988,
+          "maxFullMs": 388.6000000014901,
           "medianTaskMs": {
-            "face": 32.69999980926514,
-            "pose": 45.05000019073486,
-            "hands": 141.34999990463257
+            "face": 50.69999999925494,
+            "pose": 69.24999999627471,
+            "hands": 227.75
           },
           "positiveWarmFrames": {
             "face": 4,
@@ -2726,13 +2726,13 @@
         {
           "variant": "body-full",
           "warmFullFrames": 4,
-          "medianFullMs": 167.14999961853027,
-          "minFullMs": 141,
-          "maxFullMs": 233.4000005722046,
+          "medianFullMs": 300.80000000074506,
+          "minFullMs": 241.20000000298023,
+          "maxFullMs": 392.6000000014901,
           "medianTaskMs": {
-            "face": 9.099999904632568,
-            "pose": 42.80000019073486,
-            "hands": 115.24999952316284
+            "face": 14.74999999627471,
+            "pose": 93.50000000372529,
+            "hands": 187.89999999850988
           },
           "positiveWarmFrames": {
             "face": 0,
@@ -2744,13 +2744,13 @@
         {
           "variant": "body-upper-crop",
           "warmFullFrames": 4,
-          "medianFullMs": 141.80000019073486,
-          "minFullMs": 141.5,
-          "maxFullMs": 142.10000038146973,
+          "medianFullMs": 286.1499999947846,
+          "minFullMs": 247.20000000298023,
+          "maxFullMs": 352.79999999701977,
           "medianTaskMs": {
-            "face": 8.950000286102295,
-            "pose": 42.89999961853027,
-            "hands": 89.85000038146973
+            "face": 19.049999997019768,
+            "pose": 95.64999999850988,
+            "hands": 171.44999999925494
           },
           "positiveWarmFrames": {
             "face": 0,
@@ -2762,13 +2762,13 @@
         {
           "variant": "body-face-hand-crop",
           "warmFullFrames": 4,
-          "medianFullMs": 177.15000009536743,
-          "minFullMs": 175.89999961853027,
-          "maxFullMs": 179,
+          "medianFullMs": 372.9999999962747,
+          "minFullMs": 328.79999999701977,
+          "maxFullMs": 393.19999999552965,
           "medianTaskMs": {
-            "face": 31.75,
-            "pose": 45.30000019073486,
-            "hands": 99.65000009536743
+            "face": 56.54999999701977,
+            "pose": 100.79999999701977,
+            "hands": 206.5
           },
           "positiveWarmFrames": {
             "face": 4,
@@ -2784,15 +2784,15 @@
   "messages": [
     {
       "type": "warning",
-      "text": "W1004 12:18:15.430000 2196592 face_landmarker_graph.cc:180] Sets FaceBlendshapesGraph acceleration to xnnpack by default."
+      "text": "W1004 14:36:09.900999 2196592 face_landmarker_graph.cc:180] Sets FaceBlendshapesGraph acceleration to xnnpack by default."
     },
     {
       "type": "log",
-      "text": "I1004 12:18:15.492000 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+      "text": "I1004 14:36:09.991000 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
     },
     {
       "type": "warning",
-      "text": "W1004 12:18:15.494000 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+      "text": "W1004 14:36:09.993999 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
     },
     {
       "type": "log",
@@ -2800,11 +2800,11 @@
     },
     {
       "type": "log",
-      "text": "I1004 12:18:15.796999 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+      "text": "I1004 14:36:10.307000 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
     },
     {
       "type": "warning",
-      "text": "W1004 12:18:15.796999 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+      "text": "W1004 14:36:10.308000 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
     },
     {
       "type": "log",
@@ -2812,11 +2812,11 @@
     },
     {
       "type": "log",
-      "text": "I1004 12:18:16.100000 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
+      "text": "I1004 14:36:10.623000 2196592 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))), renderer: WebKit WebGL"
     },
     {
       "type": "warning",
-      "text": "W1004 12:18:16.100999 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
+      "text": "W1004 14:36:10.624000 2196592 gl_context.cc:1119] OpenGL error checking is disabled"
     },
     {
       "type": "log",
@@ -2828,11 +2828,11 @@
     },
     {
       "type": "warning",
-      "text": "W1004 12:18:16.152000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+      "text": "W1004 14:36:10.776999 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
     },
     {
       "type": "warning",
-      "text": "W1004 12:18:16.180999 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+      "text": "W1004 14:36:10.804999 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
     },
     {
       "type": "error",
@@ -2840,15 +2840,15 @@
     },
     {
       "type": "warning",
-      "text": "W1004 12:18:16.439000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+      "text": "W1004 14:36:11.049999 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
     },
     {
       "type": "warning",
-      "text": "W1004 12:18:16.470000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+      "text": "W1004 14:36:11.076999 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
     },
     {
       "type": "warning",
-      "text": "W1004 12:18:16.577999 2196592 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX."
+      "text": "W1004 14:36:11.167000 2196592 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX."
     },
     {
       "type": "error",
@@ -2856,15 +2856,15 @@
     },
     {
       "type": "warning",
-      "text": "W1004 12:18:16.608000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+      "text": "W1004 14:36:11.200000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
     },
     {
       "type": "warning",
-      "text": "W1004 12:18:16.631000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
+      "text": "W1004 14:36:11.220000 2196592 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors."
     },
     {
       "type": "warning",
-      "text": "W1004 12:18:16.737999 2196592 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX."
+      "text": "W1004 14:36:11.316000 2196592 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX."
     }
   ],
   "externalRequests": [],
@@ -2913,11 +2913,11 @@
   },
   "sdk": "1.0.1",
   "server": {
-    "base": "http://127.0.0.1:39713",
-    "pid": 647195,
+    "base": "http://127.0.0.1:51716",
+    "pid": 22732,
     "isolated": true
   },
-  "chromeVersion": "153.0.8010.12",
+  "chromeVersion": "154.0.4258.53",
   "coverage": [
     {
       "delegate": "CPU",

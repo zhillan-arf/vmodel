@@ -10,7 +10,7 @@
 
 [TASK-P02: Own character voice implementation and delivery](../active/TASK-P02.md) coordinates G3's seven tasks, TASK-022 through TASK-028, and reports voice progress and acceptance evidence to TASK-P01. Read it when starting voice work. Controllers are excluded from the implementation-task count and do not block child tasks from starting.
 
-This register covers 60 implementation tasks across six goals. Controllers do not count as implementation tasks.
+This register covers 61 tasks across six goals. Controllers do not count as implementation tasks.
 
 | Goal | Deliverable |
 | --- | --- |
@@ -25,9 +25,10 @@ The [research evaluation](../../reports/studio-research-evaluation.md), [action 
 
 [TASK-P04](../active/TASK-P04.md) owns G5 and TASK-039 through TASK-048. [TASK-P05](../active/TASK-P05.md) owns G6 and TASK-049 through TASK-060.
 
-Checkpoint on 2026-10-04: 32 Done; 22 In progress; 1 Blocked; 0 Ready; 5 Todo. P04/P05 implementation has synthetic evidence.
+Checkpoint on 2026-10-04: 36 Done; 18 In progress; 1 Blocked; 1 Ready; 5 Todo.
+TASK-061 collects human tests. P04 and P05 retain their release requirements.
 
-[TASK-P01](../active/TASK-P01.md) coordinates all 60 implementation tasks. Individual tasks control detailed acceptance. P01 remains open through TASK-021 and does not block its children.
+[TASK-P01](../active/TASK-P01.md) coordinates all 61 tasks. Individual tasks control detailed acceptance. P01 remains open through TASK-021 and TASK-061.
 
 The user has supplied the actual model package at `ops/resources/ENE/` and X excerpts at `ops/resources/x-posts.md`. There is no remaining missing-model blocker. Use **cyber legs**, the user's selected variant, as the baseline; preserve both PMX originals and address the known sphere-texture gaps during import. A licensed sample can support runtime development while Ene is prepared. Final avatar acceptance and recordings must use cyber legs.
 
@@ -78,7 +79,7 @@ TASK-027's training is conditional: close with evidence that an existing voice f
 | [TASK-018](../active/TASK-018.md) | Deliver landscape and portrait recordings with audio | G2 | TASK-007, TASK-017 | In progress |
 | [TASK-019](../archived/TASK-019.md) | Package local launch, offline assets and beginner documentation | G2 | TASK-015, TASK-016, TASK-017, TASK-026 | Done |
 | [TASK-020](../archived/TASK-020.md) | Validate performance, recovery and local-only operation | G2 | TASK-007, TASK-012, TASK-013, TASK-018, TASK-019 | Done |
-| [TASK-021](../active/TASK-021.md) | Complete Ene end-to-end acceptance and handoff | G1, G2, G3, G4, G5, G6 | TASK-007, TASK-014, TASK-018, TASK-019, TASK-020, TASK-028, TASK-038, TASK-048, TASK-060 | In progress |
+| [TASK-021](../active/TASK-021.md) | Complete Ene end-to-end acceptance and handoff | G1, G2, G3, G4, G5, G6 | TASK-007, TASK-014, TASK-018, TASK-019, TASK-020, TASK-028, TASK-038, TASK-048, TASK-060, TASK-061 | In progress |
 | [TASK-022](../archived/TASK-022.md) | Audit and provision the open source voice-conversion toolchain | G3 | None | Done |
 | [TASK-023](../active/TASK-023.md) | Audition English character voices and choose contrasting presets | G3 | TASK-022 | In progress |
 | [TASK-024](../active/TASK-024.md) | Benchmark laptop conversion and the conditional A100 path | G3 | TASK-003, TASK-022 | In progress |
@@ -96,19 +97,19 @@ TASK-027's training is conditional: close with evidence that an existing voice f
 | [TASK-036](../archived/TASK-036.md) | Produce all five web media families and their manifest | G4 | TASK-031, TASK-032, TASK-033, TASK-034, TASK-035 | Done |
 | [TASK-037](../archived/TASK-037.md) | Build the local web showcase and reusable resource player | G4 | TASK-036 | Done |
 | [TASK-038](../archived/TASK-038.md) | Validate web resources and deliver the G4 integration kit | G4 | TASK-037 | Done |
-| [TASK-039](../active/TASK-039.md) | Define shared studio views and model contracts | G5 | None | In progress |
+| [TASK-039](../archived/TASK-039.md) | Define shared studio views and model contracts | G5 | None | Done |
 | [TASK-040](../archived/TASK-040.md) | Separate avatar preparation from selection commit | G5 | TASK-039 | Done |
 | [TASK-041](../archived/TASK-041.md) | Implement the local model repository | G5 | TASK-039 | Done |
 | [TASK-042](../archived/TASK-042.md) | Inspect VRM structure capabilities and terms | G5 | TASK-040 | Done |
-| [TASK-043](../active/TASK-043.md) | Build the import preview and save flow | G5 | TASK-041, TASK-042 | In progress |
+| [TASK-043](../archived/TASK-043.md) | Build the import preview and save flow | G5 | TASK-041, TASK-042 | Done |
 | [TASK-044](../archived/TASK-044.md) | Commit model selection and report output state | G5 | TASK-040, TASK-041 | Done |
-| [TASK-045](../active/TASK-045.md) | Build library cards and entry management | G5 | TASK-043, TASK-044 | In progress |
+| [TASK-045](../archived/TASK-045.md) | Build library cards and entry management | G5 | TASK-043, TASK-044 | Done |
 | [TASK-046](../archived/TASK-046.md) | Implement original export and portable backups | G5 | TASK-041, TASK-042 | Done |
 | [TASK-047](../active/TASK-047.md) | Verify library recovery performance and appearance | G5 | TASK-045, TASK-046 | In progress |
 | [TASK-048](../active/TASK-048.md) | Deliver the library guide and G5 evidence | G5 | TASK-047 | In progress |
 | [TASK-049](../archived/TASK-049.md) | Add task diagnostic envelopes and timing | G6 | None | Done |
 | [TASK-050](../archived/TASK-050.md) | Expose solver rejection reasons without behavior changes | G6 | TASK-049 | Done |
-| [TASK-051](../active/TASK-051.md) | Build the matched camera overlay and live controls | G6 | TASK-039, TASK-049, TASK-050 | In progress |
+| [TASK-051](../archived/TASK-051.md) | Build the matched camera overlay and live controls | G6 | TASK-039, TASK-049, TASK-050 | Done |
 | [TASK-052](../archived/TASK-052.md) | Build estimated body and hand views | G6 | TASK-051 | Done |
 | [TASK-053](../archived/TASK-053.md) | Implement bounded traces and deterministic replay | G6 | TASK-049, TASK-050 | Done |
 | [TASK-054](../archived/TASK-054.md) | Compare canonical motion with both avatars | G6 | TASK-040, TASK-050, TASK-052, TASK-053 | Done |
@@ -120,6 +121,12 @@ TASK-027's training is conditional: close with evidence that an existing voice f
 | [TASK-060](../active/TASK-060.md) | Verify the combined studio and deliver G6 | G6 | TASK-048, TASK-059 | In progress |
 
 ## New work dependencies
+
+| Task | Title | Goal | Dependencies | Status |
+| --- | --- | --- | --- | --- |
+| [TASK-061](TASK-061.md) | Complete human tests for studio acceptance | G2, G3, G5, G6 | TASK-055 before physical diagnosis | Ready |
+
+TASK-061 collects human tests. Existing acceptance requirements remain in their original tasks.
 
 - G5: 039 → 040 + 041; 040 → 042; 041 + 042 → 043 + 046; 040 + 041 → 044.
 - G5 delivery: 043 + 044 → 045; 045 + 046 → 047 → 048.

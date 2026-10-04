@@ -1,10 +1,10 @@
 {
-  "date": "2026-10-04T12:56:04Z",
+  "date": "2026-10-04T16:05:52Z",
   "question": "Is any ticked acceptance criterion claiming a physical, remote or subjective check that was never performed?",
   "readOnly": true,
-  "tasksScanned": 65,
-  "criteriaTotal": 302,
-  "criteriaTicked": 186,
+  "tasksScanned": 66,
+  "criteriaTotal": 311,
+  "criteriaTicked": 201,
   "ticksMentioningPhysicalWork": [
     {
       "task": "TASK-025",

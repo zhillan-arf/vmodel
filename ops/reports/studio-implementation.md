@@ -2,6 +2,16 @@
 
 Date: 2026-10-04. Scope: P04 and P05. Status: implementation in progress; release acceptance remains open.
 
+The [Windows continuation](windows-continuation.md) supplies the current laptop results.
+Earlier Linux measurements below remain historical evidence.
+TASK-061 collects human tests. Physical diagnosis and correction acceptance remain open.
+
+Windows verification covers 310 unit tests, the production build, and the original 37 checks plus the new combined interaction test.
+Installed Chrome and Edge pass the software cases and model memory limits.
+The controlled inspector comparisons meet the required speed and age limits.
+TASK-039, TASK-043, TASK-045, and TASK-051 are complete for their software scope.
+Their task files identify the human checks transferred to TASK-061.
+
 ## Implemented changes
 
 - Shared Studio, Library, and Tracking navigation preserves the application instances.

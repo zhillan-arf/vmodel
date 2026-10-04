@@ -1,13 +1,16 @@
 # TASK-051 implementation evidence
 
-Date: 2026-10-04. Status: In progress.
+Date: 2026-10-04. Status: Done for software checks.
 
-Matched observations, joint controls, and inspector pause are implemented. Browser coordinate checks now pass. Physical-camera checks remain open. Live-output checks pass with simulated camera input.
+Installed Chrome and Edge pass the automated checks for this task.
+[TASK-061](../tasks/backlog/TASK-061.md) owns the transferred human checks.
+The release tasks retain their acceptance requirements.
+See [the Windows record](windows-continuation.md).
 
 See the [shared implementation record](studio-implementation.md) for files, commands, results, requirement mapping, and remaining checks.
 See the [browser results](studio-features-smoke.json) for synthetic test results.
 
-This record does not close the task acceptance criteria.
+Software acceptance is complete. The sections below retain earlier implementation evidence.
 
 ## Browser coordinates and labels
 
