@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-04",
+  "blender": "5.2.2 LTS",
+  "source": "ops/resources/ENE/ENE Cyber legs ver.pmx",
+  "sourceSha256": "226fe9075f25c7dd2e6474fdd6acb77ff71c45900fb2d5c8794e08647aa9dbe4",
+  "vrm": "assets/avatars/ene.vrm",
+  "vrmSha256": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+  "bytes": 87635472,
+  "commands": [
+    "blender --background --factory-startup --python-exit-code 1 --python scripts/import_ene.py",
+    "blender --background --factory-startup --python-exit-code 1 --python scripts/export_ene.py"
+  ],
+  "addons": [
+    {
+      "repo": "MMD-Blender/blender_mmd_tools",
+      "version": "v4.5.14",
+      "sha256": "ed3b78184ae9862be0df04e2e147803d011ad067edd8c31029c92fb719e19a6f"
+    },
+    {
+      "repo": "saturday06/VRM-Addon-for-Blender",
+      "version": "v4.7.1",
+      "sha256": "1fba87c3c6b2f995120f76c023bb11ab108b0a4a276872b4c10b20fae73e65ca"
+    }
+  ],
+  "inspection": {
+    "geometryBytes": 74248248,
+    "textureBytes": 135636000,
+    "pixels": 25431750,
+    "vrmVersion": "1"
+  },
+  "limits": [
+    "New Linux rebuild; not the earlier accepted laptop artifact.",
+    "Physical movement and human appearance acceptance remain open."
+  ],
+  "evidenceDirectory": "ops/reports/local/ene-rebuild",
+  "browserSelectionChecks": "ops/reports/local/model-selection-smoke.json",
+  "browserSelectionPassed": true
+}

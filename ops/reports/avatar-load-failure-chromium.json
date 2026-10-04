@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-04T12:27:19.079Z",
+  "passed": true,
+  "status": "complete",
+  "question": "Does an unusable avatar file produce a message a beginner can act on, leave the app working, and recover?",
+  "obsInvolved": false,
+  "physicalMedia": false,
+  "cases": [
+    {
+      "name": "not-a-model",
+      "description": "A text file renamed to .vrm.",
+      "message": "Import failed: Error: Invalid GLB header or declared length.. Select another file or retry.",
+      "avatarRetained": true,
+      "stillRendering": true,
+      "namesAnAction": true,
+      "looksLikeRawError": false
+    },
+    {
+      "name": "empty",
+      "description": "An empty file.",
+      "message": "Import failed: Error: VRM size must be at most 150 MiB.. Select another file or retry.",
+      "avatarRetained": true,
+      "stillRendering": true,
+      "namesAnAction": true,
+      "looksLikeRawError": false
+    },
+    {
+      "name": "truncated-gltf",
+      "description": "A glTF header with the body cut off.",
+      "message": "Import failed: Error: Invalid GLB header or declared length.. Select another file or retry.",
+      "avatarRetained": true,
+      "stillRendering": true,
+      "namesAnAction": true,
+      "looksLikeRawError": false
+    }
+  ],
+  "limits": [
+    "Three malformed inputs, not an exhaustive corpus of broken VRM files.",
+    "Judges whether the message names an action, not whether the wording is ideal.",
+    "Installed Chromium checks the built bundle. This is not Windows Chrome or Edge acceptance."
+  ],
+  "browser": "153.0.8010.12",
+  "browserChannel": "chromium",
+  "goodAvatarId": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+  "recoveredAfterFailures": true,
+  "pageErrors": [],
+  "checks": {
+    "everyFailureRetainedTheAvatar": true,
+    "everyFailureKeptRendering": true,
+    "everyMessageNamesAnAction": true,
+    "noRawExceptionText": true,
+    "recoveredAfterFailures": true,
+    "noPageErrors": true
+  },
+  "buildAssets": {
+    "index-BLlrnARm.js": "5b45d2a1ec016eed45acd8d2b4bcd8cd0bc7dbddc726edbfcbf15b68f3ca6561",
+    "tracking.worker-B8_2DjGm.js": "c69d02081206a79ff6d6928376b159e19b08b28b84fb81b3cc0593be3f364c15",
+    "vrm-inspection.worker-DbE1AvlA.js": "746343e2b405af7d8099ea63931e490692001ef447b7efd44a0ea8c18b7852e3"
+  }
+}

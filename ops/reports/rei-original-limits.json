@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-10-04T09:53:44.896Z",
+  "browser": "153.0.8010.12",
+  "status": "failed",
+  "sourceHash": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+  "bytes": 55715860,
+  "sourceResources": {
+    "images": 43,
+    "decodedPixels": 145752064,
+    "estimatedTextureBytes": 777344342
+  },
+  "error": "Error: page.evaluate: Error: Decoded textures exceed the pixel limit.\n    at worker.onmessage (http://127.0.0.1:33077/src/model-repository.ts:41:13)",
+  "limits": {
+    "decodedPixels": 67108864,
+    "combinedBytes": 536870912
+  },
+  "consequence": "Rei cannot pass the current library preflight. Graphics checks did not run."
+}

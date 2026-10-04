@@ -1,52 +1,14 @@
 {
-  "date": "2026-09-13T12:30:43.611Z",
-  "passed": true,
-  "status": "complete",
+  "date": "2026-10-04T12:20:25.947Z",
+  "passed": false,
+  "status": "failed",
   "question": "Does an unusable avatar file produce a message a beginner can act on, leave the app working, and recover?",
   "obsInvolved": false,
   "physicalMedia": false,
-  "cases": [
-    {
-      "name": "not-a-model",
-      "description": "A text file renamed to .vrm.",
-      "message": "Select a VRM avatar. PMX needs conversion; VMD is animation data.",
-      "avatarRetained": true,
-      "stillRendering": true,
-      "namesAnAction": true,
-      "looksLikeRawError": false
-    },
-    {
-      "name": "empty",
-      "description": "An empty file.",
-      "message": "Select a VRM avatar. PMX needs conversion; VMD is animation data.",
-      "avatarRetained": true,
-      "stillRendering": true,
-      "namesAnAction": true,
-      "looksLikeRawError": false
-    },
-    {
-      "name": "truncated-gltf",
-      "description": "A glTF header with the body cut off.",
-      "message": "This file could not be read as a VRM avatar. It may be incomplete, or not a VRM at all. Use Load another VRM to choose a different file.",
-      "avatarRetained": true,
-      "stillRendering": true,
-      "namesAnAction": true,
-      "looksLikeRawError": false
-    }
-  ],
+  "cases": [],
   "limits": [
     "Three malformed inputs, not an exhaustive corpus of broken VRM files.",
     "Judges whether the message names an action, not whether the wording is ideal."
   ],
-  "goodAvatarId": "3657b97928638e7ada5f6639141fb63f555912049a2c6ec217851001e322cbcb",
-  "recoveredAfterFailures": true,
-  "pageErrors": [],
-  "checks": {
-    "everyFailureRetainedTheAvatar": true,
-    "everyFailureKeptRendering": true,
-    "everyMessageNamesAnAction": true,
-    "noRawExceptionText": true,
-    "recoveredAfterFailures": true,
-    "noPageErrors": true
-  }
+  "error": "browserType.launch: Chromium distribution 'chrome' is not found at /opt/google/chrome/chrome\nRun \"npx playwright install chrome\"\n    at /home/zhillan/misc/vmodel/scripts/avatar_load_failure_smoke.mjs:38:28"
 }

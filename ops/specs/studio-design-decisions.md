@@ -74,3 +74,15 @@ No product or architecture decision awaits a user answer. Physical evidence is s
 | Import exceeds the specified resource ceiling. | TASK-047 | Reject the file with the measured limit and recovery text. | Do not raise limits automatically. |
 
 Any later design change must name the affected decision, requirement, evidence, and task. A failed experiment is useful evidence. It is not permission to claim an unmet acceptance result.
+
+## D08 revision: required Rei compatibility
+
+Date: 2026-10-04. Requirements: L04 and L13. Tasks: TASK-042 and TASK-047.
+The unchanged Rei model exceeds the original pixel and combined ceilings.
+Its measured estimates are 145,752,064 pixels and 797,235,598 resource bytes.
+Select fixed ceilings of 201,326,592 pixels and 1,024 MiB combined resources.
+All other ceilings remain unchanged. Files cannot raise these ceilings automatically.
+Rei passes browser preparation with these ceilings and retains its original hash.
+The [original rejection](../reports/rei-original-limits.json) and [revised check](../reports/rei-library-smoke.json) provide evidence.
+This revision preserves original model bytes and terms. It does not establish target-laptop memory capacity.
+TASK-047 must still measure process memory before release acceptance.

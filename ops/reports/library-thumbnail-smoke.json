@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-10-04T12:38:11.468Z",
+  "browser": "153.0.8010.12",
+  "manifest": {
+    "ene": {
+      "modelHash": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+      "rendererHash": "b7b706ae82af12b76c73b1f88ad351ba45f63eedf87f7ff8c17224f857dd2adb",
+      "thumbnailHash": "7cb4693df71b0b42f4b3989b1acfebdf1f1ffa828d565e0e22a6450dc7ed2cfd",
+      "width": 320,
+      "height": 320
+    },
+    "rei": {
+      "modelHash": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+      "rendererHash": "b7b706ae82af12b76c73b1f88ad351ba45f63eedf87f7ff8c17224f857dd2adb",
+      "thumbnailHash": "06e185ef74e0f38e34d1a8e94f6f51e8ea41d5ba7648a9754b3390d9e46fbb72",
+      "width": 320,
+      "height": 320
+    }
+  },
+  "images": [
+    {
+      "entry": "ene",
+      "width": 320,
+      "height": 320,
+      "foreground": 15010,
+      "minY": 26,
+      "maxY": 290
+    },
+    {
+      "entry": "rei",
+      "width": 320,
+      "height": 320,
+      "foreground": 12179,
+      "minY": 28,
+      "maxY": 297
+    }
+  ],
+  "layouts": [
+    {
+      "width": 390,
+      "overflow": false,
+      "squares": [
+        true,
+        true
+      ]
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "squares": [
+        true,
+        true
+      ]
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "squares": [
+        true,
+        true
+      ]
+    }
+  ],
+  "missingImageFallback": true,
+  "statusKeepsControlsStable": true,
+  "statusKeyboardScrollAtScaleTwo": true,
+  "errors": [],
+  "limits": [
+    "Actual bundled models. No human visual acceptance."
+  ]
+}

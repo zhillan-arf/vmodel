@@ -1,0 +1,256 @@
+{
+  "visualStates": [
+    {
+      "state": "empty",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/reports/local/visual-states/library/empty-390.png",
+      "sha256": "75565a574d3e040787aabb2f5c4e20e2e74c0a79516622f8f3f9aa4c03f3cef1",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "empty",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/reports/local/visual-states/library/empty-768.png",
+      "sha256": "a99a263e33b8f8574bcfb9c2be30e8d529c2312ab86207daa18e53045f1067a8",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "empty",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/reports/local/visual-states/library/empty-1440.png",
+      "sha256": "30e3c52f727821c31b33c6f10ca0ae163430612040438a9aaeb400409bb2fd9d",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "inspection-error",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/reports/local/visual-states/library/inspection-error-390.png",
+      "sha256": "a28564190c60abfd411035eca8230a626ec2ad636c0ef8f9d3c2b746c97a152d",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "inspection-error",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/reports/local/visual-states/library/inspection-error-768.png",
+      "sha256": "7ec403ed3bb41a9047274dddf9515080cd3fff16f536ac92745cba5c1a1e27a7",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "inspection-error",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/reports/local/visual-states/library/inspection-error-1440.png",
+      "sha256": "b2ab6fda450518cde1e326e390ea67c7f54d919276842cce406a329e6e4de359",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "preview",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/reports/local/visual-states/library/preview-390.png",
+      "sha256": "b6abbd2427456703fb252bb3bc657bdba03db1db20bb7e51c990bb3bce8c3574",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "preview",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/reports/local/visual-states/library/preview-768.png",
+      "sha256": "a5568847cf4524bded9164af934635e3e9db47150343694c0c4d7a8e4ff493d9",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "preview",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/reports/local/visual-states/library/preview-1440.png",
+      "sha256": "2d24a586c3b7c8b6c0bf7a140fa040bd19fc2033c7150d7248f810e1d9c7d766",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "terms-conflict",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/reports/local/visual-states/library/terms-conflict-390.png",
+      "sha256": "7aeb8c20a1ab22b96c5748a41173d908667d3b8c297c56f92656aeefe161a9a7",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "terms-conflict",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/reports/local/visual-states/library/terms-conflict-768.png",
+      "sha256": "f3d943d45e395a20cd459193a7c141bdcb2fa77172c9798e334bbaca85833d2b",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "terms-conflict",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/reports/local/visual-states/library/terms-conflict-1440.png",
+      "sha256": "4ab4ca1b4e47b404345c1b9fdcb7058bb716419ad632d66f1d0ec456637153ae",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "quota-failure",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/reports/local/visual-states/library/quota-failure-390.png",
+      "sha256": "583b81bc6526af5c8001a3155df1df1dda0295298411ba7989bbb53bafaa20fc",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "quota-failure",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/reports/local/visual-states/library/quota-failure-768.png",
+      "sha256": "45dacd847c979b9a9a69f5784224c4b4610fb0c20526eb30785ca36bf7733e00",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "quota-failure",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/reports/local/visual-states/library/quota-failure-1440.png",
+      "sha256": "c1978ccecd74edb1d58d7c3e3852495ff4612177bc8cfa20c6b1ca843d07dde4",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "saved-entry",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/reports/local/visual-states/library/saved-entry-390.png",
+      "sha256": "5b59f546f1fa045b79519af6b9c248ca8a43a713d71373031dd982757c171ef8",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "saved-entry",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/reports/local/visual-states/library/saved-entry-768.png",
+      "sha256": "0d6b18e262ded9ddcca6e5405bccb44fdff4c59691d5bf1b521c54017e567f77",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "saved-entry",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/reports/local/visual-states/library/saved-entry-1440.png",
+      "sha256": "703ccfebbf2199be06752b5be03ecab204b61f13c69a5e80f00098cb0475fbb5",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "duplicate",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/reports/local/visual-states/library/duplicate-390.png",
+      "sha256": "77528f23e21877af6dfc86b91bc224dd01510c72f95b54d71f32114cb67f7338",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "duplicate",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/reports/local/visual-states/library/duplicate-768.png",
+      "sha256": "0aee80b6f53a394afcde27b0fa4a8bb7a6a044b273adb649d70d488905ae0a9d",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "duplicate",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/reports/local/visual-states/library/duplicate-1440.png",
+      "sha256": "668d9fbea87fcdec384c8e8c6481fdf9f9ab17f6ab6b07401ca55ee0ecbe5ee8",
+      "horizontalOverflow": false
+    }
+  ],
+  "restoreFocusReturned": true,
+  "lateTermsFailureIgnored": true,
+  "versions": {
+    "embedded": "embedded-1",
+    "supplied": "package-2",
+    "sameMetadata": true,
+    "sameTerms": true
+  },
+  "generatedAt": "2026-10-04T12:41:45.938Z",
+  "browser": "153.0.8010.12",
+  "checks": [
+    {
+      "name": "external-buffer",
+      "rejectedBeforeGraphics": true,
+      "message": "Import failed: Error: External or invalid buffer.. Select another file or retry."
+    },
+    {
+      "name": "external-image",
+      "rejectedBeforeGraphics": true,
+      "message": "Import failed: Error: External image links are not allowed.. Select another file or retry."
+    },
+    {
+      "name": "script-image",
+      "rejectedBeforeGraphics": true,
+      "message": "Import failed: Error: External image links are not allowed.. Select another file or retry."
+    },
+    {
+      "name": "required-extension",
+      "rejectedBeforeGraphics": true,
+      "message": "Import failed: Error: Unsupported required extension: VMODEL_unknown_extension. Select another file or retry."
+    }
+  ],
+  "plainText": {
+    "executed": false,
+    "elements": 0,
+    "unsafeLinks": 0
+  },
+  "externalRequests": [],
+  "errors": [],
+  "limits": [
+    "Synthetic metadata and terms. External requests are blocked and counted by the test."
+  ]
+}

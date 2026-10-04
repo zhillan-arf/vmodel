@@ -1,0 +1,160 @@
+{
+  "generatedAt": "2026-10-04T12:34:04.208Z",
+  "browser": "153.0.8010.12",
+  "checks": {
+    "graphics": {
+      "emptyBeforeCommit": true,
+      "failed": true,
+      "preserved": true,
+      "lateRejected": true,
+      "disposed": true
+    },
+    "matchedImagesAndPause": {
+      "body": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "face": [
+        0,
+        255,
+        0,
+        255
+      ],
+      "paused": [
+        0,
+        255,
+        0,
+        255
+      ],
+      "pausedDemand": "off",
+      "closedDemand": "off"
+    },
+    "database": {
+      "atomic": true,
+      "duplicateRace": true,
+      "originalExport": true,
+      "restore": true,
+      "corruptRejected": true,
+      "rollback": true,
+      "cancellation": true,
+      "quotaAtomic": true,
+      "corruptStorageRejected": true,
+      "termsPreserved": true
+    },
+    "freshProfileSyntheticRestore": true,
+    "restoreSummary": {
+      "originalTerms": true,
+      "invalidReplacementClearsPlan": true
+    },
+    "viewports": [
+      390,
+      768,
+      1440
+    ],
+    "canonicalWithoutModel": true,
+    "pause": true,
+    "invalidImport": true,
+    "saveDoesNotSelect": true,
+    "explicitSelection": true,
+    "outputIsolation": true,
+    "syntheticSelections": {
+      "warmup": 5,
+      "measured": 20,
+      "resources": [
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        },
+        {
+          "geometries": 1,
+          "textures": 1
+        }
+      ]
+    },
+    "failedImportPreservesStudioAndOutput": true,
+    "cancelPreviewPreservesSelection": true,
+    "temporaryLibraryStatus": true,
+    "temporarySelectionDoesNotPersist": true,
+    "reloadRestoresSavedSelection": true
+  },
+  "errors": [],
+  "limits": [
+    "Synthetic fixture only. Bundled model requests receive a test 404 response.",
+    "Actual-model acceptance is outside this synthetic check.",
+    "No physical camera test."
+  ]
+}

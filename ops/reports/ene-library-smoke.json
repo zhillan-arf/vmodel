@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-10-04T12:16:42.339Z",
+  "browser": "153.0.8010.12",
+  "sourceHash": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+  "hash": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+  "bytes": 87635472,
+  "inspectionMs": 540.5,
+  "preparationMs": 596.3000001907349,
+  "resources": {
+    "geometryBytes": 74248248,
+    "textureBytes": 135636000,
+    "pixels": 25431750
+  },
+  "graphicsResources": {
+    "geometries": 49,
+    "textures": 69
+  },
+  "expressionValues": {
+    "happy": {
+      "happy": 0.7499999999994815,
+      "surprised": 0
+    },
+    "surprised": {
+      "happy": 5.185800080201559e-13,
+      "surprised": 0.7499999999994815
+    },
+    "neutral": {
+      "happy": 3.5856696629116087e-25,
+      "surprised": 5.185800080201559e-13
+    }
+  },
+  "capabilities": {
+    "validationVersion": 1,
+    "vrmVersion": "1",
+    "expressions": [
+      "aa",
+      "angry",
+      "blink",
+      "blinkLeft",
+      "blinkRight",
+      "ee",
+      "happy",
+      "ih",
+      "lookDown",
+      "lookLeft",
+      "lookRight",
+      "lookUp",
+      "neutral",
+      "oh",
+      "ou",
+      "relaxed",
+      "sad",
+      "surprised"
+    ],
+    "aliases": {},
+    "missingOptionalBones": [
+      "upperChest"
+    ],
+    "springs": true,
+    "warnings": []
+  },
+  "emptyBeforeCommit": true,
+  "handsBelowShoulders": [
+    true,
+    true
+  ],
+  "failedCandidateRejected": true,
+  "previousModelRetained": true,
+  "canceledCommitRejected": true,
+  "canceledCandidateDisposed": true,
+  "resolvedHash": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+  "originalExportHash": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+  "termsHash": "62ccff079e89a2e8e1ec073aefcc3c57da37012742495021ccc79abd490dbf20",
+  "disposedResources": {
+    "geometries": 0,
+    "textures": 0
+  },
+  "errors": [],
+  "externalRequests": [],
+  "limits": [
+    "Linux Chromium only. No physical camera or target-laptop acceptance.",
+    "Sequential single-model check; no physical comparison."
+  ]
+}

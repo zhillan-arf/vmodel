@@ -1,33 +1,66 @@
 {
-  "date": "2026-09-13T12:30:42.972Z",
+  "date": "2026-10-04T12:54:12.191Z",
   "scope": "Static served build only; does not scan unrelated files or certify future changes.",
   "checks": {
     "onlyDesignatedFiles": true,
     "avatarMatchesPreparedArtifact": true,
+    "thumbnailHashesMatch": true,
     "runtimeHashesMatch": true,
     "noticesPresent": true
   },
   "runtimePackages": 16,
   "files": [
     {
-      "path": "assets/index-DUB0lr6k.css",
-      "bytes": 5265
+      "path": "assets/index-DcEWyb9r.js",
+      "bytes": 1073208
     },
     {
-      "path": "assets/index-DxtK6Vzr.js",
-      "bytes": 793604
+      "path": "assets/index-DIiSsBGA.css",
+      "bytes": 9824
     },
     {
-      "path": "assets/tracking.worker-a-4NTgbs.js",
-      "bytes": 155643
+      "path": "assets/tracking.worker-B8_2DjGm.js",
+      "bytes": 158815
+    },
+    {
+      "path": "assets/vrm-inspection.worker-DbE1AvlA.js",
+      "bytes": 7977
     },
     {
       "path": "avatars/ene.vrm",
-      "bytes": 87635112
+      "bytes": 87635472
+    },
+    {
+      "path": "avatars/rei-notices/log.txt",
+      "bytes": 588
+    },
+    {
+      "path": "avatars/rei-notices/provenance.json",
+      "bytes": 701
+    },
+    {
+      "path": "avatars/rei-notices/readme.txt",
+      "bytes": 2998
+    },
+    {
+      "path": "avatars/rei.vrm",
+      "bytes": 55715860
+    },
+    {
+      "path": "avatars/thumbnails/07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735.png",
+      "bytes": 36347
+    },
+    {
+      "path": "avatars/thumbnails/dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc.png",
+      "bytes": 36341
+    },
+    {
+      "path": "avatars/thumbnails/manifest.json",
+      "bytes": 631
     },
     {
       "path": "index.html",
-      "bytes": 739
+      "bytes": 725
     },
     {
       "path": "notices/Apache-2.0.txt",

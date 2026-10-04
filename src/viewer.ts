@@ -3,6 +3,12 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { VRM, VRMLoaderPlugin, VRMUtils } from '@pixiv/three-vrm';
 import type { VRMSpringBoneJoint } from '@pixiv/three-vrm';
 import type { StudioSettings } from './types';
+import { Retargeter } from './retarget';
+import { AvatarResources } from './avatar-resources';
+import type { CapabilityReport } from './model-types';
+import { requiredBones } from './vrm-inspection';
+
+export interface PreparedAvatar { capabilities: CapabilityReport; vrm: VRM; retarget: Retargeter; generation: number; disposed: boolean; committed: boolean }
 import { compositionSize, fitComposition } from './composition';
 
 export class AvatarViewer {
@@ -11,6 +17,8 @@ export class AvatarViewer {
   readonly camera = new THREE.PerspectiveCamera(28, 1, 0.05, 30);
   vrm: VRM | null = null;
   private generation = 0;
+  private resources = new WeakMap<THREE.Object3D,AvatarResources>();
+  private releaseScene(scene:THREE.Object3D){const resources=this.resources.get(scene);if(resources)resources.dispose(scene);else disposeAvatarScene(scene);}
   private center = new THREE.Vector3(0, 0.9, 0);
   private height = 1.7;
   private settings: StudioSettings;
@@ -24,10 +32,12 @@ export class AvatarViewer {
     this.renderer.toneMapping = THREE.NoToneMapping;
     container.append(this.renderer.domElement);
     this.renderer.domElement.addEventListener('webglcontextlost', event => {
+      if(this.disposed)return;
       event.preventDefault(); this.contextLost = true;
       container.dispatchEvent(new CustomEvent('vmodel-renderer-state', { detail: 'Graphics paused. Waiting for the browser to restore the display.' }));
     });
     this.renderer.domElement.addEventListener('webglcontextrestored', () => {
+      if(this.disposed)return;
       this.contextLost = false; this.resize();
       container.dispatchEvent(new CustomEvent('vmodel-renderer-state', { detail: 'Graphics restored. The avatar is ready again.' }));
     });
@@ -37,33 +47,84 @@ export class AvatarViewer {
     this.observer = new ResizeObserver(() => this.resize()); this.observer.observe(container);
     this.configure(settings);
   }
-  cancelPendingLoad() { this.generation++; }
-  async load(blob: Blob): Promise<VRM> {
-    const generation = ++this.generation;
+  private disposed = false;
+  private ownedCandidates = new WeakSet<PreparedAvatar>();
+  private pendingCandidates = new Set<PreparedAvatar>();
+  cancelPendingLoad() {
+    this.generation++;
+    for(const candidate of this.pendingCandidates)this.disposePreparedAvatar(candidate);
+  }
+  async prepareAvatar(blob: Blob, signal?: AbortSignal): Promise<PreparedAvatar> {
+    signal?.throwIfAborted();
+    if(this.disposed)throw new Error('Viewer is closed.');
+    this.cancelPendingLoad();
+    const generation = this.generation;
     const header = new Uint8Array(await blob.slice(0, 4).arrayBuffer());
     if (String.fromCharCode(...header) !== 'glTF') throw new Error('Select a VRM avatar. PMX needs conversion; VMD is animation data.');
-    const loader = new GLTFLoader(); loader.register(parser => new VRMLoaderPlugin(parser));
+    const resources=new AvatarResources();
+    const loader = new GLTFLoader(); loader.register(parser => {
+      resources.watch(parser);
+      const plugin=new VRMLoaderPlugin(parser),afterRoot=plugin.afterRoot.bind(plugin);
+      plugin.afterRoot=async result=>{try{await afterRoot(result);}finally{for(const scene of result.scenes)resources.track(scene);}};
+      return plugin;
+    });
     // Embedded resources only: the selected model must not fetch arbitrary external resources.
     loader.manager.setURLModifier(url => {
       if (/^(blob:|data:)/.test(url)) return url;
       throw new Error('Avatar contains external resources. Export a VRM with embedded textures.');
     });
-    const gltf = await loader.parseAsync(await blob.arrayBuffer(), '');
+    try {
+    const bytes=await blob.arrayBuffer();signal?.throwIfAborted();
+    if(generation!==this.generation)throw new Error('Avatar load superseded.');
+    const gltf = await loader.parseAsync(bytes, '');
+    resources.track(gltf.scene);
     const vrm = gltf.userData.vrm as VRM | undefined;
-    if (!vrm) { VRMUtils.deepDispose(gltf.scene); throw new Error('This file is glTF but has no supported VRM avatar data.'); }
-    const missing = (['hips','spine','head','leftUpperArm','rightUpperArm','leftLowerArm','rightLowerArm','leftHand','rightHand','leftUpperLeg','rightUpperLeg','leftLowerLeg','rightLowerLeg','leftFoot','rightFoot'] as const).filter(name => !vrm.humanoid.getNormalizedBoneNode(name));
-    if (missing.length) { VRMUtils.deepDispose(vrm.scene); throw new Error(`Avatar is missing required humanoid controls: ${missing.join(', ')}. Choose a bundled avatar or repair its VRM rig.`); }
-    if (generation !== this.generation) { VRMUtils.deepDispose(vrm.scene); throw new Error('Avatar load superseded.'); }
-    if (this.vrm) { this.scene.remove(this.vrm.scene); VRMUtils.deepDispose(this.vrm.scene); }
-    VRMUtils.rotateVRM0(vrm);
-    vrm.scene.traverse(obj => { obj.frustumCulled = false; });
-    this.vrm = vrm; this.scene.add(vrm.scene); vrm.update(0);
-    this.springs = [...vrm.springBoneManager?.joints ?? []].map(joint => ({ joint, stiffness: joint.settings.stiffness, dragForce: joint.settings.dragForce, gravityPower: joint.settings.gravityPower }));
-    this.configureSprings();
-    const bounds = new THREE.Box3().setFromObject(vrm.scene);
-    bounds.getCenter(this.center); this.height = bounds.max.y - bounds.min.y;
-    this.resize();
+    if (!vrm) throw new Error('This file is glTF but has no supported VRM avatar data.');
+    resources.track(vrm.scene);this.resources.set(vrm.scene,resources);
+    const missing = requiredBones.filter(name => !vrm.humanoid.getNormalizedBoneNode(name));
+    if (missing.length) throw new Error(`Avatar is missing required humanoid controls: ${missing.join(', ')}. Choose a bundled avatar or repair its VRM rig.`);
+      signal?.throwIfAborted();
+      if (generation !== this.generation) throw new Error('Avatar load superseded.');
+      VRMUtils.rotateVRM0(vrm);
+      vrm.scene.traverse(obj => { obj.frustumCulled = false; });
+      vrm.update(0);
+      const bounds = new THREE.Box3().setFromObject(vrm.scene);
+      if(bounds.isEmpty()||!Number.isFinite(bounds.max.y-bounds.min.y)||bounds.max.y-bounds.min.y<=0)throw new Error('The model has no visible geometry.');
+      const retarget = new Retargeter(vrm);
+      const expressions=Object.keys(vrm.expressionManager?.expressionMap??{});
+      const aliases:Record<string,string>={};if(!expressions.includes('surprised')&&expressions.includes('びっくり'))aliases.surprised='びっくり';
+      const capabilities:CapabilityReport={validationVersion:1,vrmVersion:vrm.meta.metaVersion==='1'?'1':'0',expressions,aliases,missingOptionalBones:(['neck','chest','upperChest','leftToes','rightToes']as const).filter(name=>!vrm.humanoid.getNormalizedBoneNode(name)),springs:!!vrm.springBoneManager,warnings:[]};
+      const prepared={ capabilities,vrm, retarget, generation, disposed: false, committed: false };
+      this.ownedCandidates.add(prepared);this.pendingCandidates.add(prepared);
+      return prepared;
+    } catch (error) { resources.dispose(); throw error; }
+  }
+  disposePreparedAvatar(prepared: PreparedAvatar) {
+    if (!this.ownedCandidates.has(prepared) || prepared.disposed || prepared.committed) return;
+    prepared.disposed = true;this.pendingCandidates.delete(prepared);this.releaseScene(prepared.vrm.scene);
+  }
+  commitAvatar(prepared: PreparedAvatar): VRM {
+    if(!this.ownedCandidates.has(prepared))throw new Error('This model belongs to another viewer.');
+    if (prepared.disposed || prepared.committed || prepared.generation !== this.generation) {
+      this.disposePreparedAvatar(prepared); throw new Error('Avatar preparation is no longer current.');
+    }
+    const vrm = prepared.vrm, old = this.vrm;
+    const oldSprings=this.springs,oldCenter=this.center.clone(),oldHeight=this.height;
+    try {
+      this.vrm=vrm;this.scene.add(vrm.scene);
+      this.springs=[...vrm.springBoneManager?.joints??[]].map(joint=>({joint,stiffness:joint.settings.stiffness,dragForce:joint.settings.dragForce,gravityPower:joint.settings.gravityPower}));
+      this.configureSprings();
+      const bounds=new THREE.Box3().setFromObject(vrm.scene);bounds.getCenter(this.center);this.height=bounds.max.y-bounds.min.y;
+      this.resize();prepared.committed=true;this.pendingCandidates.delete(prepared);
+    }catch(error){
+      this.scene.remove(vrm.scene);this.vrm=old;this.springs=oldSprings;this.center.copy(oldCenter);this.height=oldHeight;
+      this.disposePreparedAvatar(prepared);throw error;
+    }
+    if(old){this.scene.remove(old.scene);this.releaseScene(old.scene);}
     return vrm;
+  }
+  async load(blob: Blob): Promise<VRM> {
+    return this.commitAvatar(await this.prepareAvatar(blob));
   }
   configure(settings: StudioSettings) {
     const changed = settings.springMotion !== this.settings.springMotion;
@@ -106,8 +167,11 @@ export class AvatarViewer {
     this.vrm?.update(Math.min(dt, 0.05)); if (!this.contextLost) this.renderer.render(this.scene, this.camera);
   }
   dispose() {
-    this.generation++; this.observer.disconnect();
-    if (this.vrm) VRMUtils.deepDispose(this.vrm.scene);
-    this.renderer.dispose(); this.renderer.domElement.remove();
+    if(this.disposed)return;this.disposed=true;
+    this.cancelPendingLoad(); this.observer.disconnect();
+    if (this.vrm) { this.scene.remove(this.vrm.scene);this.releaseScene(this.vrm.scene);this.vrm=null; }
+    this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();
   }
 }
+
+export function disposeAvatarScene(scene:THREE.Object3D){new AvatarResources().dispose(scene);}

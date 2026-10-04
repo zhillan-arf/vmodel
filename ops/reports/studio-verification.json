@@ -1,0 +1,214 @@
+{
+  "date": "2026-10-04T12:21:07.714138+00:00",
+  "command": "npm run verify",
+  "passed": false,
+  "checks": [
+    {
+      "name": "unit tests",
+      "passed": true,
+      "seconds": 4.4
+    },
+    {
+      "name": "native avatar replay and baseline comparison",
+      "passed": true,
+      "seconds": 6.4
+    },
+    {
+      "name": "solver baseline comparison",
+      "passed": true,
+      "seconds": 2.5
+    },
+    {
+      "name": "production build and typecheck",
+      "passed": true,
+      "seconds": 23.8
+    },
+    {
+      "name": "synthetic library and inspector checks",
+      "passed": true,
+      "seconds": 58.3
+    },
+    {
+      "name": "bundled model navigation with live output",
+      "passed": true,
+      "seconds": 176.5
+    },
+    {
+      "name": "inspector pause with live output",
+      "passed": true,
+      "seconds": 32.3
+    },
+    {
+      "name": "tracking overlay coordinates and labels",
+      "passed": true,
+      "seconds": 9.2
+    },
+    {
+      "name": "import cancellation and timeout checks",
+      "passed": true,
+      "seconds": 68.7
+    },
+    {
+      "name": "pinned public VRM fixture",
+      "passed": true,
+      "seconds": 0.1
+    },
+    {
+      "name": "licensed VRM import check",
+      "passed": true,
+      "seconds": 6.0
+    },
+    {
+      "name": "import metadata and version checks",
+      "passed": true,
+      "seconds": 3.1
+    },
+    {
+      "name": "decoder failure cleanup",
+      "passed": true,
+      "seconds": 2.0
+    },
+    {
+      "name": "rebuilt Ene library checks",
+      "passed": true,
+      "seconds": 16.9
+    },
+    {
+      "name": "native Rei library checks",
+      "passed": true,
+      "seconds": 22.5
+    },
+    {
+      "name": "bundled library thumbnails",
+      "passed": true,
+      "seconds": 3.6
+    },
+    {
+      "name": "studio text contrast and scaled layout",
+      "passed": true,
+      "seconds": 8.6
+    },
+    {
+      "name": "library management across tabs",
+      "passed": true,
+      "seconds": 4.8
+    },
+    {
+      "name": "browser storage checks",
+      "passed": true,
+      "seconds": 11.0
+    },
+    {
+      "name": "output failure and recovery checks",
+      "passed": true,
+      "seconds": 25.7
+    },
+    {
+      "name": "replay isolation and video checks",
+      "passed": true,
+      "seconds": 15.3
+    },
+    {
+      "name": "installed tracking worker function checks",
+      "passed": true,
+      "seconds": 7.4
+    },
+    {
+      "name": "diagnostic camera recovery",
+      "passed": true,
+      "seconds": 98.6
+    },
+    {
+      "name": "recording lifecycle checks",
+      "passed": true,
+      "seconds": 2.0
+    },
+    {
+      "name": "runtime bundle audit",
+      "passed": true,
+      "seconds": 2.4
+    },
+    {
+      "name": "model selection and output synchronization",
+      "passed": false,
+      "seconds": 0.8
+    },
+    {
+      "name": "avatar load failure handling",
+      "passed": false,
+      "seconds": 0.8
+    },
+    {
+      "name": "beginner documentation",
+      "passed": false,
+      "seconds": 0.1
+    },
+    {
+      "name": "evidence reports readable",
+      "passed": true,
+      "seconds": 0.2
+    },
+    {
+      "name": "task register",
+      "passed": true,
+      "seconds": 0.1
+    },
+    {
+      "name": "acceptance claims",
+      "passed": false,
+      "seconds": 0.1
+    },
+    {
+      "name": "voice OBS route licences",
+      "passed": false,
+      "seconds": 0.0
+    },
+    {
+      "name": "voice service-down message",
+      "passed": false,
+      "seconds": 0.7
+    },
+    {
+      "name": "voice studio tests",
+      "passed": false,
+      "seconds": 0.0
+    },
+    {
+      "name": "voice paced LLVC tests",
+      "passed": false,
+      "seconds": 0.0
+    },
+    {
+      "name": "voice LLVC chunker tests",
+      "passed": false,
+      "seconds": 0.0
+    }
+  ],
+  "counts": {
+    "passed": 27,
+    "failed": 9
+  },
+  "followup": [
+    {
+      "command": "python scripts/audit_acceptance_claims.py",
+      "passed": true,
+      "change": "Reopened the physical-camera pause criterion. Simulated-camera evidence remains recorded."
+    },
+    {
+      "command": "node scripts/model_selection_smoke.mjs --chromium",
+      "passed": true,
+      "report": "model-selection-chromium.json"
+    },
+    {
+      "command": "node scripts/avatar_load_failure_smoke.mjs --chromium",
+      "passed": true,
+      "report": "avatar-load-failure-chromium.json"
+    }
+  ],
+  "limits": [
+    "Installed Google Chrome is unavailable. Two browser checks could not start.",
+    "The Windows voice environment is unavailable. Five voice checks could not run.",
+    "The documentation audit reports 135 missing links to earlier local evidence and assets.",
+    "No physical camera, target-laptop memory, Windows Chrome/Edge, or human acceptance was performed."
+  ]
+}

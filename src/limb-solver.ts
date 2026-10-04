@@ -1,4 +1,5 @@
 import { MathUtils, Matrix4, Quaternion, Vector3 } from 'three';
+import type { SolverReason } from './tracking-diagnostics';
 
 export interface LimbRest {
   /** Rest segment directions and bone rotations, all in the same world space. */
@@ -10,6 +11,7 @@ export interface LimbRest {
   bendNormal: Vector3;
 }
 export interface LimbOptions {
+  diagnostic?: (reason: SolverReason, value?: number, threshold?: number) => void;
   /** Last reliable world-space bend normal; it is projected onto the new upper axis. */
   previousNormal?: Vector3;
   /** Radians; defaults to 155 degrees. Zero denotes an extended limb. */
@@ -60,45 +62,51 @@ function transportedRestNormal(restDirection: Vector3, direction: Vector3, restN
  * bone lengths or translations. Apply returned rotations with parent-first world
  * smoothing. A null result should enter the caller's limb-loss fallback. */
 export function solveLimbWorld(start: Vector3, joint: Vector3, end: Vector3, rest: LimbRest, options: LimbOptions = {}): LimbSolution | null {
+  const reject = (reason:SolverReason,value?:number,threshold?:number) => { options.diagnostic?.(reason,value,threshold); return null; };
   const maxFlexion = options.maxFlexion ?? MathUtils.degToRad(155);
   const straightThreshold = options.straightThreshold ?? MathUtils.degToRad(6);
   const maxPlaneChange = options.maxPlaneChange ?? MathUtils.degToRad(120);
-  if (![start, joint, end, rest.upperDirection, rest.lowerDirection, rest.bendNormal].every(finiteVector)) return null;
-  if (options.previousNormal && !finiteVector(options.previousNormal)) return null;
-  if (![maxFlexion, straightThreshold, maxPlaneChange].every(Number.isFinite) || maxFlexion < 0 || maxFlexion >= Math.PI || straightThreshold < 0 || straightThreshold > Math.PI / 4 || maxPlaneChange < 0 || maxPlaneChange > Math.PI) return null;
+  if (![start, joint, end, rest.upperDirection, rest.lowerDirection, rest.bendNormal].every(finiteVector)) return reject('invalid_value');
+  if (options.previousNormal && !finiteVector(options.previousNormal)) return reject('invalid_value');
+  if (![maxFlexion, straightThreshold, maxPlaneChange].every(Number.isFinite)) return reject('invalid_parameter');
+  if(maxFlexion<0||maxFlexion>=Math.PI)return reject('invalid_parameter',maxFlexion,maxFlexion<0?0:Math.PI);
+  if(straightThreshold<0||straightThreshold>Math.PI/4)return reject('invalid_parameter',straightThreshold,straightThreshold<0?0:Math.PI/4);
+  if(maxPlaneChange<0||maxPlaneChange>Math.PI)return reject('invalid_parameter',maxPlaneChange,maxPlaneChange<0?0:Math.PI);
 
   const upper = unitVector(joint.clone().sub(start));
   const measuredLower = unitVector(end.clone().sub(joint));
   const restUpper = unitVector(rest.upperDirection), restLower = unitVector(rest.lowerDirection);
   const restUpperWorld = unitQuaternion(rest.upperWorld), restLowerWorld = unitQuaternion(rest.lowerWorld);
-  if (!upper || !measuredLower || !restUpper || !restLower || !restUpperWorld || !restLowerWorld) return null;
+  if (!upper || !measuredLower) return reject('degenerate_segment');
+  if (!restUpper || !restLower || !restUpperWorld || !restLowerWorld) return reject('invalid_rest');
   const restNormal = projectNormal(rest.bendNormal, restUpper);
-  if (!restNormal) return null;
+  if (!restNormal) return reject('invalid_rest');
 
   const measuredFlexion = Math.acos(MathUtils.clamp(upper.dot(measuredLower), -1, 1));
   // Almost fully folded observations have the same unstable plane problem as
   // straight ones, but describe an implausible elbow/knee target. Decay safely.
-  if (Math.PI - measuredFlexion < MathUtils.degToRad(2)) return null;
+  if (Math.PI - measuredFlexion < MathUtils.degToRad(2)) return reject('fully_folded',measuredFlexion,Math.PI-MathUtils.degToRad(2));
   const previous = options.previousNormal ? projectNormal(options.previousNormal, upper) : null;
   const fallback = previous ?? transportedRestNormal(restUpper, upper, restNormal);
-  if (!fallback) return null;
+  if (!fallback) return reject('invalid_rest');
 
   let planeNormal = fallback;
   if (measuredFlexion > straightThreshold) {
     const observed = unitVector(upper.clone().cross(measuredLower));
-    if (!observed) return null;
-    if (previous && Math.acos(MathUtils.clamp(previous.dot(observed), -1, 1)) > maxPlaneChange) return null;
+    if (!observed) return reject('degenerate_segment');
+    if (previous && Math.acos(MathUtils.clamp(previous.dot(observed), -1, 1)) > maxPlaneChange) return reject('plane_jump',Math.acos(MathUtils.clamp(previous.dot(observed),-1,1)),maxPlaneChange);
     planeNormal = observed;
   }
+  if(measuredFlexion>maxFlexion)options.diagnostic?.('clamped',measuredFlexion,maxFlexion);
   const flexion = Math.min(measuredFlexion, maxFlexion);
   // Reconstruction in the accepted plane enforces a hinge bend and preserves the
   // chosen normal when tiny straight-limb noise changes the raw cross-product sign.
   const lower = upper.clone().applyAxisAngle(planeNormal, flexion).normalize();
   const restUpperFrame = frameRotation(restUpper, restNormal), restLowerFrame = frameRotation(restLower, restNormal);
   const upperFrame = frameRotation(upper, planeNormal), lowerFrame = frameRotation(lower, planeNormal);
-  if (!restUpperFrame || !restLowerFrame || !upperFrame || !lowerFrame) return null;
+  if (!restUpperFrame || !restLowerFrame || !upperFrame || !lowerFrame) return reject('invalid_rest');
   const upperWorld = upperFrame.multiply(restUpperFrame.invert()).multiply(restUpperWorld).normalize();
   const lowerWorld = lowerFrame.multiply(restLowerFrame.invert()).multiply(restLowerWorld).normalize();
-  if (!unitQuaternion(upperWorld) || !unitQuaternion(lowerWorld)) return null;
+  if (!unitQuaternion(upperWorld) || !unitQuaternion(lowerWorld)) return reject('invalid_value');
   return { upperWorld, lowerWorld, planeNormal: planeNormal.clone(), flexion };
 }

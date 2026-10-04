@@ -4,13 +4,13 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { startIsolatedStudioServer } from './isolated-studio-server.mjs';
 
 const server = await startIsolatedStudioServer();
-const browser = await chromium.launch({ channel: 'chrome', headless: true });
+const browser = await chromium.launch({ ...(process.argv.includes('--chromium') ? {} : { channel: 'chrome' }), headless: true }).catch(async error => { await server.stop(); throw error; });
 const context = await browser.newContext();
 const page = await context.newPage();
 const errors = [], checks = {};
 context.on('page', child => child.on('pageerror', error => errors.push(error.message)));
 page.on('pageerror', error => errors.push(error.message));
-const ready = (target, name) => target.waitForFunction(name => window.__vmodel?.getState().label.startsWith(name), name, { timeout: 90000 });
+const ready = async (target, name) => { await target.waitForFunction(name => window.__vmodel?.getState().label.startsWith(name)&&(!document.querySelector('#status')||document.querySelector('#status').textContent.startsWith(name)&&document.querySelector('#status').textContent.includes('is ready')), name, { timeout: 90000 }); console.log(`Ready: ${name}`); };
 const idleHands = target => target.evaluate(() => {
     const { retarget, viewer, getState } = window.__vmodel;
     for (let i = 0; i < 120; i++) { retarget.update(null, getState().settings, 1 / 60, performance.timeOrigin + performance.now()); viewer.vrm.update(1 / 60); }
@@ -83,10 +83,17 @@ try {
   checks.delayedOlderFetchCannotReplaceLatest = true;
   await page.unroute('**/avatars/ene.vrm');
   await page.setInputFiles('#avatar-file', { name: 'invalid.vrm', mimeType: 'application/octet-stream', buffer: Buffer.from('invalid') });
-  await page.waitForFunction(() => document.querySelector('#status').textContent.includes('Select a VRM'));
+  await page.waitForFunction(() => document.querySelector('#library-message').textContent.includes('Import failed'));
   assert.equal(await page.evaluate(() => window.__vmodel.getState().avatarId), rei);
   checks.manualUploadFailurePreservesSelection = true;
   assert.deepEqual(errors, []);
-  await writeFile('ops/reports/local/model-selection-smoke.json', JSON.stringify({ checks, capabilities, errors }, null, 2));
+  await writeFile('ops/reports/local/model-selection-smoke.json', JSON.stringify({ generatedAt:new Date().toISOString(), browser:browser.version(), checks, capabilities, errors }, null, 2));
   console.log(JSON.stringify({ checks, capabilities, errors }));
+} catch (error) {
+  const pages=[];
+  for(const target of context.pages()){
+    try{pages.push(await target.evaluate(()=>({url:location.href,status:document.querySelector('#status')?.textContent,state:window.__vmodel?.getState(),loading:document.querySelector('#loading')?.textContent})));}catch{pages.push({closed:true});}
+  }
+  await writeFile('ops/reports/local/model-selection-failure.json',JSON.stringify({generatedAt:new Date().toISOString(),error:String(error),checks,errors,pages},null,2));
+  console.error(JSON.stringify({checks,errors,pages}));throw error;
 } finally { await browser.close(); await server.stop(); }

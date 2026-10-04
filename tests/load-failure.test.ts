@@ -7,6 +7,10 @@ describe('describing an avatar that could not be loaded', () => {
     expect(message).toBe('Select a VRM avatar. PMX needs conversion; VMD is animation data.');
     expect(message).not.toMatch(/^Error:/);
   });
+  it('keeps the preparation timeout and retry instruction', () => {
+    const message = 'Model preparation exceeded 30 seconds. Retry the operation.';
+    expect(describeLoadFailure(new Error(message))).toBe(message);
+  });
   it('replaces a parser exception a beginner cannot act on', () => {
     const message = describeLoadFailure(new RangeError('Offset is outside the bounds of the DataView'));
     expect(message).not.toMatch(/DataView/);

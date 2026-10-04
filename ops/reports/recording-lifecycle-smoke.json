@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-10-04T12:20:01.797Z",
+  "browser": "153.0.8010.12",
+  "checks": {
+    "defaultExport": {
+      "videoOffByDefault": true,
+      "noVideo": true,
+      "noDeviceId": true,
+      "noAbsolutePath": true,
+      "samples": 1,
+      "applies": 1
+    },
+    "discardRejected": true,
+    "unsupportedText": true,
+    "visibleRecording": true,
+    "unsupportedTraceUsable": true,
+    "cameraLossStops": true,
+    "hiddenStops": true,
+    "disposed": {
+      "traceCleared": true,
+      "replayCleared": true,
+      "videoCleared": true,
+      "lateImageClosed": true,
+      "demandOff": true
+    }
+  },
+  "errors": [],
+  "limits": [
+    "Synthetic observations and a test stream.",
+    "No physical camera acceptance."
+  ]
+}

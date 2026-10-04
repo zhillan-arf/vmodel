@@ -42,3 +42,10 @@ Implementation is in progress: 22 of 60 tasks are complete. The 22 new library a
 **[TASK-P01](ops/tasks/active/TASK-P01.md)** owns the current checkpoint and links all work; the [task register](ops/tasks/backlog/README.md) covers active and archived tasks. Component tests and short fixture recordings are documented there and do not imply live acceptance.
 
 `npm run verify` runs the automated checks that need no device or person, including switching between both models, and prints what it deliberately does not cover.
+
+## Studio library and tracking
+
+The studio includes Library and Tracking views.
+Use the [model library guide](docs/model-library.md) for import, selection, backup, and recovery.
+Use the [Tracking Inspector guide](docs/tracking-inspector.md) for observations, traces, and replay.
+The [implementation evidence](ops/reports/studio-implementation.md) records automated checks and open acceptance work.

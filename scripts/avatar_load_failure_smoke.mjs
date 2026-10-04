@@ -14,7 +14,6 @@ import process from 'node:process';
 import { startIsolatedStudioServer } from './isolated-studio-server.mjs';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname).replace(/^\/(\w:)/, '$1'), '..');
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const CASES = [
   { name: 'not-a-model', description: 'A text file renamed to .vrm.', bytes: () => Buffer.from('this is clearly not a model') },
@@ -36,7 +35,9 @@ const report = {
 let server, browser, exit = 0;
 try {
   server = await startIsolatedStudioServer();
-  browser = await chromium.launch({ channel: 'chrome', headless: true });
+  browser = await chromium.launch({ ...(process.argv.includes('--chromium') ? {} : { channel: 'chrome' }), headless: true });
+  report.browser = browser.version();
+  report.browserChannel = process.argv.includes('--chromium') ? 'chromium' : 'chrome';
   const context = await browser.newContext();
   const page = await context.newPage();
   const pageErrors = [];
@@ -48,8 +49,8 @@ try {
 
   for (const testCase of CASES) {
     await page.setInputFiles('#avatar-file', { name: testCase.name + '.vrm', mimeType: 'application/octet-stream', buffer: testCase.bytes() });
-    await sleep(3000);
-    const message = await page.textContent('#status');
+    await page.waitForFunction(() => document.querySelector('#library-message').textContent.includes('Import failed'));
+    const message = await page.textContent('#library-message');
     const stillWorking = await page.evaluate(() => {
       const before = window.__vmodel.viewer.renderer.info.render.frame;
       return new Promise(resolve => setTimeout(() => resolve({
@@ -71,7 +72,7 @@ try {
   // A good file afterwards must recover without a reload.
   // The prepared avatar exceeds Playwright's in-memory buffer limit; pass the path.
   await page.setInputFiles('#avatar-file', path.join(ROOT, 'dist/avatars/ene.vrm'));
-  await page.waitForFunction(id => window.__vmodel.getState().avatarId === id, goodAvatarId, { timeout: 60000 })
+  await page.waitForFunction(() => /Duplicate bytes|Ready to save/.test(document.querySelector('#library-message').textContent), undefined, { timeout: 60000 })
     .then(() => { report.recoveredAfterFailures = true; })
     .catch(() => { report.recoveredAfterFailures = false; });
 
@@ -91,8 +92,8 @@ try {
   report.status = 'failed'; report.error = String(error?.stack ?? error); exit = 1;
 } finally {
   if (browser) await browser.close().catch(() => {});
-  if (server) await server.close?.().catch?.(() => {});
-  const file = path.join(ROOT, 'ops/reports', 'avatar-load-failure-smoke.json');
+  if (server) await server.stop().catch(() => {});
+  const file = path.join(ROOT, 'ops/reports', process.argv.includes('--chromium') ? 'avatar-load-failure-chromium.json' : 'avatar-load-failure-smoke.json');
   await mkdir(path.dirname(file), { recursive: true });
   await writeFile(file, JSON.stringify(report, null, 2));
   console.log(JSON.stringify({ report: path.relative(ROOT, file), status: report.status, checks: report.checks ?? null }, null, 2));

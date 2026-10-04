@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-10-04T12:14:56.362Z",
+  "browser": "153.0.8010.12",
+  "initialSequence": 4,
+  "pausedSequence": 10,
+  "pauseKeepsCameraAndOutput": true,
+  "pauseFreezesDisplay": true,
+  "resumeUpdatesDisplay": true,
+  "hiddenInspectorKeepsOutput": true,
+  "images": {
+    "created": 11,
+    "closed": 11,
+    "peak": 3
+  },
+  "errors": [],
+  "externalRequests": [],
+  "limits": [
+    "Chromium fake camera and installed tracking worker. Synthetic model replaces both bundled files.",
+    "Peak image count includes one pending camera copy and up to four inspector images.",
+    "No physical gesture or target-laptop acceptance."
+  ]
+}

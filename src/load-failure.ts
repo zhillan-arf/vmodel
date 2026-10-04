@@ -19,6 +19,7 @@ export function readableError(error: unknown, fallback: string): string {
 }
 
 export function describeLoadFailure(error: unknown): string {
+  if (error instanceof Error && error.message === 'Model preparation exceeded 30 seconds. Retry the operation.') return error.message;
   return readableError(error,
     'This file could not be read as a VRM avatar. It may be incomplete, or not a VRM at all. '
     + 'Use Load another VRM to choose a different file.');

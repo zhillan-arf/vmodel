@@ -1,6 +1,6 @@
 export const bundledAvatars = [
-  { id: 'ene', name: 'Ene', label: 'Ene · Cyber legs', url: '/avatars/ene.vrm' },
-  { id: 'rei', name: 'Rei', label: 'Rei · Adachi Rei', url: '/avatars/rei.vrm' },
+  { id: 'ene', packageVersion: undefined, name: 'Ene', label: 'Ene · Cyber legs', url: '/avatars/ene.vrm' },
+  { id: 'rei', packageVersion: '1.3.3', name: 'Rei', label: 'Rei · Adachi Rei', url: '/avatars/rei.vrm' },
 ] as const;
 
 export function savedAvatar() {

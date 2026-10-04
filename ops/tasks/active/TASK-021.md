@@ -15,7 +15,7 @@ Deliver the avatar, studio, voice, and website resources with verified evidence.
 
 Date: 2026-10-04. The [studio specification](../../specs/studio-product-spec.md) adds the model library and Tracking Inspector.
 
-Consume [TASK-048](../backlog/TASK-048.md) for G5 and [TASK-060](../backlog/TASK-060.md) for G6. Their controllers close before this overall gate.
+Consume [TASK-048](TASK-048.md) for G5 and [TASK-060](TASK-060.md) for G6. Their controllers close before this overall gate.
 
 Require verified backup recovery, safe selection, tracking diagnosis, correction verdicts, and combined visual acceptance. Preserve all earlier physical and voice requirements.
 
@@ -48,3 +48,9 @@ This is the release gate. Do not mark complete because a preview renders or beca
 2026-09-12: the [G1-G4 acceptance matrix](../../reports/acceptance.md) links delivered artifacts, component measurements and exact missing live checks. [TASK-038's final report](../../reports/web-resource-acceptance.md) delivers G4 and TASK-P03 is archived. Final-media functional, loading, playback and lifecycle gates pass on the documented Windows targets; actual Safari/iOS/Android remain untested. G1/G2/G3's combined operator/voice/recording gates and ongoing avatar/OBS performance work keep this overall task open.
 
 When completing this task, record changed artifact paths, exact validation commands/results or manual evidence, and any unresolved limitation in the task or its linked report. Leave unperformed checks unchecked.
+
+## G5 and G6 implementation checkpoint
+
+Date: 2026-10-04. The [implementation record](../../reports/studio-implementation.md) supplies initial code and synthetic evidence.
+P04 and P05 remain open. Their release handoffs require real models, target-laptop measurements, physical diagnosis, and human review.
+No earlier physical acceptance changed.

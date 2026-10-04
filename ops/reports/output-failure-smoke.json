@@ -1,0 +1,91 @@
+{
+  "visualStates": [
+    {
+      "state": "mismatch-studio",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/reports/local/visual-states/output/mismatch-studio-390.png",
+      "sha256": "32696e6e05b9b2bf3b7131cf9e8104d30da568920d24101990ae97eb1407ae3d",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "mismatch-studio",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/reports/local/visual-states/output/mismatch-studio-768.png",
+      "sha256": "e6be65540537cb1cc7834116358fd308523d2e5dfa78fe43279a583aa18d270e",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "mismatch-studio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/reports/local/visual-states/output/mismatch-studio-1440.png",
+      "sha256": "8355ab39f5b2e3d3251c950f582ed573581302d12c801b95bb58643881cbe1af",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "mismatch-clean-output",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/reports/local/visual-states/output/mismatch-clean-output-390.png",
+      "sha256": "45774d719358514890f36f466d243cc0210b15e5dde68711a41bcae8f7a9fd56",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "mismatch-clean-output",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/reports/local/visual-states/output/mismatch-clean-output-768.png",
+      "sha256": "8b3a4cc45d62629405fc77f450e21f3da8cde58f25673cc9352cbf6afba5362f",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "mismatch-clean-output",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/reports/local/visual-states/output/mismatch-clean-output-1440.png",
+      "sha256": "b78403f2c195168f0f9ecda5dac97d54acf66b4eb7bdcc4eb2bd7f944998f572",
+      "horizontalOverflow": false
+    }
+  ],
+  "generatedAt": "2026-10-04T12:43:16.000Z",
+  "browser": "153.0.8010.12",
+  "fixtureHashes": [
+    "3c28e5c65fe07caec323a115c76bd51a94ccbb396a9e55886301063a1ca9f33b",
+    "09c84774cfe89af2260a176c3c06162abd2297f41189af309fb76227c6931d7c"
+  ],
+  "checks": {
+    "studioFailurePreservesState": true,
+    "peerFailurePreservesOldModel": true,
+    "errorOnlyInStudio": true,
+    "peerRetry": true,
+    "lateHashCannotReplaceNewerRevision": true,
+    "deadlineKeepsOldModel": true,
+    "lateCandidateDisposed": true,
+    "persistenceFailureKeepsSelection": true,
+    "reloadedPeerReceivesLatest": true,
+    "latePeerReceivesLatest": true,
+    "closedPeersClearStatus": true,
+    "readyWaitsForSelectionSave": true,
+    "studioReloadKeepsSelection": true
+  },
+  "errors": [],
+  "limits": [
+    "Synthetic models only.",
+    "The deadline test triggers the timer callbacks after candidate preparation.",
+    "No Windows release-browser or physical camera acceptance."
+  ]
+}

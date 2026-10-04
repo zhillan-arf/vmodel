@@ -1,0 +1,74 @@
+{
+  "generatedAt": "2026-10-04T12:16:25.446Z",
+  "browser": "153.0.8010.12",
+  "results": [
+    {
+      "fixtureHash": "ecda608848eea116c9819264152d2432705e884bbaee978415b873538115c655",
+      "stage": "mesh",
+      "error": "Error: Mesh decoder fixture",
+      "counts": [
+        {
+          "kind": "geometry",
+          "count": 1
+        },
+        {
+          "kind": "material",
+          "count": 1
+        },
+        {
+          "kind": "texture",
+          "count": 1
+        },
+        {
+          "kind": "image",
+          "count": 1
+        }
+      ],
+      "activePreserved": true,
+      "resources": {
+        "geometries": 1,
+        "textures": 2
+      },
+      "baseline": {
+        "geometries": 1,
+        "textures": 2
+      }
+    },
+    {
+      "fixtureHash": "ecda608848eea116c9819264152d2432705e884bbaee978415b873538115c655",
+      "stage": "afterRoot",
+      "error": "Error: Root decoder fixture",
+      "counts": [
+        {
+          "kind": "geometry",
+          "count": 1
+        },
+        {
+          "kind": "material",
+          "count": 1
+        },
+        {
+          "kind": "texture",
+          "count": 1
+        },
+        {
+          "kind": "image",
+          "count": 1
+        }
+      ],
+      "activePreserved": true,
+      "resources": {
+        "geometries": 1,
+        "textures": 2
+      },
+      "baseline": {
+        "geometries": 1,
+        "textures": 2
+      }
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "Real GLTF loader with injected mesh and root failures. Synthetic textured VRM only."
+  ]
+}

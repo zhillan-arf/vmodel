@@ -4,7 +4,7 @@
 - Priority: P0
 - Owner: Codex (implementing assistant)
 - Goal: G6
-- Parent controller: [TASK-P05](TASK-P05.md)
+- Parent controller: [TASK-P05](../active/TASK-P05.md)
 - Depends on: TASK-057, TASK-058
 - Estimate: 1-2 days plus physical access
 - Specification: [Studio product specification](../../specs/studio-product-spec.md)
@@ -53,5 +53,9 @@ Keep personal recordings under `ops/reports/local/`. Do not mark unperformed che
 
 ## Current checkpoint
 
-Planning is complete. Implementation has not started. Start after the listed dependencies pass.
+Date: 2026-10-04. Physical diagnosis is unavailable in this environment.
+TASK-055 still needs measured overhead and human review. No scheduler or motion correction is eligible yet.
+The baseline schedule and thresholds remain unchanged. No experiment verdict has been invented.
 
+Required action: complete inspector acceptance, then perform the [physical protocol](../../../docs/tracking-check.md) on the target laptop.
+The operator supplies the gestures. Codex records the failed stage and evaluates eligible corrections.

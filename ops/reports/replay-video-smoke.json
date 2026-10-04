@@ -1,0 +1,111 @@
+{
+  "generatedAt": "2026-10-04T12:18:13.723Z",
+  "browser": "153.0.8010.12",
+  "checks": {
+    "video": [
+      {
+        "mode": "stop",
+        "bytes": 6349,
+        "audioTracks": 0,
+        "width": 160,
+        "height": 120,
+        "advanced": true,
+        "mapping": {
+          "traceId": "video-fixture",
+          "startOffsetMs": 10,
+          "stopOffsetMs": 1262,
+          "mimeType": "video/webm;codecs=vp9"
+        },
+        "active": false
+      },
+      {
+        "mode": "camera loss",
+        "bytes": 4594,
+        "audioTracks": 0,
+        "width": 160,
+        "height": 120,
+        "advanced": true,
+        "mapping": {
+          "traceId": "video-fixture",
+          "startOffsetMs": 10,
+          "stopOffsetMs": 1265.3999996185303,
+          "mimeType": "video/webm;codecs=vp9"
+        },
+        "active": false
+      },
+      {
+        "mode": "recorder error",
+        "bytes": 1756,
+        "audioTracks": 0,
+        "width": 160,
+        "height": 120,
+        "advanced": true,
+        "mapping": {
+          "traceId": "video-fixture",
+          "startOffsetMs": 10,
+          "stopOffsetMs": 1265.1000003814697,
+          "mimeType": "video/webm;codecs=vp9"
+        },
+        "active": false
+      },
+      {
+        "mode": "size limit",
+        "bytes": 3465,
+        "audioTracks": 0,
+        "width": 160,
+        "height": 120,
+        "advanced": true,
+        "mapping": {
+          "traceId": "video-fixture",
+          "startOffsetMs": 10,
+          "stopOffsetMs": 1265.5,
+          "mimeType": "video/webm;codecs=vp9"
+        },
+        "active": false
+      },
+      {
+        "mode": "duration limit",
+        "bytes": 3559,
+        "audioTracks": 0,
+        "width": 160,
+        "height": 120,
+        "advanced": true,
+        "mapping": {
+          "traceId": "video-fixture",
+          "startOffsetMs": 10,
+          "stopOffsetMs": 1264.8999996185303,
+          "mimeType": "video/webm;codecs=vp9"
+        },
+        "active": false
+      }
+    ],
+    "videoCleanup": {
+      "created": 2,
+      "released": 2,
+      "time": 0.2,
+      "sourceReleased": true,
+      "cancelled": true,
+      "noFrame": true
+    },
+    "replayUsesRecordedMirror": true,
+    "replayIsolation": {
+      "liveStateUnchanged": true,
+      "peerStateUnchanged": true,
+      "liveModelUnchanged": true,
+      "noPublishedFrames": true
+    },
+    "comparisonFieldsFollowReplay": true,
+    "comparisonReturnsAfterNavigation": true,
+    "recordedVideoImport": true,
+    "wrongVideoRejected": true,
+    "invalidTraceIsolation": true
+  },
+  "errors": [],
+  "limits": [
+    "Canvas video source only.",
+    "Camera loss and recorder error use injected events.",
+    "The size gate uses an overridden Blob.size.",
+    "The duration callback runs after 1.25 seconds; unit tests check the 60-second timer.",
+    "No physical video timing or Windows release-browser acceptance."
+  ]
+}

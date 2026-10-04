@@ -1,0 +1,367 @@
+{
+  "panelTransition": {
+    "duration": "0.15s",
+    "property": "opacity",
+    "events": [
+      {
+        "type": "transitionrun",
+        "property": "opacity",
+        "elapsed": 0
+      },
+      {
+        "type": "transitionend",
+        "property": "opacity",
+        "elapsed": 0.15
+      }
+    ]
+  },
+  "reducedMotion": {
+    "duration": "0s",
+    "animations": 0
+  },
+  "generatedAt": "2026-10-04T12:56:13.474Z",
+  "browser": "153.0.8010.12",
+  "cases": [
+    {
+      "width": 390,
+      "scale": 1,
+      "view": "library",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 390,
+      "scale": 1,
+      "view": "observations",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 390,
+      "scale": 1,
+      "view": "estimated",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 390,
+      "scale": 1,
+      "view": "accepted",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 390,
+      "scale": 2,
+      "view": "library",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 390,
+      "scale": 2,
+      "view": "observations",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 390,
+      "scale": 2,
+      "view": "estimated",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 390,
+      "scale": 2,
+      "view": "accepted",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 768,
+      "scale": 1,
+      "view": "library",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 768,
+      "scale": 1,
+      "view": "observations",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 768,
+      "scale": 1,
+      "view": "estimated",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 768,
+      "scale": 1,
+      "view": "accepted",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 768,
+      "scale": 2,
+      "view": "library",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 768,
+      "scale": 2,
+      "view": "observations",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 768,
+      "scale": 2,
+      "view": "estimated",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 768,
+      "scale": 2,
+      "view": "accepted",
+      "overflow": false,
+      "panelLeft": 0
+    },
+    {
+      "width": 1440,
+      "scale": 1,
+      "view": "library",
+      "overflow": false,
+      "panelLeft": 240
+    },
+    {
+      "width": 1440,
+      "scale": 1,
+      "view": "observations",
+      "overflow": false,
+      "panelLeft": 240
+    },
+    {
+      "width": 1440,
+      "scale": 1,
+      "view": "estimated",
+      "overflow": false,
+      "panelLeft": 240
+    },
+    {
+      "width": 1440,
+      "scale": 1,
+      "view": "accepted",
+      "overflow": false,
+      "panelLeft": 240
+    },
+    {
+      "width": 1440,
+      "scale": 2,
+      "view": "library",
+      "overflow": false,
+      "panelLeft": 480
+    },
+    {
+      "width": 1440,
+      "scale": 2,
+      "view": "observations",
+      "overflow": false,
+      "panelLeft": 480
+    },
+    {
+      "width": 1440,
+      "scale": 2,
+      "view": "estimated",
+      "overflow": false,
+      "panelLeft": 480
+    },
+    {
+      "width": 1440,
+      "scale": 2,
+      "view": "accepted",
+      "overflow": false,
+      "panelLeft": 480
+    }
+  ],
+  "textPairs": [
+    {
+      "text": "Studio",
+      "foreground": "rgb(228, 234, 245)",
+      "background": [
+        25,
+        35,
+        55
+      ],
+      "ratio": 13.004899601667656,
+      "required": 4.5
+    },
+    {
+      "text": "Library",
+      "foreground": "rgb(96, 220, 234)",
+      "background": [
+        25,
+        35,
+        55
+      ],
+      "ratio": 9.666094879672144,
+      "required": 4.5
+    },
+    {
+      "text": "Model library",
+      "foreground": "rgb(228, 234, 245)",
+      "background": [
+        12,
+        18,
+        32
+      ],
+      "ratio": 15.481970886162356,
+      "required": 3
+    },
+    {
+      "text": "1 saved models · http://127.0.0.1:41541 · 0 / 10240 MiB used",
+      "foreground": "rgb(169, 184, 207)",
+      "background": [
+        12,
+        18,
+        32
+      ],
+      "ratio": 9.300166539602895,
+      "required": 4.5
+    },
+    {
+      "text": "Import VRM",
+      "foreground": "rgb(11, 41, 50)",
+      "background": [
+        96,
+        220,
+        234
+      ],
+      "ratio": 9.381555502531025,
+      "required": 4.5
+    },
+    {
+      "text": "Preview unavailable.",
+      "foreground": "rgb(169, 184, 207)",
+      "background": [
+        24,
+        35,
+        57
+      ],
+      "ratio": 7.803890125897367,
+      "required": 4.5
+    },
+    {
+      "text": "Ene · Cyber legs",
+      "foreground": "rgb(228, 234, 245)",
+      "background": [
+        16,
+        24,
+        39
+      ],
+      "ratio": 14.709561508032108,
+      "required": 4.5
+    },
+    {
+      "text": "bundled · VRM 1 · 0 expressions · Selected · Embedded versio",
+      "foreground": "rgb(169, 184, 207)",
+      "background": [
+        16,
+        24,
+        39
+      ],
+      "ratio": 8.836172910743729,
+      "required": 4.5
+    },
+    {
+      "text": "Camera stopped",
+      "foreground": "rgb(228, 234, 245)",
+      "background": [
+        12,
+        18,
+        32
+      ],
+      "ratio": 15.481970886162356,
+      "required": 4.5
+    },
+    {
+      "text": "Tracking",
+      "foreground": "rgb(96, 220, 234)",
+      "background": [
+        39,
+        54,
+        77
+      ],
+      "ratio": 7.5084285025727615,
+      "required": 4.5
+    }
+  ],
+  "controlPairs": [
+    {
+      "kind": "control-border",
+      "text": "Studio",
+      "foreground": "rgb(114, 133, 165)",
+      "background": [
+        16,
+        24,
+        39
+      ],
+      "ratio": 4.749492962807742,
+      "required": 3
+    },
+    {
+      "kind": "control-border",
+      "text": "Library",
+      "foreground": "rgb(96, 220, 234)",
+      "background": [
+        16,
+        24,
+        39
+      ],
+      "ratio": 10.933111483365774,
+      "required": 3
+    },
+    {
+      "kind": "control-border",
+      "text": "Import VRM",
+      "foreground": "rgb(96, 220, 234)",
+      "background": [
+        12,
+        18,
+        32
+      ],
+      "ratio": 11.507216825478382,
+      "required": 3
+    },
+    {
+      "kind": "control-border",
+      "text": "Back up selected entries",
+      "foreground": "rgb(114, 133, 165)",
+      "background": [
+        12,
+        18,
+        32
+      ],
+      "ratio": 4.998892165077171,
+      "required": 3
+    }
+  ],
+  "failures": [],
+  "keyboardNavigation": true,
+  "focus": {
+    "visible": true,
+    "outline": "solid"
+  },
+  "errors": [],
+  "limits": [
+    "CSS zoom at 1 and 2. This does not certify browser zoom or screen-reader behavior.",
+    "Solid text backgrounds and control borders only. Canvas graphics and disabled controls are outside this check."
+  ]
+}

@@ -33,7 +33,7 @@ The user's original archive, extracted model package and VMD remain unchanged. T
 
 The VMD signature is `Vocaloid Motion Data 0002`, with embedded model field `八雲紫(773)`, rather than Ene. It is motion data; full motion/channel compatibility belongs to TASK-014. Its planning SHA-256 is recorded in the specification and will be checked there.
 
-The supplied [X excerpts](../resources/x-posts.md) were reviewed: AI conversation via AITuberKit, manual 3D authoring observations, and an incomplete 2D layered-PSD workflow. They do not replace the available PMX model or establish webcam performance. Original post/video access remains unverified as described in the specification.
+The supplied [X excerpts](../resources/ENE/x-posts.md) were reviewed: AI conversation via AITuberKit, manual 3D authoring observations, and an incomplete 2D layered-PSD workflow. They do not replace the available PMX model or establish webcam performance. Original post/video access remains unverified as described in the specification.
 
 ## Result
 

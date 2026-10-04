@@ -1,5 +1,11 @@
 import { FilesetResolver, FaceLandmarker, PoseLandmarker, HandLandmarker } from '@mediapipe/tasks-vision';
 import type { TrackingFrame, TrackingSample } from './types';
+import type { TaskDiagnostic, DiagnosticEnvelope, TrackingTask } from './tracking-diagnostics';
+import assets from '../config/runtime-assets.json';
+let activeDelegate: 'GPU'|'CPU' = 'GPU';
+const taskDiagnostics = {} as Record<TrackingTask,TaskDiagnostic>;
+const modelHashes = Object.fromEntries(['face','pose','hands'].map((name,i) => [name,assets[i].sha256])) as Record<TrackingTask,string>;
+const epochNow = () => performance.timeOrigin + performance.now();
 
 let face: FaceLandmarker | undefined, pose: PoseLandmarker | undefined, hands: HandLandmarker | undefined;
 let ready = false;
@@ -37,7 +43,7 @@ self.onmessage = async ({ data }) => {
       else {
         try { await initialize(delegate); } catch { release(); delegate = 'CPU'; await initialize(delegate); }
       }
-      ready = true; self.postMessage({ type: 'ready', delegate });
+      activeDelegate = delegate; ready = true; self.postMessage({ type: 'ready', delegate });
     } catch (error) { release(); self.postMessage({ type: 'error', message: `Tracking could not start: ${String(error)}` }); }
     return;
   }
@@ -52,15 +58,28 @@ self.onmessage = async ({ data }) => {
     // clamp epoch timestamps and then reject the next frame as a duplicate.
     modelTimestampOrigin ??= timestamp;
     const modelTimestamp = timestamp - modelTimestampOrigin + 1;
+    const diagnostic = data.demand === 'inspect' || data.demand === 'record';
+    const anchor = data.anchor ?? timestamp, capture = data.captureSequence ?? count + 1;
+    const stamp = (task:TrackingTask, started:number, present:boolean, observations?:TaskDiagnostic['observations']) => {
+      const previous = taskDiagnostics[task];
+      taskDiagnostics[task] = { sampleSequence:(previous?.sampleSequence??0)+1,captureSequence:capture,sampleTimeMs:timestamp-anchor,startedAtMs:started-anchor,finishedAtMs:epochNow()-anchor,state:'new',present,...(diagnostic&&observations?{observations}:{}) };
+    };
+    for(const task of ['face','pose','hands'] as const)if(taskDiagnostics[task])taskDiagnostics[task]={...taskDiagnostics[task],state:'cached'};
+    const faceStarted=epochNow();
     const f = face.detectForVideo(bitmap, modelTimestamp);
+    stamp('face',faceStarted,f.faceLandmarks.length>0,diagnostic?f.faceLandmarks:undefined);
     const faceSample: TrackingSample = { timestamp, inferenceMs: performance.now() - start, present: f.faceLandmarks.length > 0 };
     const interval = data.quality === 'low' ? 3 : 2;
     if (count % interval === 0) {
+      const poseStarted=epochNow();
       const poseStart = performance.now(), p = pose.detectForVideo(bitmap, modelTimestamp);
+      stamp('pose',poseStarted,p.worldLandmarks.length>0);
       lastPose = p.worldLandmarks[0] ?? []; lastPoseImage = p.landmarks[0] ?? [];
       poseSample = { timestamp, inferenceMs: performance.now() - poseStart, present: lastPose.length > 0 };
       if (data.hands) {
+        const handsStarted=epochNow();
         const handStart = performance.now(), h = hands.detectForVideo(bitmap, modelTimestamp);
+        stamp('hands',handsStarted,h.landmarks.length>0);
         lastHands = h.landmarks.map((landmarks, i) => ({ landmarks, world: h.worldLandmarks[i], side: h.handedness[i][0].categoryName, score: h.handedness[i][0].score }));
         handsSample = { timestamp, inferenceMs: performance.now() - handStart, present: lastHands.length > 0 };
       } else { lastHands = []; handsSample = { timestamp, inferenceMs: 0, present: false }; }
@@ -71,7 +90,14 @@ self.onmessage = async ({ data }) => {
       face: Object.fromEntries((f.faceBlendshapes[0]?.categories ?? []).map(x => [x.categoryName, x.score])),
       faceMatrix: f.facialTransformationMatrixes[0]?.data ?? null, pose: lastPose, poseImage: lastPoseImage, hands: lastHands, inferenceMs: performance.now() - start,
       samples: { face: faceSample, pose: poseSample, hands: handsSample } };
-    self.postMessage({ type: 'result', frame });
+    if (diagnostic) {
+      const disabled:TaskDiagnostic={sampleSequence:taskDiagnostics.hands?.sampleSequence??0,captureSequence:capture,sampleTimeMs:timestamp-anchor,startedAtMs:0,finishedAtMs:0,state:'disabled',present:false};
+      const diagnostics:DiagnosticEnvelope={version:1,sessionId:data.sessionId,captureSequence:capture,captureTimeMs:timestamp-anchor,videoTimeMs:data.videoTimeMs,inputSize:frame.inputSize??{width:0,height:0},runtimeVersion:'@mediapipe/tasks-vision@1.0.1',modelHashes,delegate:activeDelegate,tasks:{...taskDiagnostics,hands:data.hands?taskDiagnostics.hands??disabled:disabled}};
+      self.postMessage({type:'result',frame,diagnostics});
+    } else {
+      for(const task of Object.values(taskDiagnostics))delete task.observations;
+      self.postMessage({ type: 'result', frame });
+    }
   } catch (error) { self.postMessage({ type: 'error', message: String(error) }); }
   finally { bitmap.close(); }
 };

@@ -1,0 +1,103 @@
+{
+  "generatedAt": "2026-10-04T12:17:04.842Z",
+  "browser": "153.0.8010.12",
+  "sourceHash": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+  "hash": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+  "bytes": 55715860,
+  "inspectionMs": 347.1000003814697,
+  "preparationMs": 2019.1999998092651,
+  "resources": {
+    "geometryBytes": 19891256,
+    "textureBytes": 777344342,
+    "pixels": 145752064
+  },
+  "graphicsResources": {
+    "geometries": 45,
+    "textures": 55
+  },
+  "expressionValues": {
+    "happy": {
+      "happy": 0.7499999999994815,
+      "surprised": 0
+    },
+    "surprised": {
+      "happy": 5.185800080201559e-13,
+      "surprised": 0.7499999999994815
+    },
+    "neutral": {
+      "happy": 3.5856696629116087e-25,
+      "surprised": 5.185800080201559e-13
+    }
+  },
+  "capabilities": {
+    "validationVersion": 1,
+    "vrmVersion": "0",
+    "expressions": [
+      "neutral",
+      "aa",
+      "ih",
+      "ou",
+      "ee",
+      "oh",
+      "blink",
+      "happy",
+      "angry",
+      "sad",
+      "relaxed",
+      "lookUp",
+      "lookDown",
+      "lookLeft",
+      "lookRight",
+      "blinkLeft",
+      "blinkRight",
+      "のほほん",
+      "＞＜",
+      "びっくり",
+      "白目",
+      "瞳ハイライト消",
+      "ジト目",
+      "瞳小",
+      "両目見開き",
+      "挑発",
+      "困る",
+      "ドン引き",
+      "両目閉じ",
+      "ウィンク右",
+      "ウィンク左",
+      "瞳左",
+      "瞳右",
+      "瞳上",
+      "瞳下"
+    ],
+    "aliases": {
+      "surprised": "びっくり"
+    },
+    "missingOptionalBones": [
+      "upperChest"
+    ],
+    "springs": true,
+    "warnings": []
+  },
+  "emptyBeforeCommit": true,
+  "handsBelowShoulders": [
+    true,
+    true
+  ],
+  "failedCandidateRejected": true,
+  "previousModelRetained": true,
+  "canceledCommitRejected": true,
+  "canceledCandidateDisposed": true,
+  "resolvedHash": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+  "originalExportHash": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+  "termsHash": "c361775b83d3ad371eb29dccac794a65e7b78a1788670e3b2fb957e5706fc313",
+  "disposedResources": {
+    "geometries": 0,
+    "textures": 0
+  },
+  "errors": [],
+  "externalRequests": [],
+  "limits": [
+    "Linux Chromium only. No physical camera or target-laptop acceptance.",
+    "Sequential single-model check; no physical comparison."
+  ]
+}

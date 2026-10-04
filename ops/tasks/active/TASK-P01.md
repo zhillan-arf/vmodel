@@ -41,29 +41,28 @@ TASK-P04 maintains G5. TASK-P05 maintains G6. Both controllers supply evidence t
 
 ## Current checkpoint
 
-Date: 2026-10-04. The user requested research evaluation, design decisions, product specifications, and detailed implementation tasks.
+Date: 2026-10-04. P04 and P05 software implementation and synthetic checks are in progress.
 
 - Scope: 60 implementation tasks, TASK-001 through TASK-060.
-- Progress: 22/60 Done; 14 In progress; 0 Blocked; 2 Ready; 22 Todo.
-- Planning: The [evaluation](../../reports/studio-research-evaluation.md), [action plan](../../specs/studio-evolution-plan.md), [decisions](../../specs/studio-design-decisions.md), and [specification](../../specs/studio-product-spec.md) are complete.
-- G5: [TASK-P04](../backlog/TASK-P04.md) owns the model library and TASK-039 through TASK-048.
-- G6: [TASK-P05](../backlog/TASK-P05.md) owns tracking diagnosis and TASK-049 through TASK-060.
-- Ready: TASK-039 defines shared views and contracts. TASK-049 adds diagnostic timing.
-- New implementation: Not started. All new implementation acceptance remains unchecked.
-- Existing implementation: Status remains unchanged. Earlier live-camera, voice, and recording gates remain open.
-- Final gate: TASK-021 now consumes TASK-048 and TASK-060 as well as its earlier dependencies.
-- Physical participation: Later diagnosis needs actual camera gestures. This does not block current specification or instrumentation work.
-
-Use the new controllers for G5 and G6. They coordinate children without becoming prerequisites for them. Keep private assets and recordings outside code distribution.
+- Progress: 32/60 Done; 22 In progress; 1 Blocked; 0 Ready; 5 Todo.
+- G5: [P04](TASK-P04.md) has library, preparation, selection, and backup code with synthetic browser evidence.
+- G6: [P05](TASK-P05.md) has diagnostic, shared-solver, inspector, and replay code with component evidence.
+- Storage and backup: TASK-041, TASK-044, and TASK-046 passed their software acceptance checks.
+- Evidence: [implementation record](../../reports/studio-implementation.md) maps requirements and remaining checks.
+- Blocker: TASK-056 needs actual camera movements after inspector acceptance.
+- Model files: prepared Ene and Rei are available. Earlier private recordings and Windows voice artifacts remain absent.
+- Device work: target-laptop measurements and human acceptance remain open.
+- Corrections: TASK-057 through TASK-059 await physical diagnosis. Existing tracking thresholds remain unchanged.
+- Replay: TASK-053 passed its recording and replay software checks.
+- Release: TASK-041, TASK-044, and TASK-046 have complete storage, selection, and backup evidence. P04, P05, and TASK-021 remain open.
+- Prior acceptance: earlier physical, voice, and recording gates retain their previous status.
 
 ### Next actions
 
-1. Start TASK-039 for shared view and model contracts.
-2. Start TASK-049 for independent diagnostic timing.
-3. Follow each child's dependencies before further implementation.
-4. Preserve earlier physical acceptance gaps until direct evidence resolves them.
-
-The checkpoint below preserves prior evidence. Its scope counts and next actions describe the earlier project state.
+1. Complete the remaining software failure matrices.
+2. Complete the remaining visual-state and accessibility checks.
+3. Run target-laptop measurements and human visual review.
+4. Perform physical diagnosis before correction experiments.
 
 ## Historical checkpoint
 
@@ -189,3 +188,19 @@ Each stops short of its criterion's human half — whether motion *looks* right 
 All 14 in-progress and 2 todo tasks gate on four physical acts: **a person moving in front of the camera** (TASK-003/009/010-013/015), **the user listening and stating a voice preference** (TASK-023, which also determines whether TASK-027 needs a trained voice), **the cancelled Virtual Camera permission prompt** (TASK-017), and **two final recordings** (TASK-018, feeding TASK-021/026/028). [Remaining checks](../../../docs/remaining-checks.md) orders them by how much each unblocks; step one alone clears seven tasks.
 
 The local voice path additionally does **not** meet its gates: the paced proof passes on a quiet machine and fails reproducibly under ordinary desktop load, recorded as a measured defect rather than a pass.
+
+2026-10-04 solver checkpoint: TASK-050 passed 720 updates against the committed baseline. All 275 unit tests and the production build passed. Physical acceptance remains open.
+
+2026-10-04 asset checkpoint: Rei was extracted unchanged. Inspection rejects its 145,752,064 decoded pixels. The prepared Ene VRM remains absent. Camera restart fixes pass regression tests.
+
+2026-10-04 diagnostic checkpoint: TASK-049 is complete. Installed-worker positive detections and a 70-second fake-camera recovery check passed. Physical acceptance remains open.
+
+2026-10-04 Rei checkpoint: D08 and L04 resource ceilings were revised after the original incompatibility was recorded.
+The unchanged Rei file passes preparation, expressions, cancellation, export, and graphics disposal checks.
+All 282 unit tests pass. Target-laptop memory and Ene acceptance remain open.
+
+2026-10-04 Ene checkpoint: the supplied source was rebuilt with pinned add-ons in Blender 5.2.2 LTS.
+Structural inspection and combined Ene/Rei browser selection checks pass.
+A reload persistence race was reproduced and corrected. Physical and target-laptop acceptance remain open.
+
+2026-10-04 preparation checkpoint: TASK-040 is archived. Resource ownership, late cleanup, native-model behavior, and failure regressions pass.

@@ -1,0 +1,54 @@
+{
+  "tracePath": "ops/reports/local/avatar-comparison-trace.json",
+  "baselineCommit": "da48542e991aa202a1b9eaafc1a4f1cbb22ef7b9",
+  "generatedAt": "2026-10-04T12:10:03.013Z",
+  "browser": "153.0.8010.12",
+  "traceHash": "54752572df3fb8d540b48f78ebd482727828ebb97a5e3671c2c2d19ffee81628",
+  "samples": 120,
+  "results": [
+    {
+      "id": "canonical",
+      "hash": null,
+      "baselineAngle": 5.16191365590357e-8,
+      "baselinePosition": 0,
+      "goalsEqual": true,
+      "bones": 52,
+      "leftChangeRadians": 0.6795625038079757,
+      "rightChangeRadians": 0.0000013058723390225787,
+      "forwardError": 0,
+      "backwardError": 2.9802322387695312e-8,
+      "repeatedError": 0
+    },
+    {
+      "id": "ene",
+      "hash": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+      "baselineAngle": 4.2146848510894035e-8,
+      "baselinePosition": 0,
+      "goalsEqual": true,
+      "bones": 52,
+      "leftChangeRadians": 0.6795625038080231,
+      "rightChangeRadians": 0.0000013058723390225787,
+      "forwardError": 2.9802322387695312e-8,
+      "backwardError": 2.9802322387695312e-8,
+      "repeatedError": 2.9802322387695312e-8
+    },
+    {
+      "id": "rei",
+      "hash": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+      "baselineAngle": 4.2146848510894035e-8,
+      "baselinePosition": 0,
+      "goalsEqual": true,
+      "bones": 52,
+      "leftChangeRadians": 0.6795624983286175,
+      "rightChangeRadians": 0.0000013058723390225787,
+      "forwardError": 2.9802322387695312e-8,
+      "backwardError": 2.9802322387695312e-8,
+      "repeatedError": 2.9802322387695312e-8
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "Synthetic anatomical input on the local Ene and native Rei rigs.",
+    "No physical detector accuracy or target-laptop performance claim."
+  ]
+}

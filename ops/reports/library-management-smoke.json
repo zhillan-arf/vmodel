@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-10-04T12:33:42.557Z",
+  "browser": "153.0.8010.12",
+  "activeRemovalDisabled": true,
+  "bundleRemovalAbsent": true,
+  "invalidRenameAnnouncedImmediately": true,
+  "remoteRenamePreservesPerformance": true,
+  "refreshPreservesFocusDetailsAndSelection": true,
+  "remoteRemovalPreservesPerformance": true,
+  "missingSavedState": true,
+  "errors": [],
+  "limits": [
+    "Synthetic models and two Chromium tabs. No physical camera check."
+  ]
+}

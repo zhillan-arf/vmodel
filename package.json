@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "prebuild": "node scripts/provision_notices.mjs",
+    "prebuild": "node scripts/provision_notices.mjs && node scripts/provision_thumbnails.mjs",
     "build": "tsc --noEmit && vite build",
     "test": "vitest run",
     "preview": "vite preview --host 127.0.0.1",

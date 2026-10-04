@@ -1,7 +1,7 @@
 {
-  "date": "2026-09-13T12:30:59.524Z",
-  "passed": true,
-  "status": "complete",
+  "date": "2026-10-04T12:20:05.889Z",
+  "passed": false,
+  "status": "failed",
   "question": "Do the beginner guides reference launchers, links and local addresses that actually exist?",
   "readOnly": true,
   "files": [
@@ -18,6 +18,14 @@
         "Start VModel.cmd"
       ],
       "ports": []
+    },
+    {
+      "file": "docs/model-library.md",
+      "links": 1,
+      "launchers": [],
+      "ports": [
+        4173
+      ]
     },
     {
       "file": "docs/obs-setup.md",
@@ -78,6 +86,18 @@
       "ports": []
     },
     {
+      "file": "docs/tracking-check.md",
+      "links": 0,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "docs/tracking-inspector.md",
+      "links": 2,
+      "launchers": [],
+      "ports": []
+    },
+    {
       "file": "docs/voice-audition-passage.md",
       "links": 0,
       "launchers": [],
@@ -134,6 +154,12 @@
     {
       "file": "ops/reports/asset-audit.md",
       "links": 2,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/avatar-preparation.md",
+      "links": 6,
       "launchers": [],
       "ports": []
     },
@@ -210,8 +236,50 @@
       "ports": []
     },
     {
+      "file": "ops/reports/library-acceptance.md",
+      "links": 5,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/library-backup.md",
+      "links": 3,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/library-handoff.md",
+      "links": 2,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/library-import.md",
+      "links": 5,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/library-interface.md",
+      "links": 7,
+      "launchers": [],
+      "ports": []
+    },
+    {
       "file": "ops/reports/model-notices.md",
       "links": 4,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/model-repository.md",
+      "links": 1,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/model-selection.md",
+      "links": 5,
       "launchers": [],
       "ports": []
     },
@@ -258,8 +326,44 @@
       "ports": []
     },
     {
+      "file": "ops/reports/solver-diagnostics.md",
+      "links": 1,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/studio-evolution-acceptance.md",
+      "links": 2,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/studio-implementation.md",
+      "links": 16,
+      "launchers": [],
+      "ports": []
+    },
+    {
       "file": "ops/reports/studio-output.md",
       "links": 3,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/studio-planning-validation.md",
+      "links": 8,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/studio-research-evaluation.md",
+      "links": 19,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/studio-view-contracts.md",
+      "links": 5,
       "launchers": [],
       "ports": []
     },
@@ -270,7 +374,37 @@
       "ports": []
     },
     {
+      "file": "ops/reports/tracking-comparison.md",
+      "links": 11,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/tracking-contract.md",
+      "links": 4,
+      "launchers": [],
+      "ports": []
+    },
+    {
       "file": "ops/reports/tracking-cpu.md",
+      "links": 8,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/tracking-estimated-3d.md",
+      "links": 5,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/tracking-inspector-acceptance.md",
+      "links": 2,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/tracking-overlay.md",
       "links": 8,
       "launchers": [],
       "ports": []
@@ -278,6 +412,12 @@
     {
       "file": "ops/reports/tracking-positive-fixture.md",
       "links": 8,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/tracking-replay.md",
+      "links": 3,
       "launchers": [],
       "ports": []
     },
@@ -362,6 +502,12 @@
     {
       "file": "ops/reports/voice-toolchain.md",
       "links": 17,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/reports/vrm-inspection.md",
+      "links": 5,
       "launchers": [],
       "ports": []
     },
@@ -456,6 +602,24 @@
       "ports": []
     },
     {
+      "file": "ops/specs/studio-design-decisions.md",
+      "links": 4,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/specs/studio-evolution-plan.md",
+      "links": 8,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/specs/studio-product-spec.md",
+      "links": 4,
+      "launchers": [],
+      "ports": []
+    },
+    {
       "file": "ops/specs/voice-conversion-plan.md",
       "links": 6,
       "launchers": [],
@@ -468,7 +632,683 @@
       "ports": []
     }
   ],
-  "brokenLinks": [],
+  "brokenLinks": [
+    {
+      "file": "docs/voice-setup.md",
+      "text": "complete-passage context page",
+      "target": "../assets/voice/auditions/context-v1/review.html"
+    },
+    {
+      "file": "ops/reports/acceptance.md",
+      "text": "final media manifest",
+      "target": "../../web-showcase/public/ene/manifest.json"
+    },
+    {
+      "file": "ops/reports/capture-animation-diagnostic.md",
+      "text": "preserved diagnostic report",
+      "target": "local/capture-animation/2026-09-12T12-44-32-257Z-e21e1c3a/report.json"
+    },
+    {
+      "file": "ops/reports/capture-animation-diagnostic.md",
+      "text": "passive-end canvas pixels",
+      "target": "local/capture-animation/2026-09-12T12-44-32-257Z-e21e1c3a/passive-end-canvas.png"
+    },
+    {
+      "file": "ops/reports/capture-animation-diagnostic.md",
+      "text": "passive-end OBS capture",
+      "target": "local/capture-animation/2026-09-12T12-44-32-257Z-e21e1c3a/passive-end-obs.png"
+    },
+    {
+      "file": "ops/reports/capture-animation-diagnostic.md",
+      "text": "its report",
+      "target": "local/capture-animation/2026-09-12T12-43-57-013Z-ecb94042/report.json"
+    },
+    {
+      "file": "ops/reports/capture-passive-control.md",
+      "text": "The preserved run",
+      "target": "local/capture-passive/2026-09-12T13-02-30-235Z-45d2236f/report.json"
+    },
+    {
+      "file": "ops/reports/capture-passive-control.md",
+      "text": "Saved-frame samples",
+      "target": "local/capture-passive/2026-09-12T13-02-30-235Z-45d2236f/recording-pixel-analysis.json"
+    },
+    {
+      "file": "ops/reports/capture-passive-control.md",
+      "text": "the raw viewer canvas",
+      "target": "local/capture-passive/2026-09-12T13-02-30-235Z-45d2236f/after-passive-end-canvas.png"
+    },
+    {
+      "file": "ops/reports/capture-passive-control.md",
+      "text": "the OBS source",
+      "target": "local/capture-passive/2026-09-12T13-02-30-235Z-45d2236f/after-passive-end-obs.png"
+    },
+    {
+      "file": "ops/reports/capture-power-comparison.md",
+      "text": "earlier post-run policy check",
+      "target": "local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/power-policy-after.txt"
+    },
+    {
+      "file": "ops/reports/capture-power-comparison.md",
+      "text": "current-desktop observation",
+      "target": "local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/input-desktop-after.json"
+    },
+    {
+      "file": "ops/reports/ene-vmd-compatibility.md",
+      "text": "Editable animated Blender scene",
+      "target": "../../assets/work/ene/vmd-inspection.blend"
+    },
+    {
+      "file": "ops/reports/ene-vmd-compatibility.md",
+      "text": "1",
+      "target": "local/vmd/frame-001.png"
+    },
+    {
+      "file": "ops/reports/ene-vmd-compatibility.md",
+      "text": "60",
+      "target": "local/vmd/frame-060.png"
+    },
+    {
+      "file": "ops/reports/ene-vmd-compatibility.md",
+      "text": "120",
+      "target": "local/vmd/frame-120.png"
+    },
+    {
+      "file": "ops/reports/ene-vmd-compatibility.md",
+      "text": "180",
+      "target": "local/vmd/frame-180.png"
+    },
+    {
+      "file": "ops/reports/ene-vmd-compatibility.md",
+      "text": "240",
+      "target": "local/vmd/frame-240.png"
+    },
+    {
+      "file": "ops/reports/ene-vmd-compatibility.md",
+      "text": "300",
+      "target": "local/vmd/frame-300.png"
+    },
+    {
+      "file": "ops/reports/ene-vmd-compatibility.md",
+      "text": "349",
+      "target": "local/vmd/frame-349.png"
+    },
+    {
+      "file": "ops/reports/obs-recording.md",
+      "text": "Landscape MP4",
+      "target": "local/obs/recordings/Ene-Landscape-2026-09-12_16-44-24.mp4"
+    },
+    {
+      "file": "ops/reports/obs-recording.md",
+      "text": "MKV",
+      "target": "local/obs/recordings/Ene-Landscape-2026-09-12_16-44-24.mkv"
+    },
+    {
+      "file": "ops/reports/obs-recording.md",
+      "text": "Portrait MP4",
+      "target": "local/obs/recordings/Ene-Portrait-2026-09-12_16-44-37.mp4"
+    },
+    {
+      "file": "ops/reports/obs-recording.md",
+      "text": "MKV",
+      "target": "local/obs/recordings/Ene-Portrait-2026-09-12_16-44-37.mkv"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "Baseline A",
+      "target": "local/obs-window-lifecycle/01-baseline-a.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "baseline B",
+      "target": "local/obs-window-lifecycle/02-baseline-b.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "Covered window",
+      "target": "local/obs-window-lifecycle/03-covered-by-owned-magenta.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "Changed title",
+      "target": "local/obs-window-lifecycle/04-title-changed-same-window.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "Different active tab",
+      "target": "local/obs-window-lifecycle/05-other-tab-same-window.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "Original tab",
+      "target": "local/obs-window-lifecycle/06-original-tab-restored.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "Minimized A",
+      "target": "local/obs-window-lifecycle/07-minimized-a.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "B",
+      "target": "local/obs-window-lifecycle/08-minimized-b.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "Restored",
+      "target": "local/obs-window-lifecycle/09-restored-after-minimize.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "Hidden A",
+      "target": "local/obs-window-lifecycle/10-hidden-a.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "B",
+      "target": "local/obs-window-lifecycle/11-hidden-b.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "Shown again",
+      "target": "local/obs-window-lifecycle/12-shown-again.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "Navigation while already frozen",
+      "target": "local/obs-window-lifecycle/12b-synthetic-navigation-same-window.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "Closed A",
+      "target": "local/obs-window-lifecycle/13-closed-unmatched-alternate-a.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "B",
+      "target": "local/obs-window-lifecycle/14-closed-unmatched-alternate-b.png"
+    },
+    {
+      "file": "ops/reports/obs-window-lifecycle.md",
+      "text": "Same-title replacement",
+      "target": "local/obs-window-lifecycle/15-same-title-owned-replacement.png"
+    },
+    {
+      "file": "ops/reports/output-layout-heartbeat.md",
+      "text": "the second run report",
+      "target": "local/combined-soak/2026-09-12T11-34-10-731Z-a910b510/report.json"
+    },
+    {
+      "file": "ops/reports/output-layout-heartbeat.md",
+      "text": "its separate report",
+      "target": "local/combined-soak/2026-09-12T11-20-21-602Z-dc841f17/report.json"
+    },
+    {
+      "file": "ops/reports/output-layout-heartbeat.md",
+      "text": "exploratory output",
+      "target": "local/output-layout-heartbeat-probe-aborted-bodies.json"
+    },
+    {
+      "file": "ops/reports/output-layout-heartbeat.md",
+      "text": "that guard result",
+      "target": "local/output-layout-publisher-smoke-stop-guard.json"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "2026-09-12T11-55-00-927Z-0b91f283",
+      "target": "local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/report.json"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "saved draw-gap analysis",
+      "target": "local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/draw-gap-analysis.json"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "RGB pixel checks",
+      "target": "local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/still-pixel-analysis.json"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "Seated start",
+      "target": "local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/seated-no-hands-start.png"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "Seated end",
+      "target": "local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/seated-no-hands-end.png"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "standing start",
+      "target": "local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/standing-hands-start.png"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "standing end",
+      "target": "local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/standing-hands-end.png"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "Thirteen bounded samples from the saved videos",
+      "target": "local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/recording-pixel-analysis.json"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "post-run desktop check",
+      "target": "local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/input-desktop-after.json"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "Balanced power policy",
+      "target": "local/combined-soak/2026-09-12T11-55-00-927Z-0b91f283/power-policy-after.txt"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "Run evidence",
+      "target": "local/combined-soak/2026-09-12T14-15-58-634Z-0c607f43/report.json"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "Run evidence",
+      "target": "local/combined-soak/2026-09-12T14-38-42-211Z-c43a78e8/report.json"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "Run evidence",
+      "target": "local/combined-soak/2026-09-12T15-02-11-696Z-d86513bb/report.json"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "Intermediate evidence",
+      "target": "local/combined-soak/2026-09-12T14-45-26-887Z-cefca7c3/report.json"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "Run evidence",
+      "target": "local/combined-soak/2026-09-12T17-14-31-614Z-c8be2e10/report.json"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "Run evidence",
+      "target": "local/combined-soak/2026-09-12T17-32-10-491Z-61449bfc/report.json"
+    },
+    {
+      "file": "ops/reports/performance.md",
+      "text": "Run evidence",
+      "target": "local/combined-soak/2026-09-12T17-54-07-973Z-d719380c/report.json"
+    },
+    {
+      "file": "ops/reports/studio-output.md",
+      "text": "portrait output",
+      "target": "local/output/portrait.png"
+    },
+    {
+      "file": "ops/reports/studio-output.md",
+      "text": "landscape output",
+      "target": "local/output/landscape.png"
+    },
+    {
+      "file": "ops/reports/voice-auditions.md",
+      "text": "desktop review",
+      "target": "local/voice/audition-desktop.png"
+    },
+    {
+      "file": "ops/reports/voice-auditions.md",
+      "text": "mobile review",
+      "target": "local/voice/audition-mobile.png"
+    },
+    {
+      "file": "ops/reports/voice-llvc-hybrid-cores.md",
+      "text": "log",
+      "target": "local/voice/llvc/llvc-affinity-hybrid-dc-v2.log"
+    },
+    {
+      "file": "ops/reports/voice-llvc-hybrid-cores.md",
+      "text": "Log",
+      "target": "local/voice/llvc/llvc-paced-pcore-thread-dc-v1.log"
+    },
+    {
+      "file": "ops/reports/voice-llvc-hybrid-cores.md",
+      "text": "converted 16 kHz",
+      "target": "local/voice/llvc/llvc-paced-pcore-thread-dc-v1-converted16k.wav"
+    },
+    {
+      "file": "ops/reports/voice-llvc-hybrid-cores.md",
+      "text": "published 40 kHz",
+      "target": "local/voice/llvc/llvc-paced-pcore-thread-dc-v1-published40k.wav"
+    },
+    {
+      "file": "ops/reports/voice-llvc-onnx.md",
+      "text": "retained per-run report",
+      "target": "local/voice/llvc-onnx/20260912T123054Z-2852/report.json"
+    },
+    {
+      "file": "ops/reports/voice-llvc-onnx.md",
+      "text": "worker log",
+      "target": "local/voice/llvc-onnx/20260912T123054Z-2852/worker.log"
+    },
+    {
+      "file": "ops/reports/voice-llvc-streaming-plan.md",
+      "text": "full log",
+      "target": "local/voice/llvc/llvc-stream-adapter-eager-v1.log"
+    },
+    {
+      "file": "ops/reports/voice-llvc-streaming-plan.md",
+      "text": "adapter waveform",
+      "target": "local/voice/llvc/llvc-stream-adapter-eager-v1.wav"
+    },
+    {
+      "file": "ops/reports/voice-llvc-streaming-plan.md",
+      "text": "upstream waveform",
+      "target": "local/voice/llvc/llvc-stream-adapter-eager-v1-upstream.wav"
+    },
+    {
+      "file": "ops/reports/voice-llvc-streaming-plan.md",
+      "text": "full log",
+      "target": "local/voice/llvc/llvc-paced-unit-v2.log"
+    },
+    {
+      "file": "ops/reports/voice-models.md",
+      "text": "local access evidence",
+      "target": "local/voice/lunar-access.json"
+    },
+    {
+      "file": "ops/reports/voice-models.md",
+      "text": "bright WAV",
+      "target": "local/voice/converted-bright.wav"
+    },
+    {
+      "file": "ops/reports/voice-models.md",
+      "text": "conversion metadata",
+      "target": "local/voice/converted-bright.json"
+    },
+    {
+      "file": "ops/reports/voice-models.md",
+      "text": "soft WAV",
+      "target": "local/voice/converted-soft.wav"
+    },
+    {
+      "file": "ops/reports/voice-models.md",
+      "text": "cool WAV",
+      "target": "local/voice/converted-cool.wav"
+    },
+    {
+      "file": "ops/reports/voice-natural-mode.md",
+      "text": "review image",
+      "target": "local/voice/natural-active-mocked.png"
+    },
+    {
+      "file": "ops/reports/voice-performance.md",
+      "text": "speech comparison page",
+      "target": "../../assets/voice/auditions/context-v1/review.html"
+    },
+    {
+      "file": "ops/reports/voice-toolchain.md",
+      "text": "machine-readable result",
+      "target": "local/voice/converted-bright.json"
+    },
+    {
+      "file": "ops/reports/voice-toolchain.md",
+      "text": "actual WAV",
+      "target": "local/voice/converted-bright.wav"
+    },
+    {
+      "file": "ops/reports/voice-toolchain.md",
+      "text": "Soft evidence",
+      "target": "local/voice/converted-soft.json"
+    },
+    {
+      "file": "ops/reports/voice-toolchain.md",
+      "text": "cool evidence",
+      "target": "local/voice/converted-cool.json"
+    },
+    {
+      "file": "ops/reports/web-resource-acceptance.md",
+      "text": "manifest",
+      "target": "../../web-showcase/public/ene/manifest.json"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-confused.md",
+      "text": "four-state playback page",
+      "target": "local/web-resources/desk-states-review.html"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-confused.md",
+      "text": "contact sheet",
+      "target": "local/web-resources/desk-confused/contact-sheet.png"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-confused.md",
+      "text": "unlabelled 320 CSS px comparison",
+      "target": "local/web-resources/desk-states-unlabelled-320px.png"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-confused.md",
+      "text": "authoring scene",
+      "target": "../../assets/work/ene-web/desk-confused-authoring.blend"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-confused.md",
+      "text": "render scene",
+      "target": "../../assets/work/ene-web/desk-confused.blend"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-excited.md",
+      "text": "playable four-state review",
+      "target": "local/web-resources/desk-states-review.html"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-excited.md",
+      "text": "excited contact sheet",
+      "target": "local/web-resources/desk-excited/contact-sheet.png"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-excited.md",
+      "text": "unlabelled comparison at 320 CSS px",
+      "target": "local/web-resources/desk-states-unlabelled-320px.png"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-excited.md",
+      "text": "authoring scene",
+      "target": "../../assets/work/ene-web/desk-excited-authoring.blend"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-excited.md",
+      "text": "render scene",
+      "target": "../../assets/work/ene-web/desk-excited.blend"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-normal.md",
+      "text": "playable review",
+      "target": "local/web-resources/review.html"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-normal.md",
+      "text": "12-pose contact sheet",
+      "target": "local/web-resources/desk-normal/contact-sheet.png"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-normal.md",
+      "text": "320 CSS px face/hand view",
+      "target": "local/web-resources/desk-normal/chrome-320px.png"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-normal.md",
+      "text": "desk-normal-authoring.blend",
+      "target": "../../assets/work/ene-web/desk-normal-authoring.blend"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-normal.md",
+      "text": "desk-normal.blend",
+      "target": "../../assets/work/ene-web/desk-normal.blend"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-normal.md",
+      "text": "pose snapshot",
+      "target": "../../assets/work/ene-web/desk-baseline-pose.json"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-surprised.md",
+      "text": "four-state playback page",
+      "target": "local/web-resources/desk-states-review.html"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-surprised.md",
+      "text": "contact sheet",
+      "target": "local/web-resources/desk-surprised/contact-sheet.png"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-surprised.md",
+      "text": "unlabelled 320 CSS px comparison",
+      "target": "local/web-resources/desk-states-unlabelled-320px.png"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-surprised.md",
+      "text": "desk-surprised-authoring.blend",
+      "target": "../../assets/work/ene-web/desk-surprised-authoring.blend"
+    },
+    {
+      "file": "ops/reports/web-resource-desk-surprised.md",
+      "text": "desk-surprised.blend",
+      "target": "../../assets/work/ene-web/desk-surprised.blend"
+    },
+    {
+      "file": "ops/reports/web-resource-feasibility.md",
+      "text": "WebM comparison",
+      "target": "local/web-resource-spike/chrome-webm-composite.png"
+    },
+    {
+      "file": "ops/reports/web-resource-feasibility.md",
+      "text": "WebP comparison",
+      "target": "local/web-resource-spike/chrome-webp-composite.png"
+    },
+    {
+      "file": "ops/reports/web-resource-greeting.md",
+      "text": "playable review",
+      "target": "local/web-resources/review.html"
+    },
+    {
+      "file": "ops/reports/web-resource-greeting.md",
+      "text": "contact sheet",
+      "target": "local/web-resources/home-greeting/contact-sheet.png"
+    },
+    {
+      "file": "ops/reports/web-resource-greeting.md",
+      "text": "poster",
+      "target": "local/web-resources/home-greeting/poster.png"
+    },
+    {
+      "file": "ops/reports/web-resource-greeting.md",
+      "text": "VMD inspection scene",
+      "target": "../../assets/work/ene/vmd-inspection.blend"
+    },
+    {
+      "file": "ops/reports/web-resource-greeting.md",
+      "text": "home-greeting-authoring.blend",
+      "target": "../../assets/work/ene-web/home-greeting-authoring.blend"
+    },
+    {
+      "file": "ops/reports/web-resource-greeting.md",
+      "text": "home-greeting.blend",
+      "target": "../../assets/work/ene-web/home-greeting.blend"
+    },
+    {
+      "file": "ops/reports/web-resource-greeting.md",
+      "text": "Chrome",
+      "target": "local/web-resources/chrome-white.png"
+    },
+    {
+      "file": "ops/reports/web-resource-production-review.md",
+      "text": "320 px contact",
+      "target": "local/web-production-review/home-greeting-contact.png"
+    },
+    {
+      "file": "ops/reports/web-resource-production-review.md",
+      "text": "black comparison",
+      "target": "local/web-production-review-large/home-greeting-black.png"
+    },
+    {
+      "file": "ops/reports/web-resource-production-review.md",
+      "text": "320 px contact",
+      "target": "local/web-production-review/desk-normal-contact.png"
+    },
+    {
+      "file": "ops/reports/web-resource-production-review.md",
+      "text": "640 px detail",
+      "target": "local/web-production-review-large/desk-normal-detail.png"
+    },
+    {
+      "file": "ops/reports/web-resource-production-review.md",
+      "text": "320 px contact",
+      "target": "local/web-production-review/desk-confused-contact.png"
+    },
+    {
+      "file": "ops/reports/web-resource-production-review.md",
+      "text": "white comparison",
+      "target": "local/web-production-review-large/desk-confused-white.png"
+    },
+    {
+      "file": "ops/reports/web-resource-production-review.md",
+      "text": "320 px contact",
+      "target": "local/web-production-review/desk-surprised-contact.png"
+    },
+    {
+      "file": "ops/reports/web-resource-production-review.md",
+      "text": "640 px detail",
+      "target": "local/web-production-review-large/desk-surprised-detail.png"
+    },
+    {
+      "file": "ops/reports/web-resource-production-review.md",
+      "text": "320 px contact",
+      "target": "local/web-production-review/desk-excited-contact.png"
+    },
+    {
+      "file": "ops/reports/web-resource-production-review.md",
+      "text": "640 px detail",
+      "target": "local/web-production-review-large/desk-excited-detail.png"
+    },
+    {
+      "file": "ops/reports/web-resource-production.md",
+      "text": "web-showcase/public/ene/manifest.json",
+      "target": "../../web-showcase/public/ene/manifest.json"
+    },
+    {
+      "file": "ops/reports/web-resource-production.md",
+      "text": "build manifest",
+      "target": "../../assets/work/ene-web/production-build.json"
+    },
+    {
+      "file": "ops/reports/web-resource-rebuild.md",
+      "text": "the private production build manifest",
+      "target": "../../assets/work/ene-web/production-build.json"
+    },
+    {
+      "file": "ops/reports/web-showcase.md",
+      "text": "final manifest",
+      "target": "../../web-showcase/public/ene/manifest.json"
+    },
+    {
+      "file": "ops/reports/web-showcase.md",
+      "text": "welcome desktop",
+      "target": "local/web-showcase/welcome-desktop.png"
+    },
+    {
+      "file": "ops/reports/web-showcase.md",
+      "text": "desk desktop",
+      "target": "local/web-showcase/desk-desktop.png"
+    },
+    {
+      "file": "ops/reports/web-showcase.md",
+      "text": "welcome phone layout",
+      "target": "local/web-showcase/welcome-mobile.png"
+    },
+    {
+      "file": "ops/reports/web-showcase.md",
+      "text": "desk phone layout",
+      "target": "local/web-showcase/desk-mobile.png"
+    }
+  ],
   "missingLaunchers": [],
   "unknownPorts": [],
   "limits": [
@@ -491,6 +1331,10 @@
     "Stop VModel.cmd"
   ],
   "referencedPorts": [
+    {
+      "port": 4173,
+      "purpose": "Studio server (scripts/start.ps1, scripts/server.mjs)"
+    },
     {
       "port": 4180,
       "purpose": "Website showcase production preview"
@@ -517,6 +1361,8 @@
     "https://data.keithito.com/data/speech/LJSpeech-1.1.tar.bz2",
     "https://developer.apple.com/videos/play/wwdc2019/506/",
     "https://developer.chrome.com/blog/alpha-transparency-in-chrome-video",
+    "https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria",
     "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion",
     "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Autoplay",
     "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types",
@@ -531,6 +1377,7 @@
     "https://fetch.spec.whatwg.org/",
     "https://ffmpeg.org/download.html",
     "https://ffmpeg.org/ffmpeg-codecs.html",
+    "https://gery.casiez.net/1euro/",
     "https://github.com/ButzYung/SystemAnimatorOnline",
     "https://github.com/CNChTu/FCPE/blob/main/LICENSE",
     "https://github.com/GyanD/codexffmpeg/releases/tag/9.0.1",
@@ -593,6 +1440,8 @@
     "https://github.com/takahirox/three-mmd-loader",
     "https://github.com/tegnike/aituber-kit",
     "https://github.com/tensorflow/tflite-support/blob/master/tensorflow_lite_support/metadata/metadata_schema.fbs",
+    "https://github.com/vrm-c/vrm-specification/blob/94e82dd346fa6cf0337c4421728640e5252dd38e/samples/Seed-san/README.md",
+    "https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0/meta.md",
     "https://github.com/w-okada/voice-changer/blob/f1caf8e7c39fd0d6866202be27bf142790191a51/README_en.md",
     "https://github.com/w-okada/voice-changer/blob/master/LICENSE",
     "https://github.com/w-okada/voice-changer/blob/master/README_en.md",
@@ -634,6 +1483,7 @@
     "https://support.google.com/chrome/answer/12929150?hl=en",
     "https://threejs.org/docs/pages/Quaternion.html",
     "https://vrm-addon-for-blender.info/en-us/",
+    "https://vrm.dev/en/vrm1/changed/",
     "https://vrm.dev/en/vrm1/humanoid/",
     "https://www.apache.org/licenses/LICENSE-2.0",
     "https://www.deviantart.com/aurorayok/art/MMD--ENE-NEW-VER.-DL!!!-433555045",
@@ -645,6 +1495,7 @@
     "https://www.reddit.com/r/TransVoicechangers/comments/1o11ksk/w_okada/",
     "https://www.reddit.com/r/transgamers/comments/1ek0yqn/recommendations_for_a_voice_changer_that_isnt/",
     "https://www.tripo3d.ai/pricing",
+    "https://www.w3.org/TR/WCAG22/",
     "https://www.youtube.com/watch?v=6egum-tZZbI",
     "https://x.com/DreamyCat_Miyu/status/2097143600597565728?s=20",
     "https://x.com/Dstudio_ai/status/2096475126942560677",
@@ -653,7 +1504,7 @@
     "https://x.com/tegnike/status/2097219959457763749?s=20"
   ],
   "checks": {
-    "everyRelativeLinkResolves": true,
+    "everyRelativeLinkResolves": false,
     "everyNamedLauncherExists": true,
     "everyLocalAddressIsKnown": true
   }

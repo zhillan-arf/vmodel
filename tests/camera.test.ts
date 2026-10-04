@@ -42,6 +42,42 @@ describe('camera session ownership and backpressure', () => {
     for (const cb of queued) cb(performance.now());
     await Promise.resolve(); await Promise.resolve();
   }
+  it.each(['completes', 'fails'])('keeps a new session image when an old image copy %s', async outcome => {
+    const diagnostic = vi.fn();
+    tracker = new CameraTracker(video, onFrame, status, () => defaults, diagnostic);
+    tracker.setDiagnosticDemand('inspect');
+    const oldCopy = deferred<ImageBitmap>();
+    const oldInput = { close: vi.fn() }, oldImage = { close: vi.fn() };
+    const newInput = { close: vi.fn() }, newImage = { close: vi.fn() };
+    vi.mocked(createImageBitmap).mockResolvedValueOnce(oldInput as unknown as ImageBitmap)
+      .mockReturnValueOnce(oldCopy.promise)
+      .mockResolvedValueOnce(newInput as unknown as ImageBitmap)
+      .mockResolvedValueOnce(newImage as unknown as ImageBitmap);
+    getUserMedia.mockResolvedValue(fakeStream().stream);
+    await tracker.start();
+    const oldSession = tracker.getSessionClock().sessionId;
+    const oldWorker = FakeWorker.instances[0];
+    oldWorker.emit({ type: 'ready', delegate: 'CPU' }); await tick();
+    await tracker.start();
+    const newSession = tracker.getSessionClock().sessionId;
+    expect(newSession).not.toBe(oldSession);
+    const worker = FakeWorker.instances[1];
+    worker.emit({ type: 'ready', delegate: 'CPU' }); await tick();
+    const sent = worker.postMessage.mock.calls.find(([data]) => data.type === 'frame')![0];
+    if (outcome === 'completes') oldCopy.resolve(oldImage as unknown as ImageBitmap);
+    else oldCopy.reject(new Error('Old image copy failed'));
+    await tick();
+    expect(oldInput.close).toHaveBeenCalledOnce();
+    expect(oldImage.close).toHaveBeenCalledTimes(outcome === 'completes' ? 1 : 0);
+    expect(newImage.close).not.toHaveBeenCalled();
+    const frame = { version: 1, timestamp: sent.timestamp };
+    oldWorker.emit({ type: 'result', frame });
+    worker.emit({ type: 'result', frame, diagnostics: { sessionId: oldSession, captureSequence: sent.captureSequence } });
+    expect(onFrame).not.toHaveBeenCalled();
+    worker.emit({ type: 'result', frame, diagnostics: { sessionId: newSession, captureSequence: sent.captureSequence } });
+    expect(diagnostic).toHaveBeenCalledWith(frame, expect.objectContaining({ sessionId: newSession }), newImage);
+    expect(onFrame).toHaveBeenCalledOnce();
+  });
   it('releases a stream that arrives after Stop without starting a worker', async () => {
     const request = deferred<MediaStream>(), { stream, track } = fakeStream();
     getUserMedia.mockReturnValue(request.promise);

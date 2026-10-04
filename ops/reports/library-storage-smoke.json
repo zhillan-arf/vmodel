@@ -1,0 +1,115 @@
+{
+  "generatedAt": "2026-10-04T12:17:32.832Z",
+  "browser": "153.0.8010.12",
+  "checks": {
+    "twoTabDuplicateRace": {
+      "models": 1,
+      "assets": 1,
+      "attachments": 1
+    },
+    "secondVisit": {
+      "sameEntry": true,
+      "remoteRename": true,
+      "profileKeysUnchanged": true
+    },
+    "rollbackAndCancellation": {
+      "before": {
+        "models": 1,
+        "assets": 1,
+        "attachments": 1
+      },
+      "afterQuota": {
+        "models": 1,
+        "assets": 1,
+        "attachments": 1
+      },
+      "afterCancel": {
+        "models": 1,
+        "assets": 1,
+        "attachments": 1
+      },
+      "afterRemove": {
+        "models": 1,
+        "assets": 1,
+        "attachments": 1
+      },
+      "quota": true,
+      "cancelled": true,
+      "stillSaved": true,
+      "invalidDraft": true
+    },
+    "restoreTransactions": {
+      "before": {
+        "models": 1,
+        "assets": 1,
+        "attachments": 1
+      },
+      "afterQuota": {
+        "models": 1,
+        "assets": 1,
+        "attachments": 1
+      },
+      "afterCancel": {
+        "models": 1,
+        "assets": 1,
+        "attachments": 1
+      },
+      "afterCommit": {
+        "models": 3,
+        "assets": 3,
+        "attachments": 3
+      },
+      "afterRemove": {
+        "models": 1,
+        "assets": 1,
+        "attachments": 1
+      },
+      "quota": true,
+      "cancelled": true,
+      "settingsFailures": 1
+    },
+    "blockedUpgrade": {
+      "message": "Close other studio tabs, then retry.",
+      "version": 1
+    },
+    "newerSchema": {
+      "message": "This library needs a newer application version. Saved data has not changed.",
+      "closed": true,
+      "records": 1
+    },
+    "deniedStorage": {
+      "bundledLoads": true,
+      "temporaryLoads": true,
+      "recoveryText": true
+    },
+    "persistence": {
+      "granted": {
+        "requestCount": 1,
+        "twoSavesWithZeroEstimate": true,
+        "statusVisible": true
+      },
+      "denied": {
+        "requestCount": 1,
+        "twoSavesWithZeroEstimate": true,
+        "statusVisible": true
+      },
+      "unavailable": {
+        "requestCount": 0,
+        "twoSavesWithZeroEstimate": true,
+        "statusVisible": true
+      }
+    }
+  },
+  "errors": [],
+  "fixtureHashes": [
+    "3c28e5c65fe07caec323a115c76bd51a94ccbb396a9e55886301063a1ca9f33b",
+    "09c84774cfe89af2260a176c3c06162abd2297f41189af309fb76227c6931d7c",
+    "9bc3e4e7f1fb38e886e6c326b61aed7944abf47f5058905fc41e9d2e57c4d525",
+    "24f1a27a1785ea9a2411104217b372db7de7d5a26b8c6478050cfb373943bd99"
+  ],
+  "limits": [
+    "Synthetic models only.",
+    "The blocked-upgrade test changes the requested version through a test wrapper.",
+    "No physical camera or Windows browser acceptance."
+  ]
+}

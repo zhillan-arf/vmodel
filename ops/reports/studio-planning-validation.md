@@ -10,8 +10,8 @@ Date: 2026-10-04. This report checks the planning package and task controls. It 
 - [39 product requirements](../specs/studio-product-spec.md)
 - [Interactive layout reference](../specs/studio-layout.html)
 - [Task register](../tasks/backlog/README.md)
-- [Library controller](../tasks/backlog/TASK-P04.md)
-- [Tracking controller](../tasks/backlog/TASK-P05.md)
+- [Library controller](../tasks/active/TASK-P04.md)
+- [Tracking controller](../tasks/active/TASK-P05.md)
 
 TASK-039 through TASK-060 contain 22 detailed implementation tasks. Each task defines dependencies, effort, scope, requirements, work, acceptance, verification, and expected evidence.
 

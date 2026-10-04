@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-10-04T12:10:05.660Z",
+  "baselineCommit": "da48542e991aa202a1b9eaafc1a4f1cbb22ef7b9",
+  "cases": [
+    "canonical",
+    "missing head",
+    "missing arm",
+    "opposite orientation"
+  ],
+  "updates": 720,
+  "maxQuaternionDifferenceRadians": 5.16191365590357e-8,
+  "maxPositionDifference": 0,
+  "acceptedGoalSetsEqual": true,
+  "expressionValuesEqual": true,
+  "limits": [
+    "Synthetic motion and canonical rig variants only.",
+    "No physical camera or actual-model acceptance."
+  ]
+}

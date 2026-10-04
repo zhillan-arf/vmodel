@@ -23,9 +23,9 @@ This register covers 60 implementation tasks across six goals. Controllers do no
 
 The [research evaluation](../../reports/studio-research-evaluation.md), [action plan](../../specs/studio-evolution-plan.md), [decisions](../../specs/studio-design-decisions.md), and [product specification](../../specs/studio-product-spec.md) define G5 and G6.
 
-[TASK-P04](TASK-P04.md) owns G5 and TASK-039 through TASK-048. [TASK-P05](TASK-P05.md) owns G6 and TASK-049 through TASK-060.
+[TASK-P04](../active/TASK-P04.md) owns G5 and TASK-039 through TASK-048. [TASK-P05](../active/TASK-P05.md) owns G6 and TASK-049 through TASK-060.
 
-Checkpoint on 2026-10-04: 22 Done; 14 In progress; 0 Blocked; 2 Ready; 22 Todo. New feature implementation has not started.
+Checkpoint on 2026-10-04: 32 Done; 22 In progress; 1 Blocked; 0 Ready; 5 Todo. P04/P05 implementation has synthetic evidence.
 
 [TASK-P01](../active/TASK-P01.md) coordinates all 60 implementation tasks. Individual tasks control detailed acceptance. P01 remains open through TASK-021 and does not block its children.
 
@@ -37,7 +37,7 @@ Read **TASK-P01** at the start of each implementation session and reconcile the 
 
 G4 is complete for its recorded local scope. Use TASK-P03 for its evidence and explicit device limits.
 
-For G5, start TASK-039. For G6, start TASK-049. Follow child dependencies after these independent entry points.
+For G5 and G6, continue the remaining checks in the [implementation record](../../reports/studio-implementation.md). Real-model and physical acceptance remain open.
 
 Physical diagnosis in TASK-056 follows inspector acceptance. Do not alter tracking parameters before that diagnosis. TASK-060 requires the G5 handoff.
 
@@ -96,28 +96,28 @@ TASK-027's training is conditional: close with evidence that an existing voice f
 | [TASK-036](../archived/TASK-036.md) | Produce all five web media families and their manifest | G4 | TASK-031, TASK-032, TASK-033, TASK-034, TASK-035 | Done |
 | [TASK-037](../archived/TASK-037.md) | Build the local web showcase and reusable resource player | G4 | TASK-036 | Done |
 | [TASK-038](../archived/TASK-038.md) | Validate web resources and deliver the G4 integration kit | G4 | TASK-037 | Done |
-| [TASK-039](TASK-039.md) | Define shared studio views and model contracts | G5 | None | Ready |
-| [TASK-040](TASK-040.md) | Separate avatar preparation from selection commit | G5 | TASK-039 | Todo |
-| [TASK-041](TASK-041.md) | Implement the local model repository | G5 | TASK-039 | Todo |
-| [TASK-042](TASK-042.md) | Inspect VRM structure capabilities and terms | G5 | TASK-040 | Todo |
-| [TASK-043](TASK-043.md) | Build the import preview and save flow | G5 | TASK-041, TASK-042 | Todo |
-| [TASK-044](TASK-044.md) | Commit model selection and report output state | G5 | TASK-040, TASK-041 | Todo |
-| [TASK-045](TASK-045.md) | Build library cards and entry management | G5 | TASK-043, TASK-044 | Todo |
-| [TASK-046](TASK-046.md) | Implement original export and portable backups | G5 | TASK-041, TASK-042 | Todo |
-| [TASK-047](TASK-047.md) | Verify library recovery performance and appearance | G5 | TASK-045, TASK-046 | Todo |
-| [TASK-048](TASK-048.md) | Deliver the library guide and G5 evidence | G5 | TASK-047 | Todo |
-| [TASK-049](TASK-049.md) | Add task diagnostic envelopes and timing | G6 | None | Ready |
-| [TASK-050](TASK-050.md) | Expose solver rejection reasons without behavior changes | G6 | TASK-049 | Todo |
-| [TASK-051](TASK-051.md) | Build the matched camera overlay and live controls | G6 | TASK-039, TASK-049, TASK-050 | Todo |
-| [TASK-052](TASK-052.md) | Build estimated body and hand views | G6 | TASK-051 | Todo |
-| [TASK-053](TASK-053.md) | Implement bounded traces and deterministic replay | G6 | TASK-049, TASK-050 | Todo |
-| [TASK-054](TASK-054.md) | Compare canonical motion with both avatars | G6 | TASK-040, TASK-050, TASK-052, TASK-053 | Todo |
-| [TASK-055](TASK-055.md) | Verify inspector performance and visual clarity | G6 | TASK-051, TASK-052, TASK-053, TASK-054 | Todo |
-| [TASK-056](TASK-056.md) | Diagnose live motion through all tracker stages | G6 | TASK-055 | Todo |
+| [TASK-039](../active/TASK-039.md) | Define shared studio views and model contracts | G5 | None | In progress |
+| [TASK-040](../archived/TASK-040.md) | Separate avatar preparation from selection commit | G5 | TASK-039 | Done |
+| [TASK-041](../archived/TASK-041.md) | Implement the local model repository | G5 | TASK-039 | Done |
+| [TASK-042](../archived/TASK-042.md) | Inspect VRM structure capabilities and terms | G5 | TASK-040 | Done |
+| [TASK-043](../active/TASK-043.md) | Build the import preview and save flow | G5 | TASK-041, TASK-042 | In progress |
+| [TASK-044](../archived/TASK-044.md) | Commit model selection and report output state | G5 | TASK-040, TASK-041 | Done |
+| [TASK-045](../active/TASK-045.md) | Build library cards and entry management | G5 | TASK-043, TASK-044 | In progress |
+| [TASK-046](../archived/TASK-046.md) | Implement original export and portable backups | G5 | TASK-041, TASK-042 | Done |
+| [TASK-047](../active/TASK-047.md) | Verify library recovery performance and appearance | G5 | TASK-045, TASK-046 | In progress |
+| [TASK-048](../active/TASK-048.md) | Deliver the library guide and G5 evidence | G5 | TASK-047 | In progress |
+| [TASK-049](../archived/TASK-049.md) | Add task diagnostic envelopes and timing | G6 | None | Done |
+| [TASK-050](../archived/TASK-050.md) | Expose solver rejection reasons without behavior changes | G6 | TASK-049 | Done |
+| [TASK-051](../active/TASK-051.md) | Build the matched camera overlay and live controls | G6 | TASK-039, TASK-049, TASK-050 | In progress |
+| [TASK-052](../archived/TASK-052.md) | Build estimated body and hand views | G6 | TASK-051 | Done |
+| [TASK-053](../archived/TASK-053.md) | Implement bounded traces and deterministic replay | G6 | TASK-049, TASK-050 | Done |
+| [TASK-054](../archived/TASK-054.md) | Compare canonical motion with both avatars | G6 | TASK-040, TASK-050, TASK-052, TASK-053 | Done |
+| [TASK-055](../active/TASK-055.md) | Verify inspector performance and visual clarity | G6 | TASK-051, TASK-052, TASK-053, TASK-054 | In progress |
+| [TASK-056](../active/TASK-056.md) | Diagnose live motion through all tracker stages | G6 | TASK-055 | Blocked |
 | [TASK-057](TASK-057.md) | Evaluate and correct measured task scheduling faults | G6 | TASK-056 | Todo |
 | [TASK-058](TASK-058.md) | Evaluate measured motion corrections | G6 | TASK-056, TASK-057 | Todo |
 | [TASK-059](TASK-059.md) | Accept motion corrections and state sensing limits | G6 | TASK-057, TASK-058 | Todo |
-| [TASK-060](TASK-060.md) | Verify the combined studio and deliver G6 | G6 | TASK-048, TASK-059 | Todo |
+| [TASK-060](../active/TASK-060.md) | Verify the combined studio and deliver G6 | G6 | TASK-048, TASK-059 | In progress |
 
 ## New work dependencies
 

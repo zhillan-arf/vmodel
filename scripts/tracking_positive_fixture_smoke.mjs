@@ -6,7 +6,8 @@ import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 import { startIsolatedStudioServer } from './isolated-studio-server.mjs';
 
-if (!process.argv.includes('--quiet-window')) throw new Error('Coordinate an idle CPU/GPU window, then use --quiet-window.');
+const functional = process.argv.includes('--functional');
+if (!functional && !process.argv.includes('--quiet-window')) throw new Error('Coordinate an idle CPU/GPU window, then use --quiet-window.');
 const usage = 'https://www.nasa.gov/nasa-brand-center/images-and-media/';
 const fixtures = [
   { id: 'portrait', file: 'assets/testing/jsc2021e037768_alt.jpg', sha256: '7a7536821783691d1c7b58f5ee7cb601abbeaaa2f4703e755a15c5dbb4271b78',
@@ -23,7 +24,7 @@ const variants = [
   { id: 'body-face-hand-crop', fixture: 'full-body', crop: { x: 150, y: 75, width: 520, height: 400 } },
 ];
 const relativeTimestamp = process.argv.includes('--relative-timestamps');
-const report = { date: new Date().toISOString(), timestampMode: relativeTimestamp ? 'Monotonic session-relative milliseconds (diagnostic comparison)' : 'Epoch milliseconds (normal TrackingFrame contract)', input: 'Two NASA-credited real-person photos, repeated as still frames. Ordinary canvas resizing/letterboxing and two stated upper-body crops only. No camera, image generation, identity/sensitive-trait analysis, training, public redistribution or movement test.',
+const report = { mode: functional ? 'CPU function checks; no performance acceptance' : 'Coordinated performance check', date: new Date().toISOString(), timestampMode: relativeTimestamp ? 'Monotonic session-relative milliseconds (diagnostic comparison)' : 'Epoch milliseconds (normal TrackingFrame contract)', input: 'Two NASA-credited real-person photos, repeated as still frames. Ordinary canvas resizing/letterboxing and two stated upper-body crops only. No camera, image generation, identity/sensitive-trait analysis, training, public redistribution or movement test.',
   terms: { source: usage, basis: 'NASA permits factual informational uses subject to its media guidelines. Files and technical outputs are private test artifacts, imply no NASA endorsement, and are not used as promotional imagery. Photographs retain their publisher content; models are only run for inference, not trained.' },
   fixtures, variants, results: [], errors: [], messages: [], externalRequests: [], externalResponses: [], runtimeResponses: [] };
 let server, browser;
@@ -39,7 +40,7 @@ try {
   report.sdk = JSON.parse(await readFile('node_modules/@mediapipe/tasks-vision/package.json', 'utf8')).version;
   const policy = JSON.parse(await readFile('config/http-policy.json', 'utf8'));
   server = await startIsolatedStudioServer(); report.server = { base: server.base, pid: server.pid, isolated: true };
-  browser = await chromium.launch({ channel: 'chrome', headless: true }); report.chromeVersion = browser.version();
+  browser = await chromium.launch({ ...(functional ? {} : { channel: 'chrome' }), headless: true }); report.chromeVersion = browser.version();
   const context = await browser.newContext();
   const external = url => !url.startsWith(server.base + '/') && !url.startsWith('blob:') && !url.startsWith('data:');
   context.on('request', request => { if (external(request.url())) report.externalRequests.push(request.url()); });
@@ -63,8 +64,8 @@ try {
   page.on('pageerror', error => report.errors.push(error.message));
   page.on('console', message => { if (report.messages.length < 150) report.messages.push({ type: message.type(), text: message.text() }); });
   await page.goto(server.base + '/');
-  for (const delegate of ['GPU', 'CPU']) {
-    const result = await page.evaluate(async ({ delegate, variants, workerPath, relativeTimestamp }) => {
+  for (const delegate of (functional ? ['CPU'] : ['GPU', 'CPU'])) {
+    const result = await page.evaluate(async ({ delegate, variants, workerPath, relativeTimestamp, functional }) => {
       const worker = new Worker(workerPath, { type: 'module' }), bitmaps = new Map();
       const request = (message, transfers = []) => new Promise((resolve, reject) => {
         const cleanup = () => { clearTimeout(timer); worker.removeEventListener('message', receive); worker.removeEventListener('error', failed); };
@@ -78,6 +79,7 @@ try {
         const start = performance.now(), ready = await request({ type: 'init', ...(delegate === 'CPU' ? { delegate } : {}) });
         if (ready.type !== 'ready' || ready.delegate !== delegate) throw new Error(`Requested ${delegate}; worker returned ${JSON.stringify(ready)}`);
         const initializationMs = performance.now() - start, measurements = [];
+        const anchor=performance.timeOrigin+performance.now();let captureSequence=0;
         const canvas = new OffscreenCanvas(640, 480), draw = canvas.getContext('2d');
         for (const variant of variants) {
           const image = bitmaps.get(variant.fixture), crop = variant.crop ?? { x: 0, y: 0, width: image.width, height: image.height };
@@ -87,10 +89,21 @@ try {
           const frames = [];
           for (let index = 0; index < 11; index++) {
             const bitmap = await createImageBitmap(canvas), timestamp = (relativeTimestamp ? 0 : performance.timeOrigin) + performance.now(), sent = performance.now();
-            const { frame } = await request({ type: 'frame', bitmap, timestamp, quality: 'balanced', hands: true }, [bitmap]);
+            const demand=functional&&index%2===0?'inspect':'off';captureSequence++;
+            const { frame, diagnostics } = await request({ type: 'frame', bitmap, timestamp, quality: 'balanced', hands: true,
+              demand,anchor,sessionId:'positive-fixture',captureSequence,videoTimeMs:captureSequence*100 }, [bitmap]);
+            if(demand==='off'&&diagnostics)throw new Error('Disabled diagnostics were returned.');
+            if(demand==='inspect'){
+              if(!diagnostics||diagnostics.sessionId!=='positive-fixture'||diagnostics.captureSequence!==captureSequence)throw new Error('Diagnostic identity mismatch.');
+              for(const task of ['face','pose','hands']){
+                const value=diagnostics.tasks[task];
+                if(Math.abs(value.sampleTimeMs+anchor-frame.samples[task].timestamp)>.001)throw new Error('Diagnostic sample time mismatch.');
+                if(value.finishedAtMs<value.startedAtMs)throw new Error('Diagnostic clock order mismatch.');
+              }
+            }
             if (!frame) throw new Error('Missing real-photo inference frame.');
             const finitePoints = points => points.every(point => ['x', 'y', 'z'].every(axis => Number.isFinite(point[axis])));
-            frames.push({ sequence: frame.sequence, timestamp: frame.timestamp, inferenceMs: frame.inferenceMs, roundTripMs: performance.now() - sent, samples: frame.samples,
+            frames.push({ diagnostics:diagnostics?{captureSequence:diagnostics.captureSequence,tasks:Object.fromEntries(Object.entries(diagnostics.tasks).map(([task,value])=>[task,{...value,observations:undefined,observationPoints:value.observations?.[0]?.length??0}]))}:null, sequence: frame.sequence, timestamp: frame.timestamp, inferenceMs: frame.inferenceMs, roundTripMs: performance.now() - sent, samples: frame.samples,
               warm: index >= 3, allTasksFresh: ['face', 'pose', 'hands'].every(name => frame.samples[name].timestamp === timestamp),
               outputs: { faceMatrixValues: frame.faceMatrix?.length ?? 0, blendshapeCount: Object.keys(frame.face).length, posePoints: frame.pose.length, poseImagePoints: frame.poseImage.length,
                 hands: frame.hands.map(hand => ({ points: hand.landmarks.length, worldPoints: hand.world.length, score: hand.score })),
@@ -100,7 +113,7 @@ try {
         }
         return { delegate, initializationMs, measurements, mediaRequests: window.__mediaRequests };
       } finally { worker.terminate(); for (const bitmap of bitmaps.values()) bitmap.close(); }
-    }, { delegate, variants, workerPath, relativeTimestamp });
+    }, { delegate, variants, workerPath, relativeTimestamp, functional });
     const median = values => { const sorted = [...values].sort((a, b) => a - b); return sorted.length % 2 ? sorted[(sorted.length - 1) / 2] : (sorted[sorted.length / 2 - 1] + sorted[sorted.length / 2]) / 2; };
     result.summary = result.measurements.map(measurement => {
       const warm = measurement.frames.filter(frame => frame.warm && frame.allTasksFresh);
@@ -126,5 +139,5 @@ try {
 finally {
   try { await browser?.close(); report.browserClosed = !!browser; } catch (error) { report.errors.push(`Browser cleanup: ${error}`); process.exitCode = 1; }
   try { if (server) { report.serverExit = await server.stop(); report.serverStopped = true; } } catch (error) { report.errors.push(`Server cleanup: ${error}`); process.exitCode = 1; }
-  await mkdir('ops/reports', { recursive: true }); await writeFile('ops/reports/tracking-positive-fixture.json', JSON.stringify(report, null, 2) + '\n');
+  await mkdir('ops/reports', { recursive: true }); await writeFile(functional ? 'ops/reports/tracking-positive-functional.json' : 'ops/reports/tracking-positive-fixture.json', JSON.stringify(report, null, 2) + '\n');
 }

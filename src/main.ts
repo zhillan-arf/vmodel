@@ -1,4 +1,9 @@
 import './style.css';
+import { LocalModelRepository } from './model-repository';
+import { LibraryPanel } from './library-panel';
+import { createNavigation } from './studio-navigation';
+import { ModelOperation, prepareSelection, abortable } from './model-selection';
+import { TrackingInspector } from './tracking-inspector';
 import { bundledAvatars, savedAvatar } from './avatars';
 import { AvatarViewer } from './viewer';
 import { CameraTracker } from './camera';
@@ -51,7 +56,7 @@ app.innerHTML = output ? '<main id="stage" class="output-stage"></main>' : `
     <button id="reset" class="text-button">Reset settings</button>
     <div class="pair"><button id="save-settings">Save settings</button><label class="file-button compact">Load settings<input id="settings-file" type="file" accept=".json" /></label></div>
   </aside>
-  <main class="workspace">
+  <main class="workspace" data-studio-panel="studio">
     <header><div><span class="eyebrow">YOUR VIRTUAL STAGE</span><h2>Make yourself seen.</h2></div><span class="local-badge"><i></i> Runs on your laptop</span></header>
     <div class="stage-wrap"><div id="stage"></div><div id="loading" class="loading">Preparing avatar…</div><span class="stage-label">VMODEL</span></div>
     <footer><div><span id="status-dot" class="status-dot"></span><span id="status" role="status" aria-live="polite">Loading avatar…</span><small id="stats"></small><small id="tracking-hint"></small><small id="output-status">Output closed · Escape returns from Clean view</small></div><div class="pair"><button id="clean">Clean view</button><button id="output" class="primary">Open output ↗</button></div></footer>
@@ -65,11 +70,25 @@ let avatarId: string | null = null, loadingAvatarId: string | null = null, label
 let selectedBundle: string | null = null;
 let calibration: Calibration | null = null, appliedCalibration = '', expression = 'neutral', loadGeneration = 0;
 let tracker: CameraTracker | null = null;
+const repository = output ? null : new LocalModelRepository();
+const modelOperation = new ModelOperation();
+let libraryPanel: LibraryPanel | null = null, inspector: TrackingInspector | null = null;
+let selectedModelId: string | null = null, requestedModelId: string | null = null;
+let selectionRevision = 0, receivedRevision = -1;
+const revisionKey = `vmodel-selection-revision:${session}`;
+if (!output) {
+  try {
+    const savedRevision = Number(sessionStorage.getItem(revisionKey));
+    if (Number.isSafeInteger(savedRevision) && savedRevision >= 0) selectionRevision = savedRevision;
+  } catch { /* Storage can be unavailable. */ }
+}
+let outputLoadingRevision = -1;
+let pendingOutputState: OutputSnapshot | null = null;
 const stopServerWatch = output || import.meta.env.DEV ? () => {} : watchLocalServer(() => !!tracker?.getCameraInfo(), () => {
   tracker?.stop(); lastFrame = null; link.frame(null); status('Local studio server disconnected. Camera stopped; reopen Start VModel.cmd to continue.');
 });
 let lastTime = performance.now(), fps = 0, frames = 0, lastStats = performance.now();
-const status = (message: string) => { const el = document.querySelector('#status'); if (el) el.textContent = message; };
+const status = (message: string) => { const el = document.querySelector('#status'); if (el) el.textContent = message; const cameraMessage=document.querySelector('#camera-message');if(cameraMessage)cameraMessage.textContent=message; };
 stage.addEventListener('vmodel-renderer-state', event => status((event as CustomEvent<string>).detail));
 const scope = (): CalibrationScope | null => {
   const info = tracker?.getCameraInfo();
@@ -82,13 +101,13 @@ function applyPerformanceState() {
 }
 function restoreCalibration() { calibration = readCalibration(scope()); appliedCalibration = ''; applyPerformanceState(); }
 const link = new OutputLink(output, session,
-  known => ({ avatarId, label, ...(avatar && known !== avatarId ? { blob: avatar } : {}), settings, calibration, expression, frame: lastFrame }),
+  known => ({ sessionId:session!, revision:selectionRevision, avatarId, label, ...(avatar && known !== avatarId ? { blob: avatar } : {}), settings, calibration, expression, frame: lastFrame }),
   state => { void receiveSnapshot(state); }, frame => { lastFrame = frame; }, () => loadingAvatarId ?? avatarId,
   count => {
     if (output) { document.title = count ? `VModel Output · ${settings.orientation}` : 'VModel Output · waiting for controls'; return; }
     const el = document.querySelector('#output-status'), size = compositionSize(settings.orientation);
     if (el) el.textContent = count ? `${count} output connected · ${size.width} × ${size.height}` : 'Output closed · Escape returns from Clean view';
-  });
+  }, peers => { const el=document.querySelector('#output-peer-status');if(el)el.textContent=peers.map(peer=>`Output ${peer.state} · revision ${peer.revision}${peer.revision!==selectionRevision?' · Model mismatch':''}${peer.message?' · '+peer.message:''}`).join(' | '); });
 function applySettings() {
   document.body.classList.toggle('portrait', settings.orientation === 'portrait');
   viewer.configure(settings);
@@ -100,38 +119,58 @@ function applySettings() {
     link.publish();
   }
 }
-async function load(source: Blob | Promise<Blob>, nextLabel = label, bundleId: string | null = null) {
+async function load(source: Blob | Promise<Blob>, nextLabel = label, bundleId: string | null = null, entryId: string | null = bundleId, expectedHash?: string) {
+  libraryPanel?.cancel();
+  const signal = modelOperation.begin(); requestedModelId = entryId;
   const generation = ++loadGeneration;
   viewer.cancelPendingLoad();
   const loading = document.querySelector('#loading');
-  if (loading) { loading.textContent = `Preparing ${nextLabel}…`; loading.classList.remove('hidden'); }
+  if (loading) { loading.textContent = `Preparing ${nextLabel}…`; loading.classList.toggle('hidden',!!avatar); }
   status(`Loading ${nextLabel}…`);
   try {
-    const blob = await source;
+    const blob = await abortable(Promise.resolve(source),signal); signal.throwIfAborted();
     if (generation !== loadGeneration) return;
     const hash = await crypto.subtle.digest('SHA-256', await blob.arrayBuffer());
     const id = [...new Uint8Array(hash)].map(b => b.toString(16).padStart(2, '0')).join('');
     if (generation !== loadGeneration) return;
+    if(expectedHash && expectedHash !== id) throw new Error('Model bytes failed the hash check. Restore a backup.');
     loadingAvatarId = id;
-    const vrm = await viewer.load(blob);
-    if (generation !== loadGeneration) return;
-    avatar = blob; avatarId = id; loadingAvatarId = null; label = nextLabel; selectedBundle = bundleId; retarget = new Retargeter(vrm); appliedCalibration = '';
+    const prepared = await prepareSelection(viewer, blob, signal);
+    if (generation !== loadGeneration || signal.aborted) { viewer.disposePreparedAvatar(prepared);signal.throwIfAborted();return; }
+    const nextSettings = output && pendingOutputState?.avatarId===id ? normalizeSettings(pendingOutputState.settings) : output ? settings : readSettings(avatarSettingsKey(id));
+    viewer.commitAvatar(prepared);
+    settings = nextSettings;
+    avatar = blob; avatarId = id; loadingAvatarId = null; label = nextLabel; selectedBundle = bundleId; retarget = prepared.retarget; appliedCalibration = '';
+    selectedModelId = entryId; requestedModelId = null; selectionRevision++; modelOperation.finish(signal);
     if (!output) {
-      settings = readSettings(avatarSettingsKey(id)); restoreCalibration();
+      try { sessionStorage.setItem(revisionKey, String(selectionRevision)); } catch { /* Keep the current session active. */ }
+    }
+    if (!output) {
+      restoreCalibration();
       (document.querySelector('#avatar-select') as HTMLSelectElement).value = bundleId ?? 'custom';
-      try { if (bundleId) localStorage.setItem('vmodel-avatar', bundleId); else localStorage.removeItem('vmodel-avatar'); } catch { /* optional persistence */ }
+      try { if (bundleId) localStorage.setItem('vmodel-avatar', bundleId); } catch { /* optional persistence */ }
     }
     applySettings(); applyPerformanceState();
     document.querySelector('#loading')?.classList.add('hidden');
     const name = document.querySelector('#avatar-name'); if (name) name.textContent = label;
     const stageLabel = document.querySelector('.stage-label'); if (stageLabel) stageLabel.textContent = label.toUpperCase();
-    status(`${label} is ready. Start your camera when you are.`);
-    if (!output) link.publish();
+    status('Saving model selection…');
+    let sessionOnly=false;
+    if (!output) {
+      link.publish();
+      if(entryId){try{await repository!.select(entryId);}catch{sessionOnly=true;}}
+      if(generation!==loadGeneration)return;
+      void libraryPanel?.refresh();
+    }
+    status(sessionOnly?'Selected for this session only':`${label} is ready. Start your camera when you are.`);
+
+    for(const button of document.querySelectorAll<HTMLButtonElement>('[data-expression]')){const name=button.dataset.expression!;button.disabled=name!=='neutral'&&!prepared.vrm.expressionManager?.getExpression(name)&&!(name==='surprised'&&prepared.vrm.expressionManager?.getExpression('びっくり'));button.title=button.disabled?'This expression is not available.':'';}
     // Read-only diagnostic access for automated rendering/rig verification.
     Object.assign(window, { __vmodel: { viewer, retarget, setFrame: (frame: TrackingFrame) => { lastFrame = frame; link.frame(frame); }, getState: () => ({ avatarId, label, selectedBundle, settings, calibration, expression }), getStats: () => ({ fps, inferenceMs: lastFrame?.inferenceMs ?? 0, sequence: lastFrame?.sequence ?? 0, samples: lastFrame?.samples ?? null, drawCalls: viewer.renderer.info.render.calls }) } });
   } catch (error) {
     if (generation !== loadGeneration) return;
-    loadingAvatarId = null;
+    loadingAvatarId = null; requestedModelId = null; modelOperation.finish(signal);
+    if(output) link.acknowledge(receivedRevision,'error',String(error));
     const message = describeLoadFailure(error); status(message);
     if (loading) { loading.textContent = `${message} Choose a model or load another VRM.`; loading.classList.toggle('hidden', !!avatar); }
     const select = document.querySelector<HTMLSelectElement>('#avatar-select'); if (select) select.value = selectedBundle ?? 'custom';
@@ -145,25 +184,42 @@ function loadBundle(id: string) {
   }), model.label, model.id);
 }
 async function receiveSnapshot(state: OutputSnapshot) {
-  if (!output) return;
-  const nextSettings = normalizeSettings(state.settings);
-  const changed = JSON.stringify(settings) !== JSON.stringify(nextSettings);
-  settings = nextSettings; calibration = validCalibration(state.calibration) ? state.calibration : null;
-  expression = ['neutral','happy','surprised'].includes(state.expression) ? state.expression : 'neutral';
-  lastFrame = state.frame;
-  if (changed) applySettings();
-  if (state.avatarId === avatarId && loadingAvatarId) {
-    ++loadGeneration; viewer.cancelPendingLoad(); loadingAvatarId = null;
+  if (!output || state.sessionId && state.sessionId !== session) return;
+  const revision=state.revision??0;
+  if(revision<receivedRevision)return;
+  if(revision===receivedRevision&&pendingOutputState&&state.avatarId!==pendingOutputState.avatarId)return;
+  if(revision>receivedRevision&&outputLoadingRevision>=0){
+    ++loadGeneration;modelOperation.cancel();viewer.cancelPendingLoad();loadingAvatarId=null;outputLoadingRevision=-1;
   }
-  if (state.avatarId !== avatarId && state.avatarId !== loadingAvatarId && state.blob) {
-    loadingAvatarId = state.avatarId; await load(state.blob, state.label);
+  receivedRevision=revision; pendingOutputState=state;
+  if(state.avatarId!==avatarId){
+    if(outputLoadingRevision===revision)return;
+    if(!state.blob)return;
+    outputLoadingRevision=revision; link.acknowledge(revision,'loading');
+    try{await load(state.blob,state.label,null,null,state.avatarId??undefined);}
+    finally{if(outputLoadingRevision===revision)outputLoadingRevision=-1;}
+    if(revision!==receivedRevision || state.avatarId!==avatarId)return;
+  }else if(outputLoadingRevision>=0){
+    ++loadGeneration;modelOperation.cancel();viewer.cancelPendingLoad();loadingAvatarId=null;outputLoadingRevision=-1;
   }
-  if (state.avatarId === avatarId) applyPerformanceState();
+  const current=pendingOutputState;
+  if(!current || current.avatarId!==avatarId)return;
+  settings=normalizeSettings(current.settings);
+  calibration=validCalibration(current.calibration)?current.calibration:null;
+  expression=['neutral','happy','surprised'].includes(current.expression)?current.expression:'neutral';
+  lastFrame=current.frame;applySettings();applyPerformanceState();link.acknowledge(revision,'ready');
 }
+
 if (output) document.body.classList.add('output');
 else {
   const video = document.querySelector<HTMLVideoElement>('#camera-video')!;
-  tracker = new CameraTracker(video, frame => { lastFrame = frame; link.frame(frame); }, status, () => settings);
+  tracker = new CameraTracker(video, frame => { lastFrame = frame; link.frame(frame); }, status, () => settings, (frame,envelope,image) => inspector?.receive(frame,envelope,image));
+  libraryPanel = new LibraryPanel(repository!, async asset => { await load(asset.blob,asset.label,bundledAvatars.some(x=>x.id===asset.entryId)?asset.entryId:null,asset.entryId,asset.hash); }, () => ({id:selectedModelId,requested:requestedModelId,temporaryLabel:avatarId&&!selectedModelId?label:null}), modelOperation);
+  inspector = new TrackingInspector(demand=>tracker!.setDiagnosticDemand(demand),()=>settings,()=>calibration,()=>tracker!.getStream(),()=>tracker!.getSessionClock(),()=>avatar,async(id,signal)=>(await repository!.resolve(id,signal)).blob);
+  app.append(libraryPanel.element,inspector.element);
+  const navigation=createNavigation(view=>{libraryPanel?.setVisible(view==='library');inspector?.setVisible(view==='tracking');viewer.resize();});
+  const peerStatus=document.createElement('p');peerStatus.id='output-peer-status';peerStatus.setAttribute('role','status');navigation.element.append(peerStatus);
+  app.prepend(navigation.element);
   const updateDevices = async () => {
     const select = document.querySelector<HTMLSelectElement>('#camera')!; const previous = select.value;
     const devices = await tracker!.devices().catch(() => []);
@@ -180,7 +236,7 @@ else {
     const saved = calibration && saveCalibration(scope(), calibration); link.publish(); status(saved ? 'Neutral pose saved for this avatar and camera.' : 'Neutral pose applied for this session.');
   });
   document.querySelector('#avatar-select')!.addEventListener('change', e => { void loadBundle((e.target as HTMLSelectElement).value); });
-  document.querySelector('#avatar-file')!.addEventListener('change', e => { const file = (e.target as HTMLInputElement).files?.[0]; if (file) void load(file, file.name.replace(/\.vrm$/i, '')); });
+  document.querySelector('#avatar-file')!.addEventListener('change', e => { const file = (e.target as HTMLInputElement).files?.[0]; (e.target as HTMLInputElement).value=''; if (file) { navigation.select('library'); libraryPanel!.importFile(file); } });
   for (const key of ['mode','quality','framing','orientation','background','hands','springMotion','captureResolution','zoom','mirror','headRange','mouthGain','smoothing'] as const) document.getElementById(key)!.addEventListener('change', e => {
     const input = e.target as HTMLInputElement;
     settings = { ...settings, [key]: key === 'hands' || key === 'mirror' ? input.checked : ['zoom','headRange','mouthGain','smoothing'].includes(key) ? Number(input.value) : input.value };
@@ -233,10 +289,18 @@ else {
   });
 }
 applySettings();
-if (!output) { const model = savedAvatar(); (document.querySelector('#avatar-select') as HTMLSelectElement).value = model.id; void loadBundle(model.id); }
+if (!output) {
+  void (async()=>{
+    let saved:string|undefined;try{saved=await repository!.selected();}catch(error){status(`Saved entries are unavailable. ${String(error)}`);}
+    if(saved){try{const asset=await repository!.resolve(saved,new AbortController().signal);await load(asset.blob,asset.label,bundledAvatars.some(x=>x.id===saved)?saved:null,saved,asset.hash);if(avatar)return;}catch(error){status(`Saved model is unavailable. ${String(error)}`);}
+      await loadBundle('ene');status('Saved model is missing or invalid. Ene is active. Restore a backup to recover the saved model.');
+    }else{const model=savedAvatar();(document.querySelector('#avatar-select')as HTMLSelectElement).value=model.id;await loadBundle(model.id);}
+  })();
+}
 function animate(now: number) {
   const dt = Math.min(0.1, (now - lastTime) / 1000); lastTime = now;
   retarget?.update(lastFrame, settings, dt, performance.timeOrigin + now); viewer.draw(dt);
+  inspector?.apply(lastFrame,dt,performance.timeOrigin+now);
   frames++;
   if (now - lastStats > 1000) {
     fps = frames * 1000 / (now - lastStats); frames = 0; lastStats = now;
@@ -257,4 +321,4 @@ function animate(now: number) {
   requestAnimationFrame(animate);
 }
 requestAnimationFrame(animate);
-addEventListener('beforeunload', () => { stopServerWatch(); stopLayout(); tracker?.stop(); viewer.dispose(); link.close(); });
+addEventListener('beforeunload', () => { stopServerWatch(); stopLayout(); tracker?.stop(); modelOperation.cancel();libraryPanel?.dispose();inspector?.dispose();repository?.close(); viewer.dispose(); link.close(); });

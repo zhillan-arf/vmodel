@@ -1,0 +1,88 @@
+{
+  "generatedAt": "2026-10-04T12:14:23.934Z",
+  "browser": "153.0.8010.12",
+  "results": [
+    {
+      "model": "ene",
+      "errors": [],
+      "externalRequests": [],
+      "bytes": 87635472,
+      "sha256": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+      "checks": [
+        {
+          "view": "library",
+          "stable": {
+            "model": true,
+            "camera": true,
+            "live": true
+          },
+          "outputModelPreserved": true,
+          "settingsPreserved": true
+        },
+        {
+          "view": "tracking",
+          "stable": {
+            "model": true,
+            "camera": true,
+            "live": true
+          },
+          "outputModelPreserved": true,
+          "settingsPreserved": true
+        },
+        {
+          "view": "studio",
+          "stable": {
+            "model": true,
+            "camera": true,
+            "live": true
+          },
+          "outputModelPreserved": true,
+          "settingsPreserved": true
+        }
+      ]
+    },
+    {
+      "model": "rei",
+      "errors": [],
+      "externalRequests": [],
+      "bytes": 55715860,
+      "sha256": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+      "checks": [
+        {
+          "view": "library",
+          "stable": {
+            "model": true,
+            "camera": true,
+            "live": true
+          },
+          "outputModelPreserved": true,
+          "settingsPreserved": true
+        },
+        {
+          "view": "tracking",
+          "stable": {
+            "model": true,
+            "camera": true,
+            "live": true
+          },
+          "outputModelPreserved": true,
+          "settingsPreserved": true
+        },
+        {
+          "view": "studio",
+          "stable": {
+            "model": true,
+            "camera": true,
+            "live": true
+          },
+          "outputModelPreserved": true,
+          "settingsPreserved": true
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Actual bundled model files and simulated camera input.",
+    "Screenshots require human review. No physical camera or target-laptop acceptance."
+  ]
+}

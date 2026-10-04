@@ -1,0 +1,984 @@
+{
+  "generatedAt": "2026-10-04T12:19:59.785Z",
+  "browser": "153.0.8010.12",
+  "input": "Chromium fake camera; installed tracking worker and models.",
+  "durationMs": 70000,
+  "stopped": true,
+  "second": "9a428941-8026-405f-a1e6-7c0cf6061301",
+  "diagnosticsOff": true,
+  "frames": 140,
+  "images": 136,
+  "closed": 136,
+  "diagnostics": [
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 1,
+      "receivedAtMs": 12305.5,
+      "captureTimeMs": 1052.699951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 2,
+      "receivedAtMs": 12541.599853515625,
+      "captureTimeMs": 12318.599853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 3,
+      "receivedAtMs": 13437.699951171875,
+      "captureTimeMs": 12552,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 4,
+      "receivedAtMs": 13640.5,
+      "captureTimeMs": 13451.89990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 5,
+      "receivedAtMs": 14643,
+      "captureTimeMs": 13652,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 6,
+      "receivedAtMs": 14826,
+      "captureTimeMs": 14651.89990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 7,
+      "receivedAtMs": 15814.39990234375,
+      "captureTimeMs": 14835.199951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 8,
+      "receivedAtMs": 15998.599853515625,
+      "captureTimeMs": 15818.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 9,
+      "receivedAtMs": 17043.699951171875,
+      "captureTimeMs": 16001.7998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 10,
+      "receivedAtMs": 17229.39990234375,
+      "captureTimeMs": 17051.7998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 11,
+      "receivedAtMs": 18237.199951171875,
+      "captureTimeMs": 17235.099853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 12,
+      "receivedAtMs": 18422.199951171875,
+      "captureTimeMs": 18251.699951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 13,
+      "receivedAtMs": 19338.39990234375,
+      "captureTimeMs": 18435.099853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 14,
+      "receivedAtMs": 19471.89990234375,
+      "captureTimeMs": 19351.699951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 15,
+      "receivedAtMs": 20303.2998046875,
+      "captureTimeMs": 19485,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 16,
+      "receivedAtMs": 20361.099853515625,
+      "captureTimeMs": 20318.2998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 17,
+      "receivedAtMs": 21079.89990234375,
+      "captureTimeMs": 20368.2998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 18,
+      "receivedAtMs": 21129.2998046875,
+      "captureTimeMs": 21084.89990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 19,
+      "receivedAtMs": 21955.7998046875,
+      "captureTimeMs": 21151.5,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 20,
+      "receivedAtMs": 22112.599853515625,
+      "captureTimeMs": 21968.199951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 21,
+      "receivedAtMs": 22955.599853515625,
+      "captureTimeMs": 22118.199951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 22,
+      "receivedAtMs": 23102,
+      "captureTimeMs": 22968.199951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 23,
+      "receivedAtMs": 23918.599853515625,
+      "captureTimeMs": 23118.099853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 24,
+      "receivedAtMs": 23983.39990234375,
+      "captureTimeMs": 23934.7998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 25,
+      "receivedAtMs": 24872.699951171875,
+      "captureTimeMs": 24001.5,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 26,
+      "receivedAtMs": 25049.699951171875,
+      "captureTimeMs": 24884.7998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 27,
+      "receivedAtMs": 25898.39990234375,
+      "captureTimeMs": 25051.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 28,
+      "receivedAtMs": 25955.5,
+      "captureTimeMs": 25901.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 29,
+      "receivedAtMs": 26995,
+      "captureTimeMs": 25968.099853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 30,
+      "receivedAtMs": 27050.5,
+      "captureTimeMs": 27001.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 31,
+      "receivedAtMs": 27897,
+      "captureTimeMs": 27068,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 32,
+      "receivedAtMs": 28076.39990234375,
+      "captureTimeMs": 27901.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 33,
+      "receivedAtMs": 28973.89990234375,
+      "captureTimeMs": 28084.699951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 34,
+      "receivedAtMs": 29162.099853515625,
+      "captureTimeMs": 28984.599853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 35,
+      "receivedAtMs": 30214.5,
+      "captureTimeMs": 29167.89990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 36,
+      "receivedAtMs": 30394.099853515625,
+      "captureTimeMs": 30217.89990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 37,
+      "receivedAtMs": 31310.89990234375,
+      "captureTimeMs": 30401.199951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 38,
+      "receivedAtMs": 31377.39990234375,
+      "captureTimeMs": 31317.89990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 39,
+      "receivedAtMs": 32397.7998046875,
+      "captureTimeMs": 31384.599853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 40,
+      "receivedAtMs": 32456.699951171875,
+      "captureTimeMs": 32401.199951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 41,
+      "receivedAtMs": 33386,
+      "captureTimeMs": 32467.7998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 42,
+      "receivedAtMs": 33568.099853515625,
+      "captureTimeMs": 33401.099853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 43,
+      "receivedAtMs": 34486,
+      "captureTimeMs": 33584.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 44,
+      "receivedAtMs": 34681.199951171875,
+      "captureTimeMs": 34501.099853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 45,
+      "receivedAtMs": 35656.099853515625,
+      "captureTimeMs": 34684.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 46,
+      "receivedAtMs": 35810.2998046875,
+      "captureTimeMs": 35667.599853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 47,
+      "receivedAtMs": 36549.2998046875,
+      "captureTimeMs": 35817.599853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 48,
+      "receivedAtMs": 36600.7998046875,
+      "captureTimeMs": 36551,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 49,
+      "receivedAtMs": 37466.89990234375,
+      "captureTimeMs": 36601.199951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 50,
+      "receivedAtMs": 37631.599853515625,
+      "captureTimeMs": 37467.599853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 51,
+      "receivedAtMs": 38536.39990234375,
+      "captureTimeMs": 37634.2998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 52,
+      "receivedAtMs": 38603.5,
+      "captureTimeMs": 38550.89990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 53,
+      "receivedAtMs": 39674.39990234375,
+      "captureTimeMs": 38617.5,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 54,
+      "receivedAtMs": 39741.699951171875,
+      "captureTimeMs": 39684.199951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 55,
+      "receivedAtMs": 40633.5,
+      "captureTimeMs": 39750.89990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 56,
+      "receivedAtMs": 40808.699951171875,
+      "captureTimeMs": 40634.199951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 57,
+      "receivedAtMs": 41756.89990234375,
+      "captureTimeMs": 40817.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 58,
+      "receivedAtMs": 41941.199951171875,
+      "captureTimeMs": 41767.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 59,
+      "receivedAtMs": 42889.2998046875,
+      "captureTimeMs": 41950.699951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 60,
+      "receivedAtMs": 43070.5,
+      "captureTimeMs": 42900.7998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 61,
+      "receivedAtMs": 44014.5,
+      "captureTimeMs": 43084,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 62,
+      "receivedAtMs": 44188.199951171875,
+      "captureTimeMs": 44017.2998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 63,
+      "receivedAtMs": 45123.199951171875,
+      "captureTimeMs": 44200.699951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 64,
+      "receivedAtMs": 45191.599853515625,
+      "captureTimeMs": 45134,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 65,
+      "receivedAtMs": 46244.2998046875,
+      "captureTimeMs": 45200.699951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 66,
+      "receivedAtMs": 46302.7998046875,
+      "captureTimeMs": 46250.599853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 67,
+      "receivedAtMs": 47252.5,
+      "captureTimeMs": 46317.199951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 68,
+      "receivedAtMs": 47434.199951171875,
+      "captureTimeMs": 47267.199951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 69,
+      "receivedAtMs": 48350.7998046875,
+      "captureTimeMs": 47450.5,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 70,
+      "receivedAtMs": 48499.5,
+      "captureTimeMs": 48367.099853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 71,
+      "receivedAtMs": 49318.89990234375,
+      "captureTimeMs": 48500.5,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 72,
+      "receivedAtMs": 49388.2998046875,
+      "captureTimeMs": 49333.7998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 73,
+      "receivedAtMs": 50348.699951171875,
+      "captureTimeMs": 49400.5,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 74,
+      "receivedAtMs": 50403.89990234375,
+      "captureTimeMs": 50350.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 75,
+      "receivedAtMs": 51351,
+      "captureTimeMs": 50417.099853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 76,
+      "receivedAtMs": 51532.699951171875,
+      "captureTimeMs": 51367.099853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 77,
+      "receivedAtMs": 52463,
+      "captureTimeMs": 51533.699951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 78,
+      "receivedAtMs": 52642.199951171875,
+      "captureTimeMs": 52467,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 79,
+      "receivedAtMs": 53547.5,
+      "captureTimeMs": 52650.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 80,
+      "receivedAtMs": 53591.699951171875,
+      "captureTimeMs": 53550.199951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 81,
+      "receivedAtMs": 54497.699951171875,
+      "captureTimeMs": 53600.2998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 82,
+      "receivedAtMs": 54554.5,
+      "captureTimeMs": 54500.2998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 83,
+      "receivedAtMs": 55482.599853515625,
+      "captureTimeMs": 54566.89990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 84,
+      "receivedAtMs": 55640.39990234375,
+      "captureTimeMs": 55483.599853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 85,
+      "receivedAtMs": 56572.39990234375,
+      "captureTimeMs": 55650.199951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 86,
+      "receivedAtMs": 56635.89990234375,
+      "captureTimeMs": 56583.5,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 87,
+      "receivedAtMs": 57708.7998046875,
+      "captureTimeMs": 56650.199951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 88,
+      "receivedAtMs": 57770.89990234375,
+      "captureTimeMs": 57716.699951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 89,
+      "receivedAtMs": 58701.7998046875,
+      "captureTimeMs": 57783.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 90,
+      "receivedAtMs": 58884.2998046875,
+      "captureTimeMs": 58716.699951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 91,
+      "receivedAtMs": 59830.2998046875,
+      "captureTimeMs": 58900.099853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 92,
+      "receivedAtMs": 60006.89990234375,
+      "captureTimeMs": 59833.5,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 93,
+      "receivedAtMs": 60929.699951171875,
+      "captureTimeMs": 60016.699951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 94,
+      "receivedAtMs": 61105.2998046875,
+      "captureTimeMs": 60933.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 95,
+      "receivedAtMs": 62065.199951171875,
+      "captureTimeMs": 61116.699951171875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 96,
+      "receivedAtMs": 62239.599853515625,
+      "captureTimeMs": 62066.599853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 97,
+      "receivedAtMs": 63197.699951171875,
+      "captureTimeMs": 62250,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 98,
+      "receivedAtMs": 63257.2998046875,
+      "captureTimeMs": 63199.89990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 99,
+      "receivedAtMs": 64234.699951171875,
+      "captureTimeMs": 63266.599853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 100,
+      "receivedAtMs": 64306.2998046875,
+      "captureTimeMs": 64249.7998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 101,
+      "receivedAtMs": 65302.7998046875,
+      "captureTimeMs": 64316.5,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 102,
+      "receivedAtMs": 65484.099853515625,
+      "captureTimeMs": 65316.599853515625,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 103,
+      "receivedAtMs": 66424.5,
+      "captureTimeMs": 65499.7998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 104,
+      "receivedAtMs": 66604.5,
+      "captureTimeMs": 66433.19995117188,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 105,
+      "receivedAtMs": 67528.39990234375,
+      "captureTimeMs": 66616.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 106,
+      "receivedAtMs": 67705,
+      "captureTimeMs": 67533.19995117188,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 107,
+      "receivedAtMs": 68684.5,
+      "captureTimeMs": 67716.2998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 108,
+      "receivedAtMs": 68847.7998046875,
+      "captureTimeMs": 68699.69995117188,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 109,
+      "receivedAtMs": 69698.19995117188,
+      "captureTimeMs": 68849.59985351562,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 110,
+      "receivedAtMs": 69758.5,
+      "captureTimeMs": 69699.69995117188,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 111,
+      "receivedAtMs": 70640.5,
+      "captureTimeMs": 69766.2998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 112,
+      "receivedAtMs": 70817.7998046875,
+      "captureTimeMs": 70649.59985351562,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 113,
+      "receivedAtMs": 71741.2998046875,
+      "captureTimeMs": 70832.89990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 114,
+      "receivedAtMs": 71920.5,
+      "captureTimeMs": 71749.59985351562,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 115,
+      "receivedAtMs": 72891.39990234375,
+      "captureTimeMs": 71932.89990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 116,
+      "receivedAtMs": 73061.2998046875,
+      "captureTimeMs": 72899.5,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 117,
+      "receivedAtMs": 74038.89990234375,
+      "captureTimeMs": 73066.09985351562,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 118,
+      "receivedAtMs": 74104.39990234375,
+      "captureTimeMs": 74049.5,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 119,
+      "receivedAtMs": 75117.2998046875,
+      "captureTimeMs": 74116.19995117188,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 120,
+      "receivedAtMs": 75188.69995117188,
+      "captureTimeMs": 75132.69995117188,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 121,
+      "receivedAtMs": 76158.59985351562,
+      "captureTimeMs": 75199.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 122,
+      "receivedAtMs": 76339.59985351562,
+      "captureTimeMs": 76166,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 123,
+      "receivedAtMs": 77239.39990234375,
+      "captureTimeMs": 76349.5,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 124,
+      "receivedAtMs": 77425.5,
+      "captureTimeMs": 77249.39990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 125,
+      "receivedAtMs": 78355.69995117188,
+      "captureTimeMs": 77432.69995117188,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 126,
+      "receivedAtMs": 78541.5,
+      "captureTimeMs": 78365.89990234375,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 127,
+      "receivedAtMs": 79522,
+      "captureTimeMs": 78549.2998046875,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 128,
+      "receivedAtMs": 79697.5,
+      "captureTimeMs": 79532.5,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 129,
+      "receivedAtMs": 80548.19995117188,
+      "captureTimeMs": 79699.19995117188,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 130,
+      "receivedAtMs": 80599,
+      "captureTimeMs": 80549.09985351562,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 131,
+      "receivedAtMs": 81437.7998046875,
+      "captureTimeMs": 80599.59985351562,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 132,
+      "receivedAtMs": 81597.89990234375,
+      "captureTimeMs": 81449.09985351562,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 133,
+      "receivedAtMs": 82311.7998046875,
+      "captureTimeMs": 81599.09985351562,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 134,
+      "receivedAtMs": 82358.7998046875,
+      "captureTimeMs": 82315.69995117188,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 135,
+      "receivedAtMs": 83178.19995117188,
+      "captureTimeMs": 82365.69995117188,
+      "matches": true
+    },
+    {
+      "sessionId": "0e6a85e9-d7b9-4b6a-91df-51f80b472f98",
+      "captureSequence": 136,
+      "receivedAtMs": 83340.69995117188,
+      "captureTimeMs": 83182.39990234375,
+      "matches": true
+    }
+  ],
+  "statuses": [
+    "Camera stopped",
+    "Opening camera…",
+    "Loading local tracking models…",
+    "Camera active · GPU tracking",
+    "Camera stopped",
+    "Camera stopped",
+    "Opening camera…",
+    "Loading local tracking models…",
+    "Camera active · GPU tracking",
+    "Camera stopped"
+  ],
+  "released": true,
+  "errors": [],
+  "externalRequests": [],
+  "limits": [
+    "Linux Chromium only. No physical camera, gesture, or target-laptop acceptance."
+  ]
+}

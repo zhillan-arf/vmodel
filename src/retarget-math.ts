@@ -1,5 +1,6 @@
 import { Euler, MathUtils, Matrix4, Quaternion, Vector3 } from 'three';
 import type { HandObservation, Landmark } from './types';
+import type { DiagnosticSink } from './tracking-diagnostics';
 
 const EPSILON = 1e-8;
 const finiteVector = (v: Vector3) => [v.x, v.y, v.z].every(Number.isFinite);
@@ -27,11 +28,15 @@ const headLimits: HeadLimits = { x: 0.65, y: 1.1, z: 0.5 };
 
 /** Camera/world-space delta; caller converts this world goal through the updated parent.
  * Clamp the delta before applying the avatar's rest rotation. No preview mirror here. */
-export function calibratedHeadWorld(current: Quaternion, neutral: Quaternion, restWorld: Quaternion, limits: HeadLimits = headLimits): Quaternion | null {
+export function calibratedHeadWorld(current: Quaternion, neutral: Quaternion, restWorld: Quaternion, limits: HeadLimits = headLimits, diagnostic?: DiagnosticSink): Quaternion | null {
+  const reject=(reason: 'invalid_value'|'invalid_rest'|'invalid_parameter')=>{diagnostic?.({stage:'head',channel:'head',reason,accepted:false});return null;};
   const rotation = unitQuaternion(current), reference = unitQuaternion(neutral), rest = unitQuaternion(restWorld);
-  if (!rotation || !reference || !rest || ![limits.x, limits.y, limits.z].every(value => Number.isFinite(value) && value >= 0 && value <= Math.PI)) return null;
+  if(!rotation)return reject('invalid_value');
+  if(!reference||!rest)return reject('invalid_rest');
+  if(![limits.x,limits.y,limits.z].every(value=>Number.isFinite(value)&&value>=0&&value<=Math.PI))return reject('invalid_parameter');
   const delta = rotation.multiply(reference.invert());
   const euler = new Euler().setFromQuaternion(delta, 'YXZ');
+  if(diagnostic)for(const axis of ['x','y','z']as const)if(Math.abs(euler[axis])>limits[axis])diagnostic({stage:'head',channel:`head.${axis}`,reason:'clamped',accepted:true,value:euler[axis],threshold:limits[axis]});
   euler.x = MathUtils.clamp(euler.x, -limits.x, limits.x);
   euler.y = MathUtils.clamp(euler.y, -limits.y, limits.y);
   euler.z = MathUtils.clamp(euler.z, -limits.z, limits.z);
@@ -40,11 +45,12 @@ export function calibratedHeadWorld(current: Quaternion, neutral: Quaternion, re
 
 export interface PalmPoints { wrist: Vector3; middle: Vector3; index: Vector3; little: Vector3 }
 export interface PalmOptions {
+  diagnostic?: DiagnosticSink;
   /** Absolute palm-normal Z cosine. Zero allows a fully edge-on palm; default 0.06. */
   minFacingCos?: number;
 }
-function palmBasis(points: PalmPoints): { rotation: Quaternion; normal: Vector3 } | null {
-  if (!Object.values(points).every(finiteVector)) return null;
+function palmBasis(points: PalmPoints,invalid?:()=>void): { rotation: Quaternion; normal: Vector3 } | null {
+  if (!Object.values(points).every(finiteVector)) {invalid?.();return null;}
   const along = points.middle.clone().sub(points.wrist);
   const across = points.index.clone().sub(points.little);
   if (along.lengthSq() < EPSILON || across.lengthSq() < EPSILON) return null;
@@ -59,14 +65,20 @@ function palmBasis(points: PalmPoints): { rotation: Quaternion; normal: Vector3 
 /** Points must already share render coordinates (X-right, Y-up, camera toward -Z).
  * Use both palm axes so pronation changes the wrist even when wrist->middle is fixed. */
 export function palmWorldRotation(restPoints: PalmPoints, observedPoints: PalmPoints, restWorld: Quaternion, options: PalmOptions = {}): Quaternion | null {
-  const restBasis = palmBasis(restPoints), observed = palmBasis(observedPoints), rest = unitQuaternion(restWorld);
+  let invalidObservation=false;
+  const restBasis = palmBasis(restPoints), observed = palmBasis(observedPoints,()=>{invalidObservation=true;}), rest = unitQuaternion(restWorld);
   const facing = options.minFacingCos ?? 0.06;
-  if (!restBasis || !observed || !rest || !Number.isFinite(facing) || facing < 0 || facing > 1 || Math.abs(observed.normal.z) < facing) return null;
+  const reject=(reason:'invalid_value'|'invalid_rest'|'degenerate_segment'|'invalid_parameter'|'palm_edge_on',value?:number,threshold?:number)=>{options.diagnostic?.({stage:'palm',channel:'hand',reason,accepted:false,value,threshold});return null;};
+  if(!restBasis||!rest)return reject('invalid_rest');
+  if(!observed)return reject(invalidObservation?'invalid_value':'degenerate_segment');
+  if(!Number.isFinite(facing)||facing<0||facing>1)return reject('invalid_parameter');
+  if(Math.abs(observed.normal.z)<facing)return reject('palm_edge_on',Math.abs(observed.normal.z),facing);
   return observed.rotation.multiply(restBasis.rotation.invert()).multiply(rest).normalize();
 }
 
 export type HandSide = 'left' | 'right';
 export interface HandAssociationOptions {
+  diagnostic?: DiagnosticSink;
   /** Capture width / height; distances below are measured in image-height units. */
   imageAspect?: number;
   maxDistance?: number;
@@ -91,10 +103,14 @@ export function associateHands(hands: readonly HandObservation[], poseImage: rea
   const maxDistance = options.maxDistance ?? 0.18;
   const margin = options.ambiguityMargin ?? 0.035;
   const fallbackScore = options.minFallbackScore ?? 0.85;
-  if (![aspect, maxDistance, margin, fallbackScore].every(Number.isFinite) || aspect <= 0 || maxDistance <= 0 || margin < 0 || fallbackScore < 0.5 || fallbackScore > 1) return {};
-  const candidates = hands.filter(hand => hand.landmarks?.length === 21 && hand.world?.length === 21 && inImage(hand.landmarks[0]) && Number.isFinite(hand.score) && hand.score >= 0.5 && hand.score <= 1);
+  if (![aspect, maxDistance, margin, fallbackScore].every(Number.isFinite) || aspect <= 0 || maxDistance <= 0 || margin < 0 || fallbackScore < 0.5 || fallbackScore > 1) { options.diagnostic?.({stage:'association',channel:'hands',reason:'invalid_parameter',accepted:false});return {}; }
+  const candidates = hands.filter((hand,index) => {
+    const reason=hand.landmarks?.length!==21||hand.world?.length!==21?'missing_landmark':!inImage(hand.landmarks[0])?'invalid_value':!Number.isFinite(hand.score)||hand.score<.5||hand.score>1?'hand_score':null;
+    if(reason)options.diagnostic?.({stage:'association',channel:`hand candidate ${index}`,jointIndex:reason==='invalid_value'?0:undefined,reason,accepted:false,...(reason==='hand_score'&&Number.isFinite(hand.score)?{value:hand.score,threshold:hand.score<.5?.5:1}:reason==='missing_landmark'?{value:hand.landmarks?.length!==21?hand.landmarks?.length:hand.world?.length,threshold:21}:{})});
+    return reason===null;
+  });
   // The configured detector emits at most two hands. Unexpected over-count is ambiguous.
-  if (candidates.length > 2) return {};
+  if (candidates.length > 2) { options.diagnostic?.({stage:'association',channel:'hands',reason:'ambiguous_hand',accepted:false,value:candidates.length,threshold:2}); return {}; }
   const distance = (a: Pick<Landmark, 'x' | 'y'>, b: Pick<Landmark, 'x' | 'y'>) => Math.hypot((a.x - b.x) * aspect, a.y - b.y);
   const wrists: Partial<Record<HandSide, Landmark>> = {};
   if (poseWrist(poseImage[15])) wrists.left = poseImage[15];
@@ -109,7 +125,7 @@ export function associateHands(hands: readonly HandObservation[], poseImage: rea
     candidates.forEach((hand, candidate) => {
       if (Object.values(assignment.indices).includes(candidate)) return;
       const poseDistance = distance(hand.landmarks[0], wrists[side]!);
-      if (poseDistance > maxDistance) return;
+      if (poseDistance > maxDistance) { options.diagnostic?.({stage:'association',channel:`${side}Hand candidate ${candidate}`,reason:'hand_distance',accepted:false,value:poseDistance,threshold:maxDistance}); return; }
       const previous = options.previous?.[side];
       const continuity = inImage(previous) ? Math.min(margin * 0.2, distance(hand.landmarks[0], previous) * 0.15) : 0;
       enumerate(index + 1, { indices: { ...assignment.indices, [side]: candidate }, count: assignment.count + 1, cost: assignment.cost + poseDistance + continuity });
@@ -123,7 +139,8 @@ export function associateHands(hands: readonly HandObservation[], poseImage: rea
   const used = new Set<number>();
   for (const side of available) {
     const candidate = best.indices[side];
-    if (candidate === undefined || nearby.some(value => value.indices[side] !== candidate)) continue;
+    if (candidate === undefined) continue;
+    if(nearby.some(value=>value.indices[side]!==candidate)){options.diagnostic?.({stage:'association',channel:side+'Hand',reason:'ambiguous_hand',accepted:false});continue;}
     result[side] = candidates[candidate]; used.add(candidate);
   }
   for (const side of sides) {
@@ -131,7 +148,11 @@ export function associateHands(hands: readonly HandObservation[], poseImage: rea
     const eligible = candidates.map((hand, index) => ({ hand, index })).filter(({ hand, index }) =>
       !used.has(index) && typeof hand.side === 'string' && hand.side.toLowerCase() === side && hand.score >= fallbackScore &&
       available.every(knownSide => distance(hand.landmarks[0], wrists[knownSide]!) > maxDistance));
-    if (eligible.length !== 1) continue;
+    if (eligible.length !== 1) {
+      if(eligible.length>1)options.diagnostic?.({stage:'association',channel:side+'Hand',reason:'ambiguous_hand',accepted:false,value:eligible.length,threshold:1});
+      else for(const [index,hand]of candidates.entries())if(!used.has(index)&&hand.side?.toLowerCase()===side&&hand.score<fallbackScore)options.diagnostic?.({stage:'association',channel:side+'Hand',jointIndex:0,reason:'hand_score',accepted:false,value:hand.score,threshold:fallbackScore});
+      continue;
+    }
     result[side] = eligible[0].hand; used.add(eligible[0].index);
   }
   return result;

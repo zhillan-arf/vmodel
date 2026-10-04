@@ -65,8 +65,8 @@ The tracker owns observations. The solver owns rejection reasons. The trace reco
 
 | Controller | Scope | Completion |
 | --- | --- | --- |
-| [TASK-P04](../tasks/backlog/TASK-P04.md) | G5; TASK-039 through TASK-048; shared visual rules | Library acceptance and TASK-048 handoff |
-| [TASK-P05](../tasks/backlog/TASK-P05.md) | G6; TASK-049 through TASK-060 | Tracking acceptance and TASK-060 handoff |
+| [TASK-P04](../tasks/active/TASK-P04.md) | G5; TASK-039 through TASK-048; shared visual rules | Library acceptance and TASK-048 handoff |
+| [TASK-P05](../tasks/active/TASK-P05.md) | G6; TASK-049 through TASK-060 | Tracking acceptance and TASK-060 handoff |
 | [TASK-P01](../tasks/active/TASK-P01.md) | Overall delivery; G1 through G6 | All implementation tasks and TASK-021 |
 
 Controllers coordinate work. They are not prerequisites that must finish before their children start. TASK-P04 and TASK-P05 do not wait for TASK-021 to close.

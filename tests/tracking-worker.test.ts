@@ -104,3 +104,43 @@ it('closes every frame and preserves separate sampling timestamps at reduced cad
   expect(close).toHaveBeenCalledTimes(4);
   expect(scope.postMessage).toHaveBeenLastCalledWith({type:'error',message:expect.stringContaining('inference failure')});
 });
+it('keeps cached diagnostic identity and counts no disabled hand detection',async()=>{
+  await scope.onmessage!({data:{type:'init'}});
+  for(let i=0;i<3;i++)await scope.onmessage!({data:{type:'frame',timestamp:100+i*100,bitmap:{width:640,height:480,close:vi.fn()},quality:'balanced',hands:false,demand:'inspect',anchor:100,sessionId:'fixture',captureSequence:i+1,videoTimeMs:i*100}});
+  const results=scope.postMessage.mock.calls.map(([message])=>message).filter(message=>message.type==='result');
+  expect(results.map(x=>x.diagnostics.tasks.pose.sampleSequence)).toEqual([1,1,2]);
+  expect(results.map(x=>x.diagnostics.tasks.pose.captureSequence)).toEqual([1,1,3]);
+  expect(results.map(x=>x.diagnostics.tasks.pose.sampleTimeMs)).toEqual([0,0,200]);
+  expect(results.every(x=>x.diagnostics.tasks.hands.state==='disabled')).toBe(true);
+  expect(tasks.get('hands-GPU')!.detectForVideo).not.toHaveBeenCalled();
+  expect(results.every(x=>!('diagnostics'in x.frame)&&!('observations'in x.frame))).toBe(true);
+});
+it.each(['balanced','low'])('preserves task order and frames with diagnostics off for %s quality',async quality=>{
+  const run=async(demand:string)=>{
+    vi.resetModules();tasks.clear();scope.postMessage.mockClear();
+    await import('../src/tracking.worker');
+    await scope.onmessage!({data:{type:'init',delegate:'CPU'}});
+    const order:string[]=[];
+    for(const name of ['face','pose','hands']){
+      const task=tasks.get(name+'-CPU')!;
+      task.detectForVideo.mockImplementation((_bitmap,timestamp)=>{
+        order.push(`${name}:${timestamp}`);
+        const point={x:.2,y:.3,z:.4};
+        if(name==='face')return{faceLandmarks:[[point]],faceBlendshapes:[{categories:[{categoryName:'jawOpen',score:.2}]}],facialTransformationMatrixes:[{data:Array(16).fill(0)}]};
+        if(name==='pose')return{worldLandmarks:[[point]],landmarks:[[point]]};
+        return{landmarks:[[point]],worldLandmarks:[[point]],handedness:[[{categoryName:'Left',score:.9}]]};
+      });
+    }
+    for(let i=0;i<9;i++)await scope.onmessage!({data:{type:'frame',timestamp:1800000000000+i*100,
+      bitmap:{width:640,height:480,close:vi.fn()},quality,hands:i<4||i>6,demand,
+      anchor:1800000000000,sessionId:'parity',captureSequence:i+1,videoTimeMs:i*100}});
+    const results=scope.postMessage.mock.calls.map(([message])=>message).filter(message=>message.type==='result');
+    const frames=results.map(({frame})=>({...frame,inferenceMs:0,samples:Object.fromEntries(Object.entries(frame.samples).map(([task,sample]:[string,any])=>[task,{...sample,inferenceMs:0}]))}));
+    return{order,frames,results};
+  };
+  const off=await run('off'),on=await run('inspect');
+  expect(on.order).toEqual(off.order);expect(on.frames).toEqual(off.frames);
+  expect(off.results.every(result=>!('diagnostics'in result))).toBe(true);
+  expect(on.results.every(result=>result.diagnostics.tasks.face.observations[0][0].visibility===undefined)).toBe(true);
+  expect(on.results.every(result=>result.diagnostics.tasks.face.observations[0][0].presence===undefined)).toBe(true);
+});

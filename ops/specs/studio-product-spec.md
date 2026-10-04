@@ -135,15 +135,20 @@ These are selected release ceilings, not measured laptop capacity:
 | Nodes / meshes / primitives / accessors | 20,000 / 4,096 / 8,192 / 32,768 |
 | Image count | 256 |
 | Image width or height | 8,192 pixels |
-| Total decoded image pixels | 67,108,864 |
+| Total decoded image pixels | 201,326,592 |
 | Geometry allocation estimate | 128 MiB |
-| Combined geometry and texture estimate | 512 MiB, including RGBA textures and mipmaps |
+| Combined geometry and texture estimate | 1,024 MiB, including RGBA textures and mipmaps |
 | User terms attachments | Eight per entry; 2 MiB each; 8 MiB total |
 | Thumbnail | 320 by 320 pixels; PNG; 512 KiB |
 
 Use checked arithmetic for accessor counts, strides, sparse data, and texture sums. Read image headers before full image decode. Reject unknown image formats with a clear reason.
 
 Estimate allocations conservatively. Browser and driver overhead remain outside this estimate. Measure actual process memory in L13. If Ene or Rei exceeds a ceiling, record the incompatibility before changing this specification.
+
+The 2026-10-04 Rei check required a selected ceiling revision. Its unchanged model needs 145,752,064 pixels and 797,235,598 estimated resource bytes.
+The earlier 67,108,864-pixel and 512 MiB ceilings excluded this required model.
+The revised ceilings remain fixed for all imports. No file can raise them automatically.
+See [the measured compatibility record](../reports/vrm-inspection.md). Target-laptop memory acceptance remains required by L13.
 
 ### L05 Capabilities and terms
 
@@ -244,6 +249,9 @@ Offsets are relative to the payload start. Segments must be contiguous, nonoverl
 
 Entries contain source ID, asset segment ID, display name, metadata, acknowledgment, capability version, and attachment segment IDs. Revalidate capabilities during restore.
 
+An entry can include `packageVersion`, a supplied annotation of 1 through 80 characters. Older backups can omit this field.
+Keep this annotation separate from the embedded metadata version.
+
 Bound the manifest to 2 MiB, the complete file to 512 MiB, entries to 100, and segments to 1,000. Apply L04 limits to every restored asset and attachment.
 
 Backups contain selected entries only. Include bundled bytes only when the user selects a portable backup for those entries. Explain the file size before download.
@@ -325,7 +333,9 @@ Record receipt, solver-use, and display times separately. Reject results from an
 
 Calculate each task's effective Hz from distinct sample sequences in a rolling 10-second window. Show sample count and window duration. Show unavailable values when fewer than two samples exist.
 
-Compute p50 and p95 using nearest-rank percentiles on recorded values. Report warm-up separately. Count rejected uses separately from rejected unique samples.
+Compute p50 and p95 using nearest-rank percentiles on recorded values. Report warm-up separately. Warm-up covers sample times below 10,000 ms from the session anchor.
+Show warm-up and later samples separately within the rolling window. Expire old samples even when no new sample arrives.
+Count rejected channel uses separately from distinct rejected channel/sample pairs. Exclude outcomes without a positive sample ID.
 
 Preserve freshness boundaries: accepted age is at least -50 ms and less than 500 ms. Test -51, -50, 499, and 500 ms explicitly.
 
@@ -439,6 +449,9 @@ Landmark-only replay shows a plain background. Optional recorded video uses its 
 Provide a separate `Record camera video` checkbox, off by default. Show a visible recording state and stop control. Do not request audio.
 
 Use `MediaRecorder` only when the browser supports the selected type. Save video as a separate local file. Record start offset, stop offset, MIME type, and trace ID.
+
+New traces also record `manifest.startTimeMs` in the diagnostic session clock and `manifest.video.sha256`. These fields preserve video alignment and file identity.
+Older traces remain readable. Without the start time, video replay is unavailable. Without the hash, display that video identity is unverified.
 
 Limit video to 60 seconds or 64 MiB, whichever occurs first. Stop on camera loss or recorder error. Retain a valid partial file when possible.
 
@@ -562,7 +575,8 @@ Extend the current dark studio design. Use quiet backgrounds, clear labels, and 
 | Main text / secondary text | `#E4EAF5` / `#A9B8CF` |
 | Accent / accent text | `#60DCEA` / `#0B2932` |
 | Accepted / warning / failure | `#7CE1BE` / `#FFD18A` / `#FF9DAD` |
-| Border / focus | `#41516D` / `#66E4EF` |
+| Panel border / focus | `#41516D` / `#66E4EF` |
+| Control border | `#7285A5` |
 | Spacing | 4, 8, 12, 16, 24, 32 pixels |
 | Corner radius | 8 pixels for controls; 12 pixels for panels |
 | Font | Existing local system stack; no font download |
