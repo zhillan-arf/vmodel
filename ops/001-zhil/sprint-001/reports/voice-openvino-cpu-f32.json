@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "status": "completed",
+  "openvino": "2026.3.1-22476-759c5a6ab8c-releases/2026/3",
+  "python": "3.10.19",
+  "device": "CPU",
+  "precision": "f32",
+  "availableDevices": {
+    "CPU": "12th Gen Intel(R) Core(TM) i7-1255U",
+    "GPU": "Intel(R) Iris(R) Xe Graphics (iGPU)"
+  },
+  "settings": {
+    "PERFORMANCE_HINT": "LATENCY",
+    "NUM_STREAMS": "1",
+    "PERF_COUNT": true,
+    "INFERENCE_PRECISION_HINT": "f32",
+    "INFERENCE_NUM_THREADS": 3
+  },
+  "properties": {
+    "encoder": {
+      "EXECUTION_DEVICES": "['CPU']",
+      "INFERENCE_PRECISION_HINT": "<Type: 'float32'>",
+      "NUM_STREAMS": "1",
+      "OPTIMAL_NUMBER_OF_INFER_REQUESTS": "1"
+    },
+    "generator": {
+      "EXECUTION_DEVICES": "['CPU']",
+      "INFERENCE_PRECISION_HINT": "<Type: 'float32'>",
+      "NUM_STREAMS": "1",
+      "OPTIMAL_NUMBER_OF_INFER_REQUESTS": "1"
+    }
+  },
+  "modelArtifacts": [
+    {
+      "path": "assets/voice/onnx/bright-160ms-v1/generator.onnx",
+      "sha256": "92a6f3251cc366bb43ccf1773fbc3becbb2b7a68b4bcbad8e2e27d4cc4bd881f",
+      "bytes": 110192832
+    },
+    {
+      "path": "assets/voice/onnx/bright-160ms-v1/encoder.onnx",
+      "sha256": "b6bf6d4c95bf5fb152e1c2f25b1936a00ad23bf066a35e8959c285b0f5fef84e",
+      "bytes": 378550133
+    },
+    {
+      "path": "assets/voice/onnx/bright-160ms-v1/fixture.npz",
+      "sha256": "4dbbcbf8a8ae6906113b8722033e7214704420367f2e4cacf31fb9ad142a47fe",
+      "bytes": 741028
+    }
+  ],
+  "loadSeconds": 4.850851700000931,
+  "compileSeconds": {
+    "encoder": 1.6025591999932658,
+    "generator": 1.4276316000032239
+  },
+  "warmup": {
+    "encoderMs": 169.1393000073731,
+    "generatorMs": 152.34319999581203,
+    "computeMs": 321.4825000031851
+  },
+  "records": [
+    {
+      "encoderMs": 166.02770000463352,
+      "generatorMs": 210.56659999885596,
+      "computeMs": 376.5943000034895
+    },
+    {
+      "encoderMs": 212.29520000633784,
+      "generatorMs": 171.38000001432374,
+      "computeMs": 383.6752000206616
+    },
+    {
+      "encoderMs": 164.27619999740273,
+      "generatorMs": 148.07870000367984,
+      "computeMs": 312.35490000108257
+    },
+    {
+      "encoderMs": 168.54199999943376,
+      "generatorMs": 149.22170000500046,
+      "computeMs": 317.7637000044342
+    },
+    {
+      "encoderMs": 163.65090000908822,
+      "generatorMs": 152.35250000841916,
+      "computeMs": 316.0034000175074
+    }
+  ],
+  "computeMs": {
+    "p50": 317.7637000044342,
+    "p95": 382.25902001722716
+  },
+  "encoderMs": {
+    "p50": 166.02770000463352,
+    "p95": 203.54456000495702
+  },
+  "generatorMs": {
+    "p50": 152.35250000841916,
+    "p95": 202.72928000194952
+  },
+  "computeRealTimeFactor": 2.132989375058969,
+  "generatorVsEagerMaxAbsError": 2.1615996956825256e-06,
+  "pipelineVsEagerMaxAbsError": 1.3522803783416748e-05,
+  "encoderMaxAbsError": 8.940696716308594e-06,
+  "parityPassed": true,
+  "profiles": {
+    "encoder": {
+      "executedTypes": {
+        "brgconv_avx2_f32": 8,
+        "jit_uni_f32": 2,
+        "jit_avx2_f32": 92,
+        "gemm_mlas_f32": 62,
+        "ref_f32": 1,
+        "unknown_f32": 48,
+        "brgemm_avx2_f32": 12
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/voice/openvino/cpu-f32-encoder-profile.json",
+      "sha256": "96e04b1bfc6395bb35d1418516877e68c43bbb5d1856b1bdc960442bfb3d1d43"
+    },
+    "generator": {
+      "executedTypes": {
+        "brgemm_avx2_f32": 25,
+        "brgconv_avx2_1x1_f32": 45,
+        "jit_uni_f32": 54,
+        "unknown_f32": 13,
+        "jit_avx2_f32": 134,
+        "ref_f32": 71,
+        "brgconv_avx2_f32": 98,
+        "jit_gemm_f32": 4
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/voice/openvino/cpu-f32-generator-profile.json",
+      "sha256": "b5fa0a0f7d7e89bf0d4e1775d2bb12289bd84f0a7fc4527b4693600840ffd711"
+    }
+  },
+  "actualExecutionVerified": true,
+  "allFinite": true,
+  "output": "ops/001-zhil/sprint-001/reports/local/voice/openvino/cpu-f32-converted-window.wav",
+  "outputSha256": "8443e67b899e7679d0edc79465da50c8737ef248f99b3f8fa3651d734d43af44",
+  "outputSeconds": 0.21,
+  "outputRms": 0.04590065777301788,
+  "outputPeak": 0.20252463221549988,
+  "microphoneCaptured": false,
+  "telemetry": "Explicit supported opt-out file in isolated LOCALAPPDATA before import; Python socket connections denied",
+  "qualityAccepted": false,
+  "physicalLatencyMeasured": false,
+  "boundary": "One warmup/five repeated real-speech windows with profiling. Explicit compiled CPU/GPU; no resampling/SOLA/scheduling/device buffers/combined workload. Numerical gate is not listening or sustained live acceptance."
+}

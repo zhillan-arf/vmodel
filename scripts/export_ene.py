@@ -97,7 +97,7 @@ def main():
     meta.avatar_permission='onlySeparatelyLicensedPerson';meta.allow_redistribution=False
     meta.modification='allowModification'
     expression_map={'blink':'まばたき','blinkLeft':'ウィンク左','blinkRight':'ウィンク右','aa':'あ','ih':'い','ou':'う','oh':'お','happy':'にこり','angry':'怒り','sad':'困る','surprised':'びっくり'}
-    source_morphs=json.loads((ROOT/'ops/reports/asset-inventory.json').read_text(encoding='utf-8'))[0]['morphs']
+    source_morphs=json.loads((ROOT/'ops/001-zhil/sprint-001/reports/asset-inventory.json').read_text(encoding='utf-8'))[0]['morphs']
     expression_bindings={name:dict(sourceName=shape,sourceIndex=next(m['index'] for m in source_morphs if m['name']==shape),range=[0,1]) for name,shape in expression_map.items()}
     presets=vrm.expressions.preset.name_to_expression_dict()
     # Preserve only the deliberate mappings below in both .blend and .vrm.
@@ -167,7 +167,7 @@ def main():
             joint.drag_force=0.8
     config=ROOT/'config/avatars';config.mkdir(parents=True,exist_ok=True)
     (config/'ene.json').write_text(json.dumps(dict(schemaVersion=1,variant='cyber-legs',sourceSha256='226fe9075f25c7dd2e6474fdd6acb77ff71c45900fb2d5c8794e08647aa9dbe4',humanoid=mapping,expressions=expression_map,expressionBindings=expression_bindings,missingOptionalExpressions=['ee'],expressionPolicy=dict(blink='Use blink OR independent blinkLeft/blinkRight; do not sum both.',vowels='Use one vowel at a time; live jaw drives aa.',manual='Manual happy/surprised applies a 0.75 minimum; neutral releases the override.',compatibility='Mapped MMD shapes; not a full ARKit 52-shape avatar.')),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    (ROOT/'ops/reports/ene-export-preparation.json').write_text(json.dumps(dict(removedConstraints=removed,materials=materials,meshRepairs=mesh_repairs,restBasis={name:dict(head=list(arm.data.bones[bone].head_local),tail=list(arm.data.bones[bone].tail_local),matrix=[list(row) for row in arm.data.bones[bone].matrix_local]) for name,bone in mapping.items()},coordinates='Blender armature local: Z up; exported glTF/VRM: Y up. Runtime uses three-vrm normalized humanoid bones.'),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (ROOT/'ops/001-zhil/sprint-001/reports/ene-export-preparation.json').write_text(json.dumps(dict(removedConstraints=removed,materials=materials,meshRepairs=mesh_repairs,restBasis={name:dict(head=list(arm.data.bones[bone].head_local),tail=list(arm.data.bones[bone].tail_local),matrix=[list(row) for row in arm.data.bones[bone].matrix_local]) for name,bone in mapping.items()},coordinates='Blender armature local: Z up; exported glTF/VRM: Y up. Runtime uses three-vrm normalized humanoid bones.'),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     write_export(bpy,arm,expression_map)
 
 if __name__=='__main__':main()

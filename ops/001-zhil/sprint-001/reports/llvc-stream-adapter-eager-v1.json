@@ -1,0 +1,749 @@
+{
+  "date": "2026-09-12T12:57:55Z",
+  "runLabel": "eager-v1",
+  "passed": true,
+  "status": "passed",
+  "stage": "complete",
+  "paced": false,
+  "inputPacketSamples": 256,
+  "internalChunkSamples": 832,
+  "timeoutSeconds": 120,
+  "workerThreadEnvironment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "probeSha256": "b6b3b9f9fe664a880577e6bdaee572838586f1b6d209983eb02fa0c87d4cb1b4",
+  "adapterSha256": "78ce4fb5ac60307ee984ebe28f7f3800f82ae2ff21ac009a2b863f4fb28a4816",
+  "log": {
+    "path": "ops/001-zhil/sprint-001/reports/local/voice/llvc/llvc-stream-adapter-eager-v1.log",
+    "sha256": "a178619fc1d10d14b0cb30948bf934f158ca3b7884a4c0dc47a371549c49c5ce",
+    "bytes": 203
+  },
+  "physicalMedia": false,
+  "networkInference": false,
+  "liveAccepted": false,
+  "limits": [
+    "File-only framing/EOF parity, not paced arrival/queue/output or physical latency proof.",
+    "Windows per-call process CPU readings can be coarse or zero: interpret aggregate CPU/wall totals, not individual-call ratios.",
+    "Process CPU includes all threads in this owned process; priority/thread/process-affinity snapshots are outside timing.",
+    "One research target voice; no English preference/quality acceptance."
+  ],
+  "workerPid": 32688,
+  "torchVersion": "2.8.0+cpu",
+  "sourceSamples": 134347,
+  "sourceSha256": "b31133c05e9667a27db5be539ca089aa99e95ca7bef52040c902ff781680873a",
+  "expectedNeuralCalls": 162,
+  "beforeProcess": {
+    "pid": 32688,
+    "torchIntraopThreads": 1,
+    "torchInteropThreads": 1,
+    "powerStatus": {
+      "ACLineStatus": 1,
+      "BatteryFlag": 9,
+      "BatteryLifePercent": 82,
+      "SystemStatusFlag": 0,
+      "BatteryLifeTime": 4294967295,
+      "BatteryFullLifeTime": 4294967295
+    },
+    "threadCount": 5,
+    "priorityClass": "Normal",
+    "processAffinityMask": "FFF"
+  },
+  "upstreamNeuralCalls": 162,
+  "upstreamAudio": {
+    "path": "ops/001-zhil/sprint-001/reports/local/voice/llvc/llvc-stream-adapter-eager-v1-upstream.wav",
+    "sha256": "1e303aa45db12a480b9d0ac1e15a1d41e604a49b8f877099bc47bcc550dc082b"
+  },
+  "outputSamples": 134347,
+  "upstreamBitExact": true,
+  "maxAbsError": 0.0,
+  "timingTotals": {
+    "forwardCallCount": 162,
+    "expectedNeuralCalls": 162,
+    "countMatches": true,
+    "forwardWallTotalMs": 2590.0206999999987,
+    "forwardProcessCpuTotalMs": 2500.0,
+    "wholeAdapterWallMs": 2646.3487,
+    "wholeAdapterProcessCpuMs": 2546.875,
+    "wholeAdapterCpuToWallRatio": 0.9624109626973951,
+    "zeroPerCallCpuReadings": 14
+  },
+  "timingSamples": [
+    {
+      "wallMs": 16.0899,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.3601,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.5195,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.6589,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.471,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.3778,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.1117,
+      "processCpuMs": 0.0
+    },
+    {
+      "wallMs": 15.4991,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.9962,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.838,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.4678,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.7475,
+      "processCpuMs": 0.0
+    },
+    {
+      "wallMs": 14.7428,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.8267,
+      "processCpuMs": 0.0
+    },
+    {
+      "wallMs": 15.0472,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.4682,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.5594,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.7778,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.3104,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.9642,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 13.9968,
+      "processCpuMs": 0.0
+    },
+    {
+      "wallMs": 15.9962,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.9483,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.8101,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.3719,
+      "processCpuMs": 31.25
+    },
+    {
+      "wallMs": 15.3125,
+      "processCpuMs": 0.0
+    },
+    {
+      "wallMs": 15.4152,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.6203,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.2253,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.4335,
+      "processCpuMs": 31.25
+    },
+    {
+      "wallMs": 15.2308,
+      "processCpuMs": 0.0
+    },
+    {
+      "wallMs": 19.7929,
+      "processCpuMs": 31.25
+    },
+    {
+      "wallMs": 36.6704,
+      "processCpuMs": 31.25
+    },
+    {
+      "wallMs": 30.6095,
+      "processCpuMs": 31.25
+    },
+    {
+      "wallMs": 31.5947,
+      "processCpuMs": 31.25
+    },
+    {
+      "wallMs": 20.5677,
+      "processCpuMs": 31.25
+    },
+    {
+      "wallMs": 17.4647,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.3593,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 18.1432,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 20.8082,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 26.8727,
+      "processCpuMs": 31.25
+    },
+    {
+      "wallMs": 18.3536,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.9603,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.5435,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.4844,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 18.0324,
+      "processCpuMs": 31.25
+    },
+    {
+      "wallMs": 16.3489,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.2166,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 20.6641,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 18.6569,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 18.0868,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.8585,
+      "processCpuMs": 31.25
+    },
+    {
+      "wallMs": 18.7499,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.223,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.7027,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.3217,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.3716,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.9797,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.4993,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.9854,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.1226,
+      "processCpuMs": 0.0
+    },
+    {
+      "wallMs": 16.5075,
+      "processCpuMs": 0.0
+    },
+    {
+      "wallMs": 15.5936,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.1645,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.7551,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.1478,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.4306,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.4052,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.5829,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.7301,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.542,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.4771,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.5091,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.688,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.1699,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.6128,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.304,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.2999,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.9022,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.2551,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.8376,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.1805,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.9524,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.9056,
+      "processCpuMs": 0.0
+    },
+    {
+      "wallMs": 15.1257,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.2453,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.6943,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.8072,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.3661,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.2092,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.4848,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.7285,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.3738,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 17.722,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.5591,
+      "processCpuMs": 0.0
+    },
+    {
+      "wallMs": 15.5913,
+      "processCpuMs": 31.25
+    },
+    {
+      "wallMs": 15.3588,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.8366,
+      "processCpuMs": 0.0
+    },
+    {
+      "wallMs": 16.8237,
+      "processCpuMs": 31.25
+    },
+    {
+      "wallMs": 15.1649,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.9803,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.2843,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.1634,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.2094,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.7709,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.6162,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.4918,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.0918,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.6853,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.4437,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.8071,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 13.5467,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.6566,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.3444,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.0079,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.9713,
+      "processCpuMs": 0.0
+    },
+    {
+      "wallMs": 14.4581,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.8314,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.1258,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.1779,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 13.7038,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.0449,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.23,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.9228,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.8134,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.8658,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.7682,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.4738,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.5017,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.9478,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.4524,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 13.3718,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.5483,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.8779,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.1012,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.8713,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.7877,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.4237,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 19.9852,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.9583,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.3724,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.3726,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.7632,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.0524,
+      "processCpuMs": 0.0
+    },
+    {
+      "wallMs": 15.0536,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.1784,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.086,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.8635,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.3196,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.0254,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 13.0212,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.4191,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.9856,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.431,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 15.4112,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.767,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.1526,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.9753,
+      "processCpuMs": 0.0
+    },
+    {
+      "wallMs": 15.4247,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.7023,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 16.4997,
+      "processCpuMs": 15.625
+    },
+    {
+      "wallMs": 14.5445,
+      "processCpuMs": 15.625
+    }
+  ],
+  "afterProcess": {
+    "pid": 32688,
+    "torchIntraopThreads": 1,
+    "torchInteropThreads": 1,
+    "powerStatus": {
+      "ACLineStatus": 1,
+      "BatteryFlag": 9,
+      "BatteryLifePercent": 82,
+      "SystemStatusFlag": 0,
+      "BatteryLifeTime": 4294967295,
+      "BatteryFullLifeTime": 4294967295
+    },
+    "threadCount": 5,
+    "priorityClass": "Normal",
+    "processAffinityMask": "FFF"
+  },
+  "audio": {
+    "path": "ops/001-zhil/sprint-001/reports/local/voice/llvc/llvc-stream-adapter-eager-v1.wav",
+    "sha256": "15f9c59e4502a825582cf4b15601ed2c6ce846d06230b7c9a80c84abfc6d60d6"
+  },
+  "freshResetBitExact": true,
+  "resetNeuralCalls": 4,
+  "expectedResetCalls": 4,
+  "resetOutputSamples": 3328,
+  "completed": "2026-09-12T12:58:05Z",
+  "workerExitCode": 0,
+  "timedOut": false
+}

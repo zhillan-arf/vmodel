@@ -6,7 +6,7 @@ import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import os from 'node:os';
-const root=resolve(import.meta.dirname,'..'),media=resolve(root,'ops/reports/local/web-resource-spike');
+const root=resolve(import.meta.dirname,'..'),media=resolve(root,'ops/001-zhil/sprint-001/reports/local/web-resource-spike');
 const html=await readFile(resolve(root,'scripts/web_resource_harness.html'));
 const server=createServer(async(req,res)=>{try{const path=new URL(req.url,'http://127.0.0.1').pathname;if(path==='/'){res.setHeader('Content-Type','text/html');res.end(html);return}if(!/^\/media\/[a-z0-9.-]+$/.test(path)){res.writeHead(404);res.end();return}const name=path.slice(7),data=await readFile(resolve(media,name));res.setHeader('Content-Type',name.endsWith('.webm')?'video/webm':name.endsWith('.webp')?'image/webp':'image/png');res.setHeader('Content-Length',data.length);res.setHeader('Cache-Control','no-store');res.end(data)}catch{res.writeHead(404);res.end()}});
 await new Promise(r=>server.listen(0,'127.0.0.1',r));const base=`http://127.0.0.1:${server.address().port}`;
@@ -62,6 +62,6 @@ try{for(const spec of [{name:'chrome',type:chromium,channel:'chrome'},{name:'fir
     }
     result.status='passed';
     if(result.errors.length||!result.alphaProbe.supported&&spec.name==='chrome'||result.lostAlpha.mode!=='webp'||result.codecRejection.mode!=='webp'||result.autoplayRejection.mode!=='poster'||result.playbacks.filter(p=>p.supported!==false).some(p=>!p.visuallyChanging||p.actualAlpha.cornerAlpha!==0||p.actualAlpha.zero<50000||p.actualAlpha.full<10000||p.pause.mode!=='poster'||p.resume.mode!==p.codec))throw Error('Codec/lifecycle assertion failed');
-  }catch(e){result.status=browser?'failed':'unavailable';result.failure=e.stack;console.log(spec.name,result.status,e.message)}finally{if(browser)await browser.close();results.push(result);await writeFile(resolve(root,`ops/reports/web-spike-browsers${reportSuffix}.json`),JSON.stringify({date:new Date().toISOString(),platform:os.platform(),release:os.release(),cpu:os.cpus()[0]?.model,logicalCores:os.availableParallelism(),ramBytes:os.totalmem(),headless:true,scope:'Automated desktop engines on this Windows laptop; not actual Safari/iOS/Android hardware',results},null,2)+'\n')}
+  }catch(e){result.status=browser?'failed':'unavailable';result.failure=e.stack;console.log(spec.name,result.status,e.message)}finally{if(browser)await browser.close();results.push(result);await writeFile(resolve(root,`ops/001-zhil/sprint-001/reports/web-spike-browsers${reportSuffix}.json`),JSON.stringify({date:new Date().toISOString(),platform:os.platform(),release:os.release(),cpu:os.cpus()[0]?.model,logicalCores:os.availableParallelism(),ramBytes:os.totalmem(),headless:true,scope:'Automated desktop engines on this Windows laptop; not actual Safari/iOS/Android hardware',results},null,2)+'\n')}
 }}finally{await new Promise(r=>server.close(r))}
 if(results.some(r=>r.status==='failed'))process.exitCode=1;

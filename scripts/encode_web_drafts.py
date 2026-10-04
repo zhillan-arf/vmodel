@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 tool=json.loads((ROOT/'config/web-resources/toolchain.json').read_text())['ffmpeg'];ff=ROOT/tool['installDirectory']/'bin/ffmpeg.exe'
 config=json.loads((ROOT/'config/web-resources/performances.json').read_text())
 for resource in sys.argv[1:] or ['home-greeting','desk-normal']:
-    spec=config[resource];frames=round(spec['seconds']*12);source=ROOT/f'assets/work/ene-web/{resource}/preview-frames';out=ROOT/f'ops/reports/local/web-resources/{resource}';out.mkdir(parents=True,exist_ok=True)
+    spec=config[resource];frames=round(spec['seconds']*12);source=ROOT/f'assets/work/ene-web/{resource}/preview-frames';out=ROOT/f'ops/001-zhil/sprint-001/reports/local/web-resources/{resource}';out.mkdir(parents=True,exist_ok=True)
     for i in range(frames):
         if not (source/f'frame-{i:04d}.png').exists():raise RuntimeError(f'Missing {resource} preview frame {i}')
     records=[]
@@ -22,6 +22,6 @@ for resource in sys.argv[1:] or ['home-greeting','desk-normal']:
     command=[str(ff),'-hide_banner','-v','error','-y','-framerate','12','-start_number','0','-i',str(source/'frame-%04d.png'),'-vf',f"select={selection},scale=180:-1:flags=lanczos,format=rgba,tile=6x2:color=0x24364b",'-frames:v','1',str(out/'contact-sheet.png')]
     subprocess.run(command,check=True)
     report['contactSheetPreviewFrames']=selected
-    (ROOT/f'ops/reports/{resource}-preview-media.json').write_text(json.dumps(report,indent=2)+'\n');print('DRAFT_ENCODED',resource,flush=True)
-shutil.copyfile(ROOT/'scripts/web_draft_review.html',ROOT/'ops/reports/local/web-resources/review.html')
-shutil.copyfile(ROOT/'scripts/web_desk_states_review.html',ROOT/'ops/reports/local/web-resources/desk-states-review.html')
+    (ROOT/f'ops/001-zhil/sprint-001/reports/{resource}-preview-media.json').write_text(json.dumps(report,indent=2)+'\n');print('DRAFT_ENCODED',resource,flush=True)
+shutil.copyfile(ROOT/'scripts/web_draft_review.html',ROOT/'ops/001-zhil/sprint-001/reports/local/web-resources/review.html')
+shutil.copyfile(ROOT/'scripts/web_desk_states_review.html',ROOT/'ops/001-zhil/sprint-001/reports/local/web-resources/desk-states-review.html')

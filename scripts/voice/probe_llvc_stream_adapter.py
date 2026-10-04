@@ -8,8 +8,8 @@ def sha(file):return hashlib.sha256(Path(file).read_bytes()).hexdigest()
 def utc():return time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())
 def paths(label):
     name='llvc-stream-adapter-'+label
-    folder=ROOT/'ops/reports/local/voice/llvc'
-    return {'report':ROOT/'ops/reports'/(name+'.json'),'log':folder/(name+'.log'),'audio':folder/(name+'.wav'),'reference':folder/(name+'-upstream.wav')}
+    folder=ROOT/'ops/001-zhil/sprint-001/reports/local/voice/llvc'
+    return {'report':ROOT/'ops/001-zhil/sprint-001/reports'/(name+'.json'),'log':folder/(name+'.log'),'audio':folder/(name+'.wav'),'reference':folder/(name+'-upstream.wav')}
 def update(file,**fields):
     value=json.loads(file.read_text(encoding='utf-8'));value.update(fields)
     temporary=file.with_suffix('.pending.json');temporary.write_text(json.dumps(value,indent=2),encoding='utf-8');temporary.replace(file)

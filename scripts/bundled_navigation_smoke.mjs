@@ -21,7 +21,7 @@ try{
   await page.locator('[data-view="tracking"]').click();await page.locator('#inspector-start-camera').click();
   await page.waitForFunction(()=>window.__vmodel.getStats().sequence>=4,null,{timeout:90000});
   await page.locator('[data-view="studio"]').click();
-  await mkdir('ops/reports/local/bundled-navigation',{recursive:true});
+  await mkdir('ops/001-zhil/sprint-001/reports/local/bundled-navigation',{recursive:true});
 
     await page.waitForFunction(model=>window.__vmodel.getState().selectedBundle===model,model,{timeout:180000});
     const state=await page.evaluate(()=>window.__vmodel.getState());
@@ -41,7 +41,7 @@ try{
       assert.deepEqual(await output.evaluate(()=>window.__vmodel.getState().settings),state.settings);
       for(const viewport of [{width:390,height:844},{width:768,height:1024},{width:1440,height:900}]){
         await page.setViewportSize(viewport);
-        await page.screenshot({path:`ops/reports/local/bundled-navigation/${model}-${view}-${viewport.width}.png`});
+        await page.screenshot({path:`ops/001-zhil/sprint-001/reports/local/bundled-navigation/${model}-${view}-${viewport.width}.png`});
         assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
       }
       checks.push({view,stable,outputModelPreserved:true,settingsPreserved:true});
@@ -54,5 +54,5 @@ try{
   await context.close();
   }
   const report={generatedAt:new Date().toISOString(),browser:browser.version(),platform:process.platform,browserChannel:process.env.VMODEL_BROWSER??'chromium',results,limits:['Actual bundled model files and simulated camera input.','Screenshots require human review. No physical camera test or performance acceptance.']};
-  await writeFile('ops/reports/bundled-navigation-smoke.json',JSON.stringify(report,null,2)+'\n');
+  await writeFile('ops/001-zhil/sprint-001/reports/bundled-navigation-smoke.json',JSON.stringify(report,null,2)+'\n');
 }finally{await browser?.close();await server.close();}

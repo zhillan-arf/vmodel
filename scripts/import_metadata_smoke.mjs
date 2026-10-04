@@ -121,5 +121,5 @@ try{
   assert(visualStates.every(image=>!image.horizontalOverflow));
   const report={visualStates,restoreFocusReturned:true,lateTermsFailureIgnored:true,versions,generatedAt:new Date().toISOString(),browser:browser.version(),checks,plainText:state,externalRequests,errors,
     limits:['Synthetic metadata and terms. External requests are blocked and counted by the test.']};
-  await writeFile('ops/reports/import-metadata-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/import-metadata-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await browser?.close();await server.close();}

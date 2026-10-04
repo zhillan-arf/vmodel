@@ -57,5 +57,5 @@ try{
   await page.locator('[data-view="tracking"]').click();await page.locator('#inspector-start-camera').click();
   await page.waitForFunction(()=>document.querySelector('#camera-message').textContent.includes('Camera permission denied'));
   await capture('permission-failure');assert(visualStates.every(image=>!image.horizontalOverflow));assert.deepEqual(errors,[]);
-  await writeFile('ops/reports/tracking-states-smoke.json',JSON.stringify({generatedAt:new Date().toISOString(),browser:browser.version(),visualStates,errors,limits:['Synthetic observations, no camera images, and an empty test stream.','The trace duration fixture injects an event at 60001 ms.','Permission failure uses an injected NotAllowedError through the application camera control.','No physical tracking or human visual acceptance.']},null,2)+'\n');
+  await writeFile('ops/001-zhil/sprint-001/reports/tracking-states-smoke.json',JSON.stringify({generatedAt:new Date().toISOString(),browser:browser.version(),visualStates,errors,limits:['Synthetic observations, no camera images, and an empty test stream.','The trace duration fixture injects an event at 60001 ms.','Permission failure uses an injected NotAllowedError through the application camera control.','No physical tracking or human visual acceptance.']},null,2)+'\n');
 }finally{await browser?.close();await server.close();}

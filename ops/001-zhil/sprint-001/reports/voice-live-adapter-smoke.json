@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "passed": true,
+  "source": "Public-domain LJ025-0076.wav",
+  "model": "CHIHAYA Bright",
+  "deviceCapture": false,
+  "modelLoadAndOneWarmupSeconds": 8.562000000005355,
+  "processedBlocks": 3,
+  "inputSamplesPerBlock": 2560,
+  "outputSamplesPerBlock": 6400,
+  "outputSampleRate": 40000,
+  "computeMs": [
+    671.9999999913853,
+    703.0000000086147,
+    657.0000000065193
+  ],
+  "allFinite": true,
+  "peak": 0.6271958351135254,
+  "output": "ops/001-zhil/sprint-001/reports/local/voice/live-adapter-three-blocks.wav",
+  "outputSha256": "54525493e0164b5484540cadded1b78354d4eb9fb5c9b6a882062bf99ee3a592",
+  "boundary": "Functional adapter check. Initial 480 ms only, no listening/real-time/physical latency acceptance; timing is incidental to this bounded implementation check."
+}

@@ -12,7 +12,7 @@ def main():
     from mmd_tools import cycles_converter
     bpy.ops.object.select_all(action='SELECT')
     bpy.ops.object.delete(use_global=False)
-    source = ROOT / 'ops/resources/ENE/ENE Cyber legs ver.pmx'
+    source = ROOT / 'ops/001-zhil/sprint-001/resources/ENE/ENE Cyber legs ver.pmx'
     result = bpy.ops.mmd_tools.import_model(filepath=str(source), scale=0.08,
         types={'MESH','ARMATURE','PHYSICS','DISPLAY','MORPHS'}, rename_bones=False,
         clean_model=False, remove_doubles=False, log_level='WARNING')
@@ -50,7 +50,7 @@ def main():
     output=ROOT/'assets/work/ene'
     output.mkdir(parents=True,exist_ok=True)
     bpy.ops.wm.save_as_mainfile(filepath=str(output/'source.blend'))
-    (ROOT/'ops/reports/ene-import.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (ROOT/'ops/001-zhil/sprint-001/reports/ene-import.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     scene=bpy.context.scene
     scene.render.engine='BLENDER_EEVEE'
     scene.render.resolution_x=720;scene.render.resolution_y=900;scene.render.resolution_percentage=100
@@ -65,7 +65,7 @@ def main():
         bpy.ops.object.light_add(type='AREA',location=loc)
         light=bpy.context.object;light.data.energy=power;light.data.shape='DISK';light.data.size=size
         light.rotation_euler=(center-light.location).to_track_quat('-Z','Y').to_euler()
-    preview=ROOT/'ops/reports/local/ene-import-front.png'
+    preview=ROOT/'ops/001-zhil/sprint-001/reports/local/ene-import-front.png'
     preview.parent.mkdir(parents=True,exist_ok=True)
     scene.render.filepath=str(preview)
     bpy.ops.render.render(write_still=True)

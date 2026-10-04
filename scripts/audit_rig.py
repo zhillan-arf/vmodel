@@ -10,7 +10,7 @@ bpy.ops.wm.open_mainfile(filepath=str(ROOT/'assets/work/ene/vrm-work.blend'))
 arm=next(o for o in bpy.data.objects if o.type=='ARMATURE')
 mesh=next(o for o in bpy.data.objects if o.type=='MESH' and any(m.type=='ARMATURE' and m.object==arm for m in o.modifiers))
 profile=json.loads((ROOT/'config/avatars/ene.json').read_text(encoding='utf-8'))
-inventory=json.loads((ROOT/'ops/reports/asset-inventory.json').read_text(encoding='utf-8'))[0]
+inventory=json.loads((ROOT/'ops/001-zhil/sprint-001/reports/asset-inventory.json').read_text(encoding='utf-8'))[0]
 weights=collections.Counter();unweighted=[]
 for vertex in mesh.data.vertices:
     positive=[g for g in vertex.groups if g.weight>1e-6 and mesh.vertex_groups[g.group].name in arm.data.bones]
@@ -38,5 +38,5 @@ before=dict(vertices=len(copy.vertices),edges=len(copy.edges),polygons=len(copy.
 changed=copy.validate(verbose=True)
 report['meshValidation']=dict(changed=changed,before=before,after=dict(vertices=len(copy.vertices),edges=len(copy.edges),polygons=len(copy.polygons),loops=len(copy.loops)))
 bpy.data.meshes.remove(copy)
-(ROOT/'ops/reports/rig-audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+(ROOT/'ops/001-zhil/sprint-001/reports/rig-audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print('RIG_AUDIT',json.dumps(dict(vertices=report['vertices'],unweighted=len(unweighted),helpers=len(helpers),springs=len(springs),colliders=report['colliders'])),flush=True)

@@ -147,7 +147,7 @@ try {
   report.status = 'failed'; report.error = String(error?.stack ?? error); exit = 1;
 } finally {
   server.close();
-  const file = path.join(ROOT, 'ops/reports', 'capture-raf-occlusion-' + label + '.json');
+  const file = path.join(ROOT, 'ops/001-zhil/sprint-001/reports', 'capture-raf-occlusion-' + label + '.json');
   await mkdir(path.dirname(file), { recursive: true });
   await writeFile(file, JSON.stringify(report, null, 2), { flag: 'wx' }).catch(error => {
     if (error.code !== 'EEXIST') throw error;

@@ -1,0 +1,283 @@
+{
+  "generatedAt": "2026-10-04T14:32:19.191Z",
+  "browser": "154.0.4258.53",
+  "visualStates": [
+    {
+      "state": "camera-stopped",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/camera-stopped-390.png",
+      "sha256": "042ea0daa51cf3140c8fe1fbde0773cadb1d543cf772f2edfe9c64a0b9abd3b3",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "camera-stopped",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/camera-stopped-768.png",
+      "sha256": "4d3cc3f4c98f2dab95195fe090a2f9c3ac1e3152a58e610d75eba2dae9b78ba1",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "camera-stopped",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/camera-stopped-1440.png",
+      "sha256": "d3506a2b25fd2a0dfd6ea57012b9d9cbc9f0e875d79ccce867a8a5c472008abd",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "valid",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/valid-390.png",
+      "sha256": "2a48d4288547f279699a1e59a3e38b02995856e34c67439f59c541704899794a",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "valid",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/valid-768.png",
+      "sha256": "8f919f37c434ab469763859411ff43316257e2531778f431979ea7350fd3a21f",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "valid",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/valid-1440.png",
+      "sha256": "94505ba9fbc2277febabfeeacacd8d137133bfff419fcb6a9cfc8e59b1914aac",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "low-confidence",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/low-confidence-390.png",
+      "sha256": "17daf26b1923153ec22f9c92934b85507b2bac78e745ad900a3e14032076db62",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "low-confidence",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/low-confidence-768.png",
+      "sha256": "5367a4ba376dcc140e3bfe82e10ff24a8b2a987a114e83815658fdcfd8a0f5d4",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "low-confidence",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/low-confidence-1440.png",
+      "sha256": "e6fd98a254a4dc81b4f2af3acb9bac8727d4e078e27b1a87be5cabe4e788e600",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "stale",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/stale-390.png",
+      "sha256": "03d07c467e95723d79bd331542e772531e13c71d610f86fb27f50b7276168608",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "stale",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/stale-768.png",
+      "sha256": "c00ac902620c68ba5440d3d2cc304d76e21c9b3634b67d1499b6a6bf153adeb3",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "stale",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/stale-1440.png",
+      "sha256": "5d68e8b19190a6e139813e00f1f65c33f76a1c8457483f54c5b041753782f629",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "disabled-hands",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/disabled-hands-390.png",
+      "sha256": "2370aac52c9e92c2adb04706cdde4520bfc2825c58dd495b36bd27044501e3fa",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "disabled-hands",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/disabled-hands-768.png",
+      "sha256": "f7dd1e0585467245e044dbec173f0159c6aaba6a134db878866662685f6d4385",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "disabled-hands",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/disabled-hands-1440.png",
+      "sha256": "722370e0e102200541d900c6683658b62319fccfaab082a9c7351baf92984e5e",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "paused",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/paused-390.png",
+      "sha256": "6c45be9fc7d467b73e0243ed264469cc63f355afe24ace9fa6473f79448cded3",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "paused",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/paused-768.png",
+      "sha256": "c1a3bfe8a18530627bbd60ab15ad77bb79389527616876d15b6035649a5d51af",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "paused",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/paused-1440.png",
+      "sha256": "4a7a6afa5da6d86271cf005eaa2db7da12f61c57c1bb6e03122a0ca2543b5a10",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "trace-limit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/trace-limit-390.png",
+      "sha256": "bb6d18b746af14f41de9d506831a6b903072fbb167f4230f935b0848594f7200",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "trace-limit",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/trace-limit-768.png",
+      "sha256": "97843e35a5e338677882a7806fece6db4da4efe8fe1cbd739eedcb40d3780c44",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "trace-limit",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/trace-limit-1440.png",
+      "sha256": "b7a0c699bfe6b8006a66f0f275728827be9dc539b4b3f2ed40eb8b06073abc91",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "replay",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/replay-390.png",
+      "sha256": "c92422a29223f32229be5084ed088a12cbd261d728bb97bc5e81cf5e8baea7b7",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "replay",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/replay-768.png",
+      "sha256": "1065bfc8964fede1a8b23fe74643c868a10120ff6693149383bb4f1e931a6ab9",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "replay",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/replay-1440.png",
+      "sha256": "ff7e352475005997ce0031e3839ed66feaf90a151985c997201fe28e0091b0c0",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "permission-failure",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/permission-failure-390.png",
+      "sha256": "120b9824a07adeb2c953125ebc56e80a4b5f297bb6dc01b1d54f459e91171938",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "permission-failure",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/permission-failure-768.png",
+      "sha256": "de2e074290e24af7a5217ddfde8f5a276e209cf07b619e29b695257127e4eb8c",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "permission-failure",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/permission-failure-1440.png",
+      "sha256": "2b346ef9cd35cd5614bf9c8d18e6e0271e29371f517bd88603c447a1dc18e55a",
+      "horizontalOverflow": false
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "Synthetic observations, no camera images, and an empty test stream.",
+    "The trace duration fixture injects an event at 60001 ms.",
+    "Permission failure uses an injected NotAllowedError through the application camera control.",
+    "No physical tracking or human visual acceptance."
+  ]
+}

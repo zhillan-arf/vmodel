@@ -64,5 +64,5 @@ try{
   await page.locator('#cancel-import').click();await unchanged();assert.deepEqual(errors,[]);
   const report={generatedAt:new Date().toISOString(),browser:browser.version(),hashes,checks,retry:true,errors,
     limits:['Synthetic models replace the bundled models.','The test holds worker messages or prepared candidates. Actual 30-second timers remain unchanged.']};
-  await writeFile('ops/reports/import-lifecycle-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/import-lifecycle-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await browser?.close();await server.close();}

@@ -16,4 +16,4 @@ For the final check, record at least one minute in each orientation: speak, blin
 
 Keep the Ene output window visible and dedicated to the avatar. Reattach after resizing. **Never minimize it while recording.** A minimized window produces no frames at all — measured at 60 frames per second normally and 0 while minimized — so the avatar freezes and the recording goes blank until you restore it. Covering it with other windows is fine; the studio also tells you afterwards if its window was hidden. Before leaving Clean view or changing/closing the captured window, stop recording and disable its source with the eye icon in OBS. See [OBS setup](obs-setup.md) for the measured window limitations.
 
-The [recording report](../ops/reports/obs-recording.md) links the short landscape/portrait MP4 fixtures and the tested encoder settings. Those clips use prerecorded reference audio; they do not certify live voice performance.
+The [recording report](../ops/001-zhil/sprint-001/reports/obs-recording.md) links the short landscape/portrait MP4 fixtures and the tested encoder settings. Those clips use prerecorded reference audio; they do not certify live voice performance.

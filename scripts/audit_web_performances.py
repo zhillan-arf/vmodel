@@ -51,4 +51,4 @@ for resource in requested:
     if resource=='home-greeting':assert all(min(f['wholeUvMin'])>=.05 and max(f['wholeUvMax'])<=.95 for f in frames)
     else:assert drift<1e-5
     assert margin>.01 and maximum<.99
-    (ROOT/f'ops/reports/{resource}-audit.json').write_text(json.dumps(report,indent=2)+'\n');print('PERFORMANCE_AUDIT_PASSED',resource,loop,margin,maximum,forearm_range,flush=True)
+    (ROOT/f'ops/001-zhil/sprint-001/reports/{resource}-audit.json').write_text(json.dumps(report,indent=2)+'\n');print('PERFORMANCE_AUDIT_PASSED',resource,loop,margin,maximum,forearm_range,flush=True)

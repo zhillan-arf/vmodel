@@ -39,7 +39,7 @@ try{
         }finally{player.pause();player.remove();URL.revokeObjectURL(url);}
       }finally{window.MediaRecorder=Original;window.setTimeout=originalTimeout;video.stop();clearInterval(timer);stream.getTracks().forEach(track=>track.stop());canvas.remove();}
     },mode);
-    if(!result.advanced){await writeFile('ops/reports/local/replay-video-failure.webm',Buffer.from(result.payload));console.error({...result,payload:undefined});}
+    if(!result.advanced){await writeFile('ops/001-zhil/sprint-001/reports/local/replay-video-failure.webm',Buffer.from(result.payload));console.error({...result,payload:undefined});}
     assert(result.bytes>0);assert.equal(result.audioTracks,0);assert.equal(result.width,160);assert.equal(result.height,120);assert(result.advanced);assert.equal(result.active,false);if(!videoBytes){videoBytes=result.payload;videoMapping=result.mapping;}delete result.payload;checks.video.push(result);
   }
   checks.videoCleanup=await page.evaluate(async({videoBytes,videoMapping})=>{
@@ -120,5 +120,5 @@ try{
   assert.deepEqual(await page.evaluate(()=>window.__vmodel.getState()),before);assert.deepEqual(await output.evaluate(()=>window.__vmodel.getState()),peerBefore);checks.invalidTraceIsolation=true;
   assert.deepEqual(errors,[]);
   const report={generatedAt:new Date().toISOString(),browser:browser.version(),platform:process.platform,browserChannel:process.env.VMODEL_BROWSER??'chromium',checks,errors,limits:['Canvas video source only.','Camera loss and recorder error use injected events.','The size gate uses an overridden Blob.size.','The test waits for encoded data before each stop condition. Unit tests check the 60-second timer.','No physical video timing or human review.']};
-  await writeFile('ops/reports/replay-video-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/replay-video-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await browser?.close();await server.close();}

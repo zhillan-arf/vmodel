@@ -10,7 +10,7 @@ import os from 'node:os';
 import {mediaResponse} from './web_review_response.mjs';
 
 const root=resolve(import.meta.dirname,'..'),dist=resolve(root,'web-showcase/dist');
-const out=resolve(root,'ops/reports/local/web-showcase-acceptance');
+const out=resolve(root,'ops/001-zhil/sprint-001/reports/local/web-showcase-acceptance');
 const phase=process.env.WEB_SHOWCASE_PHASE??'all';
 if(!['cold','playback','lifecycle','all'].includes(phase))throw Error('Unknown measurement phase');
 const manifest=JSON.parse(await readFile(resolve(dist,'ene/manifest.json'),'utf8'));
@@ -32,7 +32,7 @@ const base=`http://127.0.0.1:${server.address().port}`;
 const report={date:new Date().toISOString(),phase,state:'running',platform:os.platform(),release:os.release(),cpu:os.cpus()[0]?.model,
   logicalCores:os.availableParallelism(),ramBytes:os.totalmem(),headless:true,errors:[],
   scope:'Actual final built showcase over an owned loopback server in installed Windows Chrome. CDP network emulation is not a real mobile-network result. No real Safari/Android/iOS claim.'};
-const reportPath=resolve(root,`ops/reports/web-showcase-measurement-${phase}.json`);
+const reportPath=resolve(root,`ops/001-zhil/sprint-001/reports/web-showcase-measurement-${phase}.json`);
 let browser;
 const save=()=>writeFile(reportPath,JSON.stringify(report,null,2)+'\n');
 async function stats(cdp){

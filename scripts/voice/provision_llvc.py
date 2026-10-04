@@ -105,7 +105,7 @@ def main():
                           'The active Voice Studio, its profiles and its OBS routes are unchanged.'],
                 'inferenceRun': False, 'liveAccepted': False}
     (BASE / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
-    (ROOT / 'ops/reports/voice-llvc-provision.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
+    (ROOT / 'ops/001-zhil/sprint-001/reports/voice-llvc-provision.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'provisioned': True, 'artifacts': len(artifacts), 'checkpointBytes': MODEL_BYTES, 'inferenceRun': False}))
 
 

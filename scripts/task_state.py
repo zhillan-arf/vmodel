@@ -7,7 +7,7 @@ import re
 from task_scopes import CONTROLLER_SCOPES
 
 ROOT = Path(__file__).resolve().parents[1]
-TASKS = ROOT / 'ops/tasks'
+TASKS = ROOT / 'ops/001-zhil/sprint-001/tasks'
 FOLDERS = {'In progress': 'active', 'Blocked': 'active', 'Done': 'archived', 'Ready': 'backlog', 'Todo': 'backlog'}
 
 def refresh_controller_counts():
@@ -38,7 +38,7 @@ def transition(task_id, status):
     source = matches[0].resolve()
     target = (TASKS / FOLDERS[status] / source.name).resolve()
     if not source.is_relative_to(TASKS.resolve()) or not target.is_relative_to(TASKS.resolve()):
-        raise ValueError('Task paths must remain inside ops/tasks')
+        raise ValueError('Task paths must remain inside ops/001-zhil/sprint-001/tasks')
     if source != target and target.exists():
         raise ValueError(f'Destination already exists: {target}')
     edits = []

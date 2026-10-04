@@ -3,7 +3,7 @@ import { mkdir,writeFile,readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 const browser=await chromium.launch({channel:'chrome',headless:true});
 const page=await browser.newPage({viewport:{width:1280,height:1000}});
-const folder='ops/reports/local/pose-sweep';await mkdir(folder,{recursive:true});
+const folder='ops/001-zhil/sprint-001/reports/local/pose-sweep';await mkdir(folder,{recursive:true});
 const poses=[
   {name:'t-pose',bones:{}},
   {name:'arms-up',bones:{leftUpperArm:[0,0,1.2],rightUpperArm:[0,0,-1.2]}},
@@ -52,7 +52,7 @@ try{
     results.push({...result,image:`${folder}/${pose.name}.png`});
   }
   const avatarSha256=createHash('sha256').update(await readFile('assets/avatars/ene.vrm')).digest('hex');
-  await writeFile('ops/reports/pose-sweep.json',JSON.stringify({date:new Date().toISOString(),avatarSha256,input:'Direct normalized VRM poses; independent of camera solver',results,errors},null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/pose-sweep.json',JSON.stringify({date:new Date().toISOString(),avatarSha256,input:'Direct normalized VRM poses; independent of camera solver',results,errors},null,2));
   console.log(JSON.stringify({poses:results.length,finite:results.every(r=>r.finite),errors}));
   if(errors.length||results.some(r=>!r.finite))process.exitCode=1;
 }finally{await browser.close();}

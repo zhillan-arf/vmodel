@@ -54,9 +54,9 @@ try{
   },'/'+path.relative(process.cwd(),path.join(baselineDirectory,'retarget.ts')).split(path.sep).join('/'));
   for(const item of result.results){assert(Math.abs(item.leftChangeRadians-result.results[0].leftChangeRadians)<.0001,JSON.stringify(item));assert(item.baselineAngle<.0001&&item.baselinePosition<1e-10&&item.goalsEqual,JSON.stringify(item));assert(item.leftChangeRadians>.01,JSON.stringify(item));assert(item.rightChangeRadians<.0001,JSON.stringify(item));for(const key of ['forwardError','backwardError','repeatedError'])assert(item[key]<.0001,JSON.stringify(item));}
   assert.deepEqual(errors,[]);
-  await mkdir('ops/reports/local',{recursive:true});await writeFile('ops/reports/local/avatar-comparison-trace.json',result.traceText);
+  await mkdir('ops/001-zhil/sprint-001/reports/local',{recursive:true});await writeFile('ops/001-zhil/sprint-001/reports/local/avatar-comparison-trace.json',result.traceText);
   const {traceText,...measurements}=result;
-  const report={tracePath:'ops/reports/local/avatar-comparison-trace.json',baselineCommit,generatedAt:new Date().toISOString(),browser:browser.version(),...measurements,errors,
+  const report={tracePath:'ops/001-zhil/sprint-001/reports/local/avatar-comparison-trace.json',baselineCommit,generatedAt:new Date().toISOString(),browser:browser.version(),...measurements,errors,
     limits:['Synthetic anatomical input on the local Ene and native Rei rigs.','No physical detector accuracy or target-laptop performance claim.']};
-  await writeFile('ops/reports/avatar-replay-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/avatar-replay-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await browser?.close();await server.close();await rm(baselineDirectory,{recursive:true,force:true});}

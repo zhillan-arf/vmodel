@@ -52,7 +52,7 @@
       "sha256": "0914f4fa32d8d9d29a60585870bfffc7fecbbc53deb3d300a62cd11f916ee1a1"
     },
     {
-      "path": "ops/reports/local/voice/benchmarks/cpu-q8-eager-3t.json",
+      "path": "ops/001-zhil/sprint-001/reports/local/voice/benchmarks/cpu-q8-eager-3t.json",
       "sha256": "a3981ede96414044386a7851d60c5b911a727b8974357856ef352254d58b18b2"
     },
     {
@@ -80,11 +80,11 @@
       "sha256": "74f5b8eb4068060bbc047509f76e52b3baf8a9aac6b5e9daebdf2193c8716023"
     },
     {
-      "path": "ops/reports/local/voice/benchmarks/cpu-q8-eager-3t-computed.wav",
+      "path": "ops/001-zhil/sprint-001/reports/local/voice/benchmarks/cpu-q8-eager-3t-computed.wav",
       "sha256": "c511c3ac95c7aa252702058164acc37dbb8d18938d1338dc9eb3300474d10a25"
     },
     {
-      "path": "ops/reports/local/voice/benchmarks/cpu-q8-eager-3t-deadline.wav",
+      "path": "ops/001-zhil/sprint-001/reports/local/voice/benchmarks/cpu-q8-eager-3t-deadline.wav",
       "sha256": "76588c5008529c0888b1b0e3a149d1a72c9ed1ebd262b5bff09417b3c7331bbd"
     }
   ],
@@ -95,5 +95,5 @@
     "Promoted from the reviewed .cache/rvc-repeat preparation without duplicating model assets; execution remains pending root release."
   ],
   "launcher": "scripts/voice/repeat_rvc.py",
-  "resultDirectory": "ops/reports/local/voice/rvc-repeat/<unique-label>"
+  "resultDirectory": "ops/001-zhil/sprint-001/reports/local/voice/rvc-repeat/<unique-label>"
 }

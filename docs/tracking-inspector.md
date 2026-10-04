@@ -96,7 +96,7 @@ Missing confidence remains unavailable in raw data. The unchanged runtime applie
 The accepted age range is at least -50 ms and less than 500 ms.
 No scheduler or filter correction has acceptance evidence from this implementation session.
 
-See [physical checks](tracking-check.md) and [implementation evidence](../ops/reports/studio-implementation.md).
+See [physical checks](tracking-check.md) and [implementation evidence](../ops/001-zhil/sprint-001/reports/studio-implementation.md).
 
 In Estimated 3D, select Hands to show a separate hand estimate.
 Select Calculated wrist alignment to place the matched hand at the pose wrist.

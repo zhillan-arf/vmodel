@@ -81,8 +81,8 @@ try {
     result.memoryPassed=result.after.every(x=>x.privateBytes<=result.ceilingBytes);
     await context.close();
     assert(result.memoryPassed,'Post-cleanup memory exceeds L13.');
-    await writeFile(`ops/reports/windows-library-${channel}.json`,JSON.stringify(report,null,2)+'\n');
+    await writeFile(`ops/001-zhil/sprint-001/reports/windows-library-${channel}.json`,JSON.stringify(report,null,2)+'\n');
   }
   assert.deepEqual(report.errors,[]);report.passed=true;
 }catch(error){report.errors.push(String(error));report.passed=false;process.exitCode=1;console.error(error);}
-finally{await browser?.close();await server?.stop();await writeFile(`ops/reports/windows-library-${channel}.json`,JSON.stringify(report,null,2)+'\n');}
+finally{await browser?.close();await server?.stop();await writeFile(`ops/001-zhil/sprint-001/reports/windows-library-${channel}.json`,JSON.stringify(report,null,2)+'\n');}

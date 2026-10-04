@@ -1,0 +1,87 @@
+# Voice Studio routing implementation checkpoint
+
+Date: 2026-09-12. TASK-025 and TASK-026 remain active. These components were implemented independently while TASK-024's viable live backend and physical timing gates remain open.
+
+## Implemented components
+
+- [Voice Studio server](../../../../scripts/voice/studio_server.py), [browser controls](../../../../scripts/voice/studio/studio.js), [converted receiver](../../../../scripts/voice/studio/player.js) and [bounded AudioWorklet](../../../../scripts/voice/studio/pcm-player.js). Three provisional voices, reference playback, gain/context/device settings, save/reset, meters, explicit Stop, monitoring and reconnect are available at loopback port 5082.
+- [Profile validator](../../../../scripts/voice/profiles.py) binds model SHA, engine revision, CPU backend, 16 kHz input/40 kHz output, 160 ms blocks and context to a sync fingerprint. Unsupported pitch/index/backend or fabricated acceptance is rejected. Changed timing/device settings invalidate calibration; no physical calibration is currently accepted.
+- [Persistent local RVC adapter](../../../../scripts/voice/live_rvc.py) verifies pinned source and target/encoder hashes, compares the safe tensor derivative to a weights-only checkpoint, warms one CPU model and uses bounded SOLA output. No audio-device API runs in Python. Physical microphone input is opened only by the explicit browser action.
+- [Start](../../../../deploy/Start%20Voice%20Studio.cmd)/[Stop](../../../../deploy/Stop%20Voice%20Studio.cmd) launchers use the existing 95-package environment. The hidden process receives a reduced environment, offline model flags and no inherited API tokens. Normal shutdown uses private loopback control; a timeout can terminate only the recorded process tree after checking executable and creation identity. `Start VModel.cmd -Voice` adds optional voice startup; `-NoBrowser -Voice` starts both services without windows and `-StopVoice` stops only voice. The no-browser start/stop/restart path was exercised with the avatar/audition services left running.
+- [OBS configuration helper](../../../../scripts/voice/configure_obs_voice.mjs) and [settings example](../../../../config/voice/obs-browser-source.example.json) create a separate owned audio scene/source. The explicit `--attach` mode is now applied: **Ene Converted Voice Bridge** is reused exactly once in **Ene Landscape**, **Ene Portrait**, and the audio-only **Ene Voice Studio** scene. Avatar source settings, transforms/visibility and the current scene are preserved. Actual test recordings used separate temporary scene/source names and restored the original OBS scene and recording directory.
+
+All API and WebSocket endpoints enforce the loopback Host and matching browser Origin. A producer lease prevents a second control window from taking over; the output route uses a separate private key. The converted OBS page has microphone permission disabled and receives converted PCM only. The source/reference file, model weights and route JSON are outside the static allowlist. There is no CORS wildcard or automatic raw-microphone fallback.
+
+The [explicit natural-voice extension](voice-natural-mode.md) uses its own natural-only receiver, output key, frame kind and saved timing profile. **Start natural voice → OBS** is a separate deliberate action, with an obvious active state. It stops character playback and resamples natural PCM without neural inference. Both receiver sources are installed in the two Ene scenes and remain silent while the service is idle; failures select idle/muted and never change to natural voice.
+
+The input mailbox holds one pending block. Late conversion is muted and three consecutive misses stop input. Model changes, Stop and disconnection change the epoch and flush output; obsolete results cannot cross into a new session. The receiver rejects stale/wrong-epoch frames, inserts silence on underflow, and rejects overflow. The corrected receiver adds 40 ms initial playback cushion with a hard 240 ms PCM queue cap. Network packet age is bounded separately at 400 ms. These are safety bounds, **not proof of the <=350 ms physical latency gate**; all those delays must be measured end to end.
+
+## Verification to date
+
+- Fifteen [server/profile tests](../../../../scripts/voice/test_studio.py) pass: Host/Origin, allowlisted files, producer takeover, separate output authorization, receive-only output, exact converted reference payload, bounded input backlog, late mute/stop, stale completion after Stop, model load/inference failure, reconnect restrictions and explicit natural-mode separation. Fake inference/synthetic PCM avoids physical devices.
+- [AudioWorklet/receiver checks](../../../../scripts/voice/test_pcm.mjs) pass underflow, overflow, reset, stale packets, wrong epoch, muted output and natural/converted frame separation. Two [resampler tests](../../../../scripts/voice/test_natural_pcm.py) verify natural streaming continuity and reset behavior. The [mocked natural UI workflow](voice-natural-ui-smoke.json) verifies deliberate start, clear mode, track release, muted device errors and no reopening after reload without hardware, native audio contexts, monitoring or recording.
+- [Chrome UI report](voice-studio-ui-smoke.json) passes all three timbres, save/restore/reset, monitoring independent of the separate receiver, second-window rejection, controller-loss mute and mobile layout. No physical media calls or external requests occurred. Private production profiles were not changed. Review images are local under `ops/001-zhil/sprint-001/reports/local/voice/studio-*.png`.
+- The first [OBS recording](voice-obs-bridge-initial-failure.json) contains the reference with silence before and after, no raw/desktop inputs and zero skipped render/encode frames. However, whole-clip waveform correlation was only 0.4307 because of small discontinuous timing shifts. This **failed continuity verification**; the initial WAV/MKV is retained. OBS source removal is asynchronous: an immediate list still showed the pending removals, while a subsequent read verified only the two original window inputs and the original Ene Landscape scene. The harness now waits for removal to settle.
+- The corrected [13.233-second OBS recording](voice-obs-bridge-smoke.json) passes reference identity and pre/post silence checks with a 40 ms cushion: whole-clip normalized correlation 0.8697, RMS 0.06991, zero skipped encode/render frames, and all test sources removed. Nineteen 300 ms speech windows searched within +/-2 ms have a 0.575 ms offset range and 0.9325 correlation at the fifth percentile; the lowest window remains 0.7309. These limited comparisons establish reference transport and improvement over the first capture, **not accepted continuous-speech quality** or microphone isolation under a physical challenge. The brief actual-model adapter check may overlap the tail of this recording; neither is presented as a quiet performance benchmark. No live/portrait/headphone-feedback/device-loss physical test or lip-sync acceptance is claimed.
+- The actual [new eager adapter check](voice-live-adapter-smoke.json) passes one model warmup plus three licensed file blocks: each 2,560-sample input yields 6,400 finite output samples, output peak 0.6272. Incidental compute was 657–703 ms for each 160 ms block, so it still misses live timing. This short implementation test did not open a microphone or accept quality.
+
+Relevant commands:
+
+```powershell
+.tools/voice/venv/Scripts/python.exe scripts/voice/test_studio.py
+.tools/voice/venv/Scripts/python.exe scripts/voice/test_remote.py
+.tools/voice/venv/Scripts/python.exe scripts/voice/test_natural_pcm.py
+node scripts/voice/test_pcm.mjs
+node scripts/voice/natural_ui_smoke.mjs
+node scripts/voice/studio_smoke.mjs
+node scripts/voice/obs_bridge_smoke.mjs
+.tools/voice/venv/Scripts/python.exe scripts/voice/analyze_bridge.py
+```
+
+Production source installation is recorded in [initial setup](voice-obs-setup-initial.json) and [repeat setup](voice-obs-setup.json). `node scripts/voice/configure_obs_voice.mjs --attach` passed twice without duplicating sources; the existing 0 ms sync offset was retained rather than reset. Seven unrelated/unsafe URL configurations were rejected by the source-ownership guard without OBS writes. Existing calibrated offsets are read and verified but never written by the helper. No raw audio source was added, monitoring remains off, service mode remains idle/muted, and recording/streaming/virtual-camera outputs were inactive throughout. Private URL fragment keys are omitted from both reports. This installation required no recording or performance test during production rendering.
+
+The independent **Ene Natural Voice Bridge** was subsequently [installed](voice-obs-natural-setup-initial.json) and [repeat-verified](voice-obs-natural-setup.json) using `--attach --natural`. Both Ene scenes and the utility scene contain one of each bridge. The converted source's settings/sync/mute/tracks/monitor, avatar sources and current scene were preserved. Natural setup also starts no media or OBS output. See the [natural-mode evidence](voice-natural-mode.md) for its separate contract and remaining physical acceptance.
+
+The [receiver recovery extension](voice-receiver-reconnect.md) is now installed. Both output pages retry a short disconnect with fresh-state gating, stale-socket rejection and bounded timers; producer and microphone reconnection stay explicit. The launcher also makes a guarded, best-effort silent refresh of the two owned sources. [Real isolated WebSocket restart](voice-reconnect-browser.json) passes both routes and stops retrying after replaced identities; Web Audio is mocked. [Actual launcher/OBS refresh](voice-launcher-receiver-refresh.json) preserves the production service identity, source settings/sync and scene state, leaving idle/muted voice and inactive outputs. It starts no audio/physical media and does not establish physical recovery or CEF automatic reconnect after a production-service restart.
+
+Run the OBS check only in an idle, coordinated project OBS session. It uses a still Ene reference image plus preconverted speech, not live motion or live voice. A matching recording would establish the bridge's reference transport only.
+
+## Open-source and external-call boundary
+
+The required conversion/transport path uses the already inventoried RVC/PyTorch/ONNX components, aiohttp, local JavaScript/AudioWorklet and OBS's open-source Browser Source/CEF path. Browser Source's `reroute_audio` setting routes audio into OBS; no proprietary virtual-audio driver or process-wide Chrome audio capture is required. The tested control browser is the already installed Google Chrome (a proprietary application built on Chromium); Windows and its device drivers remain platform dependencies. The project does not describe Chrome or Windows as open-source. [OBS Browser Source documentation](https://obsproject.com/kb/browser-source), [official obs-browser implementation](https://github.com/obsproject/obs-browser/blob/master/obs-browser-plugin.cpp).
+
+The Windows OBS virtual-camera implementation exposes video formats and a video queue, not an audio capture device. Call apps therefore need a separate microphone route; registering the camera does not solve converted-audio input. [Official Windows virtual-camera source](https://github.com/obsproject/obs-studio/blob/master/plugins/win-dshow/virtualcam-module/virtualcam-filter.cpp).
+
+Microsoft's SysVAD sample is a bounded open-source candidate investigation, not an installed solution. Its repository uses **MS-PL**. Its sample capture/loopback returns a generated tone rather than mixing actual application audio. Building requires Visual Studio, Windows SDK and WDK; the documented development installation enables test signing and installs a test certificate. Consequently, stock SysVAD neither establishes converted-audio loopback nor provides the ready, production-signed beginner route required here. It was not built or installed, and no security/boot settings were changed. External-call virtual-microphone compatibility remains unsupported. [Microsoft sample behavior/build/deployment documentation](https://learn.microsoft.com/en-us/samples/microsoft/windows-driver-samples/sysvad-virtual-audio-device-driver-sample/), [repository license](https://github.com/microsoft/Windows-driver-samples/blob/main/LICENSE).
+
+## Remote capability check
+
+[check_remote.py](../../../../scripts/voice/check_remote.py) requires an explicit base URL and requests only its model list and OpenAPI schema. It does not follow redirects, use discovered proxy settings, scan the VPN, upload audio or log response secrets/authorization headers. Two [owned localhost mock tests](../../../../scripts/voice/test_remote.py) pass URL credential rejection, model-list interpretation, redirect refusal and key omission. No actual A100 endpoint has been supplied or contacted. RVC compatibility remains unverified even if a future vLLM model list succeeds.
+
+Remaining gates: viable measured live backend, English/user timbre acceptance, actual microphone/device/monitor recovery in both explicit voice modes, physical latency/combined workload/soak, and both orientations' measured <=80 ms residual lip sync. The [quickstart](../../../../docs/voice-quickstart.md) states these limits.
+
+## Converted-voice OBS route: component licence audit
+
+2026-09-13. [audit_obs_route.py](../../../../scripts/voice/audit_obs_route.py) walks the actual route end to end and records what is installed, with hashes. It reads only: it starts nothing, installs nothing and changes no OBS setting. [Evidence](voice-obs-route-licences.json).
+
+| Component | Licence | Licence text shipped |
+| --- | --- | --- |
+| Voice Studio loopback server, receiver page, PCM player and AudioWorklet | Project source | n/a |
+| OBS Studio | GPL-2.0-or-later | yes, `data/obs-studio/license/gplv2.txt` |
+| OBS Browser Source plugin | GPL-2.0-or-later, within the OBS distribution | yes, via the same file |
+| OBS Browser helper process | GPL-2.0-or-later, within the OBS distribution | yes, via the same file |
+| Chromium Embedded Framework (`libcef.dll`) | BSD-3-Clause over Chromium BSD | yes, inside `chrome_100_percent.pak` and `chrome_200_percent.pak` |
+
+Every component is present, every one has a known open-source licence, and the loopback server's only third-party imports are `aiohttp`, `numpy` and `soundfile`, all three covered by the 127-entry [licence inventory](voice-license-inventory.json). Its other imports are this project's own sibling modules.
+
+**No proprietary virtual-audio product is involved.** A scan of the Windows driver directory and both program-files trees found no VB-CABLE, Voicemeeter, Synchronous Audio Router or Virtual Audio Cable. The converted route reaches OBS through its own loopback Browser Source, not through a third-party audio device.
+
+### Correction: the CEF notice is retained after all
+
+An earlier version of this section reported that the portable OBS distribution ships no CEF licence or credits file, and recommended retaining one before distribution. **That was wrong, and the finding is withdrawn.**
+
+The audit searched for loose licence *files*. CEF does not ship its credits that way: the notice lives inside the resource bundles the distribution installs. Both `chrome_100_percent.pak` and `chrome_200_percent.pak` contain the full BSD-3-Clause text, including the "Neither the name of Google Inc. nor the name Chromium Embedded Framework" clause and the complete warranty disclaimer.
+
+The audit now looks inside those bundles and records them under `cefNoticeBundles`, so the same false gap is not reported again. The lesson is narrow and worth keeping: a file-existence check answers "is there a file", not "is the notice retained", and the two differ whenever a dependency ships its notices in a resource archive.
+
+The proprietary-audio check is a name scan of driver and program directories, not an exhaustive audit, and this inventory establishes nothing about audio quality, routing correctness, latency or sync.

@@ -39,7 +39,7 @@ def main():
               'codeTerms': 'OpenVINO CPU/GPU/ONNX components Apache-2.0 with bundled third-party notices retained; Windows and installed Intel hardware drivers remain platform dependencies.',
               'inactiveComponents': 'Bundled NPU and other framework frontends are not selected for this experiment; their presence is not an NPU support or licensing verdict.',
               'telemetry': 'Runtime worker sets isolated LOCALAPPDATA supported consent file to 0 before OpenVINO import and denies Python sockets. This inventory imports only package metadata.'}
-    (ROOT / 'ops/reports/voice-openvino-environment.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
+    (ROOT / 'ops/001-zhil/sprint-001/reports/voice-openvino-environment.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
     print(json.dumps({'packages': len(packages), 'retainedNotices': len(notices), 'selectedNativeLibraries': len(native)}))
 
 

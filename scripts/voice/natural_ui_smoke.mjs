@@ -48,7 +48,7 @@ try{
   await page.evaluate(()=>window.mock.nodes.at(-1).port.onmessage({data:new Float32Array(2560).fill(.1)}));
   await page.waitForFunction(()=>window.packetCounts.natural===1);
   assert.equal(await page.evaluate(()=>window.lastMagic),'VMNA');assert.equal(await page.evaluate(()=>window.packetCounts.converted),0);
-  await page.screenshot({path:path.join(root,'ops/reports/local/voice/natural-active-mocked.png'),fullPage:true});
+  await page.screenshot({path:path.join(root,'ops/001-zhil/sprint-001/reports/local/voice/natural-active-mocked.png'),fullPage:true});
   await page.locator('[data-voice=soft]').click();await page.waitForFunction(()=>window.mock.stops===1&&!document.body.classList.contains('natural-active'));
   await page.evaluate(()=>window.mock.nodes[0].port.onmessage({data:new Float32Array(2560).fill(.2)}));
   await page.waitForTimeout(180);assert.equal(await page.evaluate(()=>window.packetCounts.natural),1);
@@ -63,7 +63,7 @@ try{
   const profile=JSON.parse(await fs.readFile(path.join(cache,'natural-profile.json'),'utf8'));
   assert.equal(profile.automaticFallbackAllowed,false);assert.equal(profile.activeOnStartup,false);
   const report={date:new Date().toISOString(),passed:true,physicalMicrophoneRequests:0,nativeAudioContextsOpened:0,monitoringOrRecordingStarted:false,explicitNaturalActionRequestsMockedMicrophone:true,sourceModeClearlyLabelled:true,separateNaturalVMNAOnly:true,convertedRouteNaturalPackets:0,presetChangeFlushesAndStopsTrack:true,oldInputAfterSwitchDiscarded:true,mockedOccupiedDeviceMutesBothRoutes:true,stopReleasesMockedTracks:true,reloadDoesNotReopenMicrophone:true,persistedProfileCannotAutoStart:true,browserErrors:errors,externalRequests:external,boundary:'Synthetic PCM and mocked browser media/audio classes in an isolated service. No physical microphone, headphone monitoring, OBS recording, inference benchmark or human-quality acceptance.'};
-  await fs.writeFile(path.join(root,'ops/reports/voice-natural-ui-smoke.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+  await fs.writeFile(path.join(root,'ops/001-zhil/sprint-001/reports/voice-natural-ui-smoke.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
 }finally{
   await browser?.close();
   try{const route=JSON.parse(await fs.readFile(path.join(cache,'route.json'),'utf8'));await fetch(base+'/api/shutdown',{method:'POST',headers:{Origin:base,'Content-Type':'application/json'},body:JSON.stringify({adminKey:route.adminKey})});}catch{}

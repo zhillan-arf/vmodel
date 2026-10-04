@@ -38,5 +38,5 @@ const notices=JSON.parse(await readFile(path.join(root,'notices/index.json'),'ut
 for(const item of notices.packages)assert.equal(await hash(path.join(root,'notices',item.notice)),item.sha256,`Notice hash mismatch: ${item.name}`);
 assert.equal(await hash(path.join(root,'notices/tracking-models.json')),await hash('config/model-notices.json'));
 const result={date:new Date().toISOString(),scope:'Static served build only; does not scan unrelated files or certify future changes.',checks:{onlyDesignatedFiles:true,avatarMatchesPreparedArtifact:true,thumbnailHashesMatch:true,runtimeHashesMatch:true,noticesPresent:true},runtimePackages:notices.packages.length,files:files.sort((a,b)=>a.path.localeCompare(b.path))};
-await writeFile('ops/reports/bundle-audit.json',JSON.stringify(result,null,2)+'\n');
+await writeFile('ops/001-zhil/sprint-001/reports/bundle-audit.json',JSON.stringify(result,null,2)+'\n');
 console.log(JSON.stringify({checks:result.checks,files:files.length,runtimePackages:notices.packages.length}));

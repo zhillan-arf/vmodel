@@ -30,9 +30,9 @@ rendered=[]
 for name,angle in [('front',0),('side',math.pi/2),('back',math.pi)]:
     camera.location=center+Vector((math.sin(angle)*height*2.5,-math.cos(angle)*height*2.5,0))
     camera.rotation_euler=(center-camera.location).to_track_quat('-Z','Y').to_euler()
-    path=ROOT/f'ops/reports/local/ene-{mode}-{name}.png';path.parent.mkdir(exist_ok=True,parents=True)
+    path=ROOT/f'ops/001-zhil/sprint-001/reports/local/ene-{mode}-{name}.png';path.parent.mkdir(exist_ok=True,parents=True)
     scene.render.filepath=str(path);bpy.ops.render.render(write_still=True);rendered.append(path.relative_to(ROOT).as_posix())
 report={'mode':mode,'reopened':True,'armature':arm.name,'meshes':len(meshes),'images':rendered,'missingImageFiles':[i.name for i in bpy.data.images if i.source=='FILE' and not i.packed_file and not Path(bpy.path.abspath(i.filepath)).exists()]}
 if mode=='vrm':report['avatarSha256']=hashlib.sha256((ROOT/'assets/avatars/ene.vrm').read_bytes()).hexdigest()
-(ROOT/f'ops/reports/{mode}-views.json').write_text(json.dumps(report,indent=2)+'\n')
+(ROOT/f'ops/001-zhil/sprint-001/reports/{mode}-views.json').write_text(json.dumps(report,indent=2)+'\n')
 print('VIEWS_COMPLETE',json.dumps(report),flush=True)

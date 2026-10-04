@@ -152,7 +152,7 @@ try {
   if (ownedPids.length) report.finalRestore = await setAffinity(ownedPids, 0xFFF).catch(error => String(error));
   if (browser) await browser.close().catch(() => {});
   if (server) await server.close?.().catch?.(() => {});
-  const file = path.join(ROOT, 'ops/reports', 'capture-core-placement-' + label + '.json');
+  const file = path.join(ROOT, 'ops/001-zhil/sprint-001/reports', 'capture-core-placement-' + label + '.json');
   await mkdir(path.dirname(file), { recursive: true });
   await writeFile(file, JSON.stringify(report, null, 2), { flag: 'wx' }).catch(error => {
     if (error.code !== 'EEXIST') throw error;

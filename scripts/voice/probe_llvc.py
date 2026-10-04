@@ -171,7 +171,7 @@ def worker(args):
     samples = output.detach().cpu().numpy().reshape(-1)
     assert samples.shape == measured_input.shape and np.isfinite(samples).all()
     assert len(traced.timings) == math.ceil(len(measured_input) / chunk_samples)
-    result_dir = ROOT / 'ops/reports/local/voice/llvc'
+    result_dir = ROOT / 'ops/001-zhil/sprint-001/reports/local/voice/llvc'
     result_dir.mkdir(parents=True, exist_ok=True)
     name = f'llvc-cpu-{args.threads}t-factor{args.chunk_factor}'
     if args.run_label:
@@ -218,7 +218,7 @@ def worker(args):
                          'The original upstream input shift/padding behavior is retained; no physical sync claim.',
                          'One research target voice only; English character fit and user preference are unaccepted.',
                          'Training dropout is disabled explicitly; upstream CLI omission of eval is not reproduced.']}
-    destination = ROOT / 'ops/reports' / (name + '.json')
+    destination = ROOT / 'ops/001-zhil/sprint-001/reports' / (name + '.json')
     destination.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'report': str(destination.relative_to(ROOT)), 'computeMs': compute,
                       'computeRealTimeFactor': report['computeRealTimeFactor'], 'deadlineMisses': report['blocksOverComputeDeadline'],

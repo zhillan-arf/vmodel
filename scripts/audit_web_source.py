@@ -29,5 +29,5 @@ for name in ['source','alpha-spike']:
         assert record['samples'][0]['leftHandQuaternion']!=record['samples'][1]['leftHandQuaternion']
     assert all(s['finite'] for s in record['samples'])
     records.append(record)
-(ROOT/'ops/reports/web-source-audit.json').write_text(json.dumps(records,indent=2)+'\n')
+(ROOT/'ops/001-zhil/sprint-001/reports/web-source-audit.json').write_text(json.dumps(records,indent=2)+'\n')
 print('WEB_SOURCE_AUDIT_PASSED',flush=True)

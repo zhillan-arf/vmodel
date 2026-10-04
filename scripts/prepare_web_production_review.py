@@ -7,7 +7,7 @@ from web_production import ROOT, IDS, plan, read_json, write_json, relative
 
 ff = ROOT / read_json(ROOT / 'config/web-resources/toolchain.json')['ffmpeg']['installDirectory'] / 'bin/ffmpeg.exe'
 large = '--large' in sys.argv[1:]
-out = ROOT / ('ops/reports/local/web-production-review-large' if large else 'ops/reports/local/web-production-review')
+out = ROOT / ('ops/001-zhil/sprint-001/reports/local/web-production-review-large' if large else 'ops/001-zhil/sprint-001/reports/local/web-production-review')
 out.mkdir(parents=True, exist_ok=True)
 selected = [arg for arg in sys.argv[1:] if arg != '--large'] or IDS
 records = []

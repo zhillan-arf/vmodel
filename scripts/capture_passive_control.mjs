@@ -36,7 +36,7 @@ if (args.includes('--plan')) { console.log(JSON.stringify(plan, null, 2)); proce
 assert(args.includes('--run') && args.includes('--quiet-window'), 'Review --plan and coordinate the quiet window before using --run --quiet-window.');
 
 const root = process.cwd(), runId = new Date().toISOString().replace(/[:.]/g, '-') + '-' + randomUUID().slice(0, 8);
-const localRoot = path.resolve('ops/reports/local/capture-passive'), directory = path.join(localRoot, runId);
+const localRoot = path.resolve('ops/001-zhil/sprint-001/reports/local/capture-passive'), directory = path.join(localRoot, runId);
 const lockPath = path.join(localRoot, 'active.lock');
 const sceneName = 'Ene Capture Diagnostic ' + runId, inputName = sceneName + ' Window', title = 'VModel Output Diagnostic ' + runId;
 const ffprobe = path.resolve('.tools/web/ffmpeg-9.0.1-essentials_build/bin/ffprobe.exe');
@@ -438,7 +438,7 @@ finally {
     if (!recordPending && report.cleanupErrors.length === 0) await clean('Release own diagnostic lock', async () => { assert.equal(JSON.parse(await readFile(lockPath, 'utf8')).runId, runId); await unlink(lockPath); });
     else report.retainedLock = relative(lockPath);
     report.cleanupPassed = report.cleanupErrors.length === 0;
-    await clean('Write final owned report', async () => { await writeFile(path.join(directory, 'report.json'), JSON.stringify(report, null, 2) + '\n'); await writeFile('ops/reports/capture-passive-control.json', JSON.stringify(report, null, 2) + '\n'); });
+    await clean('Write final owned report', async () => { await writeFile(path.join(directory, 'report.json'), JSON.stringify(report, null, 2) + '\n'); await writeFile('ops/001-zhil/sprint-001/reports/capture-passive-control.json', JSON.stringify(report, null, 2) + '\n'); });
   }
   report.cleanupPassed = report.cleanupErrors.length === 0;
   process.removeListener('SIGINT', markInterrupted); process.removeListener('SIGTERM', markInterrupted);

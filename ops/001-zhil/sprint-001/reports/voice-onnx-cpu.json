@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "provider": "cpu",
+  "onnxruntime": "1.23.2",
+  "python": "3.10.19",
+  "availableProviders": [
+    "AzureExecutionProvider",
+    "CPUExecutionProvider"
+  ],
+  "deviceId": null,
+  "cpuThreads": 3,
+  "modelArtifacts": [
+    {
+      "path": "assets/voice/onnx/bright-160ms-v1/generator.onnx",
+      "sha256": "92a6f3251cc366bb43ccf1773fbc3becbb2b7a68b4bcbad8e2e27d4cc4bd881f",
+      "bytes": 110192832
+    },
+    {
+      "path": "assets/voice/onnx/bright-160ms-v1/encoder.onnx",
+      "sha256": "b6bf6d4c95bf5fb152e1c2f25b1936a00ad23bf066a35e8959c285b0f5fef84e",
+      "bytes": 378550133
+    },
+    {
+      "path": "assets/voice/onnx/bright-160ms-v1/fixture.npz",
+      "sha256": "4dbbcbf8a8ae6906113b8722033e7214704420367f2e4cacf31fb9ad142a47fe",
+      "bytes": 741028
+    }
+  ],
+  "loadSeconds": 0.8316535000049043,
+  "warmup": {
+    "encoderMs": 167.53049998078495,
+    "generatorMs": 187.49510002089664,
+    "computeMs": 355.0256000016816
+  },
+  "measuredConversions": 5,
+  "records": [
+    {
+      "encoderMs": 165.53249998833053,
+      "generatorMs": 156.84280000277795,
+      "computeMs": 322.3752999911085
+    },
+    {
+      "encoderMs": 156.80010002688505,
+      "generatorMs": 201.68939998256974,
+      "computeMs": 358.4895000094548
+    },
+    {
+      "encoderMs": 179.87190000712872,
+      "generatorMs": 161.57090000342578,
+      "computeMs": 341.4428000105545
+    },
+    {
+      "encoderMs": 153.95790000911802,
+      "generatorMs": 161.3523999985773,
+      "computeMs": 315.31030000769533
+    },
+    {
+      "encoderMs": 153.35740000591613,
+      "generatorMs": 174.16309998952784,
+      "computeMs": 327.52049999544397
+    }
+  ],
+  "computeMs": {
+    "p50": 327.52049999544397,
+    "p95": 355.0801600096747
+  },
+  "encoderMs": {
+    "p50": 156.80010002688505,
+    "p95": 177.00402000336908
+  },
+  "generatorMs": {
+    "p50": 161.57090000342578,
+    "p95": 196.18413998396136
+  },
+  "computeRealTimeFactor": 2.0814230000178213,
+  "generatorVsEagerMaxAbsError": 2.6747584342956543e-06,
+  "generatorVsEagerRmse": 3.2229266366812226e-07,
+  "pipelineVsEagerMaxAbsError": 2.4437904357910156e-06,
+  "pipelineVsEagerRmse": 2.47581226631155e-07,
+  "encoderMaxAbsError": 3.6656856536865234e-06,
+  "parityPassed": true,
+  "allFinite": true,
+  "outputRms": 0.045900728553533554,
+  "outputPeak": 0.20252625644207,
+  "outputSeconds": 0.21,
+  "output": "ops/001-zhil/sprint-001/reports/local/voice/onnx/cpu-converted-window.wav",
+  "outputSha256": "beb754cfae8cba75198706a002197a8ac75063c6c6dcb5eeaf5c3523c50b489f",
+  "profiles": {
+    "encoder": {
+      "configuredProviders": [
+        "CPUExecutionProvider"
+      ],
+      "executedNodeEventsByProvider": {
+        "CPUExecutionProvider": 2670
+      },
+      "nodeEventDurationUsByProvider": {
+        "CPUExecutionProvider": 949831
+      },
+      "profilePath": "ops/001-zhil/sprint-001/reports/local/voice/onnx/cpu-encoder_2026-09-12_16-09-59.json",
+      "profileSha256": "5ffd3b8f35b6aa5055c213f40e2670b8798eb01b16ac1c1569fee3cbc9e3b26e"
+    },
+    "generator": {
+      "configuredProviders": [
+        "CPUExecutionProvider"
+      ],
+      "executedNodeEventsByProvider": {
+        "CPUExecutionProvider": 4179
+      },
+      "nodeEventDurationUsByProvider": {
+        "CPUExecutionProvider": 1184870
+      },
+      "profilePath": "ops/001-zhil/sprint-001/reports/local/voice/onnx/cpu-generator_2026-09-12_16-10-00.json",
+      "profileSha256": "59559f9bb4e03ee0719a6814f6c4fb4a363df665c9051c179f3e9a6e1b41c3d5"
+    }
+  },
+  "actualDirectMLExecution": false,
+  "microphoneCaptured": false,
+  "physicalLatencyMeasured": false,
+  "qualityAccepted": false,
+  "boundary": "Five repeated real-speech windows after one warmup, profiling enabled. No paced stream, device IO, SOLA, resampling, avatar/OBS combined workload or sustained quality gate. Fixed model shape and explicit seeded noise only."
+}

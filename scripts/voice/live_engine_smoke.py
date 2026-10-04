@@ -23,6 +23,6 @@ if __name__=='__main__':
         started=time.monotonic();block=engine.process(pcm[i*2560:(i+1)*2560]);durations.append((time.monotonic()-started)*1000)
         assert block.shape==(6400,) and np.isfinite(block).all();blocks.append(block)
     result=np.concatenate(blocks);assert float(np.max(np.abs(result)))>0
-    output=ROOT/'ops/reports/local/voice/live-adapter-three-blocks.wav';sf.write(output,result,40000,subtype='FLOAT')
+    output=ROOT/'ops/001-zhil/sprint-001/reports/local/voice/live-adapter-three-blocks.wav';sf.write(output,result,40000,subtype='FLOAT')
     report={'schemaVersion':1,'passed':True,'source':'Public-domain LJ025-0076.wav','model':'CHIHAYA Bright','deviceCapture':False,'modelLoadAndOneWarmupSeconds':load,'processedBlocks':3,'inputSamplesPerBlock':2560,'outputSamplesPerBlock':6400,'outputSampleRate':40000,'computeMs':durations,'allFinite':True,'peak':float(np.max(np.abs(result))),'output':str(output.relative_to(ROOT)).replace('\\','/'),'outputSha256':hashlib.sha256(output.read_bytes()).hexdigest(),'boundary':'Functional adapter check. Initial 480 ms only, no listening/real-time/physical latency acceptance; timing is incidental to this bounded implementation check.'}
-    (ROOT/'ops/reports/voice-live-adapter-smoke.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
+    (ROOT/'ops/001-zhil/sprint-001/reports/voice-live-adapter-smoke.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))

@@ -112,7 +112,7 @@ def encoding_key(recipe, index):
 
 def stage_probe():
     PUBLIC.mkdir(parents=True, exist_ok=True)
-    source = ROOT / 'ops/reports/local/web-resource-spike/alpha-probe.webm'
+    source = ROOT / 'ops/001-zhil/sprint-001/reports/local/web-resource-spike/alpha-probe.webm'
     target = PUBLIC / 'alpha-probe.webm'
     shutil.copyfile(source, target)
     measured = probe(target)
@@ -130,13 +130,13 @@ def stage_probe():
 def write_manifests():
     source = read_json(ROOT / 'config/web-resources/source.json')
     manifest = {'schemaVersion': 1, 'character': {'id': 'ene', 'variant': 'cyber-legs',
-                'sourceRevision': source['originals']['ops/resources/ENE/ENE Cyber legs ver.pmx']},
+                'sourceRevision': source['originals']['ops/001-zhil/sprint-001/resources/ENE/ENE Cyber legs ver.pmx']},
                 'credits': [{'name': 'AuroraYok / yokkaulove — Ene model edit',
                   'url': 'https://www.deviantart.com/aurorayok/art/MMD--ENE-NEW-VER.-DL!!!-433555045'}],
                 'probes': {'webmAlpha': stage_probe()}, 'resources': {}}
     builds = {}
     for resource in IDS:
-        report_path = ROOT / f'ops/reports/{resource}-production.json'
+        report_path = ROOT / f'ops/001-zhil/sprint-001/reports/{resource}-production.json'
         if not report_path.exists():
             continue
         report = read_json(report_path)
@@ -175,7 +175,7 @@ def encode(resource):
     folder = WORK / resource / 'encoded' / encode_key
     folder.mkdir(parents=True, exist_ok=True)
     count, seconds = recipe['frameCount'], recipe['durationSeconds']
-    audit = read_json(ROOT / f'ops/reports/{resource}-audit.json')
+    audit = read_json(ROOT / f'ops/001-zhil/sprint-001/reports/{resource}-audit.json')
     anchor = audit['deskAnchorTopOrigin'] if resource.startswith('desk-') else [.5, 1 - audit['frames'][0]['wholeUvMin'][1]]
     public_resource = {'label': LABELS[resource], 'durationSeconds': seconds, 'fps': 24, 'frameCount': count, 'loop': True,
        'renderSize': dict(zip(('width', 'height'), recipe['size'])), 'anchor': {'kind': 'desk' if resource.startswith('desk-') else 'foot', 'x': anchor[0], 'y': anchor[1]},
@@ -258,7 +258,7 @@ def encode(resource):
         temporary = target.with_suffix(target.suffix + '.tmp')
         shutil.copyfile(source, temporary)
         temporary.replace(target)
-    write_json(ROOT / f'ops/reports/{resource}-production.json', {'schemaVersion': 1, 'resource': resource, 'state': 'complete',
+    write_json(ROOT / f'ops/001-zhil/sprint-001/reports/{resource}-production.json', {'schemaVersion': 1, 'resource': resource, 'state': 'complete',
         'buildKey': recipe['buildKey'], 'encodeKey': encode_key, 'masterIndex': relative(master / 'index.json'),
         'publicResource': public_resource, 'files': records, 'visualAcceptance': 'Final encoded visual review is recorded separately; automated decode is not subjective acceptance.'})
     write_manifests()

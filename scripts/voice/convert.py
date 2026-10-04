@@ -35,7 +35,7 @@ def main() -> None:
     parser.add_argument('--worker', action='store_true', help=argparse.SUPPRESS)
     args = parser.parse_args()
     args.input = args.input.resolve()
-    args.output = (args.output or ROOT / f'ops/reports/local/voice/converted-{args.voice}.wav').resolve()
+    args.output = (args.output or ROOT / f'ops/001-zhil/sprint-001/reports/local/voice/converted-{args.voice}.wav').resolve()
     if not 1 <= args.threads <= 12:
         parser.error('--threads must be between 1 and 12')
     if not args.worker:

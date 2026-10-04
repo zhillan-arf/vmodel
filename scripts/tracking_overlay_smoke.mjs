@@ -135,12 +135,12 @@ try{
   await page.evaluate(async()=>{const{motionSample}=await import('/tests/fixtures/tracking-motion.ts');const sample=motionSample(3,0);window.overlayInspector.shown=sample;});
   await page.locator('#inspector-task').selectOption('pose');await page.locator('#inspector-layer').selectOption('estimated');
   await page.waitForFunction(()=>window.overlayInspector.renderer!==null);
-  await mkdir('ops/reports/local/estimated-views',{recursive:true});
+  await mkdir('ops/001-zhil/sprint-001/reports/local/estimated-views',{recursive:true});
   const views=[];
   for(const [name,steps]of [['front',0],['rotated',4],['side',8]]){
     await page.locator('#reset-view').click();
     for(let i=0;i<steps;i++)await page.locator('#orbit-left').click();
-    await page.waitForTimeout(80);await page.locator('#estimated-view').screenshot({path:`ops/reports/local/estimated-views/${name}.png`});
+    await page.waitForTimeout(80);await page.locator('#estimated-view').screenshot({path:`ops/001-zhil/sprint-001/reports/local/estimated-views/${name}.png`});
     views.push({name,camera:await position()});
   }
   await page.locator('#reset-view').click();
@@ -211,5 +211,5 @@ try{
   await page.evaluate(()=>window.overlayInspector.dispose());assert.deepEqual(errors,[]);
   const report={generatedAt:new Date().toISOString(),browser:browser.version(),cases,graphicContrast,controlVisibility,keyboardJointSelection:true,repeatedAnnouncements,faceCounts,views,estimatedWidths,knownPoseFullyVisible:true,repeatedDisposal:5,graphicsContextsReleased:true,comparisonFailureRecovery:true,channelSummaryRows:true,summaryUpdates,liveComparisonSettings:true,missingFaceConfidencePreserved:true,render3D,anatomicalLabelStable:true,missingImageLabel:true,errors,
     limits:['Synthetic points and two-color images. Draw calls and canvas pixels are measured.','Comparison timeout uses a 10 ms injected deadline. Production uses 30 seconds.','No physical camera or screen-reader check.']};
-  await writeFile('ops/reports/tracking-overlay-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/tracking-overlay-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await browser?.close();await server.close();}

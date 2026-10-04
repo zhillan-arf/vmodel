@@ -179,7 +179,7 @@ def worker(args):
               'records': records, 'boundaries': boundaries, 'qualityAccepted': False, 'microphoneCaptured': False,
               'physicalLatencyMeasured': False,
               'boundary': 'Unpaced complete English file with startup silence context; no blocks skipped/muted, so slow configurations remain listenable for comparison. Ten-block warmup outside measurements. No real capture/output devices, physical latency, combined workload or five-minute acceptance.'}
-    (ROOT / f'ops/reports/voice-context{args.context_ms}.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+    (ROOT / f'ops/001-zhil/sprint-001/reports/voice-context{args.context_ms}.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
     print(json.dumps({k:report[k] for k in ['contextMs','generatorFixtureVsOriginalMaxAbsError','blocks','computeMs','computeRealTimeFactor','blocksSlowerThan160Ms','normalizedBoundaryJump','rms','output']}, indent=2), flush=True)
 
 

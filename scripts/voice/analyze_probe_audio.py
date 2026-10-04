@@ -22,8 +22,8 @@ def main():
                 'dcMean': float(np.mean(audio)), 'spectralBandPowerFraction': bands}, magnitude
     ref_stats, ref_spectrum = stats(reference)
     results = []
-    paths = sorted((ROOT / 'ops/reports/local/voice/openvino').glob('*-converted-window.wav'))
-    paths += [ROOT / 'ops/reports/local/voice/onnx/cpu-converted-window.wav']
+    paths = sorted((ROOT / 'ops/001-zhil/sprint-001/reports/local/voice/openvino').glob('*-converted-window.wav'))
+    paths += [ROOT / 'ops/001-zhil/sprint-001/reports/local/voice/onnx/cpu-converted-window.wav']
     for path in paths:
         audio, rate = sf.read(path, dtype='float64')
         if rate != 40000 or len(audio) != len(reference):
@@ -45,7 +45,7 @@ def main():
               'reference':'Exact eager float waveform, same cached real-speech features and explicit seeded noise',
               'referenceStats':ref_stats,'results':results,
               'boundary':'210 ms fixture, stored PCM16 outputs vs float eager reference. Numeric amplitude/correlation/Hann-FFT diagnostics only. Numerical mismatch is not proof of audible failure or intelligibility; listening remains unperformed.'}
-    (ROOT / 'ops/reports/voice-probe-audio-comparison.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
+    (ROOT / 'ops/001-zhil/sprint-001/reports/voice-probe-audio-comparison.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
     print(json.dumps({'reference':ref_stats,'results':[{k:r[k] for k in ['path','rms','rmseVsReference','zeroLagCorrelation','spectralConvergence','bestOffsetSamplesWithin2_5ms','bestOffsetCorrelation']} for r in results]},indent=2))
 
 

@@ -49,5 +49,5 @@ try{
   const report={generatedAt:new Date().toISOString(),browser:browser.version(),activeRemovalDisabled:true,bundleRemovalAbsent:true,
     invalidRenameAnnouncedImmediately:true,remoteRenamePreservesPerformance:true,refreshPreservesFocusDetailsAndSelection:true,remoteRemovalPreservesPerformance:true,missingSavedState:true,errors,
     limits:['Synthetic models and two Chromium tabs. No physical camera check.']};
-  await writeFile('ops/reports/library-management-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/library-management-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await browser?.close();await server.close();}

@@ -81,7 +81,7 @@ Output keeps its previous model until the replacement is ready.
 ## Current evidence limits
 
 Automated checks cover synthetic models and database recovery. Actual Ene/Rei appearance and Windows Chrome/Edge acceptance remain open.
-See [implementation evidence](../ops/reports/studio-implementation.md).
+See [implementation evidence](../ops/001-zhil/sprint-001/reports/studio-implementation.md).
 
 The embedded model version comes from the original VRM metadata.
 The optional supplied package version identifies the source package.

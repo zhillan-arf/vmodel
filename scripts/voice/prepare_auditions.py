@@ -20,7 +20,7 @@ def main() -> None:
     manifest = json.loads((ROOT / 'config/voice/assets.json').read_text(encoding='utf-8'))
     assets = {item['id']: item for item in manifest['assets']}
     inputs = [('source', ROOT / assets['ljspeech-sample']['path'])]
-    inputs += [(name, ROOT / f'ops/reports/local/voice/converted-{name}.wav') for name in ['bright', 'soft', 'cool']]
+    inputs += [(name, ROOT / f'ops/001-zhil/sprint-001/reports/local/voice/converted-{name}.wav') for name in ['bright', 'soft', 'cool']]
     audio = []
     for name, path in inputs:
         if name == 'source':
@@ -61,7 +61,7 @@ def main() -> None:
               'isUserVoice': False, 'trainedEnglishControlIncluded': False, 'levelMatching': 'Common RMS with shared 0.9 peak headroom; no limiter',
               'targetRms': target_rms, 'items': items}
     (OUT / 'manifest.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
-    (ROOT / 'ops/reports/voice-reference-auditions.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
+    (ROOT / 'ops/001-zhil/sprint-001/reports/voice-reference-auditions.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
     print(json.dumps({'output': str(OUT), 'items': len(items), 'targetRms': target_rms, 'allPeaksBelow': 0.9}))
 
 

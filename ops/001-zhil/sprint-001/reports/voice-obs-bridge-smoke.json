@@ -1,0 +1,145 @@
+{
+  "date": "2026-09-12T10:26:57.822Z",
+  "passed": true,
+  "physicalMediaRequests": 0,
+  "boundary": "Preconverted public-domain English sample over the local PCM Browser Source bridge, with a still Ene image. No live conversion, lip sync, physical device isolation challenge or livestream acceptance.",
+  "recording": "ops/001-zhil/sprint-001/reports/local/voice/obs/Ene-Landscape-2026-09-12_17-27-00.mkv",
+  "wav": "ops/001-zhil/sprint-001/reports/local/voice/obs/bridge-recording.wav",
+  "durationSeconds": 13.233,
+  "video": [
+    {
+      "width": 1280,
+      "height": 720,
+      "codec": "h264"
+    }
+  ],
+  "audio": [
+    {
+      "rate": "48000",
+      "channels": 2,
+      "codec": "aac"
+    }
+  ],
+  "browserRerouteAudio": true,
+  "OBSMonitoring": "none",
+  "laptopMonitoring": false,
+  "rawMicrophoneAndDesktopInputs": 0,
+  "renderSkipped": 0,
+  "encodeSkipped": 0,
+  "testInputsRemoved": true,
+  "remainingAudioInputs": 0,
+  "audioAnalysis": {
+    "recordedWavSha256": "48fc1a05ec35fa03b0618256bbb9357a1558a03c19f467784ba1ed8489703fb7",
+    "reference": "assets/voice/auditions/reference-v1/bright.wav",
+    "bestReferenceOffsetSeconds": 2.70885,
+    "normalizedCorrelation": 0.8697255359268636,
+    "matchedGain": 0.868607877178681,
+    "matchedRms": 0.06991003014969181,
+    "residualRms": 0.03450309601981991,
+    "firstSecondRms": 0.0,
+    "lastSecondRms": 0.0,
+    "interpretation": "Decoded AAC matched against the preconverted reference. Offset locates test playback in the recording; it is not microphone-to-output latency or lip-sync measurement.",
+    "referenceMatchPassed": true,
+    "silenceBeforeAndAfterPassed": true,
+    "speechWindows": [
+      {
+        "sourceSeconds": 0.0,
+        "localOffsetFromWholeClipMs": 0.45,
+        "normalizedCorrelation": 0.987943546769287
+      },
+      {
+        "sourceSeconds": 0.4,
+        "localOffsetFromWholeClipMs": 0.25,
+        "normalizedCorrelation": 0.9984661342633973
+      },
+      {
+        "sourceSeconds": 0.8,
+        "localOffsetFromWholeClipMs": 0.25,
+        "normalizedCorrelation": 0.9548527904156249
+      },
+      {
+        "sourceSeconds": 1.2,
+        "localOffsetFromWholeClipMs": 0.125,
+        "normalizedCorrelation": 0.99903680436768
+      },
+      {
+        "sourceSeconds": 1.6,
+        "localOffsetFromWholeClipMs": 0.025,
+        "normalizedCorrelation": 0.9935437057274827
+      },
+      {
+        "sourceSeconds": 2.0,
+        "localOffsetFromWholeClipMs": 0.025,
+        "normalizedCorrelation": 0.7308762499099578
+      },
+      {
+        "sourceSeconds": 2.4,
+        "localOffsetFromWholeClipMs": -0.125,
+        "normalizedCorrelation": 0.999895443544182
+      },
+      {
+        "sourceSeconds": 2.8,
+        "localOffsetFromWholeClipMs": -0.125,
+        "normalizedCorrelation": 0.9998542598018906
+      },
+      {
+        "sourceSeconds": 3.2,
+        "localOffsetFromWholeClipMs": -0.125,
+        "normalizedCorrelation": 0.9998899939736781
+      },
+      {
+        "sourceSeconds": 3.6,
+        "localOffsetFromWholeClipMs": -0.125,
+        "normalizedCorrelation": 0.9985425002529426
+      },
+      {
+        "sourceSeconds": 4.0,
+        "localOffsetFromWholeClipMs": -0.05,
+        "normalizedCorrelation": 0.9994897873800264
+      },
+      {
+        "sourceSeconds": 4.4,
+        "localOffsetFromWholeClipMs": -0.05,
+        "normalizedCorrelation": 0.99969192650145
+      },
+      {
+        "sourceSeconds": 4.8,
+        "localOffsetFromWholeClipMs": -0.05,
+        "normalizedCorrelation": 0.9989839404099041
+      },
+      {
+        "sourceSeconds": 5.6,
+        "localOffsetFromWholeClipMs": -0.05,
+        "normalizedCorrelation": 0.9988674428604828
+      },
+      {
+        "sourceSeconds": 6.0,
+        "localOffsetFromWholeClipMs": -0.05,
+        "normalizedCorrelation": 0.9992523674507747
+      },
+      {
+        "sourceSeconds": 6.4,
+        "localOffsetFromWholeClipMs": -0.05,
+        "normalizedCorrelation": 0.9992923635708374
+      },
+      {
+        "sourceSeconds": 6.8,
+        "localOffsetFromWholeClipMs": -0.05,
+        "normalizedCorrelation": 0.9989440536147272
+      },
+      {
+        "sourceSeconds": 7.2,
+        "localOffsetFromWholeClipMs": -0.05,
+        "normalizedCorrelation": 0.9981517181639981
+      },
+      {
+        "sourceSeconds": 7.6,
+        "localOffsetFromWholeClipMs": -0.05,
+        "normalizedCorrelation": 0.9984987710493177
+      }
+    ],
+    "windowCorrelationP05": 0.9324551363650582,
+    "windowOffsetRangeMs": 0.575,
+    "continuousSpeechQualityAccepted": false
+  }
+}

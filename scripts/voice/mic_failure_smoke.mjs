@@ -153,7 +153,7 @@ try {
   if (server) server.kill();
   await sleep(500);
   if (cache) await rm(cache, { recursive: true, force: true }).catch(() => {});
-  const file = path.join(root, 'ops/reports', 'voice-mic-failure-smoke.json');
+  const file = path.join(root, 'ops/001-zhil/sprint-001/reports', 'voice-mic-failure-smoke.json');
   await mkdir(path.dirname(file), { recursive: true });
   await writeFile(file, JSON.stringify(report, null, 2));
   console.log(JSON.stringify({ report: path.relative(root, file), status: report.status, summary: report.summary ?? null }, null, 2));

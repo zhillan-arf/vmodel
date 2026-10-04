@@ -2,7 +2,7 @@
 
 These checks need a person, the actual camera, and the prepared Ene and Rei models.
 Synthetic fixtures cannot establish physical tracking quality.
-Record human results under [TASK-061](../ops/tasks/backlog/TASK-061.md).
+Record human results under [TASK-061](../ops/001-zhil/sprint-001/tasks/backlog/TASK-061.md).
 
 Before a correction experiment, complete the inspector acceptance checks in TASK-055.
 Keep the existing scheduler, confidence thresholds, and smoothing until diagnosis identifies the first failed stage.
@@ -18,7 +18,7 @@ Record the following conditions:
 - Model hash, settings, calibration, and mirror state.
 - Power source and OBS state.
 
-Keep personal recordings under `ops/reports/local/`. Commit aggregate measurements only.
+Keep personal recordings under `ops/001-zhil/sprint-001/reports/local/`. Commit aggregate measurements only.
 
 ## Procedure
 

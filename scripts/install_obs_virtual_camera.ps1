@@ -2,7 +2,7 @@ param([switch]$Install)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $moduleRoot = Join-Path $projectRoot '.tools/obs/data/obs-plugins/win-dshow'
-$reportPath = Join-Path $projectRoot 'ops/reports/obs-virtual-camera-install.json'
+$reportPath = Join-Path $projectRoot 'ops/001-zhil/sprint-001/reports/obs-virtual-camera-install.json'
 $classId = '{A3FCE0F5-3493-419F-958A-ABA1250EC20B}'
 $expected = @{
     '32' = 'E9513840E2B96DB8CEEB41CF6F5FDB85E58FE7DC44B6B9AFB62B198C5505AA88'

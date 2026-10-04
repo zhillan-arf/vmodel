@@ -58,10 +58,10 @@ try {
   const result={date:new Date().toISOString(),base,input:'Chromium synthetic fake camera; no real face/gesture acceptance',durationMs:duration,
     samples,stopped,restarted,releasedAgain,noAutoCamera,cameraRequests,policy,pageProbe,workerProbe,
     externalRequests,externalResponses,blockedByHarness,errors,messages};
-  await writeFile('ops/reports/tracking-recovery-smoke.json',JSON.stringify(result,null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/tracking-recovery-smoke.json',JSON.stringify(result,null,2));
   console.log(JSON.stringify({...result,samples:`${samples.length} samples`,messages:`${messages.length} messages`}));
   if(errors.length||!stopped||!restarted||!releasedAgain||!noAutoCamera||!pageProbe||!workerProbe||externalResponses.length||blockedByHarness.length||cameraRequests.some(c=>c.audio!==false))process.exitCode=1;
 }catch(error){
   const result={date:new Date().toISOString(),base,error:String(error),status:await page.locator('#status').textContent(),errors,messages,externalRequests,externalResponses,blockedByHarness};
-  await writeFile('ops/reports/tracking-recovery-smoke.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result));process.exitCode=1;
+  await writeFile('ops/001-zhil/sprint-001/reports/tracking-recovery-smoke.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result));process.exitCode=1;
 }finally{await browser.close();}

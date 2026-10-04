@@ -78,8 +78,8 @@ const run = (check) => new Promise(resolve => {
   for (const stream of [child.stdout, child.stderr]) stream.on('data', chunk => { output = (output + chunk).slice(-200000); });
   child.on('error', () => resolve({ ...check, code: null, failed: !check.optional, skipped: check.optional, ms: Date.now() - started }));
   child.on('close', code => {
-    mkdirSync(path.join(ROOT, 'ops/reports/local/verify'), { recursive: true });
-    writeFileSync(path.join(ROOT, 'ops/reports/local/verify', check.name.replaceAll(' ', '-') + '.log'), output);
+    mkdirSync(path.join(ROOT, 'ops/001-zhil/sprint-001/reports/local/verify'), { recursive: true });
+    writeFileSync(path.join(ROOT, 'ops/001-zhil/sprint-001/reports/local/verify', check.name.replaceAll(' ', '-') + '.log'), output);
     if (code !== 0) console.error(output.slice(-4000));
     resolve({ ...check, code, failed: code !== 0, skipped: false, ms: Date.now() - started });
   });
@@ -95,8 +95,8 @@ for (const check of CHECKS) {
 
 const failed = results.filter(result => result.failed && !result.skipped);
 const skipped = results.filter(result => result.skipped);
-mkdirSync(path.join(ROOT, 'ops/reports'), { recursive: true });
-writeFileSync(path.join(ROOT, `ops/reports/verify-${process.env.VMODEL_BROWSER ?? process.platform}.json`),
+mkdirSync(path.join(ROOT, 'ops/001-zhil/sprint-001/reports'), { recursive: true });
+writeFileSync(path.join(ROOT, `ops/001-zhil/sprint-001/reports/verify-${process.env.VMODEL_BROWSER ?? process.platform}.json`),
   JSON.stringify({ date: new Date().toISOString(), platform: process.platform,
     browserChannel: process.env.VMODEL_BROWSER ?? null, results, failed: failed.length,
     notCovered: NOT_COVERED }, null, 2) + '\n');

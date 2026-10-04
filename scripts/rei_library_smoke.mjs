@@ -5,7 +5,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 
 const modelId=process.argv.includes('--ene')?'ene':'rei';
-const terms=await readFile(modelId==='ene'?'ops/resources/ENE/Readmes/ReadMe_Tda_English.txt':'public/avatars/rei-notices/readme.txt');
+const terms=await readFile(modelId==='ene'?'ops/001-zhil/sprint-001/resources/ENE/Readmes/ReadMe_Tda_English.txt':'public/avatars/rei-notices/readme.txt');
 const source = await readFile(`assets/avatars/${modelId}.vrm`);
 const sourceHash = createHash('sha256').update(source).digest('hex');
 const jsonLength = source.readUInt32LE(12);
@@ -101,22 +101,22 @@ try {
   assert(result.expressionValues.neutral.happy<.001&&result.expressionValues.neutral.surprised<.001);
   assert.deepEqual(errors, []);
   assert.deepEqual(externalRequests, []);
-  await mkdir('ops/reports/local', { recursive: true });
-  await page.screenshot({ path: `ops/reports/local/${modelId}-library.png` });
+  await mkdir('ops/001-zhil/sprint-001/reports/local', { recursive: true });
+  await page.screenshot({ path: `ops/001-zhil/sprint-001/reports/local/${modelId}-library.png` });
   result.disposedResources=await page.evaluate(() => {window.reiViewer.dispose();return {...window.reiViewer.renderer.info.memory};});
   assert.equal(result.disposedResources.geometries,0);assert.equal(result.disposedResources.textures,0);
   const report = { generatedAt: new Date().toISOString(), browser: browser.version(), sourceHash,
     ...result, errors, externalRequests,
     platform: process.platform, browserChannel: process.env.VMODEL_BROWSER ?? 'chromium',
     limits: ['No physical camera test or human appearance review.', 'This single-model check does not measure memory across model changes.'] };
-  await writeFile(`ops/reports/${modelId}-library-smoke.json`, JSON.stringify(report, null, 2) + '\n');
+  await writeFile(`ops/001-zhil/sprint-001/reports/${modelId}-library-smoke.json`, JSON.stringify(report, null, 2) + '\n');
   console.log(JSON.stringify(report, null, 2));
 } catch (error) {
   const report = { generatedAt: new Date().toISOString(), browser: browser?.version(),
     status: 'failed', sourceHash, bytes: source.length, sourceResources,
     error: String(error), limits: { decodedPixels: 201326592, combinedBytes: 1073741824 },
     consequence: 'The model check failed. Later checks did not run.' };
-  await writeFile(`ops/reports/${modelId}-library-smoke.json`, JSON.stringify(report, null, 2) + '\n');
+  await writeFile(`ops/001-zhil/sprint-001/reports/${modelId}-library-smoke.json`, JSON.stringify(report, null, 2) + '\n');
   console.error(JSON.stringify(report, null, 2));
   process.exitCode = 1;
 } finally {

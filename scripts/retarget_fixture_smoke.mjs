@@ -45,7 +45,7 @@ async function apply(data, name) {
   results.push(result); assert(result.finite); return result;
 }
 try {
-  await mkdir('ops/reports/local/retarget', {recursive:true});
+  await mkdir('ops/001-zhil/sprint-001/reports/local/retarget', {recursive:true});
   await page.goto(process.env.VMODEL_TEST_URL ?? 'http://127.0.0.1:4173/');
   await page.waitForFunction(()=>!!window.__vmodel,undefined,{timeout:90000});
   const neutral = await apply(frame(), 'neutral');
@@ -59,11 +59,11 @@ try {
       assert(direction.dot(expected)>.995);
     }
   }
-  await page.screenshot({path:'ops/reports/local/retarget/torso-head.png'});
+  await page.screenshot({path:'ops/001-zhil/sprint-001/reports/local/retarget/torso-head.png'});
   const blink = frame(); blink.face={eyeBlinkLeft:.9,eyeBlinkRight:0,jawOpen:.4};
   const faceResult = await apply(blink,'left-blink-mouth');
   assert(faceResult.expressions.blinkLeft>.85);assert(faceResult.expressions.blinkRight<.05);assert(faceResult.expressions.aa>.7);
-  await page.screenshot({path:'ops/reports/local/retarget/blink-mouth.png'});
+  await page.screenshot({path:'ops/001-zhil/sprint-001/reports/local/retarget/blink-mouth.png'});
   // Build an observed hand from this avatar's rest geometry, then rotate its palm.
   // This checks palm twist through the actual rig without claiming camera detection.
   const handReference = await page.evaluate(() => {
@@ -108,7 +108,7 @@ try {
   const palm = await apply(handFrame,'left-palm-twist-wrist-association');
   const expected=twist.clone().multiply(new Quaternion().fromArray(handReference.rotation));
   assert(new Quaternion().fromArray(palm.leftHand).angleTo(expected)<.01);
-  await page.screenshot({path:'ops/reports/local/retarget/palm-twist.png'});
+  await page.screenshot({path:'ops/001-zhil/sprint-001/reports/local/retarget/palm-twist.png'});
   handFrame.hands[0].world=handReference.fist.map(p=>{
     const v=new Vector3().fromArray(p).sub(wrist).applyQuaternion(twist);return{x:v.x,y:-v.y,z:-v.z};
   });
@@ -121,7 +121,7 @@ try {
     const target=hand.getWorldPosition(hand.position.clone());target.x+=.035;
     viewer.camera.position.copy(target);viewer.camera.position.z+=.45;viewer.camera.lookAt(target);viewer.camera.updateProjectionMatrix();
   });
-  await page.screenshot({path:'ops/reports/local/retarget/fist-closeup.png'});
+  await page.screenshot({path:'ops/001-zhil/sprint-001/reports/local/retarget/fist-closeup.png'});
   await page.locator('#mode').selectOption('standing');
   const standing=frame();
   for(const [index,x,y,z] of [[23,.55,.45,0],[24,.45,.45,0],[27,.55,.9,0],[28,.45,.9,0]]) standing.poseImage[index]={x,y,z,visibility:1};
@@ -132,7 +132,7 @@ try {
   const crouch=await apply(standing,'standing-knee-bend');
   assert(crouch.knees.every(q=>new Quaternion().fromArray(q).angleTo(new Quaternion())>.8));
   const drop=standingNeutral.hipsLocal[1]-crouch.hipsLocal[1];assert(drop>0&&drop<=.351);
-  await page.screenshot({path:'ops/reports/local/retarget/knee-bend.png'});
+  await page.screenshot({path:'ops/001-zhil/sprint-001/reports/local/retarget/knee-bend.png'});
   await page.locator('#mode').selectOption('seated');
   const lost=frame();lost.pose=[];lost.hands=[];lost.faceMatrix=null;Object.values(lost.samples).forEach(sample=>sample.present=false);
   const loss=await apply(lost,'tracking-loss');assert(loss.expressions.aa<.01);assert(loss.expressions.blinkLeft<.01);
@@ -140,6 +140,6 @@ try {
   console.log(JSON.stringify({passed:true,cases:results.map(r=>r.name),errors}));
 } catch(error) { errors.push(String(error)); console.error(error); process.exitCode=1; }
 finally {
-  await writeFile('ops/reports/retarget-fixture-smoke.json',JSON.stringify({date:new Date().toISOString(),input:'Deterministic measurements through actual Ene runtime; no physical camera/inference or live gesture acceptance',results,errors},null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/retarget-fixture-smoke.json',JSON.stringify({date:new Date().toISOString(),input:'Deterministic measurements through actual Ene runtime; no physical camera/inference or live gesture acceptance',results,errors},null,2));
   await browser.close();
 }

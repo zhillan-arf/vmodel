@@ -1,17 +1,17 @@
 """Create the G4 acceptance report only from completed final measurements."""
 from web_production import ROOT, read_json
 
-cold = read_json(ROOT / 'ops/reports/web-showcase-measurement-cold.json')
-playback = read_json(ROOT / 'ops/reports/web-showcase-measurement-playback.json')
-session = read_json(ROOT / 'ops/reports/web-showcase-measurement-lifecycle.json')
-production = read_json(ROOT / 'ops/reports/web-production-audit.json')
-rebuild = read_json(ROOT / 'ops/reports/web-production-rebuild.json')
-bundle = read_json(ROOT / 'ops/reports/web-bundle-audit.json')
+cold = read_json(ROOT / 'ops/001-zhil/sprint-001/reports/web-showcase-measurement-cold.json')
+playback = read_json(ROOT / 'ops/001-zhil/sprint-001/reports/web-showcase-measurement-playback.json')
+session = read_json(ROOT / 'ops/001-zhil/sprint-001/reports/web-showcase-measurement-lifecycle.json')
+production = read_json(ROOT / 'ops/001-zhil/sprint-001/reports/web-production-audit.json')
+rebuild = read_json(ROOT / 'ops/001-zhil/sprint-001/reports/web-production-rebuild.json')
+bundle = read_json(ROOT / 'ops/001-zhil/sprint-001/reports/web-bundle-audit.json')
 assert all(item['state'] == 'passed' for item in (cold, playback, session))
 assert production['passed'] and rebuild['passed'] and bundle['pass']
 browser_rows = []
 for label, name in [('Windows Chrome', 'smoke'), ('Windows Edge', 'edge-smoke'), ('Playwright Firefox on Windows', 'firefox-smoke'), ('Playwright WebKit on Windows — supplementary engine', 'webkit-smoke')]:
-    report = read_json(ROOT / f'ops/reports/web-showcase-{name}.json')
+    report = read_json(ROOT / f'ops/001-zhil/sprint-001/reports/web-showcase-{name}.json')
     assert report['pass'] and all(case['pass'] for case in report['cases'])
     browser_rows.append(f'| {label} | {report["browser"]} | {report["cases"][0]["format"].upper()} | {len(report["cases"])} applicable functional cases pass | [Report](web-showcase-{name}.json) |')
 load_rows = []
@@ -99,5 +99,5 @@ For the same measurements after a final build, set `WEB_SHOWCASE_PHASE` to `cold
 
 No paid tool, character regeneration, source upload or public deployment was required. Original PMX/VMD and accepted G1 Blend/VRM hashes remain unchanged. Keep the AuroraYok / yokkaulove attribution and supplied contributor readmes; character media and private sources stay separate from software distribution. Actual Safari/mobile confirmation, the unavailable screenshot comparison, and any future user art-direction refinements remain explicitly outside the evidence passed here. TASK-021 consumes this G4 handoff while retaining overall project acceptance.
 '''
-(ROOT / 'ops/reports/web-resource-acceptance.md').write_text(text, encoding='utf-8')
+(ROOT / 'ops/001-zhil/sprint-001/reports/web-resource-acceptance.md').write_text(text, encoding='utf-8')
 print('WEB_RESOURCE_ACCEPTANCE_WRITTEN')

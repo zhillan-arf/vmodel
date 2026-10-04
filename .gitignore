@@ -14,9 +14,9 @@ __pycache__/
 .env
 .env.*
 !.env.example
-ops/resources/ENE/
-ops/resources/REI/
-ops/resources/*.rar
-ops/reports/local/
+ops/001-zhil/sprint-001/resources/ENE/
+ops/001-zhil/sprint-001/resources/REI/
+ops/001-zhil/sprint-001/resources/*.rar
+ops/001-zhil/sprint-001/reports/local/
 web-showcase/public/ene/
 web-showcase/dist/

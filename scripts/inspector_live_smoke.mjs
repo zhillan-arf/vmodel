@@ -47,5 +47,5 @@ try{
   const report={generatedAt:new Date().toISOString(),browser:browser.version(),initialSequence:initial,pausedSequence:paused,
     pauseKeepsCameraAndOutput:true,pauseFreezesDisplay:true,resumeUpdatesDisplay:true,hiddenInspectorKeepsOutput:true,images,errors,externalRequests,
     limits:['Chromium fake camera and installed tracking worker. Synthetic model replaces both bundled files.','Peak image count includes one pending camera copy and up to four inspector images.','No physical gesture or target-laptop acceptance.']};
-  await writeFile('ops/reports/inspector-live-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/inspector-live-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await browser?.close();await server.close();}

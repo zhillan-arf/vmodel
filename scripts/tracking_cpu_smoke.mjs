@@ -92,5 +92,5 @@ try {
 finally {
   try { await browser?.close(); report.browserClosed = !!browser; } catch (error) { report.errors.push(`Browser cleanup: ${error}`); process.exitCode = 1; }
   try { if (server) { report.serverExit = await server.stop(); report.serverStopped = true; } } catch (error) { report.errors.push(`Server cleanup: ${error}`); process.exitCode = 1; }
-  await mkdir('ops/reports', { recursive: true }); await writeFile('ops/reports/tracking-cpu-smoke.json', JSON.stringify(report, null, 2) + '\n');
+  await mkdir('ops/001-zhil/sprint-001/reports', { recursive: true }); await writeFile('ops/001-zhil/sprint-001/reports/tracking-cpu-smoke.json', JSON.stringify(report, null, 2) + '\n');
 }

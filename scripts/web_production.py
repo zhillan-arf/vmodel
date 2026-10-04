@@ -35,7 +35,7 @@ def plan(resource):
     if resource not in IDS:
         raise ValueError(f'Unknown resource {resource}')
     spec = read_json(ROOT / 'config/web-resources/performances.json')[resource]
-    audit = read_json(ROOT / f'ops/reports/{resource}-audit.json')
+    audit = read_json(ROOT / f'ops/001-zhil/sprint-001/reports/{resource}-audit.json')
     scene = WORK / f'{resource}.blend'
     scene_sha = sha(scene)
     if scene_sha != audit['sceneSha256'] or not audit['allVerticesFinite'] or audit['loopEndpointMaxVertexDistanceMeters'] != 0:

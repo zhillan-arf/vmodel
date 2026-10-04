@@ -25,7 +25,7 @@ export default defineConfig({
     },
   }],
   server: { host: '127.0.0.1', port: 5173, strictPort: true,
-    watch: { ignored: ['**/.tools/**', '**/.cache/**', '**/assets/**', '**/ops/resources/**', '**/ops/reports/**'] } },
+    watch: { ignored: ['**/.tools/**', '**/.cache/**', '**/assets/**', '**/ops/001-zhil/sprint-001/resources/**', '**/ops/001-zhil/sprint-001/reports/**'] } },
   optimizeDeps: { entries: ['index.html'] },
   worker: { format: 'es' },
   build: { target: 'es2022' },

@@ -96,14 +96,14 @@ try{
   assert.equal(await freshPage.locator('#restore-panel').isVisible(),false);
   checks.restoreSummary={originalTerms:true,invalidReplacementClearsPlan:true};
   await fresh.close();
-  await mkdir('ops/reports/local/studio-features',{recursive:true});
+  await mkdir('ops/001-zhil/sprint-001/reports/local/studio-features',{recursive:true});
   for(const [width,height]of [[390,844],[768,1024],[1440,900]]){
     await page.setViewportSize({width,height});
     for(const view of ['studio','library','tracking']){
       await page.locator(`.studio-nav [data-view="${view}"]`).click();
       assert.equal(await page.evaluate(()=>document.body.dataset.view),view);
       assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${view} overflow at ${width}`);
-      await page.screenshot({path:`ops/reports/local/studio-features/${view}-${width}.png`,fullPage:true});
+      await page.screenshot({path:`ops/001-zhil/sprint-001/reports/local/studio-features/${view}-${width}.png`,fullPage:true});
     }
   }
   checks.viewports=[390,768,1440];
@@ -172,5 +172,5 @@ try{
   await output.close();
   assert.deepEqual(errors,[]);
   const report={generatedAt:new Date().toISOString(),browser:browser.version(),checks,errors,limits:['Synthetic fixture only. Bundled model requests receive a test 404 response.','Actual-model acceptance is outside this synthetic check.','No physical camera test.']};
-  await writeFile('ops/reports/studio-features-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/studio-features-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await context.close();await browser.close();await server.close();}

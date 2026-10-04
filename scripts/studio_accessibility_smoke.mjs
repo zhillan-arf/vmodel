@@ -61,5 +61,5 @@ try{
   assert.equal(reduced.duration,'0s');assert.equal(reduced.animations,0);
   const report={panelTransition:transition,reducedMotion:reduced,generatedAt:new Date().toISOString(),browser:browser.version(),cases,textPairs:[...pairs.values()].filter(pair=>!pair.kind),controlPairs:[...pairs.values()].filter(pair=>pair.kind),failures,keyboardNavigation:true,focus,errors,
     limits:['CSS zoom at 1 and 2. This does not certify browser zoom or screen-reader behavior.','Solid text backgrounds and control borders only. Canvas graphics and disabled controls are outside this check.']};
-  await writeFile('ops/reports/studio-accessibility-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({failureCount:failures.length,firstFailures:failures.slice(0,8),errors},null,2));assert.equal(failures.length,0,'See studio-accessibility-smoke.json for failed cases.');assert.deepEqual(errors,[]);
+  await writeFile('ops/001-zhil/sprint-001/reports/studio-accessibility-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({failureCount:failures.length,firstFailures:failures.slice(0,8),errors},null,2));assert.equal(failures.length,0,'See studio-accessibility-smoke.json for failed cases.');assert.deepEqual(errors,[]);
 }finally{await browser?.close();await server.close();}

@@ -43,7 +43,7 @@ def worker(args, report):
     _, provision = verify_provision()
     manifest_path = EXPORT / 'manifest.json'
     manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
-    latest_export = json.loads((ROOT / 'ops/reports/voice-llvc-onnx-export.json').read_text(encoding='utf-8'))
+    latest_export = json.loads((ROOT / 'ops/001-zhil/sprint-001/reports/voice-llvc-onnx-export.json').read_text(encoding='utf-8'))
     if manifest['state'] != 'passed' or latest_export['state'] != 'passed' or latest_export['runId'] != manifest['runId']:
         raise ValueError('Current successful export required; an older manifest cannot hide a failed/latest attempt')
     if manifest['provisionManifest'] != provision or not manifest['onnxParity']['passed'] or not manifest['onnxResetParity']['passed']:

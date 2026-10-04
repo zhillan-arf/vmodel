@@ -21,7 +21,7 @@ try {
  }
  assert(memory.every(sample=>sample.geometries===memory[0].geometries&&sample.textures===memory[0].textures&&sample.programs===memory[0].programs));
  checks.gpuResourcesStableAcrossReloads=true;
- await page.locator('#avatar-file').setInputFiles('ops/resources/ene.vmd');
+ await page.locator('#avatar-file').setInputFiles('ops/001-zhil/sprint-001/resources/ene.vmd');
  await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('VMD is animation'));
  assert.equal(await page.evaluate(()=>window.__vmodel.getState().avatarId),original);
  checks.invalidMotionRetainsWorkingAvatar=true;
@@ -34,4 +34,4 @@ try {
  checks.contextRestoresWithoutReload=true;
  assert.deepEqual(errors,[]);
 }catch(error){checks.failure=String(error);console.error(error);process.exitCode=1;}
-finally{await writeFile('ops/reports/viewer-smoke.json',JSON.stringify({date:new Date().toISOString(),checks,memory,errors},null,2));console.log(JSON.stringify({checks,memory,errors}));await browser.close();}
+finally{await writeFile('ops/001-zhil/sprint-001/reports/viewer-smoke.json',JSON.stringify({date:new Date().toISOString(),checks,memory,errors},null,2));console.log(JSON.stringify({checks,memory,errors}));await browser.close();}

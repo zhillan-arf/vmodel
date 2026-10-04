@@ -1,0 +1,56 @@
+{
+  "comparison": "Initial and post-soak exact52ms/1t eager WAVs",
+  "files": [
+    {
+      "path": "ops/001-zhil/sprint-001/reports/local/voice/llvc/llvc-cpu-1t-factor4.wav",
+      "chunks": [
+        {
+          "chunk": "fmt ",
+          "bytes": 16,
+          "sha256": "fae0d32de87f4db0a65be64381488c49da20c1901f986bf927f2c393cadf6ab8"
+        },
+        {
+          "chunk": "fact",
+          "bytes": 4,
+          "sha256": "840a03bf496a976c1341d4759b3a4c55df346c2ca8a1ac7fa8161700909af787"
+        },
+        {
+          "chunk": "PEAK",
+          "bytes": 16,
+          "sha256": "81da5ca14ebe0e12edc8d0b2922ef3da4a16e5930f69425573dab71564754887"
+        },
+        {
+          "chunk": "data",
+          "bytes": 1920000,
+          "sha256": "b1ab0362e1d40b8ecf321075026dc7253047c1ed9aa1d9600c6584355426c441"
+        }
+      ]
+    },
+    {
+      "path": "ops/001-zhil/sprint-001/reports/local/voice/llvc/llvc-cpu-1t-factor4-post-soak.wav",
+      "chunks": [
+        {
+          "chunk": "fmt ",
+          "bytes": 16,
+          "sha256": "fae0d32de87f4db0a65be64381488c49da20c1901f986bf927f2c393cadf6ab8"
+        },
+        {
+          "chunk": "fact",
+          "bytes": 4,
+          "sha256": "840a03bf496a976c1341d4759b3a4c55df346c2ca8a1ac7fa8161700909af787"
+        },
+        {
+          "chunk": "PEAK",
+          "bytes": 16,
+          "sha256": "04f3e10681f738ab32c2267d5bdf398fc8215be9902bf055a010fd8dfad5e4da"
+        },
+        {
+          "chunk": "data",
+          "bytes": 1920000,
+          "sha256": "b1ab0362e1d40b8ecf321075026dc7253047c1ed9aa1d9600c6584355426c441"
+        }
+      ]
+    }
+  ],
+  "identicalPCM": true
+}

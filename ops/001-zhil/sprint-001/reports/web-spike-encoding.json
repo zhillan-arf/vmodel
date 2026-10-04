@@ -1,0 +1,2438 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-12T08:34:33Z",
+  "sourceFrames": "assets/work/ene-web/spike/frames",
+  "frameCount": 48,
+  "fps": 24,
+  "seconds": 2,
+  "entries": [
+    {
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -y -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\spike\\frames\\frame-%04d.png -frames:v 48 -vf scale=480:480:flags=lanczos,format=rgba -an -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 28 -deadline good -cpu-used 2 -row-mt 1 -threads 4 -auto-alt-ref 0 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-480-q28.webm",
+      "seconds": 0.93800639998517,
+      "file": "ene-spike-480-q28.webm",
+      "bytes": 103221,
+      "sha256": "e66ae0f8f481bb8dd47a107ffa7dd416fcfc13c7f653b2af7cac2c03c358f4e2",
+      "width": 480,
+      "height": 480,
+      "codec": "webm",
+      "quality": 28,
+      "decodedAlpha": {
+        "zero": 171961,
+        "full": 48954,
+        "partial": 9485
+      },
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vp9",
+            "codec_long_name": "Google VP9",
+            "profile": "Profile 0",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "vp09.00.21.08",
+            "width": 480,
+            "height": 480,
+            "coded_width": 480,
+            "coded_height": 480,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "1:1",
+            "pix_fmt": "yuv420p",
+            "level": -99,
+            "color_range": "tv",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "field_order": "progressive",
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "alpha_mode": "1",
+              "ENCODER": "Lavc63.1.101 libvpx-vp9",
+              "DURATION": "00:00:02.000000000"
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-480-q28.webm",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "matroska,webm",
+          "format_long_name": "Matroska / WebM",
+          "start_time": "0.000000",
+          "duration": "2.000000",
+          "size": "103221",
+          "bit_rate": "412884",
+          "probe_score": 100,
+          "tags": {
+            "ENCODER": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    {
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -y -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\spike\\frames\\frame-%04d.png -frames:v 48 -vf scale=480:480:flags=lanczos,format=rgba -an -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 34 -deadline good -cpu-used 2 -row-mt 1 -threads 4 -auto-alt-ref 0 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-480-q34.webm",
+      "seconds": 0.8853966000024229,
+      "file": "ene-spike-480-q34.webm",
+      "bytes": 70663,
+      "sha256": "916d185b401ac5fecccb19d3094af7978c15f16f47319b4483e299e54643a046",
+      "width": 480,
+      "height": 480,
+      "codec": "webm",
+      "quality": 34,
+      "decodedAlpha": {
+        "zero": 171584,
+        "full": 48718,
+        "partial": 10098
+      },
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vp9",
+            "codec_long_name": "Google VP9",
+            "profile": "Profile 0",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "vp09.00.21.08",
+            "width": 480,
+            "height": 480,
+            "coded_width": 480,
+            "coded_height": 480,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "1:1",
+            "pix_fmt": "yuv420p",
+            "level": -99,
+            "color_range": "tv",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "field_order": "progressive",
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "alpha_mode": "1",
+              "ENCODER": "Lavc63.1.101 libvpx-vp9",
+              "DURATION": "00:00:02.000000000"
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-480-q34.webm",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "matroska,webm",
+          "format_long_name": "Matroska / WebM",
+          "start_time": "0.000000",
+          "duration": "2.000000",
+          "size": "70663",
+          "bit_rate": "282652",
+          "probe_score": 100,
+          "tags": {
+            "ENCODER": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    {
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -y -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\spike\\frames\\frame-%04d.png -frames:v 48 -vf scale=480:480:flags=lanczos,format=rgba -an -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 40 -deadline good -cpu-used 2 -row-mt 1 -threads 4 -auto-alt-ref 0 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-480-q40.webm",
+      "seconds": 0.8549810000113212,
+      "file": "ene-spike-480-q40.webm",
+      "bytes": 47724,
+      "sha256": "022882b9b36a6ce996723c34cd8e51946e1f15d0d20f6fa041e58f9393db14ba",
+      "width": 480,
+      "height": 480,
+      "codec": "webm",
+      "quality": 40,
+      "decodedAlpha": {
+        "zero": 171430,
+        "full": 48030,
+        "partial": 10940
+      },
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vp9",
+            "codec_long_name": "Google VP9",
+            "profile": "Profile 0",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "vp09.00.21.08",
+            "width": 480,
+            "height": 480,
+            "coded_width": 480,
+            "coded_height": 480,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "1:1",
+            "pix_fmt": "yuv420p",
+            "level": -99,
+            "color_range": "tv",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "field_order": "progressive",
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "alpha_mode": "1",
+              "ENCODER": "Lavc63.1.101 libvpx-vp9",
+              "DURATION": "00:00:02.000000000"
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-480-q40.webm",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "matroska,webm",
+          "format_long_name": "Matroska / WebM",
+          "start_time": "0.000000",
+          "duration": "2.000000",
+          "size": "47724",
+          "bit_rate": "190896",
+          "probe_score": 100,
+          "tags": {
+            "ENCODER": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    {
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -y -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\spike\\frames\\frame-%04d.png -frames:v 48 -vf scale=480:480:flags=lanczos,format=rgba -an -c:v libwebp_anim -pix_fmt yuva420p -quality 65 -compression_level 4 -loop 0 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-480-q65.webp",
+      "seconds": 1.114588399999775,
+      "file": "ene-spike-480-q65.webp",
+      "bytes": 909996,
+      "sha256": "01a8105bee1e62d11647c45d0df70f8ecfc4bd4fdf4461729666b1ca1aab4333",
+      "width": 480,
+      "height": 480,
+      "codec": "webp",
+      "quality": 65,
+      "decodedAlpha": {
+        "zero": 173030,
+        "full": 50029,
+        "partial": 7341
+      },
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "webp_anim",
+            "codec_long_name": "Animated WebP",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "width": 480,
+            "height": 480,
+            "coded_width": 480,
+            "coded_height": 480,
+            "has_b_frames": 0,
+            "pix_fmt": "argb",
+            "level": -99,
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-480-q65.webp",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "webp_anim",
+          "format_long_name": "Animated WebP",
+          "start_time": "0.000000",
+          "size": "909996",
+          "probe_score": 100
+        }
+      },
+      "webpAnimation": {
+        "alpha": true,
+        "animated": true,
+        "loopCount": 0,
+        "width": 480,
+        "height": 480,
+        "frameCount": 48,
+        "durationMs": 1999,
+        "frames": [
+          {
+            "x": 74,
+            "y": 122,
+            "width": 379,
+            "height": 358,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 380,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 383,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 386,
+            "height": 354,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 74,
+            "y": 122,
+            "width": 391,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 391,
+            "height": 356,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 393,
+            "height": 355,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 395,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 396,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 397,
+            "height": 354,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 398,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 78,
+            "y": 124,
+            "width": 396,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 399,
+            "height": 354,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 398,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 78,
+            "y": 124,
+            "width": 396,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 397,
+            "height": 354,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 397,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 395,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 393,
+            "height": 354,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 391,
+            "height": 355,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 389,
+            "height": 356,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 74,
+            "y": 122,
+            "width": 388,
+            "height": 356,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 386,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 380,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 377,
+            "height": 354,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 374,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 371,
+            "height": 355,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 368,
+            "height": 356,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 368,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 78,
+            "y": 122,
+            "width": 364,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 363,
+            "height": 356,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 78,
+            "y": 122,
+            "width": 361,
+            "height": 353,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 361,
+            "height": 352,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 359,
+            "height": 356,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 359,
+            "height": 352,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 358,
+            "height": 352,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 80,
+            "y": 124,
+            "width": 354,
+            "height": 351,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 80,
+            "y": 124,
+            "width": 354,
+            "height": 351,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 359,
+            "height": 352,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 359,
+            "height": 352,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 360,
+            "height": 356,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 361,
+            "height": 352,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 78,
+            "y": 122,
+            "width": 361,
+            "height": 353,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 364,
+            "height": 356,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 78,
+            "y": 122,
+            "width": 364,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 368,
+            "height": 354,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 371,
+            "height": 356,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 374,
+            "height": 355,
+            "durationMs": 41,
+            "flags": 2
+          }
+        ]
+      }
+    },
+    {
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -y -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\spike\\frames\\frame-%04d.png -frames:v 48 -vf scale=480:480:flags=lanczos,format=rgba -an -c:v libwebp_anim -pix_fmt yuva420p -quality 80 -compression_level 4 -loop 0 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-480-q80.webp",
+      "seconds": 1.1956647999759298,
+      "file": "ene-spike-480-q80.webp",
+      "bytes": 1027824,
+      "sha256": "1ba6545b23fd9a056eb317c24b5b20be3ec23f71c376d12eeb6609f0181e7d45",
+      "width": 480,
+      "height": 480,
+      "codec": "webp",
+      "quality": 80,
+      "decodedAlpha": {
+        "zero": 173030,
+        "full": 50029,
+        "partial": 7341
+      },
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "webp_anim",
+            "codec_long_name": "Animated WebP",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "width": 480,
+            "height": 480,
+            "coded_width": 480,
+            "coded_height": 480,
+            "has_b_frames": 0,
+            "pix_fmt": "argb",
+            "level": -99,
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-480-q80.webp",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "webp_anim",
+          "format_long_name": "Animated WebP",
+          "start_time": "0.000000",
+          "size": "1027824",
+          "probe_score": 100
+        }
+      },
+      "webpAnimation": {
+        "alpha": true,
+        "animated": true,
+        "loopCount": 0,
+        "width": 480,
+        "height": 480,
+        "frameCount": 48,
+        "durationMs": 1999,
+        "frames": [
+          {
+            "x": 74,
+            "y": 122,
+            "width": 379,
+            "height": 358,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 380,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 383,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 386,
+            "height": 354,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 74,
+            "y": 122,
+            "width": 391,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 391,
+            "height": 356,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 393,
+            "height": 355,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 395,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 396,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 397,
+            "height": 354,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 398,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 78,
+            "y": 124,
+            "width": 396,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 399,
+            "height": 354,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 398,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 78,
+            "y": 124,
+            "width": 396,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 397,
+            "height": 354,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 397,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 395,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 393,
+            "height": 354,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 391,
+            "height": 355,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 389,
+            "height": 356,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 74,
+            "y": 122,
+            "width": 388,
+            "height": 356,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 386,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 380,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 377,
+            "height": 354,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 374,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 371,
+            "height": 355,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 368,
+            "height": 356,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 368,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 78,
+            "y": 122,
+            "width": 364,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 363,
+            "height": 356,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 78,
+            "y": 122,
+            "width": 361,
+            "height": 353,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 361,
+            "height": 352,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 359,
+            "height": 356,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 359,
+            "height": 352,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 358,
+            "height": 352,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 80,
+            "y": 124,
+            "width": 354,
+            "height": 351,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 80,
+            "y": 124,
+            "width": 354,
+            "height": 351,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 359,
+            "height": 352,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 359,
+            "height": 352,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 360,
+            "height": 356,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 124,
+            "width": 361,
+            "height": 352,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 78,
+            "y": 122,
+            "width": 361,
+            "height": 353,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 364,
+            "height": 356,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 78,
+            "y": 122,
+            "width": 364,
+            "height": 354,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 368,
+            "height": 354,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 371,
+            "height": 356,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 76,
+            "y": 122,
+            "width": 374,
+            "height": 355,
+            "durationMs": 41,
+            "flags": 2
+          }
+        ]
+      }
+    },
+    {
+      "file": "ene-spike-480-poster.webp",
+      "bytes": 24850,
+      "sha256": "782b56607f2bf319af55f53fdff310546a8cff5e09271d863ae9db7e7f4a4a96",
+      "codec": "poster",
+      "width": 480,
+      "height": 480,
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -y -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\spike\\frames\\frame-0001.png -vf scale=480:480:flags=lanczos,format=rgba -frames:v 1 -c:v libwebp -lossless 0 -quality 85 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-480-poster.webp",
+      "seconds": 0.09409659999073483
+    },
+    {
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -y -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\spike\\frames\\frame-%04d.png -frames:v 48 -vf scale=960:960:flags=lanczos,format=rgba -an -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 28 -deadline good -cpu-used 2 -row-mt 1 -threads 4 -auto-alt-ref 0 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-960-q28.webm",
+      "seconds": 2.4665144000027794,
+      "file": "ene-spike-960-q28.webm",
+      "bytes": 309361,
+      "sha256": "2e211471180f7ae99a29d457bedeb949b1cf152e414c8976520080d4bf7e8e7b",
+      "width": 960,
+      "height": 960,
+      "codec": "webm",
+      "quality": 28,
+      "decodedAlpha": {
+        "zero": 698504,
+        "full": 201439,
+        "partial": 21657
+      },
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vp9",
+            "codec_long_name": "Google VP9",
+            "profile": "Profile 0",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "vp09.00.31.08",
+            "width": 960,
+            "height": 960,
+            "coded_width": 960,
+            "coded_height": 960,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "1:1",
+            "pix_fmt": "yuv420p",
+            "level": -99,
+            "color_range": "tv",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "field_order": "progressive",
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "alpha_mode": "1",
+              "ENCODER": "Lavc63.1.101 libvpx-vp9",
+              "DURATION": "00:00:02.000000000"
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-960-q28.webm",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "matroska,webm",
+          "format_long_name": "Matroska / WebM",
+          "start_time": "0.000000",
+          "duration": "2.000000",
+          "size": "309361",
+          "bit_rate": "1237444",
+          "probe_score": 100,
+          "tags": {
+            "ENCODER": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    {
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -y -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\spike\\frames\\frame-%04d.png -frames:v 48 -vf scale=960:960:flags=lanczos,format=rgba -an -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 34 -deadline good -cpu-used 2 -row-mt 1 -threads 4 -auto-alt-ref 0 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-960-q34.webm",
+      "seconds": 2.517454100016039,
+      "file": "ene-spike-960-q34.webm",
+      "bytes": 208664,
+      "sha256": "ac46dad8abf3412d26b2938556f9abd081c1b56ca2217bad495604478c43b123",
+      "width": 960,
+      "height": 960,
+      "codec": "webm",
+      "quality": 34,
+      "decodedAlpha": {
+        "zero": 698014,
+        "full": 200502,
+        "partial": 23084
+      },
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vp9",
+            "codec_long_name": "Google VP9",
+            "profile": "Profile 0",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "vp09.00.31.08",
+            "width": 960,
+            "height": 960,
+            "coded_width": 960,
+            "coded_height": 960,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "1:1",
+            "pix_fmt": "yuv420p",
+            "level": -99,
+            "color_range": "tv",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "field_order": "progressive",
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "alpha_mode": "1",
+              "ENCODER": "Lavc63.1.101 libvpx-vp9",
+              "DURATION": "00:00:02.000000000"
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-960-q34.webm",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "matroska,webm",
+          "format_long_name": "Matroska / WebM",
+          "start_time": "0.000000",
+          "duration": "2.000000",
+          "size": "208664",
+          "bit_rate": "834656",
+          "probe_score": 100,
+          "tags": {
+            "ENCODER": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    {
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -y -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\spike\\frames\\frame-%04d.png -frames:v 48 -vf scale=960:960:flags=lanczos,format=rgba -an -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 40 -deadline good -cpu-used 2 -row-mt 1 -threads 4 -auto-alt-ref 0 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-960-q40.webm",
+      "seconds": 2.0132491000113077,
+      "file": "ene-spike-960-q40.webm",
+      "bytes": 133393,
+      "sha256": "fe008270e39525db0625fe98811b0e058408af4b9fbce407cdc50be4eca3dd98",
+      "width": 960,
+      "height": 960,
+      "codec": "webm",
+      "quality": 40,
+      "decodedAlpha": {
+        "zero": 697055,
+        "full": 199516,
+        "partial": 25029
+      },
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vp9",
+            "codec_long_name": "Google VP9",
+            "profile": "Profile 0",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "vp09.00.31.08",
+            "width": 960,
+            "height": 960,
+            "coded_width": 960,
+            "coded_height": 960,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "1:1",
+            "pix_fmt": "yuv420p",
+            "level": -99,
+            "color_range": "tv",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "field_order": "progressive",
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "alpha_mode": "1",
+              "ENCODER": "Lavc63.1.101 libvpx-vp9",
+              "DURATION": "00:00:02.000000000"
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-960-q40.webm",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "matroska,webm",
+          "format_long_name": "Matroska / WebM",
+          "start_time": "0.000000",
+          "duration": "2.000000",
+          "size": "133393",
+          "bit_rate": "533572",
+          "probe_score": 100,
+          "tags": {
+            "ENCODER": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    {
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -y -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\spike\\frames\\frame-%04d.png -frames:v 48 -vf scale=960:960:flags=lanczos,format=rgba -an -c:v libwebp_anim -pix_fmt yuva420p -quality 65 -compression_level 4 -loop 0 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-960-q65.webp",
+      "seconds": 2.764359200024046,
+      "file": "ene-spike-960-q65.webp",
+      "bytes": 1731932,
+      "sha256": "20d2ca62f941ebe0876466977f97f7f8624df413647fe5d42da9c7890b9a32ce",
+      "width": 960,
+      "height": 960,
+      "codec": "webp",
+      "quality": 65,
+      "decodedAlpha": {
+        "zero": 701222,
+        "full": 204428,
+        "partial": 15950
+      },
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "webp_anim",
+            "codec_long_name": "Animated WebP",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "width": 960,
+            "height": 960,
+            "coded_width": 960,
+            "coded_height": 960,
+            "has_b_frames": 0,
+            "pix_fmt": "argb",
+            "level": -99,
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-960-q65.webp",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "webp_anim",
+          "format_long_name": "Animated WebP",
+          "start_time": "0.000000",
+          "size": "1731932",
+          "probe_score": 100
+        }
+      },
+      "webpAnimation": {
+        "alpha": true,
+        "animated": true,
+        "loopCount": 0,
+        "width": 960,
+        "height": 960,
+        "frameCount": 48,
+        "durationMs": 1999,
+        "frames": [
+          {
+            "x": 154,
+            "y": 250,
+            "width": 748,
+            "height": 710,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 754,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 760,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 766,
+            "height": 701,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 771,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 775,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 779,
+            "height": 701,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 783,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 786,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 788,
+            "height": 701,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 790,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 158,
+            "y": 250,
+            "width": 787,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 791,
+            "height": 700,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 791,
+            "height": 700,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 158,
+            "y": 250,
+            "width": 787,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 788,
+            "height": 701,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 786,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 783,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 779,
+            "height": 701,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 775,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 771,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 766,
+            "height": 701,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 760,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 754,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 748,
+            "height": 702,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 742,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 736,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 730,
+            "height": 702,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 726,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 723,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 720,
+            "height": 702,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 156,
+            "y": 250,
+            "width": 718,
+            "height": 700,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 714,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 712,
+            "height": 702,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 711,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 710,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 160,
+            "y": 250,
+            "width": 704,
+            "height": 699,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 160,
+            "y": 250,
+            "width": 704,
+            "height": 699,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 711,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 712,
+            "height": 702,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 714,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 717,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 156,
+            "y": 250,
+            "width": 718,
+            "height": 700,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 723,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 726,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 730,
+            "height": 702,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 156,
+            "y": 250,
+            "width": 734,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 742,
+            "height": 701,
+            "durationMs": 41,
+            "flags": 2
+          }
+        ]
+      }
+    },
+    {
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -y -framerate 24 -start_number 1 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\spike\\frames\\frame-%04d.png -frames:v 48 -vf scale=960:960:flags=lanczos,format=rgba -an -c:v libwebp_anim -pix_fmt yuva420p -quality 80 -compression_level 4 -loop 0 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-960-q80.webp",
+      "seconds": 2.7441975999972783,
+      "file": "ene-spike-960-q80.webp",
+      "bytes": 1962818,
+      "sha256": "be19d6172da9a99e2eca22f552628d72282a105703caa8d91fee1370b9c153c5",
+      "width": 960,
+      "height": 960,
+      "codec": "webp",
+      "quality": 80,
+      "decodedAlpha": {
+        "zero": 701222,
+        "full": 204428,
+        "partial": 15950
+      },
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "webp_anim",
+            "codec_long_name": "Animated WebP",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "width": 960,
+            "height": 960,
+            "coded_width": 960,
+            "coded_height": 960,
+            "has_b_frames": 0,
+            "pix_fmt": "argb",
+            "level": -99,
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-960-q80.webp",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "webp_anim",
+          "format_long_name": "Animated WebP",
+          "start_time": "0.000000",
+          "size": "1962818",
+          "probe_score": 100
+        }
+      },
+      "webpAnimation": {
+        "alpha": true,
+        "animated": true,
+        "loopCount": 0,
+        "width": 960,
+        "height": 960,
+        "frameCount": 48,
+        "durationMs": 1999,
+        "frames": [
+          {
+            "x": 154,
+            "y": 250,
+            "width": 748,
+            "height": 710,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 754,
+            "height": 710,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 760,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 766,
+            "height": 701,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 771,
+            "height": 704,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 775,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 779,
+            "height": 701,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 783,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 786,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 788,
+            "height": 701,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 790,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 158,
+            "y": 250,
+            "width": 787,
+            "height": 708,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 791,
+            "height": 700,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 791,
+            "height": 700,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 158,
+            "y": 250,
+            "width": 787,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 788,
+            "height": 708,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 788,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 783,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 779,
+            "height": 701,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 775,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 771,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 766,
+            "height": 704,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 760,
+            "height": 704,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 754,
+            "height": 704,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 748,
+            "height": 710,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 156,
+            "y": 250,
+            "width": 746,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 736,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 730,
+            "height": 702,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 726,
+            "height": 710,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 726,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 720,
+            "height": 702,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 717,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 714,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 712,
+            "height": 702,
+            "durationMs": 41,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 711,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 3
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 710,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 158,
+            "y": 250,
+            "width": 706,
+            "height": 704,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 158,
+            "y": 250,
+            "width": 706,
+            "height": 704,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 711,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 712,
+            "height": 702,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 714,
+            "height": 701,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 717,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 156,
+            "y": 250,
+            "width": 718,
+            "height": 702,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 723,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 726,
+            "height": 702,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 730,
+            "height": 702,
+            "durationMs": 41,
+            "flags": 2
+          },
+          {
+            "x": 156,
+            "y": 250,
+            "width": 734,
+            "height": 710,
+            "durationMs": 42,
+            "flags": 2
+          },
+          {
+            "x": 154,
+            "y": 250,
+            "width": 742,
+            "height": 701,
+            "durationMs": 41,
+            "flags": 2
+          }
+        ]
+      }
+    },
+    {
+      "file": "ene-spike-960-poster.webp",
+      "bytes": 47906,
+      "sha256": "b4fe58b04aa0fe876fe805aeab0fb1d3e3c877afa99b0f98b19ee0bd9dfcbbae",
+      "codec": "poster",
+      "width": 960,
+      "height": 960,
+      "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -y -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\spike\\frames\\frame-0001.png -vf scale=960:960:flags=lanczos,format=rgba -frames:v 1 -c:v libwebp -lossless 0 -quality 85 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\ene-spike-960-poster.webp",
+      "seconds": 0.13253629999235272
+    }
+  ]
+}

@@ -5,7 +5,7 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {mediaResponse} from './web_review_response.mjs';
 const large=process.argv.includes('--large'),suffix=large?'-large':'';
-const root=resolve(import.meta.dirname,'..'),dir=resolve(root,`ops/reports/local/web-production-review${suffix}`);
+const root=resolve(import.meta.dirname,'..'),dir=resolve(root,`ops/001-zhil/sprint-001/reports/local/web-production-review${suffix}`);
 const index=JSON.parse(await readFile(resolve(dir,'index.json'),'utf8'));
 const html=`<!doctype html><meta charset="utf-8"><title>Final Ene media review</title><style>
 body{margin:20px;background:#f1f3f8;font:14px system-ui;color:#283247}h1{font-size:22px}h2{margin:18px 0 6px}.grid{display:grid;grid-template-columns:repeat(3,320px);gap:12px}.cell{width:320px;background:conic-gradient(#c8d0dd 25%,white 0 50%,#c8d0dd 0 75%,white 0) 0 0/24px 24px}.cell img{width:100%;height:auto;display:block}.white .cell{background:white}.black .cell{background:#000}.caption{display:flex;justify-content:space-between;font-size:12px}.row{margin-bottom:16px}</style><h1 id="title"></h1><p>Left: RGBA master at delivery size · middle: decoded VP9 WebM · right: decoded animated WebP. Exact matching source frames, 24 fps. Review only.</p><main></main>`;
@@ -41,5 +41,5 @@ try{
  }
  report.state=report.errors.length?'failed':'passed';
 }catch(error){report.state='failed';report.failure=error.stack;process.exitCode=1}
-finally{if(browser)await browser.close();await new Promise(done=>server.close(done));await writeFile(resolve(root,`ops/reports/web-production-visuals${suffix}.json`),JSON.stringify(report,null,2)+'\n')}
+finally{if(browser)await browser.close();await new Promise(done=>server.close(done));await writeFile(resolve(root,`ops/001-zhil/sprint-001/reports/web-production-visuals${suffix}.json`),JSON.stringify(report,null,2)+'\n')}
 console.log(JSON.stringify(report,null,2));

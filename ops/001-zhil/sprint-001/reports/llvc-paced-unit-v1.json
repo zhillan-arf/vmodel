@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-12T13:20:10Z",
+  "status": "passed",
+  "passed": true,
+  "physicalMedia": false,
+  "neuralInference": false,
+  "liveAccepted": false,
+  "exitCode": 0,
+  "log": {
+    "path": "ops/001-zhil/sprint-001/reports/local/voice/llvc/llvc-paced-unit-v1.log",
+    "sha256": "624fb103cf1a61d08121bf4c02b93a82571b66444e17969d4e035e47719dbf7a"
+  },
+  "testSha256": "7f8548f239c4402ab1686a582e2e08927f45e6b01db632d7e19deb2c4189f4fa"
+}

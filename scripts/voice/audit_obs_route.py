@@ -98,7 +98,7 @@ def installed_proprietary_audio():
 def main():
     licence_dir = OBS / 'data/obs-studio/license'
     gplv2 = licence_dir / 'gplv2.txt'
-    inventory = json.loads((ROOT / 'ops/reports/voice-license-inventory.json').read_text(encoding='utf-8'))
+    inventory = json.loads((ROOT / 'ops/001-zhil/sprint-001/reports/voice-license-inventory.json').read_text(encoding='utf-8'))
     packaged = {entry['package'].lower() for entry in inventory}
 
     # Python packages the loopback server actually imports.
@@ -162,7 +162,7 @@ def main():
         ],
     }
     report['passed'] = all(report['checks'].values())
-    out = ROOT / 'ops/reports/voice-obs-route-licences.json'
+    out = ROOT / 'ops/001-zhil/sprint-001/reports/voice-obs-route-licences.json'
     out.write_text(json.dumps(report, indent=2), encoding='utf-8')
     print(json.dumps({'report': out.relative_to(ROOT).as_posix(), 'passed': report['passed'],
                       'checks': report['checks'], 'missingLicenceFiles': missing_licence_files,

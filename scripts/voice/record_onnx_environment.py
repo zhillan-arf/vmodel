@@ -41,7 +41,7 @@ def main():
                            'terms': 'Microsoft Software License Terms for DirectML; proprietary Windows/Xbox redistributable, not the repository MIT license',
                            'termsUrl': 'https://www.nuget.org/packages/Microsoft.AI.DirectML/1.15.4/License'},
               'selection': 'Optional platform-acceleration probe only. Not the accepted OSS inference baseline; CPU baseline unchanged.'}
-    (ROOT / 'ops/reports/voice-onnx-environment.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+    (ROOT / 'ops/001-zhil/sprint-001/reports/voice-onnx-environment.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
     print(json.dumps({'distributions': len(distributions), 'retainedNotices': len(notices),
                       'availableProviders': ort.get_available_providers(), 'directmlSha256': digest(dll)}, indent=2))
 

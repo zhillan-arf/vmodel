@@ -13,7 +13,7 @@ assert(selected.every(mode=>['baseline','off','overlay','estimated','record','de
 const repetitions=Number(process.env.VMODEL_MEASURE_REPETITIONS??3);
 assert(Number.isSafeInteger(repetitions)&&repetitions>=1&&repetitions<=3);
 const tag=process.env.VMODEL_MEASURE_TAG??'';assert(/^[a-z0-9-]*$/.test(tag));
-const reportPath=`ops/reports/windows-tracking-${channel}${tag?'-'+tag:''}.json`;
+const reportPath=`ops/001-zhil/sprint-001/reports/windows-tracking-${channel}${tag?'-'+tag:''}.json`;
 const report={date:new Date().toISOString(),channel,modesRequested:selected,protocol:{warmupSeconds:30,sampleSeconds:60,repetitions,avatarRenderSize:{width:752,height:423}},modes:[],errors:[],limits:[
   'A repeated public NASA photograph supplies the camera stream. No physical camera is used.',
   'Useful pose samples have an accepted spine or arm goal at first use.',

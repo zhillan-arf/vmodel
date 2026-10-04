@@ -11,10 +11,10 @@ if not text:
 processes = json.loads(text)
 if isinstance(processes, dict):
     processes = [processes]
-path = ROOT / 'ops/reports/web-production-process-snapshots.json'
+path = ROOT / 'ops/001-zhil/sprint-001/reports/web-production-process-snapshots.json'
 report = read_json(path) if path.exists() else {'scope': 'Read-only owned Blender process snapshots; observed OS peak at snapshot time, not a continuous whole-batch peak sampler.', 'samples': []}
 report['samples'].append({'date': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
-                          'batchCheckpoint': read_json(ROOT / 'ops/reports/web-production-batch.json'),
-                          'renderCheckpoint': read_json(ROOT / 'ops/reports/web-production-render.json').get('lastFrame'), 'processes': processes})
+                          'batchCheckpoint': read_json(ROOT / 'ops/001-zhil/sprint-001/reports/web-production-batch.json'),
+                          'renderCheckpoint': read_json(ROOT / 'ops/001-zhil/sprint-001/reports/web-production-render.json').get('lastFrame'), 'processes': processes})
 write_json(path, report)
 print(json.dumps(report['samples'][-1], indent=2))

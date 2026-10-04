@@ -17,8 +17,8 @@ import process from 'node:process';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname).replace(/^\/(\w:)/, '$1'), '..');
 const SCANNED = [
   { label: 'docs', dir: path.join(ROOT, 'docs'), userFacing: true },
-  { label: 'ops/reports', dir: path.join(ROOT, 'ops/reports'), userFacing: false },
-  { label: 'ops/specs', dir: path.join(ROOT, 'ops/specs'), userFacing: false },
+  { label: 'ops/001-zhil/sprint-001/reports', dir: path.join(ROOT, 'ops/001-zhil/sprint-001/reports'), userFacing: false },
+  { label: 'ops/001-zhil/sprint-001/specs', dir: path.join(ROOT, 'ops/001-zhil/sprint-001/specs'), userFacing: false },
 ];
 const exists = async file => access(file).then(() => true).catch(() => false);
 
@@ -98,7 +98,7 @@ try {
 } catch (error) {
   report.status = 'failed'; report.error = String(error?.stack ?? error); exit = 1;
 } finally {
-  const file = path.join(ROOT, 'ops/reports', 'docs-audit.json');
+  const file = path.join(ROOT, 'ops/001-zhil/sprint-001/reports', 'docs-audit.json');
   await mkdir(path.dirname(file), { recursive: true });
   await writeFile(file, JSON.stringify(report, null, 2));
   console.log(JSON.stringify({ report: path.relative(ROOT, file), status: report.status,

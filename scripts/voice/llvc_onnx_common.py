@@ -18,7 +18,7 @@ import time
 ROOT = Path(__file__).resolve().parents[2]
 BASE = ROOT / '.tools/voice/llvc'
 EXPORT = ROOT / 'assets/voice/llvc/onnx-factor4-v1'
-LOCAL = ROOT / 'ops/reports/local/voice/llvc-onnx'
+LOCAL = ROOT / 'ops/001-zhil/sprint-001/reports/local/voice/llvc-onnx'
 SOURCE_REVISION = '1627c5d358cf9bb2b92b0ccc513d8b36807c923d'
 MODEL_REVISION = 'ebfe8c0fdeb974a7eeb463b3abbc8ce42a0e3851'
 MODEL_SHA = 'cceb7ab9621f84d62d283725ae3281cacb04f762d6a088fe3e97c1a29d4b8c0e'
@@ -155,7 +155,7 @@ class RunReport:
         if not re.fullmatch(r'[0-9TZ-]+', run_id):
             raise ValueError('Invalid owned run ID')
         self.directory = LOCAL / run_id
-        self.latest = ROOT / f'ops/reports/{label}.json'
+        self.latest = ROOT / f'ops/001-zhil/sprint-001/reports/{label}.json'
         self.started = time.perf_counter()
         self.data = {'schemaVersion': 1, 'runId': run_id, 'state': 'running',
                      'date': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),

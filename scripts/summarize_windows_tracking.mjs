@@ -8,7 +8,7 @@ const names = {
   video: 'windows-tracking-chrome-video.json',
 };
 const sources = Object.fromEntries(await Promise.all(Object.entries(names).map(async ([key, name]) =>
-  [key, JSON.parse(await readFile('ops/reports/' + name, 'utf8'))])));
+  [key, JSON.parse(await readFile('ops/001-zhil/sprint-001/reports/' + name, 'utf8'))])));
 assert(sources.paired.completed && sources.video.completed);
 assert(sources.initial.errors.every(error => error.includes('Dense face points were not exercised.')));
 assert(sources.optional.errors.every(error => error.includes('page.waitForFunction: Timeout')));
@@ -59,6 +59,6 @@ const report = { date: new Date().toISOString(), modes, defaultComparison, defau
     'Recording costs include the automatic stop within each 60-second sample.',
     'Human review and physical motion acceptance remain open.'],
 };
-await writeFile('ops/reports/windows-tracking-summary.json', JSON.stringify(report, null, 2) + '\n');
+await writeFile('ops/001-zhil/sprint-001/reports/windows-tracking-summary.json', JSON.stringify(report, null, 2) + '\n');
 assert(report.requiredLimitsPassed);
 console.log(JSON.stringify(report, null, 2));

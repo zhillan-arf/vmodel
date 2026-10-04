@@ -53,5 +53,5 @@ try {
   assert.ok(report.codeGzipBytes <= 150 * 1024, 'initial JS/CSS exceeds 150 KiB gzip');
   report.pass = true;
 } catch (error) { report.error = String(error); process.exitCode = 1; }
-await fs.writeFile(path.join(root, 'ops/reports/web-bundle-audit.json'), JSON.stringify(report, null, 2) + '\n');
+await fs.writeFile(path.join(root, 'ops/001-zhil/sprint-001/reports/web-bundle-audit.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({ ...report, files: report.files.length }, null, 2));

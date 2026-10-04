@@ -148,7 +148,7 @@ try {
   report.avatarAfter = await measureAvatar(page, BASELINE_MS, 'avatar-alone-after');
   console.log(JSON.stringify({ phase: 'avatar-alone-after', drawsPerSecond: report.avatarAfter.drawsPerSecond, inferencesPerSecond: report.avatarAfter.inferencesPerSecond }));
 
-  const voiceReportPath = path.join(ROOT, 'ops/reports', 'llvc-paced-' + report.voiceRunLabel + '.json');
+  const voiceReportPath = path.join(ROOT, 'ops/001-zhil/sprint-001/reports', 'llvc-paced-' + report.voiceRunLabel + '.json');
   const voice = JSON.parse(await readFile(voiceReportPath, 'utf8'));
   report.voiceReport = path.relative(ROOT, voiceReportPath);
   report.voice = {
@@ -181,7 +181,7 @@ try {
 } finally {
   if (browser) await browser.close().catch(() => {});
   if (server) await server.close?.().catch?.(() => {});
-  const file = path.join(ROOT, 'ops/reports', 'combined-voice-avatar-' + label + '.json');
+  const file = path.join(ROOT, 'ops/001-zhil/sprint-001/reports', 'combined-voice-avatar-' + label + '.json');
   await mkdir(path.dirname(file), { recursive: true });
   await writeFile(file, JSON.stringify(report, null, 2), { flag: 'wx' }).catch(error => {
     if (error.code !== 'EEXIST') throw error;

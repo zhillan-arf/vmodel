@@ -1,0 +1,284 @@
+{
+  "date": "2026-09-12T14:06:42Z",
+  "runLabel": "combined-combo-split-v1",
+  "passed": false,
+  "status": "failed",
+  "stage": "paced-evidence",
+  "paced": true,
+  "sourceSeconds": 30,
+  "inputPacketSamples": 256,
+  "inputPacketMs": 16,
+  "internalChunkSamples": 832,
+  "internalChunkMs": 52,
+  "outputPacketSamples": 6400,
+  "outputPacketMs": 160,
+  "publisherInitialReserveMs": 16,
+  "inputQueuePacketCap": 4,
+  "outputQueuePacketCap": 1,
+  "receiverModel": {
+    "initialInsertedSilenceMs": 40,
+    "queueCapMs": 240,
+    "causalFirGroupDelayMs": 0.625,
+    "realAudioDevice": false
+  },
+  "timeoutSeconds": 120,
+  "workerThreadEnvironment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "codeSha256": {
+    "probe_llvc_paced.py": "13953e4d44d6dc3e92e422a7ad7fcd5a6187f4c744a675fd18f87a9449dee99b",
+    "llvc_paced.py": "8ef568ca5fcf49eb8632cf27172950201884a5af2fb998c9aac0eb0577a58158"
+  },
+  "baselineSha256": {
+    "llvc_stream_adapter.py": "78ce4fb5ac60307ee984ebe28f7f3800f82ae2ff21ac009a2b863f4fb28a4816",
+    "probe_llvc_stream_adapter.py": "b6b3b9f9fe664a880577e6bdaee572838586f1b6d209983eb02fa0c87d4cb1b4",
+    "natural_pcm.py": "b1af9ce4c024c7d1c90c99db1cc08f2970139391361b242385aa1b089d70c008"
+  },
+  "llvcManifestSha256": "a1bd8939a3cda93824276795df8892dc06c1dc5f683a70f344a0a3255e8e4eb4",
+  "log": {
+    "path": "ops/001-zhil/sprint-001/reports/local/voice/llvc/llvc-paced-combined-combo-split-v1.log",
+    "sha256": "a84993049b8a17d279d49890424e888e989c9ef48a59f8d4afe931dcd4e1b6ea",
+    "bytes": 576
+  },
+  "physicalMedia": false,
+  "networkInference": false,
+  "liveAccepted": false,
+  "inferenceThreadAffinityMask": "F",
+  "harnessTimerResolutionMs": 1,
+  "affinityRationale": "Pinned from the measured hybrid-core diagnostic llvc-affinity-hybrid-dc-v2: logical CPUs 0-3 are 100%-frequency P-cores and 4-11 are 50-70% E-cores.",
+  "limits": [
+    "One synthetic paced file proof: no microphone, browser, OBS, speaker or physical latency measurement.",
+    "One research target; public-domain English source is not the user voice, and listening quality remains unaccepted.",
+    "The ideal sample-clock sink models the installed 40ms prefix and 240ms cap, not browser or hardware behavior.",
+    "Initial sink-start delay is a software scheduling proxy; FIR group delay is listed separately, not measured acoustic alignment.",
+    "Per-call Windows CPU readings may be zero/coarse; use aggregate CPU/wall totals, not individual ratios.",
+    "A synthetic acquisition wake over16ms late stops this proof separately from the four-packet/64ms FIFO bound; it does not prove physical sample loss.",
+    "Neural calls exceeding52ms are retained and reject acceptance after the paced interval; only pipeline/queue/deadline failures stop the running epoch.",
+    "Process CPU includes all owned threads. Whole-paced wall time includes scheduled waiting and the 250ms start lead.",
+    "No power, priority or served-route changes. Any harness timer resolution is recorded in harnessTimerResolutionMs and affects only this sleep-paced test, not the audio-device-clocked real contract. Any worker affinity pin is recorded in workerAffinityMask; an unset mask keeps the original scheduler behaviour. Failed trials keep the original16ms reserve and queue caps."
+  ],
+  "workerPid": 14728,
+  "appliedInferenceThreadAffinityMask": "F",
+  "torchVersion": "2.8.0+cpu",
+  "source": {
+    "path": "assets/voice/samples/LJ025-0076.wav",
+    "sha256": "b31133c05e9667a27db5be539ca089aa99e95ca7bef52040c902ff781680873a",
+    "licensedPublicDomain": true,
+    "loopGapSamples": 4000,
+    "fixtureSamples": 480000,
+    "fixtureFloat32Sha256": "d49de874f5d82e1adfaba9c5575b234a5bc408705cd153ca739a79dffa7948a0"
+  },
+  "inputAudio": {
+    "path": "ops/001-zhil/sprint-001/reports/local/voice/llvc/llvc-paced-combined-combo-split-v1-input16k.wav",
+    "sha256": "17e651994228eea667f7f69b0607d24a037934752d4ba5b7843e849511a0c591",
+    "rate": 16000,
+    "samples": 480000,
+    "complete": true
+  },
+  "pipeline": {
+    "completedWithoutLoss": false,
+    "failure": {
+      "stage": "ingress",
+      "type": "Full",
+      "message": "",
+      "atMs": 145.32660000259057
+    },
+    "inputPackets": 9,
+    "consumedInputPackets": 4,
+    "expectedInputPackets": 1875,
+    "inputHighWaterPackets": 4,
+    "outputHighWaterPackets": 0,
+    "modeledSinkHighWaterMs": 0.0,
+    "inputRecords": [
+      {
+        "sequence": 0,
+        "offset": 0,
+        "samples": 256,
+        "scheduledMs": 16.00000000325963,
+        "arrivedMs": 16.805199993541464,
+        "lateMs": 0.8051999902818352
+      },
+      {
+        "sequence": 1,
+        "offset": 256,
+        "samples": 256,
+        "scheduledMs": 32.00000000651926,
+        "arrivedMs": 33.71550000156276,
+        "lateMs": 1.7154999950435013
+      },
+      {
+        "sequence": 2,
+        "offset": 512,
+        "samples": 256,
+        "scheduledMs": 48.00000000977889,
+        "arrivedMs": 48.99979999754578,
+        "lateMs": 0.9997999877668917
+      },
+      {
+        "sequence": 3,
+        "offset": 768,
+        "samples": 256,
+        "scheduledMs": 64.00000001303852,
+        "arrivedMs": 64.90040000062436,
+        "lateMs": 0.9003999875858426
+      },
+      {
+        "sequence": 4,
+        "offset": 1024,
+        "samples": 256,
+        "scheduledMs": 79.99999998719431,
+        "arrivedMs": 80.569599987939,
+        "lateMs": 0.5696000007446855
+      },
+      {
+        "sequence": 5,
+        "offset": 1280,
+        "samples": 256,
+        "scheduledMs": 95.99999999045394,
+        "arrivedMs": 96.97670000605285,
+        "lateMs": 0.9767000155989081
+      },
+      {
+        "sequence": 6,
+        "offset": 1536,
+        "samples": 256,
+        "scheduledMs": 111.99999999371357,
+        "arrivedMs": 112.17479998595081,
+        "lateMs": 0.17479999223724008
+      },
+      {
+        "sequence": 7,
+        "offset": 1792,
+        "samples": 256,
+        "scheduledMs": 127.9999999969732,
+        "arrivedMs": 128.42219998128712,
+        "lateMs": 0.42219998431392014
+      },
+      {
+        "sequence": 8,
+        "offset": 2048,
+        "samples": 256,
+        "scheduledMs": 144.00000000023283,
+        "arrivedMs": 145.25639999192208,
+        "lateMs": 1.2563999916892499
+      }
+    ],
+    "workerRecords": [
+      {
+        "sequence": 0,
+        "queueWaitMs": 0.311999989207834,
+        "inputToWorkerReturnMs": 0.6952999974600971,
+        "returned16kSamples": 0
+      },
+      {
+        "sequence": 1,
+        "queueWaitMs": 0.3294000052846968,
+        "inputToWorkerReturnMs": 0.7142999966163188,
+        "returned16kSamples": 0
+      },
+      {
+        "sequence": 2,
+        "queueWaitMs": 0.25129999266937375,
+        "inputToWorkerReturnMs": 0.4932000010740012,
+        "returned16kSamples": 0
+      },
+      {
+        "sequence": 3,
+        "queueWaitMs": 0.15300000086426735,
+        "inputToWorkerReturnMs": 100.90910000144504,
+        "returned16kSamples": 832
+      }
+    ],
+    "outputRecords": [],
+    "expectedOutputPackets": 188,
+    "expectedOutputSamples": 1200000,
+    "modeledInitialSinkDelayMs": null,
+    "modeledSignalStartEstimateMs": null,
+    "software350msBudgetMet": false,
+    "pacedWallMs": 415.9936,
+    "pacedProcessCpuMs": 109.375,
+    "beforeProcess": {
+      "pid": 14728,
+      "torchIntraopThreads": 1,
+      "torchInteropThreads": 1,
+      "powerStatus": {
+        "ACLineStatus": 0,
+        "BatteryFlag": 0,
+        "BatteryLifePercent": 62,
+        "SystemStatusFlag": 0,
+        "BatteryLifeTime": 4123,
+        "BatteryFullLifeTime": 4294967295
+      },
+      "threadCount": 8,
+      "priorityClass": "Normal",
+      "processAffinityMask": "FFF"
+    },
+    "afterProcess": {
+      "pid": 14728,
+      "torchIntraopThreads": 1,
+      "torchInteropThreads": 1,
+      "powerStatus": {
+        "ACLineStatus": 0,
+        "BatteryFlag": 0,
+        "BatteryLifePercent": 62,
+        "SystemStatusFlag": 0,
+        "BatteryLifeTime": 4123,
+        "BatteryFullLifeTime": 4294967295
+      },
+      "threadCount": 8,
+      "priorityClass": "Normal",
+      "processAffinityMask": "FFF"
+    },
+    "resetAfterTermination": true,
+    "liveAccepted": false,
+    "pinnedThreads": {
+      "llvc-serial-inference": {
+        "mask": "F",
+        "previousMask": "FFF"
+      }
+    }
+  },
+  "timingTotals": {
+    "forwardCallCount": 1,
+    "expectedNeuralCalls": 577,
+    "countMatches": false,
+    "forwardWallTotalMs": 99.3176,
+    "forwardProcessCpuTotalMs": 109.375,
+    "forwardCpuToWallRatio": 1.1012650325823419,
+    "computeRtf": 0.0033105866666666667,
+    "computeDeadlineMs": 52,
+    "computeDeadlineMisses": 1,
+    "medianMs": 99.3176,
+    "p95Ms": 99.3176,
+    "maxMs": 99.3176,
+    "zeroPerCallCpuReadings": 0,
+    "pacedCpuToWallRatio": 0.2629247180725857
+  },
+  "timingSamples": [
+    {
+      "wallMs": 99.3176,
+      "processCpuMs": 109.375
+    }
+  ],
+  "convertedAudio": {
+    "path": "ops/001-zhil/sprint-001/reports/local/voice/llvc/llvc-paced-combined-combo-split-v1-converted16k.wav",
+    "sha256": "5ccb2b1416c1b599f7793a4d7d9b0c93483139964885af4cafea523d5cc35f43",
+    "rate": 16000,
+    "samples": 832,
+    "complete": false
+  },
+  "publishedAudio": {
+    "path": "ops/001-zhil/sprint-001/reports/local/voice/llvc/llvc-paced-combined-combo-split-v1-published40k.wav",
+    "sha256": "7b87cc5da107379b4a5f4d5f4e231a959ce58c2538595ba985e98aa3d28cebce",
+    "rate": 40000,
+    "samples": 0,
+    "complete": false
+  },
+  "completed": "2026-09-12T14:07:07Z",
+  "errorType": "AssertionError",
+  "error": "Paced pipeline stopped or lost samples; partial WAVs/report retained",
+  "workerExitCode": 1,
+  "timedOut": false
+}

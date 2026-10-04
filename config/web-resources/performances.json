@@ -30,7 +30,7 @@
       "orthoScale": 1.95
     },
     "reference": {
-      "file": "ops/resources/ene.vmd",
+      "file": "ops/001-zhil/sprint-001/resources/ene.vmd",
       "blenderFramesInspected": [
         120,
         180,

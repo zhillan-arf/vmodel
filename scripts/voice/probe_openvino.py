@@ -16,7 +16,7 @@ import time
 
 ROOT = Path(__file__).resolve().parents[2]
 MODEL = ROOT / 'assets/voice/onnx/bright-160ms-v1'
-OUT = ROOT / 'ops/reports/local/voice/openvino'
+OUT = ROOT / 'ops/001-zhil/sprint-001/reports/local/voice/openvino'
 
 
 def sha(path):
@@ -39,7 +39,7 @@ def main():
     if args.device == 'CPU' and args.accuracy:
         parser.error('Accuracy correction is only a GPU probe')
     args.preset = f'{args.device.lower()}-{args.precision}' + ('-accuracy' if args.accuracy else '')
-    report_path = ROOT / f'ops/reports/voice-openvino-{args.preset}.json'
+    report_path = ROOT / f'ops/001-zhil/sprint-001/reports/voice-openvino-{args.preset}.json'
     if not args.worker:
         interpreter = ROOT / '.tools/voice/openvino-venv/Scripts/python.exe'
         local_data = ROOT / '.tools/voice/isolation/openvino-localappdata'
@@ -81,7 +81,7 @@ def worker(args, report_path):
     import openvino as ov
     import soundfile as sf
     manifest = json.loads((MODEL / 'manifest.json').read_text())
-    cpu_evidence = json.loads((ROOT / 'ops/reports/voice-onnx-cpu.json').read_text())
+    cpu_evidence = json.loads((ROOT / 'ops/001-zhil/sprint-001/reports/voice-onnx-cpu.json').read_text())
     if not cpu_evidence['parityPassed'] or cpu_evidence['modelArtifacts'] != manifest['artifacts']:
         raise RuntimeError('Same-model CPU ONNX numerical validation required first')
     for artifact in manifest['artifacts']:

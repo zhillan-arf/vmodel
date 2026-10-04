@@ -125,6 +125,6 @@ for resource in requested:
     if is_desk:
         assert spec['camera']==config['desk-normal']['camera'] and spec['restingWrist']==config['desk-normal']['restingWrist'] and spec['deskGuideZ']==config['desk-normal']['deskGuideZ']
         report['baseline']='config/web-resources/desk-baseline.json';report['performance']=spec.get('performance',{})
-    (ROOT/f'ops/reports/{resource}-authoring.json').write_text(json.dumps(report,ensure_ascii=True,indent=2)+'\n')
+    (ROOT/f'ops/001-zhil/sprint-001/reports/{resource}-authoring.json').write_text(json.dumps(report,ensure_ascii=True,indent=2)+'\n')
     print('WEB_AUTHORED',resource,count,flush=True)
 assert hashlib.sha256(source.read_bytes()).hexdigest()==source_hash

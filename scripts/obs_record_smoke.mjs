@@ -36,7 +36,7 @@ try {
         samples:Object.fromEntries(['face','pose','hands'].map(name=>[name,{timestamp:now,inferenceMs:0,present:name==='face'}]))});
     },33);
   },title);
-  const recordingDir=path.resolve('ops/reports/local/obs/recordings');await mkdir(recordingDir,{recursive:true});
+  const recordingDir=path.resolve('ops/001-zhil/sprint-001/reports/local/obs/recordings');await mkdir(recordingDir,{recursive:true});
   await obs.request('CreateInput',{sceneName:'Ene Landscape',inputName:audioName,inputKind:'ffmpeg_source',inputSettings:{is_local_file:true,local_file:path.resolve('assets/voice/auditions/reference-v1/bright.wav'),looping:true,restart_on_activate:true,close_when_inactive:false},sceneItemEnabled:true});addedAudio=true;
   await obs.request('SetInputAudioMonitorType',{inputName:audioName,monitorType:'OBS_MONITORING_TYPE_NONE'});
   await obs.request('SetInputAudioTracks',{inputName:audioName,inputAudioTracks:{'1':true,'2':false,'3':false,'4':false,'5':false,'6':false}});
@@ -112,5 +112,5 @@ finally {
   if(originalProfile)try{await obs.request('SetCurrentProfile',{profileName:originalProfile});}catch{}
   if(originalScene)try{await obs.request('SetCurrentProgramScene',{sceneName:originalScene});}catch{}
   await browser?.close();obs.close();
-  await writeFile('ops/reports/obs-record-smoke.json',JSON.stringify({date:new Date().toISOString(),input:'Actual Ene with deterministic face animation and the locally converted public-domain English reference WAV. No physical camera/microphone, live voice conversion or public stream.',results,errors},null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/obs-record-smoke.json',JSON.stringify({date:new Date().toISOString(),input:'Actual Ene with deterministic face animation and the locally converted public-domain English reference WAV. No physical camera/microphone, live voice conversion or public stream.',results,errors},null,2));
 }

@@ -2,7 +2,7 @@ import {mkdir,readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 
 export async function captureVisualState(page,group,state){
-  const directory=`ops/reports/local/visual-states/${group}`;
+  const directory=`ops/001-zhil/sprint-001/reports/local/visual-states/${group}`;
   await mkdir(directory,{recursive:true});
   const original=page.viewportSize(),images=[];
   try{

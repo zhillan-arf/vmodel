@@ -161,7 +161,7 @@ try {
   exit = 1;
 } finally {
   if (server) await server.close?.().catch?.(() => {});
-  const file = path.join(ROOT, 'ops/reports', 'capture-occlusion-' + label + '.json');
+  const file = path.join(ROOT, 'ops/001-zhil/sprint-001/reports', 'capture-occlusion-' + label + '.json');
   await mkdir(path.dirname(file), { recursive: true });
   const body = JSON.stringify(report, null, 2);
   await writeFile(file, body, { flag: 'wx' }).catch(async error => {

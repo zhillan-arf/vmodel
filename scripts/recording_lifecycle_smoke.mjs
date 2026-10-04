@@ -42,5 +42,5 @@ try{
   for(const key of ['discardRejected','unsupportedText','visibleRecording','unsupportedTraceUsable','cameraLossStops','hiddenStops'])assert(checks[key],key);
   assert(Object.values(checks.disposed).every(Boolean));assert.deepEqual(errors,[]);
   const report={generatedAt:new Date().toISOString(),browser:browser.version(),checks,errors,limits:['Synthetic observations and a test stream.','No physical camera acceptance.']};
-  await writeFile('ops/reports/recording-lifecycle-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/recording-lifecycle-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await browser?.close();await server.close();}

@@ -21,5 +21,5 @@ try{
       results.push({stiffness,drag,speed,peakDegrees:peak*180/Math.PI,bone});
     }return results;
   });
-  await writeFile('ops/reports/spring-tuning.json',JSON.stringify(results,null,2));console.log(JSON.stringify(results));
+  await writeFile('ops/001-zhil/sprint-001/reports/spring-tuning.json',JSON.stringify(results,null,2));console.log(JSON.stringify(results));
 }finally{await browser.close();}

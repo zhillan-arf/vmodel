@@ -69,4 +69,4 @@ try{
   await page.waitForFunction(()=>document.querySelector('#camera-video').srcObject===null);
   assert.deepEqual(report.errors,[]);assert.deepEqual(report.externalRequests,[]);report.passed=true;
 }catch(error){report.errors.push(String(error));report.passed=false;process.exitCode=1;console.error(error);}
-finally{await browser?.close();await server.close();await writeFile(`ops/reports/combined-studio-${browserName}.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));}
+finally{await browser?.close();await server.close();await writeFile(`ops/001-zhil/sprint-001/reports/combined-studio-${browserName}.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));}

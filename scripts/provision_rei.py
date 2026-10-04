@@ -7,9 +7,9 @@ import struct
 import zipfile
 
 ROOT = Path(__file__).resolve().parent.parent
-archives = list((ROOT / 'ops/resources/REI').glob('*VRM*.zip'))
+archives = list((ROOT / 'ops/001-zhil/sprint-001/resources/REI').glob('*VRM*.zip'))
 if len(archives) != 1:
-    raise SystemExit('Expected one Rei VRM archive in ops/resources/REI.')
+    raise SystemExit('Expected one Rei VRM archive in ops/001-zhil/sprint-001/resources/REI.')
 with zipfile.ZipFile(archives[0]) as archive:
     models = [entry for entry in archive.infolist() if entry.filename.lower().endswith('.vrm')]
     if len(models) != 1:

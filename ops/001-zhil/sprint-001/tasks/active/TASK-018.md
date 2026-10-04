@@ -1,0 +1,48 @@
+# TASK-018: Deliver landscape and portrait recordings with audio
+
+- Status: In progress
+- Priority: P0
+- Goal: G2
+- Depends on: TASK-007, TASK-017
+- Estimate: S-M (0.5-1.5 days)
+- Specification: [Ene VTuber plan](../../specs/ene-vtuber-plan.md)
+
+## Outcome
+
+Prove that the user can produce stream-style footage and short videos.
+
+## Work
+
+- Create landscape and portrait OBS profiles with 30 fps baseline and unclipped avatar framing.
+- Record at least 60 seconds per orientation with speech, blinks, head turns and arm/hand gestures.
+- Use a recoverable recording workflow and produce an MP4 deliverable; check encoder/container compatibility with a local player/editor.
+- Check microphone level, lip/audio alignment and clean output; document cropping and file locations.
+- Keep raw camera footage and produced clips outside code distribution; write docs/recording.md.
+
+## Acceptance criteria
+
+- [ ] A playable 16:9 clip and 9:16 MP4 both show animated avatar and intelligible audio.
+- [ ] Both final recordings use actual Ene; sample clips alone do not close this task or G2.
+- [ ] The user has clear instructions to make another clip without developer tools.
+
+## Implementation notes
+
+Portrait baseline is 720x1280; 1080x1920 is conditional on measured headroom. No social upload is performed.
+
+2026-09-12 checkpoint: [Recording report](../../reports/obs-recording.md) and [structured results](../../reports/obs-record-smoke.json) verify two actual-Ene 10.566-second H.264/AAC recordings, MKV-to-MP4 remux, correct 30 fps dimensions, nonsilent file audio, changing frames and Chrome playback. Both had zero OBS render/encoder skips in this bounded fixture. [Beginner recording guide](../../../../../docs/recording.md) is ready. The required one-minute physical gesture/speech clips, live microphone/converted voice, subjective clarity and lip sync remain unperformed; no final acceptance checkbox is closed by these fixtures.
+
+These recordings establish G2's output baseline. TASK-028 additionally requires portrait/landscape clips with the selected G3 voice, no raw microphone leakage and measured lip sync before the combined handoff.
+
+When completing this task, record changed artifact paths, exact validation commands/results or manual evidence, and any unresolved limitation in the task or its linked report. Leave unperformed checks unchecked.
+
+## Beginner instruction accuracy — 2026-09-13
+
+[audit_docs.mjs](../../../../../scripts/audit_docs.mjs) checks that the guides still describe what is installed, since a broken instruction is discovered by the user mid-recording. [Evidence](../../reports/docs-audit.json).
+
+Across all 12 guides: **every relative link resolves**, **every named launcher exists** (`Attach OBS Landscape.cmd`, `Attach OBS Portrait.cmd`, `Install OBS Camera.cmd`, `Setup VModel.cmd`, `Start OBS.cmd`, `Start VModel.cmd`, `Start Voice Studio.cmd`, `Stop VModel.cmd`, `Stop Voice Studio.cmd`), and every loopback address the guides name is a configured port.
+
+One discrepancy was investigated and proved to be the **auditor's** fault, not the documentation's: port 5180 in the showcase guide looked unknown, but `web-showcase/vite.config.ts` pins exactly `port: 5180, strictPort: true`. The known-port list was incomplete and was corrected.
+
+[docs/recording.md](../../../../../docs/recording.md) now also carries the measured minimize result, because that guide is what someone follows while actually recording: a minimized window produces no frames at all (60 fps normally, 0 while minimized), so the avatar freezes and the recording goes blank until it is restored, while covering it is harmless.
+
+**Boundary:** this verifies that referenced targets exist, not that the instructions are correct or complete. A person following the guide end to end is a separate check it cannot replace, so the criterion stays open.

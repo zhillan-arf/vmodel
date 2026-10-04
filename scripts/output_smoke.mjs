@@ -62,7 +62,7 @@ async function sampleRender(p, seconds = 5) {
   return samples;
 }
 try {
-  await mkdir('ops/reports/local/output', { recursive: true });
+  await mkdir('ops/001-zhil/sprint-001/reports/local/output', { recursive: true });
   await page.goto(base); await ready(page);
   console.log('Ene loaded; starting synthetic camera and saved-state checks.');
   assert.equal(await page.evaluate(() => window.__cameraRequests.length), 0);
@@ -82,7 +82,7 @@ try {
   assert.deepEqual(state.state.calibration, before.calibration); assert(state.happy > .6);
   assert.equal(state.videoCount, 0); assert.equal(state.controls, 0);
   checks.portrait = state;
-  await output.screenshot({ path: 'ops/reports/local/output/portrait.png' });
+  await output.screenshot({ path: 'ops/001-zhil/sprint-001/reports/local/output/portrait.png' });
   await page.locator('#orientation').selectOption('landscape');
   await output.setViewportSize({ width: 1280, height: 720 });
   await output.waitForFunction(() => document.querySelector('canvas').width === 1280);
@@ -90,7 +90,7 @@ try {
   assert(Math.abs(state.cssWidth / state.cssHeight - 16 / 9) < .001);
   checks.landscape = state;
   console.log('Landscape and portrait geometry/state passed; checking reconnect and restart.');
-  await output.screenshot({ path: 'ops/reports/local/output/landscape.png' });
+  await output.screenshot({ path: 'ops/001-zhil/sprint-001/reports/local/output/landscape.png' });
   await output.setViewportSize({ width: 850, height: 900 }); await output.waitForTimeout(250);
   const resized = await canvasState(output);
   assert.equal(resized.width, 1280); assert(Math.abs(resized.cssWidth / resized.cssHeight - 16 / 9) < .001);
@@ -140,7 +140,7 @@ try {
 } catch (error) {
   checks.failure = String(error); console.error(error); process.exitCode = 1;
 } finally {
-  await writeFile('ops/reports/output-smoke.json', JSON.stringify({ date: new Date().toISOString(), base,
+  await writeFile('ops/001-zhil/sprint-001/reports/output-smoke.json', JSON.stringify({ date: new Date().toISOString(), base,
     input: 'Synthetic camera plus injected tracking frames; production build and actual Ene VRM. Render samples are headless observations under concurrent local work, not real gesture/OBS performance acceptance.',
     checks, measurements, errors }, null, 2));
   console.log(JSON.stringify({ checks, measurements: Object.fromEntries(Object.entries(measurements).map(([key, value]) => [key, value.map(v => Math.round(v.fps))])), errors }));

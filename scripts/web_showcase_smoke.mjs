@@ -10,7 +10,7 @@ assert.ok(['chrome', 'edge', 'firefox', 'webkit'].includes(engine));
 const suffix = `${draft ? 'draft-' : ''}${engine === 'chrome' ? '' : `${engine}-`}`;
 const base = process.env.ENE_WEB_TEST_URL ?? 'http://127.0.0.1:5180';
 const report = { draft, engine, base, startedAt: new Date().toISOString(), cases: [], externalRequests: [], pageErrors: [], testsPhysicalDevices: false, finalFamilies: [] };
-const local = path.join(root, 'ops/reports/local/web-showcase'); await fs.mkdir(local, { recursive: true });
+const local = path.join(root, 'ops/001-zhil/sprint-001/reports/local/web-showcase'); await fs.mkdir(local, { recursive: true });
 const ids = ['home-greeting', 'desk-normal', 'desk-confused', 'desk-surprised', 'desk-excited'];
 const bodies = new Map();
 let draftManifest;
@@ -19,7 +19,7 @@ if (draft) {
   const asset = async (id, size, type) => {
     const poster = type.startsWith('poster');
     const extension = poster ? 'png' : type;
-    const file = path.join(root, `ops/reports/local/web-resources/${id}/${poster ? 'poster.png' : `${id}-preview.${type}`}`);
+    const file = path.join(root, `ops/001-zhil/sprint-001/reports/local/web-resources/${id}/${poster ? 'poster.png' : `${id}-preview.${type}`}`);
     const data = await fs.readFile(file);
     const url = `${id}/${size}${poster ? '-poster' : ''}.${type === 'poster-webp' ? 'webp' : extension}`;
     const mime = poster ? 'image/png' : type === 'webm' ? 'video/webm' : 'image/webp';
@@ -209,6 +209,6 @@ try {
 } catch (error) { report.pass = false; report.error = String(error); throw error; }
 finally {
   await browser.close(); report.finishedAt = new Date().toISOString();
-  await fs.writeFile(path.join(root, `ops/reports/web-showcase-${suffix}smoke.json`), JSON.stringify(report, null, 2) + '\n');
+  await fs.writeFile(path.join(root, `ops/001-zhil/sprint-001/reports/web-showcase-${suffix}smoke.json`), JSON.stringify(report, null, 2) + '\n');
   console.log(JSON.stringify(report, null, 2));
 }

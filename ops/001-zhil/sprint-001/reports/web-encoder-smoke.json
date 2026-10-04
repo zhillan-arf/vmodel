@@ -1,0 +1,22 @@
+[
+  {
+    "file": "ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\tool-smoke.webm",
+    "bytes": 32861,
+    "sha256": "94b48a4c12991028e917f7b9a127cf2319ffdb3f20585a08b3ad9f05365613ef",
+    "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -y -framerate 24 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\spike\\frames\\frame-%04d.png -frames:v 12 -vf scale=480:480 -an -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 34 -auto-alt-ref 0 -threads 2 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\tool-smoke.webm",
+    "seconds": 3.3165392000228167,
+    "alphaZero": 172844,
+    "alphaOpaque": 48637,
+    "alphaPartial": 8919
+  },
+  {
+    "file": "ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\tool-smoke.webp",
+    "bytes": 205710,
+    "sha256": "59c216a2b82cc69cf8f4240d803a71cda1dd5dd431e99ac9b7bd69a5cb7108f7",
+    "command": "C:\\Users\\ASUS\\Documents\\vmodel\\.tools\\web\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe -hide_banner -loglevel error -y -framerate 24 -i C:\\Users\\ASUS\\Documents\\vmodel\\assets\\work\\ene-web\\spike\\frames\\frame-%04d.png -frames:v 12 -vf scale=480:480 -an -c:v libwebp_anim -pix_fmt yuva420p -quality 80 -loop 0 C:\\Users\\ASUS\\Documents\\vmodel\\ops\\001-zhil\\sprint-001\\reports\\local\\web-resource-spike\\tool-smoke.webp",
+    "seconds": 1.6198948999808636,
+    "alphaZero": 174998,
+    "alphaOpaque": 50471,
+    "alphaPartial": 4931
+  }
+]

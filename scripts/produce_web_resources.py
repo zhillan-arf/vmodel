@@ -9,10 +9,10 @@ selected = sys.argv[1:] or list(IDS)
 if any(resource not in IDS for resource in selected):
     raise ValueError('Expected one or more known resource IDs')
 blender = read_json(ROOT / 'config/web-resources/toolchain.json')['blender']['executable']
-log_folder = ROOT / 'ops/reports/local/web-production-logs'
+log_folder = ROOT / 'ops/001-zhil/sprint-001/reports/local/web-production-logs'
 log_folder.mkdir(parents=True, exist_ok=True)
 progress = {'state': 'running', 'selected': selected, 'completed': [], 'startedUtc': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
-report = ROOT / 'ops/reports/web-production-batch.json'
+report = ROOT / 'ops/001-zhil/sprint-001/reports/web-production-batch.json'
 write_json(report, progress)
 for resource in selected:
     for stage, command in [('render', [blender, '-b', '--python-exit-code', '1', '--python', str(ROOT / 'scripts/render_web_masters.py'), '--', resource]),

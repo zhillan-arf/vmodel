@@ -1,6 +1,6 @@
 # VModel quickstart
 
-The local studio includes Ene Cyber legs and Rei. Existing OBS scenes keep their Ene names and capture either selected model. Live movement quality and final recordings are still being tested. The [acceptance report](../ops/reports/acceptance.md) records completed components and remaining checks.
+The local studio includes Ene Cyber legs and Rei. Existing OBS scenes keep their Ene names and capture either selected model. Live movement quality and final recordings are still being tested. The [acceptance report](../ops/001-zhil/sprint-001/reports/acceptance.md) records completed components and remaining checks.
 
 ## Open your studio
 
@@ -45,9 +45,9 @@ OBS is installed locally. **Start OBS.cmd** opens its prepared scenes; **Attach 
 - **Tracking stopped:** stop/start the camera and report the message beneath the stage. A saved compatible calibration returns automatically; recenter if your position changed.
 - **Port in use:** close the conflicting program using port 4173; the launcher will not terminate unrelated programs.
 
-Your source model remains in `ops/resources/ENE/`. The editable imported source is `assets/work/ene/source.blend`; the export working scene is `assets/work/ene/vrm-work.blend`. Keep the model package and generated avatar local, with its original attribution/readmes.
+Your source model remains in `ops/001-zhil/sprint-001/resources/ENE/`. The editable imported source is `assets/work/ene/source.blend`; the export working scene is `assets/work/ene/vrm-work.blend`. Keep the model package and generated avatar local, with its original attribution/readmes.
 
-The [conversion recipe](avatar-conversion.md) documents the validated avatar and how to regenerate it. The [avatar report](../ops/reports/ene-avatar-validation.md) covers the rig, expressions, texture checks and spring tests. Use the [recording guide](recording.md) and [movement check](live-check.md) for the next steps. The complete live performance/recording acceptance is still in progress.
+The [conversion recipe](avatar-conversion.md) documents the validated avatar and how to regenerate it. The [avatar report](../ops/001-zhil/sprint-001/reports/ene-avatar-validation.md) covers the rig, expressions, texture checks and spring tests. Use the [recording guide](recording.md) and [movement check](live-check.md) for the next steps. The complete live performance/recording acceptance is still in progress.
 
 ## Optional character voice
 

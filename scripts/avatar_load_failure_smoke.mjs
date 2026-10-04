@@ -93,7 +93,7 @@ try {
 } finally {
   if (browser) await browser.close().catch(() => {});
   if (server) await server.stop().catch(() => {});
-  const file = path.join(ROOT, 'ops/reports', process.argv.includes('--chromium') ? 'avatar-load-failure-chromium.json' : 'avatar-load-failure-smoke.json');
+  const file = path.join(ROOT, 'ops/001-zhil/sprint-001/reports', process.argv.includes('--chromium') ? 'avatar-load-failure-chromium.json' : 'avatar-load-failure-smoke.json');
   await mkdir(path.dirname(file), { recursive: true });
   await writeFile(file, JSON.stringify(report, null, 2));
   console.log(JSON.stringify({ report: path.relative(ROOT, file), status: report.status, checks: report.checks ?? null }, null, 2));

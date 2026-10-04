@@ -41,14 +41,14 @@ try{
   await page.locator('#stop').click();
   const other=await context.newPage();await other.goto(base);await other.waitForFunction(()=>document.querySelector('#message').textContent.includes('Another Voice Studio window'));await other.close();
   await page.locator('#reset').click();await page.waitForFunction(()=>document.querySelector('#context').value==='1600');
-  await page.screenshot({path:path.join(root,'ops/reports/local/voice/studio-desktop.png'),fullPage:true});
+  await page.screenshot({path:path.join(root,'ops/001-zhil/sprint-001/reports/local/voice/studio-desktop.png'),fullPage:true});
   await page.setViewportSize({width:390,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
-  await page.screenshot({path:path.join(root,'ops/reports/local/voice/studio-mobile.png'),fullPage:true});
+  await page.screenshot({path:path.join(root,'ops/001-zhil/sprint-001/reports/local/voice/studio-mobile.png'),fullPage:true});
   await page.close();await output.waitForFunction(()=>!window.voiceOutput.allow);
   await output.evaluate(()=>window.voiceOutput.close());await output.close();
   assert.equal(microphoneRequests,0);assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
   const report={date:new Date().toISOString(),passed:true,compared,saveRestoreReset:true,monitoringIndependentOfOutput:true,secondControlWindowRejected:true,stopAndControllerLossMute:true,outputSampleRate:40000,mobileOverflow:false,physicalMicrophoneRequests:microphoneRequests,externalRequests:external,browserErrors:errors,privateProductionProfilesModified:false,boundary:'Converted reference UI and Web Audio receiver only. No live inference, subjective listening, physical latency or OBS acceptance.'};
-  await fs.writeFile(path.join(root,'ops/reports/voice-studio-ui-smoke.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+  await fs.writeFile(path.join(root,'ops/001-zhil/sprint-001/reports/voice-studio-ui-smoke.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
 }finally{
   await browser?.close();
   try{const route=JSON.parse(await fs.readFile(path.join(cache,'route.json'),'utf8'));await fetch(base+'/api/shutdown',{method:'POST',headers:{Origin:base,'Content-Type':'application/json'},body:JSON.stringify({adminKey:route.adminKey})});}catch{}

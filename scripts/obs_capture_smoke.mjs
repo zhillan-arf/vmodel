@@ -26,7 +26,7 @@ try {
  await page.waitForFunction(()=>!!window.__vmodel,undefined,{timeout:90000});
  await page.locator('#clean').click();
  const title='VModel Output Capture Check '+Date.now();await page.evaluate(title=>{document.title=title;},title);
- await mkdir('ops/reports/local/obs',{recursive:true});
+ await mkdir('ops/001-zhil/sprint-001/reports/local/obs',{recursive:true});
  for(const orientation of ['Landscape','Portrait']) {
   const sourceName='Ene '+orientation+' Window',sceneName='Ene '+orientation;
   await obs.request('SetCurrentProfile',{profileName:sceneName});await obs.request('SetCurrentProgramScene',{sceneName});
@@ -60,9 +60,9 @@ try {
   const metrics=await page.evaluate(()=>{const r=document.querySelector('canvas').getBoundingClientRect();return{innerWidth,innerHeight,canvas:{left:r.left,top:r.top,width:r.width,height:r.height},dpr:devicePixelRatio};});
   const crop=attachment.crop;
   await pause(1000);
-  const first=await screenshot(sceneName,`ops/reports/local/obs/${orientation.toLowerCase()}-a.png`);
+  const first=await screenshot(sceneName,`ops/001-zhil/sprint-001/reports/local/obs/${orientation.toLowerCase()}-a.png`);
   await page.evaluate(()=>{window.__poseYaw=-.35;});await pause(1000);
-  const second=await screenshot(sceneName,`ops/reports/local/obs/${orientation.toLowerCase()}-b.png`);
+  const second=await screenshot(sceneName,`ops/001-zhil/sprint-001/reports/local/obs/${orientation.toLowerCase()}-b.png`);
   assert.notEqual(first,second);
   assert.equal(await page.evaluate(()=>window.__cameraRequests),0);
   const result={orientation,video:await obs.request('GetVideoSettings'),source:{width:transform.sourceWidth,height:transform.sourceHeight},metrics,crop,changed:first!==second,
@@ -76,6 +76,6 @@ finally {
  for(const orientation of ['Landscape','Portrait']) {
   try {const sceneName='Ene '+orientation;const {sceneItemId}=await obs.request('GetSceneItemId',{sceneName,sourceName:sceneName+' Window'});await obs.request('SetSceneItemEnabled',{sceneName,sceneItemId,sceneItemEnabled:false});}catch{}
  }
- await writeFile('ops/reports/obs-capture-smoke.json',JSON.stringify({date:new Date().toISOString(),input:'Visible owned Chrome window with actual Ene and deterministic face frames. No physical camera/microphone or recording/stream was started.',results,errors},null,2));
+ await writeFile('ops/001-zhil/sprint-001/reports/obs-capture-smoke.json',JSON.stringify({date:new Date().toISOString(),input:'Visible owned Chrome window with actual Ene and deterministic face frames. No physical camera/microphone or recording/stream was started.',results,errors},null,2));
  await browser?.close();obs.close();
 }

@@ -35,11 +35,11 @@ The [prepared Ene avatar](assets/avatars/ene.vrm), [editable scene](assets/work/
 
 ## Status
 
-Design proposals: [VRM library and registration](ops/research/vrm-library-and-registration.md) and [tracking diagnosis and model-independent visualization](ops/research/tracking-diagnostics-and-improvement.md). The [action plan](ops/specs/studio-evolution-plan.md), [design decisions](ops/specs/studio-design-decisions.md), and [product specification](ops/specs/studio-product-spec.md) define the proposed implementation. The current app supports bundled selection and temporary VRM loading.
+Design proposals: [VRM library and registration](ops/001-zhil/sprint-001/research/vrm-library-and-registration.md) and [tracking diagnosis and model-independent visualization](ops/001-zhil/sprint-001/research/tracking-diagnostics-and-improvement.md). The [action plan](ops/001-zhil/sprint-001/specs/studio-evolution-plan.md), [design decisions](ops/001-zhil/sprint-001/specs/studio-design-decisions.md), and [product specification](ops/001-zhil/sprint-001/specs/studio-product-spec.md) define the proposed implementation. The current app supports bundled selection and temporary VRM loading.
 
 Implementation is in progress: 22 of 60 tasks are complete. The 22 new library and tracking tasks have not started. Physical camera and gesture acceptance, a suitable live voice backend, Virtual Camera registration and final recordings remain open, and the local voice converter does not yet meet its timing gates under ordinary desktop load.
 
-**[TASK-P01](ops/tasks/active/TASK-P01.md)** owns the current checkpoint and links all work; the [task register](ops/tasks/backlog/README.md) covers active and archived tasks. Component tests and short fixture recordings are documented there and do not imply live acceptance.
+**[TASK-P01](ops/001-zhil/sprint-001/tasks/active/TASK-P01.md)** owns the current checkpoint and links all work; the [task register](ops/001-zhil/sprint-001/tasks/backlog/README.md) covers active and archived tasks. Component tests and short fixture recordings are documented there and do not imply live acceptance.
 
 `npm run verify` runs the automated checks that need no device or person, including switching between both models, and prints what it deliberately does not cover.
 
@@ -48,4 +48,4 @@ Implementation is in progress: 22 of 60 tasks are complete. The 22 new library a
 The studio includes Library and Tracking views.
 Use the [model library guide](docs/model-library.md) for import, selection, backup, and recovery.
 Use the [Tracking Inspector guide](docs/tracking-inspector.md) for observations, traces, and replay.
-The [implementation evidence](ops/reports/studio-implementation.md) records automated checks and open acceptance work.
+The [implementation evidence](ops/001-zhil/sprint-001/reports/studio-implementation.md) records automated checks and open acceptance work.

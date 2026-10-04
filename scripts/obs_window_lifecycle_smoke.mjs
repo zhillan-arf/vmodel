@@ -10,7 +10,7 @@ import assert from 'node:assert/strict';
 
 if (!process.argv.includes('--quiet-window')) throw new Error('Coordinate a quiet benchmark window, then run with --quiet-window.');
 const run = promisify(execFile), pause = ms => new Promise(resolve => setTimeout(resolve, ms));
-const directory = 'ops/reports/local/obs-window-lifecycle';
+const directory = 'ops/001-zhil/sprint-001/reports/local/obs-window-lifecycle';
 const token = randomUUID(), title = `VModel Output Lifecycle ${token}`;
 const sceneName = 'Ene Landscape', inputName = `${sceneName} Window`;
 const report = { date: new Date().toISOString(), input: 'Owned native-viewport Chrome windows; actual Ene with deterministic face frames plus synthetic magenta content. No physical camera, microphone, recording, virtual camera or stream.', title, snapshots: [], checks: {}, errors: [] };
@@ -247,6 +247,6 @@ finally {
     obs.close();
   }
   await browser?.close();
-  await mkdir('ops/reports', { recursive: true });
-  await writeFile('ops/reports/obs-window-lifecycle.json', JSON.stringify(report, null, 2) + '\n');
+  await mkdir('ops/001-zhil/sprint-001/reports', { recursive: true });
+  await writeFile('ops/001-zhil/sprint-001/reports/obs-window-lifecycle.json', JSON.stringify(report, null, 2) + '\n');
 }

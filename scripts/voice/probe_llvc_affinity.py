@@ -38,8 +38,8 @@ CALLS = 200
 
 def paths(label):
     name = 'llvc-affinity-' + label
-    folder = ROOT / 'ops/reports/local/voice/llvc'
-    return {'report': ROOT / 'ops/reports' / (name + '.json'), 'log': folder / (name + '.log')}
+    folder = ROOT / 'ops/001-zhil/sprint-001/reports/local/voice/llvc'
+    return {'report': ROOT / 'ops/001-zhil/sprint-001/reports' / (name + '.json'), 'log': folder / (name + '.log')}
 
 
 def core_frequencies():

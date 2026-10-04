@@ -122,7 +122,7 @@ try {
 } finally {
   if (browser) await browser.close().catch(() => {});
   if (server) await server.close?.().catch?.(() => {});
-  const file = path.join(ROOT, 'ops/reports', 'camera-denial-smoke.json');
+  const file = path.join(ROOT, 'ops/001-zhil/sprint-001/reports', 'camera-denial-smoke.json');
   await mkdir(path.dirname(file), { recursive: true });
   await writeFile(file, JSON.stringify(report, null, 2));
   console.log(JSON.stringify({ report: path.relative(ROOT, file), status: report.status, summary: report.summary ?? null }, null, 2));

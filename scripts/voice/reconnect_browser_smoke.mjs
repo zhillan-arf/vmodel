@@ -110,7 +110,7 @@ try {
   }
   assert.deepEqual(errors,[]);assert.deepEqual(external,[]);assert.deepEqual(producerRequests,[]);
   const report={date:new Date().toISOString(),passed:true,receivers:evidence,physicalMicrophoneRequests:0,nativeAudioContextsOpened:0,producerActivated:false,OBSContacted:false,monitoringOrRecordingStarted:false,browserErrors:errors,externalRequests:external,boundary:'Real local WebSockets and an owned service restart, with mocked Web Audio. No physical media, neural inference, audio playback/quality or live latency acceptance.'};
-  await fs.writeFile(path.join(root,'ops/reports/voice-reconnect-browser.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+  await fs.writeFile(path.join(root,'ops/001-zhil/sprint-001/reports/voice-reconnect-browser.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
 } finally {
   await browser?.close();await stopServer();
   for(const child of processes)if(!exited(child)){child.kill();await waitForExit(child,2000);}

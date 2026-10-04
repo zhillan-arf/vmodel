@@ -6,7 +6,7 @@ Codex has provisioned the tools and performed this conversion. Everyday use star
 
 ## Reproduce from the supplied package
 
-Run from the repository root in PowerShell. The tested installed Blender is 5.1.1; the isolated add-ons are MMD Tools 4.5.14 and VRM Add-on 4.7.1. Exact download hashes and runtime versions are in the [toolchain report](../ops/reports/toolchain.md).
+Run from the repository root in PowerShell. The tested installed Blender is 5.1.1; the isolated add-ons are MMD Tools 4.5.14 and VRM Add-on 4.7.1. Exact download hashes and runtime versions are in the [toolchain report](../ops/001-zhil/sprint-001/reports/toolchain.md).
 
 ```powershell
 python scripts/provision_tools.py
@@ -21,8 +21,8 @@ The scripts enable isolated add-ons for that Blender process without changing sa
 
 ## Deliberate conversion decisions
 
-- Required variant: `ops/resources/ENE/ENE Cyber legs ver.pmx`, original SHA-256 `226fe9075f25c7dd2e6474fdd6acb77ff71c45900fb2d5c8794e08647aa9dbe4`.
-- Import scale is 0.08. The imported armature is Z-up in Blender; glTF/VRM is Y-up. The runtime uses three-vrm's normalized humanoid bones. Original rest matrices, head/tail locations and all 53 assignments are recorded in [export preparation](../ops/reports/ene-export-preparation.json) and the [avatar profile](../config/avatars/ene.json).
+- Required variant: `ops/001-zhil/sprint-001/resources/ENE/ENE Cyber legs ver.pmx`, original SHA-256 `226fe9075f25c7dd2e6474fdd6acb77ff71c45900fb2d5c8794e08647aa9dbe4`.
+- Import scale is 0.08. The imported armature is Z-up in Blender; glTF/VRM is Y-up. The runtime uses three-vrm's normalized humanoid bones. Original rest matrices, head/tail locations and all 53 assignments are recorded in [export preparation](../ops/001-zhil/sprint-001/reports/ene-export-preparation.json) and the [avatar profile](../config/avatars/ene.json).
 - The export scene uses an FK humanoid hierarchy. MMD IK/copy-transform constraints are removed there; they remain in the imported source. The D leg deform bones are reparented to their corresponding FK leg bones. Weighted twist, hair, skirt, eyebrow and headphone bones remain attached to the relevant humanoid ancestors. MMD-specific SDEF data keys are excluded from facial export.
 - One source triangle repeats vertex 21535. Blender validation removes that degenerate triangle and its edge in the export scene. All 63,278 vertex indices and facial shape arrays remain intact; the export has 112,948 triangles. The source PMX and imported scene are preserved.
 - Two unavailable additive sphere maps are disconnected, retaining the available diffuse textures. MToon materials classify actual texture alpha as opaque, mask or blend; fractional cyber-leg transparency is preserved. The blue cheek markings and fading leg ends belong to the source design.
@@ -52,4 +52,4 @@ node scripts/validate_avatar.mjs
 
 With the studio server running on port 4173, `node scripts/pose_sweep.mjs` produces reproducible body/face images; `node scripts/spring_smoke.mjs` checks abrupt motion, pause/resume and all spring modes. Reimport with `scripts/render_views.py -- vrm` in Blender for an independent viewer check. Review the actual images as well as the JSON checks; a finite bone transform alone does not prove attractive deformation.
 
-Keep character assets private and preserve the bundled readmes and contributor credits. The user's existing conversion permission is recorded in the [asset audit](../ops/reports/asset-audit.md); the model is not relicensed as open-source software. Derived assets, local review images and recordings are excluded from code distribution by default.
+Keep character assets private and preserve the bundled readmes and contributor credits. The user's existing conversion permission is recorded in the [asset audit](../ops/001-zhil/sprint-001/reports/asset-audit.md); the model is not relicensed as open-source software. Derived assets, local review images and recordings are excluded from code distribution by default.

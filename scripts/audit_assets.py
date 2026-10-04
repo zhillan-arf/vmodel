@@ -24,7 +24,7 @@ def audit():
     setup()
     from mmd_tools.core import pmx
     results = []
-    for path in sorted((ROOT / 'ops/resources/ENE').glob('*.pmx')):
+    for path in sorted((ROOT / 'ops/001-zhil/sprint-001/resources/ENE').glob('*.pmx')):
         model = pmx.load(str(path))
         textures = [dict(index=i, path=Path(t.path).relative_to(ROOT).as_posix(), exists=Path(t.path).exists()) for i,t in enumerate(model.textures)]
         missing = []
@@ -43,7 +43,7 @@ def audit():
                     duplicateMorphNames=[n for n,c in Counter(m.name for m in model.morphs).items() if c>1])
         results.append(data)
         print('AUDIT', path.name, 'bones',len(model.bones),'morphs',len(model.morphs),'rigids',len(model.rigids),'joints',len(model.joints),flush=True)
-    report = ROOT / 'ops/reports/asset-inventory.json'
+    report = ROOT / 'ops/001-zhil/sprint-001/reports/asset-inventory.json'
     report.parent.mkdir(parents=True, exist_ok=True)
     # JSON has no NaN: emitting it produced the one report a strict parser
     # rejected. An undefined measurement is written as null instead.

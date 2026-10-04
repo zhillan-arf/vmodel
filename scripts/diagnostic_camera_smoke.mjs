@@ -56,7 +56,7 @@ try {
   assert.notEqual(first,result.second);assert(result.diagnosticsOff&&result.released);
   assert(result.diagnostics.every(item=>item.sessionId===first&&item.matches&&item.receivedAtMs>=item.captureTimeMs));
   assert.equal(result.images,result.closed);assert.deepEqual(errors,[]);assert.deepEqual(externalRequests,[]);
-  await writeFile('ops/reports/diagnostic-camera-smoke.json',JSON.stringify({generatedAt:new Date().toISOString(),browser:browser.version(),
+  await writeFile('ops/001-zhil/sprint-001/reports/diagnostic-camera-smoke.json',JSON.stringify({generatedAt:new Date().toISOString(),browser:browser.version(),
     input:'Chromium fake camera; installed tracking worker and models.',durationMs:70000,stopped,
     ...result,errors,externalRequests,platform:process.platform,browserChannel:process.env.VMODEL_BROWSER??'chromium',limits:['No physical camera or gesture test. Performance acceptance requires separate measurements.']},null,2)+'\n');
   console.log(JSON.stringify({frames:result.frames,images:result.images,restart:true,diagnosticsOff:result.diagnosticsOff,released:result.released}));

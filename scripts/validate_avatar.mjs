@@ -36,6 +36,6 @@ if(gltf.buffers?.some(buffer=>buffer.uri))failures.push('External buffer depende
 const result={file:'assets/avatars/ene.vrm',sha256:createHash('sha256').update(bytes).digest('hex'),bytes:bytes.length,requiredBoneCount:required.length,mappedBoneCount:assigned.length,hierarchyChecked:hierarchy,
   boundExpressions,
   springs:gltf.extensions?.VRMC_springBone?.springs?.length??0,failures,gltfValidation:report};
-await writeFile('ops/reports/vrm-validation.json',JSON.stringify(result,null,2));
+await writeFile('ops/001-zhil/sprint-001/reports/vrm-validation.json',JSON.stringify(result,null,2));
 console.log(JSON.stringify({bytes:result.bytes,failures,springs:result.springs,errors:report.issues.numErrors,warnings:report.issues.numWarnings,firstIssues:report.issues.messages.slice(0,8)}));
 if(failures.length||report.issues.numErrors)process.exitCode=1;

@@ -131,7 +131,7 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href) {
   const obs=await connectOBS();
   try {
     const report=await configure(obs,route,{attach:args.includes('--attach'),natural});
-    await fs.writeFile(new URL('../../ops/reports/'+(natural?'voice-obs-natural-setup.json':'voice-obs-setup.json'),import.meta.url),JSON.stringify(report,null,2));
+    await fs.writeFile(new URL('../../ops/001-zhil/sprint-001/reports/'+(natural?'voice-obs-natural-setup.json':'voice-obs-setup.json'),import.meta.url),JSON.stringify(report,null,2));
     console.log(JSON.stringify(report,null,2));
   }finally{obs.close();}
 }

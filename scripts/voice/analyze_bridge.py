@@ -7,7 +7,7 @@ import soundfile as sf
 from scipy.signal import correlate,fftconvolve
 ROOT=Path(__file__).resolve().parents[2]
 if __name__=='__main__':
-    path=ROOT/'ops/reports/voice-obs-bridge-smoke.json';report=json.loads(path.read_text())
+    path=ROOT/'ops/001-zhil/sprint-001/reports/voice-obs-bridge-smoke.json';report=json.loads(path.read_text())
     if not report['passed']:raise RuntimeError('Recording did not finish')
     recorded,rate=sf.read(ROOT/report['wav'],dtype='float64');reference,reference_rate=sf.read(ROOT/'assets/voice/auditions/reference-v1/bright.wav',dtype='float64')
     assert rate==reference_rate==40000 and recorded.ndim==reference.ndim==1

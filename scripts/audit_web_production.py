@@ -13,7 +13,7 @@ desk_anchor = manifest['resources']['desk-normal']['anchor']
 for resource in IDS:
     recipe = plan(resource)
     item = manifest['resources'][resource]
-    report = read_json(ROOT / f'ops/reports/{resource}-production.json')
+    report = read_json(ROOT / f'ops/001-zhil/sprint-001/reports/{resource}-production.json')
     if report['state'] != 'complete' or report['buildKey'] != recipe['buildKey'] or report['publicResource'] != item:
         raise RuntimeError(f'{resource}: stale public/private resource evidence')
     if item['fps'] != 24 or item['frameCount'] != recipe['frameCount'] or item['durationSeconds'] != recipe['durationSeconds'] or not item['loop']:
@@ -54,7 +54,7 @@ if actual_files != expected_files:
 large_webm_bytes = sum(item['renditions']['large']['webm']['bytes'] for item in manifest['resources'].values())
 if large_webm_bytes > 9 * 1048576:
     raise RuntimeError('Combined large WebM byte target failure')
-originals = read_json(ROOT / 'ops/reports/web-performance-baselines.json')['preservedSources']
+originals = read_json(ROOT / 'ops/001-zhil/sprint-001/reports/web-performance-baselines.json')['preservedSources']
 preserved = {}
 for path, evidence in originals.items():
     actual_sha = sha(ROOT / path)
@@ -68,5 +68,5 @@ report = {'passed': True, 'logicalResources': list(IDS), 'familyFiles': len(reco
           'originalPmxVmdHashesUnchanged': True, 'acceptedG1BlendVrmHashesUnchanged': True,
           'preservedSourceHashes': preserved, 'privateSourcesExcluded': True, 'files': records,
           'scope': 'Actual hashes and all-frame decoder evidence; browser visual/lifecycle and real-device coverage are separate.'}
-write_json(ROOT / 'ops/reports/web-production-audit.json', report)
+write_json(ROOT / 'ops/001-zhil/sprint-001/reports/web-production-audit.json', report)
 print(json.dumps({key: value for key, value in report.items() if key != 'files'}, indent=2))

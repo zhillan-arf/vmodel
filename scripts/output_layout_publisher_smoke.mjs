@@ -57,6 +57,6 @@ try {
 finally {
   await context?.close(); await browser?.close(); await new Promise(resolve => server.close(resolve));
   report.finishedAt = new Date().toISOString(); report.ownedCleanup = true;
-  await writeFile('ops/reports/output-layout-publisher-smoke.json', JSON.stringify(report, null, 2) + '\n');
+  await writeFile('ops/001-zhil/sprint-001/reports/output-layout-publisher-smoke.json', JSON.stringify(report, null, 2) + '\n');
   console.log(JSON.stringify(report));
 }

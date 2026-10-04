@@ -148,7 +148,7 @@ try {
 } finally {
   if (browser) browser.kill();
   server.close();
-  const file = path.join(ROOT, 'ops/reports', 'capture-raf-minimize-' + label + '.json');
+  const file = path.join(ROOT, 'ops/001-zhil/sprint-001/reports', 'capture-raf-minimize-' + label + '.json');
   await mkdir(path.dirname(file), { recursive: true });
   await writeFile(file, JSON.stringify(report, null, 2), { flag: 'wx' }).catch(error => {
     if (error.code !== 'EEXIST') throw error;

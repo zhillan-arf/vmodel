@@ -25,8 +25,8 @@ from probe_llvc_affinity import apply_affinity,pin_current_thread,timer_resoluti
 
 def paths(label):
     name='llvc-paced-'+label
-    folder=ROOT/'ops/reports/local/voice/llvc'
-    return {'report':ROOT/'ops/reports'/(name+'.json'),'log':folder/(name+'.log'),
+    folder=ROOT/'ops/001-zhil/sprint-001/reports/local/voice/llvc'
+    return {'report':ROOT/'ops/001-zhil/sprint-001/reports'/(name+'.json'),'log':folder/(name+'.log'),
             'input':folder/(name+'-input16k.wav'),'converted':folder/(name+'-converted16k.wav'),
             'published':folder/(name+'-published40k.wav'),'reference':folder/(name+'-upstream16k.wav')}
 

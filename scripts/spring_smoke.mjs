@@ -33,6 +33,6 @@ try{
   }
   const passed=results.every(r=>r.finite&&r.maxDistance<4)&&results[0].activeJoints>0&&results[2].activeJoints===0&&results[3].activeJoints===results[0].activeJoints;
   const report={date:new Date().toISOString(),input:'Direct animated head/root transforms, with a 10-second resume delta',passed,results,errors};
-  await writeFile('ops/reports/spring-smoke.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));
+  await writeFile('ops/001-zhil/sprint-001/reports/spring-smoke.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));
   if(!passed||errors.length)process.exitCode=1;
 }finally{await browser.close();}

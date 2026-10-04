@@ -28,7 +28,7 @@ encoders = subprocess.check_output([str(binary), '-hide_banner', '-encoders'], t
 for name in ['libvpx-vp9', 'libwebp_anim']:
     if name not in encoders:
         raise RuntimeError(f'Required encoder absent: {name}')
-report = ROOT/'ops/reports/web-encoder-build.txt'
+report = ROOT/'ops/001-zhil/sprint-001/reports/web-encoder-build.txt'
 report.write_text(version+'\n'+encoders, encoding='utf-8')
 notices=destination/'notices';notices.mkdir(exist_ok=True)
 for notice in config.get('notices',[]):

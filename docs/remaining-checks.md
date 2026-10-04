@@ -1,6 +1,6 @@
 ﻿# Remaining human checks
 
-[TASK-061](../ops/tasks/backlog/TASK-061.md) collects the tests that need a person.
+[TASK-061](../ops/001-zhil/sprint-001/tasks/backlog/TASK-061.md) collects the tests that need a person.
 The original tasks retain their acceptance requirements.
 Automated test results do not establish physical or human acceptance.
 
@@ -13,8 +13,8 @@ Automated test results do not establish physical or human acceptance.
 5. Follow the [model library guide](model-library.md) through backup and restore in a new profile.
 6. Record findings in TASK-061.
 
-The [library report](../ops/reports/library-acceptance.md) identifies the required library states.
-The [inspector report](../ops/reports/tracking-inspector-acceptance.md) identifies the nine tracking states.
+The [library report](../ops/001-zhil/sprint-001/reports/library-acceptance.md) identifies the required library states.
+The [inspector report](../ops/001-zhil/sprint-001/reports/tracking-inspector-acceptance.md) identifies the nine tracking states.
 Human review must confirm model appearance, readable reasons, and distinct observation and accepted-motion layers.
 
 ## Physical motion
@@ -24,7 +24,7 @@ Test seated, standing, and close views with both mirror settings.
 Record the first failed stage before a correction experiment.
 Repeat each baseline and candidate three times under the same conditions.
 
-Keep personal recordings under `ops/reports/local/`.
+Keep personal recordings under `ops/001-zhil/sprint-001/reports/local/`.
 Commit aggregate measurements only.
 
 ## Voice selection and audio

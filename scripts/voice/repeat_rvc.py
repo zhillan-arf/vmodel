@@ -25,7 +25,7 @@ import uuid
 
 ROOT = Path(__file__).resolve().parents[2]
 REVIEW_MANIFEST = ROOT / 'config/voice/rvc-repeat-review.json'
-OUTPUT = ROOT / 'ops/reports/local/voice/rvc-repeat'
+OUTPUT = ROOT / 'ops/001-zhil/sprint-001/reports/local/voice/rvc-repeat'
 PRESET = 'cpu-q8-eager-3t'
 
 

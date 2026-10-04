@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-04T16:05:52Z",
+  "question": "Is any ticked acceptance criterion claiming a physical, remote or subjective check that was never performed?",
+  "readOnly": true,
+  "tasksScanned": 66,
+  "criteriaTotal": 311,
+  "criteriaTicked": 201,
+  "ticksMentioningPhysicalWork": [
+    {
+      "task": "TASK-025",
+      "folder": "active",
+      "physicalLanguage": [
+        "microphone"
+      ],
+      "disclaimed": true,
+      "criterion": "The required OBS route uses approved open-source components; virtual-microphone support or its specific limitation is documented independently. Every route component is enumerated with hashes and a known open-source licence in [voice-obs-route-licences.json](../../../../reports/voice-obs-route-licences.json) \u2014 OBS and its Browser Source under GPL-2.0-or-later, CEF under BSD-3-Clause, the bridge as proje"
+    }
+  ],
+  "ticksNeedingDefence": [],
+  "passed": true,
+  "limits": [
+    "A language scan, not a proof: it cannot tell whether a check actually happened, only whether a tick claims one.",
+    "A criterion could still be wrongly ticked using wording this does not match.",
+    "Disclaimer detection is textual; a tick that disclaims in words but overstates elsewhere would pass."
+  ]
+}

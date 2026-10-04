@@ -15,7 +15,7 @@ def sha(path):
 def main():
     import numpy as np
     import soundfile as sf
-    reports = [json.loads((ROOT / f'ops/reports/voice-context{c}.json').read_text()) for c in [1600,800,400]]
+    reports = [json.loads((ROOT / f'ops/001-zhil/sprint-001/reports/voice-context{c}.json').read_text()) for c in [1600,800,400]]
     source_hashes = {r['sourceReferenceSha256'] for r in reports}
     if len(source_hashes) != 1:
         raise RuntimeError('Context experiments used different source audio')
@@ -52,10 +52,10 @@ def main():
               'normalization':'RMS matched at 0.07 with shared 0.9 peak headroom; not LUFS or a dynamic limiter',
               'clips':clips,'reports':[{'contextMs':r['contextMs'],'computeMs':r['computeMs'],'computeRealTimeFactor':r['computeRealTimeFactor'],
                   'blocksSlowerThan160Ms':r['blocksSlowerThan160Ms'],'normalizedBoundaryJump':r['normalizedBoundaryJump'],
-                  'report':f"ops/reports/voice-context{r['contextMs']}.json"} for r in reports],
+                  'report':f"ops/001-zhil/sprint-001/reports/voice-context{r['contextMs']}.json"} for r in reports],
               'qualityAccepted':False,'boundary':'Experimental streaming-window file conversions on one source speaker. No user microphone, trained English control, five-minute speech, true live delay, OBS combined load or listening acceptance.'}
     (OUT/'manifest.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
-    (ROOT/'ops/reports/voice-context-comparison.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+    (ROOT/'ops/001-zhil/sprint-001/reports/voice-context-comparison.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
     cards = ''.join(f'<section><h2>{html.escape(c["label"])}</h2><audio controls preload="metadata" src="{c["id"]}-listen.wav"></audio></section>' for c in clips)
     page = '''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ene speech quality experiments</title><style>

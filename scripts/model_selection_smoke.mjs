@@ -22,7 +22,7 @@ const idleHands = target => target.evaluate(() => {
     });
   });
 try {
-  await mkdir('ops/reports/local', { recursive: true });
+  await mkdir('ops/001-zhil/sprint-001/reports/local', { recursive: true });
   await page.goto(server.base); await ready(page, 'Ene');
   assert.equal(await page.title(), 'VModel');
   assert((await idleHands(page)).every(Boolean), 'Both Ene hands should rest below the shoulders');
@@ -50,7 +50,7 @@ try {
   });
   assert(surprise > 0.7); await page.click('[data-expression="neutral"]');
   checks.reiIdlePoseAndSurprise = true;
-  await page.screenshot({ path: 'ops/reports/local/rei-selection.png' });
+  await page.screenshot({ path: 'ops/001-zhil/sprint-001/reports/local/rei-selection.png' });
   await page.selectOption('#framing', 'body');
   await page.selectOption('#avatar-select', 'ene'); await ready(page, 'Ene');
   assert.equal(await page.inputValue('#framing'), 'bust');
@@ -87,13 +87,13 @@ try {
   assert.equal(await page.evaluate(() => window.__vmodel.getState().avatarId), rei);
   checks.manualUploadFailurePreservesSelection = true;
   assert.deepEqual(errors, []);
-  await writeFile('ops/reports/local/model-selection-smoke.json', JSON.stringify({ generatedAt:new Date().toISOString(), browser:browser.version(), checks, capabilities, errors }, null, 2));
+  await writeFile('ops/001-zhil/sprint-001/reports/local/model-selection-smoke.json', JSON.stringify({ generatedAt:new Date().toISOString(), browser:browser.version(), checks, capabilities, errors }, null, 2));
   console.log(JSON.stringify({ checks, capabilities, errors }));
 } catch (error) {
   const pages=[];
   for(const target of context.pages()){
     try{pages.push(await target.evaluate(()=>({url:location.href,status:document.querySelector('#status')?.textContent,state:window.__vmodel?.getState(),loading:document.querySelector('#loading')?.textContent})));}catch{pages.push({closed:true});}
   }
-  await writeFile('ops/reports/local/model-selection-failure.json',JSON.stringify({generatedAt:new Date().toISOString(),error:String(error),checks,errors,pages},null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/local/model-selection-failure.json',JSON.stringify({generatedAt:new Date().toISOString(),error:String(error),checks,errors,pages},null,2));
   console.error(JSON.stringify({checks,errors,pages}));throw error;
 } finally { await browser.close(); await server.stop(); }

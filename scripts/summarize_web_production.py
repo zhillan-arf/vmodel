@@ -2,14 +2,14 @@
 from statistics import median
 from web_production import ROOT, IDS, plan, read_json
 
-audit = read_json(ROOT / 'ops/reports/web-production-audit.json')
+audit = read_json(ROOT / 'ops/001-zhil/sprint-001/reports/web-production-audit.json')
 if not audit['passed']:
     raise RuntimeError('Final production audit must pass first')
 rows, render_rows, decode_rows = [], [], []
 render_seconds = 0
 for resource in IDS:
     recipe = plan(resource)
-    report = read_json(ROOT / f'ops/reports/{resource}-production.json')
+    report = read_json(ROOT / f'ops/001-zhil/sprint-001/reports/{resource}-production.json')
     index = read_json(ROOT / report['masterIndex'])
     times = [frame['renderSeconds'] for frame in index['frames'].values()]
     render_seconds += sum(times)
@@ -23,7 +23,7 @@ for resource in IDS:
             file = next(file for file in report['files'] if file['codec'] == codec and file['size'] == size)
             decoded = file['decoded']
             decode_rows.append(f'| `{resource}` | {size} {codec} | {decoded["decodedFrameCount"]} | {decoded["loopSeamSampleMae255"]:.3f} | {decoded["maximumAdjacentSampleMae255"]:.3f} | {file["budgetBytes"]:,} |')
-snapshot_path = ROOT / 'ops/reports/web-production-process-snapshots.json'
+snapshot_path = ROOT / 'ops/001-zhil/sprint-001/reports/web-production-process-snapshots.json'
 memory = ''
 if snapshot_path.exists():
     snapshots = read_json(snapshot_path)
@@ -79,5 +79,5 @@ Final source/WebM/WebP comparisons and black/white/checkerboard screenshots are 
 
 The [rebuild and local launch guide](web-resource-rebuild.md) provides full-batch, single-resource and pause/resume commands. [Final staging audit](web-production-audit.json) verifies the exact allowlist and SHA/byte parity. Private sources/master frames stay outside `web-showcase/public/` and `web-showcase/dist/`; the staged character media folder is ignored by Git. Original creator/contributor terms and AuroraYok / yokkaulove attribution remain with the project. This is local integration, without paid tooling, model upload or public deployment.
 '''
-(ROOT / 'ops/reports/web-resource-production.md').write_text(text, encoding='utf-8')
+(ROOT / 'ops/001-zhil/sprint-001/reports/web-resource-production.md').write_text(text, encoding='utf-8')
 print('PRODUCTION_REPORT_WRITTEN')

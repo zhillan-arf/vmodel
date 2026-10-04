@@ -5,7 +5,7 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {mediaResponse} from './web_review_response.mjs';
-const root=resolve(import.meta.dirname,'..'),dir=resolve(root,'ops/reports/local/web-resources');
+const root=resolve(import.meta.dirname,'..'),dir=resolve(root,'ops/001-zhil/sprint-001/reports/local/web-resources');
 const server=createServer(async(req,res)=>{try{let path=new URL(req.url,'http://127.0.0.1').pathname;if(path==='/')path='/review.html';if(!/^\/(review\.html|(?:home-greeting|desk-normal)\/[a-z0-9.-]+\.(?:webm|webp|png))$/.test(path)){res.writeHead(404);res.end();return}const data=await readFile(resolve(dir,path.slice(1)));mediaResponse(req,res,data,path.endsWith('.html')?'text/html; charset=utf-8':path.endsWith('.webm')?'video/webm':path.endsWith('.webp')?'image/webp':'image/png')}catch{res.writeHead(404);res.end()}});
 await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
 const report={date:new Date().toISOString(),scope:'Private Chrome draft playback on Windows; 12 fps previews, no final rendition or device acceptance claim',errors:[]};
@@ -28,5 +28,5 @@ try{browser=await chromium.launch({channel:'chrome',headless:true});report.brows
  report.webpHashes=[[],[]];for(let k=0;k<3;k++){for(let i=0;i<2;i++)report.webpHashes[i].push(hash(await page.locator('.stage').nth(i).screenshot()));await page.waitForTimeout(450)}
  report.webpChanges=report.webpHashes.map(x=>new Set(x).size>1);await page.click('#pause');report.webpPauseUsesPoster=await page.evaluate(()=>[...document.querySelectorAll('img')].every((im,i)=>im.src===document.querySelectorAll('video')[i].poster));
  report.passed=report.webpCornerAlpha.every(a=>a===0)&&report.webmPixelsChange.every(Boolean)&&report.seekTimes.every((t,i)=>Math.abs(t-(i===0?2.6:.8))<.1)&&!report.errors.length&&report.pauseStable&&report.webpPauseUsesPoster&&report.webpChanges.every(Boolean)&&report.webm.every(v=>v.cornerAlpha===0&&v.transparentPixels>10000&&v.opaquePixels>5000&&v.loopResets>=2)&&report.replay.every(v=>v.playing&&v.time<1);
- await writeFile(resolve(root,'ops/reports/web-drafts-browser.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));if(!report.passed)process.exitCode=1;
+ await writeFile(resolve(root,'ops/001-zhil/sprint-001/reports/web-drafts-browser.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));if(!report.passed)process.exitCode=1;
 }finally{if(browser)await browser.close();await new Promise(r=>server.close(r))}

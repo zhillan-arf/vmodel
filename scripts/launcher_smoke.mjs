@@ -43,5 +43,5 @@ finally {
   await browser?.close();await closeFixture();
   if(!activeStudio&&!(await health()))try{await launch('start.ps1','-NoBrowser');activeStudio=true;}catch(error){errors.push('Studio restore: '+String(error));}
   const result={date:new Date().toISOString(),scope:'Real Windows start/stop scripts from a different working directory; owned loopback port fixture and actual avatar rendering with external requests blocked. No camera/microphone or OBS access. Camera shutdown is separately measured in server-stop-smoke.json.',checks,errors,studioLeftReady:activeStudio};
-  await writeFile('ops/reports/launcher-smoke.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
+  await writeFile('ops/001-zhil/sprint-001/reports/launcher-smoke.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
 }

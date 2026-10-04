@@ -17,7 +17,7 @@ import time
 
 ROOT = Path(__file__).resolve().parents[2]
 MODEL = ROOT / 'assets/voice/onnx/bright-160ms-v1'
-OUT = ROOT / 'ops/reports/local/voice/onnx'
+OUT = ROOT / 'ops/001-zhil/sprint-001/reports/local/voice/onnx'
 
 
 def digest(path):
@@ -53,7 +53,7 @@ def main():
                       'actualDirectMLExecution': None, 'microphoneCaptured': False,
                       'progress': json.loads(progress.read_text()) if progress.exists() else None,
                       'boundary': 'No successful completed probe within the bounded preparation/measurement budget. Availability alone is not execution evidence.'}
-            (ROOT / f'ops/reports/voice-onnx-{args.provider}.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+            (ROOT / f'ops/001-zhil/sprint-001/reports/voice-onnx-{args.provider}.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
             raise RuntimeError('ONNX probe exceeded its four-minute preparation/measurement budget')
         if code:
             raise subprocess.CalledProcessError(code, process.args)
@@ -74,7 +74,7 @@ def worker(args):
         if digest(ROOT / artifact['path']) != artifact['sha256']:
             raise RuntimeError('Changed exported model/fixture')
     if args.provider == 'directml':
-        cpu = json.loads((ROOT / 'ops/reports/voice-onnx-cpu.json').read_text())
+        cpu = json.loads((ROOT / 'ops/001-zhil/sprint-001/reports/voice-onnx-cpu.json').read_text())
         if not cpu['parityPassed'] or cpu['modelArtifacts'] != manifest['artifacts']:
             raise RuntimeError('Same-model CPU parity must pass first')
     OUT.mkdir(parents=True, exist_ok=True)
@@ -173,7 +173,7 @@ def worker(args):
               'actualDirectMLExecution': all(p['executedNodeEventsByProvider'].get('DmlExecutionProvider', 0) > 0 for p in profiles.values()),
               'microphoneCaptured': False, 'physicalLatencyMeasured': False, 'qualityAccepted': False,
               'boundary': 'Five repeated real-speech windows after one warmup, profiling enabled. No paced stream, device IO, SOLA, resampling, avatar/OBS combined workload or sustained quality gate. Fixed model shape and explicit seeded noise only.'}
-    (ROOT / f'ops/reports/voice-onnx-{args.provider}.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+    (ROOT / f'ops/001-zhil/sprint-001/reports/voice-onnx-{args.provider}.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
     print(json.dumps({k: report[k] for k in ['provider', 'loadSeconds', 'computeMs', 'encoderMs', 'generatorMs', 'computeRealTimeFactor', 'generatorVsEagerMaxAbsError', 'pipelineVsEagerMaxAbsError', 'parityPassed', 'actualDirectMLExecution', 'profiles']}, indent=2), flush=True)
     if not parity_passed:
         raise RuntimeError('Numerical parity gate failed; output is diagnostic only')

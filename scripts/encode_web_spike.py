@@ -47,5 +47,5 @@ rgba=bytes(v for y in range(32) for x in range(32) for v in ((90,160,220,255) if
 for alpha,name in [(True,'alpha-probe'),(False,'opaque-probe')]:
     run(['-f','rawvideo','-pixel_format','rgba','-video_size','32x32','-framerate','24','-i','pipe:0','-frames:v','2','-an','-c:v','libvpx-vp9','-pix_fmt','yuva420p' if alpha else 'yuv420p','-lossless','1','-auto-alt-ref','0',out/(name+'.webm')],rgba*2)
 report={'schemaVersion':1,'date':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'sourceFrames':config['privateFrames'],'frameCount':48,'fps':24,'seconds':2,'entries':entries}
-(ROOT/'ops/reports/web-spike-encoding.json').write_text(json.dumps(report,indent=2)+'\n')
+(ROOT/'ops/001-zhil/sprint-001/reports/web-spike-encoding.json').write_text(json.dumps(report,indent=2)+'\n')
 print('WEB_SPIKE_ENCODED',flush=True)

@@ -26,7 +26,7 @@ try{
     return{entry:image.closest('article').dataset.entryId,width:image.naturalWidth,height:image.naturalHeight,foreground,minY,maxY};
   }));
   for(const image of images){assert.equal(image.height,320);assert(image.foreground>1000);assert(image.minY>=10);assert(image.maxY<=309);}
-  await mkdir('ops/reports/local/library-thumbnails',{recursive:true});
+  await mkdir('ops/001-zhil/sprint-001/reports/local/library-thumbnails',{recursive:true});
   const layouts=[];
   for(const width of [390,768,1440]){
     await page.setViewportSize({width,height:1024});
@@ -38,7 +38,7 @@ try{
     assert(movement.every(value=>Math.abs(value)<1),`Status moved controls: ${movement}`);
     const layout=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,squares:[...document.querySelectorAll('.model-card img')].map(image=>{const r=image.getBoundingClientRect();return r.width>0&&r.height>0&&Math.abs(r.width-r.height)<1;})}));
     assert.equal(layout.overflow,false);assert(layout.squares.every(Boolean));layouts.push({width,...layout});
-    await page.screenshot({path:`ops/reports/local/library-thumbnails/${width}.png`});
+    await page.screenshot({path:`ops/001-zhil/sprint-001/reports/local/library-thumbnails/${width}.png`});
   }
   await page.setViewportSize({width:390,height:844});
   await page.evaluate(async()=>{document.documentElement.style.zoom='2';window.libraryActive={id:null,requested:null,temporaryLabel:'Long model name '.repeat(5)};await window.panel.refresh();});
@@ -50,5 +50,5 @@ try{
   await page.waitForFunction(()=>document.querySelectorAll('.thumbnail-unavailable').length===2);
   assert.equal(await page.locator('.model-card img').count(),0);
   await page.evaluate(()=>window.panel.dispose());assert.deepEqual(errors,[]);
-  await writeFile('ops/reports/library-thumbnail-smoke.json',JSON.stringify({generatedAt:new Date().toISOString(),browser:browser.version(),manifest,images,layouts,missingImageFallback:true,statusKeepsControlsStable:true,statusKeyboardScrollAtScaleTwo:true,errors,limits:['Actual bundled models. No human visual acceptance.']},null,2)+'\n');
+  await writeFile('ops/001-zhil/sprint-001/reports/library-thumbnail-smoke.json',JSON.stringify({generatedAt:new Date().toISOString(),browser:browser.version(),manifest,images,layouts,missingImageFallback:true,statusKeepsControlsStable:true,statusKeyboardScrollAtScaleTwo:true,errors,limits:['Actual bundled models. No human visual acceptance.']},null,2)+'\n');
 }finally{await browser?.close();await server.close();}

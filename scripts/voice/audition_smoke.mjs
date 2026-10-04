@@ -63,16 +63,16 @@ try {
   // Remove simulated notes before taking the review image.
   await page.evaluate(() => localStorage.clear());
   await page.reload({ waitUntil: 'networkidle' });
-  await fs.mkdir(path.join(root, 'ops/reports/local/voice'), { recursive: true });
-  await page.screenshot({ path: path.join(root, 'ops/reports/local/voice/audition-desktop.png'), fullPage: true });
+  await fs.mkdir(path.join(root, 'ops/001-zhil/sprint-001/reports/local/voice'), { recursive: true });
+  await page.screenshot({ path: path.join(root, 'ops/001-zhil/sprint-001/reports/local/voice/audition-desktop.png'), fullPage: true });
   await page.setViewportSize({ width: 390, height: 844 });
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
-  await page.screenshot({ path: path.join(root, 'ops/reports/local/voice/audition-mobile.png'), fullPage: true });
+  await page.screenshot({ path: path.join(root, 'ops/001-zhil/sprint-001/reports/local/voice/audition-mobile.png'), fullPage: true });
   const report = { date: new Date().toISOString(), passed: true, players: initial, automaticPlayback: false,
     comparedVoices: ['bright', 'soft', 'cool'], simultaneousPlaybackMaximum: 1, stopRewindsAll: true,
     referenceOnlySavePayload: true, persistedNotesInIsolatedBrowserContext: true,
     realUserRatingsWritten: false, mobileHorizontalOverflow: false, microphoneRequests: 0, externalRequests, errors,
     boundary: 'Synthetic browser playback/control verification; no user listening or live-conversation acceptance' };
-  await fs.writeFile(path.join(root, 'ops/reports/voice-audition-ui-smoke.json'), JSON.stringify(report, null, 2));
+  await fs.writeFile(path.join(root, 'ops/001-zhil/sprint-001/reports/voice-audition-ui-smoke.json'), JSON.stringify(report, null, 2));
   console.log(JSON.stringify(report, null, 2));
 } finally { await browser.close(); }

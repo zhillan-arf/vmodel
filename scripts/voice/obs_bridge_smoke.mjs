@@ -9,7 +9,7 @@ import assert from 'node:assert/strict';
 import {validateOwnedURL} from './configure_obs_voice.mjs';
 const run=promisify(execFile),pause=ms=>new Promise(r=>setTimeout(r,ms));
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..'),base='http://127.0.0.1:5084';
-const directory=path.join(root,'ops/reports/local/voice/obs');await fs.mkdir(directory,{recursive:true});
+const directory=path.join(root,'ops/001-zhil/sprint-001/reports/local/voice/obs');await fs.mkdir(directory,{recursive:true});
 const cache=await fs.mkdtemp(path.join(root,'.cache/voice/studio-obs-'));
 const env=Object.fromEntries(Object.entries(process.env).filter(([k])=>['SYSTEMROOT','WINDIR','TEMP','TMP'].includes(k.toUpperCase())));
 const server=spawn(path.join(root,'.tools/voice/venv/Scripts/python.exe'),['-I',path.join(root,'scripts/voice/studio_server.py'),'--port','5084','--state-dir',cache],{cwd:root,env,windowsHide:true,stdio:['ignore','ignore','ignore']});
@@ -36,7 +36,7 @@ try{
   }
   originalScene=(await obs.request('GetCurrentProgramScene')).currentProgramSceneName;originalDirectory=(await obs.request('GetRecordDirectory')).recordDirectory;
   await obs.request('CreateScene',{sceneName});createdScene=true;
-  await obs.request('CreateInput',{sceneName,inputName:imageName,inputKind:'image_source',inputSettings:{file:path.join(root,'ops/reports/local/obs/landscape-a.png')},sceneItemEnabled:true});createdInputs.push(imageName);
+  await obs.request('CreateInput',{sceneName,inputName:imageName,inputKind:'image_source',inputSettings:{file:path.join(root,'ops/001-zhil/sprint-001/reports/local/obs/landscape-a.png')},sceneItemEnabled:true});createdInputs.push(imageName);
   const video=await obs.request('GetVideoSettings'),{sceneItemId}=await obs.request('GetSceneItemId',{sceneName,sourceName:imageName});
   await obs.request('SetSceneItemTransform',{sceneName,sceneItemId,sceneItemTransform:{positionX:0,positionY:0,alignment:5,boundsType:'OBS_BOUNDS_SCALE_INNER',boundsWidth:video.baseWidth,boundsHeight:video.baseHeight}});
   await obs.request('CreateInput',{sceneName,inputName,inputKind:'browser_source',inputSettings:{url:routeURL,width:16,height:16,fps:10,reroute_audio:true,shutdown:false,restart_when_active:false,webpage_control_level:0},sceneItemEnabled:true});createdInputs.push(inputName);
@@ -69,5 +69,5 @@ finally{
   await browser?.close();
   try{const route=JSON.parse(await fs.readFile(path.join(cache,'route.json'),'utf8'));await fetch(base+'/api/shutdown',{method:'POST',headers:{Origin:base,'Content-Type':'application/json'},body:JSON.stringify({adminKey:route.adminKey})});}catch{}
   await new Promise(resolve=>{if(server.exitCode!==null)return resolve();server.once('exit',resolve);setTimeout(()=>{server.kill();resolve();},3000).unref();});
-  await fs.writeFile(path.join(root,'ops/reports/voice-obs-bridge-smoke.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+  await fs.writeFile(path.join(root,'ops/001-zhil/sprint-001/reports/voice-obs-bridge-smoke.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
 }

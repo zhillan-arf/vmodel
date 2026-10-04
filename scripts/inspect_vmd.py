@@ -8,7 +8,7 @@ import bpy
 from mathutils import Vector
 from mmd_tools.core import vmd
 
-source=ROOT/'ops/resources/ene.vmd';data=source.read_bytes()
+source=ROOT/'ops/001-zhil/sprint-001/resources/ene.vmd';data=source.read_bytes()
 class CheckedReader(io.BytesIO):
     def read(self,n=-1):
         result=super().read(n)
@@ -58,9 +58,9 @@ frames=[]
 for frame in [1,60,120,180,240,300,349]:
     scene.frame_set(frame);bpy.context.view_layer.update()
     bounds=[mesh.matrix_world@Vector(corner) for corner in mesh.bound_box]
-    image=ROOT/f'ops/reports/local/vmd/frame-{frame:03d}.png';image.parent.mkdir(parents=True,exist_ok=True)
+    image=ROOT/f'ops/001-zhil/sprint-001/reports/local/vmd/frame-{frame:03d}.png';image.parent.mkdir(parents=True,exist_ok=True)
     scene.render.filepath=str(image);bpy.ops.render.render(write_still=True)
     frames.append(dict(frame=frame,image=image.relative_to(ROOT).as_posix(),bounds=dict(min=[min(v[i] for v in bounds) for i in range(3)],max=[max(v[i] for v in bounds) for i in range(3)]),finite=all(math.isfinite(x) for p in arm.pose.bones for row in p.matrix for x in row)))
 report=dict(file=source.relative_to(ROOT).as_posix(),sha256=hashlib.sha256(data).hexdigest(),model=header.model_name,bytes=len(data),reader='MMD Tools 4.5.14 section readers with exact-read bounds guard',sections=sections,numericIssues=numeric_issues,trailingBytes=0,mapping=mapping,ikStates=[dict(frame=k.frame_number,visible=k.visible,states=k.ik_states) for k in animations['ik']],importResult=list(imported),scene=output.relative_to(ROOT).as_posix(),frameRate=scene.render.fps,frames=frames)
-(ROOT/'ops/reports/vmd-inspection.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+(ROOT/'ops/001-zhil/sprint-001/reports/vmd-inspection.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print('VMD_INSPECTED',json.dumps(dict(model=header.model_name,sections=sections,numericIssues=len(numeric_issues),frames=len(frames)),ensure_ascii=True),flush=True)

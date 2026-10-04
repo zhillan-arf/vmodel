@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-12T13:21:44Z",
+  "status": "passed",
+  "passed": true,
+  "physicalMedia": false,
+  "neuralInference": false,
+  "liveAccepted": false,
+  "change": "Ingress peak recorded inside Queue mutex; fixed four-packet bound unchanged.",
+  "exitCode": 0,
+  "log": {
+    "path": "ops/001-zhil/sprint-001/reports/local/voice/llvc/llvc-paced-unit-v2.log",
+    "sha256": "0aa8d6c19c80574fb7296e229065235dfd4c72b598d02763ede80fb68b0a8633"
+  },
+  "codeSha256": {
+    "test_llvc_paced.py": "97917911c5707e12730c02402bafc13994b00152d1f120e8c355022ca2976394",
+    "llvc_paced.py": "bc9e7f968e58eca63bc7d948bf451e189df9dfb0a40adaeb1e6e715e72564fbe",
+    "probe_llvc_paced.py": "e19e4df9d449bf9ffe8f9a44efc025813e780b9d1d76aaebcc93db683d15ff4b"
+  }
+}

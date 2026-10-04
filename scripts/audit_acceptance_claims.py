@@ -20,7 +20,7 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 TASKS = [path for folder in ('active', 'archived', 'backlog')
-         for path in sorted((ROOT / 'ops/tasks' / folder).glob('TASK-*.md'))]
+         for path in sorted((ROOT / 'ops/001-zhil/sprint-001/tasks' / folder).glob('TASK-*.md'))]
 
 # Language that can only be honoured by a person, a device or a remote service.
 PHYSICAL = {
@@ -84,7 +84,7 @@ def main():
             'Disclaimer detection is textual; a tick that disclaims in words but overstates elsewhere would pass.',
         ],
     }
-    out = ROOT / 'ops/reports/acceptance-claims-audit.json'
+    out = ROOT / 'ops/001-zhil/sprint-001/reports/acceptance-claims-audit.json'
     out.write_text(json.dumps(report, indent=2), encoding='utf-8')
     print(json.dumps({'report': out.relative_to(ROOT).as_posix(), 'passed': report['passed'],
                       'tasksScanned': len(TASKS), 'criteriaTicked': ticked,

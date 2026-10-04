@@ -18,7 +18,7 @@ import sys
 import time
 
 ROOT = Path(__file__).resolve().parents[2]
-OUTPUT = ROOT / 'ops/reports/local/voice/benchmarks'
+OUTPUT = ROOT / 'ops/001-zhil/sprint-001/reports/local/voice/benchmarks'
 
 
 def digest(path):

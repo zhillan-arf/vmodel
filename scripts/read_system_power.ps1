@@ -54,5 +54,5 @@ $eneResult = [ordered]@{
   limitation='Current API state and only selected event IDs/metadata. No broad event messages, identities, power setters, desktop switching or escalation. Missing events do not establish absence of a transition.'
 }
 $eneJson = $eneResult | ConvertTo-Json -Depth 9
-[IO.File]::WriteAllText((Join-Path $PWD 'ops/reports/power-state-comparison.json'),$eneJson+[Environment]::NewLine,(New-Object Text.UTF8Encoding($false)))
+[IO.File]::WriteAllText((Join-Path $PWD 'ops/001-zhil/sprint-001/reports/power-state-comparison.json'),$eneJson+[Environment]::NewLine,(New-Object Text.UTF8Encoding($false)))
 $eneJson

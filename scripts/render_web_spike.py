@@ -107,6 +107,6 @@ ctypes.windll.kernel32.GetCurrentProcess.restype=ctypes.c_void_p
 ctypes.windll.psapi.GetProcessMemoryInfo.argtypes=[ctypes.c_void_p,ctypes.c_void_p,ctypes.c_ulong]
 if not ctypes.windll.psapi.GetProcessMemoryInfo(ctypes.windll.kernel32.GetCurrentProcess(),ctypes.byref(mem),mem.cb): raise RuntimeError('Could not measure render process memory')
 report={'schemaVersion':1,'blender':bpy.app.version_string,'sourceSha256':source_hash,'originalHashes':hashes,'inspection':inspection,'settings':settings,'scene':'assets/work/ene-web/alpha-spike.blend','framesDirectory':config['privateFrames'],'renderedFrames':times,'elapsedSeconds':time.perf_counter()-start,'peakWorkingSetBytes':mem.PeakWorkingSetSize,'alpha':alpha,'simulation':'No secondary simulation in disposable codec spike; final actions must bake and inspect settling separately.'}
-report_path=ROOT/'ops/reports/web-spike-render.json';report_path.write_text(json.dumps(report,indent=2,ensure_ascii=True)+'\n')
+report_path=ROOT/'ops/001-zhil/sprint-001/reports/web-spike-render.json';report_path.write_text(json.dumps(report,indent=2,ensure_ascii=True)+'\n')
 if hashlib.sha256(source.read_bytes()).hexdigest()!=source_hash:raise RuntimeError('Shared source was modified')
 print('WEB_SPIKE_RENDERED', report['elapsedSeconds'], flush=True)

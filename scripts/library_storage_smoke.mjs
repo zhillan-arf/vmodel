@@ -226,7 +226,7 @@ try {
   const report = { generatedAt: new Date().toISOString(), browser: browser.version(), checks, errors, fixtureHashes:blobs.map(bytes=>createHash('sha256').update(Buffer.from(bytes)).digest('hex')),
     platform:process.platform,browserChannel:process.env.VMODEL_BROWSER??'chromium',
     limits: ['Synthetic models only.', 'The blocked-upgrade test changes the requested version through a test wrapper.', 'No physical camera test or human review.'] };
-  await mkdir('ops/reports', { recursive: true });
-  await writeFile('ops/reports/library-storage-smoke.json', JSON.stringify(report, null, 2) + '\n');
+  await mkdir('ops/001-zhil/sprint-001/reports', { recursive: true });
+  await writeFile('ops/001-zhil/sprint-001/reports/library-storage-smoke.json', JSON.stringify(report, null, 2) + '\n');
   console.log(JSON.stringify(report, null, 2));
 } finally { await browser?.close(); await server.close(); }

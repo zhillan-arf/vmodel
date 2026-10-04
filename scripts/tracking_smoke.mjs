@@ -17,10 +17,10 @@ try {
   await page.getByRole('button',{name:'Stop',exact:true}).click();
   const stopped=await page.evaluate(()=>document.querySelector('video').srcObject===null);
   const result={input:'Chromium synthetic fake camera; no real face/gesture acceptance',samples,stopped,errors,messages};
-  await writeFile('ops/reports/tracking-smoke.json',JSON.stringify(result,null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/tracking-smoke.json',JSON.stringify(result,null,2));
   console.log(JSON.stringify(result));
   if(errors.length||!stopped)process.exitCode=1;
 } catch(error) {
   const result={error:String(error),status:await page.locator('#status').textContent(),errors,messages,video:await page.evaluate(()=>{const v=document.querySelector('video');return {readyState:v.readyState,paused:v.paused,width:v.videoWidth,stream:!!v.srcObject};})};
-  await writeFile('ops/reports/tracking-smoke.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result));process.exitCode=1;
+  await writeFile('ops/001-zhil/sprint-001/reports/tracking-smoke.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result));process.exitCode=1;
 } finally{await browser.close();}

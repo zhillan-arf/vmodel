@@ -185,7 +185,7 @@ def worker(context_ms):
               'microphoneCaptured': False, 'audioDevicesOpened': False}
     (OUT / 'manifest.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
     suffix = '' if context_ms == 1600 else f'-context{context_ms}'
-    (ROOT / f'ops/reports/voice-onnx-export{suffix}.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+    (ROOT / f'ops/001-zhil/sprint-001/reports/voice-onnx-export{suffix}.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
     print(json.dumps({k: report[k] for k in ['eagerAdapterMaxAbsError', 'exportSeconds', 'totalPreparationSeconds', 'artifacts']}, indent=2), flush=True)
 
 

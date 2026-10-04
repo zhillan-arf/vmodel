@@ -8,7 +8,7 @@ import path from 'node:path';
 import process from 'node:process';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname).replace(/^\/(\w:)/, '$1'), '..');
-const DIR = path.join(ROOT, 'ops/reports');
+const DIR = path.join(ROOT, 'ops/001-zhil/sprint-001/reports');
 
 const report = {
   date: new Date().toISOString(), passed: false, status: 'running', readOnly: true,
@@ -40,7 +40,7 @@ try {
 } catch (error) {
   report.status = 'failed'; report.error = String(error?.stack ?? error); exit = 1;
 } finally {
-  const file = path.join(ROOT, 'ops/reports', 'reports-readable-audit.json');
+  const file = path.join(ROOT, 'ops/001-zhil/sprint-001/reports', 'reports-readable-audit.json');
   await mkdir(path.dirname(file), { recursive: true });
   await writeFile(file, JSON.stringify(report, null, 2));
   console.log(JSON.stringify({ report: path.relative(ROOT, file), status: report.status,

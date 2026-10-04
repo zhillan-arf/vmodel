@@ -6,7 +6,7 @@ import re
 from task_scopes import CONTROLLER_SCOPES
 
 ROOT = Path(__file__).resolve().parents[1]
-TASKS = ROOT / 'ops/tasks'
+TASKS = ROOT / 'ops/001-zhil/sprint-001/tasks'
 LOCATIONS = {'In progress': 'active', 'Blocked': 'active', 'Done': 'archived', 'Ready': 'backlog', 'Todo': 'backlog'}
 
 def audit():

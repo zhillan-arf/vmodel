@@ -62,5 +62,5 @@ try{
   assert.deepEqual(errors,[]);
   const report={generatedAt:new Date().toISOString(),browser:browser.version(),results,errors,
     limits:['Real GLTF loader with injected mesh and root failures. Synthetic textured VRM only.']};
-  await writeFile('ops/reports/avatar-decoder-failure-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/avatar-decoder-failure-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await browser?.close();await server.close();}

@@ -7,7 +7,7 @@ const manifest=JSON.parse(await readFile('config/import-fixture.json','utf8'));
 const files=await Promise.all(manifest.files.map(async entry=>{const bytes=await readFile(`${manifest.directory}/${entry.name}`);assert.equal(createHash('sha256').update(bytes).digest('hex'),entry.sha256);return bytes;}));
 const server=await createServer({server:{host:'127.0.0.1',port:0}});let browser;
 try{
-  await mkdir('ops/reports/local',{recursive:true});
+  await mkdir('ops/001-zhil/sprint-001/reports/local',{recursive:true});
   await server.listen();browser=await chromium.launch({headless:true});const page=await browser.newPage(),errors=[],externalRequests=[];
   page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url())&&new URL(r.url()).hostname!=='127.0.0.1')externalRequests.push(r.url());});
   await page.route('**/testing/fixture/*',route=>route.fulfill({body:files[route.request().url().endsWith('.vrm')?0:1]}));
@@ -28,8 +28,8 @@ try{
       await repo.remove(entry.id);viewer.dispose();output.afterDispose={...viewer.renderer.info.memory};output.remainingTextureAllocations=[...allocations.values()];output.contextLost=gl.isContextLost();return output;
     }finally{viewer.dispose();repo.close();}
   });
-  await writeFile('ops/reports/local/licensed-import-debug.json',JSON.stringify(result,null,2)+'\n');
+  await writeFile('ops/001-zhil/sprint-001/reports/local/licensed-import-debug.json',JSON.stringify(result,null,2)+'\n');
   assert.equal(result.hash,manifest.files[0].sha256);assert.equal(result.exported,result.hash);assert.equal(result.capabilities.vrmVersion,'1');assert.equal(result.termsHash,manifest.files[1].sha256);assert.equal(result.storedTermsHash,result.termsHash);assert(result.drawCalls>0);assert.equal(result.afterDispose.geometries,0);assert.deepEqual(result.remainingTextureAllocations,['dfgLUT']);assert.equal(result.contextLost,true);assert.deepEqual(errors,[]);assert.deepEqual(externalRequests,[]);
   const report={generatedAt:new Date().toISOString(),browser:browser.version(),source:manifest,...result,errors,externalRequests,limits:['Local import and preparation check. No target-laptop or human appearance acceptance.','The renderer retains one internal lighting-table counter after disposal. The graphics context is explicitly lost.']};
-  await writeFile('ops/reports/licensed-import-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+  await writeFile('ops/001-zhil/sprint-001/reports/licensed-import-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await browser?.close();await server.close();}
