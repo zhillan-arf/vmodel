@@ -1,0 +1,30 @@
+{
+  "result": {
+    "status": "Rei · Adachi Rei is ready. Start your camera when you are.",
+    "state": {
+      "avatarId": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+      "label": "Rei · Adachi Rei",
+      "selectedBundle": "rei",
+      "settings": {
+        "version": 1,
+        "mode": "seated",
+        "quality": "balanced",
+        "framing": "body",
+        "orientation": "landscape",
+        "background": "#182339",
+        "mirror": true,
+        "hands": true,
+        "smoothing": 14,
+        "springMotion": "gentle",
+        "captureResolution": "640x480",
+        "zoom": 1,
+        "headRange": 1,
+        "mouthGain": 1.8
+      },
+      "calibration": null,
+      "expression": "neutral"
+    },
+    "loading": "Preparing Rei · Adachi Rei…"
+  },
+  "errors": []
+}

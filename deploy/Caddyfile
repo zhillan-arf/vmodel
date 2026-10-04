@@ -1,8 +1,9 @@
 {
 	default_sni {$VMODEL_DOMAIN}
+	auto_https disable_redirects
 }
 
-{$VMODEL_DOMAIN} {
+https://{$VMODEL_DOMAIN}:{$VMODEL_HTTPS_PORT} {
 	tls internal
 	reverse_proxy vmodel:4173
 }

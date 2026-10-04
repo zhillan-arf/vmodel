@@ -1,0 +1,40 @@
+name: vmodel
+
+services:
+  vmodel:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    environment:
+      VMODEL_ORIGIN: "https://${VMODEL_DOMAIN:-10.12.1.193}:${VMODEL_HTTPS_PORT:-4173}"
+    restart: unless-stopped
+    init: true
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+  https:
+    image: caddy:2-alpine
+    ports:
+      - "0.0.0.0:${VMODEL_HTTPS_PORT:-4173}:${VMODEL_HTTPS_PORT:-4173}"
+    environment:
+      VMODEL_DOMAIN: "${VMODEL_DOMAIN:-10.12.1.193}"
+      VMODEL_HTTPS_PORT: "${VMODEL_HTTPS_PORT:-4173}"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      vmodel:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:2019/config/"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:

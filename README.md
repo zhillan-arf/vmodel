@@ -8,10 +8,13 @@ A local VTuber app with selectable Ene **Cyber legs** and Rei models, webcam tra
 
 ## Everyday launchers
 
-Docker can serve the studio on this computer or a local network server.
-See [Docker setup](docs/docker.md) for browser camera access and HTTPS setup.
+Run `./deploy/manage.sh start` to build and start the Docker service.
+Open `https://10.12.1.193:4173` after you install the local certificate on the client.
+Use `./deploy/manage.sh stop` or `./deploy/manage.sh restart` to control the service.
+See [Docker setup](docs/docker.md) for certificate instructions and camera access.
 
-All launchers live in the **deploy** folder. Double-click these; none of them need a terminal.
+The Windows launchers also use the **deploy** folder.
+Double-click a Windows launcher in the table below.
 
 In the studio, choose **Ene** or **Rei** with the model selector. Camera tracking, calibration, expression controls and the output view work with either model.
 

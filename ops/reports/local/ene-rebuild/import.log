@@ -1,0 +1,11 @@
+VMODEL_ADDONS_READY 5.2.2 LTS
+WARNING:root:Cannot load texture '/home/zhillan/misc/vmodel/ops/resources/ENE/s.bmp': No such file
+WARNING:root:Cannot load texture '/home/zhillan/misc/vmodel/ops/resources/ENE/spa-pi.bmp': No such file
+WARNING:root:Rigid body '髪ガードB' has invalid rotation data, using default rotation
+00:45.107  render           | Saved: '/home/zhillan/misc/vmodel/ops/reports/local/ene-import-front.png'
+Info: Imported MMD model from "/home/zhillan/misc/vmodel/ops/resources/ENE/ENE Cyber legs ver.pmx"
+Info: Saved as "source.blend"
+ENE_IMPORTED /home/zhillan/misc/vmodel/assets/work/ene/source.blend
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:34:58)
+
+Blender quit

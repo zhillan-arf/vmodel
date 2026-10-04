@@ -1,0 +1,49 @@
+
+> vmodel@0.1.0 verify
+> node scripts/verify.mjs
+
+ok      unit tests (4.4s)
+ok      native avatar replay and baseline comparison (6.4s)
+ok      solver baseline comparison (2.5s)
+ok      production build and typecheck (23.8s)
+ok      synthetic library and inspector checks (58.3s)
+ok      bundled model navigation with live output (176.5s)
+ok      inspector pause with live output (32.3s)
+ok      tracking overlay coordinates and labels (9.2s)
+ok      import cancellation and timeout checks (68.7s)
+ok      pinned public VRM fixture (0.1s)
+ok      licensed VRM import check (6.0s)
+ok      import metadata and version checks (3.1s)
+ok      decoder failure cleanup (2.0s)
+ok      rebuilt Ene library checks (16.9s)
+ok      native Rei library checks (22.5s)
+ok      bundled library thumbnails (3.6s)
+ok      studio text contrast and scaled layout (8.6s)
+ok      library management across tabs (4.8s)
+ok      browser storage checks (11.0s)
+ok      output failure and recovery checks (25.7s)
+ok      replay isolation and video checks (15.3s)
+ok      installed tracking worker function checks (7.4s)
+ok      diagnostic camera recovery (98.6s)
+ok      recording lifecycle checks (2.0s)
+ok      runtime bundle audit (2.4s)
+FAILED  model selection and output synchronization (0.8s)
+FAILED  avatar load failure handling (0.8s)
+FAILED  beginner documentation (0.1s)
+ok      evidence reports readable (0.2s)
+ok      task register (0.1s)
+FAILED  acceptance claims (0.1s)
+FAILED  voice OBS route licences (0.0s)
+FAILED  voice service-down message (0.7s)
+FAILED  voice studio tests (0.0s)
+FAILED  voice paced LLVC tests (0.0s)
+FAILED  voice LLVC chunker tests (0.0s)
+
+9 check(s) FAILED: model selection and output synchronization, avatar load failure handling, beginner documentation, acceptance claims, voice OBS route licences, voice service-down message, voice studio tests, voice paced LLVC tests, voice LLVC chunker tests
+
+Not covered here, and still required for delivery:
+  - Live camera quality, gestures and standing movement (needs a person).
+  - Voice preference and listening acceptance (needs the user).
+  - OBS Virtual Camera registration and consumer test (needs an administrator prompt).
+  - Final landscape and portrait recordings with audio (needs the operator).
+  - Combined OBS soaks and physical audio latency or sync (needs devices and time).

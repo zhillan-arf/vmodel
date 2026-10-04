@@ -1,0 +1,70 @@
+{
+  "hash": "624d0d554bc205bbdc33e22a68a2c3c20edebb3e573011ead8878a65e5329b23",
+  "exported": "624d0d554bc205bbdc33e22a68a2c3c20edebb3e573011ead8878a65e5329b23",
+  "bytes": 10917800,
+  "metadata": {
+    "allowAntisocialOrHateUsage": true,
+    "allowExcessivelySexualUsage": true,
+    "allowExcessivelyViolentUsage": true,
+    "allowPoliticalOrReligiousUsage": true,
+    "allowRedistribution": true,
+    "authors": [
+      "VirtualCast, Inc."
+    ],
+    "avatarPermission": "everyone",
+    "commercialUsage": "corporation",
+    "copyrightInformation": "VirtualCast, Inc.",
+    "creditNotation": "required",
+    "licenseUrl": "https://vrm.dev/licenses/1.0/",
+    "modification": "allowModificationRedistribution",
+    "name": "Seed-san",
+    "thumbnailImage": 14,
+    "version": "1"
+  },
+  "resources": {
+    "geometryBytes": 6328320,
+    "textureBytes": 57671680,
+    "pixels": 10813440
+  },
+  "capabilities": {
+    "validationVersion": 1,
+    "vrmVersion": "1",
+    "expressions": [
+      "aa",
+      "angry",
+      "blink",
+      "blinkLeft",
+      "blinkRight",
+      "ee",
+      "happy",
+      "ih",
+      "lookDown",
+      "lookLeft",
+      "lookRight",
+      "lookUp",
+      "neutral",
+      "oh",
+      "ou",
+      "relaxed",
+      "sad",
+      "surprised"
+    ],
+    "aliases": {},
+    "missingOptionalBones": [
+      "upperChest"
+    ],
+    "springs": true,
+    "warnings": []
+  },
+  "termsHash": "f0fdc21cf26437d9becd90a64d350bc0307fcfa172e1caea5aa39c52a5b3b9b6",
+  "storedTermsHash": "f0fdc21cf26437d9becd90a64d350bc0307fcfa172e1caea5aa39c52a5b3b9b6",
+  "drawCalls": 31,
+  "afterDispose": {
+    "geometries": 0,
+    "textures": 1
+  },
+  "remainingTextureAllocations": [
+    "dfgLUT"
+  ],
+  "contextLost": true
+}
