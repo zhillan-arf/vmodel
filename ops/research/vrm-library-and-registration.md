@@ -1,16 +1,16 @@
-# VModel model library and VRM registration design
+# VModel model library and VRM registration
 
-Prepared for the VModel owner on 2026-10-04. This is a proposed next feature, informed by adding Rei alongside Ene. It does not claim that persistent upload registration is implemented in the current change.
+Date: 2026-10-04. Status: proposed feature. This document uses the work to add Rei beside Ene as evidence. Persistent registration is not available now.
 
-VModel should expose a model library with bundled and imported entries, backed initially by IndexedDB in the local browser. Import should validate and preview a VRM, preserve its attribution and terms, and register its original bytes only after the user chooses Save to library. Keep a separate disk export for recovery. A cloud account or database server is unnecessary for this single-laptop application; a later desktop library adapter can provide disk durability across browser profiles.
+Add a model library for bundled and imported models. Use local browser IndexedDB first. Validate and preview each VRM before registration. Keep its original bytes, attribution, and terms. Save the model only after the user selects **Save to library**. Provide a separate disk export for recovery. This application runs on one laptop. It does not need a cloud account or database server. A later desktop adapter can keep files across browser profiles.
 
-## What adding Rei teaches us
+## Findings from Rei
 
-The existing Ene pipeline converts a source character into a prepared VRM. Rei's supplied resources contain separate MMD and VRM ZIP archives; the native VRM archive already contains the runtime model. Loading a native VRM should therefore be the normal import path. MMD conversion belongs in a separate authoring workflow. A ZIP, PMX or VMD file is not a runtime avatar, and the import interface should say so explicitly.
+The Ene process converts a source character into a prepared VRM. Rei has separate MMD and VRM ZIP files. The VRM ZIP already has a model that the app can use. Use a native VRM for normal import. Keep MMD conversion in a separate authoring procedure. Tell users that ZIP, PMX, and VMD files are not runtime avatars.
 
-The two bundled entries should be selected through a catalogue, not by adding another special case throughout the renderer. This change establishes that small catalogue and keeps an optional temporary VRM loader. The future library replaces the catalogue's storage boundary while reusing the renderer and retargeter.
+Select the two bundled models through the catalogue. Keep the optional temporary VRM loader. A future library can use the same renderer and retargeter.
 
-Browser review also exposed two compatibility differences that a successful file load did not catch: Ene-specific fallback arm rotations raised Rei's arms, and Rei's surprise expression uses the custom name `びっくり` instead of the standard `surprised`. The two-model implementation derives relaxed arms from rig rest directions and maps that expression. A registry should record capabilities and explicit expression aliases and preview a neutral pose; a “valid VRM” badge alone cannot promise matching behavior across models.
+Browser review found two compatibility differences after a successful file load. Ene-specific fallback rotations raised Rei's arms. Rei uses `びっくり` for surprise instead of `surprised`. The two-model implementation uses rig rest directions for relaxed arms and maps the expression. Record model capabilities and expression aliases. Preview a neutral pose. A valid VRM can still behave differently from another model.
 
 Current integration points, inspected in this repository:
 
@@ -23,9 +23,9 @@ Current integration points, inspected in this repository:
 | `scripts/server.mjs` | Primarily serves a static local build, bound to loopback | Do not assume an existing upload endpoint or server database |
 | `.gitignore` | Excludes original/prepared model assets and runtime copies | A library must remain private local data, outside code distribution |
 
-Rei is 55,715,860 bytes before browser decoding, with SHA-256 `07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735`. It is a native VRM 0 model exported by UniVRM 0.94.0. The archive labels version 1.3.3 while embedded metadata reports 1.3.2: store both source and embedded versions rather than inventing a single authoritative version. This is a useful real fixture for import progress, quota handling and switching memory use. File size does not equal GPU memory consumption: decoded textures, geometry, a preview and an output window can add substantially more memory. Benchmark both avatars instead of assuming Ene's rendering cost applies to Rei.
+Rei has 55,715,860 bytes before browser decode. Its SHA-256 is `07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735`. It is a VRM 0 model from UniVRM 0.94.0. The archive gives version 1.3.3. Embedded metadata gives version 1.3.2. Keep both values. Use Rei to test import progress, quota errors, and memory use during model selection. File size does not show GPU memory use. Decoded textures, geometry, previews, and output windows use more memory. Measure Ene and Rei separately.
 
-Rei also demonstrates why metadata alone cannot summarize terms reliably. Its embedded fields include `licenseName: Redistribution_Prohibited` and `commercialUssageName: Disallow`; the packaged Japanese readme describes permissions for modification/redistribution and paid doujin activity, with separate permission for corporate commercial activity. These are conflicting source signals, not a resolved licensing conclusion. Preserve and display both, flag the discrepancy, and leave the original CP932 readme available. Local addition is not permission to publish the asset. The exact source evidence is retained in `public/avatars/rei-notices/`.
+Rei's metadata and readme give different use terms. Metadata includes `licenseName: Redistribution_Prohibited` and `commercialUssageName: Disallow`. The Japanese readme describes modification, redistribution, and paid doujin use. It gives separate terms for corporate commercial use. Keep and show both sources. Show the difference and keep the original CP932 readme. Local import does not give permission to publish the asset. Source evidence is in `public/avatars/rei-notices/`.
 
 ## Storage decision
 
@@ -38,11 +38,11 @@ The following is a design recommendation, not a claim that any of these stores i
 | Local service with files plus SQLite | Durable library independent of browser port/profile; straightforward folder backup | Adds authenticated write APIs, migration and service packaging work | Later desktop mode if requested |
 | Remote object store plus database | Sharing and multiple devices | Accounts, network dependency, access control and redistribution questions | Outside current scope |
 
-IndexedDB supports structured records and transactions, making it suitable for committing the model bytes and entry together. [MDN IndexedDB guide](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+IndexedDB supports structured records and transactions. It can save model bytes and the model entry together. See the [MDN IndexedDB guide](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB).
 
-Browser data is not an unconditional permanent archive. Request persistent storage, report whether it was granted, inspect estimated capacity before import, catch quota errors, and provide backup/export. Browser profiles, origins and user deletion affect availability. Development on port 5173 and everyday use on port 4173 must not silently be presented as one library. [MDN storage quotas and eviction](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria)
+Browser data is not a permanent archive. Request persistent storage. Show the result. Estimate free capacity before import. Handle quota errors. Provide backup and export. Browser profiles, origins, and user deletion affect availability. Ports 5173 and 4173 have separate libraries. Explain this to the user. See [MDN storage quotas and eviction](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
 
-Use the normal launcher origin consistently. If the app later changes its host or port, offer export from the old origin and import into the new one. Do not promise automatic discovery of another origin's private storage.
+Use one normal launcher origin. If the host or port changes, export from the old origin. Then import into the new origin. An origin cannot automatically find another origin's private storage.
 
 ## Records and identity
 
@@ -55,25 +55,25 @@ Create a versioned `vmodel-library` database with these object stores. Field nam
 | `attachments` | UUID | Model ID, attachment type, original filename, Blob for supplied readme or terms |
 | `preferences` | Named setting | Selected model ID and schema migration version |
 
-Keep bundled catalogue IDs such as `ene` and `rei` as stable aliases resolved to their current assets. Do not copy bundled files into IndexedDB merely to list them. Imported entries use the same `LibraryEntry` interface but resolve through storage. Keep content hash distinct from entry ID: the former identifies rig bytes, while the latter identifies the user's named library entry.
+Keep `ene` and `rei` as stable catalogue IDs. Resolve each ID to its current asset. Do not copy bundled files into IndexedDB only to list them. Imported entries use `LibraryEntry` and resolve through storage. A content hash identifies model bytes. An entry ID identifies the user's named library entry.
 
-For a duplicate hash, offer Select existing or Rename existing; default to selecting the existing entry. Avoid creating duplicate asset bytes. A genuinely changed VRM is a new asset and a new version or entry. Retain the old version until the user removes it. Do not automatically carry calibration across different hashes, because bone axes and proportions may have changed.
+For a duplicate hash, offer **Select existing** and **Rename existing**. Select the existing entry by default. Do not store duplicate bytes. Treat changed VRM bytes as a new asset and version or entry. Keep the old version until the user removes it. Do not copy calibration across different hashes. Bone axes or proportions can change.
 
-Continue reading existing localStorage settings/calibration using the existing hash keys. Migration of those small records can happen later; it is not a prerequisite for registering assets. If moved into IndexedDB, use an explicit one-time migration and retain recoverable old records until verification succeeds.
+Read current localStorage settings and calibration with their current hash keys. Asset registration does not require their migration. If IndexedDB later holds them, use an explicit one-time migration. Keep recoverable old records until verification succeeds.
 
 ## Import and registration flow
 
-1. **Choose VRM.** Show bundled and registered models in one library. Keep temporary loading available as Try without saving. For this first version, accept a single `.vrm`, not an archive; explain how to extract the VRM from a source ZIP.
-2. **Inspect.** Check byte length, GLB header/version/chunk bounds, JSON structure and supported VRM extension before creating GPU resources. Hash once and check for a duplicate. Proposed initial limits are 150 MiB per file and 8 MiB JSON; tune these against real accepted assets and show the exact limit when rejecting a file.
-3. **Validate compatibility.** Check required humanoid bones using the runtime's actual policy. Report optional fingers, expressions and spring bones as capabilities. Missing optional expressions should disable the affected expression control with a reason, not reject an otherwise usable avatar. Accept supported VRM 0 and VRM 1 through three-vrm and test both; preserve original bytes instead of rewriting formats during import.
+1. **Choose VRM.** Show bundled and registered models in one library. Keep temporary load as **Try without saving**. Accept one `.vrm` file in the first version. Explain how to extract it from a ZIP.
+2. **Inspect.** Check byte length, GLB header, version, chunk bounds, JSON, and VRM extension before GPU use. Calculate the hash once. Find duplicate bytes. Initial proposed limits are 150 MiB per file and 8 MiB for JSON. Test these limits with real models. Show the applicable limit when the app rejects a file.
+3. **Validate compatibility.** Test required humanoid bones with the runtime policy. Report optional fingers, expressions, and spring bones. If an optional expression is absent, disable its control and show why. Accept supported VRM 0 and VRM 1 models through three-vrm. Test both versions. Keep the original bytes.
 4. **Preview.** Load into a disposable preview viewer with a timeout and cancel option. Keep the active performance/output running on its current avatar. Show name, author, version, thumbnail, capabilities and warnings. Produce a thumbnail only after decoding succeeds. Render untrusted metadata as text.
 5. **Review terms.** Display extracted metadata and supplied terms attachments. Preserve version-specific fields and raw metadata alongside a readable summary. Opening an external terms link is an explicit user action. A Save action records acknowledgement of the displayed terms, not a legal conclusion or an automatic grant of redistribution rights.
 6. **Save to library.** Commit asset, model entry and attachments in one transaction. Only show Saved after transaction completion. A quota failure or cancelled preview leaves no selectable half-entry. Return to the library and optionally select the new entry.
-7. **Select.** Resolve bytes, validate that stored content matches identity, load the new avatar, then publish a committed selection to output windows. Save the selected ID only after success. A failed load leaves the previous avatar, settings and selected ID active.
+7. **Select.** Get the bytes and verify their hash. Load the new avatar. Then send the selection to output windows. Save the selected ID only after a successful load. If load fails, keep the previous avatar, settings, and ID.
 
-VRM 1 metadata explicitly separates authorship and use conditions, including avatar permission and licensing fields. Preserve the original field meanings rather than flattening them into a single “free to use” flag. [VRM 1 metadata specification](https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0/meta.md)
+VRM 1 metadata has separate fields for authorship and use conditions. Keep the meaning of each field. Do not replace them with one **free to use** flag. See the [VRM 1 metadata specification](https://github.com/vrm-c/vrm-specification/blob/master/specification/VRMC_vrm-1.0/meta.md).
 
-VRM versions differ in specification details, including orientation conventions. Keep format handling inside the established loader rather than adding a Rei-specific transform or assuming that every model is the same version as Ene. [VRM 1 changes](https://vrm.dev/en/vrm1/changed/)
+VRM versions have different orientation rules. Keep format handling in the loader. Do not add a Rei-specific transform. Do not assume that all models use Ene's VRM version. See [VRM 1 changes](https://vrm.dev/en/vrm1/changed/).
 
 ## Boundaries and failure handling
 
@@ -83,7 +83,7 @@ Every load has a generation token. Fetching, hashing, decoding and committing mu
 
 Retain the existing embedded-resource policy and add preflight validation of buffer/image URIs. A model import must not fetch arbitrary URLs. Bound JSON complexity, texture dimensions/count and geometry allocation before or during decode; an upload byte limit alone does not prevent excessive decoded allocation. Reject unsupported required extensions clearly. These are proposed robustness controls, not claims that the current loader implements all of them.
 
-Removing an inactive entry deletes its metadata and attachments atomically and deletes asset bytes only when no entry references them. Removing the active model requires choosing another available model first. Built-in entries cannot have their shipped source bytes deleted from the UI. If a selected imported model disappears because browser data was cleared, fall back to Ene with a visible explanation; do not silently substitute during an ongoing stream.
+Remove metadata and attachments for an inactive entry in one transaction. Delete asset bytes only when no entry uses them. Select another model before you remove the active model. The UI cannot delete bundled source files. If browser data loss removes the selected model, select Ene and show why. Do not change models without notice during a stream.
 
 Export original VRM bytes and optionally a versioned library backup containing metadata, attachments and settings. Restore must validate hashes and schema, disallow archive path traversal, enforce decompression limits, resolve duplicates and never execute archive contents. No backup/export leaves the laptop without an explicit user action.
 
@@ -91,8 +91,8 @@ Export original VRM bytes and optionally a versioned library backup containing m
 
 1. Extract the current catalogue into a repository boundary while preserving Ene/Rei selection, per-avatar settings and output synchronization. Define a capability report and make validation reusable without replacing the active avatar.
 2. Add IndexedDB transactions, import inspection, preview and registration; then implement rename, remove and backup. Provide visible storage failures and recovery instructions.
-3. Add migration and recovery coverage before removing the temporary loader or recommending the library as the only copy of an avatar.
+3. Test migration and recovery. Keep the temporary loader until these tests pass. Recommend the library as the only copy after backup tests pass.
 
-Acceptance should include registering both supplied avatars, reopening the same origin, selecting each with an output window open, keeping different settings per content hash, duplicate import, renamed filename with identical bytes, updated model with different bytes, storage denied/quota exceeded, malformed GLB, unsupported extension, external textures, missing required bone, optional-expression absence, cancelling during decode and rapid alternating selections. Check zero stale commits and that failed registration cannot corrupt the previously working model. Test recovery from a backup in a fresh browser profile.
+Acceptance tests must cover both supplied avatars and a second visit to the same origin. Select each avatar with an output window open. Test separate settings for each content hash. Test duplicate import and a new filename with the same bytes. Test an updated model with different bytes. Test denied storage, quota errors, malformed GLB, unsupported extensions, and external textures. Test a missing required bone and missing optional expression. Cancel during decode and change models rapidly. Confirm that no stale operation commits. Confirm that failed registration keeps the previous model usable. Restore a backup in a new browser profile.
 
 Measure import duration, peak browser memory and time to first visible frame for Ene and Rei on this laptop, with and without output open. Report actual measurements before setting performance budgets. Passing a synthetic rig test does not establish physical tracking quality; use the separate [tracking diagnostics proposal](tracking-diagnostics-and-improvement.md) to evaluate that pipeline independently.
