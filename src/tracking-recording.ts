@@ -4,7 +4,7 @@ import { validCalibration } from './profiles';
 import type { VideoMapping } from './tracking-video';
 import type { DiagnosticEnvelope, SolverOutcome } from './tracking-diagnostics';
 export const traceLimits={duration:60000,samples:1800,applies:7200,events:10000,bytes:32*1024*1024};
-export const solverVersion='motion-solver-1';
+export const solverVersion='motion-solver-2';
 export interface TraceManifest {runtime:string;modelHashes:Record<string,string>;solverVersion:string;settings:StudioSettings;calibration:Calibration|null;rigHashes:string[];startTimeMs?:number;video?:VideoMapping}
 type EventData = {kind:'sample';frame:TrackingFrame;diagnostics:DiagnosticEnvelope;reasons:SolverOutcome[];references?:Partial<Record<'face'|'pose'|'hands',number>>}|{kind:'apply';frameSequence:number;solverTimeMs:number;dt:number;reasons?:SolverOutcome[]}|{kind:'settings';settings:StudioSettings}|{kind:'calibration';calibration:Calibration|null}|{kind:'reset'};
 export type TraceEvent=EventData&{sequence:number;timeMs:number};

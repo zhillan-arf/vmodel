@@ -20,6 +20,30 @@ Record the following conditions:
 
 Keep personal recordings under `ops/001-zhil/sprint-001/reports/local/`. Commit aggregate measurements only.
 
+## Combined view checks
+
+Use `motion-solver-2` for this software baseline.
+Open Tracking and select Camera and model.
+Select Ene, then repeat these checks with Rei.
+
+1. Raise the left shoulder while the right shoulder remains still.
+2. Raise the right shoulder while the left shoulder remains still.
+3. Raise each arm above shoulder height.
+4. Select Left hand from Model view.
+5. Bend the thumb, index, middle, ring, and little fingers separately.
+6. Repeat with Right hand.
+7. Select Face from Model view.
+8. Look left, right, up, and down without a head turn.
+9. Blink each eye separately.
+10. Open and close the mouth.
+11. Select Pause inspector.
+12. Confirm that the comparison stops while the main model continues.
+
+Compare the camera lines with the actual bones over the model.
+Record a wrong side, missing joint, range limit, or visible delay separately.
+If you compare cameras, keep the light, distance, settings, and gestures constant.
+These checks do not replace the loss, crossed-hand, and standing tests below.
+
 ## Procedure
 
 1. Record 10 seconds without deliberate movement.

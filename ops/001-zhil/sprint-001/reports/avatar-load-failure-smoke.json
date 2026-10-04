@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-04T14:40:04.289Z",
+  "date": "2026-10-04T17:57:31.081Z",
   "passed": true,
   "status": "complete",
   "question": "Does an unusable avatar file produce a message a beginner can act on, leave the app working, and recover?",
@@ -38,7 +38,7 @@
     "Three malformed inputs, not an exhaustive corpus of broken VRM files.",
     "Judges whether the message names an action, not whether the wording is ideal."
   ],
-  "browser": "154.0.4258.53",
+  "browser": "154.0.8037.97",
   "browserChannel": "chrome",
   "goodAvatarId": "3657b97928638e7ada5f6639141fb63f555912049a2c6ec217851001e322cbcb",
   "recoveredAfterFailures": true,

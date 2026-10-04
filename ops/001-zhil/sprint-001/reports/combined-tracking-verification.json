@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-04T18:05:18.146Z",
+  "fullRunReport": "verify-win32.json",
+  "fullRunChecks": 39,
+  "originalFailures": [
+    "combined tracking library and output checks",
+    "studio text contrast and scaled layout"
+  ],
+  "followup": [
+    {
+      "name": "unit tests",
+      "command": "npm test -- --reporter=dot",
+      "code": 0,
+      "ms": 5480,
+      "log": "ops/001-zhil/sprint-001/reports/local/verify/unit-tests-followup.log"
+    },
+    {
+      "name": "production build and typecheck",
+      "command": "npm run build --silent",
+      "code": 0,
+      "ms": 21879,
+      "log": "ops/001-zhil/sprint-001/reports/local/verify/production-build-and-typecheck-followup.log"
+    },
+    {
+      "name": "combined tracking library and output checks",
+      "command": "node scripts/combined_studio_smoke.mjs",
+      "code": 0,
+      "ms": 121005,
+      "log": "ops/001-zhil/sprint-001/reports/local/verify/combined-tracking-library-and-output-checks-followup.log"
+    },
+    {
+      "name": "studio text contrast and scaled layout",
+      "command": "node scripts/studio_accessibility_smoke.mjs",
+      "code": 1,
+      "ms": 40082,
+      "log": "ops/001-zhil/sprint-001/reports/local/verify/studio-text-contrast-and-scaled-layout-followup.log"
+    },
+    {
+      "name": "combined camera model and full rig checks",
+      "command": "node scripts/combined_tracking_smoke.mjs",
+      "code": 0,
+      "ms": 96980,
+      "log": "ops/001-zhil/sprint-001/reports/local/verify/combined-camera-model-and-full-rig-checks-followup.log"
+    },
+    {
+      "name": "studio text contrast and scaled layout",
+      "command": "node scripts/studio_accessibility_smoke.mjs",
+      "code": 0,
+      "ms": 12933,
+      "log": "ops/001-zhil/sprint-001/reports/local/verify/studio-layout-final.log"
+    }
+  ],
+  "unresolved": [],
+  "passed": true,
+  "limits": [
+    "Model appearance, diagnostic clarity, native zoom, and screen-reader review (TASK-061).",
+    "Windows memory and inspector performance (separate measurement scripts).",
+    "Live camera quality, gestures and standing movement (needs a person).",
+    "Voice preference and listening acceptance (needs the user).",
+    "OBS Virtual Camera registration and consumer test (needs an administrator prompt).",
+    "Final landscape and portrait recordings with audio (needs the operator).",
+    "Combined OBS soaks and physical audio latency or sync (needs devices and time)."
+  ]
+}

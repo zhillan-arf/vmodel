@@ -61,3 +61,10 @@ The baseline schedule and thresholds remain unchanged. No experiment verdict has
 
 Required action: complete inspector acceptance, then perform the [physical protocol](../../../../../docs/tracking-check.md) on the target laptop.
 The operator supplies the gestures. Codex records the failed stage and evaluates eligible corrections.
+
+## Scope update: 2026-10-05
+
+[TASK-062](../archived/TASK-062.md) implements missing shoulder and gaze controls before human tests.
+The user authorized this change.
+This task retains physical correction experiments and their acceptance gates.
+Use `motion-solver-2` as the new software baseline.

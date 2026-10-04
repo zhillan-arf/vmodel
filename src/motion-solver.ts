@@ -22,7 +22,7 @@ export class MotionSolver {
   diagnosticSink?: DiagnosticSink;
   sampleIds:Partial<Record<'face'|'pose'|'hands',number>>={};
   headDiagnostic:{raw:number[];neutralRelative:number[];limited:number[];applied:number[]}|null=null;
-  private task(channel:string):TrackingTask { return channel==='head'||channel==='face'||channel==='neck'?'face':/hands|Hand|Thumb|Index|Middle|Ring|Little/.test(channel)?'hands':'pose'; }
+  private task(channel:string):TrackingTask { return channel==='head'||channel==='face'||channel==='neck'||channel.endsWith('Eye')?'face':/hands|Hand|Thumb|Index|Middle|Ring|Little/.test(channel)?'hands':'pose'; }
   private report(channel:string,reason:SolverOutcome['reason'],value?:number,threshold?:number,task=this.task(channel),jointIndex?:number) {
     this.diagnosticSink?.({stage:'solver',channel,reason,accepted:reason==='accepted'||reason==='clamped',sampleId:this.sampleIds[task],jointIndex,
       value:Number.isFinite(value)?value:undefined,threshold:Number.isFinite(threshold)?threshold:undefined});
@@ -70,7 +70,7 @@ export class MotionSolver {
   private rootRest = new Vector3();
   constructor(readonly vrm: MotionRig) {
     vrm.humanoid.resetNormalizedPose(); vrm.scene.updateMatrixWorld(true);
-    const childOf: Record<string, string> = { hips:'spine',spine:'chest',chest:'neck',neck:'head',head:'leftEye' };
+    const childOf: Record<string, string> = { hips:'spine',spine:'chest',chest:'neck',neck:'head',head:'leftEye',leftEye:'leftEye',rightEye:'rightEye' };
     for (const side of ['left','right']) {
       Object.assign(childOf, { [side+'Shoulder']:side+'UpperArm', [side+'UpperArm']:side+'LowerArm', [side+'LowerArm']:side+'Hand',
         [side+'Hand']:side+'MiddleProximal', [side+'UpperLeg']:side+'LowerLeg',[side+'LowerLeg']:side+'Foot',[side+'Foot']:side+'Toes' });
@@ -198,6 +198,7 @@ export class MotionSolver {
       }else this.report('spine','degenerate_segment',forward.lengthSq(),.5);
     }
     for (const [side,s,e,w,h,k,a,t] of [['left',11,13,15,23,25,27,31],['right',12,14,16,24,26,28,32]] as const) {
+      this.shoulder(side,poseTime,p,s,e);
       this.limb(side,'Arm',poseTime,p[s],p[e],p[w]);
       // Pose's wrist-to-index direction supplies a fallback when detailed hands disappear.
       this.aim(side+'Hand',poseTime,p[w],p[side === 'left' ? 19 : 20],undefined,[w,side==='left'?19:20],'pose');
@@ -215,6 +216,40 @@ export class MotionSolver {
         const segments = finger === 'Thumb' ? ['Metacarpal','Proximal','Distal'] : ['Proximal','Intermediate','Distal'];
         segments.forEach((part,i) => this.aim(side+finger+part,frame.samples.hands.timestamp,hand.world[start+i],hand.world[start+i+1],palmDelta,[start+i,start+i+1],'hands'));
       }
+    }
+  }
+  private shoulder(side:'left'|'right',timestamp:number,p:Landmark[],s:number,e:number) {
+    const name=side+'Shoulder',rest=this.rests.get(name),spine=this.rests.get('spine'),torso=this.goals.get('spine');
+    if(!rest){this.report(name,'missing_bone');return;}
+    if(!this.points(name,[p[11],p[12],p[s],p[e]],[11,12,s,e],'pose'))return;
+    // If hips are hidden, use the rest torso as the shoulder reference.
+    const torsoDelta=spine&&torso?torso.world.clone().multiply(spine.world.clone().invert()):new Quaternion();
+    const up=new Vector3(0,1,0).applyQuaternion(torsoDelta);
+    const across=point(p[s]).sub(point(p[side==='left'?12:11]));
+    const arm=point(p[e]).sub(point(p[s]));
+    if(across.lengthSq()<1e-8||arm.lengthSq()<1e-8){this.report(name,'degenerate_segment');return;}
+    // Shoulder points show tilt. Raised arms add a bounded clavicle estimate.
+    const tilt=Math.asin(MathUtils.clamp(across.normalize().dot(up),-1,1));
+    const lift=Math.max(0,Math.asin(MathUtils.clamp(arm.normalize().dot(up),-1,1)))*.3;
+    const angle=tilt+lift;this.limit(name,angle,-.25,.45,'pose');
+    const lateral=rest.direction.clone().normalize().applyQuaternion(torsoDelta);
+    const axis=lateral.clone().cross(up).normalize();
+    if(axis.lengthSq()<.5){this.report(name,'invalid_rest');return;}
+    this.setGoal(name,new Quaternion().setFromAxisAngle(axis,MathUtils.clamp(angle,-.25,.45)).multiply(torsoDelta).multiply(rest.world),timestamp,'pose');
+  }
+  private gaze(frame:TrackingFrame|null,active:boolean,alpha:number) {
+    for(const side of ['left','right'] as const){
+      const name=side+'Eye',rest=this.rests.get(name);
+      if(!rest){if(active)this.report(name,'missing_bone',undefined,undefined,'face');continue;}
+      const suffix=side==='left'?'Left':'Right',face=active?frame!.face:{};
+      const valid=active&&['In','Out','Up','Down'].every(direction=>Number.isFinite(face['eyeLook'+direction+suffix]));
+      const value=(direction:string)=>coefficient(face['eyeLook'+direction+suffix]);
+      const yaw=valid?(value('Out')-value('In'))*(side==='left'?1:-1)*.35:0;
+      const pitch=valid?(value('Down')-value('Up'))*.25:0;
+      const delta=new Quaternion().setFromEuler(new Euler(pitch,yaw,0,'YXZ'));
+      const local=rest.local.clone().multiply(rest.world.clone().invert().multiply(delta).multiply(rest.world));
+      rest.node.quaternion.slerp(local,alpha);rest.node.updateWorldMatrix(false,false);
+      this.report(name,valid?'accepted':'not_detected',undefined,undefined,'face');
     }
   }
   update(frame: TrackingFrame | null, settings: StudioSettings, dt: number, now: number) {
@@ -258,6 +293,7 @@ export class MotionSolver {
     this.vrm.scene.updateMatrixWorld(true);
     const currentWorlds = new Map([...this.rests].map(([name,rest]) => [name,rest.node.getWorldQuaternion(new Quaternion())]));
     for (const [name,rest] of this.rests) {
+      if(name.endsWith('Eye'))continue;
       const measured = fresh ? this.goals.get(name) : undefined;
       const parent = rest.node.parent?.getWorldQuaternion(new Quaternion()) ?? new Quaternion();
       let goal = measured && recent(measured.timestamp,now) ? measured.world : undefined;
@@ -280,6 +316,7 @@ export class MotionSolver {
       }
       rest.node.updateWorldMatrix(false,false);
     }
+    this.gaze(frame,!!faceFresh,alpha);
     if (this.root) {
       const target = this.rootRest.clone();
       if (fresh && frame.samples.pose.present && recent(frame.samples.pose.timestamp,now) && settings.mode==='standing' && this.points('root',[frame.poseImage[23],frame.poseImage[24]],[23,24],'pose')) {

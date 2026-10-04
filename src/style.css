@@ -34,3 +34,6 @@ body[data-view=library] .sidebar,body[data-view=tracking] .sidebar{display:none}
 .library-status{height:128px;overflow:auto}
 .library-status:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
 #library-message:empty{min-height:0;margin:0}
+
+.combined-view .comparison-views{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}.combined-view #inspector-avatar{height:420px}.combined-view #inspector-3d-controls{grid-column:1/-1}.comparison-views>div{min-width:0}#mapping-guide,#rig-coverage{font-size:.875rem}#comparison-state{overflow-wrap:anywhere}
+@media(max-width:900px){.combined-view .comparison-views{grid-template-columns:1fr}}

@@ -7,6 +7,7 @@ import { Retargeter } from './retarget';
 import { AvatarResources } from './avatar-resources';
 import type { CapabilityReport } from './model-types';
 import { requiredBones } from './vrm-inspection';
+import { RigOverlay, trackedBones } from './rig-overlay';
 
 export interface PreparedAvatar { capabilities: CapabilityReport; vrm: VRM; retarget: Retargeter; generation: number; disposed: boolean; committed: boolean }
 import { compositionSize, fitComposition } from './composition';
@@ -25,6 +26,13 @@ export class AvatarViewer {
   private observer: ResizeObserver;
   private springs: { joint: VRMSpringBoneJoint; stiffness: number; dragForce: number; gravityPower: number }[] = [];
   private contextLost = false;
+  private rigOverlay: RigOverlay | null = null;
+  private diagnosticFocus='body';
+  setDiagnosticFocus(value:string){this.diagnosticFocus=value;this.resize();}
+  setRigVisible(visible:boolean) {
+    if(visible&&!this.rigOverlay){this.rigOverlay=new RigOverlay();this.scene.add(this.rigOverlay.lines,this.rigOverlay.points);}
+    if(!visible){this.rigOverlay?.dispose();this.rigOverlay=null;}
+  }
   constructor(readonly container: HTMLElement, settings: StudioSettings, private outputMode = false) {
     this.settings = settings;
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: 'high-performance' });
@@ -86,6 +94,7 @@ export class AvatarViewer {
       signal?.throwIfAborted();
       if (generation !== this.generation) throw new Error('Avatar load superseded.');
       VRMUtils.rotateVRM0(vrm);
+      if(vrm.lookAt)vrm.lookAt.autoUpdate=false;
       vrm.scene.traverse(obj => { obj.frustumCulled = false; });
       vrm.update(0);
       const bounds = new THREE.Box3().setFromObject(vrm.scene);
@@ -164,10 +173,23 @@ export class AvatarViewer {
   }
   setOutputMode(enabled: boolean) { this.outputMode = enabled; this.resize(); }
   draw(dt: number) {
-    this.vrm?.update(Math.min(dt, 0.05)); if (!this.contextLost) this.renderer.render(this.scene, this.camera);
+    this.vrm?.update(Math.min(dt, 0.05));
+    if(this.vrm)this.rigOverlay?.update(this.vrm);
+    if(this.vrm&&this.diagnosticFocus!=='body'){
+      const names=trackedBones.filter(name=>this.diagnosticFocus==='face'?['head','leftEye','rightEye'].includes(name):name.startsWith(this.diagnosticFocus.startsWith('left')?'left':'right')&&/Hand|Thumb|Index|Middle|Ring|Little/.test(name));
+      const points=names.flatMap(name=>{const bone=this.vrm!.humanoid.getRawBoneNode(name);return bone?[bone.getWorldPosition(new THREE.Vector3())]:[];});
+      if(points.length){
+        const bounds=new THREE.Box3().setFromPoints(points),target=bounds.getCenter(new THREE.Vector3());
+        const span=Math.max(bounds.getSize(new THREE.Vector3()).length()*1.5,this.diagnosticFocus==='face'?.38:.25);
+        const distance=span/(2*Math.tan(THREE.MathUtils.degToRad(this.camera.fov/2)))*Math.max(1,1/this.camera.aspect);
+        this.camera.position.set(target.x,target.y,target.z+distance);this.camera.lookAt(target);
+      }
+    }
+    if (!this.contextLost) this.renderer.render(this.scene, this.camera);
   }
   dispose() {
     if(this.disposed)return;this.disposed=true;
+    this.setRigVisible(false);
     this.cancelPendingLoad(); this.observer.disconnect();
     if (this.vrm) { this.scene.remove(this.vrm.scene);this.releaseScene(this.vrm.scene);this.vrm=null; }
     this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();

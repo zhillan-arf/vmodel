@@ -59,3 +59,9 @@ The G5 handoff and physical G6 acceptance remain open.
 Evidence: [implementation record](../../reports/studio-implementation.md) and [task report](../../reports/studio-evolution-acceptance.md).
 
 Acceptance remains open until all required checks have direct evidence.
+
+## Scope update: 2026-10-05
+
+Include [TASK-062](../archived/TASK-062.md) in the final combined acceptance test.
+The new Camera and model layer must show both models with their actual bones.
+Physical and human acceptance remain open.

@@ -4,7 +4,7 @@
 - Priority: P0
 - Owner: Codex (implementing assistant)
 - Goal: G1, G2, G3, G4, G5, G6
-- Depends on: None to start; completion requires TASK-001 through TASK-061, including the TASK-021 acceptance gate.
+- Depends on: None to start; completion requires TASK-001 through TASK-062, including the TASK-021 acceptance gate.
 - Estimate: Ongoing throughout implementation; included in delivery coordination.
 - Specification: [Ene VTuber plan](../../specs/ene-vtuber-plan.md)
 - Voice specification: [Live English character voice](../../specs/voice-conversion-plan.md)
@@ -17,7 +17,7 @@
 
 Own the work from the current plan through delivery of the user's **Ene Cyber legs** avatar and working webcam-to-recording/streaming program. Maintain an accurate, resumable account of what is finished, what is active, what is blocked, and what should happen next.
 
-This controller owns TASK-001 through TASK-061 across G1 through G6.
+This controller owns TASK-001 through TASK-062 across G1 through G6.
 Children can start before this controller finishes.
 TASK-061 collects the tests that need a person.
 
@@ -43,10 +43,10 @@ TASK-P04 maintains G5. TASK-P05 maintains G6. Both controllers supply evidence t
 
 ## Current checkpoint
 
-Date: 2026-10-04. Windows software checks, model memory tests, and inspector speed comparisons pass. Human acceptance remains open.
+Date: 2026-10-05. Combined tracking software checks pass. Human acceptance remains open.
 
-- Scope: 61 tasks, TASK-001 through TASK-061.
-- Progress: 36/61 Done; 18 In progress; 1 Blocked; 1 Ready; 5 Todo.
+- Scope: 62 tasks, TASK-001 through TASK-062.
+- Progress: 37/62 Done; 18 In progress; 1 Blocked; 1 Ready; 5 Todo.
 - G5: [P04](TASK-P04.md) has library, preparation, selection, and backup code with synthetic browser evidence.
 - G6: [P05](TASK-P05.md) has diagnostic, shared-solver, inspector, and replay code with component evidence.
 - Storage and backup: TASK-041, TASK-044, and TASK-046 passed their software acceptance checks.
@@ -214,3 +214,14 @@ See [the Windows record](../../reports/windows-continuation.md).
 TASK-039, TASK-043, TASK-045, and TASK-051 have complete software evidence.
 [TASK-061](../backlog/TASK-061.md) owns their transferred human checks and the other physical acceptance tests.
 The release requirements remain unchanged.
+
+## Combined tracking update: 2026-10-05
+
+[TASK-062](../archived/TASK-062.md) adds the combined camera view, actual model bones, shoulder control, and gaze control.
+The user requested these software changes before human tests.
+This supersedes the earlier restriction on missing controls.
+Scheduler and confidence experiments still require physical evidence.
+See the [audit](../../reports/combined-tracking-audit.md).
+
+TASK-062 is complete. All 39 software verification checks have passing results after follow-up runs.
+The [verification record](../../reports/combined-tracking-verification.json) preserves the original failures and the final results.

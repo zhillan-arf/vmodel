@@ -68,3 +68,11 @@ Do not repeat the OBS permission prompt automatically.
 - [ ] Voice preference and physical audio tests have recorded results.
 - [ ] OBS Virtual Camera works in the intended consumer application.
 - [ ] Final landscape and portrait recordings pass human review.
+
+## Combined tracking review
+
+Review Camera and model with Ene and Rei.
+Check shoulder motion, gaze direction, and each of the ten fingers.
+Use the face and hand close views to inspect the model bones.
+Compare the laptop camera with the external webcam under the same conditions.
+See [TASK-062](../archived/TASK-062.md) and the [audit](../../reports/combined-tracking-audit.md).

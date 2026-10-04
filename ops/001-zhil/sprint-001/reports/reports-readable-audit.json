@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-04T16:05:52.416Z",
+  "date": "2026-10-04T18:07:01.100Z",
   "passed": true,
   "status": "complete",
   "readOnly": true,
@@ -8,7 +8,7 @@
     "Checks that each file parses, not that its contents are correct or current.",
     "Deliberately does not verify that path fields point at existing files. Of 1028 such fields, the ones that do not resolve are URL routes, bundle-relative paths, and absences that are themselves the finding - the two sphere maps recorded as unavailable, for instance. A check flagging those would be noise, and would pressure someone to \"fix\" an accurate record."
   ],
-  "scanned": 212,
+  "scanned": 216,
   "withBom": [],
   "unparseable": [],
   "checks": {

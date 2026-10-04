@@ -5,7 +5,7 @@
 - Owner: Codex (implementing assistant)
 - Goal: G6
 - Parent controller: [TASK-P01](TASK-P01.md)
-- Depends on: None to start; completion requires TASK-049 through TASK-060 and the G5 handoff in TASK-048.
+- Depends on: None to start; completion requires TASK-049 through TASK-060, TASK-062, and the G5 handoff in TASK-048.
 - Estimate: Coordination throughout G6 implementation; included in child estimates.
 - Specification: [Studio product specification](../../specs/studio-product-spec.md)
 - Decisions: [Design decisions](../../specs/studio-design-decisions.md)
@@ -35,10 +35,10 @@ This controller is a coordination record, not a background process. It does not 
 
 ## Current checkpoint
 
-Date: 2026-10-04. Windows software checks and inspector speed comparisons pass. Human and physical acceptance remain open.
+Date: 2026-10-05. Combined tracking software checks pass. Human and physical acceptance remain open.
 
-- Scope: Twelve implementation tasks, TASK-049 through TASK-060.
-- Progress: 6/12 Done; 2 In progress; 1 Blocked; 0 Ready; 3 Todo.
+- Scope: Thirteen implementation tasks, TASK-049 through TASK-060, plus TASK-062.
+- Progress: 7/13 Done; 2 In progress; 1 Blocked; 0 Ready; 3 Todo.
 - Evidence: [implementation record](../../reports/studio-implementation.md) and [browser checks](../../reports/studio-features-smoke.json).
 - Completed checks: unit suite, production build, solver diagnostics, trace limits, and video lifecycle tests.
 - Model assets: local Ene and Rei pass Chrome and Edge selection and memory tests. The Windows reports record their actual hashes.
@@ -92,3 +92,14 @@ See [the Windows record](../../reports/windows-continuation.md).
 TASK-039, TASK-043, TASK-045, and TASK-051 have complete software evidence.
 [TASK-061](../backlog/TASK-061.md) owns their transferred human checks and the other physical acceptance tests.
 The release requirements remain unchanged.
+
+## Combined tracking update: 2026-10-05
+
+[TASK-062](../archived/TASK-062.md) adds the combined camera view, actual model bones, shoulder control, and gaze control.
+The user requested these software changes before human tests.
+This supersedes the earlier restriction on missing controls.
+Scheduler and confidence experiments still require physical evidence.
+See the [audit](../../reports/combined-tracking-audit.md).
+
+TASK-062 is complete. All 39 software verification checks have passing results after follow-up runs.
+The [verification record](../../reports/combined-tracking-verification.json) preserves the original failures and the final results.

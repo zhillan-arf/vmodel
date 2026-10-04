@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T14:35:21.113Z",
-  "browser": "154.0.4258.53",
+  "generatedAt": "2026-10-04T17:54:04.189Z",
+  "browser": "153.0.8010.12",
   "checks": {
     "twoTabDuplicateRace": {
       "models": 1,
@@ -108,7 +108,7 @@
     "24f1a27a1785ea9a2411104217b372db7de7d5a26b8c6478050cfb373943bd99"
   ],
   "platform": "win32",
-  "browserChannel": "msedge",
+  "browserChannel": "chromium",
   "limits": [
     "Synthetic models only.",
     "The blocked-upgrade test changes the requested version through a test wrapper.",

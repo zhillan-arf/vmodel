@@ -13,6 +13,8 @@ import { ReplayVideo,replayVideoTime } from './replay-video';
 import { DiagnosticVideo } from './tracking-video';
 import { download } from './library-backup';
 import { AvatarViewer } from './viewer';
+import { combinedObservations,isCombinedCapture } from './combined-observations';
+import { trackedBones } from './rig-overlay';
 import { ModelOperation,prepareSelection,abortable } from './model-selection';
 import { sha256 } from './model-types';
 import type { Calibration,Landmark,StudioSettings,TrackingFrame } from './types';
@@ -28,6 +30,7 @@ export class TrackingInspector {
   private paused=false;
   private latest:{frame:TrackingFrame;diagnostics:DiagnosticEnvelope}|null=null;
   private shown:{frame:TrackingFrame;diagnostics:DiagnosticEnvelope}|null=null;
+  private combinedLatest:typeof this.latest=null;
   private frozen:HTMLCanvasElement|null=null;
   private rig=createCanonicalRig();
   private solver=new MotionSolver(this.rig);
@@ -68,9 +71,9 @@ export class TrackingInspector {
     this.element.className='feature-panel';this.element.dataset.studioPanel='tracking';this.element.hidden=true;
     this.element.innerHTML=`<h1>Tracking Inspector</h1><p>Observations show camera points. Estimated 3D shows calculated depth. Accepted motion shows solver results. Avatar shows model appearance.</p>
       <p id="camera-message" role="status"></p><div class="toolbar"><button id="inspector-start-camera">Start camera</button><button id="inspector-stop-camera">Stop camera</button><button id="pause-inspector">Pause inspector</button><span id="inspector-state" role="status">Camera stopped</span></div>
-      <label>Layer<select id="inspector-layer"><option value="observations">Observations</option><option value="estimated">Estimated 3D</option><option value="accepted">Accepted motion</option><option value="avatar">Avatar</option></select></label>
+      <label>Layer<select id="inspector-layer"><option value="observations">Observations</option><option value="estimated">Estimated 3D</option><option value="accepted">Accepted motion</option><option value="avatar">Avatar</option><option value="combined">Camera and model</option></select></label>
       <div class="toolbar"><label>Task<select id="inspector-task"><option value="pose">Body</option><option value="face">Face</option><option value="hands">Hands</option></select></label><label>Hand<select id="inspector-hand"><option value="left">Left hand</option><option value="right">Right hand</option></select></label><label class="check"><input id="dense-face" type="checkbox"> Dense face points</label><label class="check"><input id="align-hands" type="checkbox"> Calculated wrist alignment</label></div>
-      <p>Accepted: solid line. Rejected: dashed line. Stale: faded line. Missing: no marker.</p><div class="inspector-layout"><div><canvas id="observation-canvas" width="800" height="600" role="img" aria-label="Tracking observations" aria-describedby="observation-state"></canvas><p id="observation-state" role="status"></p><div id="estimated-view" hidden><p>Estimated 3D · meters · X right · Y up · Z forward</p><p id="alignment-state" role="status"></p></div><label>Comparison model<select id="comparison-model"><option value="current">Current model</option><option value="ene">Ene</option><option value="rei">Rei</option></select></label><p id="comparison-state" role="status" aria-live="polite"></p><div id="inspector-avatar" hidden></div>
+      <p>Accepted: solid line. Rejected: dashed line. Stale: faded line. Missing: no marker.</p><div class="inspector-layout"><div class="comparison-views"><div class="camera-pane"><canvas id="observation-canvas" width="800" height="600" role="img" aria-label="Tracking observations" aria-describedby="observation-state"></canvas><p id="observation-state" role="status"></p><div id="estimated-view" hidden><p>Estimated 3D · meters · X right · Y up · Z forward</p><p id="alignment-state" role="status"></p></div></div><div class="model-pane"><div id="inspector-avatar" hidden></div><label>Comparison model<select id="comparison-model"><option value="current">Current model</option><option value="ene">Ene</option><option value="rei">Rei</option></select></label><p id="comparison-load-state" role="status" aria-live="polite"></p><details id="comparison-details"><summary>Model data</summary><p id="comparison-state" role="status" aria-live="polite"></p></details><label id="rig-control" class="check" hidden><input id="show-model-bones" type="checkbox" checked> Show model bones</label><label id="focus-control" hidden>Model view<select id="model-focus"><option value="body">Body</option><option value="face">Face</option><option value="leftHand">Left hand</option><option value="rightHand">Right hand</option></select></label><p id="rig-coverage" hidden></p><p id="mapping-guide" hidden>Camera points set joint directions. These directions rotate model bones. Skin weights move the surface. Face points control head motion, eyes, and mouth shapes. Blue lines show model bones. Gold points show joints. Bone lengths remain fixed.</p></div>
       <div id="inspector-3d-controls" class="toolbar" hidden><button id="orbit-left">Orbit left</button><button id="orbit-right">Orbit right</button><button id="zoom-in">Zoom in</button><button id="zoom-out">Zoom out</button><button id="reset-view">Reset view</button></div></div>
       <div><label>Joint index<input id="joint-index" type="number" min="0" max="477" value="13"></label><p id="joint-selection" role="status" aria-live="polite"></p><div id="channel-summary" aria-label="Solver summary"></div><p id="shared-hand-summary"></p><details><summary>Joint values</summary><pre id="joint-detail"></pre></details><details><summary>Timing and distributions</summary><pre id="tracking-metrics"></pre></details><details><summary>Solver values and reasons</summary><pre id="solver-outcomes"></pre></details><details><summary>Recorded reasons</summary><pre id="recorded-outcomes">No replay result</pre></details></div></div>
       <section><h2>Trace</h2><p>Traces contain personal movement. Exports contain no camera images by default.</p>
@@ -80,9 +83,11 @@ export class TrackingInspector {
     this.get('inspector-stop-camera').onclick=()=>document.querySelector<HTMLButtonElement>('#stop')?.click();
     for(const label of ['Face','Body','Left hand','Right hand']){const row=document.createElement('p');const heading=document.createElement('strong');heading.textContent=label;const value=document.createElement('span');row.append(heading,document.createElement('br'),value);this.get('channel-summary').append(row);}
     this.canvas=this.get('observation-canvas');
-    this.get('pause-inspector').onclick=()=>{this.paused=!this.paused;this.get('pause-inspector').textContent=this.paused?'Resume':'Pause inspector';if(this.paused){if(!this.replaying)this.shown=this.latest;this.frozen=document.createElement('canvas');this.frozen.width=this.canvas.width;this.frozen.height=this.canvas.height;this.frozen.getContext('2d')!.drawImage(this.canvas,0,0);}else{this.frozen=null;if(!this.replaying)this.shown=this.latest;}for(const id of ['inspector-task','inspector-hand','dense-face','align-hands']){const control=this.get<HTMLInputElement>(id);control.disabled=this.paused;control.title=this.paused?'Resume the inspector to change this control.':'';}this.setDemand();};
-    this.get('comparison-model').onchange=()=>{if(this.layer==='avatar')void this.prepareAvatar();};
-    this.get('inspector-layer').onchange=()=>{this.dispose3D();this.avatarOperation.cancel();this.avatarViewer?.dispose();this.avatarViewer=null;this.avatarSolver=null;if(this.layer==='avatar')void this.prepareAvatar();};
+    this.get('pause-inspector').onclick=()=>{this.paused=!this.paused;this.get('pause-inspector').textContent=this.paused?'Resume':'Pause inspector';if(this.paused){if(!this.replaying)this.shown=this.layer==='combined'?this.combinedLatest:this.latest;this.frozen=document.createElement('canvas');this.frozen.width=this.canvas.width;this.frozen.height=this.canvas.height;this.frozen.getContext('2d')!.drawImage(this.canvas,0,0);}else{this.frozen=null;if(!this.replaying)this.shown=this.latest;}for(const id of ['inspector-task','inspector-hand','dense-face','align-hands']){const control=this.get<HTMLInputElement>(id);control.disabled=this.paused;control.title=this.paused?'Resume the inspector to change this control.':'';}this.setDemand();};
+    this.get('show-model-bones').onchange=()=>this.avatarViewer?.setRigVisible(this.get<HTMLInputElement>('show-model-bones').checked);
+    this.get('model-focus').onchange=()=>this.avatarViewer?.setDiagnosticFocus(this.get<HTMLSelectElement>('model-focus').value);
+    this.get('comparison-model').onchange=()=>{if(this.hasAvatar)void this.prepareAvatar();};
+    this.get('inspector-layer').onchange=()=>{this.dispose3D();this.avatarOperation.cancel();this.avatarViewer?.dispose();this.avatarViewer=null;this.avatarSolver=null;if(this.hasAvatar)void this.prepareAvatar();};
     this.get<HTMLInputElement>('joint-index').oninput=()=>{this.selectedJoint=Math.max(0,Math.min(477,Number(this.get<HTMLInputElement>('joint-index').value)));};
     this.canvas.onclick=event=>{const sample=this.shown;if(!sample)return;const rect=this.canvas.getBoundingClientRect(),x=(event.clientX-rect.left)*800/rect.width,y=(event.clientY-rect.top)*600/rect.height;let distance=Infinity;this.points(sample).forEach((p,i)=>{const q=containedPoint(p,sample.diagnostics.inputSize,800,600,this.displaySettings().mirror),d=Math.hypot(q.x-x,q.y-y);if(d<distance){distance=d;this.selectedJoint=i;}});this.get<HTMLInputElement>('joint-index').value=String(this.selectedJoint);};
     this.get('record-trace').onclick=()=>this.startRecord();this.get('stop-trace').onclick=()=>this.stopRecord();
@@ -104,15 +109,16 @@ export class TrackingInspector {
   }
   private get<T extends HTMLElement=HTMLElement>(id:string){return this.element.querySelector<T>(`#${id}`)!;}
   private get task(){return this.get<HTMLSelectElement>('inspector-task').value as TrackingTask;}
+  private get hasAvatar(){return this.layer==='avatar'||this.layer==='combined';}
   private get layer(){return this.get<HTMLSelectElement>('inspector-layer').value;}
   private message(text:string){this.get('trace-state').textContent=text;}
   private setDemand(){this.demand(this.recording?'record':this.visible&&!this.paused&&!this.replaying?'inspect':'off');}
-  setVisible(visible:boolean){this.visible=visible;if(!visible){if(this.recording)this.stopRecord();this.clearReplayVideo();this.images.clear();this.dispose3D();this.avatarOperation.cancel();this.avatarViewer?.dispose();this.avatarViewer=null;this.avatarSolver=null;}else if(this.layer==='avatar'&&!this.avatarViewer){void this.prepareAvatar();}this.setDemand();}
+  setVisible(visible:boolean){this.visible=visible;if(!visible){if(this.recording)this.stopRecord();this.clearReplayVideo();this.images.clear();this.dispose3D();this.avatarOperation.cancel();this.avatarViewer?.dispose();this.avatarViewer=null;this.avatarSolver=null;}else if(this.hasAvatar&&!this.avatarViewer){void this.prepareAvatar();}this.setDemand();}
   receive(frame:TrackingFrame,diagnostics:DiagnosticEnvelope,image:ImageBitmap|null){
     if(this.disposed){image?.close();return;}
-    if(this.latest&&this.latest.diagnostics.sessionId!==diagnostics.sessionId){this.stopRecord();this.images.clear();this.resetSolver();}
+    if(this.latest&&this.latest.diagnostics.sessionId!==diagnostics.sessionId){this.stopRecord();this.images.clear();this.combinedLatest=null;this.resetSolver();}
     if(image)this.images.retain(diagnostics.captureSequence,image,diagnostics);
-    this.latest={frame,diagnostics};if(!this.paused&&!this.replaying)this.shown=this.latest;
+    this.latest={frame,diagnostics};if(isCombinedCapture(diagnostics))this.combinedLatest=this.latest;if(!this.paused&&!this.replaying)this.shown=this.latest;
     this.metrics.add(diagnostics,diagnostics.receivedAtMs??diagnostics.captureTimeMs);
     if(this.recording&&this.recorder){
       const time=performance.now()-this.recordingStart;
@@ -160,24 +166,44 @@ export class TrackingInspector {
   private points(sample:{frame:TrackingFrame;diagnostics:DiagnosticEnvelope}):Landmark[]{if(this.task==='face')return sample.diagnostics.tasks.face.observations?.[0]??[];if(this.task==='pose')return sample.frame.poseImage;return sample.frame.hands.find(x=>x.side.toLowerCase()===this.get<HTMLSelectElement>('inspector-hand').value)?.landmarks??[];}
   private connections(){return this.task==='pose'?PoseLandmarker.POSE_CONNECTIONS:this.task==='hands'?HandLandmarker.HAND_CONNECTIONS:FaceLandmarker.FACE_LANDMARKS_CONTOURS;}
   private draw(now:number){
-    const sample=this.shown;this.announce('inspector-state',this.recording?(this.video.active?'Recording trace and camera video':'Recording trace'):this.replaying?'Replay':this.paused?'Inspector paused':this.stream()?'Camera active':'Camera stopped');
-    if(this.replaying&&this.replay&&sample)this.replayVideo.seek(replayVideoTime(this.replay,sample.diagnostics,this.task));
-    const observation=this.layer==='observations';this.canvas.hidden=!observation;this.get('estimated-view').hidden=!['estimated','accepted'].includes(this.layer);this.get('inspector-avatar').hidden=this.layer!=='avatar';this.get('inspector-3d-controls').hidden=!['estimated','accepted'].includes(this.layer);
-    this.get('inspector-hand').closest('label')!.hidden=this.task!=='hands'||!['observations','estimated'].includes(this.layer);
-    this.get('dense-face').closest('label')!.hidden=this.task!=='face'||!observation;
+    let sample=this.shown;
+    if(this.layer==='combined'&&!this.paused){
+      if(!this.replaying)sample=this.combinedLatest;
+      else if(this.replay){const index=Number(this.get<HTMLInputElement>('trace-position').value);const event=this.replay.events.slice(0,index+1).reverse().find(event=>event.kind==='sample'&&isCombinedCapture(event.diagnostics));sample=event?.kind==='sample'?event:null;}
+    }
+    this.announce('inspector-state',this.recording?(this.video.active?'Recording trace and camera video':'Recording trace'):this.replaying?'Replay':this.paused?'Inspector paused':this.stream()?'Camera active':'Camera stopped');
+    if(this.replaying&&this.replay&&sample)this.replayVideo.seek(replayVideoTime(this.replay,sample.diagnostics,this.layer==='combined'?'face':this.task));
+    this.element.classList.toggle('combined-view',this.layer==='combined');
+    const observation=this.layer==='observations'||this.layer==='combined';this.canvas.hidden=!observation;this.get('estimated-view').hidden=!['estimated','accepted'].includes(this.layer);this.get('inspector-avatar').hidden=!this.hasAvatar;this.get('inspector-3d-controls').hidden=!['estimated','accepted'].includes(this.layer);
+    this.get('inspector-hand').closest('label')!.hidden=this.task!=='hands'||!['observations','estimated','combined'].includes(this.layer);
+    this.get('dense-face').closest('label')!.hidden=this.task!=='face'||this.layer!=='observations';
     this.get('align-hands').closest('label')!.hidden=this.task!=='hands'||this.layer!=='estimated';
-    this.get('comparison-model').closest('label')!.hidden=this.layer!=='avatar';
-    this.get('comparison-state').hidden=this.layer!=='avatar';
+    this.get('comparison-model').closest('label')!.hidden=!this.hasAvatar;
+    for(const id of ['rig-control','focus-control','rig-coverage','mapping-guide'])this.get(id).hidden=!this.hasAvatar;
+    this.get('comparison-details').hidden=!this.hasAvatar;this.get('comparison-load-state').hidden=!this.hasAvatar;
     if(observation){const context=this.canvas.getContext('2d')!;context.fillStyle='#101827';context.fillRect(0,0,800,600);
       if(this.paused&&this.frozen)context.drawImage(this.frozen,0,0);
-      else if(sample){const task=sample.diagnostics.tasks[this.task],image=this.replaying?this.replayVideo.frame:this.images.get(task);this.announce('observation-state',image?'Matched camera image.':'No matching image. Points use a plain background.');if(image){const width=image instanceof HTMLVideoElement?image.videoWidth:image.width,height=image instanceof HTMLVideoElement?image.videoHeight:image.height;const scale=Math.min(800/width,600/height),w=width*scale,h=height*scale;context.save();if(this.displaySettings().mirror){context.translate(800,0);context.scale(-1,1);}context.drawImage(image,(800-w)/2,(600-h)/2,w,h);context.restore();}else{context.fillStyle='#E4EAF5';context.fillText('No matching image. Points use a plain background.',16,24);}
+      else if(sample){const task=sample.diagnostics.tasks[this.layer==='combined'?'face':this.task],image=this.replaying?this.replayVideo.frame:this.images.get(task);if(this.layer!=='combined')this.announce('observation-state',image?'Matched camera image.':'No matching image. Points use a plain background.');if(image){const width=image instanceof HTMLVideoElement?image.videoWidth:image.width,height=image instanceof HTMLVideoElement?image.videoHeight:image.height;const scale=Math.min(800/width,600/height),w=width*scale,h=height*scale;context.save();if(this.displaySettings().mirror){context.translate(800,0);context.scale(-1,1);}context.drawImage(image,(800-w)/2,(600-h)/2,w,h);context.restore();}else{context.fillStyle='#E4EAF5';context.fillText('No matching image. Points use a plain background.',16,24);}
         const age=performance.timeOrigin+now-this.clock().anchor-task.sampleTimeMs;const stale=!this.replaying&&age>=500;
-        const points=this.points(sample);const mapped=points.map(p=>containedPoint(p,sample.diagnostics.inputSize,800,600,this.displaySettings().mirror));
-        for(const edge of this.connections()){const a=mapped[edge.start],b=mapped[edge.end];if(!a||!b)continue;const rejected=[points[edge.start],points[edge.end]].some(p=>(p.visibility??1)<=.55||(p.presence??1)<=.55);drawObservationEdge(context,a,b,rejected,stale);}context.setLineDash([]);
-        if(this.task!=='face'||this.get<HTMLInputElement>('dense-face').checked)for(const [index,p]of mapped.entries())drawObservationPoint(context,p,index===this.selectedJoint,stale);
+        const groups=this.layer==='combined'?combinedObservations(sample.frame,sample.diagnostics):[{task:this.task,points:this.points(sample),edges:this.connections()}];
+        for(const group of groups){
+          const points=group.points,mapped=points.map(p=>containedPoint(p,sample.diagnostics.inputSize,800,600,this.displaySettings().mirror));
+          if(group.task==='face'&&this.layer==='combined'){
+            context.save();context.strokeStyle=stale?'#879B99':'#E4EAF5';context.lineWidth=.6;context.beginPath();
+            for(const edge of group.edges){const a=mapped[edge.start],b=mapped[edge.end];if(a&&b&&[a.x,a.y,b.x,b.y].every(Number.isFinite)){context.moveTo(a.x,a.y);context.lineTo(b.x,b.y);}}
+            context.stroke();context.restore();
+          }else{
+            for(const edge of group.edges){const a=mapped[edge.start],b=mapped[edge.end];if(!a||!b||![a.x,a.y,b.x,b.y].every(Number.isFinite))continue;const rejected=[points[edge.start],points[edge.end]].some(p=>(p.visibility??1)<=.55||(p.presence??1)<=.55);drawObservationEdge(context,a,b,rejected,stale);}
+            context.setLineDash([]);
+            if(group.task!=='face'||this.get<HTMLInputElement>('dense-face').checked)for(const [index,p]of mapped.entries())if(Number.isFinite(p.x+p.y))drawObservationPoint(context,p,group.task===this.task&&index===this.selectedJoint,stale);
+          }
+        }
+        if(this.layer==='combined')this.announce('observation-state',`${image?'Matched camera image.':'No matching image.'} Face: ${groups.find(g=>g.task==='face')?.points.length??0} points. Body: ${groups.find(g=>g.task==='pose')?.points.length??0} points. Hands: ${groups.filter(g=>g.task==='hands').length}. ${stale?'Sample is stale.':''}`);
+
       }
       context.globalAlpha=1;
-    }else if(this.layer==='estimated'||this.layer==='accepted')this.draw3D();else this.avatarViewer?.draw(1/30);
+    }else if(this.layer==='estimated'||this.layer==='accepted')this.draw3D();
+    if(this.hasAvatar){this.avatarViewer?.draw(this.paused?0:1/30);this.get('mapping-guide').dataset.capture=String(sample?.diagnostics.captureSequence??0);}
     if(!sample){this.showChannelSummary([]);this.announce('observation-state','No camera sample.');this.announce('joint-selection','No joint sample.');this.get('joint-detail').textContent='Missing · No camera sample';this.get('tracking-metrics').textContent='Face: unavailable\nBody: unavailable\nLeft hand: unavailable\nRight hand: unavailable';}
     if(sample&&now-this.lastSummary>=250){this.lastSummary=now;this.showChannelSummary(this.outcomes);sample.diagnostics.displayTimeMs=this.replaying?sample.diagnostics.captureTimeMs:performance.timeOrigin+now-this.clock().anchor;const point=(this.layer==='estimated'?this.worldPoints(sample.frame):this.points(sample))[this.selectedJoint];const jointLabel=`${this.task} · ${this.task==='pose' ? ({11:'Left shoulder',12:'Right shoulder',13:'Left elbow',14:'Right elbow',15:'Left wrist',16:'Right wrist',23:'Left hip',24:'Right hip',25:'Left knee',26:'Right knee',27:'Left ankle',28:'Right ankle'} as Record<number,string>)[this.selectedJoint]??'Joint' : this.task==='hands'?this.get<HTMLSelectElement>('inspector-hand').value+' hand joint':'Joint'} ${this.selectedJoint}`;this.announce('joint-selection',jointLabel);this.get('joint-detail').textContent=`${jointLabel}\n${this.layer==='estimated'?'Raw world coordinates · meters':'Raw image coordinates'}\n${point?JSON.stringify(point,null,2):'Missing'}\nConfidence defaults to 1 only inside the solver. Missing values remain unavailable here.`;this.get('tracking-metrics').textContent=this.replaying?'Live metrics are unavailable during replay.':(['face','pose','hands']as const).map(task=>{
       const m=this.metrics.summary(task,performance.timeOrigin+now-this.clock().anchor);
@@ -210,12 +236,13 @@ export class TrackingInspector {
   private showComparisonDetails(settings:StudioSettings,calibration:Calibration|null){
     if(!this.comparisonAsset||!this.avatarViewer)return;
     const key=JSON.stringify(settings);
-    if(key!==this.comparisonSettings){this.avatarViewer.configure({...settings});this.comparisonSettings=key;}
+    if(key!==this.comparisonSettings){this.avatarViewer.configure({...settings});this.avatarViewer.renderer.domElement.style.transform=settings.mirror?'scaleX(-1)':'';this.comparisonSettings=key;}
+    this.announce('comparison-load-state',`${this.comparisonAsset.id==='current'?'Current model':this.comparisonAsset.id==='ene'?'Ene':'Rei'} is ready.`);
     this.announce('comparison-state',`${this.comparisonAsset.id} · SHA-256 ${this.comparisonAsset.hash} · ${JSON.stringify({settings,calibration})}`);
   }
   private async prepareAvatar(){
     this.avatarOperation.cancel();this.avatarViewer?.dispose();this.avatarViewer=null;this.avatarSolver=null;
-    this.comparisonAsset=null;this.comparisonSettings='';this.get('comparison-state').setAttribute('role','status');this.get('comparison-state').setAttribute('aria-live','polite');this.get('comparison-state').textContent='Preparing comparison model';
+    this.comparisonAsset=null;this.comparisonSettings='';this.get('comparison-state').setAttribute('role','status');this.get('comparison-state').setAttribute('aria-live','polite');this.get('comparison-state').textContent='Preparing comparison model';this.announce('comparison-load-state','Preparing comparison model');this.announce('rig-coverage','');
     const signal=this.avatarOperation.begin(),id=this.get<HTMLSelectElement>('comparison-model').value;
     let viewer:AvatarViewer|null=null;
     try{
@@ -226,7 +253,10 @@ export class TrackingInspector {
       viewer=new AvatarViewer(this.get('inspector-avatar'),settings);this.avatarViewer=viewer;
       const candidate=await prepareSelection(viewer,blob,signal);
       if(this.avatarViewer!==viewer){viewer.disposePreparedAvatar(candidate);return;}
-      viewer.commitAvatar(candidate);this.avatarSolver=candidate.retarget;this.avatarSolver.setCalibration(this.calibration());this.avatarOperation.finish(signal);
+      viewer.commitAvatar(candidate);viewer.setRigVisible(this.get<HTMLInputElement>('show-model-bones').checked);viewer.setDiagnosticFocus(this.get<HTMLSelectElement>('model-focus').value);
+      const missing=trackedBones.filter(name=>name!=='upperChest'&&!candidate.vrm.humanoid.getNormalizedBoneNode(name));
+      this.announce('rig-coverage',missing.length?`Missing model bones: ${missing.join(', ')}.`:'Model bones are available for the body, shoulders, arms, hands, ten fingers, head, and eyes.');
+      this.avatarSolver=candidate.retarget;this.avatarSolver.setCalibration(this.calibration());this.avatarOperation.finish(signal);
       const hash=await sha256(blob);if(this.avatarViewer!==viewer||signal.aborted)return;
       this.comparisonAsset={id,hash};this.showComparisonDetails(settings,this.calibration());
       if(this.replaying)this.seek(Number(this.get<HTMLInputElement>('trace-position').value));
@@ -235,10 +265,10 @@ export class TrackingInspector {
       if(this.avatarOperation.isCurrent(signal)&&!this.disposed){
         this.avatarOperation.finish(signal);this.comparisonAsset=null;
         const status=this.get('comparison-state');status.setAttribute('role','alert');status.setAttribute('aria-live','assertive');
-        status.textContent=`Comparison failed: ${String(e)}`;this.message(status.textContent);
+        status.textContent=`Comparison failed: ${String(e)}`;this.announce('comparison-load-state',status.textContent);this.message(status.textContent);
       }
     }
   }
   private dispose3D(){this.controls?.dispose();this.scene?.traverse(object=>{const mesh=object as THREE.Mesh;mesh.geometry?.dispose();if(Array.isArray(mesh.material))mesh.material.forEach(material=>material.dispose());else mesh.material?.dispose();});this.renderer?.dispose();this.renderer?.forceContextLoss();this.renderer?.domElement.remove();this.renderer=null;this.scene=null;this.lines=null;this.controls=null;this.camera=null;}
-  dispose(){this.disposed=true;this.traceImportGeneration++;this.clearReplayVideo();cancelAnimationFrame(this.frameHandle);this.stopRecord();this.recorder=null;this.replay=null;this.videoBlob=null;this.latest=null;this.shown=null;this.frozen=null;this.images.clear();this.dispose3D();this.avatarOperation.cancel();this.avatarViewer?.dispose();this.demand('off');}
+  dispose(){this.disposed=true;this.traceImportGeneration++;this.clearReplayVideo();cancelAnimationFrame(this.frameHandle);this.stopRecord();this.recorder=null;this.replay=null;this.videoBlob=null;this.latest=null;this.combinedLatest=null;this.shown=null;this.frozen=null;this.images.clear();this.dispose3D();this.avatarOperation.cancel();this.avatarViewer?.dispose();this.demand('off');}
 }

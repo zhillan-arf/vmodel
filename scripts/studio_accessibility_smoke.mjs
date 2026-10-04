@@ -13,10 +13,10 @@ try{
   await page.locator('#model-name').fill('Long model name '.repeat(5).trim());await page.locator('#acknowledge-terms').check();await page.locator('#save-model').click();
   await page.waitForFunction(()=>document.querySelectorAll('.model-card').length===3);
   const cases=[],failures=[],pairs=new Map();
-  for(const width of [390,768,1440])for(const scale of [1,2])for(const view of ['library','observations','estimated','accepted']){
+  for(const width of [390,768,1440])for(const scale of [1,2])for(const view of ['library','observations','estimated','accepted','combined']){
     await page.setViewportSize({width,height:900});await page.evaluate(scale=>document.documentElement.style.zoom=String(scale),scale);
     await page.locator(`.studio-nav [data-view="${view==='library'?'library':'tracking'}"]`).click();
-    if(view!=='library'){await page.locator('#inspector-layer').selectOption(view);for(const summary of await page.locator('.feature-panel:not([hidden]) summary').all())if(!(await summary.evaluate(el=>el.parentElement.open)))await summary.click();}
+    if(view!=='library'){await page.locator('#inspector-layer').selectOption(view);await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));for(const summary of await page.locator('.feature-panel:not([hidden]) summary').elementHandles())if(await summary.isVisible()&&!(await summary.evaluate(el=>el.parentElement.open)))await summary.click();}
     else for(const summary of await page.locator('.model-card summary').all())if(!(await summary.evaluate(el=>el.parentElement.open)))await summary.click();
     const result=await page.evaluate(()=>{
       const color=value=>{const parts=value.match(/[\d.]+/g)?.map(Number)??[0,0,0];return[...parts.slice(0,3),parts[3]??1];};

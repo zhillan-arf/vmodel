@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-04T14:38:09.244Z",
+  "date": "2026-10-04T17:56:26.733Z",
   "scope": "Static served build only; does not scan unrelated files or certify future changes.",
   "checks": {
     "onlyDesignatedFiles": true,
@@ -11,12 +11,12 @@
   "runtimePackages": 16,
   "files": [
     {
-      "path": "assets/index-DDaFZKi3.js",
-      "bytes": 1073628
+      "path": "assets/index-DI25YkYg.js",
+      "bytes": 1081822
     },
     {
-      "path": "assets/index-DIiSsBGA.css",
-      "bytes": 9824
+      "path": "assets/index-DyeBB1Ox.css",
+      "bytes": 10251
     },
     {
       "path": "assets/tracking.worker-B8_2DjGm.js",
@@ -48,11 +48,11 @@
     },
     {
       "path": "avatars/thumbnails/07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735.png",
-      "bytes": 36129
+      "bytes": 36347
     },
     {
       "path": "avatars/thumbnails/3657b97928638e7ada5f6639141fb63f555912049a2c6ec217851001e322cbcb.png",
-      "bytes": 35988
+      "bytes": 36341
     },
     {
       "path": "avatars/thumbnails/manifest.json",
@@ -136,7 +136,7 @@
     },
     {
       "path": "notices/tracking-models.json",
-      "bytes": 3816
+      "bytes": 3836
     },
     {
       "path": "runtime/face_landmarker.task",

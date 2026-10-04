@@ -1,3 +1,5 @@
+// This old-solver comparison disables only the new shoulder and gaze controls.
+// combined_tracking_smoke.mjs checks the new controls on both actual models.
 import { execFileSync } from 'node:child_process';
 import { mkdtemp, mkdir, writeFile, rm, readFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -22,7 +24,7 @@ it('preserves the committed solver across motion and rig variants',()=>{
     const make=()=>{const rig=createCanonicalRig(),values=new Map<string,number>();
       if(variant==='missing head')rig.bones.delete('head');if(variant==='missing arm')rig.bones.delete('leftLowerArm');if(variant==='opposite orientation')rig.scene.rotation.y=Math.PI;
       return{rig:{...rig,expressionManager:{getExpression:(name:string)=>name==='surprised'?undefined:{name},getValue:(name:string)=>values.get(name)??0,setValue:(name:string,value:number)=>{values.set(name,value);}}},values};};
-    const before=make(),after=make(),baseline=new Retargeter(before.rig as any),current=new MotionSolver(after.rig);current.diagnosticSink=()=>{};
+    const before=make(),after=make(),baseline=new Retargeter(before.rig as any),current=new MotionSolver(after.rig);(current as any).shoulder=()=>{};(current as any).gaze=()=>{};current.diagnosticSink=()=>{};
     for(let index=1;index<=180;index++){
       const now=1000+index*17,data=motionSample(index,now).frame,settings={...defaults,mode:index<90?'seated' as const:'standing' as const,hands:index%23!==0};
       if(index%13===0)data.samples.pose.timestamp-=500;if(index%19===0)data.timestamp-=501;if(index%29===0)data.faceMatrix=null;
@@ -39,6 +41,6 @@ it('preserves the committed solver across motion and rig variants',()=>{
   const config=path.join(directory,'vitest.config.mjs');
   await writeFile(config,'export default '+JSON.stringify({test:{include:[path.relative(root,path.join(directory,'baseline.parity.ts')).split(path.sep).join('/')]}}));
   execFileSync(process.execPath,[path.join(root,'node_modules/vitest/vitest.mjs'),'run','--config',config,'--reporter=dot'],{stdio:'inherit'});
-  const result={generatedAt:new Date().toISOString(),baselineCommit:commit,...JSON.parse(await readFile(report,'utf8')),limits:['Synthetic motion and canonical rig variants only.','No physical camera or actual-model acceptance.']};
+  const result={generatedAt:new Date().toISOString(),baselineCommit:commit,...JSON.parse(await readFile(report,'utf8')),limits:['Legacy comparison disables the new shoulder and gaze controls in this test only.','The combined tracking test checks the new controls on both models.','Synthetic motion and canonical rig variants only.','No physical camera or actual-model acceptance.']};
   await writeFile('ops/001-zhil/sprint-001/reports/solver-baseline.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
 }finally{await rm(directory,{recursive:true,force:true});}

@@ -10,7 +10,7 @@
 
 [TASK-P02: Own character voice implementation and delivery](../active/TASK-P02.md) coordinates G3's seven tasks, TASK-022 through TASK-028, and reports voice progress and acceptance evidence to TASK-P01. Read it when starting voice work. Controllers are excluded from the implementation-task count and do not block child tasks from starting.
 
-This register covers 61 tasks across six goals. Controllers do not count as implementation tasks.
+This register covers 62 tasks across six goals. Controllers do not count as implementation tasks.
 
 | Goal | Deliverable |
 | --- | --- |
@@ -25,10 +25,10 @@ The [research evaluation](../../reports/studio-research-evaluation.md), [action 
 
 [TASK-P04](../active/TASK-P04.md) owns G5 and TASK-039 through TASK-048. [TASK-P05](../active/TASK-P05.md) owns G6 and TASK-049 through TASK-060.
 
-Checkpoint on 2026-10-04: 36 Done; 18 In progress; 1 Blocked; 1 Ready; 5 Todo.
+Checkpoint on 2026-10-05: 37 Done; 18 In progress; 1 Blocked; 1 Ready; 5 Todo.
 TASK-061 collects human tests. P04 and P05 retain their release requirements.
 
-[TASK-P01](../active/TASK-P01.md) coordinates all 61 tasks. Individual tasks control detailed acceptance. P01 remains open through TASK-021 and TASK-061.
+[TASK-P01](../active/TASK-P01.md) coordinates all 62 tasks. Individual tasks control detailed acceptance. P01 remains open through TASK-021 and TASK-061.
 
 The user has supplied the actual model package at `ops/001-zhil/sprint-001/resources/ENE/` and X excerpts at `ops/001-zhil/sprint-001/resources/x-posts.md`. There is no remaining missing-model blocker. Use **cyber legs**, the user's selected variant, as the baseline; preserve both PMX originals and address the known sphere-texture gaps during import. A licensed sample can support runtime development while Ene is prepared. Final avatar acceptance and recordings must use cyber legs.
 
@@ -125,6 +125,7 @@ TASK-027's training is conditional: close with evidence that an existing voice f
 | Task | Title | Goal | Dependencies | Status |
 | --- | --- | --- | --- | --- |
 | [TASK-061](TASK-061.md) | Complete human tests for studio acceptance | G2, G3, G5, G6 | TASK-055 before physical diagnosis | Ready |
+| [TASK-062](../archived/TASK-062.md) | Complete combined tracking before human tests | G2, G6 | TASK-051, TASK-052, TASK-054 | Done |
 
 TASK-061 collects human tests. Existing acceptance requirements remain in their original tasks.
 
@@ -155,3 +156,7 @@ Each task contains its intended outcome, implementation work, dependencies, esti
 - G3 requires actual English auditions, the user's voice preference and measured combined performance; a downloadable model or converter screenshot does not close it.
 - TASK-021 is the final acceptance gate. It maps G1 through G6 to artifacts and evidence.
 - Update TASK-P01 and this index when child task status changes and before session handoff. Close TASK-P01 only after the in-scope implementation tasks and TASK-021 acceptance are complete.
+
+The 2026-10-05 request adds TASK-062 to P05.
+It permits missing software controls before physical diagnosis.
+Physical acceptance remains in the existing tasks.

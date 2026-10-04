@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-04T16:47:36.399Z",
+  "date": "2026-10-04T18:07:00.398Z",
   "passed": true,
   "status": "complete",
   "question": "Do the beginner guides reference launchers, links and local addresses that actually exist?",
@@ -88,7 +88,7 @@
     },
     {
       "file": "docs/tracking-inspector.md",
-      "links": 2,
+      "links": 3,
       "launchers": [],
       "ports": []
     },
@@ -202,6 +202,12 @@
     },
     {
       "file": "ops/001-zhil/sprint-001/reports/combined-fixture-soak-plan.md",
+      "links": 6,
+      "launchers": [],
+      "ports": []
+    },
+    {
+      "file": "ops/001-zhil/sprint-001/reports/combined-tracking-audit.md",
       "links": 6,
       "launchers": [],
       "ports": []
@@ -772,6 +778,8 @@
     "https://github.com/w-okada/voice-changer/blob/master/README_en.md",
     "https://github.com/w-okada/voice-changer/discussions/1453",
     "https://github.com/yeemachine/kalidokit",
+    "https://github.com/yeemachine/kalidokit/blob/main/src/HandSolver/index.ts",
+    "https://github.com/yeemachine/kalidokit/blob/main/src/PoseSolver/calcArms.ts",
     "https://huggingface.co/IssacMosesD/Lunar-RVC-Model",
     "https://huggingface.co/KoeAI/llvc/blob/ebfe8c0fdeb974a7eeb463b3abbc8ce42a0e3851/README.md",
     "https://huggingface.co/api/models/KoeAI/llvc",

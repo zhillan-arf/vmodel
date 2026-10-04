@@ -3,6 +3,48 @@
 A sample is one result from face, body, or hand inference. Cached results retain the original sample identity and time.
 A trace stores observations and application events for replay. A canonical skeleton is a fixed reference rig that needs no VRM.
 
+
+## Show camera points and model bones
+
+1. Open Tracking.
+2. Select Camera and model from Layer.
+3. Select Ene or Rei from Comparison model.
+4. Select Start camera.
+5. Keep your face, shoulders, elbows, wrists, and hands inside the image.
+6. Move one arm slowly.
+7. Select Left hand or Right hand from Model view.
+8. Bend each finger separately.
+9. Select Face to check gaze, blink, and mouth motion.
+
+The camera image shows face triangles, body lines, and both detected hands.
+All displayed points belong to the same captured image.
+The counts below the image show missing groups.
+The model appears beside the image on wide screens and below it on small screens.
+
+A rig is the set of model bones and expression controls.
+Show model bones displays the actual rig over the model surface.
+Blue lines connect bones. Gold points mark joints.
+Skin weights connect these bones to the model surface.
+The face uses head and eye bones plus expression shapes.
+It does not contain a model bone for every face point.
+
+The Body view shows the model at the current framing setting.
+Face and hand views follow the selected part at a closer distance.
+Model data contains the model hash and comparison settings.
+Pause inspector freezes this comparison. The main model and clean output continue.
+
+Use Balanced quality first.
+The detector updates body and hands less frequently than the camera captures images.
+The combined image waits for a complete capture; the model can use a newer face result.
+The inspector does not establish that a physical movement passed acceptance.
+
+Use the Studio camera selector to choose the laptop camera or an external webcam.
+Select Stop camera before a device change.
+Select the device, then select Start camera.
+Use 1280?720 if the camera supports it and motion remains responsive.
+
+See the [combined tracking audit](../ops/001-zhil/sprint-001/reports/combined-tracking-audit.md) for model coverage, research, and test limits.
+
 ## Inspect movement
 
 1. Open Tracking.
@@ -94,7 +136,7 @@ A different solver version produces a Comparison label. The application does not
 
 Missing confidence remains unavailable in raw data. The unchanged runtime applies a default of 1.
 The accepted age range is at least -50 ms and less than 500 ms.
-No scheduler or filter correction has acceptance evidence from this implementation session.
+The scheduler and filter settings remain unchanged. TASK-062 adds shoulder and gaze controls before physical acceptance.
 
 See [physical checks](tracking-check.md) and [implementation evidence](../ops/001-zhil/sprint-001/reports/studio-implementation.md).
 

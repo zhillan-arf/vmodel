@@ -3,7 +3,7 @@ import type { MotionRig } from './motion-solver';
 export function createCanonicalRig(): MotionRig & { bones: Map<string,Object3D> } {
   const scene=new Object3D(),bones=new Map<string,Object3D>();
   const add=(name:string,parent:string|null,position:[number,number,number])=>{const bone=new Object3D();bone.name=name;bone.position.set(...position);(parent?bones.get(parent)!:scene).add(bone);bones.set(name,bone);return bone;};
-  add('hips',null,[0,1,0]);add('spine','hips',[0,.2,0]);add('chest','spine',[0,.18,0]);add('neck','chest',[0,.12,0]);add('head','neck',[0,.05,0]);add('leftEye','head',[.03,.06,.08]);
+  add('hips',null,[0,1,0]);add('spine','hips',[0,.2,0]);add('chest','spine',[0,.18,0]);add('neck','chest',[0,.12,0]);add('head','neck',[0,.05,0]);add('leftEye','head',[.03,.06,.08]);add('rightEye','head',[-.03,.06,.08]);
   for(const side of ['left','right']){const sign=side==='left'?1:-1;
     add(side+'Shoulder','chest',[sign*.12,.07,0]);add(side+'UpperArm',side+'Shoulder',[sign*.06,0,0]);add(side+'LowerArm',side+'UpperArm',[sign*.28,0,0]);add(side+'Hand',side+'LowerArm',[sign*.25,0,0]);
     add(side+'UpperLeg','hips',[sign*.11,0,0]);add(side+'LowerLeg',side+'UpperLeg',[0,-.42,0]);add(side+'Foot',side+'LowerLeg',[0,-.43,0]);add(side+'Toes',side+'Foot',[0,0,.15]);

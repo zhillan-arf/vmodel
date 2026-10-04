@@ -1,96 +1,96 @@
 {
-  "generatedAt": "2026-10-04T14:36:05.736Z",
-  "browser": "154.0.4258.53",
+  "generatedAt": "2026-10-04T17:54:44.283Z",
+  "browser": "153.0.8010.12",
   "platform": "win32",
-  "browserChannel": "msedge",
+  "browserChannel": "chromium",
   "checks": {
     "video": [
       {
         "mode": "stop",
-        "bytes": 8488,
+        "bytes": 12049,
         "audioTracks": 0,
         "width": 160,
         "height": 120,
         "advanced": true,
-        "currentTime": 0.022049,
-        "duration": null,
-        "drawnFrames": 70,
+        "currentTime": 0.01356,
+        "duration": 2.056,
+        "drawnFrames": 66,
         "mapping": {
           "traceId": "video-fixture",
           "startOffsetMs": 10,
-          "stopOffsetMs": 2231.39999999851,
+          "stopOffsetMs": 2076.39999999851,
           "mimeType": "video/webm;codecs=vp9"
         },
         "active": false
       },
       {
         "mode": "camera loss",
-        "bytes": 11603,
+        "bytes": 10977,
         "audioTracks": 0,
         "width": 160,
         "height": 120,
         "advanced": true,
-        "currentTime": 0.027174,
-        "duration": 2.066,
-        "drawnFrames": 65,
+        "currentTime": 0.018328,
+        "duration": 2.056,
+        "drawnFrames": 64,
         "mapping": {
           "traceId": "video-fixture",
           "startOffsetMs": 10,
-          "stopOffsetMs": 2085.5,
+          "stopOffsetMs": 2069.8000000044703,
           "mimeType": "video/webm;codecs=vp9"
         },
         "active": false
       },
       {
         "mode": "recorder error",
-        "bytes": 8842,
+        "bytes": 9519,
         "audioTracks": 0,
         "width": 160,
         "height": 120,
         "advanced": true,
-        "currentTime": 0.021715,
-        "duration": 2.024,
-        "drawnFrames": 63,
+        "currentTime": 0.022882,
+        "duration": 2.048,
+        "drawnFrames": 64,
         "mapping": {
           "traceId": "video-fixture",
           "startOffsetMs": 10,
-          "stopOffsetMs": 2044.1999999955297,
+          "stopOffsetMs": 2060.5,
           "mimeType": "video/webm;codecs=vp9"
         },
         "active": false
       },
       {
         "mode": "size limit",
-        "bytes": 12014,
+        "bytes": 8094,
         "audioTracks": 0,
         "width": 160,
         "height": 120,
         "advanced": true,
-        "currentTime": 0.018407,
-        "duration": 2.03,
+        "currentTime": 0.021546,
+        "duration": 2.025,
         "drawnFrames": 64,
         "mapping": {
           "traceId": "video-fixture",
           "startOffsetMs": 10,
-          "stopOffsetMs": 2054.10000000149,
+          "stopOffsetMs": 2057.39999999851,
           "mimeType": "video/webm;codecs=vp9"
         },
         "active": false
       },
       {
         "mode": "duration limit",
-        "bytes": 10680,
+        "bytes": 9828,
         "audioTracks": 0,
         "width": 160,
         "height": 120,
         "advanced": true,
-        "currentTime": 0.019025,
-        "duration": 2.031,
-        "drawnFrames": 64,
+        "currentTime": 0.023845,
+        "duration": 2.018,
+        "drawnFrames": 63,
         "mapping": {
           "traceId": "video-fixture",
           "startOffsetMs": 10,
-          "stopOffsetMs": 2052,
+          "stopOffsetMs": 2032.2000000029802,
           "mimeType": "video/webm;codecs=vp9"
         },
         "active": false

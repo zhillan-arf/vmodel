@@ -21,6 +21,8 @@ Human review must confirm model appearance, readable reasons, and distinct obser
 
 After TASK-055 acceptance, follow the [physical test guide](tracking-check.md).
 Test seated, standing, and close views with both mirror settings.
+Use Camera and model to compare landmarks with the Ene and Rei bones.
+Check each finger separately, plus shoulder motion and gaze direction.
 Record the first failed stage before a correction experiment.
 Repeat each baseline and candidate three times under the same conditions.
 

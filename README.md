@@ -4,7 +4,7 @@ A local VTuber app with selectable Ene **Cyber legs** and Rei models, webcam tra
 
 ## What to do next
 
-**[Remaining checks](docs/remaining-checks.md)** lists the four things that still need you, in the order that unblocks the most work. The original delivery still needs those checks. New library and tracking tasks can start without physical-device access.
+**[Remaining checks](docs/remaining-checks.md)** lists the checks that need a person. The original delivery still needs those checks. New library and tracking tasks can start without physical-device access.
 
 ## Everyday launchers
 
@@ -37,7 +37,7 @@ The [prepared Ene avatar](assets/avatars/ene.vrm), [editable scene](assets/work/
 
 Design proposals: [VRM library and registration](ops/001-zhil/sprint-001/research/vrm-library-and-registration.md) and [tracking diagnosis and model-independent visualization](ops/001-zhil/sprint-001/research/tracking-diagnostics-and-improvement.md). The [action plan](ops/001-zhil/sprint-001/specs/studio-evolution-plan.md), [design decisions](ops/001-zhil/sprint-001/specs/studio-design-decisions.md), and [product specification](ops/001-zhil/sprint-001/specs/studio-product-spec.md) define the proposed implementation. The current app supports bundled selection and temporary VRM loading.
 
-Implementation is in progress: 22 of 60 tasks are complete. The 22 new library and tracking tasks have not started. Physical camera and gesture acceptance, a suitable live voice backend, Virtual Camera registration and final recordings remain open, and the local voice converter does not yet meet its timing gates under ordinary desktop load.
+Implementation and human acceptance remain separate. The task register records the current status. Physical camera and gesture acceptance, a suitable live voice backend, Virtual Camera registration and final recordings remain open, and the local voice converter does not yet meet its timing gates under ordinary desktop load.
 
 **[TASK-P01](ops/001-zhil/sprint-001/tasks/active/TASK-P01.md)** owns the current checkpoint and links all work; the [task register](ops/001-zhil/sprint-001/tasks/backlog/README.md) covers active and archived tasks. Component tests and short fixture recordings are documented there and do not imply live acceptance.
 
@@ -49,3 +49,16 @@ The studio includes Library and Tracking views.
 Use the [model library guide](docs/model-library.md) for import, selection, backup, and recovery.
 Use the [Tracking Inspector guide](docs/tracking-inspector.md) for observations, traces, and replay.
 The [implementation evidence](ops/001-zhil/sprint-001/reports/studio-implementation.md) records automated checks and open acceptance work.
+
+## Combined camera and model view
+
+Open **Tracking**, then select **Camera and model** from **Layer**.
+Select **Ene** or **Rei**, then select **Start camera**.
+The camera image shows face triangles, body lines, and both detected hands.
+The model appears with its actual bones.
+Use **Model view** for a close view of the face or either hand.
+
+Both models contain the bones for shoulders, eyes, hands, and all ten fingers.
+The solver now includes shoulder and gaze controls.
+See the [audit](ops/001-zhil/sprint-001/reports/combined-tracking-audit.md) and [instructions](docs/tracking-inspector.md).
+Physical camera and gesture acceptance remain open.

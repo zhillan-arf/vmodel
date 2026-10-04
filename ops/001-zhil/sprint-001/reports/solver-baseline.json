@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T14:28:54.058Z",
+  "generatedAt": "2026-10-04T17:44:33.980Z",
   "baselineCommit": "da48542e991aa202a1b9eaafc1a4f1cbb22ef7b9",
   "cases": [
     "canonical",
@@ -13,6 +13,8 @@
   "acceptedGoalSetsEqual": true,
   "expressionValuesEqual": true,
   "limits": [
+    "Legacy comparison disables the new shoulder and gaze controls in this test only.",
+    "The combined tracking test checks the new controls on both models.",
     "Synthetic motion and canonical rig variants only.",
     "No physical camera or actual-model acceptance."
   ]

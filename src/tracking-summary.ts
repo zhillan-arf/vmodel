@@ -4,7 +4,7 @@ export function trackingSummary(outcomes: readonly SolverOutcome[]) {
   const shared: SolverOutcome[] = [];
   for (const outcome of outcomes) {
     const channel = outcome.channel;
-    if (/^(head(?:\.|$)|face$|neck$|eyeBlink|mouthSmile|jawOpen$|aa$)/.test(channel)) groups.Face.push(outcome);
+    if (/^(head(?:\.|$)|face$|neck$|leftEye$|rightEye$|eyeBlink|mouthSmile|jawOpen$|aa$)/.test(channel)) groups.Face.push(outcome);
     else if (/hand|thumb|index|middle|ring|little/i.test(channel)) {
       if (channel.startsWith('left')) groups['Left hand'].push(outcome);
       else if (channel.startsWith('right')) groups['Right hand'].push(outcome);

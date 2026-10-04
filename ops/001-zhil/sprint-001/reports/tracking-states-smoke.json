@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T14:32:19.191Z",
-  "browser": "154.0.4258.53",
+  "generatedAt": "2026-10-04T17:51:01.973Z",
+  "browser": "153.0.8010.12",
   "visualStates": [
     {
       "state": "camera-stopped",
@@ -9,7 +9,7 @@
         "height": 844
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/camera-stopped-390.png",
-      "sha256": "042ea0daa51cf3140c8fe1fbde0773cadb1d543cf772f2edfe9c64a0b9abd3b3",
+      "sha256": "b64ea22d6cef170f4acd53697c6d2c6a3b8fa68723045b6639520d5dc8089571",
       "horizontalOverflow": false
     },
     {
@@ -19,7 +19,7 @@
         "height": 1024
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/camera-stopped-768.png",
-      "sha256": "4d3cc3f4c98f2dab95195fe090a2f9c3ac1e3152a58e610d75eba2dae9b78ba1",
+      "sha256": "26ebf1719c3cd0b080e90903caf30342d8dd928800fd279a60dbb3fecd78340f",
       "horizontalOverflow": false
     },
     {
@@ -29,7 +29,7 @@
         "height": 900
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/camera-stopped-1440.png",
-      "sha256": "d3506a2b25fd2a0dfd6ea57012b9d9cbc9f0e875d79ccce867a8a5c472008abd",
+      "sha256": "7063bceaba81c49e07d8cc507bc64a589d45cdf3f2e9dc88dab3899db04bb652",
       "horizontalOverflow": false
     },
     {
@@ -39,7 +39,7 @@
         "height": 844
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/valid-390.png",
-      "sha256": "2a48d4288547f279699a1e59a3e38b02995856e34c67439f59c541704899794a",
+      "sha256": "16601f9322c45ab1b8474ff8e701f2ff87b024a452f5191ec9681ccdb0c58e64",
       "horizontalOverflow": false
     },
     {
@@ -49,7 +49,7 @@
         "height": 1024
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/valid-768.png",
-      "sha256": "8f919f37c434ab469763859411ff43316257e2531778f431979ea7350fd3a21f",
+      "sha256": "1c8ef07700355b8ade1e9eecaf8aa0ca043d5061f4d44ae0f1b08592d3e96cc6",
       "horizontalOverflow": false
     },
     {
@@ -59,7 +59,7 @@
         "height": 900
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/valid-1440.png",
-      "sha256": "94505ba9fbc2277febabfeeacacd8d137133bfff419fcb6a9cfc8e59b1914aac",
+      "sha256": "b9535e47acbedf65c5e43d17614a6bb3c34ff0fe9d1bbc3735a8b4ccb5d6dbcf",
       "horizontalOverflow": false
     },
     {
@@ -69,7 +69,7 @@
         "height": 844
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/low-confidence-390.png",
-      "sha256": "17daf26b1923153ec22f9c92934b85507b2bac78e745ad900a3e14032076db62",
+      "sha256": "c10b4c9d4948d89221ff80532917de345dabc333b5e8c1daa7fc52dddf9d7de6",
       "horizontalOverflow": false
     },
     {
@@ -79,7 +79,7 @@
         "height": 1024
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/low-confidence-768.png",
-      "sha256": "5367a4ba376dcc140e3bfe82e10ff24a8b2a987a114e83815658fdcfd8a0f5d4",
+      "sha256": "c7684cc01e72cd9a9ec6c69896f27ef8450dcb9e734902c1b37ed2f270b33564",
       "horizontalOverflow": false
     },
     {
@@ -89,7 +89,7 @@
         "height": 900
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/low-confidence-1440.png",
-      "sha256": "e6fd98a254a4dc81b4f2af3acb9bac8727d4e078e27b1a87be5cabe4e788e600",
+      "sha256": "532532b3397acf8ff9497bcc02ce59244a041ee05e8db4d84dc59db5b9d3717c",
       "horizontalOverflow": false
     },
     {
@@ -99,7 +99,7 @@
         "height": 844
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/stale-390.png",
-      "sha256": "03d07c467e95723d79bd331542e772531e13c71d610f86fb27f50b7276168608",
+      "sha256": "275c38772c226af264aee72a6954c6ed642d8a30b8eaf9f89ee07a4237a6260e",
       "horizontalOverflow": false
     },
     {
@@ -109,7 +109,7 @@
         "height": 1024
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/stale-768.png",
-      "sha256": "c00ac902620c68ba5440d3d2cc304d76e21c9b3634b67d1499b6a6bf153adeb3",
+      "sha256": "50bfb7063678925b12d82cf5687fd235e2a5ef73b2c4b678710d35105ce0b326",
       "horizontalOverflow": false
     },
     {
@@ -119,7 +119,7 @@
         "height": 900
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/stale-1440.png",
-      "sha256": "5d68e8b19190a6e139813e00f1f65c33f76a1c8457483f54c5b041753782f629",
+      "sha256": "394547bd7dc5825af1ee926d499eb733ce495a4b40757ac658f38db17838850b",
       "horizontalOverflow": false
     },
     {
@@ -129,7 +129,7 @@
         "height": 844
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/disabled-hands-390.png",
-      "sha256": "2370aac52c9e92c2adb04706cdde4520bfc2825c58dd495b36bd27044501e3fa",
+      "sha256": "8f5f84d23e05e17a67e62a35fc74e83c60d045743288d2c586fe6637055019b2",
       "horizontalOverflow": false
     },
     {
@@ -139,7 +139,7 @@
         "height": 1024
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/disabled-hands-768.png",
-      "sha256": "f7dd1e0585467245e044dbec173f0159c6aaba6a134db878866662685f6d4385",
+      "sha256": "9ee1da1c7a4e5e7df5b2eef9cd29f907418042709992265362f70bf7f867368a",
       "horizontalOverflow": false
     },
     {
@@ -149,7 +149,7 @@
         "height": 900
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/disabled-hands-1440.png",
-      "sha256": "722370e0e102200541d900c6683658b62319fccfaab082a9c7351baf92984e5e",
+      "sha256": "23236ef44e8ff565d7a748aef1f841612a721e065e179cfc0b43ae2f9f89415f",
       "horizontalOverflow": false
     },
     {
@@ -159,7 +159,7 @@
         "height": 844
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/paused-390.png",
-      "sha256": "6c45be9fc7d467b73e0243ed264469cc63f355afe24ace9fa6473f79448cded3",
+      "sha256": "75bf2e754da4fb2b163f4db7e1726cd96f40f8c02061f30e88bf58e134b17593",
       "horizontalOverflow": false
     },
     {
@@ -169,7 +169,7 @@
         "height": 1024
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/paused-768.png",
-      "sha256": "c1a3bfe8a18530627bbd60ab15ad77bb79389527616876d15b6035649a5d51af",
+      "sha256": "087c1a424410a23bfe7a65b1964e20c5fb250f8adbe7dd55ebe7d67f2f6f6cf9",
       "horizontalOverflow": false
     },
     {
@@ -179,7 +179,7 @@
         "height": 900
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/paused-1440.png",
-      "sha256": "4a7a6afa5da6d86271cf005eaa2db7da12f61c57c1bb6e03122a0ca2543b5a10",
+      "sha256": "5a89816f11ce917356959e8ace9151f3ee88fa2263e7447b9d99ae79093f4bac",
       "horizontalOverflow": false
     },
     {
@@ -189,7 +189,7 @@
         "height": 844
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/trace-limit-390.png",
-      "sha256": "bb6d18b746af14f41de9d506831a6b903072fbb167f4230f935b0848594f7200",
+      "sha256": "23e7f201789b2f332959d2cc2c8f1b02279fe1f5c9f5580add4c1a81b57dc692",
       "horizontalOverflow": false
     },
     {
@@ -199,7 +199,7 @@
         "height": 1024
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/trace-limit-768.png",
-      "sha256": "97843e35a5e338677882a7806fece6db4da4efe8fe1cbd739eedcb40d3780c44",
+      "sha256": "0efd57865e15d76f1fe6282d02ada491c62fe1001c96388b3b3b14ee85f5bf59",
       "horizontalOverflow": false
     },
     {
@@ -209,7 +209,7 @@
         "height": 900
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/trace-limit-1440.png",
-      "sha256": "b7a0c699bfe6b8006a66f0f275728827be9dc539b4b3f2ed40eb8b06073abc91",
+      "sha256": "7715289232b8cd4c99d2f68deaf9eea1e7b56850595b2ec2e0b38eb33302fc48",
       "horizontalOverflow": false
     },
     {
@@ -219,7 +219,7 @@
         "height": 844
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/replay-390.png",
-      "sha256": "c92422a29223f32229be5084ed088a12cbd261d728bb97bc5e81cf5e8baea7b7",
+      "sha256": "6255285cfba2b42a23f1d90d2d0ef4a8ae94836fcb2327c1b024d43f162624ad",
       "horizontalOverflow": false
     },
     {
@@ -229,7 +229,7 @@
         "height": 1024
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/replay-768.png",
-      "sha256": "1065bfc8964fede1a8b23fe74643c868a10120ff6693149383bb4f1e931a6ab9",
+      "sha256": "72903b5a98fe4ab1a0664f32a905df0b00c08752b8372d9c4bbce0451d7e5118",
       "horizontalOverflow": false
     },
     {
@@ -239,7 +239,7 @@
         "height": 900
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/replay-1440.png",
-      "sha256": "ff7e352475005997ce0031e3839ed66feaf90a151985c997201fe28e0091b0c0",
+      "sha256": "7a450ad154e11488011f8ff8e8c9c3138898ed67b3ad4d5d737fdba01f6012ed",
       "horizontalOverflow": false
     },
     {
@@ -249,7 +249,7 @@
         "height": 844
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/permission-failure-390.png",
-      "sha256": "120b9824a07adeb2c953125ebc56e80a4b5f297bb6dc01b1d54f459e91171938",
+      "sha256": "0947f5b990e00c4393b0e67cebb300adf64c5bf94002e5e36166d22f8de73958",
       "horizontalOverflow": false
     },
     {
@@ -259,7 +259,7 @@
         "height": 1024
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/permission-failure-768.png",
-      "sha256": "de2e074290e24af7a5217ddfde8f5a276e209cf07b619e29b695257127e4eb8c",
+      "sha256": "05f96f99f5e58ec80f6dc3dfebbc79fa2fd2c6a60620760f76024bc39b65d9a1",
       "horizontalOverflow": false
     },
     {
@@ -269,7 +269,7 @@
         "height": 900
       },
       "path": "ops/001-zhil/sprint-001/reports/local/visual-states/tracking/permission-failure-1440.png",
-      "sha256": "2b346ef9cd35cd5614bf9c8d18e6e0271e29371f517bd88603c447a1dc18e55a",
+      "sha256": "f0721634ba8046cf7d5ea4024de2f6ba852ca0d6609d547a38cec3df7f6031e3",
       "horizontalOverflow": false
     }
   ],

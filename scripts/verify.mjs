@@ -20,6 +20,7 @@ const quote = value => (/[\s]/.test(value) ? `"${value}"` : value);
 const CHECKS = [
   { name: 'unit tests', command: 'npm test --silent' },
   { name: 'native avatar replay and baseline comparison', command: 'node scripts/avatar_replay_smoke.mjs' },
+  { name: 'combined camera model and full rig checks', command: 'node scripts/combined_tracking_smoke.mjs' },
   { name: 'solver baseline comparison', command: 'node scripts/solver_baseline_check.mjs' },
   { name: 'production build and typecheck', command: 'npm run build --silent' },
   { name: 'synthetic library and inspector checks', command: 'node scripts/studio_features_smoke.mjs' },

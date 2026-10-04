@@ -1,9 +1,9 @@
 {
   "tracePath": "ops/001-zhil/sprint-001/reports/local/avatar-comparison-trace.json",
   "baselineCommit": "da48542e991aa202a1b9eaafc1a4f1cbb22ef7b9",
-  "generatedAt": "2026-10-04T14:28:48.247Z",
-  "browser": "154.0.4258.53",
-  "traceHash": "68cf2c99c0cefcb3f6e3f496f1bd9733ec6956395e5fc7232faa695b08c9ce4b",
+  "generatedAt": "2026-10-04T17:43:03.651Z",
+  "browser": "153.0.8010.12",
+  "traceHash": "92066a2ebeae8f51d5c38bea87611f02e761eacf0a1d571d3b6c24238fc19236",
   "samples": 120,
   "results": [
     {
@@ -12,7 +12,7 @@
       "baselineAngle": 5.16191365590357e-8,
       "baselinePosition": 0,
       "goalsEqual": true,
-      "bones": 52,
+      "bones": 53,
       "leftChangeRadians": 0.6795625038079757,
       "rightChangeRadians": 0.0000013058723390225787,
       "forwardError": 0,
@@ -25,7 +25,7 @@
       "baselineAngle": 4.2146848510894035e-8,
       "baselinePosition": 0,
       "goalsEqual": true,
-      "bones": 52,
+      "bones": 53,
       "leftChangeRadians": 0.6795625038080231,
       "rightChangeRadians": 0.0000013058723390225787,
       "forwardError": 2.9802322387695312e-8,
@@ -38,7 +38,7 @@
       "baselineAngle": 4.2146848510894035e-8,
       "baselinePosition": 0,
       "goalsEqual": true,
-      "bones": 52,
+      "bones": 53,
       "leftChangeRadians": 0.6795624983286175,
       "rightChangeRadians": 0.0000013058723390225787,
       "forwardError": 2.9802322387695312e-8,
@@ -48,6 +48,8 @@
   ],
   "errors": [],
   "limits": [
+    "Legacy comparison disables the new shoulder and gaze controls in this test only.",
+    "The combined tracking test checks the new controls on both models.",
     "Synthetic anatomical input on the local Ene and native Rei rigs.",
     "No physical detector accuracy or target-laptop performance claim."
   ]
