@@ -1,5 +1,7 @@
 # Local voice-conversion setup
 
+All `.cmd` launchers are in the project's **deploy** folder.
+
 Codex provisions this environment. It converts local files into three licensed character candidates, and [Voice Studio](voice-quickstart.md) supplies controls, explicit natural voice and separate installed OBS receivers. Preferred-voice auditions, physical device behavior, live character performance and sync still require acceptance; a successful file conversion does not establish a ready livestream setup.
 
 The kit uses isolated Python 3.10.19 at `.tools/voice/venv`, a pinned deiteris RVC source checkout and local weights at `assets/voice`. It uses CPU inference and does not depend on an A100. The avatar launcher continues to work independently.

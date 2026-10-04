@@ -2,7 +2,7 @@
 
 The reusable model is [assets/avatars/ene.vrm](../assets/avatars/ene.vrm). The [export scene](../assets/work/ene/vrm-work.blend) contains the humanoid assignments, facial expressions, MToon materials and spring settings. The separate [imported scene](../assets/work/ene/source.blend) preserves the original MMD rig, morphs and physics for future authoring. Both original PMX files remain unchanged.
 
-Codex has provisioned the tools and performed this conversion. Everyday use starts with [Start VModel.cmd](../Start%20VModel.cmd); the commands below are the reproducible authoring workflow, not an installation task for the user.
+Codex has provisioned the tools and performed this conversion. Everyday use starts with [Start VModel.cmd](../deploy/Start%20VModel.cmd); the commands below are the reproducible authoring workflow, not an installation task for the user.
 
 ## Reproduce from the supplied package
 

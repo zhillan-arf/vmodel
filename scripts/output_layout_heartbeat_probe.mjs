@@ -38,7 +38,7 @@ try {
     const postsBefore = observedPosts, completeBefore = completedPosts;
     const measured = await page.evaluate(async variant => {
       const payload = JSON.stringify({ id: crypto.randomUUID(), active: true, kind: 'clean', orientation: 'landscape',
-        title: 'Ene Output Soak 2026-09-12T11-34-10-731Z-a910b510', viewport: { width: 1283, height: 643 },
+        title: 'VModel Output Soak 2026-09-12T11-34-10-731Z-a910b510', viewport: { width: 1283, height: 643 },
         canvas: { left: 69.9375, top: 0, width: 1143.104248046875, height: 643 } });
       const failures = []; let passed = 0, failed = 0, lastStatus;
       const started = performance.now();

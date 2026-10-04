@@ -1,5 +1,7 @@
 # Record Ene with OBS
 
+All `.cmd` launchers are in the project's **deploy** folder.
+
 The local OBS capture setup is ready for testing. Virtual-camera registration, live audio routing and final recording acceptance are still in progress.
 
 1. Open **Start VModel.cmd**, start your camera and calibrate. Choose your frame and background.

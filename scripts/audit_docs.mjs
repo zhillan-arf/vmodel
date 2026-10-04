@@ -81,7 +81,7 @@ try {
   }
 
   for (const launcher of [...launchers].sort()) {
-    if (!(await exists(path.join(ROOT, launcher)))) report.missingLaunchers.push(launcher);
+    if (!(await exists(path.join(ROOT, 'deploy', launcher)))) report.missingLaunchers.push(launcher);
   }
   report.unknownPorts = [...ports].filter(port => !KNOWN_PORTS[port]).sort();
   report.referencedLaunchers = [...launchers].sort();

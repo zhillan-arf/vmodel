@@ -1,5 +1,5 @@
 @echo off
-cd /d "%~dp0"
+cd /d "%~dp0.."
 if not exist ".tools\voice\venv\Scripts\python.exe" (
   echo Voice setup is missing, so there is no voice service to stop.
   pause

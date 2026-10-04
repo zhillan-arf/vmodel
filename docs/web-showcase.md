@@ -1,5 +1,7 @@
 # Ene website showcase
 
+All `.cmd` launchers are in the project's **deploy** folder.
+
 The showcase has a welcome page with Ene's full-body greeting and a desk scene with four expressions. Its text, backdrop, desk and sample chat are ordinary HTML/CSS; only the character is animated media. It does not use a webcam, microphone, account or streaming service.
 
 All five final 24 fps media families are installed and the player/layout pass the [production browser checks](../ops/reports/web-showcase.md). The [G4 acceptance report](../ops/reports/web-resource-acceptance.md) includes passing local Windows loading, sustained playback and ten-minute lifecycle measurements; actual Safari/iOS/Android remains untested. If a copied installation lacks `ene/manifest.json`, the page explains the missing package and offers a reload.

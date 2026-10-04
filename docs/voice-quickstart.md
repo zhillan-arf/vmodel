@@ -1,13 +1,15 @@
 # Ene Voice Studio
 
+All `.cmd` launchers are in the project's **deploy** folder.
+
 Voice Studio now provides three provisional voices, local saved settings, a converted-reference demo, and an experimental microphone adapter. Live conversion on this laptop has **not** met its timing or English-quality acceptance gates. Use the reference demo to try the controls; it is prerecorded conversion of a licensed English sample, not your microphone.
 
 ## Start and listen
 
-1. Double-click [Start Voice Studio.cmd](../Start%20Voice%20Studio.cmd). It starts a hidden local service and opens `http://127.0.0.1:5082/`. It starts muted and does not request microphone access.
+1. Double-click [Start Voice Studio.cmd](../deploy/Start%20Voice%20Studio.cmd). It starts a hidden local service and opens `http://127.0.0.1:5082/`. It starts muted and does not request microphone access.
 2. Select **Bright**, **Soft** or **Cool**. Enable **Hear the active voice on this laptop** with headphones, then click **Play converted reference**. Each timbre uses the same public-domain English sentence. The separate [listening comparison](http://127.0.0.1:5081/) includes the natural source and provisional rating controls.
 3. Use **Stop / mute** to clear audio. Change gain, past context or microphone selection, then **Save preset**. Presets restore locally; monitoring starts off on each new control connection. These no-F0 models have no pitch control. **Reset preset** restores the selected voice's defaults.
-4. Close the control window to mute, or double-click [Stop Voice Studio.cmd](../Stop%20Voice%20Studio.cmd) to stop the service. The avatar and listening-room services remain available. Reconnect explicitly, then start audio again.
+4. Close the control window to mute, or double-click [Stop Voice Studio.cmd](../deploy/Stop%20Voice%20Studio.cmd) to stop the service. The avatar and listening-room services remain available. Reconnect explicitly, then start audio again.
 
 One control window owns the voice producer. If another window reports an owner conflict, use the original window or close it and wait 30 seconds before connecting a new one. Reconnect within the same tab restores its lease but never restarts the microphone automatically.
 

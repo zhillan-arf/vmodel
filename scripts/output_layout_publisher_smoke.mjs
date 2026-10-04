@@ -17,7 +17,7 @@ server.on('request', (req, res) => {
   if (req.method === 'POST') { posts++; req.on('data', chunk => { payloadBytes += chunk.length; }); }
   if (req.url === '/publisher.js') { res.writeHead(200, { 'Content-Type': 'text/javascript' }); res.end(javascript); return; }
   void handler(req, res).then(handled => {
-    if (!handled) { res.writeHead(200, { 'Content-Type': 'text/html' }); res.end('<!doctype html><title>Ene Output heartbeat regression</title><canvas width="640" height="360"></canvas>'); }
+    if (!handled) { res.writeHead(200, { 'Content-Type': 'text/html' }); res.end('<!doctype html><title>VModel Output heartbeat regression</title><canvas width="640" height="360"></canvas>'); }
   });
 });
 const report = { startedAt: new Date().toISOString(), sourceSHA256: createHash('sha256').update(source).digest('hex'),

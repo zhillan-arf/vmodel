@@ -18,6 +18,7 @@ const recent = (timestamp: number, now: number) => Number.isFinite(timestamp) &&
 const coefficient = (value: number | undefined) => Number.isFinite(value) ? MathUtils.clamp(value!, 0, 1) : 0;
 export class Retargeter {
   private rests = new Map<string, Rest>();
+  private idleArms = new Map<string, Quaternion>();
   private neutralHead = new Quaternion();
   private neutralRoot = new Vector3(0.5, -0.5, 0);
   private lastTimestamp = -1;
@@ -51,6 +52,15 @@ export class Retargeter {
     }
     const depth = (node: Object3D): number => node.parent ? 1 + depth(node.parent) : 0;
     this.rests = new Map([...this.rests].sort(([, a], [, b]) => depth(a.node) - depth(b.node)));
+    for (const name of ['leftUpperArm', 'rightUpperArm']) {
+      const rest = this.rests.get(name); if (!rest) continue;
+      // VRM0 and VRM1 can face opposite directions before normalization. Derive
+      // the relaxed pose from this rig instead of assuming Ene's local Z signs.
+      const lateral = rest.direction.clone().setY(0).normalize();
+      const target = lateral.multiplyScalar(Math.cos(1.15)).add(new Vector3(0, -Math.sin(1.15), 0));
+      const rotation = segmentRotation(rest.direction, target); if (!rotation) continue;
+      this.idleArms.set(name, rest.local.clone().multiply(rest.world.clone().invert().multiply(rotation).multiply(rest.world)));
+    }
     for (const side of ['left', 'right']) {
       const palm: Partial<PalmPoints> = {};
       for (const [key, bone] of [['wrist','Hand'], ['middle','MiddleProximal'], ['index','IndexProximal'], ['little','LittleProximal']] as const) {
@@ -190,9 +200,7 @@ export class Retargeter {
       const parent = rest.node.parent?.getWorldQuaternion(new Quaternion()) ?? new Quaternion();
       let goal = measured && recent(measured.timestamp,now) ? measured.world : undefined;
       if (!goal) {
-        goal = rest.local.clone();
-        if (name === 'leftUpperArm') goal.multiply(new Quaternion().setFromAxisAngle(new Vector3(0,0,1),-1.15));
-        if (name === 'rightUpperArm') goal.multiply(new Quaternion().setFromAxisAngle(new Vector3(0,0,1),1.15));
+        goal = (this.idleArms.get(name) ?? rest.local).clone();
         goal.premultiply(parent);
       }
       rest.node.quaternion.copy(parent.invert().multiply(currentWorlds.get(name)!.slerp(goal,alpha))).normalize();
@@ -231,8 +239,11 @@ export class Retargeter {
     for (const name of ['blinkLeft','blinkRight','aa','happy','surprised']) {
       const manual = this.manual === name ? 0.75 : 0;
       const target = Math.max(manual,faceFresh ? this.expressionGoals[name] ?? 0 : 0);
-      const current = this.vrm.expressionManager?.getValue(name) ?? 0;
-      this.vrm.expressionManager?.setValue(name,MathUtils.lerp(current,MathUtils.clamp(target,0,1),alpha));
+      const manager = this.vrm.expressionManager;
+      // Rei supplies the surprise morph as a custom Japanese expression.
+      const expression = name === 'surprised' && !manager?.getExpression(name) && manager?.getExpression('びっくり') ? 'びっくり' : name;
+      const current = manager?.getValue(expression) ?? 0;
+      manager?.setValue(expression,MathUtils.lerp(current,MathUtils.clamp(target,0,1),alpha));
     }
   }
 }

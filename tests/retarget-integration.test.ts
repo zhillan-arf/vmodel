@@ -4,8 +4,9 @@ import type { VRM } from '@pixiv/three-vrm';
 import { Retargeter } from '../src/retarget';
 import { defaults, type TrackingFrame } from '../src/types';
 
-function rig() {
+function rig(facing = 0) {
   const scene = new Object3D(), nodes = new Map<string, Object3D>(), values = new Map<string, number>();
+  scene.rotation.y = facing;
   const add = (name: string, parent: string | null, position: number[]) => {
     const bone = new Object3D(); bone.position.fromArray(position);
     (parent ? nodes.get(parent)! : scene).add(bone); nodes.set(name, bone);
@@ -27,7 +28,7 @@ function rig() {
   }
   scene.updateMatrixWorld(true);
   const vrm = { scene, humanoid: { resetNormalizedPose() {}, getNormalizedBoneNode: (name: string) => nodes.get(name) ?? null },
-    expressionManager: { getValue: (name: string) => values.get(name) ?? 0, setValue: (name: string, value: number) => values.set(name, value) } } as unknown as VRM;
+    expressionManager: { getExpression: (name: string) => ({ expressionName: name }), getValue: (name: string) => values.get(name) ?? 0, setValue: (name: string, value: number) => values.set(name, value) } } as unknown as VRM;
   return { solver: new Retargeter(vrm), scene, nodes, values };
 }
 function frame(yaw = 0, now = 1000): TrackingFrame {
@@ -42,6 +43,20 @@ function frame(yaw = 0, now = 1000): TrackingFrame {
 function settle(solver: Retargeter, data: TrackingFrame, seconds = 1) {
   for (let i = 0; i < seconds*60; i++) solver.update(data, defaults, 1/60, data.timestamp + i*3);
 }
+
+describe('idle pose across avatar orientations', () => {
+  it.each([0, Math.PI, Math.PI / 2])('lowers both arms for a rig facing %s radians', facing => {
+    const { solver, scene, nodes } = rig(facing);
+    for (let i = 0; i < 120; i++) solver.update(null, defaults, 1 / 60, 1000 + i * 17);
+    scene.updateMatrixWorld(true);
+    for (const side of ['left', 'right']) {
+      const shoulder = nodes.get(side + 'UpperArm')!.getWorldPosition(new Vector3());
+      const hand = nodes.get(side + 'Hand')!.getWorldPosition(new Vector3());
+      expect(hand.y).toBeLessThan(shoulder.y - 0.4);
+      expect(hand.distanceTo(shoulder)).toBeCloseTo(0.55, 4);
+    }
+  });
+});
 
 describe('anatomical side and mirror independence', () => {
   // TASK-010 and TASK-011: head and limbs must follow the correct side whether

@@ -17,7 +17,7 @@ export function createOutputLayoutHandler(port, { now = Date.now, ttl = 5500 } =
       if (!input || !/^[a-f0-9-]{36}$/.test(input.id)) throw new Error('Invalid layout identifier.');
       if (input.active === false) { layouts.delete(input.id); reply(200, { ok: true }); return true; }
       const { title, kind, orientation, viewport, canvas } = input;
-      if (input.active !== true || typeof title !== 'string' || !title.startsWith('Ene Output') || title.length > 160 || /[\r\n]/.test(title)) throw new Error('Invalid output title.');
+      if (input.active !== true || typeof title !== 'string' || !title.startsWith('VModel Output') || title.length > 160 || /[\r\n]/.test(title)) throw new Error('Invalid output title.');
       if (!['output', 'clean'].includes(kind) || !['landscape', 'portrait'].includes(orientation)) throw new Error('Invalid composition.');
       if (!viewport || !canvas || ![viewport.width, viewport.height, canvas.left, canvas.top, canvas.width, canvas.height].every(Number.isFinite)) throw new Error('Invalid geometry.');
       if (viewport.width < 1 || viewport.height < 1 || viewport.width > 16384 || viewport.height > 16384 || canvas.width < 1 || canvas.height < 1 || canvas.left < -1 || canvas.top < -1 || canvas.left + canvas.width > viewport.width + 1 || canvas.top + canvas.height > viewport.height + 1) throw new Error('Canvas must fit the viewport.');

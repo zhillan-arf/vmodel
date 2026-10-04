@@ -15,7 +15,7 @@ async function fixture() {
   const get = () => fetch(origin + '/api/output-layout').then(response => response.json());
   return { post, get, expire: () => { time += 6000; } };
 }
-const layout: OutputLayout = { id: 'abcde123-1234-4321-1234-123456789012', title: 'Ene Output · clean', kind: 'clean', orientation: 'portrait', viewport: { width: 600, height: 800 }, canvas: { left: 75, top: 0, width: 450, height: 800 }, observedAt: 0 };
+const layout: OutputLayout = { id: 'abcde123-1234-4321-1234-123456789012', title: 'VModel Output · clean', kind: 'clean', orientation: 'portrait', viewport: { width: 600, height: 800 }, canvas: { left: 75, top: 0, width: 450, height: 800 }, observedAt: 0 };
 describe('local output geometry', () => {
   it('shares whitelisted geometry, expires closed outputs and deletes on exit', async () => {
     const f = await fixture();

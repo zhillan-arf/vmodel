@@ -1,5 +1,7 @@
 # Make a video with Ene
 
+All `.cmd` launchers are in the project's **deploy** folder.
+
 The recording path has passed short local tests. Your final camera/voice performance still needs acceptance; the reference clips are examples of the output format.
 
 1. Open **Start VModel.cmd**, choose your camera, click **Start camera**, then **Recenter & calibrate**.

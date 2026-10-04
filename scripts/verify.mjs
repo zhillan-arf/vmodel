@@ -20,6 +20,7 @@ const CHECKS = [
   { name: 'unit tests', command: 'npm test --silent' },
   { name: 'production build and typecheck', command: 'npm run build --silent' },
   { name: 'runtime bundle audit', command: 'node scripts/audit_bundle.mjs' },
+  { name: 'model selection and output synchronization', command: 'node scripts/model_selection_smoke.mjs' },
   { name: 'avatar load failure handling', command: 'node scripts/avatar_load_failure_smoke.mjs' },
   { name: 'beginner documentation', command: 'node scripts/audit_docs.mjs' },
   { name: 'evidence reports readable', command: 'node scripts/audit_reports_readable.mjs' },

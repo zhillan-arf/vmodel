@@ -22,7 +22,7 @@ export async function startIsolatedStudioServer() {
     const timer = setTimeout(() => reject(new Error(`Owned studio server startup timed out: ${output}`)), 10000);
     child.stdout.on('data', chunk => {
       output = (output + chunk).slice(-10000);
-      if (output.includes(`Ene Studio is ready at ${base}`)) { clearTimeout(timer); resolve(); }
+      if (output.includes(`VModel is ready at ${base}`)) { clearTimeout(timer); resolve(); }
     });
     child.stderr.on('data', chunk => { output = (output + chunk).slice(-10000); });
     child.once('error', error => { clearTimeout(timer); reject(error); });

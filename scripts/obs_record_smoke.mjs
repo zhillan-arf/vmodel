@@ -27,7 +27,7 @@ try {
   await page.goto('http://127.0.0.1:4173/');
   await page.waitForFunction(()=>!!window.__vmodel,undefined,{timeout:90000});
   await page.locator('#clean').click();
-  const title='Ene Output Recording Check '+Date.now();
+  const title='VModel Output Recording Check '+Date.now();
   await page.evaluate(title=>{
     document.title=title;
     window.__poseTimer=setInterval(()=>{

@@ -36,7 +36,7 @@ assert(args.includes('--run') && args.includes('--quiet-window'), 'Review --plan
 const root = process.cwd(), runId = new Date().toISOString().replace(/[:.]/g, '-') + '-' + randomUUID().slice(0, 8);
 const localRoot = path.resolve('ops/reports/local/capture-animation'), directory = path.join(localRoot, runId);
 const lockPath = path.join(localRoot, 'active.lock');
-const sceneName = 'Ene Capture Diagnostic ' + runId, inputName = sceneName + ' Window', title = 'Ene Output Diagnostic ' + runId;
+const sceneName = 'Ene Capture Diagnostic ' + runId, inputName = sceneName + ' Window', title = 'VModel Output Diagnostic ' + runId;
 const ffprobe = path.resolve('.tools/web/ffmpeg-9.0.1-essentials_build/bin/ffprobe.exe');
 const ffmpeg = path.resolve('.tools/web/ffmpeg-9.0.1-essentials_build/bin/ffmpeg.exe');
 const report = { startedAt: new Date().toISOString(), runId, plan, fixtures, phases: [], errors: [], cleanupErrors: [], externalRequests: [], externalResponses: [], browserMessages: [],

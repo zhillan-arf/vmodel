@@ -1,6 +1,6 @@
 param([Parameter(Mandatory=$true)][string]$Title, [Parameter(Mandatory=$true)][int]$BrowserProcessId, [switch]$InspectOwnedCaptions)
 $ErrorActionPreference = 'Stop'
-if ((!$Title.StartsWith('Ene Output Diagnostic ') -and !$Title.StartsWith('Ene Output Soak ')) -or $BrowserProcessId -le 0) { throw 'Only the exact owned diagnostic/soak title and positive browser PID are permitted.' }
+if ((!$Title.StartsWith('VModel Output Diagnostic ') -and !$Title.StartsWith('VModel Output Soak ')) -or $BrowserProcessId -le 0) { throw 'Only the exact owned diagnostic/soak title and positive browser PID are permitted.' }
 Add-Type @'
 using System;using System.Collections.Generic;using System.Runtime.InteropServices;using System.Text;
 public static class EneOwnedWindowRead {

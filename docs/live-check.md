@@ -1,5 +1,7 @@
 # Check movement on your camera
 
+All `.cmd` launchers are in the project's **deploy** folder.
+
 These are the remaining physical checks for Ene. Automated poses already exercise the rig, but they cannot tell us how your camera sees your movements. This check does not require a public stream or saving raw webcam footage.
 
 Open **Start VModel.cmd**, use **Seated**, start the camera and recenter. Begin at **640×480**, **Balanced** quality and **Gentle** hair motion. Enable the camera preview only if it helps you stay in frame.

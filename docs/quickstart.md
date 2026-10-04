@@ -1,16 +1,18 @@
-# Ene Studio quickstart
+# VModel quickstart
 
-Ene Cyber legs, the local studio and OBS scenes are prepared on this laptop. Live movement quality and final recordings are still being tested. The [acceptance report](../ops/reports/acceptance.md) records completed components and remaining checks.
+The local studio includes Ene Cyber legs and Rei. Existing OBS scenes keep their Ene names and capture either selected model. Live movement quality and final recordings are still being tested. The [acceptance report](../ops/reports/acceptance.md) records completed components and remaining checks.
 
 ## Open your studio
 
-Double-click **Start VModel.cmd** in the project folder. It opens the local studio in your browser. After the initial setup, the avatar and tracking models run on the laptop without a cloud account.
+Double-click **Start VModel.cmd** in the project's **deploy** folder. It opens the local studio in your browser. After the initial setup, the avatar and tracking models run on the laptop without a cloud account.
 
 The launcher uses the tested installed Chrome and reuses an already running studio. **Stop VModel.cmd** stops only the server it owns; the production app then releases an active camera after detecting that disconnect, normally within four seconds. Close the studio/output windows when finished. The normal **Stop** button releases the camera immediately without closing the app.
 
-If a build is missing, **Setup VModel.cmd** installs the pinned app dependencies, provisions the tracking files and builds the app. Initial setup needs an internet connection and the already installed Node.js. Codex handles authoring tools and model preparation; you do not need to rig the model yourself.
+If a build is missing, **Setup VModel.cmd** installs the pinned app dependencies, provisions the tracking files and builds the app. Initial setup needs an internet connection and the already installed Node.js and Python 3.10 or newer. Codex handles authoring tools and model preparation; you do not need to rig the model yourself.
 
-## Move as Ene
+## Choose a model and move
+
+Choose **Ene** or **Rei** from **Model**. Switching models also updates the output view; your camera and studio settings stay available.
 
 1. Click **Start camera** and allow camera access for the local page. Choose your laptop camera if more than one is listed.
 2. Face the camera in comfortable lighting. Click **Recenter & calibrate**.
@@ -49,9 +51,9 @@ The [conversion recipe](avatar-conversion.md) documents the validated avatar and
 
 ## Optional character voice
 
-[Start Voice Studio.cmd](../Start%20Voice%20Studio.cmd) opens the local voice controls at `http://127.0.0.1:5082/`. Three provisional converted reference voices can be compared, selected and saved. Enable headphone monitoring to hear the reference. Microphone access requires an explicit character-microphone or natural-voice action. Live character conversion on this laptop still misses its timing target and mutes late audio. English voice quality and physical lip sync remain unaccepted.
+[Start Voice Studio.cmd](../deploy/Start%20Voice%20Studio.cmd) opens the local voice controls at `http://127.0.0.1:5082/`. Three provisional converted reference voices can be compared, selected and saved. Enable headphone monitoring to hear the reference. Microphone access requires an explicit character-microphone or natural-voice action. Live character conversion on this laptop still misses its timing target and mutes late audio. English voice quality and physical lip sync remain unaccepted.
 
-From a terminal, `Start VModel.cmd -Voice` opens both avatar and voice controls; optional voice failure does not stop avatar startup. `Start VModel.cmd -NoBrowser -Voice` starts their services without opening windows. `Start VModel.cmd -StopVoice`, or [Stop Voice Studio.cmd](../Stop%20Voice%20Studio.cmd), stops only the identity-checked voice service and leaves the avatar service running. Default `Start VModel.cmd` continues to start the avatar independently.
+From Command Prompt in the `deploy` folder, `"Start VModel.cmd" -Voice` opens both avatar and voice controls; optional voice failure does not stop avatar startup. `"Start VModel.cmd" -NoBrowser -Voice` starts their services without opening windows. `"Start VModel.cmd" -StopVoice`, or [Stop Voice Studio.cmd](../deploy/Stop%20Voice%20Studio.cmd), stops only the identity-checked voice service and leaves the avatar service running. Default `Start VModel.cmd` continues to start the avatar independently.
 
 Separate character and natural-voice sources are already installed in both Ene OBS scenes, so no manual source setup is needed. **Start natural voice → OBS** deliberately sends your own speech; failures never select this mode and **Stop / mute** silences both routes. See the [voice quickstart](voice-quickstart.md) for monitoring, Stop/reconnect and remaining limits. Converted reference transport and mocked natural controls pass; physical natural-device behavior, continuous character-speech quality, live conversion performance and lip sync remain unaccepted.
 

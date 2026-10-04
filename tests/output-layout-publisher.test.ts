@@ -7,7 +7,7 @@ const canvas = { getBoundingClientRect: () => ({ left: 0, top: 0, width: 1280, h
 const active = () => ({ active: true, kind: 'clean' as const, orientation: 'landscape' as const });
 beforeEach(() => {
   vi.useFakeTimers(); disconnect = vi.fn<() => void>();
-  vi.stubGlobal('document', { title: 'Ene Output publisher regression' });
+  vi.stubGlobal('document', { title: 'VModel Output publisher regression' });
   vi.stubGlobal('innerWidth', 1280); vi.stubGlobal('innerHeight', 720);
   vi.stubGlobal('ResizeObserver', class {
     constructor(callback: () => void) { resized = callback; }
@@ -44,7 +44,7 @@ describe('output layout publisher lifecycle', () => {
     resized(); resized(); await vi.advanceTimersByTimeAsync(1500);
     expect(fetchMock).toHaveBeenCalledOnce();
     finishBody(); await flush();
-    document.title = 'Ene Output latest layout'; resized(); await flush();
+    document.title = 'VModel Output latest layout'; resized(); await flush();
     expect(fetchMock).toHaveBeenCalledTimes(2);
     expect(JSON.parse(String(fetchMock.mock.calls[1][1]?.body)).title).toBe(document.title);
     stop();

@@ -1,5 +1,7 @@
 # What's left, and what only you can do
 
+All `.cmd` launchers are in the project's **deploy** folder.
+
 Everything that can be finished without you is finished. The 17 open tasks all wait on the same four things: **your camera, your microphone and ears, one Windows permission prompt, and two final recordings.** Nothing here needs code edits or developer tools.
 
 They are ordered so each one unblocks the most work. You can stop after any step; progress is recorded as you go.

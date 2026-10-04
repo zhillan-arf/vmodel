@@ -1,5 +1,5 @@
 @echo off
-cd /d "%~dp0"
+cd /d "%~dp0.."
 if not exist "node_modules\vite" (
   echo Project setup is missing. Run Setup VModel.cmd first.
   pause

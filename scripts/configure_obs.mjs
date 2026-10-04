@@ -13,7 +13,7 @@ try {
   const inputs=(await obs.request('GetInputList')).inputs;
   for(const frame of ['Landscape','Portrait']) {
     const inputName='Ene '+frame+' Window',sceneName='Ene '+frame;
-    if(!inputs.some(input=>input.inputName===inputName)) await obs.request('CreateInput',{sceneName,inputName,inputKind:'window_capture',inputSettings:{window:'Ene Output:Chrome_WidgetWin_1:chrome.exe',method:2,priority:1,cursor:false,client_area:true,capture_audio:false,force_sdr:true},sceneItemEnabled:false});
+    if(!inputs.some(input=>input.inputName===inputName)) await obs.request('CreateInput',{sceneName,inputName,inputKind:'window_capture',inputSettings:{window:'VModel Output:Chrome_WidgetWin_1:chrome.exe',method:2,priority:1,cursor:false,client_area:true,capture_audio:false,force_sdr:true},sceneItemEnabled:false});
     else await obs.request('SetInputSettings',{inputName,inputSettings:{priority:1,cursor:false,capture_audio:false},overlay:true});
   }
   const inputName='Ene '+orientation+' Window',sceneName='Ene '+orientation;
@@ -28,8 +28,8 @@ try {
     const {propertyItems}=await obs.request('GetInputPropertiesListPropertyItems',{inputName,propertyName:'window'});
     const candidates=layouts.filter(layout=>layout.orientation===orientation.toLowerCase()&&(!requestedTitle||layout.title===requestedTitle)).flatMap(layout=>propertyItems.filter(item=>item.itemEnabled && item.itemName.includes(layout.title)).map(item=>({item,layout})));
     if(candidates.length!==1) {
-      if(process.env.VMODEL_OBS_DEBUG==='1')console.error(JSON.stringify({layouts,eneWindows:propertyItems.filter(item=>item.itemName.includes('Ene Output')),candidates:candidates.length}));
-      throw new Error(`Open one visible ${orientation.toLowerCase()} Ene output (or Clean view), wait two seconds, then retry. Close extra matching outputs.`);
+      if(process.env.VMODEL_OBS_DEBUG==='1')console.error(JSON.stringify({layouts,vmodelWindows:propertyItems.filter(item=>item.itemName.includes('VModel Output')),candidates:candidates.length}));
+      throw new Error(`Open one visible ${orientation.toLowerCase()} VModel output (or Clean view), wait two seconds, then retry. Close extra matching outputs.`);
     }
     const {item,layout}=candidates[0];
     await obs.request('SetInputSettings',{inputName,inputSettings:{window:item.itemValue,priority:1,method:2,cursor:false,client_area:true,capture_audio:false,force_sdr:true},overlay:true});
@@ -46,7 +46,7 @@ try {
   }
   await obs.request('SetSceneItemTransform',{sceneName,sceneItemId,sceneItemTransform:{positionX:0,positionY:0,alignment:5,boundsType:'OBS_BOUNDS_SCALE_INNER',boundsAlignment:0,boundsWidth:width,boundsHeight:height,...crop}});
   console.log(JSON.stringify({profile:'Ene '+orientation,scene:sceneName,video:await obs.request('GetVideoSettings'),attached:attach,
-    crop,capture:'Windows Graphics Capture; title used to attach, cursor/audio off. Keep this window on Ene. Reattach after resizing; stop recording and disable the source before changing or closing it.'}));
+    crop,capture:'Windows Graphics Capture; title used to attach, cursor/audio off. Keep this window on VModel. Reattach after resizing; stop recording and disable the source before changing or closing it.'}));
 } catch(error) {
   // 'Local OBS connection closed.' is accurate but leaves the user nowhere.
   const unreachable = /connection closed|ECONNREFUSED|failed to connect|timed out/i.test(error.message);

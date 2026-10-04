@@ -25,7 +25,7 @@ try {
  await page.goto(process.env.VMODEL_TEST_URL??'http://127.0.0.1:4173/');
  await page.waitForFunction(()=>!!window.__vmodel,undefined,{timeout:90000});
  await page.locator('#clean').click();
- const title='Ene Output Capture Check '+Date.now();await page.evaluate(title=>{document.title=title;},title);
+ const title='VModel Output Capture Check '+Date.now();await page.evaluate(title=>{document.title=title;},title);
  await mkdir('ops/reports/local/obs',{recursive:true});
  for(const orientation of ['Landscape','Portrait']) {
   const sourceName='Ene '+orientation+' Window',sceneName='Ene '+orientation;

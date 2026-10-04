@@ -37,6 +37,7 @@ export class AvatarViewer {
     this.observer = new ResizeObserver(() => this.resize()); this.observer.observe(container);
     this.configure(settings);
   }
+  cancelPendingLoad() { this.generation++; }
   async load(blob: Blob): Promise<VRM> {
     const generation = ++this.generation;
     const header = new Uint8Array(await blob.slice(0, 4).arrayBuffer());
@@ -51,7 +52,7 @@ export class AvatarViewer {
     const vrm = gltf.userData.vrm as VRM | undefined;
     if (!vrm) { VRMUtils.deepDispose(gltf.scene); throw new Error('This file is glTF but has no supported VRM avatar data.'); }
     const missing = (['hips','spine','head','leftUpperArm','rightUpperArm','leftLowerArm','rightLowerArm','leftHand','rightHand','leftUpperLeg','rightUpperLeg','leftLowerLeg','rightLowerLeg','leftFoot','rightFoot'] as const).filter(name => !vrm.humanoid.getNormalizedBoneNode(name));
-    if (missing.length) { VRMUtils.deepDispose(vrm.scene); throw new Error(`Avatar is missing required humanoid controls: ${missing.join(', ')}. Use the prepared Ene avatar or repair its VRM rig.`); }
+    if (missing.length) { VRMUtils.deepDispose(vrm.scene); throw new Error(`Avatar is missing required humanoid controls: ${missing.join(', ')}. Choose a bundled avatar or repair its VRM rig.`); }
     if (generation !== this.generation) { VRMUtils.deepDispose(vrm.scene); throw new Error('Avatar load superseded.'); }
     if (this.vrm) { this.scene.remove(this.vrm.scene); VRMUtils.deepDispose(this.vrm.scene); }
     VRMUtils.rotateVRM0(vrm);

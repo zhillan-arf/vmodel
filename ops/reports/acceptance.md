@@ -7,9 +7,9 @@ Checkpoint: 2026-09-13. **Overall release remains in progress.** TASK-020 is now
 | Deliverable | Local entry point |
 | --- | --- |
 | Reusable Ene Cyber legs avatar | [VRM](../../assets/avatars/ene.vrm), [editable export scene](../../assets/work/ene/vrm-work.blend), [mapping](../../config/avatars/ene.json), [conversion recipe](../../docs/avatar-conversion.md) |
-| Webcam studio | [Start VModel.cmd](../../Start%20VModel.cmd), [quickstart](../../docs/quickstart.md), [operator check](../../docs/live-check.md) |
+| Webcam studio | [Start VModel.cmd](../../deploy/Start%20VModel.cmd), [quickstart](../../docs/quickstart.md), [operator check](../../docs/live-check.md) |
 | OBS capture/recording | [OBS setup](../../docs/obs-setup.md), [recording guide](../../docs/recording.md); installed Landscape and Portrait scenes |
-| Voice auditions and controls | [Start Voice Studio.cmd](../../Start%20Voice%20Studio.cmd), [voice guide](../../docs/voice-quickstart.md); Bright, Soft, Cool and explicit natural speech |
+| Voice auditions and controls | [Start Voice Studio.cmd](../../deploy/Start%20Voice%20Studio.cmd), [voice guide](../../docs/voice-quickstart.md); Bright, Soft, Cool and explicit natural speech |
 | Five website animations | [showcase guide](../../docs/web-showcase.md), [final media manifest](../../web-showcase/public/ene/manifest.json), [production/rebuild evidence](web-resource-production.md) |
 | Installation and provenance | [Toolchain](toolchain.md), [software/model notices](../../docs/third-party-notices.md), [character attribution](model-notices.md) |
 

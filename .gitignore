@@ -15,6 +15,7 @@ __pycache__/
 .env.*
 !.env.example
 ops/resources/ENE/
+ops/resources/REI/
 ops/resources/*.rar
 ops/reports/local/
 web-showcase/public/ene/

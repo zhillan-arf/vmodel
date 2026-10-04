@@ -8,7 +8,7 @@ $expectedScript = Join-Path $PSScriptRoot 'server.mjs'
 if ($server -and $server.Name -eq 'node.exe' -and $server.CommandLine.Contains($expectedScript)) {
     Stop-Process -Id $serverPid
     Remove-Item -LiteralPath $pidFile
-    Write-Output 'Ene Studio server stopped. The production studio releases its camera after detecting the disconnect (normally within four seconds). Close its browser windows when finished.'
+    Write-Output 'VModel server stopped. The production studio releases its camera after detecting the disconnect (normally within four seconds). Close its browser windows when finished.'
 } elseif ($server) {
     throw 'The recorded process is not this project server; it was left running.'
 } else {

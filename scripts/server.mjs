@@ -30,4 +30,4 @@ const server=http.createServer(async(req,res)=>{
   }catch{res.writeHead(404,{'Content-Type':'text/plain'});res.end('File not found.');}
 });
 server.on('error',error=>{console.error(error.code==='EADDRINUSE'?`Port ${port} is in use. Close the other app or choose VMODEL_PORT.`:error);process.exitCode=1;});
-server.listen(port,'127.0.0.1',()=>console.log(`Ene Studio is ready at http://127.0.0.1:${port}`));
+server.listen(port,'127.0.0.1',()=>console.log(`VModel is ready at http://127.0.0.1:${port}`));

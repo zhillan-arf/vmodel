@@ -1,4 +1,5 @@
 import './style.css';
+import { bundledAvatars, savedAvatar } from './avatars';
 import { AvatarViewer } from './viewer';
 import { CameraTracker } from './camera';
 import { defaults, normalizeSettings, readSettings, type Calibration, type TrackingFrame } from './types';
@@ -20,9 +21,10 @@ let settings = readSettings();
 const app = document.querySelector<HTMLDivElement>('#app')!;
 app.innerHTML = output ? '<main id="stage" class="output-stage"></main>' : `
   <aside class="sidebar">
-    <a class="brand" href="/">e<span>ne</span><small>STUDIO</small></a>
+    <a class="brand" href="/">V<span>Model</span></a>
     <div class="section-heading">YOUR AVATAR <span>01</span></div>
-    <h1 id="avatar-name">Ene <span>Cyber legs</span></h1>
+    <h1 id="avatar-name">Choose your avatar</h1>
+    <label>Model<select id="avatar-select">${bundledAvatars.map(avatar => `<option value="${avatar.id}">${avatar.label}</option>`).join('')}<option value="custom" hidden>Loaded VRM</option></select></label>
     <p class="muted">A little more you. A little more virtual.</p>
     <label class="file-button">Load another VRM<input id="avatar-file" type="file" accept=".vrm" /></label>
     <div class="section-heading">PERFORMANCE <span>02</span></div>
@@ -51,7 +53,7 @@ app.innerHTML = output ? '<main id="stage" class="output-stage"></main>' : `
   </aside>
   <main class="workspace">
     <header><div><span class="eyebrow">YOUR VIRTUAL STAGE</span><h2>Make yourself seen.</h2></div><span class="local-badge"><i></i> Runs on your laptop</span></header>
-    <div class="stage-wrap"><div id="stage"></div><div id="loading" class="loading">Preparing Ene…</div><span class="stage-label">ENE / CYBER LEGS</span></div>
+    <div class="stage-wrap"><div id="stage"></div><div id="loading" class="loading">Preparing avatar…</div><span class="stage-label">VMODEL</span></div>
     <footer><div><span id="status-dot" class="status-dot"></span><span id="status" role="status" aria-live="polite">Loading avatar…</span><small id="stats"></small><small id="tracking-hint"></small><small id="output-status">Output closed · Escape returns from Clean view</small></div><div class="pair"><button id="clean">Clean view</button><button id="output" class="primary">Open output ↗</button></div></footer>
     <div class="bottom-note"><span>Made for your next hello.</span><span>Capture the output window in OBS · Camera preview stays here.</span></div>
   </main>`;
@@ -59,7 +61,8 @@ const stage = document.querySelector<HTMLElement>('#stage')!;
 const viewer = new AvatarViewer(stage, settings, output);
 const stopLayout = publishOutputLayout(viewer.renderer.domElement, () => ({ active: output || document.body.classList.contains('clean'), kind: output ? 'output' : 'clean', orientation: settings.orientation }));
 let retarget: Retargeter | null = null, avatar: Blob | null = null, lastFrame: TrackingFrame | null = null;
-let avatarId: string | null = null, loadingAvatarId: string | null = null, label = 'Ene · Cyber legs';
+let avatarId: string | null = null, loadingAvatarId: string | null = null, label: string = savedAvatar().label;
+let selectedBundle: string | null = null;
 let calibration: Calibration | null = null, appliedCalibration = '', expression = 'neutral', loadGeneration = 0;
 let tracker: CameraTracker | null = null;
 const stopServerWatch = output || import.meta.env.DEV ? () => {} : watchLocalServer(() => !!tracker?.getCameraInfo(), () => {
@@ -82,7 +85,7 @@ const link = new OutputLink(output, session,
   known => ({ avatarId, label, ...(avatar && known !== avatarId ? { blob: avatar } : {}), settings, calibration, expression, frame: lastFrame }),
   state => { void receiveSnapshot(state); }, frame => { lastFrame = frame; }, () => loadingAvatarId ?? avatarId,
   count => {
-    if (output) { document.title = count ? `Ene Output · ${settings.orientation}` : 'Ene Output · waiting for controls'; return; }
+    if (output) { document.title = count ? `VModel Output · ${settings.orientation}` : 'VModel Output · waiting for controls'; return; }
     const el = document.querySelector('#output-status'), size = compositionSize(settings.orientation);
     if (el) el.textContent = count ? `${count} output connected · ${size.width} × ${size.height}` : 'Output closed · Escape returns from Clean view';
   });
@@ -97,30 +100,49 @@ function applySettings() {
     link.publish();
   }
 }
-async function load(blob: Blob, nextLabel = label) {
+async function load(source: Blob | Promise<Blob>, nextLabel = label, bundleId: string | null = null) {
   const generation = ++loadGeneration;
+  viewer.cancelPendingLoad();
+  const loading = document.querySelector('#loading');
+  if (loading) { loading.textContent = `Preparing ${nextLabel}…`; loading.classList.remove('hidden'); }
+  status(`Loading ${nextLabel}…`);
   try {
+    const blob = await source;
+    if (generation !== loadGeneration) return;
     const hash = await crypto.subtle.digest('SHA-256', await blob.arrayBuffer());
     const id = [...new Uint8Array(hash)].map(b => b.toString(16).padStart(2, '0')).join('');
     if (generation !== loadGeneration) return;
     loadingAvatarId = id;
     const vrm = await viewer.load(blob);
     if (generation !== loadGeneration) return;
-    avatar = blob; avatarId = id; loadingAvatarId = null; label = nextLabel; retarget = new Retargeter(vrm); appliedCalibration = '';
-    if (!output) { settings = readSettings(avatarSettingsKey(id)); restoreCalibration(); }
+    avatar = blob; avatarId = id; loadingAvatarId = null; label = nextLabel; selectedBundle = bundleId; retarget = new Retargeter(vrm); appliedCalibration = '';
+    if (!output) {
+      settings = readSettings(avatarSettingsKey(id)); restoreCalibration();
+      (document.querySelector('#avatar-select') as HTMLSelectElement).value = bundleId ?? 'custom';
+      try { if (bundleId) localStorage.setItem('vmodel-avatar', bundleId); else localStorage.removeItem('vmodel-avatar'); } catch { /* optional persistence */ }
+    }
     applySettings(); applyPerformanceState();
     document.querySelector('#loading')?.classList.add('hidden');
     const name = document.querySelector('#avatar-name'); if (name) name.textContent = label;
+    const stageLabel = document.querySelector('.stage-label'); if (stageLabel) stageLabel.textContent = label.toUpperCase();
     status(`${label} is ready. Start your camera when you are.`);
     if (!output) link.publish();
     // Read-only diagnostic access for automated rendering/rig verification.
-    Object.assign(window, { __vmodel: { viewer, retarget, setFrame: (frame: TrackingFrame) => { lastFrame = frame; link.frame(frame); }, getState: () => ({ avatarId, settings, calibration, expression }), getStats: () => ({ fps, inferenceMs: lastFrame?.inferenceMs ?? 0, sequence: lastFrame?.sequence ?? 0, samples: lastFrame?.samples ?? null, drawCalls: viewer.renderer.info.render.calls }) } });
+    Object.assign(window, { __vmodel: { viewer, retarget, setFrame: (frame: TrackingFrame) => { lastFrame = frame; link.frame(frame); }, getState: () => ({ avatarId, label, selectedBundle, settings, calibration, expression }), getStats: () => ({ fps, inferenceMs: lastFrame?.inferenceMs ?? 0, sequence: lastFrame?.sequence ?? 0, samples: lastFrame?.samples ?? null, drawCalls: viewer.renderer.info.render.calls }) } });
   } catch (error) {
     if (generation !== loadGeneration) return;
     loadingAvatarId = null;
     const message = describeLoadFailure(error); status(message);
-    const loading = document.querySelector('#loading'); if (loading) loading.textContent = `${message} Use Load another VRM to choose an avatar.`;
+    if (loading) { loading.textContent = `${message} Choose a model or load another VRM.`; loading.classList.toggle('hidden', !!avatar); }
+    const select = document.querySelector<HTMLSelectElement>('#avatar-select'); if (select) select.value = selectedBundle ?? 'custom';
   }
+}
+function loadBundle(id: string) {
+  const model = bundledAvatars.find(item => item.id === id); if (!model) return;
+  return load(fetch(model.url).then(response => {
+    if (!response.ok) throw new Error(`Prepared ${model.name} avatar not found. Run deploy/Setup VModel.cmd or load a VRM.`);
+    return response.blob();
+  }), model.label, model.id);
 }
 async function receiveSnapshot(state: OutputSnapshot) {
   if (!output) return;
@@ -130,6 +152,9 @@ async function receiveSnapshot(state: OutputSnapshot) {
   expression = ['neutral','happy','surprised'].includes(state.expression) ? state.expression : 'neutral';
   lastFrame = state.frame;
   if (changed) applySettings();
+  if (state.avatarId === avatarId && loadingAvatarId) {
+    ++loadGeneration; viewer.cancelPendingLoad(); loadingAvatarId = null;
+  }
   if (state.avatarId !== avatarId && state.avatarId !== loadingAvatarId && state.blob) {
     loadingAvatarId = state.avatarId; await load(state.blob, state.label);
   }
@@ -154,6 +179,7 @@ else {
     retarget?.calibrate(lastFrame); calibration = retarget?.getCalibration() ?? null; appliedCalibration = JSON.stringify(calibration);
     const saved = calibration && saveCalibration(scope(), calibration); link.publish(); status(saved ? 'Neutral pose saved for this avatar and camera.' : 'Neutral pose applied for this session.');
   });
+  document.querySelector('#avatar-select')!.addEventListener('change', e => { void loadBundle((e.target as HTMLSelectElement).value); });
   document.querySelector('#avatar-file')!.addEventListener('change', e => { const file = (e.target as HTMLInputElement).files?.[0]; if (file) void load(file, file.name.replace(/\.vrm$/i, '')); });
   for (const key of ['mode','quality','framing','orientation','background','hands','springMotion','captureResolution','zoom','mirror','headRange','mouthGain','smoothing'] as const) document.getElementById(key)!.addEventListener('change', e => {
     const input = e.target as HTMLInputElement;
@@ -171,7 +197,7 @@ else {
     const child = window.open(`/?output=1&session=${encodeURIComponent(session!)}`, `vmodel-output-${session}`, `width=${size.width},height=${size.height}`);
     if (!child) status('Allow this local site to open its output window, then retry.');
   });
-  document.querySelector('#clean')!.addEventListener('click', () => { document.title = 'Ene Output · clean'; document.body.classList.add('clean'); viewer.setOutputMode(true); });
+  document.querySelector('#clean')!.addEventListener('click', () => { document.title = 'VModel Output · clean'; document.body.classList.add('clean'); viewer.setOutputMode(true); });
   document.querySelector('#reset')!.addEventListener('click', () => {
     const cleared = !avatarId || clearAvatarCalibration(avatarId);
     settings = { ...defaults }; calibration = null; retarget?.setCalibration(null); expression = 'neutral'; applyPerformanceState(); applySettings();
@@ -201,19 +227,13 @@ else {
     } else freeze.hidden(performance.now());
   });
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { document.title = 'Ene Studio'; document.body.classList.remove('clean'); viewer.setOutputMode(false); }
+    if (e.key === 'Escape') { document.title = 'VModel'; document.body.classList.remove('clean'); viewer.setOutputMode(false); }
     if (e.code === 'Space' && document.body.classList.contains('clean')) { e.preventDefault(); stop(); }
     if (e.code === 'KeyC' && document.body.classList.contains('clean')) (document.querySelector('#calibrate') as HTMLButtonElement).click();
   });
 }
 applySettings();
-if (!output) void fetch('/avatars/ene.vrm').then(response => {
-  if (!response.ok) throw new Error('Prepared Ene avatar not found. Run the avatar preparation script or select a VRM.');
-  return response.blob();
-}).then(load).catch(error => {
-  const message = readableError(error, 'The prepared Ene avatar could not be loaded. Run Setup VModel.cmd, or use Load another VRM.');
-  status(message); const loading = document.querySelector('#loading'); if (loading) loading.textContent = message;
-});
+if (!output) { const model = savedAvatar(); (document.querySelector('#avatar-select') as HTMLSelectElement).value = model.id; void loadBundle(model.id); }
 function animate(now: number) {
   const dt = Math.min(0.1, (now - lastTime) / 1000); lastTime = now;
   retarget?.update(lastFrame, settings, dt, performance.timeOrigin + now); viewer.draw(dt);
