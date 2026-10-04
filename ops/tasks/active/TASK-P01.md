@@ -3,8 +3,8 @@
 - Status: In progress
 - Priority: P0
 - Owner: Codex (implementing assistant)
-- Goal: G1, G2, G3, G4
-- Depends on: None to start; completion requires TASK-001 through TASK-038, including the TASK-021 acceptance gate.
+- Goal: G1, G2, G3, G4, G5, G6
+- Depends on: None to start; completion requires TASK-001 through TASK-060, including the TASK-021 acceptance gate.
 - Estimate: Ongoing throughout implementation; included in delivery coordination.
 - Specification: [Ene VTuber plan](../../specs/ene-vtuber-plan.md)
 - Voice specification: [Live English character voice](../../specs/voice-conversion-plan.md)
@@ -17,13 +17,15 @@
 
 Own the work from the current plan through delivery of the user's **Ene Cyber legs** avatar and working webcam-to-recording/streaming program. Maintain an accurate, resumable account of what is finished, what is active, what is blocked, and what should happen next.
 
-This is the parent controller for TASK-001 through TASK-038, including the live English voice/audition and animated website-resource goals. It runs throughout their implementation; it is not a prerequisite that must finish before child tasks can start. Creating this document does not start implementation or complete any child task.
+This controller owns TASK-001 through TASK-060 across G1 through G6. It runs throughout their implementation; it is not a prerequisite that must finish before child tasks can start. Creating this document does not start implementation or complete any child task.
 
 ## Work
 
 TASK-P03 maintains website-resource production, codec/quality measurements, showcase and browser acceptance. It closes after TASK-038 and its G4 handoff; TASK-021 consumes that evidence as the overall gate. G4 reuses the verified authoring subset without waiting unnecessarily for webcam/voice work.
 
-TASK-P02 maintains the detailed voice checkpoint, milestones, decisions and blockers. TASK-P01 retains the overall G1/G2/G3/G4 view and shared dependency coordination. Reflect material voice status changes here; TASK-P02 closes after TASK-028 and its G3 handoff, while TASK-P01 stays open through TASK-021.
+TASK-P02 maintains the voice checkpoint and decisions. TASK-P01 coordinates G1 through G6. P02 closes after TASK-028; P01 remains open through TASK-021.
+
+TASK-P04 maintains G5. TASK-P05 maintains G6. Both controllers supply evidence to P01 before the final acceptance gate.
 
 - At the start of each implementation session, read this controller, the specification, the backlog index and relevant child tasks. Reconcile their recorded status with actual files and validation evidence before choosing the next dependency-ready task.
 - Own execution, including installing/configuring the toolchain in TASK-002 and providing the everyday launcher in TASK-019. The user is not responsible for figuring out installations or rigging. Request their participation only for necessary interactions such as camera permission, calibration gestures, live acceptance or an installer prompt the assistant cannot handle.
@@ -31,18 +33,45 @@ TASK-P02 maintains the detailed voice checkpoint, milestones, decisions and bloc
 - Track statuses as Ready, Todo, In progress, Blocked or Done. Ready means dependencies are satisfied; Todo means waiting for dependencies. A task is Done only when its acceptance criteria have evidence, including required manual checks.
 - For each blocker, record the affected tasks, concrete missing condition, evidence, unblock action and responsible party. Continue other dependency-ready work when possible. Do not treat a missing optional reference or incompatible VMD as a blocker for independent live-tracking work.
 - Record decisions affecting architecture, dependency versions, performance targets, avatar variant or acceptance scope. Keep the specification and affected tasks consistent. Preserve cyber legs as the required variant and both source models unchanged.
-- Track deliverables and measured results against G1/G2/G3/G4, not merely the number of files or tasks created. A sample avatar, head-only preview or fixture-only test cannot replace the specified final Ene and live voice checks.
+- Track deliverables and measured results against G1 through G6.
+- Require actual Ene movement and live voice evidence for their physical acceptance criteria.
 - If implementation reveals missing work, add a clearly scoped follow-up task, link its dependencies and update this controller's scope/counts. Do not silently waive required acceptance criteria or expand into unrelated projects.
 - End each implementation session with a checkpoint containing active work, artifact/evidence links, blockers and the exact next actions so another session can resume without reconstructing the conversation.
 - Close this controller only after the in-scope child tasks and TASK-021 acceptance are complete and the user has the final model, launcher, quickstart, OBS setup and recording evidence.
 
 ## Current checkpoint
 
+Date: 2026-10-04. The user requested research evaluation, design decisions, product specifications, and detailed implementation tasks.
+
+- Scope: 60 implementation tasks, TASK-001 through TASK-060.
+- Progress: 22/60 Done; 14 In progress; 0 Blocked; 2 Ready; 22 Todo.
+- Planning: The [evaluation](../../reports/studio-research-evaluation.md), [action plan](../../specs/studio-evolution-plan.md), [decisions](../../specs/studio-design-decisions.md), and [specification](../../specs/studio-product-spec.md) are complete.
+- G5: [TASK-P04](../backlog/TASK-P04.md) owns the model library and TASK-039 through TASK-048.
+- G6: [TASK-P05](../backlog/TASK-P05.md) owns tracking diagnosis and TASK-049 through TASK-060.
+- Ready: TASK-039 defines shared views and contracts. TASK-049 adds diagnostic timing.
+- New implementation: Not started. All new implementation acceptance remains unchecked.
+- Existing implementation: Status remains unchanged. Earlier live-camera, voice, and recording gates remain open.
+- Final gate: TASK-021 now consumes TASK-048 and TASK-060 as well as its earlier dependencies.
+- Physical participation: Later diagnosis needs actual camera gestures. This does not block current specification or instrumentation work.
+
+Use the new controllers for G5 and G6. They coordinate children without becoming prerequisites for them. Keep private assets and recordings outside code distribution.
+
+### Next actions
+
+1. Start TASK-039 for shared view and model contracts.
+2. Start TASK-049 for independent diagnostic timing.
+3. Follow each child's dependencies before further implementation.
+4. Preserve earlier physical acceptance gaps until direct evidence resolves them.
+
+The checkpoint below preserves prior evidence. Its scope counts and next actions describe the earlier project state.
+
+## Historical checkpoint
+
 Last updated: 2026-09-13. **Two TASK-020 mechanisms are now identified.** A minimized Chrome window delivers zero animation frames (60.04 fps before, 0.00 fps minimized with `visibilityState` hidden, 59.91 fps restored), which reproduces the original 1 Hz-plus-blank-capture signature. Separately, both observed whole-system stalls occurred in runs containing an AC/DC power transition, with every other candidate ruled out by evidence captured at the stall instant. Standing also measures **60.61 fps on AC against 30.03 fps on battery**. The seated soak also passed a full 900-second window with the render gate passing, zero skipped OBS frames and zero blank captures. The unexplained LLVC timing variability is resolved as hybrid-core placement; the paced voice proof passed once on a quiet machine but fails reproducibly under ordinary desktop load, and TASK-024 now has its combined-workload verdict as a measured defect. For TASK-020, core placement is rejected as the cadence-collapse cause and window occlusion remains untested because neither probe managed to occlude the window; the collapse and blank-white captures are still unexplained. A broken production typecheck was found and fixed. No live, physical-device or listening acceptance changed.
 
 - Overall: Implementation in progress. G1 reusable Cyber legs avatar and G4 website resources are delivered, with their specific evidence. VMD investigation, viewer, clean output and packaging are accepted. Native OBS capture, short landscape/portrait MP4 fixtures and positive GPU/CPU tracking have evidence. Tested local RVC character-voice conversion is too slow for live acceptance. Combined avatar/OBS measurement, physical gestures and final voice/recordings remain open. The [G1-G4 acceptance matrix](../../reports/acceptance.md) links delivered components and missing checks.
-- Scope: 38 implementation tasks, TASK-001 through TASK-038.
-- Progress: 22/38 Done; 14 In progress; 0 Blocked; 0 Ready; 2 Todo. Controllers are excluded. TASK-001/002, TASK-004 through TASK-008, TASK-014/016/019, TASK-022 and TASK-029 through TASK-038 are archived; TASK-P03 is also Done. `task_state.py` recomputes controller counts after transitions; `task_audit.py` checks them, lifecycle storage, the register, links and dependency cycles.
+- Historical scope: 38 implementation tasks, TASK-001 through TASK-038.
+- Historical progress: 22/38 Done; 14 In progress; 0 Blocked; 0 Ready; 2 Todo. Controllers are excluded. TASK-001/002, TASK-004 through TASK-008, TASK-014/016/019, TASK-022 and TASK-029 through TASK-038 are archived; TASK-P03 is also Done. `task_state.py` recomputes controller counts after transitions; `task_audit.py` checks them, lifecycle storage, the register, links and dependency cycles.
 - Active focus: TASK-020 render/capture diagnosis, now with two mechanisms eliminated and the cause still open; TASK-024 physical/combined voice measurement after its paced proof passed; TASK-021 evidence collation. TASK-026 receiver restart reliability now has component evidence, while physical device/recovery gates remain. TASK-003/009, TASK-010 through TASK-013 and TASK-015 await physical camera/solver checks; TASK-017/018 retain final OBS/recordings; TASK-023 through TASK-026 retain voice preference, live speed, physical device/routing and sync acceptance.
 - Model: User-selected `ops/resources/ENE/ENE Cyber legs ver.pmx` is available. The earlier missing-model blocker is resolved.
 - Completed cleanup: Missing additive sphere maps `s.bmp` and `spa-pi.bmp` were explicitly disconnected during import; available diffuse textures and original source files were preserved. The [import report](../../reports/ene-import.md) records the decision.
@@ -73,7 +102,7 @@ The subsequent [bounded capture diagnostic](../../reports/capture-animation-diag
 | Website resources (G4) | 029-038 | Done; G4 handed off to 021 | Five animated resources, source/recipe, measured codecs and local showcase |
 | Combined handoff | 021 | Active evidence collation; live gates and 028 remain | G1/G2/G3/G4 evidence and beginner handoff |
 
-### Next actions
+### Historical next actions
 
 1. Incorporate the pending physical-camera feedback into TASK-003/009/010-013/015. Use the [operator check](../../../docs/live-check.md); synthetic fixtures do not close live quality criteria. **All 17 open tasks are now user-gated.** Every remaining unchecked criterion needs the physical camera, the user's listening preference, the cancelled Virtual Camera permission prompt, or the two final recordings. [Remaining checks](../../../docs/remaining-checks.md) orders those four for the user and names which tasks each one closes.
 2. TASK-020's instrumented soak has now run. **The seated phase passed its full 900-second window** at 58.48 fps median, frame interval p95 49.1 ms, **0 skipped OBS render and output frames of 27,002** and **0 blank captures of 31 samples**, with last-versus-first ratios of 0.996-1.004, so the 1 Hz collapse and blank captures did not reproduce under ordinary recorded load on battery. **The standing phase then closed the browser at roughly 55 seconds**, with no Chrome crash event in the Windows Application log and memory pressure plausible but unproven; that cause is not recorded as known. Steady-state hand inference measured 169-303 ms and a full three-task cycle 418-464 ms, roughly 2.2 Hz, which is a separate finding for TASK-012/013. OBS restored with no cleanup errors. A `--phase=<id>` selector was added so the standing workload can be reproduced with fresh browser state, and system-wide free memory is now sampled. [Analysis](../../reports/performance.md), [run evidence](../../reports/local/combined-soak/2026-09-12T14-15-58-634Z-0c607f43/report.json). Previously eliminated for the original failure: [core placement is rejected](../../reports/capture-core-placement.md); [window occlusion is untested](../../reports/capture-occlusion-investigation.md) because neither probe occluded the window.
@@ -104,7 +133,9 @@ Append substantive checkpoints here. Link actual artifact/report paths when they
 - [ ] G2 is delivered with usable local camera tracking, required body/hand/standing behavior, OBS integration and landscape/portrait recordings with audio.
 - [ ] G3 is delivered with an accepted cheerful English voice, alternative timbres, measured live performance and converted audio in both recording orientations.
 - [x] G4 is delivered as five animated Ene website resources, including the VMD-informed greeting and four desk expressions, with measured transparent media, editable source and a runnable showcase accepted in TASK-038.
-- [ ] TASK-021 is Done and its acceptance report covers the specifications' G1/G2/G3/G4 requirements; no unresolved release-blocking defects remain.
+- [ ] TASK-021 is Done and its report covers G1 through G6.
+- [ ] TASK-P04 and TASK-P05 have delivered their required evidence.
+- [ ] No release-blocking defect remains unresolved.
 - [ ] The final checkpoint links the model, app launcher, beginner documentation, OBS setup and acceptance evidence, and records known limitations.
 
 ## Implementation notes

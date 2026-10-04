@@ -4,7 +4,7 @@ A local VTuber app with selectable Ene **Cyber legs** and Rei models, webcam tra
 
 ## What to do next
 
-**[Remaining checks](docs/remaining-checks.md)** lists the four things that still need you, in the order that unblocks the most work. The first one takes about ten minutes and clears seven tasks. Everything that can be finished without you is finished.
+**[Remaining checks](docs/remaining-checks.md)** lists the four things that still need you, in the order that unblocks the most work. The original delivery still needs those checks. New library and tracking tasks can start without physical-device access.
 
 ## Everyday launchers
 
@@ -35,9 +35,9 @@ The [prepared Ene avatar](assets/avatars/ene.vrm), [editable scene](assets/work/
 
 ## Status
 
-Design proposals: [VRM library and registration](ops/research/vrm-library-and-registration.md) and [tracking diagnosis and model-independent visualization](ops/research/tracking-diagnostics-and-improvement.md). These describe future features; the current app supports bundled model selection and temporary VRM loading.
+Design proposals: [VRM library and registration](ops/research/vrm-library-and-registration.md) and [tracking diagnosis and model-independent visualization](ops/research/tracking-diagnostics-and-improvement.md). The [action plan](ops/specs/studio-evolution-plan.md), [design decisions](ops/specs/studio-design-decisions.md), and [product specification](ops/specs/studio-product-spec.md) define the proposed implementation. The current app supports bundled selection and temporary VRM loading.
 
-Implementation is in progress: 22 of 38 tasks are complete. Physical camera and gesture acceptance, a suitable live voice backend, Virtual Camera registration and final recordings remain open, and the local voice converter does not yet meet its timing gates under ordinary desktop load.
+Implementation is in progress: 22 of 60 tasks are complete. The 22 new library and tracking tasks have not started. Physical camera and gesture acceptance, a suitable live voice backend, Virtual Camera registration and final recordings remain open, and the local voice converter does not yet meet its timing gates under ordinary desktop load.
 
 **[TASK-P01](ops/tasks/active/TASK-P01.md)** owns the current checkpoint and links all work; the [task register](ops/tasks/backlog/README.md) covers active and archived tasks. Component tests and short fixture recordings are documented there and do not imply live acceptance.
 

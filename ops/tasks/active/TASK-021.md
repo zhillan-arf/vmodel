@@ -2,14 +2,22 @@
 
 - Status: In progress
 - Priority: P0
-- Goal: G1, G2, G3, G4
-- Depends on: TASK-007, TASK-014, TASK-018, TASK-019, TASK-020, TASK-028, TASK-038
+- Goal: G1, G2, G3, G4, G5, G6
+- Depends on: TASK-007, TASK-014, TASK-018, TASK-019, TASK-020, TASK-028, TASK-038, TASK-048, TASK-060
 - Estimate: M (1-2 days)
 - Specification: [Ene VTuber plan](../../specs/ene-vtuber-plan.md)
 
 ## Outcome
 
-Demonstrate the avatar/application, live character-voice and website-resource goals, leaving a usable model, recording workflow, five animated website resources and a runnable showcase.
+Deliver the avatar, studio, voice, and website resources with verified evidence. Include the model library, Tracking Inspector, and measured correction results.
+
+## Added scope for G5 and G6
+
+Date: 2026-10-04. The [studio specification](../../specs/studio-product-spec.md) adds the model library and Tracking Inspector.
+
+Consume [TASK-048](../backlog/TASK-048.md) for G5 and [TASK-060](../backlog/TASK-060.md) for G6. Their controllers close before this overall gate.
+
+Require verified backup recovery, safe selection, tracking diagnosis, correction verdicts, and combined visual acceptance. Preserve all earlier physical and voice requirements.
 
 ## Work
 
@@ -19,9 +27,14 @@ Demonstrate the avatar/application, live character-voice and website-resource go
 - Confirm editable .blend, VRM, mapping profile, conversion recipe, reproducible toolchain and app launch are present.
 - Verify TASK-028's selected cheerful English voice, alternative timbres, synced portrait/landscape clips, open-source component inventory and local/remote performance verdict.
 - Verify TASK-038's five animated media families, VMD-informed greeting, four desk expressions, measured alpha/browser/performance evidence, editable sources, integration kit and local showcase. TASK-P03 hands off G4 before this gate closes.
-- Write ops/reports/acceptance.md mapping each G1/G2/G3/G4 requirement to evidence, known limitations and remaining defects; resolve release-blocking defects.
+- Map G1 through G6 to evidence, limits, and defects in `ops/reports/acceptance.md`.
+- Resolve release-blocking defects before final acceptance.
 
 ## Acceptance criteria
+
+- [ ] G5 passes L01 through L14 and applicable U requirements; TASK-048 is Done.
+- [ ] G6 passes T01 through T17 and applicable U requirements; TASK-060 is Done.
+- [ ] The final acceptance report maps G1 through G6 to actual evidence.
 
 - [ ] G1/G2 acceptance in the avatar spec and G3 acceptance in the [voice spec](../../specs/voice-conversion-plan.md) are satisfied using actual Ene, not only a sample avatar.
 - [x] G4-A through G4-E in the [web-resource proposal](../../specs/web-character-resources-plan.md) are satisfied with all five animated resources and the simple web showcase; TASK-038 is Done.

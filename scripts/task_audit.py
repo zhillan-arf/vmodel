@@ -3,6 +3,7 @@ from collections import Counter
 import json
 from pathlib import Path
 import re
+from task_scopes import CONTROLLER_SCOPES
 
 ROOT = Path(__file__).resolve().parents[1]
 TASKS = ROOT / 'ops/tasks'
@@ -29,7 +30,7 @@ def audit():
                 errors.append(f'{task}: archived with unchecked acceptance')
             line = re.search(r'^- Depends on: (.+)$', content, re.M)
             dependencies[task] = re.findall(r'TASK-\d{3}', line[1]) if line else []
-    for number in range(1, 39):
+    for number in CONTROLLER_SCOPES['TASK-P01']:
         if f'TASK-{number:03}' not in tasks:
             errors.append(f'TASK-{number:03}: missing')
     for path in (ROOT / 'ops').rglob('*.md'):
@@ -45,7 +46,7 @@ def audit():
     for task in dependencies:
         visit(task, [])
     counts = Counter(status for task, status in tasks.items() if re.fullmatch(r'TASK-\d{3}', task))
-    for controller, numbers in [('TASK-P01', range(1, 39)), ('TASK-P02', range(22, 29)), ('TASK-P03', range(29, 39))]:
+    for controller, numbers in CONTROLLER_SCOPES.items():
         expected = Counter(tasks.get(f'TASK-{number:03}') for number in numbers)
         paths = list(TASKS.glob(f'*/{controller}.md'))
         if len(paths) != 1: continue

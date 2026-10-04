@@ -4,6 +4,7 @@ from collections import Counter
 import os
 from pathlib import Path
 import re
+from task_scopes import CONTROLLER_SCOPES
 
 ROOT = Path(__file__).resolve().parents[1]
 TASKS = ROOT / 'ops/tasks'
@@ -16,7 +17,7 @@ def refresh_controller_counts():
             content = path.read_text(encoding='utf-8')
             match = re.search(r'^- Status: ([^\n]+)', content, re.M)
             if match: statuses[int(path.stem[-3:])] = match[1].strip()
-    for controller, numbers in [('TASK-P01', sorted(statuses)), ('TASK-P02', range(22, 29)), ('TASK-P03', range(29, 39))]:
+    for controller, numbers in CONTROLLER_SCOPES.items():
         counts = Counter(statuses[number] for number in numbers if number in statuses)
         total = sum(counts.values())
         summary = f"- Progress: {counts['Done']}/{total} Done; {counts['In progress']} In progress; {counts['Blocked']} Blocked; {counts['Ready']} Ready; {counts['Todo']} Todo."
