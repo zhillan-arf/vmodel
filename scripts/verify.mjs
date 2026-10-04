@@ -23,6 +23,7 @@ const CHECKS = [
   { name: 'combined camera model and full rig checks', command: 'node scripts/combined_tracking_smoke.mjs' },
   { name: 'solver baseline comparison', command: 'node scripts/solver_baseline_check.mjs' },
   { name: 'production build and typecheck', command: 'npm run build --silent' },
+  { name: 'browser deployment and camera access', command: 'npm run test:deployment' },
   { name: 'synthetic library and inspector checks', command: 'node scripts/studio_features_smoke.mjs' },
   { name: 'combined tracking library and output checks', command: 'node scripts/combined_studio_smoke.mjs' },
   { name: 'bundled model navigation with live output', command: 'node scripts/bundled_navigation_smoke.mjs' },

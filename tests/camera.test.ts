@@ -42,6 +42,21 @@ describe('camera session ownership and backpressure', () => {
     for (const cb of queued) cb(performance.now());
     await Promise.resolve(); await Promise.resolve();
   }
+  it('explains HTTPS before it requests camera access', async () => {
+    vi.stubGlobal('isSecureContext', false);
+    vi.stubGlobal('crypto', {});
+    await tracker.start();
+    expect(getUserMedia).not.toHaveBeenCalled();
+    expect(status).toHaveBeenLastCalledWith(expect.stringContaining('requires HTTPS or localhost'));
+    expect(FakeWorker.instances).toHaveLength(0);
+  });
+  it('handles a browser without camera APIs', async () => {
+    vi.stubGlobal('navigator', {});
+    expect(await tracker.devices()).toEqual([]);
+    await tracker.start();
+    expect(status).toHaveBeenLastCalledWith(expect.stringContaining('browser cannot access a camera'));
+    expect(FakeWorker.instances).toHaveLength(0);
+  });
   it.each(['completes', 'fails'])('keeps a new session image when an old image copy %s', async outcome => {
     const diagnostic = vi.fn();
     tracker = new CameraTracker(video, onFrame, status, () => defaults, diagnostic);

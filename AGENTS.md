@@ -14,3 +14,14 @@ Use [ASD-STE100 Issue 9](https://www.asd-ste100.org/assets/files/ASD-STE100_ISSU
 - Review each new or changed English sentence before delivery. Check sentence length, terms, voice, and meaning. Use the official dictionary for uncertain words.
 
 The standard controls English prose. Code syntax, identifiers, external quotations, and source titles keep their exact form.
+
+# Line endings
+
+LF means line feed. CRLF means carriage return followed by line feed.
+
+- Follow `.gitattributes` for Git line endings.
+- Save text files with LF line endings.
+- Save Windows command files (`.bat` and `.cmd`) with CRLF line endings.
+- Follow `.editorconfig` when you edit files.
+- Apply these rules to text files that scripts generate.
+- Keep these rules in the repository. Do not change global Git settings to remove line-ending warnings.

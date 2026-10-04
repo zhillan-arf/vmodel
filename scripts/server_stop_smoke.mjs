@@ -59,7 +59,7 @@ try {
   // The production watcher must have performed a real successful probe first.
   await page.waitForFunction(() => window.__healthChecks.some(check => check.status === 200), undefined, { timeout: 5000 });
   report.stopRequestedAt = Date.now(); report.serverExit = await server.stop(); report.serverStoppedAt = Date.now();
-  await page.waitForFunction(() => document.querySelector('#camera-video').srcObject === null && window.__ownedTracks.length > 0 && window.__ownedTracks.every(item => item.track.readyState === 'ended') && /Local studio server disconnected/.test(document.querySelector('#status').textContent), undefined, { timeout: 10000 });
+  await page.waitForFunction(() => document.querySelector('#camera-video').srcObject === null && window.__ownedTracks.length > 0 && window.__ownedTracks.every(item => item.track.readyState === 'ended') && /Studio server disconnected/.test(document.querySelector('#status').textContent), undefined, { timeout: 10000 });
   report.after = await page.evaluate(state); report.observedReleasedAt = Date.now();
   report.releaseDelayMs = report.observedReleasedAt - report.stopRequestedAt;
   const failed = report.after.healthChecks.filter(check => check.startedAt >= report.stopRequestedAt && check.failed);

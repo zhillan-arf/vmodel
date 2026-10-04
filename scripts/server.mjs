@@ -4,15 +4,18 @@ import { stat, realpath, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createOutputLayoutHandler } from './output-layout.mjs';
+import { allowedOrigins, acceptsOrigin } from './request-origin.mjs';
 const root=await realpath(path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../dist'));
 const port=Number(process.env.VMODEL_PORT??4173);
-const outputLayout = createOutputLayoutHandler(port);
+const host=process.env.VMODEL_HOST??'127.0.0.1';
+const origins=allowedOrigins(port,process.env.VMODEL_ORIGIN);
+const outputLayout = createOutputLayoutHandler(port,{origins});
 const policy=JSON.parse(await readFile(new URL('../config/http-policy.json',import.meta.url),'utf8'));
 const types={'.html':'text/html; charset=utf-8','.js':'application/javascript','.css':'text/css','.wasm':'application/wasm','.json':'application/json','.png':'image/png','.svg':'image/svg+xml','.vrm':'model/gltf-binary','.task':'application/octet-stream'};
 const server=http.createServer(async(req,res)=>{
   // Apply to worker scripts too: workers enforce the policy on their own response.
   for(const [name,value] of Object.entries(policy))res.setHeader(name,value);
-  if(req.headers.host!==`127.0.0.1:${port}`&&req.headers.host!==`localhost:${port}`){res.writeHead(403);res.end();return;}
+  if(!acceptsOrigin(req,origins)){res.writeHead(403);res.end();return;}
   if(await outputLayout(req,res))return;
   if(!['GET','HEAD'].includes(req.method??'')){res.writeHead(405);res.end();return;}
   if(req.url==='/health'){res.writeHead(200,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify({application:'vmodel',version:'0.1.0'}));return;}
@@ -30,4 +33,4 @@ const server=http.createServer(async(req,res)=>{
   }catch{res.writeHead(404,{'Content-Type':'text/plain'});res.end('File not found.');}
 });
 server.on('error',error=>{console.error(error.code==='EADDRINUSE'?`Port ${port} is in use. Close the other app or choose VMODEL_PORT.`:error);process.exitCode=1;});
-server.listen(port,'127.0.0.1',()=>console.log(`VModel is ready at http://127.0.0.1:${port}`));
+server.listen(port,host,()=>console.log(`VModel is ready at ${process.env.VMODEL_ORIGIN??`http://127.0.0.1:${port}`}`));

@@ -85,7 +85,7 @@ if (!output) {
 let outputLoadingRevision = -1;
 let pendingOutputState: OutputSnapshot | null = null;
 const stopServerWatch = output || import.meta.env.DEV ? () => {} : watchLocalServer(() => !!tracker?.getCameraInfo(), () => {
-  tracker?.stop(); lastFrame = null; link.frame(null); status('Local studio server disconnected. Camera stopped; reopen Start VModel.cmd to continue.');
+  tracker?.stop(); lastFrame = null; link.frame(null); status('Studio server disconnected. Camera stopped. Start the server, then reload this page.');
 });
 let lastTime = performance.now(), fps = 0, frames = 0, lastStats = performance.now();
 const status = (message: string) => { const el = document.querySelector('#status'); if (el) el.textContent = message; const cameraMessage=document.querySelector('#camera-message');if(cameraMessage)cameraMessage.textContent=message; };

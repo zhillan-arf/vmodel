@@ -8,6 +8,7 @@
     "prebuild": "node scripts/provision_notices.mjs && node scripts/provision_thumbnails.mjs",
     "build": "tsc --noEmit && vite build",
     "test": "vitest run",
+    "test:deployment": "node scripts/deployment_smoke.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "web:dev": "vite --config web-showcase/vite.config.ts",
     "web:build": "tsc --project web-showcase/tsconfig.json && vite build --config web-showcase/vite.config.ts",

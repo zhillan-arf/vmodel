@@ -1,11 +1,11 @@
 // Only geometry is shared with the local OBS helper; no media or avatar data.
-export function createOutputLayoutHandler(port, { now = Date.now, ttl = 5500 } = {}) {
+import { allowedOrigins, acceptsOrigin } from './request-origin.mjs';
+export function createOutputLayoutHandler(port, { now = Date.now, ttl = 5500, origins = allowedOrigins(port) } = {}) {
   const layouts = new Map();
   return async function handle(req, res) {
     if (req.url?.split('?')[0] !== '/api/output-layout') return false;
     const reply = (status, value) => { res.writeHead(status, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' }); res.end(JSON.stringify(value)); };
-    const hosts = [`127.0.0.1:${port}`, `localhost:${port}`];
-    if (!hosts.includes(req.headers.host) || (req.headers.origin && req.headers.origin !== `http://${req.headers.host}`)) { reply(403, { error: 'Local origin required.' }); return true; }
+    if (!acceptsOrigin(req, origins)) { reply(403, { error: 'Configured origin required.' }); return true; }
     for (const [id, value] of layouts) if (now() - value.observedAt > ttl) layouts.delete(id);
     if (req.method === 'GET') { reply(200, { layouts: [...layouts.values()] }); return true; }
     if (req.method !== 'POST') { reply(405, { error: 'Use GET or POST.' }); return true; }

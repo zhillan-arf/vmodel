@@ -1,0 +1,23 @@
+services:
+  vmodel:
+    environment:
+      VMODEL_ORIGIN: "https://${VMODEL_DOMAIN:?Set VMODEL_DOMAIN to the server DNS name or LAN IP address}"
+  https:
+    image: caddy:2-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      VMODEL_DOMAIN: "${VMODEL_DOMAIN:?Set VMODEL_DOMAIN to the server DNS name or LAN IP address}"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      vmodel:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:

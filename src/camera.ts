@@ -29,10 +29,18 @@ export class CameraTracker {
   }
   constructor(readonly video: HTMLVideoElement, readonly onFrame: (frame: TrackingFrame) => void,
     readonly onStatus: (message: string) => void, readonly getSettings: () => StudioSettings, readonly onDiagnostic?: (frame:TrackingFrame,envelope:DiagnosticEnvelope,image:ImageBitmap|null)=>void) {}
-  async devices() { return (await navigator.mediaDevices.enumerateDevices()).filter(x => x.kind === 'videoinput'); }
+  async devices() { return navigator.mediaDevices ? (await navigator.mediaDevices.enumerateDevices()).filter(x => x.kind === 'videoinput') : []; }
   getCameraInfo() { return this.stream?.getVideoTracks()[0]?.getSettings() ?? null; }
   async start(deviceId?: string) {
     this.stop(); const generation = this.generation;
+    if (globalThis.isSecureContext === false) {
+      this.onStatus('Camera access requires HTTPS or localhost. Open the server through trusted HTTPS.');
+      return;
+    }
+    if (!navigator.mediaDevices?.getUserMedia) {
+      this.onStatus('This browser cannot access a camera. Use a browser with camera support.');
+      return;
+    }
     this.sessionId=crypto.randomUUID();this.anchor=performance.timeOrigin+performance.now();this.captureSequence=0;
     this.onStatus('Opening camera…');
     try {

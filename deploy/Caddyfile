@@ -1,0 +1,8 @@
+{
+	default_sni {$VMODEL_DOMAIN}
+}
+
+{$VMODEL_DOMAIN} {
+	tls internal
+	reverse_proxy vmodel:4173
+}
