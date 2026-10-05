@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-05",
+  "text_files": 33,
+  "local_links": 55,
+  "sentence_fragments": 753,
+  "trace_hashes_match": true,
+  "source_hashes_match": true,
+  "model_hashes_match": true,
+  "errors": [],
+  "limits": "Sentence length is an automatic check. It does not certify STE dictionary use or full compliance."
+}

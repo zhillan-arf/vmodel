@@ -1,0 +1,576 @@
+{
+  "generatedAt": "2026-10-04T20:50:27.237Z",
+  "browser": "153.0.8010.12",
+  "cases": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "input": {
+        "width": 640,
+        "height": 480
+      },
+      "mirror": false,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "input": {
+        "width": 640,
+        "height": 480
+      },
+      "mirror": true,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "input": {
+        "width": 1280,
+        "height": 720
+      },
+      "mirror": false,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "input": {
+        "width": 1280,
+        "height": 720
+      },
+      "mirror": true,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "input": {
+        "width": 480,
+        "height": 800
+      },
+      "mirror": false,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "input": {
+        "width": 480,
+        "height": 800
+      },
+      "mirror": true,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "input": {
+        "width": 640,
+        "height": 480
+      },
+      "mirror": false,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "input": {
+        "width": 640,
+        "height": 480
+      },
+      "mirror": true,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "input": {
+        "width": 1280,
+        "height": 720
+      },
+      "mirror": false,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "input": {
+        "width": 1280,
+        "height": 720
+      },
+      "mirror": true,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "input": {
+        "width": 480,
+        "height": 800
+      },
+      "mirror": false,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "input": {
+        "width": 480,
+        "height": 800
+      },
+      "mirror": true,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "input": {
+        "width": 640,
+        "height": 480
+      },
+      "mirror": false,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "input": {
+        "width": 640,
+        "height": 480
+      },
+      "mirror": true,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "input": {
+        "width": 1280,
+        "height": 720
+      },
+      "mirror": false,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "input": {
+        "width": 1280,
+        "height": 720
+      },
+      "mirror": true,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "input": {
+        "width": 480,
+        "height": 800
+      },
+      "mirror": false,
+      "maximumErrorCSSPixels": 0
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "input": {
+        "width": 480,
+        "height": 800
+      },
+      "mirror": true,
+      "maximumErrorCSSPixels": 0
+    }
+  ],
+  "graphicContrast": {
+    "colors": {
+      "outline": "#101827",
+      "accepted": "#7CE1BE",
+      "rejected": "#FFD18A",
+      "stale": "#879B99",
+      "point": "#E4EAF5",
+      "selected": "#60DCEA"
+    },
+    "cases": [
+      {
+        "background": "#000000",
+        "stale": false,
+        "rejected": false,
+        "lineContrast": 11.312052958252606,
+        "pointContrast": 11.23513056832656,
+        "normalPointContrast": 15.00239083217041,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#000000",
+        "stale": false,
+        "rejected": true,
+        "lineContrast": 12.469885700514773,
+        "pointContrast": 11.23513056832656,
+        "normalPointContrast": 15.00239083217041,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#000000",
+        "stale": true,
+        "rejected": false,
+        "lineContrast": 6.073441364861918,
+        "pointContrast": 6.241215671962818,
+        "normalPointContrast": 6.194347873808155,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#000000",
+        "stale": true,
+        "rejected": true,
+        "lineContrast": 6.073441364861918,
+        "pointContrast": 6.241215671962818,
+        "normalPointContrast": 6.194347873808155,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#FFFFFF",
+        "stale": false,
+        "rejected": false,
+        "lineContrast": 11.312052958252606,
+        "pointContrast": 8.496652015657288,
+        "normalPointContrast": 12.25950790418627,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#FFFFFF",
+        "stale": false,
+        "rejected": true,
+        "lineContrast": 12.469885700514773,
+        "pointContrast": 8.496652015657288,
+        "normalPointContrast": 12.25950790418627,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#FFFFFF",
+        "stale": true,
+        "rejected": false,
+        "lineContrast": 6.073441364861918,
+        "pointContrast": 4.71996630540568,
+        "normalPointContrast": 5.06183698116897,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#FFFFFF",
+        "stale": true,
+        "rejected": true,
+        "lineContrast": 6.073441364861918,
+        "pointContrast": 4.71996630540568,
+        "normalPointContrast": 5.06183698116897,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#7CE1BE",
+        "stale": false,
+        "rejected": false,
+        "lineContrast": 11.312052958252606,
+        "pointContrast": 9.058950343985794,
+        "normalPointContrast": 12.786638640291134,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#7CE1BE",
+        "stale": false,
+        "rejected": true,
+        "lineContrast": 12.469885700514773,
+        "pointContrast": 9.058950343985794,
+        "normalPointContrast": 12.786638640291134,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#7CE1BE",
+        "stale": true,
+        "rejected": false,
+        "lineContrast": 6.073441364861918,
+        "pointContrast": 5.0323280637083325,
+        "normalPointContrast": 5.2794843675714285,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#7CE1BE",
+        "stale": true,
+        "rejected": true,
+        "lineContrast": 6.073441364861918,
+        "pointContrast": 5.0323280637083325,
+        "normalPointContrast": 5.2794843675714285,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#FFD18A",
+        "stale": false,
+        "rejected": false,
+        "lineContrast": 11.312052958252606,
+        "pointContrast": 8.96000725406845,
+        "normalPointContrast": 12.73271158780331,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#FFD18A",
+        "stale": false,
+        "rejected": true,
+        "lineContrast": 12.469885700514773,
+        "pointContrast": 8.96000725406845,
+        "normalPointContrast": 12.73271158780331,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#FFD18A",
+        "stale": true,
+        "rejected": false,
+        "lineContrast": 6.073441364861918,
+        "pointContrast": 4.977364290953841,
+        "normalPointContrast": 5.257218388324815,
+        "opaque": true,
+        "dashGap": true
+      },
+      {
+        "background": "#FFD18A",
+        "stale": true,
+        "rejected": true,
+        "lineContrast": 6.073441364861918,
+        "pointContrast": 4.977364290953841,
+        "normalPointContrast": 5.257218388324815,
+        "opaque": true,
+        "dashGap": true
+      }
+    ]
+  },
+  "controlVisibility": [
+    {
+      "layer": "observations",
+      "task": "pose",
+      "hand": false,
+      "dense": false,
+      "alignment": false,
+      "comparison": false
+    },
+    {
+      "layer": "observations",
+      "task": "face",
+      "hand": false,
+      "dense": true,
+      "alignment": false,
+      "comparison": false
+    },
+    {
+      "layer": "observations",
+      "task": "hands",
+      "hand": true,
+      "dense": false,
+      "alignment": false,
+      "comparison": false
+    },
+    {
+      "layer": "estimated",
+      "task": "pose",
+      "hand": false,
+      "dense": false,
+      "alignment": false,
+      "comparison": false
+    },
+    {
+      "layer": "estimated",
+      "task": "face",
+      "hand": false,
+      "dense": false,
+      "alignment": false,
+      "comparison": false
+    },
+    {
+      "layer": "estimated",
+      "task": "hands",
+      "hand": true,
+      "dense": false,
+      "alignment": true,
+      "comparison": false
+    },
+    {
+      "layer": "accepted",
+      "task": "pose",
+      "hand": false,
+      "dense": false,
+      "alignment": false,
+      "comparison": false
+    },
+    {
+      "layer": "accepted",
+      "task": "face",
+      "hand": false,
+      "dense": false,
+      "alignment": false,
+      "comparison": false
+    },
+    {
+      "layer": "accepted",
+      "task": "hands",
+      "hand": false,
+      "dense": false,
+      "alignment": false,
+      "comparison": false
+    },
+    {
+      "layer": "avatar",
+      "task": "pose",
+      "hand": false,
+      "dense": false,
+      "alignment": false,
+      "comparison": true
+    },
+    {
+      "layer": "avatar",
+      "task": "face",
+      "hand": false,
+      "dense": false,
+      "alignment": false,
+      "comparison": true
+    },
+    {
+      "layer": "avatar",
+      "task": "hands",
+      "hand": false,
+      "dense": false,
+      "alignment": false,
+      "comparison": true
+    }
+  ],
+  "keyboardJointSelection": true,
+  "repeatedAnnouncements": 0,
+  "faceCounts": [
+    478,
+    468
+  ],
+  "views": [
+    {
+      "name": "front",
+      "camera": [
+        0,
+        0.19999999999999968,
+        3.499999999999999
+      ]
+    },
+    {
+      "name": "rotated",
+      "camera": [
+        -2.5107463181483287,
+        0.19999999999999968,
+        2.4384734827150787
+      ]
+    },
+    {
+      "name": "side",
+      "camera": [
+        -3.4985076106452633,
+        0.19999999999999946,
+        -0.10219832805450993
+      ]
+    }
+  ],
+  "estimatedWidths": [
+    {
+      "width": 390,
+      "panel": 358,
+      "canvas": 358,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "panel": 736,
+      "canvas": 736,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "panel": 1056,
+      "canvas": 1056,
+      "overflow": false
+    }
+  ],
+  "knownPoseFullyVisible": true,
+  "repeatedDisposal": 5,
+  "graphicsContextsReleased": true,
+  "comparisonFailureRecovery": true,
+  "channelSummaryRows": true,
+  "summaryUpdates": 1,
+  "liveComparisonSettings": true,
+  "missingFaceConfidencePreserved": true,
+  "render3D": {
+    "calculatedAlignment": true,
+    "failedAssociationRemovesAlignment": true,
+    "rawGeometry": [
+      0,
+      1,
+      0,
+      0.30000001192092896,
+      1.399999976158142,
+      0
+    ],
+    "originalWorldDetail": true,
+    "missingAndNonfiniteEdgesOmitted": true,
+    "keyboardOrbitZoomReset": true,
+    "reducedMotion": true
+  },
+  "anatomicalLabelStable": true,
+  "missingImageLabel": true,
+  "errors": [],
+  "limits": [
+    "Synthetic points and two-color images. Draw calls and canvas pixels are measured.",
+    "Comparison timeout uses a 10 ms injected deadline. Production uses 30 seconds.",
+    "No physical camera or screen-reader check."
+  ]
+}

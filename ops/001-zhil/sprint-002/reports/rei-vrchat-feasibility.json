@@ -1,0 +1,309 @@
+{
+  "date": "2026-10-05",
+  "modelSha256": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+  "modelUnchanged": true,
+  "inventory": {
+    "capabilities": {
+      "validationVersion": 1,
+      "vrmVersion": "0",
+      "expressions": [
+        "neutral",
+        "aa",
+        "ih",
+        "ou",
+        "ee",
+        "oh",
+        "blink",
+        "happy",
+        "angry",
+        "sad",
+        "relaxed",
+        "lookUp",
+        "lookDown",
+        "lookLeft",
+        "lookRight",
+        "blinkLeft",
+        "blinkRight",
+        "のほほん",
+        "＞＜",
+        "びっくり",
+        "白目",
+        "瞳ハイライト消",
+        "ジト目",
+        "瞳小",
+        "両目見開き",
+        "挑発",
+        "困る",
+        "ドン引き",
+        "両目閉じ",
+        "ウィンク右",
+        "ウィンク左",
+        "瞳左",
+        "瞳右",
+        "瞳上",
+        "瞳下"
+      ],
+      "aliases": {
+        "surprised": "びっくり"
+      },
+      "missingOptionalBones": [
+        "upperChest"
+      ],
+      "springs": true,
+      "warnings": []
+    },
+    "head": [
+      -0.000020027160000000014,
+      1.5056757871,
+      0.00011680614000000346
+    ],
+    "expressions": [
+      {
+        "name": "aa",
+        "exists": true,
+        "changedMorphWeights": 10
+      },
+      {
+        "name": "ih",
+        "exists": true,
+        "changedMorphWeights": 10
+      },
+      {
+        "name": "ou",
+        "exists": true,
+        "changedMorphWeights": 10
+      },
+      {
+        "name": "ee",
+        "exists": true,
+        "changedMorphWeights": 10
+      },
+      {
+        "name": "oh",
+        "exists": true,
+        "changedMorphWeights": 10
+      },
+      {
+        "name": "blinkLeft",
+        "exists": true,
+        "changedMorphWeights": 10
+      },
+      {
+        "name": "blinkRight",
+        "exists": true,
+        "changedMorphWeights": 10
+      },
+      {
+        "name": "happy",
+        "exists": true,
+        "changedMorphWeights": 10
+      },
+      {
+        "name": "angry",
+        "exists": true,
+        "changedMorphWeights": 30
+      },
+      {
+        "name": "sad",
+        "exists": true,
+        "changedMorphWeights": 50
+      },
+      {
+        "name": "びっくり",
+        "exists": true,
+        "changedMorphWeights": 20
+      }
+    ],
+    "activeSpringJoints": 0,
+    "springMode": "off",
+    "graphics": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  },
+  "renders": [
+    {
+      "preset": "studio",
+      "width": 1280,
+      "height": 720,
+      "drawCalls": 45,
+      "triangles": 59176,
+      "cameraFov": 28,
+      "cameraPosition": [
+        0.00009328289032839443,
+        1.3758649722013208,
+        1.7657374630672205
+      ],
+      "lights": [
+        {
+          "color": "ffffff",
+          "intensity": 2
+        },
+        {
+          "color": "fff4e9",
+          "intensity": 2.1
+        },
+        {
+          "color": "92dcff",
+          "intensity": 0.7
+        }
+      ]
+    },
+    {
+      "preset": "close",
+      "width": 1920,
+      "height": 1080,
+      "drawCalls": 45,
+      "triangles": 59176,
+      "cameraFov": 42,
+      "cameraPosition": [
+        -0.000020027160000000014,
+        1.5606757870999999,
+        0.45011680614
+      ],
+      "lights": [
+        {
+          "color": "ffffff",
+          "intensity": 2
+        },
+        {
+          "color": "fff4e9",
+          "intensity": 2.1
+        },
+        {
+          "color": "92dcff",
+          "intensity": 0.7
+        }
+      ]
+    },
+    {
+      "preset": "warm",
+      "width": 1920,
+      "height": 1080,
+      "drawCalls": 45,
+      "triangles": 59176,
+      "cameraFov": 42,
+      "cameraPosition": [
+        -0.000020027160000000014,
+        1.5606757870999999,
+        0.45011680614
+      ],
+      "lights": [
+        {
+          "color": "f5d6a5",
+          "intensity": 0.85
+        },
+        {
+          "color": "ffdb9e",
+          "intensity": 1.1
+        },
+        {
+          "color": "e2a76d",
+          "intensity": 0.15
+        }
+      ]
+    },
+    {
+      "preset": "violet",
+      "width": 1920,
+      "height": 1080,
+      "drawCalls": 45,
+      "triangles": 59176,
+      "cameraFov": 42,
+      "cameraPosition": [
+        -0.000020027160000000014,
+        1.5606757870999999,
+        0.45011680614
+      ],
+      "lights": [
+        {
+          "color": "fc9de8",
+          "intensity": 1
+        },
+        {
+          "color": "f2a1ed",
+          "intensity": 1
+        },
+        {
+          "color": "9b72fa",
+          "intensity": 0.4
+        }
+      ]
+    },
+    {
+      "preset": "expression",
+      "width": 1920,
+      "height": 1080,
+      "drawCalls": 45,
+      "triangles": 59176,
+      "cameraFov": 42,
+      "cameraPosition": [
+        -0.000020027160000000014,
+        1.5606757870999999,
+        0.45011680614
+      ],
+      "lights": [
+        {
+          "color": "ffffff",
+          "intensity": 2
+        },
+        {
+          "color": "fff4e9",
+          "intensity": 2.1
+        },
+        {
+          "color": "92dcff",
+          "intensity": 0.7
+        }
+      ]
+    },
+    {
+      "preset": "outline",
+      "width": 1920,
+      "height": 1080,
+      "drawCalls": 90,
+      "triangles": 118352,
+      "cameraFov": 42,
+      "cameraPosition": [
+        -0.000020027160000000014,
+        1.5606757870999999,
+        0.45011680614
+      ],
+      "lights": [
+        {
+          "color": "f5d6a5",
+          "intensity": 0.85
+        },
+        {
+          "color": "ffdb9e",
+          "intensity": 1.1
+        },
+        {
+          "color": "e2a76d",
+          "intensity": 0.15
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "limits": "Static render and expression tests. No webcam or target GPU measurement.",
+  "archive": {
+    "source": "https://bowlroll.net/file/204581",
+    "retrieved": "2026-10-05",
+    "file": "official-rei-v1.0.0.zip",
+    "bytes": 142727761,
+    "sha256": "5f624bf3738c636f73b336406858dcd094b45376dc3a76629eaddb95e39dcb62"
+  },
+  "sourceFiles": {
+    "src/viewer.ts": "1582b2c36a0e9238ff55b078578da03d97336ba0e286750ea5bced00692647c4",
+    "src/composition.ts": "81e8baacdf9186c76ef9d051719c53de04738af46f9613c438e68e65028ea4bb",
+    "package.json": "d1554f0e8be2d9211746d627fa1b4f9f2e9aadeb0ddfbadaf4dcfcb83dd1ce98"
+  },
+  "comparisonPage": {
+    "imageSelectionsChecked": 8,
+    "pageErrors": []
+  },
+  "openChecks": [
+    "Exact reference avatar source",
+    "Independent Unity conversion",
+    "Physical webcam acceptance",
+    "Target GPU performance"
+  ]
+}

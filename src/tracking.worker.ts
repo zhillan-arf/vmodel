@@ -69,7 +69,7 @@ self.onmessage = async ({ data }) => {
     const f = face.detectForVideo(bitmap, modelTimestamp);
     stamp('face',faceStarted,f.faceLandmarks.length>0,diagnostic?f.faceLandmarks:undefined);
     const faceSample: TrackingSample = { timestamp, inferenceMs: performance.now() - start, present: f.faceLandmarks.length > 0 };
-    const interval = data.quality === 'low' ? 3 : 2;
+    const interval = data.quality === 'low' ? 2 : 1;
     if (count % interval === 0) {
       const poseStarted=epochNow();
       const poseStart = performance.now(), p = pose.detectForVideo(bitmap, modelTimestamp);
@@ -84,6 +84,7 @@ self.onmessage = async ({ data }) => {
         handsSample = { timestamp, inferenceMs: performance.now() - handStart, present: lastHands.length > 0 };
       } else { lastHands = []; handsSample = { timestamp, inferenceMs: 0, present: false }; }
     }
+    if(!data.hands){lastHands=[];handsSample={timestamp,inferenceMs:0,present:false};}
     count++;
     const frame: TrackingFrame = { version: 1, sequence: count, timestamp,
       ...(bitmap.width > 0 && bitmap.height > 0 ? { inputSize: { width: bitmap.width, height: bitmap.height } } : {}),

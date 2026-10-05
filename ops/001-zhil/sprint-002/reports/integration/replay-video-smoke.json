@@ -1,0 +1,128 @@
+{
+  "generatedAt": "2026-10-04T20:59:05.379Z",
+  "browser": "153.0.8010.12",
+  "platform": "linux",
+  "browserChannel": "chromium",
+  "checks": {
+    "video": [
+      {
+        "mode": "stop",
+        "bytes": 8279,
+        "audioTracks": 0,
+        "width": 160,
+        "height": 120,
+        "advanced": true,
+        "currentTime": 0.019093,
+        "duration": 2.056,
+        "drawnFrames": 64,
+        "mapping": {
+          "traceId": "video-fixture",
+          "startOffsetMs": 10,
+          "stopOffsetMs": 2070.0999994277954,
+          "mimeType": "video/webm;codecs=vp9"
+        },
+        "active": false
+      },
+      {
+        "mode": "camera loss",
+        "bytes": 13038,
+        "audioTracks": 0,
+        "width": 160,
+        "height": 120,
+        "advanced": true,
+        "currentTime": 0.01883,
+        "duration": 2.012,
+        "drawnFrames": 63,
+        "mapping": {
+          "traceId": "video-fixture",
+          "startOffsetMs": 10,
+          "stopOffsetMs": 2026.5,
+          "mimeType": "video/webm;codecs=vp9"
+        },
+        "active": false
+      },
+      {
+        "mode": "recorder error",
+        "bytes": 11740,
+        "audioTracks": 0,
+        "width": 160,
+        "height": 120,
+        "advanced": true,
+        "currentTime": 0.018784,
+        "duration": 2.046,
+        "drawnFrames": 64,
+        "mapping": {
+          "traceId": "video-fixture",
+          "startOffsetMs": 10,
+          "stopOffsetMs": 2059.8999996185303,
+          "mimeType": "video/webm;codecs=vp9"
+        },
+        "active": false
+      },
+      {
+        "mode": "size limit",
+        "bytes": 5674,
+        "audioTracks": 0,
+        "width": 160,
+        "height": 120,
+        "advanced": true,
+        "currentTime": 0.017909,
+        "duration": 2.051,
+        "drawnFrames": 64,
+        "mapping": {
+          "traceId": "video-fixture",
+          "startOffsetMs": 10,
+          "stopOffsetMs": 2065.199999809265,
+          "mimeType": "video/webm;codecs=vp9"
+        },
+        "active": false
+      },
+      {
+        "mode": "duration limit",
+        "bytes": 6370,
+        "audioTracks": 0,
+        "width": 160,
+        "height": 120,
+        "advanced": true,
+        "currentTime": 0.018993,
+        "duration": 2.012,
+        "drawnFrames": 63,
+        "mapping": {
+          "traceId": "video-fixture",
+          "startOffsetMs": 10,
+          "stopOffsetMs": 2025.8000001907349,
+          "mimeType": "video/webm;codecs=vp9"
+        },
+        "active": false
+      }
+    ],
+    "videoCleanup": {
+      "created": 2,
+      "released": 2,
+      "time": 0.2,
+      "sourceReleased": true,
+      "cancelled": true,
+      "noFrame": true
+    },
+    "replayUsesRecordedMirror": true,
+    "replayIsolation": {
+      "liveStateUnchanged": true,
+      "peerStateUnchanged": true,
+      "liveModelUnchanged": true,
+      "noPublishedFrames": true
+    },
+    "comparisonFieldsFollowReplay": true,
+    "comparisonReturnsAfterNavigation": true,
+    "recordedVideoImport": true,
+    "wrongVideoRejected": true,
+    "invalidTraceIsolation": true
+  },
+  "errors": [],
+  "limits": [
+    "Canvas video source only.",
+    "Camera loss and recorder error use injected events.",
+    "The size gate uses an overridden Blob.size.",
+    "The test waits for encoded data before each stop condition. Unit tests check the 60-second timer.",
+    "No physical video timing or human review."
+  ]
+}

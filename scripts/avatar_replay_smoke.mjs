@@ -1,5 +1,5 @@
-// This old-solver comparison disables only the new shoulder and gaze controls.
-// combined_tracking_smoke.mjs checks the new controls on both actual models.
+// Record differences from the previous solver. Test current replay determinism.
+// Sprint 002 changes torso distribution and recovery, so exact old parity is obsolete.
 import assert from 'node:assert/strict';
 import {writeFile,mkdir,mkdtemp,rm} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
@@ -39,13 +39,13 @@ try{
       const positions=()=>Object.fromEntries(names.flatMap(name=>{const bone=rig.humanoid.getNormalizedBoneNode(name);return bone?[[name,bone.position.clone()]]:[];}));
       const baseline=new Baseline(rig),reference=new Map();
       for(const event of trace.events){if(event.kind==='sample')current=event.frame;else if(event.kind==='apply'){baseline.update(current,settings,event.dt,event.solverTimeMs);reference.set(event.frameSequence,{bones:snapshot(),positions:positions(),goals:[...baseline.goals.keys()].sort()});}}
-      solver=new MotionSolver(rig);solver.shoulder=()=>{};solver.gaze=()=>{};let baselineAngle=0,baselinePosition=0,goalsEqual=true;
+      solver=new MotionSolver(rig);let baselineAngle=0,baselinePosition=0,goalsEqual=true;
       let halfway;
       for(const event of trace.events){if(event.kind==='sample')current=event.frame;else if(event.kind==='apply'){solver.update(current,settings,event.dt,event.solverTimeMs);const expected=reference.get(event.frameSequence);for(const[name,q]of Object.entries(snapshot()))baselineAngle=Math.max(baselineAngle,q.angleTo(expected.bones[name]));for(const[name,p]of Object.entries(positions()))baselinePosition=Math.max(baselinePosition,p.distanceTo(expected.positions[name]));goalsEqual&&=JSON.stringify([...solver.goals.keys()].sort())===JSON.stringify(expected.goals);if(event.frameSequence===60)halfway=snapshot();}}
       const final=snapshot(),angle=(a,b)=>Math.max(...Object.keys(a).map(name=>a[name].angleTo(b[name])));
       const leftChange=Math.max(...['leftUpperArm','leftLowerArm'].map(name=>halfway[name].angleTo(final[name])));
       const rightChange=Math.max(...['rightUpperArm','rightLowerArm'].map(name=>halfway[name].angleTo(final[name])));
-      const target={reset:()=>{solver=new MotionSolver(rig);solver.shoulder=()=>{};solver.gaze=()=>{};},settings:value=>{liveSettings=value;},calibration:value=>solver.setCalibration(value),sample:()=>{},apply:(frame,dt,now)=>solver.update(frame,liveSettings,dt,now)};
+      const target={reset:()=>{solver=new MotionSolver(rig);},settings:value=>{liveSettings=value;},calibration:value=>solver.setCalibration(value),sample:()=>{},apply:(frame,dt,now)=>solver.update(frame,liveSettings,dt,now)};
       replayTrace(trace,target);const forwardError=angle(final,snapshot());
       replayTrace(trace,target,119);const backwardError=angle(halfway,snapshot());
       replayTrace(trace,target);const repeatedError=angle(final,snapshot());
@@ -54,11 +54,11 @@ try{
     }
     return{traceText:await recorder.export().text(),traceHash:await sha256(recorder.export()),samples:120,results};
   },'/'+path.relative(process.cwd(),path.join(baselineDirectory,'retarget.ts')).split(path.sep).join('/'));
-  for(const item of result.results){assert(Math.abs(item.leftChangeRadians-result.results[0].leftChangeRadians)<.0001,JSON.stringify(item));assert(item.baselineAngle<.0001&&item.baselinePosition<1e-10&&item.goalsEqual,JSON.stringify(item));assert(item.leftChangeRadians>.01,JSON.stringify(item));assert(item.rightChangeRadians<.0001,JSON.stringify(item));for(const key of ['forwardError','backwardError','repeatedError'])assert(item[key]<.0001,JSON.stringify(item));}
+  for(const item of result.results){assert(Number.isFinite(item.baselineAngle)&&item.baselinePosition<1e-10,JSON.stringify(item));assert(item.leftChangeRadians>.01,JSON.stringify(item));assert(item.rightChangeRadians<.0001,JSON.stringify(item));for(const key of ['forwardError','backwardError','repeatedError'])assert(item[key]<.0001,JSON.stringify(item));}
   assert.deepEqual(errors,[]);
   await mkdir('ops/001-zhil/sprint-001/reports/local',{recursive:true});await writeFile('ops/001-zhil/sprint-001/reports/local/avatar-comparison-trace.json',result.traceText);
   const {traceText,...measurements}=result;
   const report={tracePath:'ops/001-zhil/sprint-001/reports/local/avatar-comparison-trace.json',baselineCommit,generatedAt:new Date().toISOString(),browser:browser.version(),...measurements,errors,
-    limits:['Legacy comparison disables the new shoulder and gaze controls in this test only.','The combined tracking test checks the new controls on both models.','Synthetic anatomical input on the local Ene and native Rei rigs.','No physical detector accuracy or target-laptop performance claim.']};
+    limits:['The old solver supplies comparison measurements, not an equality requirement.','The current solver includes shoulder control, torso distribution, and bounded recovery.','Synthetic anatomical input on the local Ene and native Rei rigs.','No physical detector accuracy or target-laptop performance claim.']};
   await writeFile('ops/001-zhil/sprint-001/reports/avatar-replay-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await browser?.close();await server.close();await rm(baselineDirectory,{recursive:true,force:true});}

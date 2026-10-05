@@ -1,0 +1,182 @@
+{
+  "date": "2026-10-04T20:59:18.649Z",
+  "scope": "Static served build only; does not scan unrelated files or certify future changes.",
+  "checks": {
+    "onlyDesignatedFiles": true,
+    "avatarMatchesPreparedArtifact": true,
+    "thumbnailHashesMatch": true,
+    "runtimeHashesMatch": true,
+    "noticesPresent": true
+  },
+  "runtimePackages": 16,
+  "files": [
+    {
+      "path": "assets/index-DyeBB1Ox.css",
+      "bytes": 10251
+    },
+    {
+      "path": "assets/index-FDHBZ7e6.js",
+      "bytes": 2208
+    },
+    {
+      "path": "assets/main-CSmVK7gs.js",
+      "bytes": 1084969
+    },
+    {
+      "path": "assets/tracking.worker-Dg4wb7nr.js",
+      "bytes": 158874
+    },
+    {
+      "path": "assets/vrm-inspection.worker-DbE1AvlA.js",
+      "bytes": 7977
+    },
+    {
+      "path": "avatars/ene.vrm",
+      "bytes": 87635472
+    },
+    {
+      "path": "avatars/rei-notices/log.txt",
+      "bytes": 588
+    },
+    {
+      "path": "avatars/rei-notices/provenance.json",
+      "bytes": 701
+    },
+    {
+      "path": "avatars/rei-notices/readme.txt",
+      "bytes": 2998
+    },
+    {
+      "path": "avatars/rei.vrm",
+      "bytes": 55715860
+    },
+    {
+      "path": "avatars/thumbnails/07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735.png",
+      "bytes": 36347
+    },
+    {
+      "path": "avatars/thumbnails/dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc.png",
+      "bytes": 36341
+    },
+    {
+      "path": "avatars/thumbnails/manifest.json",
+      "bytes": 631
+    },
+    {
+      "path": "index.html",
+      "bytes": 725
+    },
+    {
+      "path": "notices/Apache-2.0.txt",
+      "bytes": 11358
+    },
+    {
+      "path": "notices/index.json",
+      "bytes": 5589
+    },
+    {
+      "path": "notices/mediapipe__tasks-vision.txt",
+      "bytes": 11478
+    },
+    {
+      "path": "notices/pixiv__three-vrm-core.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__three-vrm-materials-hdr-emissive-multiplier.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__three-vrm-materials-mtoon.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__three-vrm-materials-v0compat.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__three-vrm-node-constraint.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__three-vrm-springbone.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__three-vrm.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__types-vrm-0.0.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__types-vrmc-materials-hdr-emissive-multiplier-1.0.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__types-vrmc-materials-mtoon-1.0.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__types-vrmc-node-constraint-1.0.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__types-vrmc-springbone-1.0.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__types-vrmc-springbone-extended-collider-1.0.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/pixiv__types-vrmc-vrm-1.0.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "notices/three.txt",
+      "bytes": 1092
+    },
+    {
+      "path": "notices/tracking-models.json",
+      "bytes": 3836
+    },
+    {
+      "path": "runtime/face_landmarker.task",
+      "bytes": 3758596
+    },
+    {
+      "path": "runtime/hand_landmarker.task",
+      "bytes": 7819105
+    },
+    {
+      "path": "runtime/pose_landmarker_lite.task",
+      "bytes": 5777746
+    },
+    {
+      "path": "runtime/wasm/vision_wasm_internal.js",
+      "bytes": 323377
+    },
+    {
+      "path": "runtime/wasm/vision_wasm_internal.wasm",
+      "bytes": 11756954
+    },
+    {
+      "path": "runtime/wasm/vision_wasm_module_internal.js",
+      "bytes": 323415
+    },
+    {
+      "path": "runtime/wasm/vision_wasm_module_internal.wasm",
+      "bytes": 11756972
+    },
+    {
+      "path": "runtime/wasm/vision_wasm_nosimd_internal.js",
+      "bytes": 323180
+    },
+    {
+      "path": "runtime/wasm/vision_wasm_nosimd_internal.wasm",
+      "bytes": 10960242
+    }
+  ]
+}

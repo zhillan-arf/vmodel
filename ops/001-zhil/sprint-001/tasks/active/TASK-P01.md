@@ -43,28 +43,29 @@ TASK-P04 maintains G5. TASK-P05 maintains G6. Both controllers supply evidence t
 
 ## Current checkpoint
 
-Date: 2026-10-05. Combined tracking software checks pass. Human acceptance remains open.
+Date: 2026-10-05. Physical motion tests show defects despite passing software checks.
+The [sprint-002 research](../../../sprint-002/README.md) and [transfer plan](../../../sprint-002/specs/sprint-002-plan.md#sprint-001-transfer) now control motion work.
 
 - Scope: 62 tasks, TASK-001 through TASK-062.
-- Progress: 37/62 Done; 18 In progress; 1 Blocked; 1 Ready; 5 Todo.
+- Progress: 37/62 Done; 19 In progress; 0 Blocked; 1 Ready; 5 Todo.
 - G5: [P04](TASK-P04.md) has library, preparation, selection, and backup code with synthetic browser evidence.
 - G6: [P05](TASK-P05.md) has diagnostic, shared-solver, inspector, and replay code with component evidence.
 - Storage and backup: TASK-041, TASK-044, and TASK-046 passed their software acceptance checks.
 - Evidence: [implementation record](../../reports/studio-implementation.md) maps requirements and remaining checks.
-- Blocker: TASK-056 needs actual camera movements after inspector acceptance.
+- Diagnosis: TASK-056 has physical images and traces. Finger confidence and hidden-hip rejection have confirmed causes.
 - Model files: prepared Ene and Rei are available. The Windows reports record their actual hashes.
 - Device work: Chrome and Edge pass model memory tests. Inspector speed comparisons pass. Human acceptance remains open in TASK-061.
-- Corrections: TASK-057 through TASK-059 await physical diagnosis. Existing tracking thresholds remain unchanged.
+- Corrections: sprint-002 tasks replace the execution order for TASK-057 through TASK-059. Production code remains unchanged.
 - Replay: TASK-053 passed its recording and replay software checks.
 - Release: TASK-041, TASK-044, and TASK-046 have complete storage, selection, and backup evidence. P04, P05, and TASK-021 remain open.
 - Prior acceptance: earlier physical, voice, and recording gates retain their previous status.
 
 ### Next actions
 
-1. Complete the human library and inspector checks in TASK-061.
-2. Record those results in TASK-047, TASK-048, and TASK-055.
-3. After inspector acceptance, perform the physical diagnosis for TASK-056.
-4. Use the diagnosis to select and test correction experiments.
+1. Use the sprint-002 plan for motion repairs and their acceptance tests.
+2. Retain the unrelated library and inspector checks in TASK-061.
+3. Record those results in TASK-047, TASK-048, and TASK-055.
+4. Preserve the open voice, output, and final recording requirements.
 
 ## Historical checkpoint
 

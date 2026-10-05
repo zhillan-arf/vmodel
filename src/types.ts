@@ -1,7 +1,7 @@
 export interface Landmark { x: number; y: number; z: number; visibility?: number; presence?: number }
 export interface HandObservation { side: string; landmarks: Landmark[]; world: Landmark[]; score: number }
 export interface TrackingSample { timestamp: number; inferenceMs: number; present: boolean }
-export interface Calibration { version: 1; head: number[]; root: number[] }
+export interface Calibration { version: 1; head: number[]; root: number[]; torsoRoll?: number }
 export interface TrackingFrame {
   version: 1;
   sequence: number;

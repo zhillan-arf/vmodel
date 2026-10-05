@@ -1,5 +1,10 @@
 # TASK-059: Accept motion corrections and state sensing limits
 
+Current direction: 2026-10-05.
+The [sprint-002 diagnosis](../../../sprint-002/research/001-physical-diagnosis.md) now supplies physical evidence.
+[S002-009](../../../sprint-002/tasks/backlog/S002-009.md) replaces this task's motion acceptance work.
+The remaining text preserves the earlier requirements and history.
+
 - Status: Todo
 - Priority: P0
 - Owner: Codex (implementing assistant)

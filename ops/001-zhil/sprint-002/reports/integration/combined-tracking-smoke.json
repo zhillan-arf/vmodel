@@ -1,0 +1,702 @@
+{
+  "date": "2026-10-04T20:50:15.754Z",
+  "models": [
+    {
+      "id": "ene",
+      "sha256": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+      "missing": [],
+      "weights": {
+        "hips": 0,
+        "spine": 245,
+        "chest": 677,
+        "neck": 1158,
+        "head": 11712,
+        "leftEye": 1833,
+        "rightEye": 1833,
+        "leftShoulder": 105,
+        "leftUpperArm": 44,
+        "leftLowerArm": 51,
+        "leftHand": 998,
+        "leftUpperLeg": 16106,
+        "leftLowerLeg": 0,
+        "leftFoot": 0,
+        "leftToes": 0,
+        "leftThumbMetacarpal": 160,
+        "leftThumbProximal": 165,
+        "leftThumbDistal": 296,
+        "leftIndexProximal": 178,
+        "leftIndexIntermediate": 179,
+        "leftIndexDistal": 285,
+        "leftMiddleProximal": 196,
+        "leftMiddleIntermediate": 179,
+        "leftMiddleDistal": 299,
+        "leftRingProximal": 184,
+        "leftRingIntermediate": 180,
+        "leftRingDistal": 287,
+        "leftLittleProximal": 182,
+        "leftLittleIntermediate": 180,
+        "leftLittleDistal": 298,
+        "rightShoulder": 102,
+        "rightUpperArm": 54,
+        "rightLowerArm": 51,
+        "rightHand": 998,
+        "rightUpperLeg": 16107,
+        "rightLowerLeg": 0,
+        "rightFoot": 0,
+        "rightToes": 0,
+        "rightThumbMetacarpal": 160,
+        "rightThumbProximal": 165,
+        "rightThumbDistal": 296,
+        "rightIndexProximal": 178,
+        "rightIndexIntermediate": 179,
+        "rightIndexDistal": 285,
+        "rightMiddleProximal": 196,
+        "rightMiddleIntermediate": 179,
+        "rightMiddleDistal": 299,
+        "rightRingProximal": 184,
+        "rightRingIntermediate": 180,
+        "rightRingDistal": 287,
+        "rightLittleProximal": 182,
+        "rightLittleIntermediate": 180,
+        "rightLittleDistal": 293
+      },
+      "shoulder": 0.2781885653800277,
+      "otherShoulder": 0,
+      "gaze": [
+        0.34999999997426295,
+        0.34999999997426295
+      ],
+      "expressions": {
+        "aa": 0.7199999999999999,
+        "blinkLeft": 0.8999999999338233,
+        "blinkRight": 0.09999999999264704
+      },
+      "fingers": [
+        {
+          "side": "left",
+          "finger": "Thumb",
+          "joints": [
+            {
+              "name": "leftThumbMetacarpal",
+              "angle": 0.455497871776167,
+              "rawAngle": 0.4554954794059519,
+              "weightedVertices": 160,
+              "deformedVertices": 621
+            },
+            {
+              "name": "leftThumbProximal",
+              "angle": 0.45828329844654603,
+              "rawAngle": 0.45828494515023865,
+              "weightedVertices": 165,
+              "deformedVertices": 461
+            },
+            {
+              "name": "leftThumbDistal",
+              "angle": 0.48186277236853586,
+              "rawAngle": 0.4818637057193899,
+              "weightedVertices": 296,
+              "deformedVertices": 296
+            }
+          ]
+        },
+        {
+          "side": "left",
+          "finger": "Index",
+          "joints": [
+            {
+              "name": "leftIndexProximal",
+              "angle": 0.6499999999522064,
+              "rawAngle": 0.6499980232139151,
+              "weightedVertices": 178,
+              "deformedVertices": 642
+            },
+            {
+              "name": "leftIndexIntermediate",
+              "angle": 0.6499999999523907,
+              "rawAngle": 0.6499988440827844,
+              "weightedVertices": 179,
+              "deformedVertices": 464
+            },
+            {
+              "name": "leftIndexDistal",
+              "angle": 0.6499999999522085,
+              "rawAngle": 0.649999610568416,
+              "weightedVertices": 285,
+              "deformedVertices": 285
+            }
+          ]
+        },
+        {
+          "side": "left",
+          "finger": "Middle",
+          "joints": [
+            {
+              "name": "leftMiddleProximal",
+              "angle": 0.6499999999522008,
+              "rawAngle": 0.6499981095778825,
+              "weightedVertices": 196,
+              "deformedVertices": 674
+            },
+            {
+              "name": "leftMiddleIntermediate",
+              "angle": 0.64999999995231,
+              "rawAngle": 0.6499988913207178,
+              "weightedVertices": 179,
+              "deformedVertices": 478
+            },
+            {
+              "name": "leftMiddleDistal",
+              "angle": 0.6499999999522057,
+              "rawAngle": 0.6499984331590369,
+              "weightedVertices": 299,
+              "deformedVertices": 299
+            }
+          ]
+        },
+        {
+          "side": "left",
+          "finger": "Ring",
+          "joints": [
+            {
+              "name": "leftRingProximal",
+              "angle": 0.6499999999522049,
+              "rawAngle": 0.649998069400268,
+              "weightedVertices": 184,
+              "deformedVertices": 651
+            },
+            {
+              "name": "leftRingIntermediate",
+              "angle": 0.6499999999522696,
+              "rawAngle": 0.64999979741383,
+              "weightedVertices": 180,
+              "deformedVertices": 467
+            },
+            {
+              "name": "leftRingDistal",
+              "angle": 0.6499999999522036,
+              "rawAngle": 0.6499982498600452,
+              "weightedVertices": 287,
+              "deformedVertices": 287
+            }
+          ]
+        },
+        {
+          "side": "left",
+          "finger": "Little",
+          "joints": [
+            {
+              "name": "leftLittleProximal",
+              "angle": 0.6499999999522021,
+              "rawAngle": 0.6499977421111355,
+              "weightedVertices": 182,
+              "deformedVertices": 660
+            },
+            {
+              "name": "leftLittleIntermediate",
+              "angle": 0.64999999995307,
+              "rawAngle": 0.6500000760607766,
+              "weightedVertices": 180,
+              "deformedVertices": 478
+            },
+            {
+              "name": "leftLittleDistal",
+              "angle": 0.6499999999522258,
+              "rawAngle": 0.6499996404466265,
+              "weightedVertices": 298,
+              "deformedVertices": 298
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "finger": "Thumb",
+          "joints": [
+            {
+              "name": "rightThumbMetacarpal",
+              "angle": 0.45549823433681796,
+              "rawAngle": 0.4554959608158855,
+              "weightedVertices": 160,
+              "deformedVertices": 621
+            },
+            {
+              "name": "rightThumbProximal",
+              "angle": 0.4582812700769967,
+              "rawAngle": 0.4582818724265422,
+              "weightedVertices": 165,
+              "deformedVertices": 461
+            },
+            {
+              "name": "rightThumbDistal",
+              "angle": 0.48186267090779333,
+              "rawAngle": 0.481863221804825,
+              "weightedVertices": 296,
+              "deformedVertices": 296
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "finger": "Index",
+          "joints": [
+            {
+              "name": "rightIndexProximal",
+              "angle": 0.6499999999522049,
+              "rawAngle": 0.6499986571404938,
+              "weightedVertices": 178,
+              "deformedVertices": 642
+            },
+            {
+              "name": "rightIndexIntermediate",
+              "angle": 0.6499999999522126,
+              "rawAngle": 0.6499987287329657,
+              "weightedVertices": 179,
+              "deformedVertices": 464
+            },
+            {
+              "name": "rightIndexDistal",
+              "angle": 0.6499999999522064,
+              "rawAngle": 0.6499984589092614,
+              "weightedVertices": 285,
+              "deformedVertices": 285
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "finger": "Middle",
+          "joints": [
+            {
+              "name": "rightMiddleProximal",
+              "angle": 0.6499999999522043,
+              "rawAngle": 0.6499987414773094,
+              "weightedVertices": 196,
+              "deformedVertices": 674
+            },
+            {
+              "name": "rightMiddleIntermediate",
+              "angle": 0.6499999999523983,
+              "rawAngle": 0.6499987470338481,
+              "weightedVertices": 179,
+              "deformedVertices": 478
+            },
+            {
+              "name": "rightMiddleDistal",
+              "angle": 0.6499999999522189,
+              "rawAngle": 0.6499986003534121,
+              "weightedVertices": 299,
+              "deformedVertices": 299
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "finger": "Ring",
+          "joints": [
+            {
+              "name": "rightRingProximal",
+              "angle": 0.6499999999522049,
+              "rawAngle": 0.6499986479773995,
+              "weightedVertices": 184,
+              "deformedVertices": 651
+            },
+            {
+              "name": "rightRingIntermediate",
+              "angle": 0.6499999999522036,
+              "rawAngle": 0.6499985074144672,
+              "weightedVertices": 180,
+              "deformedVertices": 467
+            },
+            {
+              "name": "rightRingDistal",
+              "angle": 0.6499999999522112,
+              "rawAngle": 0.6499983226192925,
+              "weightedVertices": 287,
+              "deformedVertices": 287
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "finger": "Little",
+          "joints": [
+            {
+              "name": "rightLittleProximal",
+              "angle": 0.6499999999522036,
+              "rawAngle": 0.6499984937598001,
+              "weightedVertices": 182,
+              "deformedVertices": 655
+            },
+            {
+              "name": "rightLittleIntermediate",
+              "angle": 0.6499999999525311,
+              "rawAngle": 0.649998779681648,
+              "weightedVertices": 180,
+              "deformedVertices": 473
+            },
+            {
+              "name": "rightLittleDistal",
+              "angle": 0.6499999999522008,
+              "rawAngle": 0.6499987756593378,
+              "weightedVertices": 293,
+              "deformedVertices": 293
+            }
+          ]
+        }
+      ],
+      "overlayJoints": 53
+    },
+    {
+      "id": "rei",
+      "sha256": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+      "missing": [],
+      "weights": {
+        "hips": 217945,
+        "spine": 37800,
+        "chest": 89705,
+        "neck": 16915,
+        "head": 375280,
+        "leftEye": 3025,
+        "rightEye": 3210,
+        "leftShoulder": 15785,
+        "leftUpperArm": 22750,
+        "leftLowerArm": 33530,
+        "leftHand": 23835,
+        "leftUpperLeg": 91840,
+        "leftLowerLeg": 23835,
+        "leftFoot": 41895,
+        "leftToes": 0,
+        "leftThumbMetacarpal": 0,
+        "leftThumbProximal": 1610,
+        "leftThumbDistal": 1750,
+        "leftIndexProximal": 2310,
+        "leftIndexIntermediate": 1085,
+        "leftIndexDistal": 1610,
+        "leftMiddleProximal": 2275,
+        "leftMiddleIntermediate": 980,
+        "leftMiddleDistal": 1365,
+        "leftRingProximal": 2345,
+        "leftRingIntermediate": 1085,
+        "leftRingDistal": 1225,
+        "leftLittleProximal": 1155,
+        "leftLittleIntermediate": 1015,
+        "leftLittleDistal": 1330,
+        "rightShoulder": 18305,
+        "rightUpperArm": 22015,
+        "rightLowerArm": 34790,
+        "rightHand": 24745,
+        "rightUpperLeg": 89110,
+        "rightLowerLeg": 23590,
+        "rightFoot": 41510,
+        "rightToes": 0,
+        "rightThumbMetacarpal": 0,
+        "rightThumbProximal": 1365,
+        "rightThumbDistal": 1680,
+        "rightIndexProximal": 2100,
+        "rightIndexIntermediate": 1120,
+        "rightIndexDistal": 1540,
+        "rightMiddleProximal": 1925,
+        "rightMiddleIntermediate": 840,
+        "rightMiddleDistal": 1400,
+        "rightRingProximal": 2135,
+        "rightRingIntermediate": 1015,
+        "rightRingDistal": 1190,
+        "rightLittleProximal": 1435,
+        "rightLittleIntermediate": 1120,
+        "rightLittleDistal": 1260
+      },
+      "shoulder": 0.2781885653800277,
+      "otherShoulder": 0,
+      "gaze": [
+        0.34999999997426295,
+        0.34999999997426295
+      ],
+      "expressions": {
+        "aa": 0.7199999999999999,
+        "blinkLeft": 0.8999999999338233,
+        "blinkRight": 0.09999999999264704
+      },
+      "fingers": [
+        {
+          "side": "left",
+          "finger": "Thumb",
+          "joints": [
+            {
+              "name": "leftThumbMetacarpal",
+              "angle": 0.5187337551836415,
+              "rawAngle": 0.5187337551836415,
+              "weightedVertices": 0,
+              "deformedVertices": 3360
+            },
+            {
+              "name": "leftThumbProximal",
+              "angle": 0.7567304331752848,
+              "rawAngle": 0.7567304331752848,
+              "weightedVertices": 1610,
+              "deformedVertices": 3360
+            },
+            {
+              "name": "leftThumbDistal",
+              "angle": 0.6458750634106556,
+              "rawAngle": 0.6458750634106556,
+              "weightedVertices": 1750,
+              "deformedVertices": 1750
+            }
+          ]
+        },
+        {
+          "side": "left",
+          "finger": "Index",
+          "joints": [
+            {
+              "name": "leftIndexProximal",
+              "angle": 0.6499999999522008,
+              "rawAngle": 0.6499999999522008,
+              "weightedVertices": 2310,
+              "deformedVertices": 5005
+            },
+            {
+              "name": "leftIndexIntermediate",
+              "angle": 0.6505287921765204,
+              "rawAngle": 0.6505287921765204,
+              "weightedVertices": 1085,
+              "deformedVertices": 2695
+            },
+            {
+              "name": "leftIndexDistal",
+              "angle": 0.6500093020450081,
+              "rawAngle": 0.6500093020450081,
+              "weightedVertices": 1610,
+              "deformedVertices": 1610
+            }
+          ]
+        },
+        {
+          "side": "left",
+          "finger": "Middle",
+          "joints": [
+            {
+              "name": "leftMiddleProximal",
+              "angle": 0.6499999999522036,
+              "rawAngle": 0.6499999999522036,
+              "weightedVertices": 2275,
+              "deformedVertices": 4620
+            },
+            {
+              "name": "leftMiddleIntermediate",
+              "angle": 0.650058398447549,
+              "rawAngle": 0.650058398447549,
+              "weightedVertices": 980,
+              "deformedVertices": 2345
+            },
+            {
+              "name": "leftMiddleDistal",
+              "angle": 0.6500015965040196,
+              "rawAngle": 0.6500015965040196,
+              "weightedVertices": 1365,
+              "deformedVertices": 1365
+            }
+          ]
+        },
+        {
+          "side": "left",
+          "finger": "Ring",
+          "joints": [
+            {
+              "name": "leftRingProximal",
+              "angle": 0.6499999999522021,
+              "rawAngle": 0.6499999999522021,
+              "weightedVertices": 2345,
+              "deformedVertices": 4655
+            },
+            {
+              "name": "leftRingIntermediate",
+              "angle": 0.6500066179498323,
+              "rawAngle": 0.6500066179498323,
+              "weightedVertices": 1085,
+              "deformedVertices": 2310
+            },
+            {
+              "name": "leftRingDistal",
+              "angle": 0.6500001656462122,
+              "rawAngle": 0.6500001656462122,
+              "weightedVertices": 1225,
+              "deformedVertices": 1225
+            }
+          ]
+        },
+        {
+          "side": "left",
+          "finger": "Little",
+          "joints": [
+            {
+              "name": "leftLittleProximal",
+              "angle": 0.6499999999522036,
+              "rawAngle": 0.6499999999522036,
+              "weightedVertices": 1155,
+              "deformedVertices": 3500
+            },
+            {
+              "name": "leftLittleIntermediate",
+              "angle": 0.6502850359621841,
+              "rawAngle": 0.6502850359621841,
+              "weightedVertices": 1015,
+              "deformedVertices": 2345
+            },
+            {
+              "name": "leftLittleDistal",
+              "angle": 0.6500091073787382,
+              "rawAngle": 0.6500091073787382,
+              "weightedVertices": 1330,
+              "deformedVertices": 1330
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "finger": "Thumb",
+          "joints": [
+            {
+              "name": "rightThumbMetacarpal",
+              "angle": 0.5206362076710358,
+              "rawAngle": 0.5206362076710358,
+              "weightedVertices": 0,
+              "deformedVertices": 3045
+            },
+            {
+              "name": "rightThumbProximal",
+              "angle": 0.748271452810403,
+              "rawAngle": 0.748271452810403,
+              "weightedVertices": 1365,
+              "deformedVertices": 3045
+            },
+            {
+              "name": "rightThumbDistal",
+              "angle": 0.6452097633568772,
+              "rawAngle": 0.6452097633568772,
+              "weightedVertices": 1680,
+              "deformedVertices": 1680
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "finger": "Index",
+          "joints": [
+            {
+              "name": "rightIndexProximal",
+              "angle": 0.6499999999522049,
+              "rawAngle": 0.6499999999522049,
+              "weightedVertices": 2100,
+              "deformedVertices": 4760
+            },
+            {
+              "name": "rightIndexIntermediate",
+              "angle": 0.6501184629189203,
+              "rawAngle": 0.6501184629189203,
+              "weightedVertices": 1120,
+              "deformedVertices": 2660
+            },
+            {
+              "name": "rightIndexDistal",
+              "angle": 0.6500020876647601,
+              "rawAngle": 0.6500020876647601,
+              "weightedVertices": 1540,
+              "deformedVertices": 1540
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "finger": "Middle",
+          "joints": [
+            {
+              "name": "rightMiddleProximal",
+              "angle": 0.6499999999522085,
+              "rawAngle": 0.6499999999522085,
+              "weightedVertices": 1925,
+              "deformedVertices": 4165
+            },
+            {
+              "name": "rightMiddleIntermediate",
+              "angle": 0.6500583909891399,
+              "rawAngle": 0.6500583909891399,
+              "weightedVertices": 840,
+              "deformedVertices": 2240
+            },
+            {
+              "name": "rightMiddleDistal",
+              "angle": 0.6500015963045025,
+              "rawAngle": 0.6500015963045025,
+              "weightedVertices": 1400,
+              "deformedVertices": 1400
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "finger": "Ring",
+          "joints": [
+            {
+              "name": "rightRingProximal",
+              "angle": 0.6499999999522043,
+              "rawAngle": 0.6499999999522043,
+              "weightedVertices": 2135,
+              "deformedVertices": 4340
+            },
+            {
+              "name": "rightRingIntermediate",
+              "angle": 0.6510877292784779,
+              "rawAngle": 0.6510877292784779,
+              "weightedVertices": 1015,
+              "deformedVertices": 2205
+            },
+            {
+              "name": "rightRingDistal",
+              "angle": 0.6500272264428927,
+              "rawAngle": 0.6500272264428927,
+              "weightedVertices": 1190,
+              "deformedVertices": 1190
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "finger": "Little",
+          "joints": [
+            {
+              "name": "rightLittleProximal",
+              "angle": 0.6499999999522043,
+              "rawAngle": 0.6499999999522043,
+              "weightedVertices": 1435,
+              "deformedVertices": 3815
+            },
+            {
+              "name": "rightLittleIntermediate",
+              "angle": 0.6503567190470384,
+              "rawAngle": 0.6503567190470384,
+              "weightedVertices": 1120,
+              "deformedVertices": 2380
+            },
+            {
+              "name": "rightLittleDistal",
+              "angle": 0.6500118157774969,
+              "rawAngle": 0.6500118157774969,
+              "weightedVertices": 1260,
+              "deformedVertices": 1260
+            }
+          ]
+        }
+      ],
+      "overlayJoints": 53
+    }
+  ],
+  "errors": [],
+  "combinedView": true,
+  "pause": true,
+  "cachedCapture": true,
+  "mobileLayout": true,
+  "limits": [
+    "Synthetic motion tests use the actual model files.",
+    "These checks do not measure camera accuracy or physical gestures."
+  ]
+}

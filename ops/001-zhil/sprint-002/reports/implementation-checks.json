@@ -1,0 +1,176 @@
+{
+  "date": "2026-10-05",
+  "source_commit": "ab239e2d70e8bb79ed11d1329ce37099ed5566bb",
+  "source_tree_has_uncommitted_changes": true,
+  "source_hashes": {
+    "src/studio-navigation.ts": "afb3e43f951e23383c1fda2e77e07bdac4a518409d236a16a34877696113f719",
+    "src/output-layout.ts": "1dbf09294d1955b633b30644d1b47153821b57671440b1be2364c73a0be74e6b",
+    "src/tracking-graphics.ts": "92253f1929a19b1f129bb461e25d59588d565e649e6782ecf9d69aa46a39ff46",
+    "src/freeze-notice.ts": "f478ff86213236b3f3eab2e651f94788baa6f3293077136b946fa71ebf53e607",
+    "src/vrm-inspection.ts": "009dcf306878704487bf777d11be8c476267ef87f8a81f29672cf10390567b5f",
+    "src/load-failure.ts": "8a9f79f26eb47f9203d5685ff982470a7fb384afe98becf1227ff2e4ea98ba5f",
+    "src/limb-solver.ts": "02898d0936491d2001f34283829aca89946cfa294150642f99fa87fef107f25a",
+    "src/main.ts": "bb437ad3af4b7916f57a5fccda5cfe05cdaa8148fa920d737cb07f5987882480",
+    "src/torso-solver.ts": "dce715d19272642be8eaaa32cdc256fa4378598cf41e9bab26e30afe597d75f2",
+    "src/tracking-summary.ts": "2a501c74e0db6b170ff1bb43829a09f6e7c2764bbf3d75ae9401865ff43e16fe",
+    "src/avatars.ts": "7c7bdcfee6c5177de78b3e751e96636b10fd948481a1a100b1c2954a43d0f4a9",
+    "src/combined-observations.ts": "32ef548a679bc3a3c7a5a76ffcb83bea08aea7a36411a0c80b016dc5cbf3f2d9",
+    "src/library-panel.ts": "d931db34ef004375a302ab55de8fc155d5754c94350ec816632b86921861f45f",
+    "src/tracking-recording.ts": "1677b82b10cb93a12bd062743621672461c6ac1fdc97ee0d845791729f218003",
+    "src/library-backup.ts": "a2764cb49dc4020c2ba70ecd3ddfce65103dcf6be99a36750304941a73f38ca5",
+    "src/rig-overlay.ts": "957af3aa9e7e5d166a147e3f48917254e390edc4e0497a6293956f98388449b0",
+    "src/composition.ts": "81e8baacdf9186c76ef9d051719c53de04738af46f9613c438e68e65028ea4bb",
+    "src/retarget-math.ts": "3c1f4a186d3bcf495af1c5d24953811e4864b733f2206dfbc88bcd732464760b",
+    "src/model-selection.ts": "b4b2d724ea2fb64ab0b5a03bf11064c53bf0506baecfde8088979da26ec96f88",
+    "src/canonical-rig.ts": "4748adf4285f5cde8b4df107cb8435bd854411372ce950c6bdab73c644d5effb",
+    "src/tracking-diagnostics.ts": "75fd491e47aeecc71ef1e7a359ebf686d6196d997c5202eb1bf6ec589056b014",
+    "src/viewer.ts": "1582b2c36a0e9238ff55b078578da03d97336ba0e286750ea5bced00692647c4",
+    "src/bootstrap.ts": "edcae08a6942bef91de8a4265644c4f92f2704368c51aa0ab2da5f76a4c4ad14",
+    "src/profiles.ts": "91931977bbe94af96352fb507ee7877f83ba6ff3e93c322a2b19daae1fea4ad0",
+    "src/tracking-inspector-3d.ts": "cbf4a5bde2690120227afd36c2aad4c64acb48d10d0e24a8e5eeb948cde03306",
+    "src/tracking-video.ts": "c9f16ac5157aa4f5ec1fb217092afc0644b59dfb89d4da904bc0a3bdff4c8a05",
+    "src/tracking-inspector.ts": "4b15273d4be763366a79734c79d1da00be8437a4b357f5a0fa5d400e65f51b84",
+    "src/camera.ts": "bd6dcb5f6ca4920079dd1fa058766090b0fc013baf6d068614e3f5647f96f31c",
+    "src/output-link.ts": "ce19349eac679121fbc9b92a1d620dc460416ca380b0f8ed89b2cc027996e36c",
+    "src/model-repository.ts": "4dd46bc22696e9ffd03e734ed64751d756cb1baf89fb2b644e2baf8f984d52a3",
+    "src/library-db.ts": "ae3d7ebcf4d0f7b522e54fe1c3fe8d991ee0cb8b9a91e94fcf168a9f2c5d5428",
+    "src/motion-solver.ts": "88b9110a61cf472ecf9210007c89839a6e0782f7620e472f416198e58dcb74e7",
+    "src/types.ts": "b482d1716156e26250fc4c72eb121304f95517fac93b7ed603194fc9c09066fd",
+    "src/model-thumbnail.ts": "913b7bbb6afd3863fbbe243ca7e734dcd1c85cb2f4f18d1985b73815330329ce",
+    "src/vrm-inspection.worker.ts": "edfa23891e394987ecf65e9e78dc6e3d23e964a9c7353bdc190568cc6937c5b8",
+    "src/tracking.worker.ts": "d924c20a326474c4d3d83cbbd14be2b927034134911cd87b9c1fa53e83bf7128",
+    "src/model-types.ts": "844b9609f337c425d6a903b085050db1190ccd6caa92499efca03d5b7c5a6bff",
+    "src/replay-video.ts": "56f3c6993e5683c19efb32ca3cdbe913acfe20731a7ac68d96c8d85d34824d39",
+    "src/finger-solver.ts": "333748f83c46ba9e81a8ecca1362edb9a8dbc7fbdbab8c80a31a2e9f04afe78c",
+    "src/avatar-resources.ts": "560a8e75fce9f4d0c82d66c6a5189f02f5c9eca9b2540c12e366bf72ef84f787",
+    "src/retarget.ts": "463e3053dea925deaae4f40cb3d8fd4b399c7e096cd7c2520f0fb3c4e6f20b9e",
+    "src/server-watch.ts": "fcf5ae0209867717250fb5fee81a2b3bfc39fbc411e650e9077f69ea10d1e37e",
+    "src/library-validation.ts": "f1c3d8022e90aa91dfa811b76a69a1eeddb88ec9f568a3b9fa6c378f881b2ca6",
+    "package-lock.json": "ac4f8956014d746717508b7330da4fdc358a2c893c34f3e221ad69fa62a26cfb",
+    "scripts/sprint002_motion_smoke.mjs": "b3ddb099ff9452c2c956889ef58c396e668f35cf88e8208afe7d5d7a8843ded7",
+    "scripts/sprint002_inspector_smoke.mjs": "10a950a1084d2599095c03e3e32abeeafefd448279f788a170d18a6aac1d2773",
+    "tests/fixtures/hand-gestures.ts": "59e140e34a31ca6ce0863ce7f045225cbb4f7b65e94d8f1a0241b8da913d8423",
+    "scripts/avatar_replay_smoke.mjs": "3e3205146f054ca951290b2eaf062365163ebdccfb2883ab7b23ee2c45786ffc",
+    "scripts/verify.mjs": "38adf037f8103bca12ff5e112957a31f1aafb0551f7b0d589dc055bc9e8b8a6e",
+    "tests/sprint002-motion.test.ts": "d11443b66333d7190ee566fdde68b4f93a7cb3c31510a1de19725980c4248928",
+    "tests/finger-gestures.test.ts": "4ed2a32dbe669970cd69b4192322490a7e606e09aaa658799c31537e23104d86",
+    "tests/tracking-recording.test.ts": "ffd5a1225cf7e36e64456fed5205b0effacae6e4ceade058ba84b719efeea7a0"
+  },
+  "model_hashes": {
+    "ene": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+    "rei": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735"
+  },
+  "checks": [
+    {
+      "command": "npm test -- --reporter=dot",
+      "result": "pass",
+      "evidence": "334 tests in 36 files"
+    },
+    {
+      "command": "npm run build",
+      "result": "pass",
+      "evidence": "TypeScript and Vite production build"
+    },
+    {
+      "command": "node scripts/sprint002_motion_smoke.mjs",
+      "result": "pass",
+      "evidence": "Four gestures and two torso rolls on each model"
+    },
+    {
+      "command": "node scripts/sprint002_inspector_smoke.mjs",
+      "result": "pass",
+      "evidence": "Selected rig, cached reasons, model hash, and recording cancellation"
+    },
+    {
+      "command": "node ops/001-zhil/sprint-002/research/tools/verify_implementation.mjs",
+      "result": "pass",
+      "evidence": "18 recorded replay conditions and 64 direct controls"
+    },
+    {
+      "command": "node scripts/avatar_replay_smoke.mjs",
+      "result": "pass",
+      "evidence": "Forward, backward, and repeated replay"
+    },
+    {
+      "command": "node scripts/combined_tracking_smoke.mjs",
+      "result": "pass",
+      "evidence": "Both avatar rigs, shoulders, and gaze"
+    },
+    {
+      "command": "node scripts/tracking_overlay_smoke.mjs",
+      "result": "pass",
+      "evidence": "Coordinates and contrast"
+    },
+    {
+      "command": "node scripts/tracking_states_smoke.mjs",
+      "result": "pass",
+      "evidence": "Retest after a browser startup race"
+    },
+    {
+      "command": "node scripts/replay_video_smoke.mjs",
+      "result": "pass",
+      "evidence": "Retest without development reloads"
+    },
+    {
+      "command": "node scripts/diagnostic_camera_smoke.mjs",
+      "result": "pass",
+      "evidence": "Fake camera, installed worker, restart, and image release"
+    },
+    {
+      "command": "node scripts/recording_lifecycle_smoke.mjs",
+      "result": "pass",
+      "evidence": "Trace and video lifecycle"
+    },
+    {
+      "command": "node scripts/inspector_live_smoke.mjs",
+      "result": "pass",
+      "evidence": "Inspector pause and live output"
+    },
+    {
+      "command": "node scripts/tracking_positive_fixture_smoke.mjs --functional",
+      "result": "pass",
+      "evidence": "Installed CPU inference on static photo fixtures"
+    },
+    {
+      "command": "node scripts/deployment_smoke.mjs",
+      "result": "pass",
+      "evidence": "Isolated production server, camera access, and tracking"
+    },
+    {
+      "command": "node scripts/audit_bundle.mjs",
+      "result": "pass",
+      "evidence": "Runtime hashes, model files, and notices"
+    },
+    {
+      "command": "python scripts/task_audit.py",
+      "result": "pass",
+      "evidence": "Historical sprint-001 register"
+    },
+    {
+      "command": "node scripts/audit_docs.mjs",
+      "result": "limited",
+      "evidence": "139 historical links refer to absent local evidence or assets"
+    },
+    {
+      "command": "./deploy/manage.sh restart",
+      "result": "pass",
+      "evidence": "Both local containers are healthy"
+    },
+    {
+      "command": "Deployed HTTPS browser check",
+      "result": "pass",
+      "evidence": "Model load, new build marker, no page errors, and verified local CA"
+    },
+    {
+      "command": "Sprint 002 document check",
+      "result": "pass",
+      "evidence": "17 documents, 89 local links, and LF line endings; no reported errors"
+    }
+  ],
+  "limits": [
+    "Physical acceptance remains open.",
+    "The complete repository verify command was not run.",
+    "Historical documentation links remain absent in this checkout.",
+    "No paid service, external tracker, or model modification was used."
+  ]
+}

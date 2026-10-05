@@ -1,5 +1,11 @@
 # TASK-012: Implement wrist and visible finger tracking
 
+Current direction: 2026-10-05.
+The physical tests show failed finger motion.
+The [sprint-002 diagnosis](../../../sprint-002/research/001-physical-diagnosis.md) identifies the hand confidence defect.
+Use [S002-004](../../../sprint-002/tasks/backlog/S002-004.md) after the confidence repair.
+The remaining text preserves the earlier requirements and history.
+
 - Status: In progress
 - Priority: P0
 - Goal: G2

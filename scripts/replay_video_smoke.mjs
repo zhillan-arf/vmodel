@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { chromium } from '@playwright/test';
 import { createServer } from 'vite';
 import { writeFile } from 'node:fs/promises';
-const server=await createServer({server:{port:0,host:'127.0.0.1'}});let browser;
+const server=await createServer({server:{port:0,host:'127.0.0.1',watch:null}});let browser;
 try{
   await server.listen();const base=server.resolvedUrls.local[0];browser=await chromium.launch({headless:true});const context=await browser.newContext();context.setDefaultTimeout(15000);
   const page=await context.newPage(),errors=[];page.on('pageerror',error=>errors.push(error.message));await page.goto(base+'tests/browser-host.html');

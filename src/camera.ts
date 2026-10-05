@@ -98,7 +98,7 @@ export class CameraTracker {
     this.frameHandle = requestAnimationFrame(async () => {
       this.schedule();
       const timestamp = performance.timeOrigin + performance.now();
-      const interval = this.getSettings().quality === 'low' ? 100 : 50;
+      const interval = this.getSettings().quality === 'low' ? 100 : 1000/30;
       if (this.inFlight || this.video.readyState < 2 || this.video.currentTime === this.lastVideoTime || timestamp - this.lastSent < interval) return;
       this.inFlight = true; const generation = this.generation;
       let bitmap: ImageBitmap | undefined;

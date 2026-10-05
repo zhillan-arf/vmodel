@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-04T20:56:50.932Z",
+  "checks": {
+    "before": 15,
+    "between": 15,
+    "modelHash": true,
+    "solverVersion": "motion-solver-3",
+    "adapter": "task-confidence-2",
+    "diagnosticRig": "canonical",
+    "cancelled": true,
+    "events": 3
+  },
+  "errors": []
+}

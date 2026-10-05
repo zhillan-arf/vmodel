@@ -4,7 +4,11 @@ A local VTuber app with selectable Ene **Cyber legs** and Rei models, webcam tra
 
 ## What to do next
 
-**[Remaining checks](docs/remaining-checks.md)** lists the checks that need a person. The original delivery still needs those checks. New library and tracking tasks can start without physical-device access.
+Start with **[Sprint 002](ops/001-zhil/sprint-002/README.md)** for the implemented motion corrections and current backlog.
+The supplied physical tests show failed finger motion, an upright torso, and unstable arms.
+The new build corrects hand confidence, seated torso roll, arm recovery, and task cadence.
+Use the **[human test procedure](ops/001-zhil/sprint-002/specs/human-test.md)** for the next Ene and Rei session.
+**[Remaining checks](docs/remaining-checks.md)** lists the checks that still need a person.
 
 ## Everyday launchers
 

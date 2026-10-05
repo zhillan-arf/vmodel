@@ -3,7 +3,7 @@ import {writeFile} from 'node:fs/promises';
 import {chromium} from '@playwright/test';
 import {createServer} from 'vite';
 import {captureVisualState} from './visual-state-capture.mjs';
-const server=await createServer({server:{host:'127.0.0.1',port:0}});let browser;
+const server=await createServer({server:{host:'127.0.0.1',port:0,watch:null}});let browser;
 try{
   await server.listen();browser=await chromium.launch({headless:true});const page=await browser.newPage(),errors=[];
   page.on('pageerror',error=>errors.push(error.message));await page.goto(server.resolvedUrls.local[0]+'tests/browser-host.html');
@@ -53,7 +53,7 @@ try{
   await page.route('**/avatars/*.vrm',route=>route.fulfill({status:404,body:'Missing fixture model'}));
   await page.addInitScript(()=>{navigator.mediaDevices.getUserMedia=async()=>{throw new DOMException('Permission fixture','NotAllowedError');};});
   await page.goto(server.resolvedUrls.local[0]);
-  await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('not found'));
+  await page.waitForFunction(()=>document.querySelector('#status')?.textContent.includes('not found'));
   await page.locator('[data-view="tracking"]').click();await page.locator('#inspector-start-camera').click();
   await page.waitForFunction(()=>document.querySelector('#camera-message').textContent.includes('Camera permission denied'));
   await capture('permission-failure');assert(visualStates.every(image=>!image.horizontalOverflow));assert.deepEqual(errors,[]);

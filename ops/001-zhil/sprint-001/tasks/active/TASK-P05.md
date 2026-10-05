@@ -35,17 +35,19 @@ This controller is a coordination record, not a background process. It does not 
 
 ## Current checkpoint
 
-Date: 2026-10-05. Combined tracking software checks pass. Human and physical acceptance remain open.
+Date: 2026-10-05. The user supplied physical evidence of failed motion.
+The [sprint-002 diagnosis](../../../sprint-002/research/001-physical-diagnosis.md) confirms shared software causes.
+The [transfer plan](../../../sprint-002/specs/sprint-002-plan.md#sprint-001-transfer) replaces the remaining motion execution order.
 
 - Scope: Thirteen implementation tasks, TASK-049 through TASK-060, plus TASK-062.
-- Progress: 7/13 Done; 2 In progress; 1 Blocked; 0 Ready; 3 Todo.
+- Progress: 7/13 Done; 3 In progress; 0 Blocked; 0 Ready; 3 Todo.
 - Evidence: [implementation record](../../reports/studio-implementation.md) and [browser checks](../../reports/studio-features-smoke.json).
 - Completed checks: unit suite, production build, solver diagnostics, trace limits, and video lifecycle tests.
 - Model assets: local Ene and Rei pass Chrome and Edge selection and memory tests. The Windows reports record their actual hashes.
-- Physical evidence: camera gestures and human review remain open. Actual-model browser images are available.
+- Physical evidence: thirteen images and three traces establish finger and torso failures. Full repeated acceptance remains open.
 - Acceptance: TASK-049 through TASK-054 have complete software evidence. Human checks now belong to TASK-061. Controller release acceptance remains open.
 - Coordination: both controllers use the same viewer preparation boundary and MotionSolver.
-- Corrections: the tracker schedule and thresholds remain unchanged pending physical diagnosis.
+- Corrections: the tracker schedule and production solver remain unchanged. Sprint 002 defines the proposed repairs.
 
 ## Milestones
 
@@ -81,8 +83,8 @@ Do not install multi-camera infrastructure, buy hardware, replace MediaPipe, or 
 
 ## Next action
 
-Complete the human inspector checks in [TASK-061](../backlog/TASK-061.md).
-After TASK-055 acceptance, collect physical gestures for TASK-056.
+Start motion implementation from [S002-001](../../../sprint-002/tasks/backlog/S002-001.md).
+Retain the unrelated human inspector checks in [TASK-061](../backlog/TASK-061.md).
 The [Windows report](../../reports/windows-continuation.md) supplies software, memory, and performance evidence.
 
 ## Windows continuation

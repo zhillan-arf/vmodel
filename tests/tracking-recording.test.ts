@@ -99,3 +99,18 @@ it.each(['start','hash','null']as const)('rejects invalid video metadata: %s',as
   if(kind==='null')(recorder.trace.manifest as any).video=null;
   await expect(importTrace(recorder.export())).rejects.toThrow();
 });
+
+it('imports new solver metadata and shoulder calibration without changing old traces',async()=>{
+  const recorder=record();
+  recorder.trace.manifest.confidenceAdapterVersion='task-confidence-2';
+  recorder.trace.manifest.diagnosticRig='canonical';
+  recorder.trace.manifest.rigHashes=['e'.repeat(64)];
+  recorder.trace.manifest.calibration={version:1,head:[0,0,0,1],root:[.5,-.5,0],torsoRoll:.2};
+  const apply=recorder.trace.events[1];
+  if(apply.kind==='apply')apply.reasons=[{stage:'application',channel:'leftUpperArm',reason:'held',accepted:false,sampleId:1}];
+  const trace=await importTrace(recorder.export());
+  expect(trace.manifest).toEqual(recorder.trace.manifest);
+  expect(trace.events[1]).toEqual(apply);
+  recorder.trace.manifest.calibration.torsoRoll=2;
+  await expect(importTrace(recorder.export())).rejects.toThrow('calibration');
+});

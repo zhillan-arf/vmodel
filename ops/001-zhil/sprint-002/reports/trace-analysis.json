@@ -1,0 +1,3379 @@
+{
+  "source_commit": "ab239e2d70e8bb79ed11d1329ce37099ed5566bb",
+  "source_hashes": {
+    "src/motion-solver.ts": "f389e4569d13eb475dc1d2991352729c2f9df26ec0a21f526400d2c669351766",
+    "src/retarget-math.ts": "3c1f4a186d3bcf495af1c5d24953811e4864b733f2206dfbc88bcd732464760b",
+    "src/finger-solver.ts": "333748f83c46ba9e81a8ecca1362edb9a8dbc7fbdbab8c80a31a2e9f04afe78c",
+    "src/limb-solver.ts": "02898d0936491d2001f34283829aca89946cfa294150642f99fa87fef107f25a",
+    "src/tracking.worker.ts": "2cd1e3c33083d848b9d3a79d8d91ddf1bfa7aab0ddf0b805fc2da3f014fb751f",
+    "src/tracking-recording.ts": "0dcf5e34559550193baf7329a1d9d3630f4e226b2fbaa836578954150670ecbf",
+    "src/canonical-rig.ts": "4748adf4285f5cde8b4df107cb8435bd854411372ce950c6bdab73c644d5effb",
+    "src/viewer.ts": "1582b2c36a0e9238ff55b078578da03d97336ba0e286750ea5bced00692647c4",
+    "node_modules/@mediapipe/tasks-vision/vision_bundle.mjs": "d885630c297c0b20b1fe86096cb06291c4c8080876f27852e724f24ac603713f"
+  },
+  "method": "Resolve task references before measurements. Count each task identity once for inference statistics. Count each apply event for age statistics.",
+  "models": [
+    {
+      "path": "assets/avatars/ene.vrm",
+      "sha256": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+      "vrm_version": "1.0",
+      "node_count": 194,
+      "mesh_count": 1,
+      "expressions": {
+        "custom": {},
+        "preset": {
+          "aa": {
+            "isBinary": false,
+            "morphTargetBinds": [
+              {
+                "index": 26,
+                "node": 193,
+                "weight": 1.0
+              }
+            ],
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "angry": {
+            "isBinary": false,
+            "morphTargetBinds": [
+              {
+                "index": 3,
+                "node": 193,
+                "weight": 1.0
+              }
+            ],
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "blink": {
+            "isBinary": false,
+            "morphTargetBinds": [
+              {
+                "index": 6,
+                "node": 193,
+                "weight": 1.0
+              }
+            ],
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "blinkLeft": {
+            "isBinary": false,
+            "morphTargetBinds": [
+              {
+                "index": 7,
+                "node": 193,
+                "weight": 1.0
+              }
+            ],
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "blinkRight": {
+            "isBinary": false,
+            "morphTargetBinds": [
+              {
+                "index": 8,
+                "node": 193,
+                "weight": 1.0
+              }
+            ],
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "ee": {
+            "isBinary": false,
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "happy": {
+            "isBinary": false,
+            "morphTargetBinds": [
+              {
+                "index": 2,
+                "node": 193,
+                "weight": 1.0
+              }
+            ],
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "ih": {
+            "isBinary": false,
+            "morphTargetBinds": [
+              {
+                "index": 27,
+                "node": 193,
+                "weight": 1.0
+              }
+            ],
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "lookDown": {
+            "isBinary": false,
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "lookLeft": {
+            "isBinary": false,
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "lookRight": {
+            "isBinary": false,
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "lookUp": {
+            "isBinary": false,
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "neutral": {
+            "isBinary": false,
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "oh": {
+            "isBinary": false,
+            "morphTargetBinds": [
+              {
+                "index": 29,
+                "node": 193,
+                "weight": 1.0
+              }
+            ],
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "ou": {
+            "isBinary": false,
+            "morphTargetBinds": [
+              {
+                "index": 28,
+                "node": 193,
+                "weight": 1.0
+              }
+            ],
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "relaxed": {
+            "isBinary": false,
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "sad": {
+            "isBinary": false,
+            "morphTargetBinds": [
+              {
+                "index": 1,
+                "node": 193,
+                "weight": 1.0
+              }
+            ],
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          },
+          "surprised": {
+            "isBinary": false,
+            "morphTargetBinds": [
+              {
+                "index": 14,
+                "node": 193,
+                "weight": 1.0
+              }
+            ],
+            "overrideBlink": "none",
+            "overrideLookAt": "none",
+            "overrideMouth": "none"
+          }
+        }
+      }
+    },
+    {
+      "path": "assets/avatars/rei.vrm",
+      "sha256": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+      "vrm_version": "0.0",
+      "node_count": 605,
+      "mesh_count": 2,
+      "expressions": [
+        {
+          "binds": [],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "Neutral",
+          "presetName": "neutral"
+        },
+        {
+          "binds": [
+            {
+              "index": 0,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "A",
+          "presetName": "a"
+        },
+        {
+          "binds": [
+            {
+              "index": 2,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "I",
+          "presetName": "i"
+        },
+        {
+          "binds": [
+            {
+              "index": 3,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "U",
+          "presetName": "u"
+        },
+        {
+          "binds": [
+            {
+              "index": 4,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "E",
+          "presetName": "e"
+        },
+        {
+          "binds": [
+            {
+              "index": 5,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "O",
+          "presetName": "o"
+        },
+        {
+          "binds": [
+            {
+              "index": 19,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "Blink",
+          "presetName": "blink"
+        },
+        {
+          "binds": [
+            {
+              "index": 11,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "Joy",
+          "presetName": "joy"
+        },
+        {
+          "binds": [
+            {
+              "index": 8,
+              "mesh": 1,
+              "weight": 100
+            },
+            {
+              "index": 22,
+              "mesh": 1,
+              "weight": 87
+            },
+            {
+              "index": 50,
+              "mesh": 1,
+              "weight": 26.1
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "Angry",
+          "presetName": "angry"
+        },
+        {
+          "binds": [
+            {
+              "index": 8,
+              "mesh": 1,
+              "weight": 97.8
+            },
+            {
+              "index": 19,
+              "mesh": 1,
+              "weight": 20.2
+            },
+            {
+              "index": 38,
+              "mesh": 1,
+              "weight": 72.6
+            },
+            {
+              "index": 44,
+              "mesh": 1,
+              "weight": 23
+            },
+            {
+              "index": 47,
+              "mesh": 1,
+              "weight": 77
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "Sorrow",
+          "presetName": "sorrow"
+        },
+        {
+          "binds": [
+            {
+              "index": 25,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "Fun",
+          "presetName": "fun"
+        },
+        {
+          "binds": [
+            {
+              "index": 32,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "LookUp",
+          "presetName": "lookup"
+        },
+        {
+          "binds": [
+            {
+              "index": 33,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "LookDown",
+          "presetName": "lookdown"
+        },
+        {
+          "binds": [
+            {
+              "index": 34,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "LookLeft",
+          "presetName": "lookleft"
+        },
+        {
+          "binds": [
+            {
+              "index": 35,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "LookRight",
+          "presetName": "lookright"
+        },
+        {
+          "binds": [
+            {
+              "index": 14,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "Blink_L",
+          "presetName": "blink_l"
+        },
+        {
+          "binds": [
+            {
+              "index": 15,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "Blink_R",
+          "presetName": "blink_r"
+        },
+        {
+          "binds": [
+            {
+              "index": 25,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u306e\u307b\u307b\u3093",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 28,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\uff1e\uff1c",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 0,
+              "mesh": 1,
+              "weight": 46
+            },
+            {
+              "index": 16,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u3073\u3063\u304f\u308a",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 29,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u767d\u76ee",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 31,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u77b3\u30cf\u30a4\u30e9\u30a4\u30c8\u6d88",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 22,
+              "mesh": 1,
+              "weight": 100
+            },
+            {
+              "index": 38,
+              "mesh": 1,
+              "weight": 39.7
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u30b8\u30c8\u76ee",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 30,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u77b3\u5c0f",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 16,
+              "mesh": 1,
+              "weight": 100
+            },
+            {
+              "index": 41,
+              "mesh": 1,
+              "weight": 58.2
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u4e21\u76ee\u898b\u958b\u304d",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 0,
+              "mesh": 1,
+              "weight": 63.5
+            },
+            {
+              "index": 6,
+              "mesh": 1,
+              "weight": 37.9
+            },
+            {
+              "index": 11,
+              "mesh": 1,
+              "weight": 9
+            },
+            {
+              "index": 38,
+              "mesh": 1,
+              "weight": 100
+            },
+            {
+              "index": 44,
+              "mesh": 1,
+              "weight": 43.3
+            },
+            {
+              "index": 47,
+              "mesh": 1,
+              "weight": 88.3
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u6311\u767a",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 38,
+              "mesh": 1,
+              "weight": 77.1
+            },
+            {
+              "index": 47,
+              "mesh": 1,
+              "weight": 88.8
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u56f0\u308b",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 8,
+              "mesh": 1,
+              "weight": 100
+            },
+            {
+              "index": 22,
+              "mesh": 1,
+              "weight": 100
+            },
+            {
+              "index": 38,
+              "mesh": 1,
+              "weight": 100
+            },
+            {
+              "index": 47,
+              "mesh": 1,
+              "weight": 83.8
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u30c9\u30f3\u5f15\u304d",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 14,
+              "mesh": 1,
+              "weight": 100
+            },
+            {
+              "index": 15,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u4e21\u76ee\u9589\u3058",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 15,
+              "mesh": 1,
+              "weight": 100
+            },
+            {
+              "index": 43,
+              "mesh": 1,
+              "weight": 67.5
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u30a6\u30a3\u30f3\u30af\u53f3",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 14,
+              "mesh": 1,
+              "weight": 100
+            },
+            {
+              "index": 42,
+              "mesh": 1,
+              "weight": 62.8
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u30a6\u30a3\u30f3\u30af\u5de6",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 34,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u77b3\u5de6",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 35,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u77b3\u53f3",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 32,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u77b3\u4e0a",
+          "presetName": "unknown"
+        },
+        {
+          "binds": [
+            {
+              "index": 33,
+              "mesh": 1,
+              "weight": 100
+            }
+          ],
+          "isBinary": false,
+          "materialValues": [],
+          "name": "\u77b3\u4e0b",
+          "presetName": "unknown"
+        }
+      ]
+    }
+  ],
+  "traces": [
+    {
+      "file": "ops/001-zhil/sprint-002/research/trace/ene_body.json",
+      "sha256": "bd2fdd69141438cff4252f4ed3de9f3a2fd9f702699dea816266528a4a350675",
+      "bytes": 9679455,
+      "trace_id": "9b494a42-997d-4aeb-8d05-ceca17c26a38",
+      "manifest": {
+        "runtime": "@mediapipe/tasks-vision@1.0.1",
+        "modelHashes": {
+          "face": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+          "pose": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a",
+          "hands": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1"
+        },
+        "solverVersion": "motion-solver-2",
+        "settings": {
+          "version": 1,
+          "mode": "seated",
+          "quality": "balanced",
+          "framing": "bust",
+          "orientation": "landscape",
+          "background": "#182339",
+          "mirror": true,
+          "hands": true,
+          "smoothing": 14,
+          "springMotion": "gentle",
+          "captureResolution": "640x480",
+          "zoom": 1,
+          "headRange": 1,
+          "mouthGain": 1.8
+        },
+        "calibration": null,
+        "rigHashes": [],
+        "startTimeMs": 1327126.4001464844,
+        "video": {
+          "traceId": "9b494a42-997d-4aeb-8d05-ceca17c26a38",
+          "startOffsetMs": 2.899999998509884,
+          "stopOffsetMs": 14057.59999999404,
+          "mimeType": "video/webm;codecs=vp9",
+          "sha256": "9052eebf439be4b994239737a655cfab348590fc796cb25847c6f806ef38db56"
+        }
+      },
+      "sample_events": 160,
+      "apply_events": 826,
+      "duration_ms": 14037.80000000447,
+      "task_stats": {
+        "face": {
+          "unique_samples": 160,
+          "unique_samples_in_window": 160,
+          "present_unique_samples": 160,
+          "rate_hz_in_window": 11.439507149024495,
+          "sample_interval_ms": {
+            "count": 159,
+            "min": 50,
+            "p50": 79.89990234375,
+            "p95": 151.900146484375,
+            "max": 227.199951171875
+          },
+          "inference_ms": {
+            "count": 160,
+            "min": 15.89990234375,
+            "p50": 25.400146484375,
+            "p95": 36.699951171875,
+            "max": 55.300048828125
+          },
+          "age_at_apply_ms": {
+            "count": 826,
+            "min": 24.599853515625,
+            "p50": 96.10009765625,
+            "p95": 179,
+            "max": 261.400146484375
+          },
+          "applies_age_at_least_500ms": 0
+        },
+        "pose": {
+          "unique_samples": 80,
+          "unique_samples_in_window": 80,
+          "present_unique_samples": 80,
+          "rate_hz_in_window": 5.732447020606438,
+          "sample_interval_ms": {
+            "count": 79,
+            "min": 131.60009765625,
+            "p50": 167.400146484375,
+            "p95": 235.5,
+            "max": 291.5
+          },
+          "inference_ms": {
+            "count": 80,
+            "min": 14.800048828125,
+            "p50": 27.0,
+            "p95": 42.800048828125,
+            "max": 62.599853515625
+          },
+          "age_at_apply_ms": {
+            "count": 826,
+            "min": 62.5,
+            "p50": 180.0,
+            "p95": 326.7998046875,
+            "max": 425.5
+          },
+          "applies_age_at_least_500ms": 0
+        },
+        "hands": {
+          "unique_samples": 80,
+          "unique_samples_in_window": 80,
+          "present_unique_samples": 33,
+          "rate_hz_in_window": 5.732447020606438,
+          "sample_interval_ms": {
+            "count": 79,
+            "min": 131.60009765625,
+            "p50": 167.400146484375,
+            "p95": 235.5,
+            "max": 291.5
+          },
+          "inference_ms": {
+            "count": 80,
+            "min": 12.099853515625,
+            "p50": 38.099853515625,
+            "p95": 90.300048828125,
+            "max": 113.800048828125
+          },
+          "age_at_apply_ms": {
+            "count": 826,
+            "min": 62.5,
+            "p50": 180.0,
+            "p95": 326.7998046875,
+            "max": 425.5
+          },
+          "applies_age_at_least_500ms": 0
+        }
+      },
+      "unique_hand_observations": 33,
+      "hand_count_per_unique_sample": {
+        "0": 47,
+        "1": 33
+      },
+      "hand_world_visibility": {
+        "0": 693
+      },
+      "hand_world_presence": {
+        "absent": 693
+      },
+      "pose_visibility": {
+        "11": {
+          "count": 80,
+          "min": 0.914213240146637,
+          "p50": 0.9633303880691528,
+          "p95": 0.9896332025527954,
+          "max": 0.9924181699752808
+        },
+        "12": {
+          "count": 80,
+          "min": 0.9316567182540894,
+          "p50": 0.9741571545600891,
+          "p95": 0.9927564859390259,
+          "max": 0.9946842789649963
+        },
+        "13": {
+          "count": 80,
+          "min": 0.26705148816108704,
+          "p50": 0.5592932105064392,
+          "p95": 0.8792698979377747,
+          "max": 0.9156150221824646
+        },
+        "14": {
+          "count": 80,
+          "min": 0.374474436044693,
+          "p50": 0.6367636322975159,
+          "p95": 0.9029435515403748,
+          "max": 0.9247226715087891
+        },
+        "15": {
+          "count": 80,
+          "min": 0.06890310347080231,
+          "p50": 0.48331841826438904,
+          "p95": 0.8615516424179077,
+          "max": 0.9072472453117371
+        },
+        "16": {
+          "count": 80,
+          "min": 0.08724585175514221,
+          "p50": 0.5375180840492249,
+          "p95": 0.8893730044364929,
+          "max": 0.9181399345397949
+        },
+        "23": {
+          "count": 80,
+          "min": 0.0021077627316117287,
+          "p50": 0.006244140211492777,
+          "p95": 0.015412253327667713,
+          "max": 0.016634799540042877
+        },
+        "24": {
+          "count": 80,
+          "min": 0.0020213292445987463,
+          "p50": 0.0067692906595766544,
+          "p95": 0.01680208556354046,
+          "max": 0.018019940704107285
+        }
+      },
+      "hips_outside_image_samples": 80,
+      "solver_channels": {
+        "spine": {
+          "low_visibility": 160
+        },
+        "leftArm": {
+          "low_visibility": 92
+        },
+        "rightArm": {
+          "low_visibility": 80
+        },
+        "leftUpperArm": {
+          "accepted": 68
+        },
+        "rightUpperArm": {
+          "accepted": 80
+        }
+      },
+      "reasons": [
+        {
+          "stage": "association",
+          "channel": "leftHand candidate 0",
+          "reason": "hand_distance",
+          "count": 30
+        },
+        {
+          "stage": "association",
+          "channel": "rightHand",
+          "reason": "hand_score",
+          "count": 2
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "leftArm",
+          "reason": "accepted",
+          "count": 312
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "leftHand",
+          "reason": "accepted",
+          "count": 136
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "leftShoulder",
+          "reason": "accepted",
+          "count": 564
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "rightArm",
+          "reason": "accepted",
+          "count": 346
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "rightHand",
+          "reason": "accepted",
+          "count": 156
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "rightShoulder",
+          "reason": "accepted",
+          "count": 586
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "spine",
+          "reason": "accepted",
+          "count": 320
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftIndexDistal",
+          "reason": "clamped",
+          "count": 33
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftIndexIntermediate",
+          "reason": "clamped",
+          "count": 31
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftIndexProximal",
+          "reason": "clamped",
+          "count": 31
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftLittleDistal",
+          "reason": "clamped",
+          "count": 33
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftLittleIntermediate",
+          "reason": "clamped",
+          "count": 31
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftLittleProximal",
+          "reason": "clamped",
+          "count": 31
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftMiddleDistal",
+          "reason": "clamped",
+          "count": 33
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftMiddleIntermediate",
+          "reason": "clamped",
+          "count": 31
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftMiddleProximal",
+          "reason": "clamped",
+          "count": 31
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftRingDistal",
+          "reason": "clamped",
+          "count": 33
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftRingIntermediate",
+          "reason": "clamped",
+          "count": 31
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftRingProximal",
+          "reason": "clamped",
+          "count": 31
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightIndexProximal",
+          "reason": "clamped",
+          "count": 2
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightLittleProximal",
+          "reason": "clamped",
+          "count": 2
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightMiddleProximal",
+          "reason": "clamped",
+          "count": 2
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightRingProximal",
+          "reason": "clamped",
+          "count": 2
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftIndexDistal",
+          "reason": "clamped",
+          "count": 100
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftIndexIntermediate",
+          "reason": "clamped",
+          "count": 105
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftIndexProximal",
+          "reason": "clamped",
+          "count": 32
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftLittleDistal",
+          "reason": "clamped",
+          "count": 100
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftLittleIntermediate",
+          "reason": "clamped",
+          "count": 105
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftLittleProximal",
+          "reason": "clamped",
+          "count": 32
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftMiddleDistal",
+          "reason": "clamped",
+          "count": 100
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftMiddleIntermediate",
+          "reason": "clamped",
+          "count": 105
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftMiddleProximal",
+          "reason": "clamped",
+          "count": 32
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftRingDistal",
+          "reason": "clamped",
+          "count": 100
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftRingIntermediate",
+          "reason": "clamped",
+          "count": 105
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftRingProximal",
+          "reason": "clamped",
+          "count": 32
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightIndexDistal",
+          "reason": "clamped",
+          "count": 176
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightIndexIntermediate",
+          "reason": "clamped",
+          "count": 179
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightIndexProximal",
+          "reason": "clamped",
+          "count": 52
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightLittleDistal",
+          "reason": "clamped",
+          "count": 176
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightLittleIntermediate",
+          "reason": "clamped",
+          "count": 179
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightLittleProximal",
+          "reason": "clamped",
+          "count": 52
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightMiddleDistal",
+          "reason": "clamped",
+          "count": 176
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightMiddleIntermediate",
+          "reason": "clamped",
+          "count": 179
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightMiddleProximal",
+          "reason": "clamped",
+          "count": 52
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightRingDistal",
+          "reason": "clamped",
+          "count": 176
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightRingIntermediate",
+          "reason": "clamped",
+          "count": 179
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightRingProximal",
+          "reason": "clamped",
+          "count": 52
+        },
+        {
+          "stage": "solver",
+          "channel": "eyeBlinkLeft",
+          "reason": "accepted",
+          "count": 160
+        },
+        {
+          "stage": "solver",
+          "channel": "eyeBlinkRight",
+          "reason": "accepted",
+          "count": 160
+        },
+        {
+          "stage": "solver",
+          "channel": "hands",
+          "reason": "not_detected",
+          "count": 94
+        },
+        {
+          "stage": "solver",
+          "channel": "head",
+          "reason": "accepted",
+          "count": 160
+        },
+        {
+          "stage": "solver",
+          "channel": "jawOpen",
+          "reason": "accepted",
+          "count": 160
+        },
+        {
+          "stage": "solver",
+          "channel": "leftArm",
+          "reason": "low_visibility",
+          "count": 92
+        },
+        {
+          "stage": "solver",
+          "channel": "leftEye",
+          "reason": "accepted",
+          "count": 826
+        },
+        {
+          "stage": "solver",
+          "channel": "leftHand",
+          "reason": "accepted",
+          "count": 68
+        },
+        {
+          "stage": "solver",
+          "channel": "leftHand",
+          "reason": "low_visibility",
+          "count": 92
+        },
+        {
+          "stage": "solver",
+          "channel": "leftLowerArm",
+          "reason": "accepted",
+          "count": 68
+        },
+        {
+          "stage": "solver",
+          "channel": "leftShoulder",
+          "reason": "accepted",
+          "count": 84
+        },
+        {
+          "stage": "solver",
+          "channel": "leftShoulder",
+          "reason": "low_visibility",
+          "count": 76
+        },
+        {
+          "stage": "solver",
+          "channel": "leftThumbMetacarpal",
+          "reason": "clamped",
+          "count": 1
+        },
+        {
+          "stage": "solver",
+          "channel": "leftUpperArm",
+          "reason": "accepted",
+          "count": 68
+        },
+        {
+          "stage": "solver",
+          "channel": "legs",
+          "reason": "disabled_by_mode",
+          "count": 160
+        },
+        {
+          "stage": "solver",
+          "channel": "mouthSmileLeft",
+          "reason": "accepted",
+          "count": 160
+        },
+        {
+          "stage": "solver",
+          "channel": "mouthSmileRight",
+          "reason": "accepted",
+          "count": 160
+        },
+        {
+          "stage": "solver",
+          "channel": "neck",
+          "reason": "accepted",
+          "count": 160
+        },
+        {
+          "stage": "solver",
+          "channel": "rightArm",
+          "reason": "low_visibility",
+          "count": 80
+        },
+        {
+          "stage": "solver",
+          "channel": "rightEye",
+          "reason": "accepted",
+          "count": 826
+        },
+        {
+          "stage": "solver",
+          "channel": "rightHand",
+          "reason": "accepted",
+          "count": 140
+        },
+        {
+          "stage": "solver",
+          "channel": "rightHand",
+          "reason": "low_visibility",
+          "count": 84
+        },
+        {
+          "stage": "solver",
+          "channel": "rightIndexDistal",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightIndexIntermediate",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightIndexProximal",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightLittleDistal",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightLittleIntermediate",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightLittleProximal",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightLowerArm",
+          "reason": "accepted",
+          "count": 80
+        },
+        {
+          "stage": "solver",
+          "channel": "rightMiddleDistal",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightMiddleIntermediate",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightMiddleProximal",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightRingDistal",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightRingIntermediate",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightRingProximal",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightShoulder",
+          "reason": "accepted",
+          "count": 106
+        },
+        {
+          "stage": "solver",
+          "channel": "rightShoulder",
+          "reason": "low_visibility",
+          "count": 54
+        },
+        {
+          "stage": "solver",
+          "channel": "rightThumbDistal",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightThumbMetacarpal",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightThumbProximal",
+          "reason": "low_visibility",
+          "count": 64
+        },
+        {
+          "stage": "solver",
+          "channel": "rightUpperArm",
+          "reason": "accepted",
+          "count": 80
+        },
+        {
+          "stage": "solver",
+          "channel": "root",
+          "reason": "disabled_by_mode",
+          "count": 826
+        },
+        {
+          "stage": "solver",
+          "channel": "spine",
+          "reason": "low_visibility",
+          "count": 160
+        }
+      ]
+    },
+    {
+      "file": "ops/001-zhil/sprint-002/research/trace/human_body.json",
+      "sha256": "6cfef65cc476ba03a5f6b7e24f1ac40356a0fdd7aecb48e68820de7e78864200",
+      "bytes": 9539304,
+      "trace_id": "8c5061a5-4e92-466d-9199-cc58cc7a16a3",
+      "manifest": {
+        "runtime": "@mediapipe/tasks-vision@1.0.1",
+        "modelHashes": {
+          "face": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+          "pose": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a",
+          "hands": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1"
+        },
+        "solverVersion": "motion-solver-2",
+        "settings": {
+          "version": 1,
+          "mode": "seated",
+          "quality": "balanced",
+          "framing": "bust",
+          "orientation": "landscape",
+          "background": "#182339",
+          "mirror": true,
+          "hands": true,
+          "smoothing": 14,
+          "springMotion": "gentle",
+          "captureResolution": "640x480",
+          "zoom": 1,
+          "headRange": 1,
+          "mouthGain": 1.8
+        },
+        "calibration": null,
+        "rigHashes": [],
+        "startTimeMs": 1522833.5,
+        "video": {
+          "traceId": "8c5061a5-4e92-466d-9199-cc58cc7a16a3",
+          "startOffsetMs": 4.5,
+          "stopOffsetMs": 12079.19999999553,
+          "mimeType": "video/webm;codecs=vp9",
+          "sha256": "c7218ae9c3a7e4361462e10baf36cc5da6eb6c8ccdb5153f5f7ea438e4b40d6f"
+        }
+      },
+      "sample_events": 154,
+      "apply_events": 714,
+      "duration_ms": 12060.29999999702,
+      "task_stats": {
+        "face": {
+          "unique_samples": 154,
+          "unique_samples_in_window": 153,
+          "present_unique_samples": 154,
+          "rate_hz_in_window": 12.707967561240698,
+          "sample_interval_ms": {
+            "count": 152,
+            "min": 50.0,
+            "p50": 67.199951171875,
+            "p95": 132.89990234375,
+            "max": 153.199951171875
+          },
+          "inference_ms": {
+            "count": 154,
+            "min": 16.60009765625,
+            "p50": 24.900146484375,
+            "p95": 41.60009765625,
+            "max": 45.60009765625
+          },
+          "age_at_apply_ms": {
+            "count": 714,
+            "min": -4.199951171875,
+            "p50": 94.89990234375,
+            "p95": 157.10009765625,
+            "max": 1629.89990234375
+          },
+          "applies_age_at_least_500ms": 4
+        },
+        "pose": {
+          "unique_samples": 77,
+          "unique_samples_in_window": 76,
+          "present_unique_samples": 77,
+          "rate_hz_in_window": 6.354693550385283,
+          "sample_interval_ms": {
+            "count": 75,
+            "min": 115.89990234375,
+            "p50": 159.599853515625,
+            "p95": 199.7998046875,
+            "max": 203.39990234375
+          },
+          "inference_ms": {
+            "count": 77,
+            "min": 14.800048828125,
+            "p50": 26.099853515625,
+            "p95": 45.39990234375,
+            "max": 59.7998046875
+          },
+          "age_at_apply_ms": {
+            "count": 714,
+            "min": 43.699951171875,
+            "p50": 162.800048828125,
+            "p95": 263.300048828125,
+            "max": 1763.300048828125
+          },
+          "applies_age_at_least_500ms": 12
+        },
+        "hands": {
+          "unique_samples": 77,
+          "unique_samples_in_window": 76,
+          "present_unique_samples": 31,
+          "rate_hz_in_window": 6.354693550385283,
+          "sample_interval_ms": {
+            "count": 75,
+            "min": 115.89990234375,
+            "p50": 159.599853515625,
+            "p95": 199.7998046875,
+            "max": 203.39990234375
+          },
+          "inference_ms": {
+            "count": 77,
+            "min": 10.39990234375,
+            "p50": 28.5,
+            "p95": 54.89990234375,
+            "max": 65.900146484375
+          },
+          "age_at_apply_ms": {
+            "count": 714,
+            "min": 43.699951171875,
+            "p50": 162.800048828125,
+            "p95": 263.300048828125,
+            "max": 1763.300048828125
+          },
+          "applies_age_at_least_500ms": 12
+        }
+      },
+      "unique_hand_observations": 59,
+      "hand_count_per_unique_sample": {
+        "0": 46,
+        "1": 3,
+        "2": 28
+      },
+      "hand_world_visibility": {
+        "0": 1239
+      },
+      "hand_world_presence": {
+        "absent": 1239
+      },
+      "pose_visibility": {
+        "11": {
+          "count": 77,
+          "min": 0.9932975172996521,
+          "p50": 0.9972427487373352,
+          "p95": 0.999367356300354,
+          "max": 0.9994990825653076
+        },
+        "12": {
+          "count": 77,
+          "min": 0.9950736165046692,
+          "p50": 0.9977487921714783,
+          "p95": 0.998808741569519,
+          "max": 0.9989607334136963
+        },
+        "13": {
+          "count": 77,
+          "min": 0.2988142669200897,
+          "p50": 0.5754901170730591,
+          "p95": 0.9461468458175659,
+          "max": 0.9573144316673279
+        },
+        "14": {
+          "count": 77,
+          "min": 0.516522228717804,
+          "p50": 0.7071461081504822,
+          "p95": 0.9353379607200623,
+          "max": 0.9468429088592529
+        },
+        "15": {
+          "count": 77,
+          "min": 0.03760083392262459,
+          "p50": 0.367985337972641,
+          "p95": 0.9437763690948486,
+          "max": 0.9580062031745911
+        },
+        "16": {
+          "count": 77,
+          "min": 0.07125614583492279,
+          "p50": 0.3717406392097473,
+          "p95": 0.9422334432601929,
+          "max": 0.9570721387863159
+        },
+        "23": {
+          "count": 77,
+          "min": 0.002118881558999419,
+          "p50": 0.002801706315949559,
+          "p95": 0.004049390088766813,
+          "max": 0.004253186285495758
+        },
+        "24": {
+          "count": 77,
+          "min": 0.0017850699368864298,
+          "p50": 0.003056403947994113,
+          "p95": 0.005085670854896307,
+          "max": 0.005301476921886206
+        }
+      },
+      "hips_outside_image_samples": 77,
+      "solver_channels": {
+        "spine": {
+          "missing_landmark": 1,
+          "low_visibility": 152
+        },
+        "leftArm": {
+          "missing_landmark": 1,
+          "low_visibility": 92
+        },
+        "rightArm": {
+          "missing_landmark": 1,
+          "low_visibility": 90
+        },
+        "leftUpperArm": {
+          "accepted": 60
+        },
+        "rightUpperArm": {
+          "accepted": 62
+        }
+      },
+      "reasons": [
+        {
+          "stage": "association",
+          "channel": "hand candidate 0",
+          "reason": "invalid_value",
+          "count": 6
+        },
+        {
+          "stage": "association",
+          "channel": "hand candidate 1",
+          "reason": "invalid_value",
+          "count": 26
+        },
+        {
+          "stage": "association",
+          "channel": "leftHand candidate 1",
+          "reason": "hand_distance",
+          "count": 26
+        },
+        {
+          "stage": "association",
+          "channel": "rightHand candidate 0",
+          "reason": "hand_distance",
+          "count": 44
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "leftArm",
+          "reason": "accepted",
+          "count": 294
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "leftHand",
+          "reason": "accepted",
+          "count": 120
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "leftShoulder",
+          "reason": "accepted",
+          "count": 538
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "rightArm",
+          "reason": "accepted",
+          "count": 338
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "rightHand",
+          "reason": "accepted",
+          "count": 124
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "rightShoulder",
+          "reason": "accepted",
+          "count": 580
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "spine",
+          "reason": "accepted",
+          "count": 304
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftIndexDistal",
+          "reason": "clamped",
+          "count": 7
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftIndexIntermediate",
+          "reason": "clamped",
+          "count": 8
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftIndexProximal",
+          "reason": "clamped",
+          "count": 9
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftLittleDistal",
+          "reason": "clamped",
+          "count": 7
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftLittleIntermediate",
+          "reason": "clamped",
+          "count": 8
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftLittleProximal",
+          "reason": "clamped",
+          "count": 9
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftMiddleDistal",
+          "reason": "clamped",
+          "count": 7
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftMiddleIntermediate",
+          "reason": "clamped",
+          "count": 8
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftMiddleProximal",
+          "reason": "clamped",
+          "count": 9
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftRingDistal",
+          "reason": "clamped",
+          "count": 7
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftRingIntermediate",
+          "reason": "clamped",
+          "count": 8
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftRingProximal",
+          "reason": "clamped",
+          "count": 9
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightIndexDistal",
+          "reason": "clamped",
+          "count": 10
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightIndexIntermediate",
+          "reason": "clamped",
+          "count": 18
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightIndexProximal",
+          "reason": "clamped",
+          "count": 22
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightLittleDistal",
+          "reason": "clamped",
+          "count": 10
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightLittleIntermediate",
+          "reason": "clamped",
+          "count": 18
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightLittleProximal",
+          "reason": "clamped",
+          "count": 22
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightMiddleDistal",
+          "reason": "clamped",
+          "count": 10
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightMiddleIntermediate",
+          "reason": "clamped",
+          "count": 18
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightMiddleProximal",
+          "reason": "clamped",
+          "count": 22
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightRingDistal",
+          "reason": "clamped",
+          "count": 10
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightRingIntermediate",
+          "reason": "clamped",
+          "count": 18
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightRingProximal",
+          "reason": "clamped",
+          "count": 22
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftIndexDistal",
+          "reason": "clamped",
+          "count": 122
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftIndexIntermediate",
+          "reason": "clamped",
+          "count": 123
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftIndexProximal",
+          "reason": "clamped",
+          "count": 48
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftLittleDistal",
+          "reason": "clamped",
+          "count": 122
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftLittleIntermediate",
+          "reason": "clamped",
+          "count": 123
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftLittleProximal",
+          "reason": "clamped",
+          "count": 48
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftMiddleDistal",
+          "reason": "clamped",
+          "count": 122
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftMiddleIntermediate",
+          "reason": "clamped",
+          "count": 123
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftMiddleProximal",
+          "reason": "clamped",
+          "count": 48
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftRingDistal",
+          "reason": "clamped",
+          "count": 122
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftRingIntermediate",
+          "reason": "clamped",
+          "count": 123
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftRingProximal",
+          "reason": "clamped",
+          "count": 48
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightIndexDistal",
+          "reason": "clamped",
+          "count": 179
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightIndexIntermediate",
+          "reason": "clamped",
+          "count": 185
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightIndexProximal",
+          "reason": "clamped",
+          "count": 66
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightLittleDistal",
+          "reason": "clamped",
+          "count": 179
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightLittleIntermediate",
+          "reason": "clamped",
+          "count": 185
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightLittleProximal",
+          "reason": "clamped",
+          "count": 66
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightMiddleDistal",
+          "reason": "clamped",
+          "count": 179
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightMiddleIntermediate",
+          "reason": "clamped",
+          "count": 185
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightMiddleProximal",
+          "reason": "clamped",
+          "count": 66
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightRingDistal",
+          "reason": "clamped",
+          "count": 179
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightRingIntermediate",
+          "reason": "clamped",
+          "count": 185
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightRingProximal",
+          "reason": "clamped",
+          "count": 66
+        },
+        {
+          "stage": "solver",
+          "channel": "body",
+          "reason": "stale",
+          "count": 1
+        },
+        {
+          "stage": "solver",
+          "channel": "eyeBlinkLeft",
+          "reason": "accepted",
+          "count": 153
+        },
+        {
+          "stage": "solver",
+          "channel": "eyeBlinkRight",
+          "reason": "accepted",
+          "count": 153
+        },
+        {
+          "stage": "solver",
+          "channel": "frame",
+          "reason": "stale",
+          "count": 4
+        },
+        {
+          "stage": "solver",
+          "channel": "hands",
+          "reason": "not_detected",
+          "count": 91
+        },
+        {
+          "stage": "solver",
+          "channel": "head",
+          "reason": "accepted",
+          "count": 153
+        },
+        {
+          "stage": "solver",
+          "channel": "jawOpen",
+          "reason": "accepted",
+          "count": 153
+        },
+        {
+          "stage": "solver",
+          "channel": "leftArm",
+          "reason": "low_visibility",
+          "count": 92
+        },
+        {
+          "stage": "solver",
+          "channel": "leftArm",
+          "reason": "missing_landmark",
+          "count": 1
+        },
+        {
+          "stage": "solver",
+          "channel": "leftEye",
+          "reason": "accepted",
+          "count": 710
+        },
+        {
+          "stage": "solver",
+          "channel": "leftEye",
+          "reason": "not_detected",
+          "count": 4
+        },
+        {
+          "stage": "solver",
+          "channel": "leftHand",
+          "reason": "accepted",
+          "count": 116
+        },
+        {
+          "stage": "solver",
+          "channel": "leftHand",
+          "reason": "low_visibility",
+          "count": 92
+        },
+        {
+          "stage": "solver",
+          "channel": "leftHand",
+          "reason": "missing_landmark",
+          "count": 1
+        },
+        {
+          "stage": "solver",
+          "channel": "leftIndexDistal",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftIndexIntermediate",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftIndexProximal",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftLittleDistal",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftLittleIntermediate",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftLittleProximal",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftLowerArm",
+          "reason": "accepted",
+          "count": 60
+        },
+        {
+          "stage": "solver",
+          "channel": "leftMiddleDistal",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftMiddleIntermediate",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftMiddleProximal",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftRingDistal",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftRingIntermediate",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftRingProximal",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftShoulder",
+          "reason": "accepted",
+          "count": 82
+        },
+        {
+          "stage": "solver",
+          "channel": "leftShoulder",
+          "reason": "low_visibility",
+          "count": 70
+        },
+        {
+          "stage": "solver",
+          "channel": "leftShoulder",
+          "reason": "missing_landmark",
+          "count": 1
+        },
+        {
+          "stage": "solver",
+          "channel": "leftThumbDistal",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftThumbMetacarpal",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftThumbProximal",
+          "reason": "low_visibility",
+          "count": 56
+        },
+        {
+          "stage": "solver",
+          "channel": "leftUpperArm",
+          "reason": "accepted",
+          "count": 60
+        },
+        {
+          "stage": "solver",
+          "channel": "legs",
+          "reason": "disabled_by_mode",
+          "count": 153
+        },
+        {
+          "stage": "solver",
+          "channel": "mouthSmileLeft",
+          "reason": "accepted",
+          "count": 153
+        },
+        {
+          "stage": "solver",
+          "channel": "mouthSmileRight",
+          "reason": "accepted",
+          "count": 153
+        },
+        {
+          "stage": "solver",
+          "channel": "neck",
+          "reason": "accepted",
+          "count": 153
+        },
+        {
+          "stage": "solver",
+          "channel": "rightArm",
+          "reason": "low_visibility",
+          "count": 90
+        },
+        {
+          "stage": "solver",
+          "channel": "rightArm",
+          "reason": "missing_landmark",
+          "count": 1
+        },
+        {
+          "stage": "solver",
+          "channel": "rightEye",
+          "reason": "accepted",
+          "count": 710
+        },
+        {
+          "stage": "solver",
+          "channel": "rightEye",
+          "reason": "not_detected",
+          "count": 4
+        },
+        {
+          "stage": "solver",
+          "channel": "rightHand",
+          "reason": "accepted",
+          "count": 92
+        },
+        {
+          "stage": "solver",
+          "channel": "rightHand",
+          "reason": "low_visibility",
+          "count": 90
+        },
+        {
+          "stage": "solver",
+          "channel": "rightHand",
+          "reason": "missing_landmark",
+          "count": 1
+        },
+        {
+          "stage": "solver",
+          "channel": "rightIndexDistal",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightIndexIntermediate",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightIndexProximal",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightLittleDistal",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightLittleIntermediate",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightLittleProximal",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightLowerArm",
+          "reason": "accepted",
+          "count": 62
+        },
+        {
+          "stage": "solver",
+          "channel": "rightMiddleDistal",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightMiddleIntermediate",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightMiddleProximal",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightRingDistal",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightRingIntermediate",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightRingProximal",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightShoulder",
+          "reason": "accepted",
+          "count": 124
+        },
+        {
+          "stage": "solver",
+          "channel": "rightShoulder",
+          "reason": "low_visibility",
+          "count": 28
+        },
+        {
+          "stage": "solver",
+          "channel": "rightShoulder",
+          "reason": "missing_landmark",
+          "count": 1
+        },
+        {
+          "stage": "solver",
+          "channel": "rightThumbDistal",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightThumbMetacarpal",
+          "reason": "clamped",
+          "count": 2
+        },
+        {
+          "stage": "solver",
+          "channel": "rightThumbMetacarpal",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightThumbProximal",
+          "reason": "low_visibility",
+          "count": 30
+        },
+        {
+          "stage": "solver",
+          "channel": "rightUpperArm",
+          "reason": "accepted",
+          "count": 62
+        },
+        {
+          "stage": "solver",
+          "channel": "root",
+          "reason": "disabled_by_mode",
+          "count": 702
+        },
+        {
+          "stage": "solver",
+          "channel": "root",
+          "reason": "stale",
+          "count": 12
+        },
+        {
+          "stage": "solver",
+          "channel": "spine",
+          "reason": "low_visibility",
+          "count": 152
+        },
+        {
+          "stage": "solver",
+          "channel": "spine",
+          "reason": "missing_landmark",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "file": "ops/001-zhil/sprint-002/research/trace/human_hand.json",
+      "sha256": "4710110bba38d9a53845ded8dec4b7395246c6ee2453a460d26c89db42bf21ed",
+      "bytes": 6814598,
+      "trace_id": "d127ccbe-0d95-4d64-bb0b-81a72fa7a087",
+      "manifest": {
+        "runtime": "@mediapipe/tasks-vision@1.0.1",
+        "modelHashes": {
+          "face": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+          "pose": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a",
+          "hands": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1"
+        },
+        "solverVersion": "motion-solver-2",
+        "settings": {
+          "version": 1,
+          "mode": "seated",
+          "quality": "balanced",
+          "framing": "bust",
+          "orientation": "landscape",
+          "background": "#182339",
+          "mirror": true,
+          "hands": true,
+          "smoothing": 14,
+          "springMotion": "gentle",
+          "captureResolution": "640x480",
+          "zoom": 1,
+          "headRange": 1,
+          "mouthGain": 1.8
+        },
+        "calibration": null,
+        "rigHashes": [],
+        "startTimeMs": 1425370.4001464844,
+        "video": {
+          "traceId": "d127ccbe-0d95-4d64-bb0b-81a72fa7a087",
+          "startOffsetMs": 2.2000000029802322,
+          "stopOffsetMs": 8975.30000000447,
+          "mimeType": "video/webm;codecs=vp9",
+          "sha256": "d1c534ef3892de7bb6636857341139137e75c598c1f97923b62e1b0fd40cfcda"
+        }
+      },
+      "sample_events": 113,
+      "apply_events": 517,
+      "duration_ms": 8949.10000000149,
+      "task_stats": {
+        "face": {
+          "unique_samples": 113,
+          "unique_samples_in_window": 113,
+          "present_unique_samples": 113,
+          "rate_hz_in_window": 12.699564656669077,
+          "sample_interval_ms": {
+            "count": 112,
+            "min": 50.0,
+            "p50": 68.199951171875,
+            "p95": 123.5,
+            "max": 233.0
+          },
+          "inference_ms": {
+            "count": 113,
+            "min": 15.199951171875,
+            "p50": 23.199951171875,
+            "p95": 38.699951171875,
+            "max": 63.0
+          },
+          "age_at_apply_ms": {
+            "count": 517,
+            "min": 11.60009765625,
+            "p50": 93.199951171875,
+            "p95": 146.60009765625,
+            "max": 262.89990234375
+          },
+          "applies_age_at_least_500ms": 0
+        },
+        "pose": {
+          "unique_samples": 57,
+          "unique_samples_in_window": 57,
+          "present_unique_samples": 57,
+          "rate_hz_in_window": 6.3497823283345385,
+          "sample_interval_ms": {
+            "count": 56,
+            "min": 131.89990234375,
+            "p50": 150.0,
+            "p95": 200.2998046875,
+            "max": 299.800048828125
+          },
+          "inference_ms": {
+            "count": 57,
+            "min": 15.099853515625,
+            "p50": 24.0,
+            "p95": 47.300048828125,
+            "max": 58.10009765625
+          },
+          "age_at_apply_ms": {
+            "count": 517,
+            "min": 58.0,
+            "p50": 162.2001953125,
+            "p95": 263.199951171875,
+            "max": 396.300048828125
+          },
+          "applies_age_at_least_500ms": 0
+        },
+        "hands": {
+          "unique_samples": 57,
+          "unique_samples_in_window": 57,
+          "present_unique_samples": 20,
+          "rate_hz_in_window": 6.3497823283345385,
+          "sample_interval_ms": {
+            "count": 56,
+            "min": 131.89990234375,
+            "p50": 150.0,
+            "p95": 200.2998046875,
+            "max": 299.800048828125
+          },
+          "inference_ms": {
+            "count": 57,
+            "min": 11.2998046875,
+            "p50": 30.5,
+            "p95": 52.199951171875,
+            "max": 95.39990234375
+          },
+          "age_at_apply_ms": {
+            "count": 517,
+            "min": 58.0,
+            "p50": 162.2001953125,
+            "p95": 263.199951171875,
+            "max": 396.300048828125
+          },
+          "applies_age_at_least_500ms": 0
+        }
+      },
+      "unique_hand_observations": 39,
+      "hand_count_per_unique_sample": {
+        "0": 37,
+        "1": 1,
+        "2": 19
+      },
+      "hand_world_visibility": {
+        "0": 819
+      },
+      "hand_world_presence": {
+        "absent": 819
+      },
+      "pose_visibility": {
+        "11": {
+          "count": 57,
+          "min": 0.9942755699157715,
+          "p50": 0.9959521293640137,
+          "p95": 0.9991860389709473,
+          "max": 0.9993285536766052
+        },
+        "12": {
+          "count": 57,
+          "min": 0.9955194592475891,
+          "p50": 0.9970107674598694,
+          "p95": 0.9992866516113281,
+          "max": 0.9994025230407715
+        },
+        "13": {
+          "count": 57,
+          "min": 0.2849709391593933,
+          "p50": 0.47291359305381775,
+          "p95": 0.8955625295639038,
+          "max": 0.913272500038147
+        },
+        "14": {
+          "count": 57,
+          "min": 0.489279568195343,
+          "p50": 0.6463009715080261,
+          "p95": 0.9234011173248291,
+          "max": 0.936014711856842
+        },
+        "15": {
+          "count": 57,
+          "min": 0.031362589448690414,
+          "p50": 0.30528607964515686,
+          "p95": 0.8636534214019775,
+          "max": 0.888846218585968
+        },
+        "16": {
+          "count": 57,
+          "min": 0.08166905492544174,
+          "p50": 0.3610178232192993,
+          "p95": 0.8729469180107117,
+          "max": 0.8966465592384338
+        },
+        "23": {
+          "count": 57,
+          "min": 0.0030691223219037056,
+          "p50": 0.004491585306823254,
+          "p95": 0.008532172068953514,
+          "max": 0.009285233914852142
+        },
+        "24": {
+          "count": 57,
+          "min": 0.003295050235465169,
+          "p50": 0.00458560511469841,
+          "p95": 0.007797199301421642,
+          "max": 0.008984583429992199
+        }
+      },
+      "hips_outside_image_samples": 57,
+      "solver_channels": {
+        "spine": {
+          "low_visibility": 113
+        },
+        "leftArm": {
+          "low_visibility": 77
+        },
+        "rightArm": {
+          "low_visibility": 73
+        },
+        "leftUpperArm": {
+          "accepted": 36
+        },
+        "rightUpperArm": {
+          "accepted": 40
+        }
+      },
+      "reasons": [
+        {
+          "stage": "association",
+          "channel": "leftHand candidate 1",
+          "reason": "hand_distance",
+          "count": 28
+        },
+        {
+          "stage": "association",
+          "channel": "rightHand candidate 0",
+          "reason": "hand_distance",
+          "count": 30
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "leftArm",
+          "reason": "accepted",
+          "count": 199
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "leftHand",
+          "reason": "accepted",
+          "count": 72
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "leftShoulder",
+          "reason": "accepted",
+          "count": 389
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "rightArm",
+          "reason": "accepted",
+          "count": 232
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "rightHand",
+          "reason": "accepted",
+          "count": 80
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "rightShoulder",
+          "reason": "accepted",
+          "count": 418
+        },
+        {
+          "stage": "confidence.presence",
+          "channel": "spine",
+          "reason": "accepted",
+          "count": 226
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftIndexProximal",
+          "reason": "clamped",
+          "count": 4
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftLittleProximal",
+          "reason": "clamped",
+          "count": 4
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftMiddleProximal",
+          "reason": "clamped",
+          "count": 4
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "leftRingProximal",
+          "reason": "clamped",
+          "count": 4
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightIndexIntermediate",
+          "reason": "clamped",
+          "count": 3
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightIndexProximal",
+          "reason": "clamped",
+          "count": 6
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightLittleIntermediate",
+          "reason": "clamped",
+          "count": 3
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightLittleProximal",
+          "reason": "clamped",
+          "count": 6
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightMiddleIntermediate",
+          "reason": "clamped",
+          "count": 3
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightMiddleProximal",
+          "reason": "clamped",
+          "count": 6
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightRingIntermediate",
+          "reason": "clamped",
+          "count": 3
+        },
+        {
+          "stage": "finger.curl",
+          "channel": "rightRingProximal",
+          "reason": "clamped",
+          "count": 6
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftIndexDistal",
+          "reason": "clamped",
+          "count": 55
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftIndexIntermediate",
+          "reason": "clamped",
+          "count": 57
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftIndexProximal",
+          "reason": "clamped",
+          "count": 18
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftLittleDistal",
+          "reason": "clamped",
+          "count": 55
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftLittleIntermediate",
+          "reason": "clamped",
+          "count": 57
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftLittleProximal",
+          "reason": "clamped",
+          "count": 18
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftMiddleDistal",
+          "reason": "clamped",
+          "count": 55
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftMiddleIntermediate",
+          "reason": "clamped",
+          "count": 57
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftMiddleProximal",
+          "reason": "clamped",
+          "count": 18
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftRingDistal",
+          "reason": "clamped",
+          "count": 55
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftRingIntermediate",
+          "reason": "clamped",
+          "count": 57
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "leftRingProximal",
+          "reason": "clamped",
+          "count": 18
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightIndexDistal",
+          "reason": "clamped",
+          "count": 55
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightIndexIntermediate",
+          "reason": "clamped",
+          "count": 57
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightIndexProximal",
+          "reason": "clamped",
+          "count": 16
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightLittleDistal",
+          "reason": "clamped",
+          "count": 55
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightLittleIntermediate",
+          "reason": "clamped",
+          "count": 57
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightLittleProximal",
+          "reason": "clamped",
+          "count": 16
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightMiddleDistal",
+          "reason": "clamped",
+          "count": 55
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightMiddleIntermediate",
+          "reason": "clamped",
+          "count": 57
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightMiddleProximal",
+          "reason": "clamped",
+          "count": 16
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightRingDistal",
+          "reason": "clamped",
+          "count": 55
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightRingIntermediate",
+          "reason": "clamped",
+          "count": 57
+        },
+        {
+          "stage": "finger.spread",
+          "channel": "rightRingProximal",
+          "reason": "clamped",
+          "count": 16
+        },
+        {
+          "stage": "solver",
+          "channel": "eyeBlinkLeft",
+          "reason": "accepted",
+          "count": 113
+        },
+        {
+          "stage": "solver",
+          "channel": "eyeBlinkRight",
+          "reason": "accepted",
+          "count": 113
+        },
+        {
+          "stage": "solver",
+          "channel": "hands",
+          "reason": "not_detected",
+          "count": 73
+        },
+        {
+          "stage": "solver",
+          "channel": "head",
+          "reason": "accepted",
+          "count": 113
+        },
+        {
+          "stage": "solver",
+          "channel": "jawOpen",
+          "reason": "accepted",
+          "count": 113
+        },
+        {
+          "stage": "solver",
+          "channel": "leftArm",
+          "reason": "low_visibility",
+          "count": 77
+        },
+        {
+          "stage": "solver",
+          "channel": "leftEye",
+          "reason": "accepted",
+          "count": 517
+        },
+        {
+          "stage": "solver",
+          "channel": "leftHand",
+          "reason": "accepted",
+          "count": 76
+        },
+        {
+          "stage": "solver",
+          "channel": "leftHand",
+          "reason": "low_visibility",
+          "count": 77
+        },
+        {
+          "stage": "solver",
+          "channel": "leftIndexDistal",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftIndexIntermediate",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftIndexProximal",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftLittleDistal",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftLittleIntermediate",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftLittleProximal",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftLowerArm",
+          "reason": "accepted",
+          "count": 36
+        },
+        {
+          "stage": "solver",
+          "channel": "leftMiddleDistal",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftMiddleIntermediate",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftMiddleProximal",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftRingDistal",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftRingIntermediate",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftRingProximal",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftShoulder",
+          "reason": "accepted",
+          "count": 50
+        },
+        {
+          "stage": "solver",
+          "channel": "leftShoulder",
+          "reason": "low_visibility",
+          "count": 63
+        },
+        {
+          "stage": "solver",
+          "channel": "leftThumbDistal",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftThumbMetacarpal",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftThumbProximal",
+          "reason": "low_visibility",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "leftUpperArm",
+          "reason": "accepted",
+          "count": 36
+        },
+        {
+          "stage": "solver",
+          "channel": "legs",
+          "reason": "disabled_by_mode",
+          "count": 113
+        },
+        {
+          "stage": "solver",
+          "channel": "mouthSmileLeft",
+          "reason": "accepted",
+          "count": 113
+        },
+        {
+          "stage": "solver",
+          "channel": "mouthSmileRight",
+          "reason": "accepted",
+          "count": 113
+        },
+        {
+          "stage": "solver",
+          "channel": "neck",
+          "reason": "accepted",
+          "count": 113
+        },
+        {
+          "stage": "solver",
+          "channel": "rightArm",
+          "reason": "low_visibility",
+          "count": 73
+        },
+        {
+          "stage": "solver",
+          "channel": "rightEye",
+          "reason": "accepted",
+          "count": 517
+        },
+        {
+          "stage": "solver",
+          "channel": "rightHand",
+          "reason": "accepted",
+          "count": 78
+        },
+        {
+          "stage": "solver",
+          "channel": "rightHand",
+          "reason": "low_visibility",
+          "count": 73
+        },
+        {
+          "stage": "solver",
+          "channel": "rightIndexDistal",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightIndexIntermediate",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightIndexProximal",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightLittleDistal",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightLittleIntermediate",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightLittleProximal",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightLowerArm",
+          "reason": "accepted",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "rightMiddleDistal",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightMiddleIntermediate",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightMiddleProximal",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightRingDistal",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightRingIntermediate",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightRingProximal",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightShoulder",
+          "reason": "accepted",
+          "count": 79
+        },
+        {
+          "stage": "solver",
+          "channel": "rightShoulder",
+          "reason": "low_visibility",
+          "count": 34
+        },
+        {
+          "stage": "solver",
+          "channel": "rightThumbDistal",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightThumbMetacarpal",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightThumbProximal",
+          "reason": "low_visibility",
+          "count": 38
+        },
+        {
+          "stage": "solver",
+          "channel": "rightUpperArm",
+          "reason": "accepted",
+          "count": 40
+        },
+        {
+          "stage": "solver",
+          "channel": "root",
+          "reason": "disabled_by_mode",
+          "count": 517
+        },
+        {
+          "stage": "solver",
+          "channel": "spine",
+          "reason": "low_visibility",
+          "count": 113
+        }
+      ]
+    }
+  ]
+}

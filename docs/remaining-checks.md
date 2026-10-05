@@ -2,6 +2,10 @@
 
 [TASK-061](../ops/001-zhil/sprint-001/tasks/backlog/TASK-061.md) collects the tests that need a person.
 The original tasks retain their acceptance requirements.
+The [sprint-002 diagnosis](../ops/001-zhil/sprint-002/research/001-physical-diagnosis.md) now records the supplied physical motion failures.
+Finger and torso motion failed these observations; raised arms also have a reported stability defect.
+The [new plan](../ops/001-zhil/sprint-002/specs/sprint-002-plan.md) controls motion corrections and tests.
+The first corrected build is ready for the [sprint-002 retest](../ops/001-zhil/sprint-002/specs/human-test.md).
 Automated test results do not establish physical or human acceptance.
 
 ## Model library and inspector
@@ -19,7 +23,8 @@ Human review must confirm model appearance, readable reasons, and distinct obser
 
 ## Physical motion
 
-After TASK-055 acceptance, follow the [physical test guide](tracking-check.md).
+Use the [sprint-002 protocol](../ops/001-zhil/sprint-002/specs/sprint-002-plan.md#evidence-to-collect-next) for the next motion tests.
+The supplied traces are sufficient to start the confirmed software repairs.
 Test seated, standing, and close views with both mirror settings.
 Use Camera and model to compare landmarks with the Ene and Rei bones.
 Check each finger separately, plus shoulder motion and gaze direction.

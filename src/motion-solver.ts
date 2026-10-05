@@ -7,6 +7,7 @@ import { validCalibration } from './profiles';
 import { associateHands, calibratedHeadWorld, faceRotation, palmWorldRotation, type PalmPoints } from './retarget-math';
 import { limitFingerRotation } from './finger-solver';
 import { solveLimbWorld } from './limb-solver';
+import { shoulderRoll } from './torso-solver';
 
 export const confidence = (p?: Landmark) => !!p && Number.isFinite(p.x + p.y + p.z) && (p.visibility ?? 1) > 0.55 && (p.presence ?? 1) > 0.55;
 export const point = (p: Landmark) => new Vector3(p.x, -p.y, -p.z);
@@ -34,6 +35,7 @@ export class MotionSolver {
     for(let i=0;i<points.length;i++){
       const point=points[i];
       if(!point||!Number.isFinite(point.x+point.y+point.z)){this.report(channel,point?'invalid_value':'missing_landmark',undefined,undefined,task,indices[i]);return false;}
+      if(task==='hands')continue;
       for(const field of ['visibility','presence']as const){
         if(point[field]===undefined)this.diagnosticSink?.({stage:`confidence.${field}`,channel,reason:'accepted',accepted:true,sampleId:this.sampleIds[task],jointIndex:indices[i],defaultApplied:1});
         if(!((point[field]??1)>.55)){this.report(channel,field==='visibility'?'low_visibility':'low_presence',point[field],.55,task,indices[i]);return false;}
@@ -59,7 +61,10 @@ export class MotionSolver {
   private neutralHead = new Quaternion();
   private neutralRoot = new Vector3(0.5, -0.5, 0);
   private lastTimestamp = -1;
-  private goals = new Map<string, { world: Quaternion; timestamp: number }>();
+  private lastMode = '';
+  private neutralTorsoRoll = 0;
+  private sampleOutcomes:SolverOutcome[]=[];
+  private goals = new Map<string, { world: Quaternion; timestamp: number; task:TrackingTask; sampleId?:number; lostAt?:number }>();
   private palms = new Map<string, PalmPoints>();
   private fingerAxes = new Map<string, Vector3>();
   private limbPlanes = new Map<string, { normal: Vector3; timestamp: number }>();
@@ -122,18 +127,19 @@ export class MotionSolver {
   calibrate(frame: TrackingFrame | null) {
     const head = faceRotation(frame?.faceMatrix ?? null);
     if (head) this.neutralHead.copy(head);
+    if(frame&&frame.samples.pose.present&&recent(frame.samples.pose.timestamp,frame.timestamp))this.neutralTorsoRoll=shoulderRoll(frame)??this.neutralTorsoRoll;
     if (confidence(frame?.poseImage[23]) && confidence(frame?.poseImage[24])) this.neutralRoot.copy(point(frame!.poseImage[23])).add(point(frame!.poseImage[24])).multiplyScalar(0.5);
     this.lastTimestamp = -1; this.goals.clear(); this.limbPlanes.clear();
   }
-  getCalibration(): Calibration { return { version: 1, head: this.neutralHead.toArray(), root: this.neutralRoot.toArray() }; }
+  getCalibration(): Calibration { return { version: 1, head: this.neutralHead.toArray(), root: this.neutralRoot.toArray(), torsoRoll: this.neutralTorsoRoll }; }
   setCalibration(value: Calibration | null) {
-    if (validCalibration(value)) { this.neutralHead.fromArray(value.head); this.neutralRoot.fromArray(value.root); }
-    else { this.neutralHead.identity(); this.neutralRoot.set(0.5, -0.5, 0); }
+    if (validCalibration(value)) { this.neutralHead.fromArray(value.head); this.neutralRoot.fromArray(value.root); this.neutralTorsoRoll=value.torsoRoll??0; }
+    else { this.neutralHead.identity(); this.neutralRoot.set(0.5, -0.5, 0); this.neutralTorsoRoll=0; }
     this.lastTimestamp = -1; this.goals.clear(); this.limbPlanes.clear();
   }
   setExpression(name: string) { this.manual = ['neutral','happy','surprised'].includes(name) ? name : 'neutral'; }
   private setGoal(name: string, world: Quaternion, timestamp: number, task=this.task(name)) {
-    if (world.toArray().every(Number.isFinite) && world.lengthSq() > 1e-8) { this.goals.set(name, { world: world.normalize(), timestamp }); this.report(name,'accepted',undefined,undefined,task); } else this.report(name,'invalid_value',undefined,undefined,task);
+    if (world.toArray().every(Number.isFinite) && world.lengthSq() > 1e-8) { this.goals.set(name, { world: world.normalize(), timestamp, task, sampleId:this.sampleIds[task] }); this.report(name,'accepted',undefined,undefined,task); } else this.report(name,'invalid_value',undefined,undefined,task);
   }
   private aim(name: string, timestamp: number, a?: Landmark, b?: Landmark, referenceDelta?: Quaternion, indices:number[] = [], task=this.task(name)) {
     const rest = this.rests.get(name);
@@ -174,7 +180,8 @@ export class MotionSolver {
     else this.age('hands',frame.samples.hands.timestamp,now,'hands');
     const p = frame.samples.pose.present && recent(poseTime, now) ? frame.pose : [];
     let pelvis: Quaternion | undefined;
-    if (this.points('spine',[p[11],p[12],p[23],p[24]],[11,12,23,24],'pose')) {
+    const fullTorso=[11,12,23,24].every(index=>confidence(p[index]));
+    if (fullTorso) {
       const up = point(p[11]).add(point(p[12])).sub(point(p[23])).sub(point(p[24])).normalize();
       const left = point(p[11]).sub(point(p[12])).normalize();
       const forward = new Vector3().crossVectors(left,up).normalize(); left.crossVectors(up,forward).normalize();
@@ -182,9 +189,8 @@ export class MotionSolver {
         const q = new Quaternion().setFromRotationMatrix(new Matrix4().makeBasis(left,up,forward));
         const e = new Euler().setFromQuaternion(q, 'YXZ');
         if(this.diagnosticSink)for(const [axis,limit]of [['x',.45],['y',.8],['z',.5]]as const)if(Math.abs(e[axis])>limit)this.report(`spine.${axis}`,'clamped',e[axis],limit);
-        e.x=MathUtils.clamp(e.x,-0.45,0.45);e.y=MathUtils.clamp(e.y,-0.8,0.8);e.z=MathUtils.clamp(e.z,-0.5,0.5);
-        const rest = this.rests.get('spine');
-        if (rest) this.setGoal('spine',new Quaternion().setFromEuler(e).multiply(rest.world), poseTime);else this.report('spine','missing_bone');
+        e.x=MathUtils.clamp(e.x,-0.45,0.45);e.y=MathUtils.clamp(e.y,-0.8,0.8);e.z=MathUtils.clamp(e.z-this.neutralTorsoRoll,-0.5,0.5);
+        this.torsoGoals(new Quaternion().setFromEuler(e),poseTime);
         if (settings.mode === 'standing') {
           const hipLine = point(p[23]).sub(point(p[24])).normalize();
           const yaw=Math.atan2(-hipLine.z,hipLine.x),roll=Math.asin(MathUtils.clamp(hipLine.y,-1,1));
@@ -196,16 +202,27 @@ export class MotionSolver {
           const hips = this.rests.get('hips'); if (hips) this.setGoal('hips',pelvis.clone().multiply(hips.world),poseTime);else this.report('hips','missing_bone');
         }
       }else this.report('spine','degenerate_segment',forward.lengthSq(),.5);
-    }
+    } else if(settings.mode==='seated'&&p.length){
+      const roll=shoulderRoll(frame);
+      if(roll!==null){
+        const relative=roll-this.neutralTorsoRoll;
+        this.limit('spine.z',relative,-.5,.5,'pose');
+        this.torsoGoals(new Quaternion().setFromAxisAngle(new Vector3(0,0,1),MathUtils.clamp(relative,-.5,.5)),poseTime);
+        this.diagnosticSink?.({stage:'torso.shoulders.roll',channel:'spine',reason:'accepted',accepted:true,sampleId:this.sampleIds.pose});
+      }else this.report('spine','missing_landmark');
+    }else this.points('spine',[p[11],p[12],p[23],p[24]],[11,12,23,24],'pose');
     for (const [side,s,e,w,h,k,a,t] of [['left',11,13,15,23,25,27,31],['right',12,14,16,24,26,28,32]] as const) {
       this.shoulder(side,poseTime,p,s,e);
       this.limb(side,'Arm',poseTime,p[s],p[e],p[w]);
       // Pose's wrist-to-index direction supplies a fallback when detailed hands disappear.
-      this.aim(side+'Hand',poseTime,p[w],p[side === 'left' ? 19 : 20],undefined,[w,side==='left'?19:20],'pose');
+      const previousHand=this.goals.get(side+'Hand');
+      if(!settings.hands||!previousHand||previousHand.task!=='hands'||now-previousHand.timestamp>=250)
+        this.aim(side+'Hand',poseTime,p[w],p[side === 'left' ? 19 : 20],undefined,[w,side==='left'?19:20],'pose');
       if (settings.mode==='standing') { this.limb(side,'Leg',poseTime,p[h],p[k],p[a],pelvis);this.aim(side+'Foot',poseTime,p[a],p[t],undefined,[a,t],'pose'); }
     }
     if (settings.hands && frame.samples.hands.present && recent(frame.samples.hands.timestamp, now)) for (const [side, hand] of Object.entries(associateHands(frame.hands, p.length ? frame.poseImage : [], { imageAspect: frame.inputSize ? frame.inputSize.width / frame.inputSize.height : 1, diagnostic:this.context('hands') }))) {
       if (hand.world.length !== 21) {this.report(side+'Hand','missing_landmark');continue;}
+      if(!this.points(side+'Hand',hand.world,hand.world.map((_,index)=>index),'hands'))continue;
       const rest = this.rests.get(side+'Hand'), palm = this.palms.get(side);
       if(!rest||!palm)this.report(side+'Hand','missing_bone');
       const rotation = rest && palm && palmWorldRotation(palm, { wrist: point(hand.world[0]), middle: point(hand.world[9]), index: point(hand.world[5]), little: point(hand.world[17]) }, rest.world, {diagnostic:this.context('hands',side+'Hand')});
@@ -218,11 +235,18 @@ export class MotionSolver {
       }
     }
   }
+  private torsoGoals(delta:Quaternion,timestamp:number){
+    const spine=this.rests.get('spine'),chest=this.rests.get('chest');
+    if(spine)this.setGoal('spine',new Quaternion().slerp(delta,chest?.45:1).multiply(spine.world),timestamp);
+    else this.report('spine','missing_bone');
+    // Both goals use world space. The chest receives the total rotation once.
+    if(chest)this.setGoal('chest',delta.clone().multiply(chest.world),timestamp);
+  }
   private shoulder(side:'left'|'right',timestamp:number,p:Landmark[],s:number,e:number) {
-    const name=side+'Shoulder',rest=this.rests.get(name),spine=this.rests.get('spine'),torso=this.goals.get('spine');
+    const name=side+'Shoulder',rest=this.rests.get(name),spine=this.rests.get('chest')??this.rests.get('spine'),torso=this.goals.get('chest')??this.goals.get('spine');
     if(!rest){this.report(name,'missing_bone');return;}
     if(!this.points(name,[p[11],p[12],p[s],p[e]],[11,12,s,e],'pose'))return;
-    // If hips are hidden, use the rest torso as the shoulder reference.
+    // Use the total torso rotation as the shoulder reference.
     const torsoDelta=spine&&torso?torso.world.clone().multiply(spine.world.clone().invert()):new Quaternion();
     const up=new Vector3(0,1,0).applyQuaternion(torsoDelta);
     const across=point(p[s]).sub(point(p[side==='left'?12:11]));
@@ -258,9 +282,15 @@ export class MotionSolver {
     const fresh = frame !== null && frame.version === 1 && recent(frame.timestamp, now);
     const faceFresh = fresh && frame.samples.face.present && recent(frame.samples.face.timestamp, now);
     if(!faceFresh)this.headDiagnostic=null;
+    const mode=settings.mode+':'+settings.hands;
+    if(mode!==this.lastMode){this.goals.clear();this.limbPlanes.clear();this.lastTimestamp=-1;this.lastMode=mode;}
+    const sink=this.diagnosticSink;
     if (fresh && frame.timestamp !== this.lastTimestamp) {
+      this.sampleOutcomes=[];
+      if(sink)this.diagnosticSink=outcome=>{this.sampleOutcomes.push(outcome);sink(outcome);};
       this.headDiagnostic=null;
-      this.lastTimestamp = frame.timestamp; this.goals.clear(); this.expressionGoals = {};
+      this.lastTimestamp = frame.timestamp; this.expressionGoals = {};
+      for(const [name,goal]of this.goals)if(goal.task==='face'||!recent(goal.timestamp,now))this.goals.delete(name);
       this.body(frame,settings,now);
       if(!frame.samples.face.present)this.report('face','not_detected');else this.age('face',frame.samples.face.timestamp,now,'face');
       const face = faceFresh ? faceRotation(frame.faceMatrix) : null;
@@ -272,7 +302,7 @@ export class MotionSolver {
         if (head) {
           if(this.diagnosticSink)this.headDiagnostic={raw:face.toArray(),neutralRelative:face.clone().multiply(this.neutralHead.clone().invert()).toArray(),limited:head.clone().multiply(rest!.world.clone().invert()).toArray(),applied:[]};
           this.setGoal('head',head,frame.samples.face.timestamp);
-          const neck = this.rests.get('neck'), spine = this.rests.get('spine'), torso = this.goals.get('spine');
+          const neck = this.rests.get('neck'), spine = this.rests.get('chest')??this.rests.get('spine'), torso = this.goals.get('chest')??this.goals.get('spine');
           if (neck) {
             const torsoDelta = torso && spine ? torso.world.clone().multiply(spine.world.clone().invert()) : new Quaternion();
             const headDelta = head.clone().multiply(rest!.world.clone().invert());
@@ -286,7 +316,10 @@ export class MotionSolver {
         this.limit('aa',jaw,0,1,'face');
         this.expressionGoals={blinkLeft,blinkRight,aa:Math.min(jaw,1),happy:Math.min(this.faceCoefficient('mouthSmileLeft',frame.face.mouthSmileLeft),this.faceCoefficient('mouthSmileRight',frame.face.mouthSmileRight))*0.55};
       }
+    } else if(fresh) {
+      for(const outcome of this.sampleOutcomes)sink?.(outcome);
     }
+    this.diagnosticSink=sink;
     const alpha = smoothingFactor(settings.smoothing,dt);
     // Snapshot before moving any parent. Smooth in world space, then convert through
     // the updated parent so torso motion is not added a second time to tracked limbs.
@@ -296,7 +329,11 @@ export class MotionSolver {
       if(name.endsWith('Eye'))continue;
       const measured = fresh ? this.goals.get(name) : undefined;
       const parent = rest.node.parent?.getWorldQuaternion(new Quaternion()) ?? new Quaternion();
-      let goal = measured && recent(measured.timestamp,now) ? measured.world : undefined;
+      const rejected=!!measured&&!!frame&&frame.samples[measured.task].timestamp>measured.timestamp;
+      if(rejected&&measured.lostAt===undefined)measured.lostAt=now;
+      const valid=measured&&recent(measured.timestamp,now)&&(!rejected||now-measured.lostAt!<150);
+      let goal = valid ? measured.world : undefined;
+      if(name!=='hips')this.diagnosticSink?.({stage:'application',channel:name,reason:!goal?'decaying':rejected?'held':frame&&measured!.timestamp<frame.timestamp?'cached':'accepted',accepted:!!goal&&!rejected,sampleId:measured?.sampleId??this.sampleIds[this.task(name)]});
       if (!goal) {
         goal = (this.idleArms.get(name) ?? rest.local).clone();
         goal.premultiply(parent);

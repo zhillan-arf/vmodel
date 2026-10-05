@@ -1,5 +1,11 @@
 # TASK-058: Evaluate measured motion corrections
 
+Current direction: 2026-10-05.
+The [sprint-002 diagnosis](../../../sprint-002/research/001-physical-diagnosis.md) now supplies physical evidence.
+S002-001 through S002-004 replace this task's correction work.
+Use the [new plan](../../../sprint-002/specs/sprint-002-plan.md).
+The remaining text preserves the earlier requirements and history.
+
 - Status: Todo
 - Priority: P0
 - Owner: Codex (implementing assistant)

@@ -17,6 +17,6 @@ describe('tracking summary',()=>{
   });
   it('includes face coefficients and preserves mixed decisions',()=>{
     const result=trackingSummary([outcome('head.x',true,'clamped'),outcome('eyeBlinkLeft'),outcome('jawOpen',false,'invalid_value')]);
-    expect(result.rows[0].text).toBe('Accepted: 2. Rejected: 1. Reasons: clamped, accepted, invalid value.');
+    expect(result.rows[0].text).toBe('Accepted: 1. Rejected: 1. Reasons: clamped, accepted, invalid value.');
   });
 });

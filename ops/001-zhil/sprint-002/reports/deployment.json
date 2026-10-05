@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-04T21:01:29.184Z",
+  "url": "https://10.12.1.193:4173/",
+  "model": "Ene · Cyber legs",
+  "marker": true,
+  "health": {
+    "application": "vmodel",
+    "version": "0.1.0"
+  },
+  "errors": [],
+  "tlsCheck": "curl verified the deployed certificate against the local CA."
+}

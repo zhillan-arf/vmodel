@@ -1,0 +1,10 @@
+{
+  "files": 17,
+  "local_links": 89,
+  "sentence_fragments": 653,
+  "errors": [],
+  "limits": [
+    "Sentence length and file checks do not establish full STE compliance.",
+    "A person must check both parts of ASD-STE100 before a compliance claim."
+  ]
+}

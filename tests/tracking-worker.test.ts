@@ -79,18 +79,18 @@ it('keeps epoch freshness timestamps outside the SDK while all task clocks advan
   const epoch=1_800_000_000_000,close=vi.fn(),timestamps=[epoch,epoch+100,epoch+200];
   for(const timestamp of timestamps)await scope.onmessage!({data:{type:'frame',timestamp,bitmap:{close},quality:'balanced',hands:true}});
   expect(tasks.get('face-GPU')!.detectForVideo.mock.calls.map(([,timestamp])=>timestamp)).toEqual([1,101,201]);
-  for(const name of ['pose','hands'])expect(tasks.get(name+'-GPU')!.detectForVideo.mock.calls.map(([,timestamp])=>timestamp)).toEqual([1,201]);
+  for(const name of ['pose','hands'])expect(tasks.get(name+'-GPU')!.detectForVideo.mock.calls.map(([,timestamp])=>timestamp)).toEqual([1,101,201]);
   const messages=scope.postMessage.mock.calls.map(([message])=>message),frames=messages.filter(message=>message.type==='result').map(message=>message.frame);
   expect(messages.some(message=>message.type==='error')).toBe(false);
   expect(frames.map(frame=>frame.timestamp)).toEqual(timestamps);
   expect(frames.map(frame=>frame.samples.face.timestamp)).toEqual(timestamps);
-  for(const name of ['pose','hands'])expect(frames.map(frame=>frame.samples[name].timestamp)).toEqual([epoch,epoch,epoch+200]);
+  for(const name of ['pose','hands'])expect(frames.map(frame=>frame.samples[name].timestamp)).toEqual(timestamps);
   expect(close).toHaveBeenCalledTimes(3);
 });
 it('closes every frame and preserves separate sampling timestamps at reduced cadence',async()=>{
   await scope.onmessage!({data:{type:'init'}});
   const close=vi.fn();
-  for(const timestamp of [100,200,300])await scope.onmessage!({data:{type:'frame',timestamp,bitmap:{close},quality:'balanced',hands:true}});
+  for(const timestamp of [100,200,300])await scope.onmessage!({data:{type:'frame',timestamp,bitmap:{close},quality:'low',hands:true}});
   expect(close).toHaveBeenCalledTimes(3);
   expect(tasks.get('face-GPU')!.detectForVideo).toHaveBeenCalledTimes(3);
   expect(tasks.get('pose-GPU')!.detectForVideo).toHaveBeenCalledTimes(2);
@@ -100,13 +100,13 @@ it('closes every frame and preserves separate sampling timestamps at reduced cad
   expect(frames.map(f=>f.samples.pose.timestamp)).toEqual([100,100,300]);
   expect(frames.map(f=>f.samples.face.timestamp)).toEqual([100,200,300]);
   tasks.get('face-GPU')!.detectForVideo.mockImplementation(()=>{throw new Error('inference failure');});
-  await scope.onmessage!({data:{type:'frame',timestamp:400,bitmap:{close},quality:'balanced',hands:true}});
+  await scope.onmessage!({data:{type:'frame',timestamp:400,bitmap:{close},quality:'low',hands:true}});
   expect(close).toHaveBeenCalledTimes(4);
   expect(scope.postMessage).toHaveBeenLastCalledWith({type:'error',message:expect.stringContaining('inference failure')});
 });
 it('keeps cached diagnostic identity and counts no disabled hand detection',async()=>{
   await scope.onmessage!({data:{type:'init'}});
-  for(let i=0;i<3;i++)await scope.onmessage!({data:{type:'frame',timestamp:100+i*100,bitmap:{width:640,height:480,close:vi.fn()},quality:'balanced',hands:false,demand:'inspect',anchor:100,sessionId:'fixture',captureSequence:i+1,videoTimeMs:i*100}});
+  for(let i=0;i<3;i++)await scope.onmessage!({data:{type:'frame',timestamp:100+i*100,bitmap:{width:640,height:480,close:vi.fn()},quality:'low',hands:false,demand:'inspect',anchor:100,sessionId:'fixture',captureSequence:i+1,videoTimeMs:i*100}});
   const results=scope.postMessage.mock.calls.map(([message])=>message).filter(message=>message.type==='result');
   expect(results.map(x=>x.diagnostics.tasks.pose.sampleSequence)).toEqual([1,1,2]);
   expect(results.map(x=>x.diagnostics.tasks.pose.captureSequence)).toEqual([1,1,3]);

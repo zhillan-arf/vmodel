@@ -25,7 +25,10 @@ The [research evaluation](../../reports/studio-research-evaluation.md), [action 
 
 [TASK-P04](../active/TASK-P04.md) owns G5 and TASK-039 through TASK-048. [TASK-P05](../active/TASK-P05.md) owns G6 and TASK-049 through TASK-060.
 
-Checkpoint on 2026-10-05: 37 Done; 18 In progress; 1 Blocked; 1 Ready; 5 Todo.
+Checkpoint on 2026-10-05: 37 Done; 19 In progress; 0 Blocked; 1 Ready; 5 Todo.
+The [sprint-002 diagnosis](../../../sprint-002/research/001-physical-diagnosis.md) now includes actual physical evidence.
+The [transfer plan](../../../sprint-002/specs/sprint-002-plan.md#sprint-001-transfer) replaces this register's remaining motion execution order.
+These task states retain historical acceptance requirements.
 TASK-061 collects human tests. P04 and P05 retain their release requirements.
 
 [TASK-P01](../active/TASK-P01.md) coordinates all 62 tasks. Individual tasks control detailed acceptance. P01 remains open through TASK-021 and TASK-061.
@@ -40,7 +43,9 @@ G4 is complete for its recorded local scope. Use TASK-P03 for its evidence and e
 
 For G5 and G6, continue the remaining checks in the [implementation record](../../reports/studio-implementation.md). Real-model and physical acceptance remain open.
 
-Physical diagnosis in TASK-056 follows inspector acceptance. Do not alter tracking parameters before that diagnosis. TASK-060 requires the G5 handoff.
+TASK-056 now has a partial physical diagnosis.
+Use sprint 002 for subsequent motion corrections and acceptance.
+TASK-060 retains its G5 handoff requirement.
 
 **TASK-022** is Done; continue **TASK-023** auditions and the dependency-ready voice work. Three functional English-reference conversions are available. Live performance and final voice fit remain untested. TASK-024's long-unexplained timing variability is resolved as [hybrid-core placement](../../reports/voice-llvc-hybrid-cores.md), but its paced streaming proof [passed only once and does not reproduce under ordinary load](../../reports/voice-combined-workload.md); its combined-workload verdict is recorded as a measured defect. The avatar is unaffected by the converter and needs no pinning. The conditional A100 option is currently described as VPN-accessible vLLM API access; its actual voice capabilities remain unknown.
 
@@ -114,7 +119,7 @@ TASK-027's training is conditional: close with evidence that an existing voice f
 | [TASK-053](../archived/TASK-053.md) | Implement bounded traces and deterministic replay | G6 | TASK-049, TASK-050 | Done |
 | [TASK-054](../archived/TASK-054.md) | Compare canonical motion with both avatars | G6 | TASK-040, TASK-050, TASK-052, TASK-053 | Done |
 | [TASK-055](../active/TASK-055.md) | Verify inspector performance and visual clarity | G6 | TASK-051, TASK-052, TASK-053, TASK-054 | In progress |
-| [TASK-056](../active/TASK-056.md) | Diagnose live motion through all tracker stages | G6 | TASK-055 | Blocked |
+| [TASK-056](../active/TASK-056.md) | Diagnose live motion through all tracker stages | G6 | TASK-055 | In progress |
 | [TASK-057](TASK-057.md) | Evaluate and correct measured task scheduling faults | G6 | TASK-056 | Todo |
 | [TASK-058](TASK-058.md) | Evaluate measured motion corrections | G6 | TASK-056, TASK-057 | Todo |
 | [TASK-059](TASK-059.md) | Accept motion corrections and state sensing limits | G6 | TASK-057, TASK-058 | Todo |

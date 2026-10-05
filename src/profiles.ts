@@ -8,6 +8,7 @@ export function saveLocal(key: string, value: unknown): boolean {
 export function validCalibration(value: unknown): value is Calibration {
   if (!value || typeof value !== 'object') return false;
   const c = value as Calibration;
+  if(c.torsoRoll!==undefined&&(!Number.isFinite(c.torsoRoll)||Math.abs(c.torsoRoll)>Math.PI/2))return false;
   if (c.version !== 1 || !Array.isArray(c.head) || c.head.length !== 4 || !Array.isArray(c.root) || c.root.length !== 3) return false;
   if (![...c.head, ...c.root].every(v => typeof v === 'number' && Number.isFinite(v))) return false;
   const norm = Math.hypot(...c.head);

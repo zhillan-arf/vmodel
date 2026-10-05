@@ -4,8 +4,8 @@ import { validCalibration } from './profiles';
 import type { VideoMapping } from './tracking-video';
 import type { DiagnosticEnvelope, SolverOutcome } from './tracking-diagnostics';
 export const traceLimits={duration:60000,samples:1800,applies:7200,events:10000,bytes:32*1024*1024};
-export const solverVersion='motion-solver-2';
-export interface TraceManifest {runtime:string;modelHashes:Record<string,string>;solverVersion:string;settings:StudioSettings;calibration:Calibration|null;rigHashes:string[];startTimeMs?:number;video?:VideoMapping}
+export const solverVersion='motion-solver-3';
+export interface TraceManifest {runtime:string;modelHashes:Record<string,string>;solverVersion:string;confidenceAdapterVersion?:string;diagnosticRig?:'canonical';settings:StudioSettings;calibration:Calibration|null;rigHashes:string[];startTimeMs?:number;video?:VideoMapping}
 type EventData = {kind:'sample';frame:TrackingFrame;diagnostics:DiagnosticEnvelope;reasons:SolverOutcome[];references?:Partial<Record<'face'|'pose'|'hands',number>>}|{kind:'apply';frameSequence:number;solverTimeMs:number;dt:number;reasons?:SolverOutcome[]}|{kind:'settings';settings:StudioSettings}|{kind:'calibration';calibration:Calibration|null}|{kind:'reset'};
 export type TraceEvent=EventData&{sequence:number;timeMs:number};
 export interface TrackingTrace {type:'vmodel-trace';version:1;id:string;manifest:TraceManifest;events:TraceEvent[]}
@@ -75,17 +75,19 @@ function validateSettings(value:unknown){
   const normalized=normalizeSettings(value);exact(value,Object.keys(normalized));
   if(Object.keys(value).length!==Object.keys(normalized).length||Object.entries(normalized).some(([key,expected])=>value[key]!==expected))throw new Error('Invalid trace settings.');
 }
-function validateCalibration(value:unknown){if(value===null)return;exact(value,['version','head','root']);if(!validCalibration(value))throw new Error('Invalid trace calibration.');}
+function validateCalibration(value:unknown){if(value===null)return;exact(value,['version','head','root','torsoRoll']);if(!validCalibration(value))throw new Error('Invalid trace calibration.');}
 function validateReasons(value:unknown){
   if(!Array.isArray(value)||value.length>512)throw new Error('Invalid solver reasons.');
-  const reasons=['accepted','not_detected','missing_landmark','invalid_value','low_visibility','low_presence','stale','future_sample','disabled_by_mode','disabled_by_setting','ambiguous_hand','hand_distance','hand_score','missing_bone','degenerate_segment','invalid_rest','invalid_parameter','fully_folded','plane_jump','palm_edge_on','clamped'];
+  const reasons=['accepted','not_detected','missing_landmark','invalid_value','low_visibility','low_presence','stale','future_sample','disabled_by_mode','disabled_by_setting','ambiguous_hand','hand_distance','hand_score','missing_bone','degenerate_segment','invalid_rest','invalid_parameter','fully_folded','plane_jump','palm_edge_on','clamped','held','decaying','cached'];
   for(const reason of value){exact(reason,['stage','channel','reason','accepted','sampleId','jointIndex','value','threshold','defaultApplied']);if(!reasons.includes(reason.reason)||typeof reason.accepted!=='boolean'||typeof reason.stage!=='string'||typeof reason.channel!=='string'||reason.stage.length>80||reason.channel.length>80)throw new Error('Invalid solver reason.');for(const key of ['sampleId','jointIndex'])if(reason[key]!==undefined&&(!Number.isSafeInteger(reason[key])||reason[key]<0))throw new Error('Invalid solver reference.');for(const key of ['value','threshold','defaultApplied'])if(reason[key]!==undefined&&!Number.isFinite(reason[key]))throw new Error('Invalid solver measurement.');}
 }
 export async function importTrace(blob:Blob):Promise<TrackingTrace>{
   if(blob.size>traceLimits.bytes)throw new Error('Trace exceeds 32 MiB.');
   const value:unknown=JSON.parse(await blob.text());finiteTree(value);exact(value,['type','version','id','manifest','events']);
   if(value.type!=='vmodel-trace'||value.version!==1||typeof value.id!=='string'||!Array.isArray(value.events)||value.events.length>traceLimits.events)throw new Error('Unsupported trace format.');
-  exact(value.manifest,['runtime','modelHashes','solverVersion','settings','calibration','rigHashes','startTimeMs','video']);
+  exact(value.manifest,['runtime','modelHashes','solverVersion','confidenceAdapterVersion','diagnosticRig','settings','calibration','rigHashes','startTimeMs','video']);
+  if(value.manifest.diagnosticRig!==undefined&&value.manifest.diagnosticRig!=='canonical')throw new Error('Invalid diagnostic rig.');
+  if(value.manifest.confidenceAdapterVersion!==undefined&&(typeof value.manifest.confidenceAdapterVersion!=='string'||value.manifest.confidenceAdapterVersion.length>128))throw new Error('Invalid confidence adapter version.');
   if(value.manifest.video!==undefined){exact(value.manifest.video,['traceId','startOffsetMs','stopOffsetMs','mimeType','sha256']);const video=value.manifest.video;if(video.traceId!==value.id||!Number.isFinite(video.startOffsetMs)||!Number.isFinite(video.stopOffsetMs)||video.startOffsetMs<0||video.stopOffsetMs<video.startOffsetMs||video.stopOffsetMs-video.startOffsetMs>61000||typeof video.mimeType!=='string')throw new Error('Invalid video timing.');}
   if(value.manifest.startTimeMs!==undefined&&(!Number.isFinite(value.manifest.startTimeMs)||value.manifest.startTimeMs<0))throw new Error('Invalid trace start time.');
   if(value.manifest.video?.sha256!==undefined&&(typeof value.manifest.video.sha256!=='string'||!/^[a-f0-9]{64}$/.test(value.manifest.video.sha256)))throw new Error('Invalid video hash.');

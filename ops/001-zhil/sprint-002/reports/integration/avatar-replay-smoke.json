@@ -1,0 +1,56 @@
+{
+  "tracePath": "ops/001-zhil/sprint-001/reports/local/avatar-comparison-trace.json",
+  "baselineCommit": "da48542e991aa202a1b9eaafc1a4f1cbb22ef7b9",
+  "generatedAt": "2026-10-04T21:04:32.942Z",
+  "browser": "153.0.8010.12",
+  "traceHash": "e1a28a83a908705fa652d17caef75bc8ce2313f373166b791085842532811b8a",
+  "samples": 120,
+  "results": [
+    {
+      "id": "canonical",
+      "hash": null,
+      "baselineAngle": 0.23342088736031738,
+      "baselinePosition": 0,
+      "goalsEqual": false,
+      "bones": 53,
+      "leftChangeRadians": 0.653776758183156,
+      "rightChangeRadians": 0.0000013058723390225787,
+      "forwardError": 0,
+      "backwardError": 2.9802322387695312e-8,
+      "repeatedError": 0
+    },
+    {
+      "id": "ene",
+      "hash": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+      "baselineAngle": 0.23342088736031738,
+      "baselinePosition": 0,
+      "goalsEqual": false,
+      "bones": 53,
+      "leftChangeRadians": 0.6546434156180372,
+      "rightChangeRadians": 0.0000013058723390225787,
+      "forwardError": 2.9802322387695312e-8,
+      "backwardError": 2.9802322387695312e-8,
+      "repeatedError": 2.9802322387695312e-8
+    },
+    {
+      "id": "rei",
+      "hash": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+      "baselineAngle": 0.23342088736031738,
+      "baselinePosition": 0,
+      "goalsEqual": false,
+      "bones": 53,
+      "leftChangeRadians": 0.6493907887329771,
+      "rightChangeRadians": 0.0000013058723390225787,
+      "forwardError": 2.9802322387695312e-8,
+      "backwardError": 2.9802322387695312e-8,
+      "repeatedError": 2.9802322387695312e-8
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "The old solver supplies comparison measurements, not an equality requirement.",
+    "The current solver includes shoulder control, torso distribution, and bounded recovery.",
+    "Synthetic anatomical input on the local Ene and native Rei rigs.",
+    "No physical detector accuracy or target-laptop performance claim."
+  ]
+}

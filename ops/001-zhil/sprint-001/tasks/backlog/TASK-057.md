@@ -1,5 +1,10 @@
 # TASK-057: Evaluate and correct measured task scheduling faults
 
+Current direction: 2026-10-05.
+The [sprint-002 diagnosis](../../../sprint-002/research/001-physical-diagnosis.md) now supplies physical evidence.
+[S002-005](../../../sprint-002/tasks/backlog/S002-005.md) replaces this task's execution order.
+The remaining text preserves the earlier requirements and history.
+
 - Status: Todo
 - Priority: P0
 - Owner: Codex (implementing assistant)

@@ -1,5 +1,10 @@
 # TASK-011: Implement torso and arm motion for seated performance
 
+Current direction: 2026-10-05.
+The physical tests show failed torso motion and unstable arms.
+Use [S002-002](../../../sprint-002/tasks/backlog/S002-002.md) and [S002-003](../../../sprint-002/tasks/backlog/S002-003.md) for the replacement correction work.
+The remaining text preserves the earlier requirements and history.
+
 - Status: In progress
 - Priority: P0
 - Goal: G2
