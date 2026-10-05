@@ -42,11 +42,17 @@ app.innerHTML = output ? '<main id="stage" class="output-stage"></main>' : `
     <label class="check"><input id="hands" type="checkbox" /> Follow hands and fingers</label>
     <label>Head movement range<input id="headRange" type="range" min="0.5" max="1.3" step="0.05" /></label>
     <label>Mouth sensitivity<input id="mouthGain" type="range" min="0.8" max="3" step="0.1" /></label>
+    <label>Face controls<select id="faceDetail"><option value="basic">Basic</option><option value="extended">More detail</option></select></label>
+    <p class="hint">More detail uses available brow and mouth shapes. Select Neutral to follow your face.</p>
     <label>Response speed<input id="smoothing" type="range" min="4" max="30" step="1" /></label>
     <label class="check"><input id="preview" type="checkbox" /> Show camera preview</label>
     <video id="camera-video" autoplay playsinline muted hidden></video>
     <div class="section-heading">THE LOOK <span>03</span></div>
-    <div class="pair"><label>Frame<select id="framing"><option value="body">Full avatar</option><option value="bust">Close-up</option></select></label><label>Canvas<select id="orientation"><option value="landscape">16:9</option><option value="portrait">9:16</option></select></label></div>
+    <div class="pair"><label>Frame<select id="framing"><option value="body">Full avatar</option><option value="bust">Upper body</option><option value="face">Face</option></select></label><label>Canvas<select id="orientation"><option value="landscape">16:9</option><option value="portrait">9:16</option></select></label></div>
+    <label>Output size<select id="outputResolution"><option value="720p">720p</option><option value="1080p">1080p</option></select></label>
+    <label>Light<select id="lighting"><option value="studio">Studio</option><option value="warm">Warm</option><option value="violet">Violet</option></select></label>
+    <label>Light intensity<input id="lightIntensity" type="range" min="0.4" max="1.6" step="0.05" /></label>
+    <label>Camera field of view<input id="cameraFov" type="range" min="20" max="50" step="1" /></label>
     <div class="pair"><label>Background<input id="background" type="color" /></label><label>Quality<select id="quality"><option value="balanced">Balanced</option><option value="low">Low power</option></select></label></div>
     <label>Zoom<input id="zoom" type="range" min="0.65" max="1.6" step="0.05" /></label>
     <label class="check"><input id="mirror" type="checkbox" /> Mirror my performance</label>
@@ -105,7 +111,7 @@ const link = new OutputLink(output, session,
   state => { void receiveSnapshot(state); }, frame => { lastFrame = frame; }, () => loadingAvatarId ?? avatarId,
   count => {
     if (output) { document.title = count ? `VModel Output · ${settings.orientation}` : 'VModel Output · waiting for controls'; return; }
-    const el = document.querySelector('#output-status'), size = compositionSize(settings.orientation);
+    const el = document.querySelector('#output-status'), size = compositionSize(settings.orientation, settings.outputResolution);
     if (el) el.textContent = count ? `${count} output connected · ${size.width} × ${size.height}` : 'Output closed · Escape returns from Clean view';
   }, peers => { const el=document.querySelector('#output-peer-status');if(el)el.textContent=peers.map(peer=>`Output ${peer.state} · revision ${peer.revision}${peer.revision!==selectionRevision?' · Model mismatch':''}${peer.message?' · '+peer.message:''}`).join(' | '); });
 function applySettings() {
@@ -113,7 +119,7 @@ function applySettings() {
   viewer.configure(settings);
   viewer.renderer.domElement.style.transform = settings.mirror ? 'scaleX(-1)' : '';
   if (!output) {
-    for (const key of ['mode','quality','framing','orientation','background','springMotion','captureResolution','zoom','headRange','mouthGain','smoothing'] as const) (document.getElementById(key) as HTMLInputElement).value = String(settings[key]);
+    for (const key of ['mode','quality','framing','orientation','outputResolution','lighting','lightIntensity','cameraFov','background','springMotion','captureResolution','zoom','headRange','mouthGain','faceDetail','smoothing'] as const) (document.getElementById(key) as HTMLInputElement).value = String(settings[key]);
     for (const key of ['hands','mirror'] as const) (document.getElementById(key) as HTMLInputElement).checked = settings[key];
     saveLocal('vmodel-settings', settings); if (avatarId) saveLocal(avatarSettingsKey(avatarId), settings);
     link.publish();
@@ -237,9 +243,9 @@ else {
   });
   document.querySelector('#avatar-select')!.addEventListener('change', e => { void loadBundle((e.target as HTMLSelectElement).value); });
   document.querySelector('#avatar-file')!.addEventListener('change', e => { const file = (e.target as HTMLInputElement).files?.[0]; (e.target as HTMLInputElement).value=''; if (file) { navigation.select('library'); libraryPanel!.importFile(file); } });
-  for (const key of ['mode','quality','framing','orientation','background','hands','springMotion','captureResolution','zoom','mirror','headRange','mouthGain','smoothing'] as const) document.getElementById(key)!.addEventListener('change', e => {
+  for (const key of ['mode','quality','framing','orientation','outputResolution','lighting','lightIntensity','cameraFov','background','hands','springMotion','captureResolution','zoom','mirror','headRange','mouthGain','faceDetail','smoothing'] as const) document.getElementById(key)!.addEventListener('change', e => {
     const input = e.target as HTMLInputElement;
-    settings = { ...settings, [key]: key === 'hands' || key === 'mirror' ? input.checked : ['zoom','headRange','mouthGain','smoothing'].includes(key) ? Number(input.value) : input.value };
+    settings = { ...settings, [key]: key === 'hands' || key === 'mirror' ? input.checked : ['zoom','headRange','mouthGain','smoothing','lightIntensity','cameraFov'].includes(key) ? Number(input.value) : input.value };
     if (key === 'mode') restoreCalibration();
     applySettings();
     if (key === 'captureResolution') status('Camera size saved. Press Start camera to apply it.');
@@ -249,7 +255,7 @@ else {
     expression = button.dataset.expression!; applyPerformanceState(); link.publish();
   }));
   document.querySelector('#output')!.addEventListener('click', () => {
-    const size = compositionSize(settings.orientation);
+    const size = compositionSize(settings.orientation, settings.outputResolution);
     const child = window.open(`/?output=1&session=${encodeURIComponent(session!)}`, `vmodel-output-${session}`, `width=${size.width},height=${size.height}`);
     if (!child) status('Allow this local site to open its output window, then retry.');
   });

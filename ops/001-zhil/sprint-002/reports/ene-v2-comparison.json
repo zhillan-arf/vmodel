@@ -1,0 +1,3730 @@
+{
+  "date": "2026-10-05T02:50:32.609Z",
+  "hashes": {
+    "ene": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+    "ene-v2": "952e05bae0f20976df6a3340a6aba3c92422b2a6455b8f6029a9b5241d099e2d"
+  },
+  "sourceHashes": {
+    "src/viewer.ts": "7edb210c5144b92dd22ce2f4f023fc5191cc19b8359ab407b0945fa62f7d9fe6",
+    "src/lighting.ts": "80c2ce7e013aca57ad1b6e5bfabced094c36994d5e5fc5c0aa316b75d2a3dd1d",
+    "src/types.ts": "5df057a789f79ac0ccb1519e9ad4339b663779a5184a9deefd2aedf3d628f451",
+    "src/composition.ts": "848bcba6892cbb9958cb1196a30cda37de079c4e2d23ff95d388e81b94e0c67b",
+    "src/face-expressions.ts": "c3efafc66aea7ca9294342752086c10b574a8fb7106625ddf1b22ccbe64701d0",
+    "src/motion-solver.ts": "9de367b984722743c354e04570ce1fd8aa39b909c578aec0a2e2a2c6917aed7c",
+    "src/profiles.ts": "9ff5538dd70c3e23002b38172825226fcbf251151548d84ecaddae020ec62998",
+    "src/tracking-recording.ts": "967f4d023bd2a80ddcbb38a836dd9fb3faf7c280023413ee26834315c3928ae6",
+    "src/vrm-inspection.ts": "23986f1a5c593e1d3624c42d801165c006a9ce93ec3d8d3b48550876fdbc11d5",
+    "config/avatars/ene-v2.json": "7963eabcf7169f8f0a9ccea8ebd47c45cfd30eaf7c8670db463b5d184e21ff37",
+    "scripts/build_ene_v2.py": "6059e80bf786a9a903c4a12d0ee200882670a0f78f10d88207e78afb6ac02413",
+    "scripts/vrm_asset.py": "c8fda4a597efb80976267dd6909f0e85364a83aebfae923e2cd7ad1c579e84fb",
+    "scripts/ene_v2_compare.mjs": "74b17492d474953aad836880e8e45086ba2b3f5c2ac3a53ccf13ae14cbf1004c"
+  },
+  "validation": {
+    "ene": {
+      "errors": 0,
+      "warnings": 58,
+      "messages": [
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/0/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/1/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/2/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/3/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/4/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/5/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/6/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/7/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/8/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/9/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/10/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/11/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/12/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/13/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/14/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/15/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/16/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/17/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/18/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/19/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/20/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/21/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/22/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/23/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/24/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/25/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/26/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/27/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/28/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/29/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/30/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/31/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/32/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/33/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/34/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/35/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/36/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/37/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/38/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/39/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/40/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/41/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/42/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/43/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/44/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/45/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/46/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/47/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/48/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/2"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/10"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/11"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/12"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/13"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/14"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/15"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/16"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/17"
+        }
+      ]
+    },
+    "ene-v2": {
+      "errors": 0,
+      "warnings": 58,
+      "messages": [
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/0/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/1/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/2/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/3/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/4/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/5/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/6/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/7/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/8/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/9/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/10/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/11/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/12/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/13/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/14/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/15/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/16/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/17/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/18/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/19/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/20/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/21/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/22/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/23/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/24/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/25/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/26/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/27/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/28/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/29/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/30/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/31/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/32/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/33/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/34/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/35/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/36/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/37/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/38/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/39/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/40/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/41/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/42/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/43/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/44/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/45/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/46/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/47/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "MULTIPLE_EXTENSIONS",
+          "message": "This extension may be incompatible with other extensions for the object.",
+          "severity": 1,
+          "pointer": "/materials/48/extensions/KHR_materials_unlit"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/2"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/10"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/11"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/12"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/13"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/14"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/15"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/16"
+        },
+        {
+          "code": "IMAGE_FEATURES_UNSUPPORTED",
+          "message": "Image contains unsupported features like non-default colorspace information, non-square pixels, or animation.",
+          "severity": 1,
+          "pointer": "/images/17"
+        }
+      ]
+    }
+  },
+  "results": [
+    {
+      "id": "ene",
+      "capabilities": {
+        "validationVersion": 1,
+        "vrmVersion": "1",
+        "expressions": [
+          "aa",
+          "angry",
+          "blink",
+          "blinkLeft",
+          "blinkRight",
+          "ee",
+          "happy",
+          "ih",
+          "lookDown",
+          "lookLeft",
+          "lookRight",
+          "lookUp",
+          "neutral",
+          "oh",
+          "ou",
+          "relaxed",
+          "sad",
+          "surprised"
+        ],
+        "aliases": {},
+        "missingOptionalBones": [
+          "upperChest"
+        ],
+        "springs": true,
+        "warnings": []
+      },
+      "resources": {
+        "geometryBytes": 74248248,
+        "textureBytes": 135636000,
+        "pixels": 25431750
+      },
+      "graphics": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "controls": {
+        "expressions": [
+          {
+            "name": "aa",
+            "bound": true,
+            "maxDisplacement": 0.013901460951798755
+          },
+          {
+            "name": "angry",
+            "bound": true,
+            "maxDisplacement": 0.04469897842077925
+          },
+          {
+            "name": "blink",
+            "bound": true,
+            "maxDisplacement": 0.02924137818952794
+          },
+          {
+            "name": "blinkLeft",
+            "bound": true,
+            "maxDisplacement": 0.02826781275060181
+          },
+          {
+            "name": "blinkRight",
+            "bound": true,
+            "maxDisplacement": 0.02924137818952794
+          },
+          {
+            "name": "ee",
+            "bound": false,
+            "maxDisplacement": 0
+          },
+          {
+            "name": "happy",
+            "bound": true,
+            "maxDisplacement": 0.010550164021612471
+          },
+          {
+            "name": "ih",
+            "bound": true,
+            "maxDisplacement": 0.004519923742030936
+          },
+          {
+            "name": "lookDown",
+            "bound": false,
+            "maxDisplacement": 0
+          },
+          {
+            "name": "lookLeft",
+            "bound": false,
+            "maxDisplacement": 0
+          },
+          {
+            "name": "lookRight",
+            "bound": false,
+            "maxDisplacement": 0
+          },
+          {
+            "name": "lookUp",
+            "bound": false,
+            "maxDisplacement": 0
+          },
+          {
+            "name": "neutral",
+            "bound": false,
+            "maxDisplacement": 0
+          },
+          {
+            "name": "oh",
+            "bound": true,
+            "maxDisplacement": 0.014700094352333366
+          },
+          {
+            "name": "ou",
+            "bound": true,
+            "maxDisplacement": 0.011707323667347608
+          },
+          {
+            "name": "relaxed",
+            "bound": false,
+            "maxDisplacement": 0
+          },
+          {
+            "name": "sad",
+            "bound": true,
+            "maxDisplacement": 0.02288923249255809
+          },
+          {
+            "name": "surprised",
+            "bound": true,
+            "maxDisplacement": 0.00476747451617657
+          }
+        ],
+        "direct": [
+          {
+            "name": "spine",
+            "rawAngle": 0.39999968203897274,
+            "surfaceSamples": 608,
+            "maxDisplacement": 0.2716501878949289
+          },
+          {
+            "name": "chest",
+            "rawAngle": 0.39999939398948064,
+            "surfaceSamples": 604,
+            "maxDisplacement": 0.2611638178573026
+          },
+          {
+            "name": "leftThumbMetacarpal",
+            "rawAngle": 0.39999726466227964,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.0216200852773187
+          },
+          {
+            "name": "leftThumbProximal",
+            "rawAngle": 0.40000189469593583,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.01018714557323066
+          },
+          {
+            "name": "leftThumbDistal",
+            "rawAngle": 0.4000011313106471,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.00500890765928693
+          },
+          {
+            "name": "leftIndexProximal",
+            "rawAngle": 0.3999967142265447,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.025541937513735454
+          },
+          {
+            "name": "leftIndexIntermediate",
+            "rawAngle": 0.39999807869276016,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.01326927024773054
+          },
+          {
+            "name": "leftIndexDistal",
+            "rawAngle": 0.39999935275990567,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.007400558779131531
+          },
+          {
+            "name": "leftMiddleProximal",
+            "rawAngle": 0.39999685778280203,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.028243475925263287
+          },
+          {
+            "name": "leftMiddleIntermediate",
+            "rawAngle": 0.3999981572127483,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.01448450481255928
+          },
+          {
+            "name": "leftMiddleDistal",
+            "rawAngle": 0.39999739564682185,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.007131521127244671
+          },
+          {
+            "name": "leftRingProximal",
+            "rawAngle": 0.39999679099861224,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.02770026071577982
+          },
+          {
+            "name": "leftRingIntermediate",
+            "rawAngle": 0.3999996633373831,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.014771192680641592
+          },
+          {
+            "name": "leftRingDistal",
+            "rawAngle": 0.3999970909630884,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.007870917258611587
+          },
+          {
+            "name": "leftLittleProximal",
+            "rawAngle": 0.39999624697057484,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.0221466392398272
+          },
+          {
+            "name": "leftLittleIntermediate",
+            "rawAngle": 0.4000001265073924,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.011528120068653204
+          },
+          {
+            "name": "leftLittleDistal",
+            "rawAngle": 0.3999994024239541,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.006737919184553137
+          },
+          {
+            "name": "rightThumbMetacarpal",
+            "rawAngle": 0.3999974005476157,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.021951066478099666
+          },
+          {
+            "name": "rightThumbProximal",
+            "rawAngle": 0.4000006930599758,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.010440890907732906
+          },
+          {
+            "name": "rightThumbDistal",
+            "rawAngle": 0.40000066773995213,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.0051894485547909685
+          },
+          {
+            "name": "rightIndexProximal",
+            "rawAngle": 0.39999776795368497,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.025674381522016197
+          },
+          {
+            "name": "rightIndexIntermediate",
+            "rawAngle": 0.39999788695619387,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.013413088286961517
+          },
+          {
+            "name": "rightIndexDistal",
+            "rawAngle": 0.3999974384494194,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.007561550787339625
+          },
+          {
+            "name": "rightMiddleProximal",
+            "rawAngle": 0.39999790814012,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.028298181300735872
+          },
+          {
+            "name": "rightMiddleIntermediate",
+            "rawAngle": 0.3999979173759946,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.014549187626114755
+          },
+          {
+            "name": "rightMiddleDistal",
+            "rawAngle": 0.3999976735609572,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.0072164890392267525
+          },
+          {
+            "name": "rightRingProximal",
+            "rawAngle": 0.3999977527225939,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.027700353724362855
+          },
+          {
+            "name": "rightRingIntermediate",
+            "rawAngle": 0.39999751907585246,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.014771316169484522
+          },
+          {
+            "name": "rightRingDistal",
+            "rawAngle": 0.3999972119051649,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.007870986890102015
+          },
+          {
+            "name": "rightLittleProximal",
+            "rawAngle": 0.39999749637875825,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.02214659050716861
+          },
+          {
+            "name": "rightLittleIntermediate",
+            "rawAngle": 0.399997971643622,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.01152811402324708
+          },
+          {
+            "name": "rightLittleDistal",
+            "rawAngle": 0.39999796495821277,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.006737941662402089
+          }
+        ],
+        "gestures": [
+          {
+            "gesture": "open",
+            "fingers": {
+              "leftThumbMetacarpal": 0.744784276679939,
+              "leftIndexProximal": 0.05822335209493111,
+              "leftMiddleProximal": 0.05822148651223445,
+              "leftRingProximal": 0.05822035357380384,
+              "leftLittleProximal": 0.05822006026525365,
+              "rightThumbMetacarpal": 0.7447835299763987,
+              "rightIndexProximal": 0.05822311913266837,
+              "rightMiddleProximal": 0.058224281219517296,
+              "rightRingProximal": 0.05822134895419144,
+              "rightLittleProximal": 0.0582216086556076,
+              "leftThumbProximal": 0.000007860754469962597,
+              "leftIndexIntermediate": 0.000011160919997242437,
+              "leftMiddleIntermediate": 0.00000722176133674106,
+              "leftRingIntermediate": 0.0000065638896213504416,
+              "leftLittleIntermediate": 0.00001700778093300061,
+              "rightThumbProximal": 1.1920928955078128e-7,
+              "rightIndexIntermediate": 0.000006713663563434221,
+              "rightMiddleIntermediate": 0.000012601132404451342,
+              "rightRingIntermediate": 0.0000021680037354796052,
+              "rightLittleIntermediate": 0.000011768710327322922,
+              "leftThumbDistal": 0,
+              "leftIndexDistal": 0,
+              "leftMiddleDistal": 0,
+              "leftRingDistal": 0,
+              "leftLittleDistal": 0,
+              "rightThumbDistal": 0,
+              "rightIndexDistal": 0,
+              "rightMiddleDistal": 0,
+              "rightRingDistal": 0,
+              "rightLittleDistal": 0
+            }
+          },
+          {
+            "gesture": "fist",
+            "fingers": {
+              "leftThumbMetacarpal": 0.9711733219349526,
+              "leftIndexProximal": 0.762880125250963,
+              "leftMiddleProximal": 0.7628826945343063,
+              "leftRingProximal": 0.7628844155824848,
+              "leftLittleProximal": 0.7628846824288398,
+              "rightThumbMetacarpal": 0.9711822401749199,
+              "rightIndexProximal": 0.7628800398165632,
+              "rightMiddleProximal": 0.7628783421096316,
+              "rightRingProximal": 0.7628824795131988,
+              "rightLittleProximal": 0.7628822547582761,
+              "leftThumbProximal": 1.13010358618435,
+              "leftIndexIntermediate": 1.0005943381371516,
+              "leftMiddleIntermediate": 1.0005760110405741,
+              "leftRingIntermediate": 1.0005766644294318,
+              "leftLittleIntermediate": 1.000566279244284,
+              "rightThumbProximal": 1.1301116745323436,
+              "rightIndexIntermediate": 1.0005899047028153,
+              "rightMiddleIntermediate": 1.0005706334362765,
+              "rightRingIntermediate": 1.000585360901956,
+              "rightLittleIntermediate": 1.0005949226636977,
+              "leftThumbDistal": 0.6837211396998184,
+              "leftIndexDistal": 0.5015739919966341,
+              "leftMiddleDistal": 0.5015739743324559,
+              "leftRingDistal": 0.5015739793323998,
+              "leftLittleDistal": 0.5015739888203365,
+              "rightThumbDistal": 0.6837290322759717,
+              "rightIndexDistal": 0.5015739767739986,
+              "rightMiddleDistal": 0.5015739309373879,
+              "rightRingDistal": 0.5015739555198226,
+              "rightLittleDistal": 0.5015739604235678
+            }
+          },
+          {
+            "gesture": "point",
+            "fingers": {
+              "leftThumbMetacarpal": 0.9711733219349526,
+              "leftIndexProximal": 0.05822335209493111,
+              "leftMiddleProximal": 0.7628826945343063,
+              "leftRingProximal": 0.7628844155824848,
+              "leftLittleProximal": 0.7628846824288398,
+              "rightThumbMetacarpal": 0.9711822401749199,
+              "rightIndexProximal": 0.05822311913266837,
+              "rightMiddleProximal": 0.7628783421096316,
+              "rightRingProximal": 0.7628824795131988,
+              "rightLittleProximal": 0.7628822547582761,
+              "leftThumbProximal": 1.13010358618435,
+              "leftIndexIntermediate": 0.000011160919997242437,
+              "leftMiddleIntermediate": 1.0005760110405741,
+              "leftRingIntermediate": 1.0005766644294318,
+              "leftLittleIntermediate": 1.000566279244284,
+              "rightThumbProximal": 1.1301116745323436,
+              "rightIndexIntermediate": 0.000006713663563434221,
+              "rightMiddleIntermediate": 1.0005706334362765,
+              "rightRingIntermediate": 1.000585360901956,
+              "rightLittleIntermediate": 1.0005949226636977,
+              "leftThumbDistal": 0.6837211396998184,
+              "leftIndexDistal": 0,
+              "leftMiddleDistal": 0.5015739743324559,
+              "leftRingDistal": 0.5015739793323998,
+              "leftLittleDistal": 0.5015739888203365,
+              "rightThumbDistal": 0.6837290322759717,
+              "rightIndexDistal": 0,
+              "rightMiddleDistal": 0.5015739309373879,
+              "rightRingDistal": 0.5015739555198226,
+              "rightLittleDistal": 0.5015739604235678
+            }
+          },
+          {
+            "gesture": "peace",
+            "fingers": {
+              "leftThumbMetacarpal": 0.744784276679939,
+              "leftIndexProximal": 0.05822335209493111,
+              "leftMiddleProximal": 0.05822148651223445,
+              "leftRingProximal": 0.7628844155824848,
+              "leftLittleProximal": 0.7628846824288398,
+              "rightThumbMetacarpal": 0.7447835299763987,
+              "rightIndexProximal": 0.05822311913266837,
+              "rightMiddleProximal": 0.058224281219517296,
+              "rightRingProximal": 0.7628824795131988,
+              "rightLittleProximal": 0.7628822547582761,
+              "leftThumbProximal": 0.000007860754469962597,
+              "leftIndexIntermediate": 0.000011160919997242437,
+              "leftMiddleIntermediate": 0.00000722176133674106,
+              "leftRingIntermediate": 1.0005766644294318,
+              "leftLittleIntermediate": 1.000566279244284,
+              "rightThumbProximal": 1.1920928955078128e-7,
+              "rightIndexIntermediate": 0.000006713663563434221,
+              "rightMiddleIntermediate": 0.000012601132404451342,
+              "rightRingIntermediate": 1.000585360901956,
+              "rightLittleIntermediate": 1.0005949226636977,
+              "leftThumbDistal": 0,
+              "leftIndexDistal": 0,
+              "leftMiddleDistal": 0,
+              "leftRingDistal": 0.5015739793323998,
+              "leftLittleDistal": 0.5015739888203365,
+              "rightThumbDistal": 0,
+              "rightIndexDistal": 0,
+              "rightMiddleDistal": 0,
+              "rightRingDistal": 0.5015739555198226,
+              "rightLittleDistal": 0.5015739604235678
+            }
+          }
+        ]
+      },
+      "gaze": [
+        {
+          "direction": "left",
+          "yaw": 26.565051177077994,
+          "pitch": 2.867340801273369e-14,
+          "anglesRadians": [
+            0,
+            0
+          ],
+          "quaternions": [
+            [
+              -0.2818505764007567,
+              -0.6772679090499876,
+              -0.6772678494453428,
+              0.0563622750341892
+            ],
+            [
+              -0.2818505764007567,
+              0.6772679090499876,
+              0.6772678494453428,
+              0.0563622750341892
+            ]
+          ]
+        },
+        {
+          "direction": "right",
+          "yaw": -26.565051177077994,
+          "pitch": 2.7088631789665343e-14,
+          "anglesRadians": [
+            0,
+            0
+          ],
+          "quaternions": [
+            [
+              -0.2818505764007567,
+              -0.6772679090499876,
+              -0.6772678494453428,
+              0.0563622750341892
+            ],
+            [
+              -0.2818505764007567,
+              0.6772679090499876,
+              0.6772678494453428,
+              0.0563622750341892
+            ]
+          ]
+        },
+        {
+          "direction": "up",
+          "yaw": 0,
+          "pitch": -21.80140948635179,
+          "anglesRadians": [
+            0,
+            0
+          ],
+          "quaternions": [
+            [
+              -0.2818505764007567,
+              -0.6772679090499876,
+              -0.6772678494453428,
+              0.0563622750341892
+            ],
+            [
+              -0.2818505764007567,
+              0.6772679090499876,
+              0.6772678494453428,
+              0.0563622750341892
+            ]
+          ]
+        },
+        {
+          "direction": "down",
+          "yaw": 0,
+          "pitch": 21.801409486351844,
+          "anglesRadians": [
+            0,
+            0
+          ],
+          "quaternions": [
+            [
+              -0.2818505764007567,
+              -0.6772679090499876,
+              -0.6772678494453428,
+              0.0563622750341892
+            ],
+            [
+              -0.2818505764007567,
+              0.6772679090499876,
+              0.6772678494453428,
+              0.0563622750341892
+            ]
+          ]
+        }
+      ],
+      "clearance": [
+        {
+          "gesture": "open",
+          "side": "left",
+          "cuffVertices": 106,
+          "fingerVertices": 2331,
+          "cuffMaximum": 0.07291284554451435,
+          "fingerMinimum": 0.008769272153627081,
+          "planeGapMeters": -0.06414357339088728
+        },
+        {
+          "gesture": "open",
+          "side": "right",
+          "cuffVertices": 106,
+          "fingerVertices": 2326,
+          "cuffMaximum": 0.07292339532475267,
+          "fingerMinimum": 0.007343807641403948,
+          "planeGapMeters": -0.06557958768334872
+        },
+        {
+          "gesture": "fist",
+          "side": "left",
+          "cuffVertices": 106,
+          "fingerVertices": 2331,
+          "cuffMaximum": 0.07291284554451435,
+          "fingerMinimum": 0.008769272153627081,
+          "planeGapMeters": -0.06414357339088728
+        },
+        {
+          "gesture": "fist",
+          "side": "right",
+          "cuffVertices": 106,
+          "fingerVertices": 2326,
+          "cuffMaximum": 0.07292339532475267,
+          "fingerMinimum": 0.007343807641403948,
+          "planeGapMeters": -0.06557958768334872
+        },
+        {
+          "gesture": "point",
+          "side": "left",
+          "cuffVertices": 106,
+          "fingerVertices": 2331,
+          "cuffMaximum": 0.07291284554451435,
+          "fingerMinimum": 0.008769272153627081,
+          "planeGapMeters": -0.06414357339088728
+        },
+        {
+          "gesture": "point",
+          "side": "right",
+          "cuffVertices": 106,
+          "fingerVertices": 2326,
+          "cuffMaximum": 0.07292339532475267,
+          "fingerMinimum": 0.007343807641403948,
+          "planeGapMeters": -0.06557958768334872
+        },
+        {
+          "gesture": "peace",
+          "side": "left",
+          "cuffVertices": 106,
+          "fingerVertices": 2331,
+          "cuffMaximum": 0.07291284554451435,
+          "fingerMinimum": 0.008769272153627081,
+          "planeGapMeters": -0.06414357339088728
+        },
+        {
+          "gesture": "peace",
+          "side": "right",
+          "cuffVertices": 106,
+          "fingerVertices": 2326,
+          "cuffMaximum": 0.07292339532475267,
+          "fingerMinimum": 0.007343807641403948,
+          "planeGapMeters": -0.06557958768334872
+        },
+        {
+          "gesture": "wrist-bend",
+          "side": "left",
+          "cuffVertices": 106,
+          "fingerVertices": 2331,
+          "cuffMaximum": 0.07291286223537573,
+          "fingerMinimum": 0.007942794350110433,
+          "planeGapMeters": -0.0649700678852653
+        },
+        {
+          "gesture": "wrist-bend",
+          "side": "right",
+          "cuffVertices": 106,
+          "fingerVertices": 2326,
+          "cuffMaximum": 0.07292340418522883,
+          "fingerMinimum": 0.006414291929591256,
+          "planeGapMeters": -0.06650911225563758
+        },
+        {
+          "gesture": "wrist-twist",
+          "side": "left",
+          "cuffVertices": 106,
+          "fingerVertices": 2331,
+          "cuffMaximum": 0.07291287355871454,
+          "fingerMinimum": 0.0070536576302679425,
+          "planeGapMeters": -0.0658592159284466
+        },
+        {
+          "gesture": "wrist-twist",
+          "side": "right",
+          "cuffVertices": 106,
+          "fingerVertices": 2326,
+          "cuffMaximum": 0.07292340323220599,
+          "fingerMinimum": 0.0065718298805606335,
+          "planeGapMeters": -0.06635157335164535
+        }
+      ],
+      "springs": [
+        {
+          "springMotion": "full",
+          "joints": 36,
+          "maximumAngle": 2.0405206636496955,
+          "finalStepMaximum": 0.0005872222225342379,
+          "finite": true
+        },
+        {
+          "springMotion": "gentle",
+          "joints": 36,
+          "maximumAngle": 1.9614768395934206,
+          "finalStepMaximum": 0.0005872222210217297,
+          "finite": true
+        },
+        {
+          "springMotion": "off",
+          "joints": 0,
+          "maximumAngle": 0,
+          "finalStepMaximum": 0,
+          "finite": true
+        }
+      ],
+      "outputSizes": [
+        {
+          "outputResolution": "720p",
+          "orientation": "landscape",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "outputResolution": "720p",
+          "orientation": "portrait",
+          "width": 720,
+          "height": 1280
+        },
+        {
+          "outputResolution": "1080p",
+          "orientation": "landscape",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "outputResolution": "1080p",
+          "orientation": "portrait",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "renders": [
+        {
+          "pose": "front",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-front.png",
+          "imageSha256": "ed0c6568b7e2f5dc7064883409932eb3c0bcd0f13b9faad9ba03b1f21c8d7c87"
+        },
+        {
+          "pose": "side",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            0.02904856886805197,
+            1.4059884708803982,
+            0.38692133641997456
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-side.png",
+          "imageSha256": "517eb9f2b9f90d170e71992ff8a6cff025e2d287ee84e7d09d37e65395ec0e5d"
+        },
+        {
+          "pose": "back",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            0.000120670309314887,
+            1.4059884708803982,
+            0.3577520972523298
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-back.png",
+          "imageSha256": "566011e32a7b063a5afda4e5fdb013e2b52cc2d7ed18b9f183dbbb543393c7f9"
+        },
+        {
+          "pose": "full",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -1.556693166593348e-7,
+            0.8616860096228679,
+            2.4127841591664585
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-full.png",
+          "imageSha256": "350f106b4d1d2f3929725e7b99897cd9c95546ccc156a34434b949d84417538c"
+        },
+        {
+          "pose": "full-light",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -1.556693166593348e-7,
+            0.8616860096228679,
+            2.4127841591664585
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-full-light.png",
+          "imageSha256": "1994d355b66453aeb1420bcccc8f2a0ad16b89483961f7fa7a5149a260036743"
+        },
+        {
+          "pose": "full-side",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -1.556693166593348e-7,
+            0.8616860096228679,
+            2.4127841591664585
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-full-side.png",
+          "imageSha256": "f6312e9fe12056cf19329eb68b7200a7af73f5ed1415f0e826e647837a984928"
+        },
+        {
+          "pose": "full-side-light",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -1.556693166593348e-7,
+            0.8616860096228679,
+            2.4127841591664585
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-full-side-light.png",
+          "imageSha256": "7bbf08c7d40d58f53847618c54803d6691587627a1cbef80d33fc27554ad2cba"
+        },
+        {
+          "pose": "full-back",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -1.556693166593348e-7,
+            0.8616860096228679,
+            2.4127841591664585
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-full-back.png",
+          "imageSha256": "d71e7c2aad822d9c378f9ad7635e901ddb8fb1d4d52eb4217276f52c8f6e89c2"
+        },
+        {
+          "pose": "full-back-light",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -1.556693166593348e-7,
+            0.8616860096228679,
+            2.4127841591664585
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-full-back-light.png",
+          "imageSha256": "2030e72afd43c93ea18ff59c9a9aead61e4e4bcafc95061a8b9cff6ad074026b"
+        },
+        {
+          "pose": "smile",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-smile.png",
+          "imageSha256": "52375dc684797d52a5e3c81e134f53651225a70129b56493881832f65417a224"
+        },
+        {
+          "pose": "blink",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-blink.png",
+          "imageSha256": "a762b624b4670f49daa58deb1e37eeec0d578535044bafed913df5fd2a4bf3d3"
+        },
+        {
+          "pose": "wink",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-wink.png",
+          "imageSha256": "413b41a296b149f4e82137cbaa35f67422c17a88a646911ede1a49cc719c87db"
+        },
+        {
+          "pose": "mouth",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-mouth.png",
+          "imageSha256": "e27aab1747a006de7575ed3e950d1358cd2d4680a0b47ea0cb413dce0b2dbeb1"
+        },
+        {
+          "pose": "ee",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-ee.png",
+          "imageSha256": "ed0c6568b7e2f5dc7064883409932eb3c0bcd0f13b9faad9ba03b1f21c8d7c87"
+        },
+        {
+          "pose": "combined",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-combined.png",
+          "imageSha256": "5e0b803db474b90f662e39af0ca872a44913191fc624e598165fee418850c363"
+        },
+        {
+          "pose": "brows",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-brows.png",
+          "imageSha256": "ed0c6568b7e2f5dc7064883409932eb3c0bcd0f13b9faad9ba03b1f21c8d7c87"
+        },
+        {
+          "pose": "raised-arms",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -1.556693166593348e-7,
+            1.2451618222516703,
+            0.9328009798274033
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-raised-arms.png",
+          "imageSha256": "94971d72ce3b1d12a0110a407747b3127426b6224a957aa63dfb3c32fa8d6f59"
+        },
+        {
+          "pose": "peace",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -1.556693166593348e-7,
+            1.2451618222516703,
+            0.9328009798274033
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-peace.png",
+          "imageSha256": "1dd0d17d1301ea2e8a90add6ca5e968202567492040b66c43aeab472f17de737"
+        },
+        {
+          "pose": "lean",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -1.556693166593348e-7,
+            1.2451618222516703,
+            0.9328009798274033
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-lean.png",
+          "imageSha256": "27cffbd39bcde7a39507c73a8bb71d10f1c9743567be1d241d85272b25aae5b4"
+        },
+        {
+          "pose": "hand-open-left",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            0.41165669785172343,
+            1.5618338519799797,
+            0.2783690978447039
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-hand-open-left.png",
+          "imageSha256": "7b9099feae3380a3ba19542c13b59796c4d98d4ba7c15723ee24d848a4fec2f2"
+        },
+        {
+          "pose": "hand-open-right",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.4455844473353876,
+            1.4520957990419985,
+            0.34205598976253115
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-hand-open-right.png",
+          "imageSha256": "95099c6dfafb40954756a5b6030f7490d669e964855748cd9692a22a176fc4df"
+        },
+        {
+          "pose": "hand-fist-left",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            0.411656699823633,
+            1.547121586042715,
+            0.3024144101630034
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-hand-fist-left.png",
+          "imageSha256": "e9f8b519c5359acacfdc72aa354bec63bfdfa5870b5b875293144363aac68faf"
+        },
+        {
+          "pose": "hand-fist-right",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.44558444969999855,
+            1.4373835236697805,
+            0.3659102199749701
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-hand-fist-right.png",
+          "imageSha256": "9208467bc491f47daf314e03574d0aae82270f502644b03c5cfcf6002e592c59"
+        },
+        {
+          "pose": "hand-point-left",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            0.4116566982913348,
+            1.5584675649253834,
+            0.3024144101630034
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-hand-point-left.png",
+          "imageSha256": "30e8c62426b0307c2f490a0d67b7a27093946a3491b42c0fa1f04e90883a08cc"
+        },
+        {
+          "pose": "hand-point-right",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.4455844473353876,
+            1.4487294568038718,
+            0.3659102199749701
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-hand-point-right.png",
+          "imageSha256": "ea34a993b95abaedeea87a66a662cc0ded8865a9b059abf37b27abf3c2883e30"
+        },
+        {
+          "pose": "hand-peace-left",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            0.4116566982913348,
+            1.5618338519799797,
+            0.2932407986220727
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-hand-peace-left.png",
+          "imageSha256": "7c9a34dca49edef6a0c4b2f4d94e4478722fd63584f91216b24e6c7b1b67aa43"
+        },
+        {
+          "pose": "hand-peace-right",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.4455844473353876,
+            1.4520957990419985,
+            0.3569276299933013
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-hand-peace-right.png",
+          "imageSha256": "4ef756ba5508bf2795a0bcfaf6e2f09627c8cf6644692f273565628afa7593fc"
+        },
+        {
+          "pose": "hand-wrist-bend-left",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            0.4319015047134882,
+            1.5557638066885207,
+            0.297673145147253
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-hand-wrist-bend-left.png",
+          "imageSha256": "bbe6a337934de2638941c81706fd2074e399651976b093f035786fef2e95e45d"
+        },
+        {
+          "pose": "hand-wrist-bend-right",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.45007863537539117,
+            1.4466327619300858,
+            0.3116352918527384
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-hand-wrist-bend-right.png",
+          "imageSha256": "1c6fa5befafcf9b1db2ede88b452d4b9cc292c722449299c5847859a7919eb27"
+        },
+        {
+          "pose": "hand-wrist-twist-left",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            0.4457935830087951,
+            1.5513255461253115,
+            0.28031027140708237
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-hand-wrist-twist-left.png",
+          "imageSha256": "34453e6d9f128fe7bd87e72140441b329c918a38e185bd7ea10ae7b5ce55a471"
+        },
+        {
+          "pose": "hand-wrist-twist-right",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.48227132456006605,
+            1.439774323863387,
+            0.3383533059645115
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-hand-wrist-twist-right.png",
+          "imageSha256": "06a1c1597ec2861f0d4a27f955310dccce7ae1c765d4f5a13c45470ccb7bc950"
+        },
+        {
+          "pose": "spring-full-move",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -1.556693166593348e-7,
+            1.2451618222516703,
+            0.9328009798274033
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-spring-full-move.png",
+          "imageSha256": "2d63f6df532d1bb45db9957f697a1bedbb38962138b97ee1ade31ab0e773e872"
+        },
+        {
+          "pose": "spring-full-rest",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -1.556693166593348e-7,
+            1.2451618222516703,
+            0.9328009798274033
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-spring-full-rest.png",
+          "imageSha256": "1097c0b6e023abf78c6dd151569ad4cade1ac5704c0ea8aeb670498865d5a59e"
+        },
+        {
+          "pose": "spring-gentle-move",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -1.556693166593348e-7,
+            1.2451618222516703,
+            0.9328009798274033
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-spring-gentle-move.png",
+          "imageSha256": "b0d71cf653e123bca4c98ba8c4f738b89d9d6909b6766da65a5783d842922afd"
+        },
+        {
+          "pose": "spring-gentle-rest",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -1.556693166593348e-7,
+            1.2451618222516703,
+            0.9328009798274033
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-spring-gentle-rest.png",
+          "imageSha256": "1975851820608f9066d6ab518b47a888ee81a47e7d10d0537c6cc8822c55c503"
+        },
+        {
+          "pose": "front",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-warm.png",
+          "imageSha256": "f1f4f1d0d533e93705a0f0c5aabb1315ddc2e1dca63c41e8e6461bab03660e23"
+        },
+        {
+          "pose": "front",
+          "lighting": "violet",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 49,
+          "triangles": 112948,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-violet.png",
+          "imageSha256": "1732e79915718daf40006fb913612d761cce47b3055096b7e61d78b3875f7395"
+        }
+      ]
+    },
+    {
+      "id": "ene-v2",
+      "capabilities": {
+        "validationVersion": 1,
+        "vrmVersion": "1",
+        "expressions": [
+          "aa",
+          "angry",
+          "blink",
+          "blinkLeft",
+          "blinkRight",
+          "ee",
+          "happy",
+          "ih",
+          "lookDown",
+          "lookLeft",
+          "lookRight",
+          "lookUp",
+          "neutral",
+          "oh",
+          "ou",
+          "relaxed",
+          "sad",
+          "surprised",
+          "vmodelBrowWorry",
+          "vmodelMouthSmile",
+          "vmodelMouthFrown",
+          "vmodelSoftEyes",
+          "vmodelHalfClosedEyes",
+          "vmodelTongue",
+          "vmodelBlush",
+          "vmodelBrowUpLeft",
+          "vmodelBrowUpRight",
+          "vmodelBrowDownLeft",
+          "vmodelBrowDownRight",
+          "vmodelEyeWideLeft",
+          "vmodelEyeWideRight",
+          "vmodelOriginalHappy",
+          "vmodelOriginalSad",
+          "vmodelOriginalSurprised"
+        ],
+        "aliases": {},
+        "missingOptionalBones": [
+          "upperChest"
+        ],
+        "springs": true,
+        "warnings": []
+      },
+      "resources": {
+        "geometryBytes": 45195120,
+        "textureBytes": 135636000,
+        "pixels": 25431750
+      },
+      "graphics": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "controls": {
+        "expressions": [
+          {
+            "name": "aa",
+            "bound": true,
+            "maxDisplacement": 0.013901460951798755
+          },
+          {
+            "name": "angry",
+            "bound": true,
+            "maxDisplacement": 0.04469897842077925
+          },
+          {
+            "name": "blink",
+            "bound": true,
+            "maxDisplacement": 0.02924137818952794
+          },
+          {
+            "name": "blinkLeft",
+            "bound": true,
+            "maxDisplacement": 0.02826781275060181
+          },
+          {
+            "name": "blinkRight",
+            "bound": true,
+            "maxDisplacement": 0.02924137818952794
+          },
+          {
+            "name": "ee",
+            "bound": true,
+            "maxDisplacement": 0.007334733933198361
+          },
+          {
+            "name": "happy",
+            "bound": true,
+            "maxDisplacement": 0.0057685752969783176
+          },
+          {
+            "name": "ih",
+            "bound": true,
+            "maxDisplacement": 0.004519923742030936
+          },
+          {
+            "name": "lookDown",
+            "bound": false,
+            "maxDisplacement": 0
+          },
+          {
+            "name": "lookLeft",
+            "bound": false,
+            "maxDisplacement": 0
+          },
+          {
+            "name": "lookRight",
+            "bound": false,
+            "maxDisplacement": 0
+          },
+          {
+            "name": "lookUp",
+            "bound": false,
+            "maxDisplacement": 0
+          },
+          {
+            "name": "neutral",
+            "bound": false,
+            "maxDisplacement": 0
+          },
+          {
+            "name": "oh",
+            "bound": true,
+            "maxDisplacement": 0.014700094352333366
+          },
+          {
+            "name": "ou",
+            "bound": true,
+            "maxDisplacement": 0.011707323667347608
+          },
+          {
+            "name": "relaxed",
+            "bound": false,
+            "maxDisplacement": 0
+          },
+          {
+            "name": "sad",
+            "bound": true,
+            "maxDisplacement": 0.012589077870935834
+          },
+          {
+            "name": "surprised",
+            "bound": true,
+            "maxDisplacement": 0.00845889613057072
+          },
+          {
+            "name": "vmodelBrowWorry",
+            "bound": true,
+            "maxDisplacement": 0.022889232492610736
+          },
+          {
+            "name": "vmodelMouthSmile",
+            "bound": true,
+            "maxDisplacement": 0.006003775708182143
+          },
+          {
+            "name": "vmodelMouthFrown",
+            "bound": true,
+            "maxDisplacement": 0.006003775708182143
+          },
+          {
+            "name": "vmodelSoftEyes",
+            "bound": true,
+            "maxDisplacement": 0.003674207857677584
+          },
+          {
+            "name": "vmodelHalfClosedEyes",
+            "bound": true,
+            "maxDisplacement": 0.010499039679079935
+          },
+          {
+            "name": "vmodelTongue",
+            "bound": true,
+            "maxDisplacement": 0.021118434194228042
+          },
+          {
+            "name": "vmodelBlush",
+            "bound": true,
+            "maxDisplacement": 0.07525499204268306
+          },
+          {
+            "name": "vmodelBrowUpLeft",
+            "bound": true,
+            "maxDisplacement": 0.018797546956823716
+          },
+          {
+            "name": "vmodelBrowUpRight",
+            "bound": true,
+            "maxDisplacement": 0.01879743138484736
+          },
+          {
+            "name": "vmodelBrowDownLeft",
+            "bound": true,
+            "maxDisplacement": 0.01745575238295051
+          },
+          {
+            "name": "vmodelBrowDownRight",
+            "bound": true,
+            "maxDisplacement": 0.017455749232327858
+          },
+          {
+            "name": "vmodelEyeWideLeft",
+            "bound": true,
+            "maxDisplacement": 0.00476747451617657
+          },
+          {
+            "name": "vmodelEyeWideRight",
+            "bound": true,
+            "maxDisplacement": 0.004767474516176357
+          },
+          {
+            "name": "vmodelOriginalHappy",
+            "bound": true,
+            "maxDisplacement": 0.010550164021612471
+          },
+          {
+            "name": "vmodelOriginalSad",
+            "bound": true,
+            "maxDisplacement": 0.022889232492610736
+          },
+          {
+            "name": "vmodelOriginalSurprised",
+            "bound": true,
+            "maxDisplacement": 0.00476747451617657
+          }
+        ],
+        "direct": [
+          {
+            "name": "spine",
+            "rawAngle": 0.39999968203897274,
+            "surfaceSamples": 608,
+            "maxDisplacement": 0.2716501878949289
+          },
+          {
+            "name": "chest",
+            "rawAngle": 0.39999939398948064,
+            "surfaceSamples": 604,
+            "maxDisplacement": 0.2611638178573026
+          },
+          {
+            "name": "leftThumbMetacarpal",
+            "rawAngle": 0.39999726466227964,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.0216200852773187
+          },
+          {
+            "name": "leftThumbProximal",
+            "rawAngle": 0.40000189469593583,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.01018714557323066
+          },
+          {
+            "name": "leftThumbDistal",
+            "rawAngle": 0.4000011313106471,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.00500890765928693
+          },
+          {
+            "name": "leftIndexProximal",
+            "rawAngle": 0.3999967142265447,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.025541937513735454
+          },
+          {
+            "name": "leftIndexIntermediate",
+            "rawAngle": 0.39999807869276016,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.01326927024773054
+          },
+          {
+            "name": "leftIndexDistal",
+            "rawAngle": 0.39999935275990567,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.007400558779131531
+          },
+          {
+            "name": "leftMiddleProximal",
+            "rawAngle": 0.39999685778280203,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.028243475925263287
+          },
+          {
+            "name": "leftMiddleIntermediate",
+            "rawAngle": 0.3999981572127483,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.01448450481255928
+          },
+          {
+            "name": "leftMiddleDistal",
+            "rawAngle": 0.39999739564682185,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.007131521127244671
+          },
+          {
+            "name": "leftRingProximal",
+            "rawAngle": 0.39999679099861224,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.02770026071577982
+          },
+          {
+            "name": "leftRingIntermediate",
+            "rawAngle": 0.3999996633373831,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.014771192680641592
+          },
+          {
+            "name": "leftRingDistal",
+            "rawAngle": 0.3999970909630884,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.007870917258611587
+          },
+          {
+            "name": "leftLittleProximal",
+            "rawAngle": 0.39999624697057484,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.0221466392398272
+          },
+          {
+            "name": "leftLittleIntermediate",
+            "rawAngle": 0.4000001265073924,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.011528120068653204
+          },
+          {
+            "name": "leftLittleDistal",
+            "rawAngle": 0.3999994024239541,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.006737919184553137
+          },
+          {
+            "name": "rightThumbMetacarpal",
+            "rawAngle": 0.3999974005476157,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.021951066478099666
+          },
+          {
+            "name": "rightThumbProximal",
+            "rawAngle": 0.4000006930599758,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.010440890907732906
+          },
+          {
+            "name": "rightThumbDistal",
+            "rawAngle": 0.40000066773995213,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.0051894485547909685
+          },
+          {
+            "name": "rightIndexProximal",
+            "rawAngle": 0.39999776795368497,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.025674381522016197
+          },
+          {
+            "name": "rightIndexIntermediate",
+            "rawAngle": 0.39999788695619387,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.013413088286961517
+          },
+          {
+            "name": "rightIndexDistal",
+            "rawAngle": 0.3999974384494194,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.007561550787339625
+          },
+          {
+            "name": "rightMiddleProximal",
+            "rawAngle": 0.39999790814012,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.028298181300735872
+          },
+          {
+            "name": "rightMiddleIntermediate",
+            "rawAngle": 0.3999979173759946,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.014549187626114755
+          },
+          {
+            "name": "rightMiddleDistal",
+            "rawAngle": 0.3999976735609572,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.0072164890392267525
+          },
+          {
+            "name": "rightRingProximal",
+            "rawAngle": 0.3999977527225939,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.027700353724362855
+          },
+          {
+            "name": "rightRingIntermediate",
+            "rawAngle": 0.39999751907585246,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.014771316169484522
+          },
+          {
+            "name": "rightRingDistal",
+            "rawAngle": 0.3999972119051649,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.007870986890102015
+          },
+          {
+            "name": "rightLittleProximal",
+            "rawAngle": 0.39999749637875825,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.02214659050716861
+          },
+          {
+            "name": "rightLittleIntermediate",
+            "rawAngle": 0.399997971643622,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.01152811402324708
+          },
+          {
+            "name": "rightLittleDistal",
+            "rawAngle": 0.39999796495821277,
+            "surfaceSamples": 32,
+            "maxDisplacement": 0.006737941662402089
+          }
+        ],
+        "gestures": [
+          {
+            "gesture": "open",
+            "fingers": {
+              "leftThumbMetacarpal": 0.744784276679939,
+              "leftIndexProximal": 0.05822335209493111,
+              "leftMiddleProximal": 0.05822148651223445,
+              "leftRingProximal": 0.05822035357380384,
+              "leftLittleProximal": 0.05822006026525365,
+              "rightThumbMetacarpal": 0.7447835299763987,
+              "rightIndexProximal": 0.05822311913266837,
+              "rightMiddleProximal": 0.058224281219517296,
+              "rightRingProximal": 0.05822134895419144,
+              "rightLittleProximal": 0.0582216086556076,
+              "leftThumbProximal": 0.000007860754469962597,
+              "leftIndexIntermediate": 0.000011160919997242437,
+              "leftMiddleIntermediate": 0.00000722176133674106,
+              "leftRingIntermediate": 0.0000065638896213504416,
+              "leftLittleIntermediate": 0.00001700778093300061,
+              "rightThumbProximal": 1.1920928955078128e-7,
+              "rightIndexIntermediate": 0.000006713663563434221,
+              "rightMiddleIntermediate": 0.000012601132404451342,
+              "rightRingIntermediate": 0.0000021680037354796052,
+              "rightLittleIntermediate": 0.000011768710327322922,
+              "leftThumbDistal": 0,
+              "leftIndexDistal": 0,
+              "leftMiddleDistal": 0,
+              "leftRingDistal": 0,
+              "leftLittleDistal": 0,
+              "rightThumbDistal": 0,
+              "rightIndexDistal": 0,
+              "rightMiddleDistal": 0,
+              "rightRingDistal": 0,
+              "rightLittleDistal": 0
+            }
+          },
+          {
+            "gesture": "fist",
+            "fingers": {
+              "leftThumbMetacarpal": 0.9711733219349526,
+              "leftIndexProximal": 0.762880125250963,
+              "leftMiddleProximal": 0.7628826945343063,
+              "leftRingProximal": 0.7628844155824848,
+              "leftLittleProximal": 0.7628846824288398,
+              "rightThumbMetacarpal": 0.9711822401749199,
+              "rightIndexProximal": 0.7628800398165632,
+              "rightMiddleProximal": 0.7628783421096316,
+              "rightRingProximal": 0.7628824795131988,
+              "rightLittleProximal": 0.7628822547582761,
+              "leftThumbProximal": 1.13010358618435,
+              "leftIndexIntermediate": 1.0005943381371516,
+              "leftMiddleIntermediate": 1.0005760110405741,
+              "leftRingIntermediate": 1.0005766644294318,
+              "leftLittleIntermediate": 1.000566279244284,
+              "rightThumbProximal": 1.1301116745323436,
+              "rightIndexIntermediate": 1.0005899047028153,
+              "rightMiddleIntermediate": 1.0005706334362765,
+              "rightRingIntermediate": 1.000585360901956,
+              "rightLittleIntermediate": 1.0005949226636977,
+              "leftThumbDistal": 0.6837211396998184,
+              "leftIndexDistal": 0.5015739919966341,
+              "leftMiddleDistal": 0.5015739743324559,
+              "leftRingDistal": 0.5015739793323998,
+              "leftLittleDistal": 0.5015739888203365,
+              "rightThumbDistal": 0.6837290322759717,
+              "rightIndexDistal": 0.5015739767739986,
+              "rightMiddleDistal": 0.5015739309373879,
+              "rightRingDistal": 0.5015739555198226,
+              "rightLittleDistal": 0.5015739604235678
+            }
+          },
+          {
+            "gesture": "point",
+            "fingers": {
+              "leftThumbMetacarpal": 0.9711733219349526,
+              "leftIndexProximal": 0.05822335209493111,
+              "leftMiddleProximal": 0.7628826945343063,
+              "leftRingProximal": 0.7628844155824848,
+              "leftLittleProximal": 0.7628846824288398,
+              "rightThumbMetacarpal": 0.9711822401749199,
+              "rightIndexProximal": 0.05822311913266837,
+              "rightMiddleProximal": 0.7628783421096316,
+              "rightRingProximal": 0.7628824795131988,
+              "rightLittleProximal": 0.7628822547582761,
+              "leftThumbProximal": 1.13010358618435,
+              "leftIndexIntermediate": 0.000011160919997242437,
+              "leftMiddleIntermediate": 1.0005760110405741,
+              "leftRingIntermediate": 1.0005766644294318,
+              "leftLittleIntermediate": 1.000566279244284,
+              "rightThumbProximal": 1.1301116745323436,
+              "rightIndexIntermediate": 0.000006713663563434221,
+              "rightMiddleIntermediate": 1.0005706334362765,
+              "rightRingIntermediate": 1.000585360901956,
+              "rightLittleIntermediate": 1.0005949226636977,
+              "leftThumbDistal": 0.6837211396998184,
+              "leftIndexDistal": 0,
+              "leftMiddleDistal": 0.5015739743324559,
+              "leftRingDistal": 0.5015739793323998,
+              "leftLittleDistal": 0.5015739888203365,
+              "rightThumbDistal": 0.6837290322759717,
+              "rightIndexDistal": 0,
+              "rightMiddleDistal": 0.5015739309373879,
+              "rightRingDistal": 0.5015739555198226,
+              "rightLittleDistal": 0.5015739604235678
+            }
+          },
+          {
+            "gesture": "peace",
+            "fingers": {
+              "leftThumbMetacarpal": 0.744784276679939,
+              "leftIndexProximal": 0.05822335209493111,
+              "leftMiddleProximal": 0.05822148651223445,
+              "leftRingProximal": 0.7628844155824848,
+              "leftLittleProximal": 0.7628846824288398,
+              "rightThumbMetacarpal": 0.7447835299763987,
+              "rightIndexProximal": 0.05822311913266837,
+              "rightMiddleProximal": 0.058224281219517296,
+              "rightRingProximal": 0.7628824795131988,
+              "rightLittleProximal": 0.7628822547582761,
+              "leftThumbProximal": 0.000007860754469962597,
+              "leftIndexIntermediate": 0.000011160919997242437,
+              "leftMiddleIntermediate": 0.00000722176133674106,
+              "leftRingIntermediate": 1.0005766644294318,
+              "leftLittleIntermediate": 1.000566279244284,
+              "rightThumbProximal": 1.1920928955078128e-7,
+              "rightIndexIntermediate": 0.000006713663563434221,
+              "rightMiddleIntermediate": 0.000012601132404451342,
+              "rightRingIntermediate": 1.000585360901956,
+              "rightLittleIntermediate": 1.0005949226636977,
+              "leftThumbDistal": 0,
+              "leftIndexDistal": 0,
+              "leftMiddleDistal": 0,
+              "leftRingDistal": 0.5015739793323998,
+              "leftLittleDistal": 0.5015739888203365,
+              "rightThumbDistal": 0,
+              "rightIndexDistal": 0,
+              "rightMiddleDistal": 0,
+              "rightRingDistal": 0.5015739555198226,
+              "rightLittleDistal": 0.5015739604235678
+            }
+          }
+        ]
+      },
+      "gaze": [
+        {
+          "direction": "left",
+          "yaw": 26.565051177077994,
+          "pitch": 2.867340801273369e-14,
+          "anglesRadians": [
+            0.2318235642654413,
+            0.15454884174580713
+          ],
+          "quaternions": [
+            [
+              -0.358287015226619,
+              -0.6662048225815405,
+              -0.6401264722557439,
+              0.1343118110675499
+            ],
+            [
+              -0.22872594721454553,
+              0.6795978469994289,
+              0.6970049706320744,
+              0.003910540175066637
+            ]
+          ]
+        },
+        {
+          "direction": "right",
+          "yaw": -26.565051177077994,
+          "pitch": 2.7088631789665343e-14,
+          "anglesRadians": [
+            0.15454884174580713,
+            0.23182356426543935
+          ],
+          "quaternions": [
+            [
+              -0.22872594721347062,
+              -0.6795978469865118,
+              -0.6970049706449916,
+              0.003910540180442163
+            ],
+            [
+              -0.35828701522500855,
+              0.6662048225621889,
+              0.6401264722750954,
+              0.13431181107560317
+            ]
+          ]
+        },
+        {
+          "direction": "up",
+          "yaw": 0,
+          "pitch": -21.80140948635179,
+          "anglesRadians": [
+            0.10146781636798366,
+            0.10146781636797927
+          ],
+          "quaternions": [
+            [
+              -0.28434618597090416,
+              -0.7107423594888423,
+              -0.6420505112170161,
+              0.041996428225882086
+            ],
+            [
+              -0.2843461859866831,
+              0.7107423594851009,
+              0.642050511214092,
+              0.04199642822707394
+            ]
+          ]
+        },
+        {
+          "direction": "down",
+          "yaw": 0,
+          "pitch": 21.801409486351844,
+          "anglesRadians": [
+            0.10146781636797927,
+            0.10146781636797927
+          ],
+          "quaternions": [
+            [
+              -0.278629651055113,
+              -0.6420505737643304,
+              -0.7107423029802543,
+              0.07058307886352784
+            ],
+            [
+              -0.27862965103933407,
+              0.6420505737680718,
+              0.7107423029831784,
+              0.07058307886233599
+            ]
+          ]
+        }
+      ],
+      "clearance": [
+        {
+          "gesture": "open",
+          "side": "left",
+          "cuffVertices": 106,
+          "fingerVertices": 2331,
+          "cuffMaximum": -0.02265378795242248,
+          "fingerMinimum": 0.008769272153627081,
+          "planeGapMeters": 0.03142306010604956
+        },
+        {
+          "gesture": "open",
+          "side": "right",
+          "cuffVertices": 106,
+          "fingerVertices": 2326,
+          "cuffMaximum": -0.022646461278795434,
+          "fingerMinimum": 0.007343807641403948,
+          "planeGapMeters": 0.029990268920199382
+        },
+        {
+          "gesture": "fist",
+          "side": "left",
+          "cuffVertices": 106,
+          "fingerVertices": 2331,
+          "cuffMaximum": -0.02265378795242248,
+          "fingerMinimum": 0.008769272153627081,
+          "planeGapMeters": 0.03142306010604956
+        },
+        {
+          "gesture": "fist",
+          "side": "right",
+          "cuffVertices": 106,
+          "fingerVertices": 2326,
+          "cuffMaximum": -0.022646461278795434,
+          "fingerMinimum": 0.007343807641403948,
+          "planeGapMeters": 0.029990268920199382
+        },
+        {
+          "gesture": "point",
+          "side": "left",
+          "cuffVertices": 106,
+          "fingerVertices": 2331,
+          "cuffMaximum": -0.02265378795242248,
+          "fingerMinimum": 0.008769272153627081,
+          "planeGapMeters": 0.03142306010604956
+        },
+        {
+          "gesture": "point",
+          "side": "right",
+          "cuffVertices": 106,
+          "fingerVertices": 2326,
+          "cuffMaximum": -0.022646461278795434,
+          "fingerMinimum": 0.007343807641403948,
+          "planeGapMeters": 0.029990268920199382
+        },
+        {
+          "gesture": "peace",
+          "side": "left",
+          "cuffVertices": 106,
+          "fingerVertices": 2331,
+          "cuffMaximum": -0.02265378795242248,
+          "fingerMinimum": 0.008769272153627081,
+          "planeGapMeters": 0.03142306010604956
+        },
+        {
+          "gesture": "peace",
+          "side": "right",
+          "cuffVertices": 106,
+          "fingerVertices": 2326,
+          "cuffMaximum": -0.022646461278795434,
+          "fingerMinimum": 0.007343807641403948,
+          "planeGapMeters": 0.029990268920199382
+        },
+        {
+          "gesture": "wrist-bend",
+          "side": "left",
+          "cuffVertices": 106,
+          "fingerVertices": 2331,
+          "cuffMaximum": -0.022653769039147603,
+          "fingerMinimum": 0.007942794350110433,
+          "planeGapMeters": 0.030596563389258036
+        },
+        {
+          "gesture": "wrist-bend",
+          "side": "right",
+          "cuffVertices": 106,
+          "fingerVertices": 2326,
+          "cuffMaximum": -0.02264645453160882,
+          "fingerMinimum": 0.006414291929591256,
+          "planeGapMeters": 0.029060746461200077
+        },
+        {
+          "gesture": "wrist-twist",
+          "side": "left",
+          "cuffVertices": 106,
+          "fingerVertices": 2331,
+          "cuffMaximum": -0.022653746491550913,
+          "fingerMinimum": 0.0070536576302679425,
+          "planeGapMeters": 0.029707404121818857
+        },
+        {
+          "gesture": "wrist-twist",
+          "side": "right",
+          "cuffVertices": 106,
+          "fingerVertices": 2326,
+          "cuffMaximum": -0.02264645429686174,
+          "fingerMinimum": 0.0065718298805606335,
+          "planeGapMeters": 0.029218284177422373
+        }
+      ],
+      "springs": [
+        {
+          "springMotion": "full",
+          "joints": 36,
+          "maximumAngle": 2.0405206636496955,
+          "finalStepMaximum": 0.0005872222225342379,
+          "finite": true
+        },
+        {
+          "springMotion": "gentle",
+          "joints": 36,
+          "maximumAngle": 1.9614768395934206,
+          "finalStepMaximum": 0.0005872222210217297,
+          "finite": true
+        },
+        {
+          "springMotion": "off",
+          "joints": 0,
+          "maximumAngle": 0,
+          "finalStepMaximum": 0,
+          "finite": true
+        }
+      ],
+      "outputSizes": [
+        {
+          "outputResolution": "720p",
+          "orientation": "landscape",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "outputResolution": "720p",
+          "orientation": "portrait",
+          "width": 720,
+          "height": 1280
+        },
+        {
+          "outputResolution": "1080p",
+          "orientation": "landscape",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "outputResolution": "1080p",
+          "orientation": "portrait",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "renders": [
+        {
+          "pose": "front",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-front.png",
+          "imageSha256": "713ba26f092864fc6f908f28f3f8fec6f38ecbd6997c028101f9b96fc8611156"
+        },
+        {
+          "pose": "side",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            0.02904856886805197,
+            1.4059884708803982,
+            0.38692133641997456
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-side.png",
+          "imageSha256": "c0e74804a573712b42f260507eb836fcc2a26faa41af0ab36dad01cbb817c0de"
+        },
+        {
+          "pose": "back",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            0.000120670309314887,
+            1.4059884708803982,
+            0.3577520972523298
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-back.png",
+          "imageSha256": "12fc098a6eaa8c1ec9f12896d15849215d5f245ad1b9b3260a050143887d8613"
+        },
+        {
+          "pose": "full",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -1.556693166593348e-7,
+            0.8616860096228679,
+            2.4127841591664585
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-full.png",
+          "imageSha256": "029dbb11a43e28e6641315f7d8d1547c61feec073367f750f9bb3feb5370f951"
+        },
+        {
+          "pose": "full-light",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -1.556693166593348e-7,
+            0.8616860096228679,
+            2.4127841591664585
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-full-light.png",
+          "imageSha256": "daad41b47bd98c829980467fe8d8cf4bb3d48fcdad7e6bf4eeb84dd5ff564e81"
+        },
+        {
+          "pose": "full-side",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -1.556693166593348e-7,
+            0.8616860096228679,
+            2.4127841591664585
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-full-side.png",
+          "imageSha256": "e5ff6480f70140e2389a9539bcaf40a99b80ffa0024963aa29175b56bfba0c44"
+        },
+        {
+          "pose": "full-side-light",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -1.556693166593348e-7,
+            0.8616860096228679,
+            2.4127841591664585
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-full-side-light.png",
+          "imageSha256": "8e0e568f20cee5d4dd53989017e88623f1253a487aea49afbc96bbb2213b015e"
+        },
+        {
+          "pose": "full-back",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -1.556693166593348e-7,
+            0.8616860096228679,
+            2.4127841591664585
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-full-back.png",
+          "imageSha256": "dce853302edaadb9ada4d21ca7c4cbd03740670ca5785be048d09ba632dffa36"
+        },
+        {
+          "pose": "full-back-light",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -1.556693166593348e-7,
+            0.8616860096228679,
+            2.4127841591664585
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-full-back-light.png",
+          "imageSha256": "3957d0ac453cf2f494bb81b7085933efde20f3c03657ded8b70e3e8c21c6ac9e"
+        },
+        {
+          "pose": "smile",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-smile.png",
+          "imageSha256": "34d41ceebdc2aa15eabc3497fbef4f3877a26a303ced6375d13c45fa456a038a"
+        },
+        {
+          "pose": "blink",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-blink.png",
+          "imageSha256": "45a81b57cb44620156e1c051ce0d4f87aeca41ca50f3d9a5aab4d32612de609d"
+        },
+        {
+          "pose": "wink",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-wink.png",
+          "imageSha256": "b0bc5a8b1f3c23376d070b3351439556761d469d8c7badd206434e9807cc0dd9"
+        },
+        {
+          "pose": "mouth",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-mouth.png",
+          "imageSha256": "1728ee01558123ca9b95ce36e05922b0d9af6f28773d0fb0cd76774f624109f4"
+        },
+        {
+          "pose": "ee",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-ee.png",
+          "imageSha256": "11e4ea280b6c131a6a85e48033c358e092ff793d68a24699ab88d26533c7ae4a"
+        },
+        {
+          "pose": "combined",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-combined.png",
+          "imageSha256": "55c761e290dc3d4cdbcf1b54cc2ca6fc2f1c178032b30698e271b8e231ae299b"
+        },
+        {
+          "pose": "brows",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-brows.png",
+          "imageSha256": "54ffe19769f402dee64fd8389cd6436bb109544167aa5e4df06a86dd4c2d515c"
+        },
+        {
+          "pose": "raised-arms",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -1.556693166593348e-7,
+            1.2451618222516703,
+            0.9328009798274033
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-raised-arms.png",
+          "imageSha256": "3c32d7503c189254358e7eca81e1eb726d6cecac08009c3cc9d91f24766e71c3"
+        },
+        {
+          "pose": "peace",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -1.556693166593348e-7,
+            1.2451618222516703,
+            0.9328009798274033
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-peace.png",
+          "imageSha256": "ee0c367343cce39c07634bbbec758706f6c5c54592c7e40cede00ec2f74697de"
+        },
+        {
+          "pose": "lean",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -1.556693166593348e-7,
+            1.2451618222516703,
+            0.9328009798274033
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-lean.png",
+          "imageSha256": "f236dae7bbacfcefa6f3aabdef4023e0ded30a37a7c4039a68237c20a6522960"
+        },
+        {
+          "pose": "hand-open-left",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            0.41165669785172343,
+            1.5618338519799797,
+            0.2783690978447039
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-hand-open-left.png",
+          "imageSha256": "2858284d0ae4f8d421aef139ae014004056c80fca2fea7a7e45faf20fdae0bb5"
+        },
+        {
+          "pose": "hand-open-right",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.4455844473353876,
+            1.4520957990419985,
+            0.34205598976253115
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-hand-open-right.png",
+          "imageSha256": "67d3060ac69e4a27a5ee3ea7ba69f3f0063cdd9927df6ebb6d2786400e074076"
+        },
+        {
+          "pose": "hand-fist-left",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            0.411656699823633,
+            1.547121586042715,
+            0.3024144101630034
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-hand-fist-left.png",
+          "imageSha256": "c4e0f848300d4064b0e6d29244bd9896013402157868a5140785d977edadcc3d"
+        },
+        {
+          "pose": "hand-fist-right",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.44558444969999855,
+            1.4373835236697805,
+            0.3659102199749701
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-hand-fist-right.png",
+          "imageSha256": "3b5ec83938f9ccbe57a3c4592e6386f073ba2715d92f73f8b96d55f7a6ec7b73"
+        },
+        {
+          "pose": "hand-point-left",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            0.4116566982913348,
+            1.5584675649253834,
+            0.3024144101630034
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-hand-point-left.png",
+          "imageSha256": "b180e46faadae1a9e2b9d9317a73cc2bd24a500d235b942d3d7c992038a590fe"
+        },
+        {
+          "pose": "hand-point-right",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.4455844473353876,
+            1.4487294568038718,
+            0.3659102199749701
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-hand-point-right.png",
+          "imageSha256": "ddc078eb4780a94c43bd8f67e8a616a249cbc0d1386ba70406c4cfd7abc3d0aa"
+        },
+        {
+          "pose": "hand-peace-left",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            0.4116566982913348,
+            1.5618338519799797,
+            0.2932407986220727
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-hand-peace-left.png",
+          "imageSha256": "b7374f3629efa35f2ec176d08f3be2df60c25cf27a3b3baaaf7b579964614f05"
+        },
+        {
+          "pose": "hand-peace-right",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.4455844473353876,
+            1.4520957990419985,
+            0.3569276299933013
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-hand-peace-right.png",
+          "imageSha256": "5bf6fcac043288b670ecbb0242ab6ab1b2985d002246cf526466b3b2c5fcda9b"
+        },
+        {
+          "pose": "hand-wrist-bend-left",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            0.4319015047134882,
+            1.5557638066885207,
+            0.297673145147253
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-hand-wrist-bend-left.png",
+          "imageSha256": "909dbffa095c01dcdf4c3336c7ee55405b66246d1cd77ba5550f7ba72af66520"
+        },
+        {
+          "pose": "hand-wrist-bend-right",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.45007863537539117,
+            1.4466327619300858,
+            0.3116352918527384
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-hand-wrist-bend-right.png",
+          "imageSha256": "2edb08226372f5ec35ef0f9087a0e79ce8238060df57d7d0e57784959a454438"
+        },
+        {
+          "pose": "hand-wrist-twist-left",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            0.4457935830087951,
+            1.5513255461253115,
+            0.28031027140708237
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-hand-wrist-twist-left.png",
+          "imageSha256": "a4a23eaea7a1054f1b9a61129763291b194e6f81d52034c1ad33ab5e1f773ebd"
+        },
+        {
+          "pose": "hand-wrist-twist-right",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.48227132456006605,
+            1.439774323863387,
+            0.3383533059645115
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-hand-wrist-twist-right.png",
+          "imageSha256": "12ac206405a8adfb6c9be51b209d13230ce14e88db84930424c018de7480db98"
+        },
+        {
+          "pose": "spring-full-move",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -1.556693166593348e-7,
+            1.2451618222516703,
+            0.9328009798274033
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-spring-full-move.png",
+          "imageSha256": "b242a9f4623ab7878966e9b796edb2c43c20b59bb468b7cd3087a7c19d7351ed"
+        },
+        {
+          "pose": "spring-full-rest",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -1.556693166593348e-7,
+            1.2451618222516703,
+            0.9328009798274033
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-spring-full-rest.png",
+          "imageSha256": "c97c03865a2b47ef6bec5c2de8d0d853f7cbd6a918b00135d875e94dbe763fcb"
+        },
+        {
+          "pose": "spring-gentle-move",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -1.556693166593348e-7,
+            1.2451618222516703,
+            0.9328009798274033
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-spring-gentle-move.png",
+          "imageSha256": "7df1f58c7520f13278633518a855cf7dd2c4772253da018a6561ee65e8104fd5"
+        },
+        {
+          "pose": "spring-gentle-rest",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -1.556693166593348e-7,
+            1.2451618222516703,
+            0.9328009798274033
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-spring-gentle-rest.png",
+          "imageSha256": "bb1ca9e6e3764571aec61a216c9bdaa37210a28865842b3f0fc0f27faa40556f"
+        },
+        {
+          "pose": "front",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-warm.png",
+          "imageSha256": "59ee79b0bebcb36c702e083abd09ba8e8c6f1954db1260b682448774f31f6e33"
+        },
+        {
+          "pose": "front",
+          "lighting": "violet",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 69,
+          "triangles": 135111,
+          "camera": [
+            -0.00012067029959217326,
+            1.4059884708803982,
+            0.415849234978712
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/ene-v2/ene-v2-violet.png",
+          "imageSha256": "aaa42d03b01c480fdbbefeb9ecb352b6f0ad33c7d574a640abc383ee9849a92b"
+        }
+      ]
+    }
+  ],
+  "geometry": [
+    {
+      "pose": "front",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "side",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "back",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "full",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "full-light",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "full-side",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "full-side-light",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "full-back",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "full-back-light",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "smile",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "blink",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "wink",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "mouth",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "ee",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "combined",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "brows",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "raised-arms",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "peace",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "lean",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "hand-open-left",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "hand-open-right",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "hand-fist-left",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "hand-fist-right",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "hand-point-left",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "hand-point-right",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "hand-peace-left",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "hand-peace-right",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "hand-wrist-bend-left",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "hand-wrist-bend-right",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "hand-wrist-twist-left",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "hand-wrist-twist-right",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "spring-full-move",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "spring-full-rest",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "spring-gentle-move",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "spring-gentle-rest",
+      "lighting": "studio",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "front",
+      "lighting": "warm",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    },
+    {
+      "pose": "front",
+      "lighting": "violet",
+      "sameCamera": true,
+      "originalSurfaceSamples": 781,
+      "editedSurfaceSamples": 785
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "limits": [
+    "Fixed synthetic controls and software graphics.",
+    "No live camera accuracy or target GPU timing measurement.",
+    "Appearance acceptance remains open."
+  ]
+}

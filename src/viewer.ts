@@ -8,6 +8,7 @@ import { AvatarResources } from './avatar-resources';
 import type { CapabilityReport } from './model-types';
 import { requiredBones } from './vrm-inspection';
 import { RigOverlay, trackedBones } from './rig-overlay';
+import { StudioLights } from './lighting';
 
 export interface PreparedAvatar { capabilities: CapabilityReport; vrm: VRM; retarget: Retargeter; generation: number; disposed: boolean; committed: boolean }
 import { compositionSize, fitComposition } from './composition';
@@ -23,6 +24,7 @@ export class AvatarViewer {
   private center = new THREE.Vector3(0, 0.9, 0);
   private height = 1.7;
   private settings: StudioSettings;
+  private lights = new StudioLights();
   private observer: ResizeObserver;
   private springs: { joint: VRMSpringBoneJoint; stiffness: number; dragForce: number; gravityPower: number }[] = [];
   private contextLost = false;
@@ -49,9 +51,7 @@ export class AvatarViewer {
       this.contextLost = false; this.resize();
       container.dispatchEvent(new CustomEvent('vmodel-renderer-state', { detail: 'Graphics restored. The avatar is ready again.' }));
     });
-    this.scene.add(new THREE.HemisphereLight(0xffffff, 0x91a2bf, 2));
-    const key = new THREE.DirectionalLight(0xfff4e9, 2.1); key.position.set(1, 2, 3); this.scene.add(key);
-    const fill = new THREE.DirectionalLight(0x92dcff, 0.7); fill.position.set(-2, 1, -1); this.scene.add(fill);
+    this.scene.add(this.lights.ambient, this.lights.key, this.lights.fill);
     this.observer = new ResizeObserver(() => this.resize()); this.observer.observe(container);
     this.configure(settings);
   }
@@ -140,6 +140,7 @@ export class AvatarViewer {
     this.settings = settings;
     if (changed) this.configureSprings();
     this.scene.background = new THREE.Color(settings.background);
+    this.lights.configure(settings);
     this.renderer.setPixelRatio(1);
     this.resize();
   }
@@ -159,16 +160,23 @@ export class AvatarViewer {
   }
   resize() {
     const width = Math.max(1, this.container.clientWidth), height = Math.max(1, this.container.clientHeight);
-    const targetSize = compositionSize(this.settings.orientation), fitted = fitComposition(width, height, this.settings.orientation);
+    const targetSize = compositionSize(this.settings.orientation, this.settings.outputResolution), fitted = fitComposition(width, height, this.settings.orientation);
     const ratio = Math.min(devicePixelRatio, this.settings.quality === 'low' ? 1 : 1.5);
     this.renderer.setSize(this.outputMode ? targetSize.width : Math.round(fitted.width * ratio), this.outputMode ? targetSize.height : Math.round(fitted.height * ratio), false);
     Object.assign(this.renderer.domElement.style, { position: 'absolute', width: `${fitted.width}px`, height: `${fitted.height}px`, left: `${fitted.left}px`, top: `${fitted.top}px` });
     this.camera.aspect = targetSize.width / targetSize.height;
+    this.camera.fov = this.settings.cameraFov;
     const bust = this.settings.framing === 'bust';
+    const face = this.settings.framing === 'face';
     const target = this.center.clone(); if (bust) target.y += this.height * 0.27;
-    const viewHeight = this.height * (bust ? 0.50 : 1.3);
+    if (face) {
+      const head = this.vrm?.humanoid.getRawBoneNode('head');
+      if (head) { head.getWorldPosition(target); target.y += this.height * .035; }
+      else target.y += this.height * .38;
+    }
+    const viewHeight = this.height * (face ? .22 : bust ? 0.50 : 1.3);
     const distance = viewHeight / (2 * Math.tan(THREE.MathUtils.degToRad(this.camera.fov / 2))) / this.settings.zoom;
-    this.camera.position.set(target.x, target.y, this.center.z + distance * Math.max(1, 0.7 / this.camera.aspect));
+    this.camera.position.set(target.x, target.y, target.z + distance * Math.max(1, 0.7 / this.camera.aspect));
     this.camera.lookAt(target); this.camera.updateProjectionMatrix();
   }
   setOutputMode(enabled: boolean) { this.outputMode = enabled; this.resize(); }

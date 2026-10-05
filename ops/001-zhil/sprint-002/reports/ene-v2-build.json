@@ -1,0 +1,392 @@
+{
+  "sourceSha256": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+  "outputSha256": "952e05bae0f20976df6a3340a6aba3c92422b2a6455b8f6029a9b5241d099e2d",
+  "sourceBytes": 87635472,
+  "bytes": 19818552,
+  "sourceUnchanged": true,
+  "repeatBuildEqual": true,
+  "packing": {
+    "usedAccessorValuesEqual": true,
+    "imagesCopiedWithoutChanges": true,
+    "removedUnusedAccessors": 2221,
+    "sparseMorphAccessors": 99,
+    "zeroMorphAccessors": 2402
+  },
+  "changes": {
+    "cuffs": [
+      {
+        "side": "left",
+        "material": "材質1.003",
+        "vertices": 78,
+        "maximumDisplacementMeters": 0.0723208636045456,
+        "originalEndFromWristMeters": 0.07065203040838242,
+        "newEndFromWristMeters": -0.025
+      },
+      {
+        "side": "left",
+        "material": "材質2.001",
+        "vertices": 80,
+        "maximumDisplacementMeters": 0.0956520289182663,
+        "originalEndFromWristMeters": 0.07065203040838242,
+        "newEndFromWristMeters": -0.025
+      },
+      {
+        "side": "left",
+        "material": "材質6.001",
+        "vertices": 24,
+        "maximumDisplacementMeters": 0.06988689303398132,
+        "originalEndFromWristMeters": 0.07065203040838242,
+        "newEndFromWristMeters": -0.025
+      },
+      {
+        "side": "left",
+        "material": "材質8.001",
+        "vertices": 26,
+        "maximumDisplacementMeters": 0.09118115901947021,
+        "originalEndFromWristMeters": 0.07065203040838242,
+        "newEndFromWristMeters": -0.025
+      },
+      {
+        "side": "right",
+        "material": "材質1.003",
+        "vertices": 78,
+        "maximumDisplacementMeters": 0.07232198864221573,
+        "originalEndFromWristMeters": 0.07065523415803909,
+        "newEndFromWristMeters": -0.025
+      },
+      {
+        "side": "right",
+        "material": "材質2.001",
+        "vertices": 80,
+        "maximumDisplacementMeters": 0.09565523266792297,
+        "originalEndFromWristMeters": 0.07065523415803909,
+        "newEndFromWristMeters": -0.025
+      },
+      {
+        "side": "right",
+        "material": "材質6.001",
+        "vertices": 24,
+        "maximumDisplacementMeters": 0.06988795101642609,
+        "originalEndFromWristMeters": 0.07065523415803909,
+        "newEndFromWristMeters": -0.025
+      },
+      {
+        "side": "right",
+        "material": "材質8.001",
+        "vertices": 26,
+        "maximumDisplacementMeters": 0.09118334949016571,
+        "originalEndFromWristMeters": 0.07065523415803909,
+        "newEndFromWristMeters": -0.025
+      }
+    ],
+    "materials": [
+      {
+        "name": "Nails",
+        "outlineMeters": 0.00025,
+        "shade": [
+          0.64,
+          0.7,
+          0.8
+        ]
+      },
+      {
+        "name": "body",
+        "outlineMeters": 0.00025,
+        "shade": [
+          0.64,
+          0.7,
+          0.8
+        ]
+      },
+      {
+        "name": "首",
+        "outlineMeters": 0.00025,
+        "shade": [
+          0.64,
+          0.7,
+          0.8
+        ]
+      },
+      {
+        "name": "新規",
+        "outlineMeters": 0,
+        "shade": [
+          0.7,
+          0.76,
+          0.86
+        ]
+      },
+      {
+        "name": "材質1",
+        "outlineMeters": 0,
+        "shade": [
+          0.7,
+          0.76,
+          0.86
+        ]
+      },
+      {
+        "name": "新規.001",
+        "outlineMeters": 0,
+        "shade": [
+          0.7,
+          0.76,
+          0.86
+        ]
+      },
+      {
+        "name": "新規.002",
+        "outlineMeters": 0,
+        "shade": [
+          0.7,
+          0.76,
+          0.86
+        ]
+      },
+      {
+        "name": "材質0",
+        "outlineMeters": 0,
+        "shade": [
+          0.7,
+          0.76,
+          0.86
+        ]
+      },
+      {
+        "name": "材質1.001",
+        "outlineMeters": 0,
+        "shade": [
+          0.7,
+          0.76,
+          0.86
+        ]
+      },
+      {
+        "name": "新規.003",
+        "outlineMeters": 0,
+        "shade": [
+          0.7,
+          0.76,
+          0.86
+        ]
+      },
+      {
+        "name": "材質0.001",
+        "outlineMeters": 0,
+        "shade": [
+          0.7,
+          0.76,
+          0.86
+        ]
+      },
+      {
+        "name": "hair",
+        "outlineMeters": 0.00045,
+        "shade": [
+          0.42,
+          0.58,
+          0.74
+        ]
+      },
+      {
+        "name": "材質1.002",
+        "outlineMeters": 0.00045,
+        "shade": [
+          0.48,
+          0.58,
+          0.72
+        ]
+      },
+      {
+        "name": "材質3",
+        "outlineMeters": 0.00045,
+        "shade": [
+          0.48,
+          0.58,
+          0.72
+        ]
+      },
+      {
+        "name": "材質4",
+        "outlineMeters": 0.00045,
+        "shade": [
+          0.48,
+          0.58,
+          0.72
+        ]
+      },
+      {
+        "name": "材質5",
+        "outlineMeters": 0.00045,
+        "shade": [
+          0.48,
+          0.58,
+          0.72
+        ]
+      },
+      {
+        "name": "材質6",
+        "outlineMeters": 0.00045,
+        "shade": [
+          0.48,
+          0.58,
+          0.72
+        ]
+      },
+      {
+        "name": "材質7",
+        "outlineMeters": 0.00045,
+        "shade": [
+          0.48,
+          0.58,
+          0.72
+        ]
+      },
+      {
+        "name": "材質8",
+        "outlineMeters": 0.00045,
+        "shade": [
+          0.48,
+          0.58,
+          0.72
+        ]
+      },
+      {
+        "name": "材質9",
+        "outlineMeters": 0.00045,
+        "shade": [
+          0.48,
+          0.58,
+          0.72
+        ]
+      },
+      {
+        "name": "材質10",
+        "outlineMeters": 0.00045,
+        "shade": [
+          0.48,
+          0.58,
+          0.72
+        ]
+      },
+      {
+        "name": "材質0.003",
+        "outlineMeters": 0.00045,
+        "shade": [
+          0.48,
+          0.58,
+          0.72
+        ]
+      },
+      {
+        "name": "材質2",
+        "outlineMeters": 0.00045,
+        "shade": [
+          0.48,
+          0.58,
+          0.72
+        ]
+      },
+      {
+        "name": "スカート腕ヘドフォン",
+        "outlineMeters": 0.00045,
+        "shade": [
+          0.48,
+          0.58,
+          0.72
+        ]
+      },
+      {
+        "name": "材質1.003",
+        "outlineMeters": 0.0004,
+        "shade": [
+          0.48,
+          0.58,
+          0.74
+        ]
+      },
+      {
+        "name": "材質2.001",
+        "outlineMeters": 0.0004,
+        "shade": [
+          0.48,
+          0.58,
+          0.74
+        ]
+      },
+      {
+        "name": "材質6.001",
+        "outlineMeters": 0.0004,
+        "shade": [
+          0.48,
+          0.58,
+          0.74
+        ]
+      },
+      {
+        "name": "材質8.001",
+        "outlineMeters": 0.0004,
+        "shade": [
+          0.48,
+          0.58,
+          0.74
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "vmodelBrowUpLeft",
+        "index": 45,
+        "changedPrimitiveVertices": 53
+      },
+      {
+        "name": "vmodelBrowUpRight",
+        "index": 46,
+        "changedPrimitiveVertices": 53
+      },
+      {
+        "name": "vmodelBrowDownLeft",
+        "index": 47,
+        "changedPrimitiveVertices": 53
+      },
+      {
+        "name": "vmodelBrowDownRight",
+        "index": 48,
+        "changedPrimitiveVertices": 53
+      },
+      {
+        "name": "vmodelEyeWideLeft",
+        "index": 49,
+        "changedPrimitiveVertices": 1096
+      },
+      {
+        "name": "vmodelEyeWideRight",
+        "index": 50,
+        "changedPrimitiveVertices": 1094
+      },
+      {
+        "name": "vmodelEe",
+        "index": 51,
+        "changedPrimitiveVertices": 2830
+      }
+    ]
+  },
+  "termsSha256": {
+    "Readmes/READREADREADREADREADREADPLZPLZPLZPLZPLZPLZPLZPLZPLZPLZPLZ.txt": "69714fe43b682cfda3989c37b1c7c10bb1673acf5f9fe203e5000eef9ad6eed7",
+    "Readmes/YYBﾊｽ･ｷ･ﾆ･茹・readme.txt": "7c21143849cddcb30f93a57d99a46ce244f15d9be2b2eaba8e7092c641fc1f86",
+    "Readmes/ReadMe_Tda.txt": "5b732de972eb58d258bd5294c2a2c9927d26931961b414130131ab248ddf9fb6",
+    "Readmes/ReadMe_ïaÄqùæë¬.txt": "12594f475d34935cd4a40f4061dbab05783b19a5dbb03f4e3aab4b9e47616d3d",
+    "Readmes/ReadMe_Tda_English.txt": "62ccff079e89a2e8e1ec073aefcc3c57da37012742495021ccc79abd490dbf20"
+  },
+  "originalMorphTargetsPreserved": true,
+  "skinWeightsAndTextureCoordinatesUnchanged": true,
+  "alphaModesAndTexturesUnchanged": true,
+  "humanoidSpringsAndCollidersUnchanged": true,
+  "recipe": "config/avatars/ene-v2.json",
+  "assetVersion": "2.0.0-candidate.1",
+  "limits": [
+    "Local appearance candidate.",
+    "Physical and appearance acceptance remain open.",
+    "Source terms still apply."
+  ]
+}

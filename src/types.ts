@@ -1,7 +1,7 @@
 export interface Landmark { x: number; y: number; z: number; visibility?: number; presence?: number }
 export interface HandObservation { side: string; landmarks: Landmark[]; world: Landmark[]; score: number }
 export interface TrackingSample { timestamp: number; inferenceMs: number; present: boolean }
-export interface Calibration { version: 1; head: number[]; root: number[]; torsoRoll?: number }
+export interface Calibration { version: 1; head: number[]; root: number[]; torsoRoll?: number; face?: Record<string, number> }
 export interface TrackingFrame {
   version: 1;
   sequence: number;
@@ -19,8 +19,13 @@ export interface StudioSettings {
   version: 1;
   mode: 'seated' | 'standing';
   quality: 'balanced' | 'low';
-  framing: 'body' | 'bust';
+  framing: 'body' | 'bust' | 'face';
   orientation: 'landscape' | 'portrait';
+  outputResolution: '720p' | '1080p';
+  lighting: 'studio' | 'warm' | 'violet';
+  lightIntensity: number;
+  cameraFov: number;
+  faceDetail: 'basic' | 'extended';
   background: string;
   mirror: boolean;
   hands: boolean;
@@ -33,7 +38,8 @@ export interface StudioSettings {
 }
 export const defaults: StudioSettings = {
   version: 1, mode: 'seated', quality: 'balanced', framing: 'body',
-  orientation: 'landscape', background: '#182339', mirror: true, hands: true, smoothing: 14, springMotion: 'gentle', captureResolution: '640x480', zoom: 1, headRange: 1, mouthGain: 1.8,
+  orientation: 'landscape', outputResolution: '720p', lighting: 'studio', lightIntensity: 1, cameraFov: 28, faceDetail: 'basic',
+  background: '#182339', mirror: true, hands: true, smoothing: 14, springMotion: 'gentle', captureResolution: '640x480', zoom: 1, headRange: 1, mouthGain: 1.8,
 };
 
 export function normalizeSettings(input: unknown): StudioSettings {
@@ -43,8 +49,13 @@ export function normalizeSettings(input: unknown): StudioSettings {
       ...defaults,
       mode: value.mode === 'standing' ? 'standing' : 'seated',
       quality: value.quality === 'low' ? 'low' : 'balanced',
-      framing: value.framing === 'bust' ? 'bust' : 'body',
+      framing: value.framing === 'bust' || value.framing === 'face' ? value.framing : 'body',
       orientation: value.orientation === 'portrait' ? 'portrait' : 'landscape',
+      outputResolution: value.outputResolution === '1080p' ? '1080p' : '720p',
+      lighting: value.lighting === 'warm' || value.lighting === 'violet' ? value.lighting : 'studio',
+      lightIntensity: typeof value.lightIntensity === 'number' && Number.isFinite(value.lightIntensity) ? Math.min(1.6, Math.max(.4, value.lightIntensity)) : defaults.lightIntensity,
+      cameraFov: typeof value.cameraFov === 'number' && Number.isFinite(value.cameraFov) ? Math.min(50, Math.max(20, value.cameraFov)) : defaults.cameraFov,
+      faceDetail: value.faceDetail === 'extended' ? 'extended' : 'basic',
       background: typeof value.background === 'string' && /^#[\da-f]{6}$/i.test(value.background) ? value.background : defaults.background,
       mirror: typeof value.mirror === 'boolean' ? value.mirror : defaults.mirror,
       hands: typeof value.hands === 'boolean' ? value.hands : defaults.hands,

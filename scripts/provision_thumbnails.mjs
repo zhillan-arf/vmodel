@@ -9,7 +9,7 @@ const sources=await readdir('src');
 const rendererHash=hash(Buffer.concat(await Promise.all([...sources.filter(name=>name.endsWith('.ts')).sort().map(name=>`src/${name}`),'package-lock.json','scripts/provision_thumbnails.mjs'].map(name=>readFile(name)))));
 let manifest={};try{manifest=JSON.parse(await readFile(`${output}/manifest.json`,'utf8'));}catch{}
 const pending=[];
-for(const id of ['ene','rei']){
+for(const id of ['ene','rei','rei-v2','ene-v2']){
   let bytes;try{bytes=await readFile(`public/avatars/${id}.vrm`);}catch(error){if(error.code==='ENOENT'){console.log(`${id}: bundled model is unavailable. Thumbnail was not generated.`);continue;}throw error;}
   const modelHash=hash(bytes),file=`${output}/${modelHash}.png`,previous=manifest[id];
   let valid=false;try{valid=previous?.modelHash===modelHash&&previous.rendererHash===rendererHash&&previous.thumbnailHash===hash(await readFile(file));}catch{}

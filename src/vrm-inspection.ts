@@ -98,7 +98,7 @@ export async function inspectVRM(blob: Blob, signal?: AbortSignal): Promise<Insp
       const item = getView(accessor.bufferView), stride = item.byteStride ?? size;
       const start = integer(accessor.byteOffset ?? 0);
       ensure(stride >= size && ((item.byteOffset??0)+start) % component === 0 && start % component === 0 && start + (count ? (count - 1) * stride + size : 0) <= item.byteLength, 'Accessor is outside its buffer view.');
-    } else ensure(accessor.sparse, 'Accessor has no data.');
+    } else ensure(accessor.byteOffset === undefined, 'Accessor without a buffer view has a byte offset.');
     if (accessor.sparse) {
       const sparse = accessor.sparse, n = integer(sparse.count, count), indices = getView(sparse.indices.bufferView), values = getView(sparse.values.bufferView);
       const indexBytes = componentBytes[sparse.indices.componentType];

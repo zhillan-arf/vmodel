@@ -44,6 +44,18 @@ it('checks the decoded pixel boundary with image headers',async()=>{
 it('checks the geometry estimate boundary with a sparse accessor',async()=>{
   for(const excess of [0,1]){const result=inspectVRM(glb({...fixtureJSON(),...sparseGeometry(limits.geometry/4+excess)},new Uint8Array(8)));if(excess)await expect(result).rejects.toThrow('128 MiB');else await expect(result).resolves.toHaveProperty('resources.geometryBytes',limits.geometry);}
 });
+it('checks the geometry limit for an accessor that contains only zeros',async()=>{
+  for(const excess of [0,1]){
+    const accessor={count:limits.geometry/4+excess,type:'SCALAR',componentType:5126};
+    const result=inspectVRM(glb({...fixtureJSON(),accessors:[accessor]}));
+    if(excess)await expect(result).rejects.toThrow('128 MiB');
+    else await expect(result).resolves.toHaveProperty('resources.geometryBytes',limits.geometry);
+  }
+});
+it.each([0,4])('rejects byte offset %s when an accessor has no buffer view',async byteOffset=>{
+  const accessor={count:1,type:'SCALAR',componentType:5126,byteOffset};
+  await expect(inspectVRM(glb({...fixtureJSON(),accessors:[accessor]}))).rejects.toThrow('byte offset');
+});
 it('checks the combined boundary without changing another ceiling',async()=>{
   expect(limits.geometry+Math.ceil(limits.pixels*4*4/3)).toBeGreaterThan(limits.combined);
   for(const excess of [0,1]){

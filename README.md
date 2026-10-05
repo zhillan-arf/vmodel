@@ -45,6 +45,10 @@ The [prepared Ene avatar](assets/avatars/ene.vrm), [editable scene](assets/work/
 
 ## Status
 
+Local [Rei v2](ops/001-zhil/sprint-002/specs/rei-v2-review.md) and [Ene v2](ops/001-zhil/sprint-002/specs/ene-v2-review.md) candidates are available in the model list.
+Their review guides include edited VRMs, Blender files, build recipes, comparisons, and test results.
+Appearance review and physical camera tests remain open.
+
 Design proposals: [VRM library and registration](ops/001-zhil/sprint-001/research/vrm-library-and-registration.md) and [tracking diagnosis and model-independent visualization](ops/001-zhil/sprint-001/research/tracking-diagnostics-and-improvement.md). The [action plan](ops/001-zhil/sprint-001/specs/studio-evolution-plan.md), [design decisions](ops/001-zhil/sprint-001/specs/studio-design-decisions.md), and [product specification](ops/001-zhil/sprint-001/specs/studio-product-spec.md) define the proposed implementation. The current app supports bundled selection and temporary VRM loading.
 
 Implementation and human acceptance remain separate. The task register records the current status. Physical camera and gesture acceptance, a suitable live voice backend, Virtual Camera registration and final recordings remain open, and the local voice converter does not yet meet its timing gates under ordinary desktop load.

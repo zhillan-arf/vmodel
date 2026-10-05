@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sourceSha256": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+  "title": "Adachi Rei - VModel v2 candidate",
+  "assetVersion": "2.0.0-candidate.1",
+  "skeletonRoots": { "1": 0 },
+  "removeLegacyExtensionUsed": true,
+  "addedExpressionsUsePositionOnly": true,
+  "outlines": [
+    { "materials": ["0.kami", "1.saidote^ru", "2.kamitasuki"], "width": 0.055, "color": [0.18, 0.09, 0.06, 1] },
+    { "materials": ["4.karadahada", "3.kao"], "width": 0.018, "color": [0.34, 0.19, 0.16, 1] },
+    { "materials": ["24.ni^hai", "25.kyurotto", "26.hainekku2", "28.beruto", "29.koshisagyouyoue_ron", "30.suni^ka^", "31.suni^ka^hidari", "35.uwagihyou"], "width": 0.045, "color": [0.075, 0.065, 0.06, 1] },
+    { "materials": ["32.tebukuro", "33.tebukuromigi", "36.uwagiatsumi"], "width": 0.025, "color": [0.10, 0.07, 0.05, 1] }
+  ],
+  "colors": [
+    { "material": "6.matsuge", "property": "_Color", "value": [0.50, 0.42, 0.39, 1] },
+    { "material": "7.mayuge", "property": "_Color", "value": [0.78, 0.62, 0.51, 1] },
+    { "material": "3.kao", "property": "_ShadeColor", "value": [1, 0.93, 0.90, 1] },
+    { "material": "10.hitomihidari", "property": "_EmissionColor", "value": [0.025, 0.012, 0, 1] },
+    { "material": "12.hitomimigi", "property": "_EmissionColor", "value": [0.025, 0.012, 0, 1] }
+  ],
+  "expressions": {
+    "vmodelBrowUpLeft": "39.左まゆ上げ",
+    "vmodelBrowUpRight": "40.右まゆ上げ",
+    "vmodelBrowDownLeft": "42.左まゆ下げ",
+    "vmodelBrowDownRight": "43.右まゆ下げ",
+    "vmodelBrowWorry": "47.両まゆ困り",
+    "vmodelMouthSmile": "7.微笑",
+    "vmodelMouthFrown": "8.への字",
+    "vmodelEyeWideLeft": "17.左目見開き",
+    "vmodelEyeWideRight": "18.右目見開き"
+  }
+}

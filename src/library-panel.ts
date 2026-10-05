@@ -102,6 +102,18 @@ export class LibraryPanel {
       const use=document.createElement('button');use.textContent='Use model';use.onclick=()=>void this.use(entry);
       const details=document.createElement('details'), label=document.createElement('summary');label.textContent='Entry actions';details.append(label);
       const exportButton=document.createElement('button');exportButton.textContent='Export original VRM';exportButton.onclick=()=>void this.repository.export(entry.id).then(blob=>download(blob,entry.originalFilename)).catch(e=>this.message(String(e),'error'));details.append(exportButton);
+      if (entry.sourceKind === 'bundled' && ['rei', 'rei-v2', 'ene-v2'].includes(entry.id)) {
+        const terms = document.createElement('a');
+        if (entry.id === 'ene-v2') {
+          terms.href = '/avatars/ene-v2-notices/index.html'; terms.target = '_blank'; terms.rel = 'noopener'; terms.textContent = 'Read source terms';
+        } else {
+          terms.href = `/avatars/${entry.id}-notices/readme.txt`; terms.download = `${entry.id}-readme.txt`; terms.textContent = 'Save source terms (CP932)';
+        }
+        details.append(terms);
+        const source = document.createElement('a'); source.href = `/avatars/${entry.id}-notices/provenance.json`;
+        source.download = `${entry.id}-provenance.json`; source.textContent = 'Save source record'; details.append(source);
+        const metadata = document.createElement('pre'); metadata.textContent = JSON.stringify(entry.rawMeta, null, 2); details.append(metadata);
+      }
       if(entry.sourceKind==='bundled'){const img=document.createElement('img');img.src=`/avatars/thumbnails/${entry.assetHash}.png`;img.alt=`${entry.displayName} preview`;card.append(img);}
       if(entry.sourceKind==='imported') {
         const rename=document.createElement('button');rename.textContent='Rename';rename.onclick=()=>{const name=prompt('Model name',entry.displayName);if(name!==null)void this.repository.rename(entry.id,name).catch(e=>this.message(String(e),'error'));};details.append(rename);

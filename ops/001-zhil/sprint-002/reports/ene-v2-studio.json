@@ -1,0 +1,259 @@
+{
+  "date": "2026-10-05T02:52:45.825Z",
+  "sourceHashes": {
+    "src/main.ts": "cb0007277e3b8039f06e47c8573b8c212041872a6053da55e2ec3f7526ded9f8",
+    "src/library-panel.ts": "38578668539fdf54a1c26c0ac9f87be96266ab4b76d0b51871b32fc725ea360b",
+    "src/avatars.ts": "469c1ab36a8edc1c41be675ca627ccbf9e8cf151ff7b328718a384c8af25452a",
+    "src/viewer.ts": "7edb210c5144b92dd22ce2f4f023fc5191cc19b8359ab407b0945fa62f7d9fe6",
+    "src/types.ts": "5df057a789f79ac0ccb1519e9ad4339b663779a5184a9deefd2aedf3d628f451",
+    "src/face-expressions.ts": "c3efafc66aea7ca9294342752086c10b574a8fb7106625ddf1b22ccbe64701d0",
+    "src/motion-solver.ts": "9de367b984722743c354e04570ce1fd8aa39b909c578aec0a2e2a2c6917aed7c",
+    "scripts/v2_studio_smoke.mjs": "fcef66bc7cdeef57f7a3e492a2596054e105c7058235d31ac77cd8a460c8b61d"
+  },
+  "initial": {
+    "avatarId": "952e05bae0f20976df6a3340a6aba3c92422b2a6455b8f6029a9b5241d099e2d",
+    "label": "Ene v2 · Appearance test",
+    "selectedBundle": "ene-v2",
+    "settings": {
+      "version": 1,
+      "mode": "seated",
+      "quality": "balanced",
+      "framing": "face",
+      "orientation": "landscape",
+      "outputResolution": "1080p",
+      "lighting": "warm",
+      "lightIntensity": 0.9,
+      "cameraFov": 42,
+      "faceDetail": "extended",
+      "background": "#182339",
+      "mirror": true,
+      "hands": true,
+      "smoothing": 14,
+      "springMotion": "gentle",
+      "captureResolution": "640x480",
+      "zoom": 1,
+      "headRange": 1,
+      "mouthGain": 1.8
+    },
+    "calibration": {
+      "version": 1,
+      "head": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "root": [
+        0.5,
+        -0.5,
+        0
+      ],
+      "torsoRoll": 0,
+      "face": {
+        "jawOpen": 0.15,
+        "browOuterUpLeft": 0.2
+      }
+    },
+    "expression": "neutral"
+  },
+  "output": {
+    "avatarId": "952e05bae0f20976df6a3340a6aba3c92422b2a6455b8f6029a9b5241d099e2d",
+    "label": "Ene v2 · Appearance test",
+    "selectedBundle": null,
+    "settings": {
+      "version": 1,
+      "mode": "seated",
+      "quality": "balanced",
+      "framing": "face",
+      "orientation": "landscape",
+      "outputResolution": "1080p",
+      "lighting": "warm",
+      "lightIntensity": 0.9,
+      "cameraFov": 42,
+      "faceDetail": "extended",
+      "background": "#182339",
+      "mirror": true,
+      "hands": true,
+      "smoothing": 14,
+      "springMotion": "gentle",
+      "captureResolution": "640x480",
+      "zoom": 1,
+      "headRange": 1,
+      "mouthGain": 1.8
+    },
+    "calibration": {
+      "version": 1,
+      "head": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "root": [
+        0.5,
+        -0.5,
+        0
+      ],
+      "torsoRoll": 0,
+      "face": {
+        "jawOpen": 0.15,
+        "browOuterUpLeft": 0.2
+      }
+    },
+    "expression": "neutral",
+    "canvas": {
+      "width": 1920,
+      "height": 1080
+    },
+    "fov": 42,
+    "lights": [
+      {
+        "color": "f5d6a5",
+        "intensity": 0.765
+      },
+      {
+        "color": "ffdb9e",
+        "intensity": 0.9900000000000001
+      },
+      {
+        "color": "e2a76d",
+        "intensity": 0.135
+      }
+    ],
+    "brows": 0,
+    "aa": 0
+  },
+  "facialOutput": {
+    "avatarId": "952e05bae0f20976df6a3340a6aba3c92422b2a6455b8f6029a9b5241d099e2d",
+    "label": "Ene v2 · Appearance test",
+    "selectedBundle": null,
+    "settings": {
+      "version": 1,
+      "mode": "seated",
+      "quality": "balanced",
+      "framing": "face",
+      "orientation": "landscape",
+      "outputResolution": "1080p",
+      "lighting": "warm",
+      "lightIntensity": 0.9,
+      "cameraFov": 42,
+      "faceDetail": "extended",
+      "background": "#182339",
+      "mirror": true,
+      "hands": true,
+      "smoothing": 14,
+      "springMotion": "gentle",
+      "captureResolution": "640x480",
+      "zoom": 1,
+      "headRange": 1,
+      "mouthGain": 1.8
+    },
+    "calibration": {
+      "version": 1,
+      "head": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "root": [
+        0.5,
+        -0.5,
+        0
+      ],
+      "torsoRoll": 0,
+      "face": {
+        "jawOpen": 0.15,
+        "browOuterUpLeft": 0.2
+      }
+    },
+    "expression": "neutral",
+    "canvas": {
+      "width": 1920,
+      "height": 1080
+    },
+    "fov": 42,
+    "lights": [
+      {
+        "color": "f5d6a5",
+        "intensity": 0.765
+      },
+      {
+        "color": "ffdb9e",
+        "intensity": 0.9900000000000001
+      },
+      {
+        "color": "e2a76d",
+        "intensity": 0.135
+      }
+    ],
+    "brows": 0.6574329561623474,
+    "aa": 0.894992763851263
+  },
+  "persisted": {
+    "avatarId": "952e05bae0f20976df6a3340a6aba3c92422b2a6455b8f6029a9b5241d099e2d",
+    "label": "Ene v2 · Appearance test",
+    "selectedBundle": "ene-v2",
+    "settings": {
+      "version": 1,
+      "mode": "seated",
+      "quality": "balanced",
+      "framing": "face",
+      "orientation": "landscape",
+      "outputResolution": "1080p",
+      "lighting": "violet",
+      "lightIntensity": 0.9,
+      "cameraFov": 42,
+      "faceDetail": "extended",
+      "background": "#182339",
+      "mirror": true,
+      "hands": true,
+      "smoothing": 14,
+      "springMotion": "gentle",
+      "captureResolution": "640x480",
+      "zoom": 1,
+      "headRange": 1,
+      "mouthGain": 1.8
+    },
+    "calibration": null,
+    "expression": "neutral",
+    "canvas": {
+      "width": 1150,
+      "height": 647
+    },
+    "fov": 42,
+    "lights": [
+      {
+        "color": "fc9de8",
+        "intensity": 0.9
+      },
+      {
+        "color": "f2a1ed",
+        "intensity": 0.9
+      },
+      {
+        "color": "9b72fa",
+        "intensity": 0.36000000000000004
+      }
+    ],
+    "brows": 0,
+    "aa": 0
+  },
+  "errors": [],
+  "externalRequests": [],
+  "checks": [
+    "Local model selection",
+    "Light and camera settings",
+    "1080p and 720p in both orientations",
+    "Face calibration transfer",
+    "Brow and mouth output",
+    "Manual expression conflict control",
+    "Output reload",
+    "Saved settings",
+    "Source terms and thumbnail"
+  ],
+  "limits": [
+    "Synthetic face coefficients.",
+    "No camera, OBS, or target GPU measurement."
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "blender": "5.2.2 LTS",
+  "sourceVrmSha256": "952e05bae0f20976df6a3340a6aba3c92422b2a6455b8f6029a9b5241d099e2d",
+  "file": "assets/work/ene-v2/ene-v2.blend",
+  "blendSha256": "7a032e009fd8e7a95aaec6076e2fd76609ed449157bd243df36ed5aaa21c3f98",
+  "reopened": true,
+  "humanoidBones": {
+    "hips": "腰",
+    "spine": "上半身",
+    "chest": "上半身2",
+    "neck": "首",
+    "head": "頭",
+    "leftEye": "左目",
+    "rightEye": "右目",
+    "leftUpperLeg": "左足",
+    "leftLowerLeg": "左ひざ",
+    "leftFoot": "左足首",
+    "leftToes": "左つま先",
+    "rightUpperLeg": "右足",
+    "rightLowerLeg": "右ひざ",
+    "rightFoot": "右足首",
+    "rightToes": "右つま先",
+    "leftShoulder": "左肩",
+    "leftUpperArm": "左腕",
+    "leftLowerArm": "左ひじ",
+    "leftHand": "左手首",
+    "rightShoulder": "右肩",
+    "rightUpperArm": "右腕",
+    "rightLowerArm": "右ひじ",
+    "rightHand": "右手首",
+    "leftThumbMetacarpal": "左親指０",
+    "leftThumbProximal": "左親指１",
+    "leftThumbDistal": "左親指２",
+    "leftIndexProximal": "左人指１",
+    "leftIndexIntermediate": "左人指２",
+    "leftIndexDistal": "左人指３",
+    "leftMiddleProximal": "左中指１",
+    "leftMiddleIntermediate": "左中指２",
+    "leftMiddleDistal": "左中指３",
+    "leftRingProximal": "左薬指１",
+    "leftRingIntermediate": "左薬指２",
+    "leftRingDistal": "左薬指３",
+    "leftLittleProximal": "左小指１",
+    "leftLittleIntermediate": "左小指２",
+    "leftLittleDistal": "左小指３",
+    "rightThumbMetacarpal": "右親指０",
+    "rightThumbProximal": "右親指１",
+    "rightThumbDistal": "右親指２",
+    "rightIndexProximal": "右人指１",
+    "rightIndexIntermediate": "右人指２",
+    "rightIndexDistal": "右人指３",
+    "rightMiddleProximal": "右中指１",
+    "rightMiddleIntermediate": "右中指２",
+    "rightMiddleDistal": "右中指３",
+    "rightRingProximal": "右薬指１",
+    "rightRingIntermediate": "右薬指２",
+    "rightRingDistal": "右薬指３",
+    "rightLittleProximal": "右小指１",
+    "rightLittleIntermediate": "右小指２",
+    "rightLittleDistal": "右小指３"
+  },
+  "shapes": [
+    "anger mark",
+    "lll",
+    "vmodelBrowDownLeft",
+    "vmodelBrowDownRight",
+    "vmodelBrowUpLeft",
+    "vmodelBrowUpRight",
+    "vmodelEe",
+    "vmodelEyeWideLeft",
+    "vmodelEyeWideRight",
+    "ω",
+    "ω□",
+    "∧",
+    "∧2",
+    "▲",
+    "▲2",
+    "○",
+    "○ ○",
+    "○2",
+    "あ",
+    "い",
+    "う",
+    "お",
+    "じと目",
+    "なごみ",
+    "にこり",
+    "はぁと",
+    "はぅ",
+    "はんっ！",
+    "びっくり",
+    "ぺろっ",
+    "ぺろっ2",
+    "まばたき",
+    "ウィンク右",
+    "ウィンク左",
+    "スダー",
+    "上",
+    "下",
+    "優しい",
+    "困る",
+    "怒り",
+    "恐ろしい",
+    "汗",
+    "照れ",
+    "照れ2",
+    "照れ3",
+    "猫目",
+    "真面目",
+    "瞳小",
+    "笑い",
+    "笑い右",
+    "笑い左",
+    "笑い目"
+  ],
+  "packedImages": 19,
+  "gazeType": "bone",
+  "secondViewerGaze": [
+    {
+      "direction": "left",
+      "anglesRadians": [
+        0.2318221628665924,
+        0.15454840660095215
+      ],
+      "quaternions": [
+        [
+          0.9932897090911865,
+          0.03532446548342705,
+          -0.008820103481411934,
+          0.10977209359407425
+        ],
+        [
+          0.9970158338546753,
+          -0.023578951135277748,
+          -0.005887387786060572,
+          0.0732724666595459
+        ]
+      ]
+    },
+    {
+      "direction": "right",
+      "anglesRadians": [
+        0.15454840660095215,
+        0.2318221628665924
+      ],
+      "quaternions": [
+        [
+          0.9970158338546753,
+          -0.0235789492726326,
+          0.0058873859234154224,
+          -0.0732724666595459
+        ],
+        [
+          0.9932897090911865,
+          0.03532446548342705,
+          0.008820106275379658,
+          -0.10977209359407425
+        ]
+      ]
+    },
+    {
+      "direction": "up",
+      "anglesRadians": [
+        0.10146769136190414,
+        0.10146769136190414
+      ],
+      "quaternions": [
+        [
+          0.9987133145332336,
+          0.0423329696059227,
+          -0.023232437670230865,
+          -0.015489383600652218
+        ],
+        [
+          0.9987133145332336,
+          0.042332958430051804,
+          0.023232460021972656,
+          0.015489384531974792
+        ]
+      ]
+    },
+    {
+      "direction": "down",
+      "anglesRadians": [
+        0.10146769136190414,
+        0.10146769136190414
+      ],
+      "quaternions": [
+        [
+          0.9987133145332336,
+          -0.0423329696059227,
+          0.023232437670230865,
+          0.015489383600652218
+        ],
+        [
+          0.9987133145332336,
+          -0.042332958430051804,
+          -0.023232460021972656,
+          -0.015489384531974792
+        ]
+      ]
+    }
+  ],
+  "limits": "Blender VRM viewer controls and source check. No physical camera test."
+}

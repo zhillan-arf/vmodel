@@ -1,6 +1,7 @@
 import type { StudioSettings } from './types';
-export function compositionSize(orientation: StudioSettings['orientation']) {
-  return orientation === 'portrait' ? { width: 720, height: 1280 } : { width: 1280, height: 720 };
+export function compositionSize(orientation: StudioSettings['orientation'], resolution: StudioSettings['outputResolution'] = '720p') {
+  const [width, height] = resolution === '1080p' ? [1920, 1080] : [1280, 720];
+  return orientation === 'portrait' ? { width: height, height: width } : { width, height };
 }
 export function fitComposition(width: number, height: number, orientation: StudioSettings['orientation']) {
   const target = compositionSize(orientation);

@@ -1,0 +1,243 @@
+{
+  "blender": "5.2.2 LTS",
+  "file": "assets/work/rei-v2/rei-v2.blend",
+  "armatures": [
+    {
+      "name": "Armature",
+      "bones": 601
+    }
+  ],
+  "meshes": [
+    {
+      "name": "U_Char_0",
+      "vertices": 41167,
+      "shapeKeys": 0
+    },
+    {
+      "name": "U_Char_1",
+      "vertices": 12454,
+      "shapeKeys": 61
+    }
+  ],
+  "images": 43,
+  "packedImages": 43,
+  "limits": "The recipe builds the tested VRM. Blender edits require a separate export and verification.",
+  "reopened": true,
+  "humanoidBones": [
+    {
+      "name": "hips",
+      "node": "33.joint_HipMaster"
+    },
+    {
+      "name": "spine",
+      "node": "4.joint_Torso"
+    },
+    {
+      "name": "chest",
+      "node": "5.joint_Torso2"
+    },
+    {
+      "name": "neck",
+      "node": "6.joint_Neck"
+    },
+    {
+      "name": "head",
+      "node": "7.joint_Head"
+    },
+    {
+      "name": "leftEye",
+      "node": "39.joint_LeftEye"
+    },
+    {
+      "name": "rightEye",
+      "node": "41.joint_RightEye"
+    },
+    {
+      "name": "leftUpperLeg",
+      "node": "35.joint_LeftHip"
+    },
+    {
+      "name": "leftLowerLeg",
+      "node": "36.joint_LeftKnee"
+    },
+    {
+      "name": "leftFoot",
+      "node": "37.joint_LeftFoot"
+    },
+    {
+      "name": "leftToes",
+      "node": "38.!joint_LeftToe"
+    },
+    {
+      "name": "rightUpperLeg",
+      "node": "69.joint_RightHip"
+    },
+    {
+      "name": "rightLowerLeg",
+      "node": "70.joint_RightKnee"
+    },
+    {
+      "name": "rightFoot",
+      "node": "71.joint_RightFoot"
+    },
+    {
+      "name": "rightToes",
+      "node": "72.!joint_RightToe"
+    },
+    {
+      "name": "leftShoulder",
+      "node": "9.joint_LeftShoulder"
+    },
+    {
+      "name": "leftUpperArm",
+      "node": "10.joint_LeftArm"
+    },
+    {
+      "name": "leftLowerArm",
+      "node": "11.joint_LeftElbow"
+    },
+    {
+      "name": "leftHand",
+      "node": "12.joint_LeftWrist"
+    },
+    {
+      "name": "rightShoulder",
+      "node": "45.joint_RightShoulder"
+    },
+    {
+      "name": "rightUpperArm",
+      "node": "46.joint_RightArm"
+    },
+    {
+      "name": "rightLowerArm",
+      "node": "47.joint_RightElbow"
+    },
+    {
+      "name": "rightHand",
+      "node": "48.joint_RightWrist"
+    },
+    {
+      "name": "leftThumbProximal",
+      "node": "599.!joint_LeftThumb0M"
+    },
+    {
+      "name": "leftThumbIntermediate",
+      "node": "14.joint_LeftThumb1"
+    },
+    {
+      "name": "leftThumbDistal",
+      "node": "15.joint_LeftThumb2"
+    },
+    {
+      "name": "leftIndexProximal",
+      "node": "17.joint_LeftIndex1"
+    },
+    {
+      "name": "leftIndexIntermediate",
+      "node": "18.joint_LeftIndex2"
+    },
+    {
+      "name": "leftIndexDistal",
+      "node": "19.joint_LeftIndex3"
+    },
+    {
+      "name": "leftMiddleProximal",
+      "node": "21.joint_LeftMiddle1"
+    },
+    {
+      "name": "leftMiddleIntermediate",
+      "node": "22.joint_LeftMiddle2"
+    },
+    {
+      "name": "leftMiddleDistal",
+      "node": "23.joint_LeftMiddle3"
+    },
+    {
+      "name": "leftRingProximal",
+      "node": "25.joint_LeftRing1"
+    },
+    {
+      "name": "leftRingIntermediate",
+      "node": "26.joint_LeftRing2"
+    },
+    {
+      "name": "leftRingDistal",
+      "node": "27.joint_LeftRing3"
+    },
+    {
+      "name": "leftLittleProximal",
+      "node": "29.joint_LeftPinky1"
+    },
+    {
+      "name": "leftLittleIntermediate",
+      "node": "30.joint_LeftPinky2"
+    },
+    {
+      "name": "leftLittleDistal",
+      "node": "31.joint_LeftPinky3"
+    },
+    {
+      "name": "rightThumbProximal",
+      "node": "600.!joint_RightThumb0M"
+    },
+    {
+      "name": "rightThumbIntermediate",
+      "node": "50.joint_RightThumb1"
+    },
+    {
+      "name": "rightThumbDistal",
+      "node": "51.joint_RightThumb2"
+    },
+    {
+      "name": "rightIndexProximal",
+      "node": "53.joint_RightIndex1"
+    },
+    {
+      "name": "rightIndexIntermediate",
+      "node": "54.joint_RightIndex2"
+    },
+    {
+      "name": "rightIndexDistal",
+      "node": "55.joint_RightIndex3"
+    },
+    {
+      "name": "rightMiddleProximal",
+      "node": "57.joint_RightMiddle1"
+    },
+    {
+      "name": "rightMiddleIntermediate",
+      "node": "58.joint_RightMiddle2"
+    },
+    {
+      "name": "rightMiddleDistal",
+      "node": "59.joint_RightMiddle3"
+    },
+    {
+      "name": "rightRingProximal",
+      "node": "61.joint_RightRing1"
+    },
+    {
+      "name": "rightRingIntermediate",
+      "node": "62.joint_RightRing2"
+    },
+    {
+      "name": "rightRingDistal",
+      "node": "63.joint_RightRing3"
+    },
+    {
+      "name": "rightLittleProximal",
+      "node": "65.joint_RightPinky1"
+    },
+    {
+      "name": "rightLittleIntermediate",
+      "node": "66.joint_RightPinky2"
+    },
+    {
+      "name": "rightLittleDistal",
+      "node": "67.joint_RightPinky3"
+    }
+  ],
+  "sourceVrmSha256": "9afc0d72fb640e3b3d89075e38a957e2d6d990e0ea8f7058f6796fd7c6487639",
+  "blendSha256": "3959c7f976d49a97485e4e992e85f521574c6a5602f8dd49d4fae4d48057b364",
+  "addedShapesPresent": true
+}

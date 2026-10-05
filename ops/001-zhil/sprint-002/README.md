@@ -4,14 +4,17 @@ Date: 2026-10-05.
 Phase: The first implementation is complete. The software checks passed. The next human session remains open.
 
 The main defects occur in the software between MediaPipe observations and model movement.
-The evidence does not justify a new Ene model for these defects.
+Those motion defects required software repairs.
+The later Ene study identified separate expression and cuff defects for asset changes.
 
 The objective is the best practical motion quality that approaches established VTuber and VRChat systems.
 The user must not need to create or repair 3D assets manually.
 The [plan](specs/sprint-002-plan.md) defines separate targets for camera motion, model appearance, and optional external tracking.
 
 **Next action:** follow the [human test procedure](specs/human-test.md).
-The build uses `motion-solver-3` and `task-confidence-2`.
+The build uses `motion-solver-4` and `task-confidence-2`.
+The [Rei v2 review](specs/rei-v2-review.md) covers the new asset and appearance controls.
+The [Ene v2 review](specs/ene-v2-review.md) covers the smaller export, face controls, gaze, materials, and shorter cuffs.
 
 ## Start here
 
@@ -21,6 +24,9 @@ The build uses `motion-solver-3` and `task-confidence-2`.
 | [Industry options](research/002-industry-options.md) | Compare software repair, established applications, and better sensors. |
 | [Models and Tripo](research/003-model-and-tripo.md) | Assess the actual models, automatic asset work, Tripo, and the Ene v2 decision. |
 | [Rei and VRChat](research/004-rei-vrchat-feasibility.md) | Trace the reference avatar, test the existing Rei asset, and assess webcam limits and conversion. |
+| [Ene v2 study](research/005-ene-v2-feasibility.md) | Test Ene expression, material, and export changes without a required VRChat reference. |
+| [Rei v2 plan](specs/rei-v2-plan.md) | Create a separate local Rei asset and improve VModel appearance with open-source tools. |
+| [Ene v2 plan](specs/ene-v2-plan.md) | Create a separate local Ene asset and test the measured model repairs. |
 | [Sprint plan](specs/sprint-002-plan.md) | Define work order, acceptance targets, and sprint-001 transfer. |
 | [Task register](tasks/backlog/README.md) | Track completed software work and open physical requirements. |
 | [Implementation decisions](specs/implementation-decisions.md) | Explain the implemented correction and conditional deferrals. |
@@ -42,7 +48,9 @@ The build uses `motion-solver-3` and `task-confidence-2`.
 These findings support software repairs first.
 They do not show that a repaired solver meets the motion targets.
 The research test changed data only inside its own replay process.
-The implementation now corrects production motion conversion. Both model files remain unchanged.
+The implementation now corrects production motion conversion.
+Both original model files remain unchanged.
+Separate v2 candidates contain the later appearance and asset changes.
 
 ## Terms
 

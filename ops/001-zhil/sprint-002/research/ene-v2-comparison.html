@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ene v2 research comparison</title>
+<style>
+:root{color-scheme:dark;font:16px/1.5 system-ui;background:#101a27;color:#e7f1fb}body{max-width:1280px;margin:auto;padding:28px}h1{margin-bottom:8px}p{max-width:85ch}a{color:#86ddff}label{display:block;margin:14px 0}select,input{font:inherit;accent-color:#50caff}select{padding:8px;max-width:100%}.compare{position:relative;aspect-ratio:8/5;background:#162637;overflow:hidden;border:1px solid #416078;border-radius:12px}.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.top{clip-path:inset(0 50% 0 0)}.line{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff}.tags{display:flex;justify-content:space-between;gap:16px;font-weight:600}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}.grid img{width:100%;background:#162637;border-radius:8px}figure{margin:0}figcaption{padding:8px 0;font-size:.9rem}input[type=range]{width:100%}.note{color:#afc4d5}button{font:inherit;padding:6px 12px}section{margin-top:28px}
+</style>
+<h1>Ene v2: tests with the existing model</h1>
+<p>The research copy uses the existing mesh, textures, and bones. These tests show changes to light, materials, and expression bindings.</p>
+<p><a href="005-ene-v2-feasibility.md">Read the study</a> · <a href="ene-v2-local/ene-packed.vrm">Open the smaller research VRM</a></p>
+<label for="variant">Select the comparison
+<select id="variant">
+<option value="packed">Smaller file: same appearance</option>
+<option value="lighting-only">Light changes only</option>
+<option value="styled">Material changes only</option>
+<option value="styled-cool" selected>Material and light changes</option>
+<option value="current-happy">Current happy control</option>
+<option value="new-smile">Additional smile controls</option>
+<option value="new-skeptical">Additional eye and eyebrow controls</option>
+<option value="new-brows">Raised eyebrows and open mouth</option>
+<option value="blink">Closed eyes</option>
+<option value="wink-mouth">Wink and open mouth</option>
+</select></label>
+<div class="tags"><span>Current Ene</span><span id="selectedLabel">Material and light changes</span></div>
+<div class="compare">
+<img id="candidate" src="ene-v2-local/ene-styled-cool.png" alt="Selected Ene research result">
+<img class="top" id="baseline" src="ene-v2-local/ene-original.png" alt="Current Ene with the same camera and pose">
+<div class="line" id="line"></div>
+</div>
+<label for="split">Move the comparison boundary<input id="split" type="range" min="0" max="100" value="50"></label>
+<p id="detail" class="note"></p>
+<p class="note">These are static browser renders. The selected style is a test, not an approved design. Spring motion is off.</p>
+<section>
+<h2>Views of the current model</h2>
+<div class="grid">
+<figure><img src="ene-v2-local/ene-side.png" alt="Ene head from the side"><figcaption>Side view: headphones, cheek marks, and hair.</figcaption></figure>
+<figure><img src="ene-v2-local/ene-back.png" alt="Ene head from the back"><figcaption>Back view: hair shape and surface detail.</figcaption></figure>
+<figure><img src="ene-v2-local/ene-full.png" alt="Full Ene model on a dark background"><figcaption>Full model with the original cyber legs.</figcaption></figure>
+<figure><img src="ene-v2-local/ene-full-light.png" alt="Full Ene model on a light background"><figcaption>The same leg transparency on a light background.</figcaption></figure>
+</div>
+</section>
+<section>
+<h2>References and an open defect</h2>
+<div class="grid">
+<figure><img src="ene-v2-local/official-ene.png" alt="Official Ene character illustration"><figcaption><a href="https://www.mekakucityactors.com/character/006ene.html">Official character art</a>. Use this for design details. It is not a 3D performance reference.</figcaption></figure>
+<figure><img src="ene-v2-local/vrcmods-preview.jpg" alt="Preview from the older Ene VRChat listing"><figcaption><a href="https://vrcmods.com/item/1924">Older VRChat listing by manek</a>. The source package and its model ancestry remain unverified.</figcaption></figure>
+<figure><img src="../reports/local/ene-implementation-hand_xyz_only.png" alt="A prior test shows fingers through Ene's sleeve"><figcaption>Earlier solver test: fingers pass through the sleeve. The study proposes a cuff control and corrected weights.</figcaption></figure>
+</div>
+</section>
+<p class="note">Local files only. Model files and reference images remain outside Git. The deployed Ene file was not changed by this study.</p>
+<script>
+const details={packed:'83.58 MiB → 18.79 MiB. The neutral screenshots match exactly. The model retains its triangles and textures.',
+'lighting-only':'The mesh and materials stay the same. Only the three light settings change.',
+styled:'The light settings stay the same. Selected materials receive outlines and different shade settings.',
+'styled-cool':'Selected outlines and shade settings combine with lower light intensity. The surface shape stays the same.',
+'current-happy':'The current happy binding changes 106 eyebrow vertices. It does not include a complete smile.',
+'new-smile':'Existing eye and mouth shapes combine with the happy binding. This combination still needs expression conflict rules.',
+'new-skeptical':'Existing shapes change the eyelids and eyebrows. The main application does not yet drive these added controls.',
+'new-brows':'An existing eyebrow shape combines with aa. The main application does not yet drive this added eyebrow control.',
+blink:'The existing blink control closes both eyes.',
+'wink-mouth':'The existing left blink and aa controls run together.'};
+const variant=document.querySelector('#variant'),split=document.querySelector('#split');
+function update(){document.querySelector('#candidate').src=`ene-v2-local/ene-${variant.value}.png`;document.querySelector('#selectedLabel').textContent=variant.selectedOptions[0].textContent;document.querySelector('#detail').textContent=details[variant.value];}
+variant.addEventListener('change',update);split.addEventListener('input',()=>{document.querySelector('#baseline').style.clipPath=`inset(0 ${100-split.value}% 0 0)`;document.querySelector('#line').style.left=`${split.value}%`;});update();
+</script>
+</html>

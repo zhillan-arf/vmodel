@@ -8,6 +8,7 @@ import { associateHands, calibratedHeadWorld, faceRotation, palmWorldRotation, t
 import { limitFingerRotation } from './finger-solver';
 import { solveLimbWorld } from './limb-solver';
 import { shoulderRoll } from './torso-solver';
+import { captureFaceNeutral, faceChannels, faceExpressions, hasFaceBinding, relativeFaceValue, solveFaceExpressions } from './face-expressions';
 
 export const confidence = (p?: Landmark) => !!p && Number.isFinite(p.x + p.y + p.z) && (p.visibility ?? 1) > 0.55 && (p.presence ?? 1) > 0.55;
 export const point = (p: Landmark) => new Vector3(p.x, -p.y, -p.z);
@@ -70,6 +71,8 @@ export class MotionSolver {
   private limbPlanes = new Map<string, { normal: Vector3; timestamp: number }>();
   private groundY = 0;
   private expressionGoals: Record<string, number> = {};
+  private neutralFace: Record<string, number> = {};
+  private lastFaceSettings = '';
   private manual = 'neutral';
   private root: Object3D | null;
   private rootRest = new Vector3();
@@ -127,12 +130,14 @@ export class MotionSolver {
   calibrate(frame: TrackingFrame | null) {
     const head = faceRotation(frame?.faceMatrix ?? null);
     if (head) this.neutralHead.copy(head);
+    if (frame?.samples.face.present && recent(frame.samples.face.timestamp, frame.timestamp)) this.neutralFace = captureFaceNeutral(frame.face);
     if(frame&&frame.samples.pose.present&&recent(frame.samples.pose.timestamp,frame.timestamp))this.neutralTorsoRoll=shoulderRoll(frame)??this.neutralTorsoRoll;
     if (confidence(frame?.poseImage[23]) && confidence(frame?.poseImage[24])) this.neutralRoot.copy(point(frame!.poseImage[23])).add(point(frame!.poseImage[24])).multiplyScalar(0.5);
     this.lastTimestamp = -1; this.goals.clear(); this.limbPlanes.clear();
   }
-  getCalibration(): Calibration { return { version: 1, head: this.neutralHead.toArray(), root: this.neutralRoot.toArray(), torsoRoll: this.neutralTorsoRoll }; }
+  getCalibration(): Calibration { return { version: 1, head: this.neutralHead.toArray(), root: this.neutralRoot.toArray(), torsoRoll: this.neutralTorsoRoll, face: { ...this.neutralFace } }; }
   setCalibration(value: Calibration | null) {
+    this.neutralFace = validCalibration(value) ? { ...value.face } : {};
     if (validCalibration(value)) { this.neutralHead.fromArray(value.head); this.neutralRoot.fromArray(value.root); this.neutralTorsoRoll=value.torsoRoll??0; }
     else { this.neutralHead.identity(); this.neutralRoot.set(0.5, -0.5, 0); this.neutralTorsoRoll=0; }
     this.lastTimestamp = -1; this.goals.clear(); this.limbPlanes.clear();
@@ -284,6 +289,8 @@ export class MotionSolver {
     if(!faceFresh)this.headDiagnostic=null;
     const mode=settings.mode+':'+settings.hands;
     if(mode!==this.lastMode){this.goals.clear();this.limbPlanes.clear();this.lastTimestamp=-1;this.lastMode=mode;}
+    const faceSettings = `${settings.faceDetail}:${settings.mouthGain}`;
+    if (faceSettings !== this.lastFaceSettings) { this.lastTimestamp = -1; this.lastFaceSettings = faceSettings; }
     const sink=this.diagnosticSink;
     if (fresh && frame.timestamp !== this.lastTimestamp) {
       this.sampleOutcomes=[];
@@ -311,10 +318,11 @@ export class MotionSolver {
         }
       }
       if (faceFresh) {
-        const blinkLeft=this.faceCoefficient('eyeBlinkLeft',frame.face.eyeBlinkLeft),blinkRight=this.faceCoefficient('eyeBlinkRight',frame.face.eyeBlinkRight);
-        const jaw=this.faceCoefficient('jawOpen',frame.face.jawOpen)*settings.mouthGain;
-        this.limit('aa',jaw,0,1,'face');
-        this.expressionGoals={blinkLeft,blinkRight,aa:Math.min(jaw,1),happy:Math.min(this.faceCoefficient('mouthSmileLeft',frame.face.mouthSmileLeft),this.faceCoefficient('mouthSmileRight',frame.face.mouthSmileRight))*0.55};
+        const coefficients = Object.fromEntries(faceChannels.map(name => [name,
+          relativeFaceValue(this.faceCoefficient(name, frame.face[name]), this.neutralFace[name])]));
+        this.limit('aa', coefficients.jawOpen * settings.mouthGain, 0, 1, 'face');
+        this.expressionGoals = solveFaceExpressions(coefficients, settings.mouthGain, settings.faceDetail === 'extended',
+          name => hasFaceBinding(this.vrm.expressionManager?.getExpression(name)));
       }
     } else if(fresh) {
       for(const outcome of this.sampleOutcomes)sink?.(outcome);
@@ -386,9 +394,10 @@ export class MotionSolver {
       this.root.position.lerp(target,alpha);
     }else this.report('root','missing_bone',undefined,undefined,'pose');
     if(this.diagnosticSink&&this.headDiagnostic)this.headDiagnostic.applied=this.rests.get('head')?.node.getWorldQuaternion(new Quaternion()).toArray()??[];
-    for (const name of ['blinkLeft','blinkRight','aa','happy','surprised']) {
+    for (const name of faceExpressions) {
       const manual = this.manual === name ? 0.75 : 0;
-      const target = Math.max(manual,faceFresh ? this.expressionGoals[name] ?? 0 : 0);
+      const continuous = settings.faceDetail === 'extended' && this.manual !== 'neutral' ? 0 : faceFresh ? this.expressionGoals[name] ?? 0 : 0;
+      const target = Math.max(manual, continuous);
       const manager = this.vrm.expressionManager;
       // Rei supplies the surprise morph as a custom Japanese expression.
       const expression = name === 'surprised' && !manager?.getExpression(name) && manager?.getExpression('びっくり') ? 'びっくり' : name;

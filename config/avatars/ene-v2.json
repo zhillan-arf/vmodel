@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "sourceSha256": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+  "assetVersion": "2.0.0-candidate.1",
+  "name": "Ene - VModel v2 candidate",
+  "cuffs": {
+    "materials": ["材質1.003", "材質2.001", "材質6.001", "材質8.001"],
+    "startBeforeWristMeters": 0.14,
+    "endBeforeWristMeters": 0.025
+  },
+  "materialGroups": [
+    { "materials": ["Nails", "body", "首"], "shade": [0.64, 0.70, 0.80], "outlineMeters": 0.00025, "outlineColor": [0.12, 0.085, 0.11] },
+    { "materials": ["新規", "材質1", "新規.001", "新規.002", "材質0", "材質1.001", "新規.003", "材質0.001"], "shade": [0.70, 0.76, 0.86], "outlineMeters": 0 },
+    { "materials": ["hair"], "shade": [0.42, 0.58, 0.74], "outlineMeters": 0.00045, "outlineColor": [0.015, 0.045, 0.075] },
+    { "materials": ["材質1.002", "材質3", "材質4", "材質5", "材質6", "材質7", "材質8", "材質9", "材質10", "材質0.003", "材質2", "スカート腕ヘドフォン"], "shade": [0.48, 0.58, 0.72], "outlineMeters": 0.00045, "outlineColor": [0.015, 0.035, 0.06] },
+    { "materials": ["材質1.003", "材質2.001", "材質6.001", "材質8.001"], "shade": [0.48, 0.58, 0.74], "outlineMeters": 0.00040, "outlineColor": [0.015, 0.04, 0.075] }
+  ],
+  "customExpressions": {
+    "vmodelBrowWorry": "困る",
+    "vmodelMouthSmile": "ω",
+    "vmodelMouthFrown": "∧",
+    "vmodelSoftEyes": "優しい",
+    "vmodelHalfClosedEyes": "じと目",
+    "vmodelTongue": "ぺろっ",
+    "vmodelBlush": "照れ"
+  },
+  "splitExpressions": {
+    "vmodelBrowUpLeft": { "source": "上", "side": "left" },
+    "vmodelBrowUpRight": { "source": "上", "side": "right" },
+    "vmodelBrowDownLeft": { "source": "下", "side": "left" },
+    "vmodelBrowDownRight": { "source": "下", "side": "right" },
+    "vmodelEyeWideLeft": { "source": "びっくり", "side": "left" },
+    "vmodelEyeWideRight": { "source": "びっくり", "side": "right" }
+  },
+  "ee": { "aaWeight": 0.42, "ihWeight": 0.58, "widthGain": 1.12 },
+  "gazeDegrees": { "horizontalInner": 10, "horizontalOuter": 15, "vertical": 8 },
+  "presets": {
+    "happy": { "にこり": 0.45, "笑い": 0.25, "ω": 0.8 },
+    "sad": { "困る": 0.55, "∧": 0.55 },
+    "surprised": { "びっくり": 0.8, "上": 0.45, "あ": 0.4 }
+  }
+}

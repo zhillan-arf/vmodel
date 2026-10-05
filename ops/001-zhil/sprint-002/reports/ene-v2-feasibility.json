@@ -1,0 +1,612 @@
+{
+  "date": "2026-10-05",
+  "modelSha256": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+  "modelUnchanged": true,
+  "publicCopyMatches": true,
+  "asset": {
+    "bytes": 87635472,
+    "triangles": 112948,
+    "primitiveVertices": 63713,
+    "materialCount": 49,
+    "alphaModes": {
+      "OPAQUE": 34,
+      "MASK": 13,
+      "BLEND": 2
+    },
+    "outlineModes": {
+      "none": 49
+    },
+    "imageEncodedBytes": 13948094,
+    "imageRgbaBytesWithoutMipmaps": 101727000,
+    "boundMorphCount": 11,
+    "springGroups": 19,
+    "springJoints": 55,
+    "colliders": 17
+  },
+  "humanoidBoneCount": 53,
+  "morphCount": 45,
+  "unboundMorphCount": 34,
+  "pack": {
+    "sourceSha256": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+    "candidateSha256": "6f1b3015998ac90026f9e60f04b008fd2a677b0804feff1ea60f36bf45ac6fd2",
+    "sourceBytes": 87635472,
+    "candidateBytes": 19703484,
+    "reductionPercent": 77.5165426164419,
+    "originalAccessors": 4704,
+    "usedAccessors": 2499,
+    "removedUnusedAccessors": 2205,
+    "sparseMorphAccessors": 86,
+    "zeroMorphAccessors": 2074,
+    "usedAccessorValuesEqual": true,
+    "imagesCopiedWithoutChanges": true,
+    "limits": "File size test. Sparse arrays expand at load time. No GPU memory reduction is established."
+  },
+  "render": {
+    "date": "2026-10-05",
+    "modelSha256": "dcb46b18c7c5c47e2a66a63826bad2772950cfe3ccd7c8bb11896c1ba7a05acc",
+    "modelUnchanged": true,
+    "sourceHashes": {
+      "src/viewer.ts": "7edb210c5144b92dd22ce2f4f023fc5191cc19b8359ab407b0945fa62f7d9fe6",
+      "src/types.ts": "5df057a789f79ac0ccb1519e9ad4339b663779a5184a9deefd2aedf3d628f451",
+      "src/composition.ts": "848bcba6892cbb9958cb1196a30cda37de079c4e2d23ff95d388e81b94e0c67b",
+      "src/lighting.ts": "80c2ce7e013aca57ad1b6e5bfabced094c36994d5e5fc5c0aa316b75d2a3dd1d",
+      "src/motion-solver.ts": "f72f242aec4aa5a898ba1cdcc728315e9958e2befe4301e7f7345a6d68ff7099"
+    },
+    "sourceUnchangedDuringTest": true,
+    "packedMatchesOriginalScreenshot": true,
+    "gltfErrors": 0,
+    "gltfWarnings": 58,
+    "originalGltfWarnings": 58,
+    "originalGltfErrors": 0,
+    "inventories": {
+      "original": {
+        "expressions": [
+          {
+            "name": "aa",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "angry",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "blink",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "blinkLeft",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "blinkRight",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "ee",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "happy",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "ih",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "lookDown",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "lookLeft",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "lookRight",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "lookUp",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "neutral",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "oh",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "ou",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "relaxed",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "sad",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "surprised",
+            "changedMorphWeights": 49
+          }
+        ],
+        "loadedSpringJoints": 36,
+        "graphics": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "packed": {
+        "expressions": [
+          {
+            "name": "aa",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "angry",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "blink",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "blinkLeft",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "blinkRight",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "ee",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "happy",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "ih",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "lookDown",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "lookLeft",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "lookRight",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "lookUp",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "neutral",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "oh",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "ou",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "relaxed",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "sad",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "surprised",
+            "changedMorphWeights": 49
+          }
+        ],
+        "loadedSpringJoints": 36,
+        "graphics": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "styled": {
+        "expressions": [
+          {
+            "name": "aa",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "angry",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "blink",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "blinkLeft",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "blinkRight",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "ee",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "happy",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "ih",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "lookDown",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "lookLeft",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "lookRight",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "lookUp",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "neutral",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "oh",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "ou",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "relaxed",
+            "changedMorphWeights": 0
+          },
+          {
+            "name": "sad",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "surprised",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "study_上",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "study_下",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "study_笑い",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "study_じと目",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "study_優しい",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "study_ω",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "study_ぺろっ",
+            "changedMorphWeights": 49
+          },
+          {
+            "name": "study_照れ",
+            "changedMorphWeights": 49
+          }
+        ],
+        "loadedSpringJoints": 36,
+        "graphics": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      }
+    },
+    "renders": [
+      {
+        "name": "ene-original",
+        "view": "front",
+        "lighting": "stock",
+        "expression": null,
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 49,
+        "triangles": 112948
+      },
+      {
+        "name": "ene-packed",
+        "view": "front",
+        "lighting": "stock",
+        "expression": null,
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 49,
+        "triangles": 112948
+      },
+      {
+        "name": "ene-lighting-only",
+        "view": "front",
+        "lighting": "cool",
+        "expression": null,
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 49,
+        "triangles": 112948
+      },
+      {
+        "name": "ene-side",
+        "view": "side",
+        "lighting": "stock",
+        "expression": null,
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 49,
+        "triangles": 112948
+      },
+      {
+        "name": "ene-back",
+        "view": "back",
+        "lighting": "stock",
+        "expression": null,
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 49,
+        "triangles": 112948
+      },
+      {
+        "name": "ene-full",
+        "view": "full",
+        "lighting": "stock",
+        "expression": null,
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 49,
+        "triangles": 112948
+      },
+      {
+        "name": "ene-full-light",
+        "view": "full-light",
+        "lighting": "stock",
+        "expression": null,
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 49,
+        "triangles": 112948
+      },
+      {
+        "name": "ene-full-side",
+        "view": "full-side",
+        "lighting": "stock",
+        "expression": null,
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 49,
+        "triangles": 112948
+      },
+      {
+        "name": "ene-current-happy",
+        "view": "front",
+        "lighting": "stock",
+        "expression": {
+          "happy": 1
+        },
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 49,
+        "triangles": 112948
+      },
+      {
+        "name": "ene-styled",
+        "view": "front",
+        "lighting": "stock",
+        "expression": null,
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 65,
+        "triangles": 133965
+      },
+      {
+        "name": "ene-styled-cool",
+        "view": "front",
+        "lighting": "cool",
+        "expression": null,
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 65,
+        "triangles": 133965
+      },
+      {
+        "name": "ene-new-smile",
+        "view": "front",
+        "lighting": "cool",
+        "expression": {
+          "happy": 0.7,
+          "study_笑い": 0.7,
+          "study_ω": 0.4
+        },
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 65,
+        "triangles": 133965
+      },
+      {
+        "name": "ene-new-skeptical",
+        "view": "front",
+        "lighting": "cool",
+        "expression": {
+          "study_じと目": 0.7,
+          "study_下": 0.35
+        },
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 65,
+        "triangles": 133965
+      },
+      {
+        "name": "ene-new-brows",
+        "view": "front",
+        "lighting": "cool",
+        "expression": {
+          "study_上": 1,
+          "aa": 0.3
+        },
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 65,
+        "triangles": 133965
+      },
+      {
+        "name": "ene-blink",
+        "view": "front",
+        "lighting": "cool",
+        "expression": {
+          "blink": 1
+        },
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 65,
+        "triangles": 133965
+      },
+      {
+        "name": "ene-wink-mouth",
+        "view": "front",
+        "lighting": "cool",
+        "expression": {
+          "blinkLeft": 1,
+          "aa": 0.7
+        },
+        "width": 1600,
+        "height": 1000,
+        "drawCalls": 65,
+        "triangles": 133965
+      }
+    ],
+    "errors": [],
+    "limits": "Static views and expression bindings. No webcam, target GPU, or dynamic collision test."
+  },
+  "scene": {
+    "blender": "5.2.2 LTS",
+    "sceneSha256": "30b21a29f912e066fc7ab77919f07a6fe4cbb308039ac5daa2df27796cd47358",
+    "sceneUnchanged": true,
+    "happyShape": {
+      "name": "にこり",
+      "changedVertices": 106,
+      "maximumDeltaMeters": 0.012437008321285248,
+      "materials": [
+        "材質0"
+      ],
+      "boundsBlender": {
+        "min": [
+          -0.07018027454614639,
+          -0.10400533676147461,
+          1.4429301023483276
+        ],
+        "max": [
+          0.06993892788887024,
+          -0.0838499516248703,
+          1.4516477584838867
+        ]
+      }
+    },
+    "sleeveGroups": {
+      "右袖": {
+        "vertices": 0,
+        "maximumWeight": 0
+      },
+      "左袖": {
+        "vertices": 0,
+        "maximumWeight": 0
+      }
+    }
+  },
+  "packedImport": {
+    "blender": "5.2.2 LTS",
+    "importFinished": true,
+    "mappedHumanoidBones": 53,
+    "shapeNames": [
+      "anger mark",
+      "lll",
+      "ω",
+      "ω□",
+      "∧",
+      "∧2",
+      "▲",
+      "▲2",
+      "○",
+      "○ ○",
+      "○2",
+      "あ",
+      "い",
+      "う",
+      "お",
+      "じと目",
+      "なごみ",
+      "にこり",
+      "はぁと",
+      "はぅ",
+      "はんっ！",
+      "びっくり",
+      "ぺろっ",
+      "ぺろっ2",
+      "まばたき",
+      "ウィンク右",
+      "ウィンク左",
+      "スダー",
+      "上",
+      "下",
+      "優しい",
+      "困る",
+      "怒り",
+      "恐ろしい",
+      "汗",
+      "照れ",
+      "照れ2",
+      "照れ3",
+      "猫目",
+      "真面目",
+      "瞳小",
+      "笑い",
+      "笑い右",
+      "笑い左",
+      "笑い目"
+    ],
+    "meshCount": 2,
+    "limits": "Import structure check. No Blender render or new export."
+  },
+  "validatorWarningCodes": {
+    "MULTIPLE_EXTENSIONS": 49,
+    "IMAGE_FEATURES_UNSUPPORTED": 9
+  },
+  "scope": "Research only. No Ene deployment. No live webcam or target GPU measurement.",
+  "comparisonPage": {
+    "variantsChecked": 10,
+    "imagesLoaded": 9,
+    "mobileWidth": 390,
+    "mobileFits": true,
+    "errors": []
+  }
+}

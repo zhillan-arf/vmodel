@@ -1,0 +1,1680 @@
+{
+  "date": "2026-10-05T02:51:39.703Z",
+  "hashes": {
+    "rei": "07037243141d9c3f260c6ef09419f1225ca64ffb7791204b4aef0b817ebc1735",
+    "rei-v2": "9afc0d72fb640e3b3d89075e38a957e2d6d990e0ea8f7058f6796fd7c6487639"
+  },
+  "sourceHashes": {
+    "src/viewer.ts": "7edb210c5144b92dd22ce2f4f023fc5191cc19b8359ab407b0945fa62f7d9fe6",
+    "src/lighting.ts": "80c2ce7e013aca57ad1b6e5bfabced094c36994d5e5fc5c0aa316b75d2a3dd1d",
+    "src/types.ts": "5df057a789f79ac0ccb1519e9ad4339b663779a5184a9deefd2aedf3d628f451",
+    "src/composition.ts": "848bcba6892cbb9958cb1196a30cda37de079c4e2d23ff95d388e81b94e0c67b",
+    "src/face-expressions.ts": "c3efafc66aea7ca9294342752086c10b574a8fb7106625ddf1b22ccbe64701d0",
+    "src/motion-solver.ts": "9de367b984722743c354e04570ce1fd8aa39b909c578aec0a2e2a2c6917aed7c",
+    "src/profiles.ts": "9ff5538dd70c3e23002b38172825226fcbf251151548d84ecaddae020ec62998",
+    "src/tracking-recording.ts": "967f4d023bd2a80ddcbb38a836dd9fb3faf7c280023413ee26834315c3928ae6",
+    "config/avatars/rei-v2.json": "4cda09e91c1fd9f2b92c395958fd25f6182ae112ebe5010feae4bcba3d0aa129",
+    "scripts/build_rei_v2.py": "e2849f86b7c0b2e24ddbe617c3d34a5178809ea72e2537a53c0ffca7aea5c381",
+    "scripts/rei_v2_compare.mjs": "f5c31b305518a53bbf0ac43d16bb4cb4e09872af7d200448939ca70a9765b20a"
+  },
+  "validation": {
+    "rei": {
+      "errors": 1,
+      "warnings": 4,
+      "messages": [
+        {
+          "code": "UNEXPECTED_PROPERTY",
+          "message": "Unexpected property.",
+          "severity": 1,
+          "pointer": "/extensionUsed"
+        },
+        {
+          "code": "INVALID_EXTENSION_NAME_FORMAT",
+          "message": "Extension name has invalid format.",
+          "severity": 1,
+          "pointer": "/extensionsUsed/2"
+        },
+        {
+          "code": "SKIN_SKELETON_INVALID",
+          "message": "Skeleton node is not a common root.",
+          "severity": 0,
+          "pointer": "/skins/1/skeleton"
+        },
+        {
+          "code": "NODE_SKINNED_MESH_NON_ROOT",
+          "message": "Node with a skinned mesh is not root. Parent transforms will not affect a skinned mesh.",
+          "severity": 1,
+          "pointer": "/nodes/602"
+        },
+        {
+          "code": "NODE_SKINNED_MESH_NON_ROOT",
+          "message": "Node with a skinned mesh is not root. Parent transforms will not affect a skinned mesh.",
+          "severity": 1,
+          "pointer": "/nodes/603"
+        }
+      ]
+    },
+    "rei-v2": {
+      "errors": 0,
+      "warnings": 3,
+      "messages": [
+        {
+          "code": "INVALID_EXTENSION_NAME_FORMAT",
+          "message": "Extension name has invalid format.",
+          "severity": 1,
+          "pointer": "/extensionsUsed/2"
+        },
+        {
+          "code": "NODE_SKINNED_MESH_NON_ROOT",
+          "message": "Node with a skinned mesh is not root. Parent transforms will not affect a skinned mesh.",
+          "severity": 1,
+          "pointer": "/nodes/602"
+        },
+        {
+          "code": "NODE_SKINNED_MESH_NON_ROOT",
+          "message": "Node with a skinned mesh is not root. Parent transforms will not affect a skinned mesh.",
+          "severity": 1,
+          "pointer": "/nodes/603"
+        }
+      ]
+    }
+  },
+  "results": [
+    {
+      "id": "rei",
+      "capabilities": {
+        "validationVersion": 1,
+        "vrmVersion": "0",
+        "expressions": [
+          "neutral",
+          "aa",
+          "ih",
+          "ou",
+          "ee",
+          "oh",
+          "blink",
+          "happy",
+          "angry",
+          "sad",
+          "relaxed",
+          "lookUp",
+          "lookDown",
+          "lookLeft",
+          "lookRight",
+          "blinkLeft",
+          "blinkRight",
+          "のほほん",
+          "＞＜",
+          "びっくり",
+          "白目",
+          "瞳ハイライト消",
+          "ジト目",
+          "瞳小",
+          "両目見開き",
+          "挑発",
+          "困る",
+          "ドン引き",
+          "両目閉じ",
+          "ウィンク右",
+          "ウィンク左",
+          "瞳左",
+          "瞳右",
+          "瞳上",
+          "瞳下"
+        ],
+        "aliases": {
+          "surprised": "びっくり"
+        },
+        "missingOptionalBones": [
+          "upperChest"
+        ],
+        "springs": true,
+        "warnings": []
+      },
+      "resources": {
+        "geometryBytes": 19891256,
+        "textureBytes": 777344342,
+        "pixels": 145752064
+      },
+      "graphics": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "controls": {
+        "expressions": [
+          {
+            "name": "neutral",
+            "maxDisplacement": 0
+          },
+          {
+            "name": "aa",
+            "maxDisplacement": 0.0076143639180994436
+          },
+          {
+            "name": "ih",
+            "maxDisplacement": 0.00393356368129639
+          },
+          {
+            "name": "ou",
+            "maxDisplacement": 0.004624859667356539
+          },
+          {
+            "name": "ee",
+            "maxDisplacement": 0.005108116500415192
+          },
+          {
+            "name": "oh",
+            "maxDisplacement": 0.0034526597811660445
+          },
+          {
+            "name": "blink",
+            "maxDisplacement": 0.02401578426361084
+          },
+          {
+            "name": "happy",
+            "maxDisplacement": 0.014028992053755273
+          },
+          {
+            "name": "angry",
+            "maxDisplacement": 0.00783565521240237
+          },
+          {
+            "name": "sad",
+            "maxDisplacement": 0.008810393571853536
+          },
+          {
+            "name": "relaxed",
+            "maxDisplacement": 0.015052556991577148
+          },
+          {
+            "name": "lookUp",
+            "maxDisplacement": 0.007050202537468653
+          },
+          {
+            "name": "lookDown",
+            "maxDisplacement": 0.006201192615979276
+          },
+          {
+            "name": "lookLeft",
+            "maxDisplacement": 0.00510406808017754
+          },
+          {
+            "name": "lookRight",
+            "maxDisplacement": 0.0043450395892773415
+          },
+          {
+            "name": "blinkLeft",
+            "maxDisplacement": 0.023873790090405286
+          },
+          {
+            "name": "blinkRight",
+            "maxDisplacement": 0.02401578426361084
+          },
+          {
+            "name": "のほほん",
+            "maxDisplacement": 0.015052556991577148
+          },
+          {
+            "name": "＞＜",
+            "maxDisplacement": 0.01794674689715301
+          },
+          {
+            "name": "びっくり",
+            "maxDisplacement": 0.0035026074023258398
+          },
+          {
+            "name": "白目",
+            "maxDisplacement": 0.002263113856315613
+          },
+          {
+            "name": "瞳ハイライト消",
+            "maxDisplacement": 0.0012874230742454529
+          },
+          {
+            "name": "ジト目",
+            "maxDisplacement": 0.009006500244140625
+          },
+          {
+            "name": "瞳小",
+            "maxDisplacement": 0.0029410943388938904
+          },
+          {
+            "name": "両目見開き",
+            "maxDisplacement": 0.0033804002996337514
+          },
+          {
+            "name": "挑発",
+            "maxDisplacement": 0.01188850103563405
+          },
+          {
+            "name": "困る",
+            "maxDisplacement": 0.008178637146949663
+          },
+          {
+            "name": "ドン引き",
+            "maxDisplacement": 0.009073447052690033
+          },
+          {
+            "name": "両目閉じ",
+            "maxDisplacement": 0.02401578426361084
+          },
+          {
+            "name": "ウィンク右",
+            "maxDisplacement": 0.02401578426361084
+          },
+          {
+            "name": "ウィンク左",
+            "maxDisplacement": 0.023873790090405286
+          },
+          {
+            "name": "瞳左",
+            "maxDisplacement": 0.00510406808017754
+          },
+          {
+            "name": "瞳右",
+            "maxDisplacement": 0.0043450395892773415
+          },
+          {
+            "name": "瞳上",
+            "maxDisplacement": 0.007050202537468653
+          },
+          {
+            "name": "瞳下",
+            "maxDisplacement": 0.006201192615979276
+          }
+        ],
+        "direct": [
+          {
+            "name": "spine",
+            "rawAngle": 0.4,
+            "surfaceSamples": 720,
+            "maxDisplacement": 0.20997226657993961
+          },
+          {
+            "name": "chest",
+            "rawAngle": 0.4,
+            "surfaceSamples": 720,
+            "maxDisplacement": 0.1708674757000756
+          },
+          {
+            "name": "leftThumbMetacarpal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.02407766082894786
+          },
+          {
+            "name": "leftThumbProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.014796140222794537
+          },
+          {
+            "name": "leftThumbDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.011128406315565558
+          },
+          {
+            "name": "leftIndexProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.01917037231539032
+          },
+          {
+            "name": "leftIndexIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.018320869267855845
+          },
+          {
+            "name": "leftIndexDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.010283710997465438
+          },
+          {
+            "name": "leftMiddleProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.028456265315171914
+          },
+          {
+            "name": "leftMiddleIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.01876800566064431
+          },
+          {
+            "name": "leftMiddleDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.009747291374595441
+          },
+          {
+            "name": "leftRingProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.03173558411221757
+          },
+          {
+            "name": "leftRingIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.017269469348082944
+          },
+          {
+            "name": "leftRingDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.010005750057666827
+          },
+          {
+            "name": "leftLittleProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.019326716891537473
+          },
+          {
+            "name": "leftLittleIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.011544352904743023
+          },
+          {
+            "name": "leftLittleDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.006058824088465139
+          },
+          {
+            "name": "rightThumbMetacarpal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.026579047505517633
+          },
+          {
+            "name": "rightThumbProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.017026615095524833
+          },
+          {
+            "name": "rightThumbDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.00867219723704274
+          },
+          {
+            "name": "rightIndexProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.019125766119648155
+          },
+          {
+            "name": "rightIndexIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.01831958939843931
+          },
+          {
+            "name": "rightIndexDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.010284078551257386
+          },
+          {
+            "name": "rightMiddleProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.028456823247723355
+          },
+          {
+            "name": "rightMiddleIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.018768204089209643
+          },
+          {
+            "name": "rightMiddleDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.009747285056940795
+          },
+          {
+            "name": "rightRingProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.031684702903213506
+          },
+          {
+            "name": "rightRingIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.017269516252971837
+          },
+          {
+            "name": "rightRingDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.01000583345301746
+          },
+          {
+            "name": "rightLittleProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.015124337065518634
+          },
+          {
+            "name": "rightLittleIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.011545907218837047
+          },
+          {
+            "name": "rightLittleDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.006061325783636829
+          }
+        ],
+        "gestures": [
+          {
+            "gesture": "open",
+            "fingers": {
+              "leftThumbMetacarpal": 0.6506853887444727,
+              "leftIndexProximal": 0.1022002655457708,
+              "leftMiddleProximal": 0.10385416918078179,
+              "leftRingProximal": 0.05032244298718706,
+              "leftLittleProximal": 0.04710943053193315,
+              "rightThumbMetacarpal": 0.6506872554273002,
+              "rightIndexProximal": 0.12518324098684142,
+              "rightMiddleProximal": 0.10385388310447818,
+              "rightRingProximal": 0.05395303427879843,
+              "rightLittleProximal": 0.0578504745642526,
+              "leftThumbProximal": 0.38683787870067027,
+              "leftIndexIntermediate": 0.0384917639426245,
+              "leftMiddleIntermediate": 0.05013071805245505,
+              "leftRingIntermediate": 0.01945494099792765,
+              "leftLittleIntermediate": 0.07203372982429086,
+              "rightThumbProximal": 0.3855184962014212,
+              "rightIndexIntermediate": 0.020927620964857317,
+              "rightMiddleIntermediate": 0.05013095405521227,
+              "rightRingIntermediate": 0.05606034026767001,
+              "rightLittleIntermediate": 0.07203506774265943,
+              "leftThumbDistal": 0,
+              "leftIndexDistal": 0,
+              "leftMiddleDistal": 0,
+              "leftRingDistal": 0,
+              "leftLittleDistal": 0,
+              "rightThumbDistal": 0,
+              "rightIndexDistal": 0,
+              "rightMiddleDistal": 0,
+              "rightRingDistal": 0,
+              "rightLittleDistal": 0
+            }
+          },
+          {
+            "gesture": "fist",
+            "fingers": {
+              "leftThumbMetacarpal": 0.9065135626844287,
+              "leftIndexProximal": 0.6791317430114552,
+              "leftMiddleProximal": 0.6768296738752803,
+              "leftRingProximal": 0.7543956356693555,
+              "leftLittleProximal": 0.8420423326597128,
+              "rightThumbMetacarpal": 0.9065038968522428,
+              "rightIndexProximal": 0.6828344149235018,
+              "rightMiddleProximal": 0.6768304201395255,
+              "rightRingProximal": 0.7581899642714757,
+              "rightLittleProximal": 0.8474958371367598,
+              "leftThumbProximal": 0.9921204605066135,
+              "leftIndexIntermediate": 1.0097629966468016,
+              "leftMiddleIntermediate": 1.072546182443291,
+              "leftRingIntermediate": 0.9811036821696939,
+              "leftLittleIntermediate": 0.933544753286338,
+              "rightThumbProximal": 0.9714662055804717,
+              "rightIndexIntermediate": 1.009998146567777,
+              "rightMiddleIntermediate": 1.0725458096850604,
+              "rightRingIntermediate": 0.979674903002388,
+              "rightLittleIntermediate": 0.9348335745497239,
+              "leftThumbDistal": 0.532473512278817,
+              "leftIndexDistal": 0.5021144470755464,
+              "leftMiddleDistal": 0.5002017390198558,
+              "leftRingDistal": 0.5002094086681684,
+              "leftLittleDistal": 0.5019281838382998,
+              "rightThumbDistal": 0.5334777957343289,
+              "rightIndexDistal": 0.5021143998569895,
+              "rightMiddleDistal": 0.5002017318941333,
+              "rightRingDistal": 0.5002480218419832,
+              "rightLittleDistal": 0.5000195909168139
+            }
+          },
+          {
+            "gesture": "point",
+            "fingers": {
+              "leftThumbMetacarpal": 0.9065135626844287,
+              "leftIndexProximal": 0.1022002655457708,
+              "leftMiddleProximal": 0.6768296738752803,
+              "leftRingProximal": 0.7543956356693555,
+              "leftLittleProximal": 0.8420423326597128,
+              "rightThumbMetacarpal": 0.9065038968522428,
+              "rightIndexProximal": 0.12518324098684142,
+              "rightMiddleProximal": 0.6768304201395255,
+              "rightRingProximal": 0.7581899642714757,
+              "rightLittleProximal": 0.8474958371367598,
+              "leftThumbProximal": 0.9921204605066135,
+              "leftIndexIntermediate": 0.0384917639426245,
+              "leftMiddleIntermediate": 1.072546182443291,
+              "leftRingIntermediate": 0.9811036821696939,
+              "leftLittleIntermediate": 0.933544753286338,
+              "rightThumbProximal": 0.9714662055804717,
+              "rightIndexIntermediate": 0.020927620964857317,
+              "rightMiddleIntermediate": 1.0725458096850604,
+              "rightRingIntermediate": 0.979674903002388,
+              "rightLittleIntermediate": 0.9348335745497239,
+              "leftThumbDistal": 0.532473512278817,
+              "leftIndexDistal": 0,
+              "leftMiddleDistal": 0.5002017390198558,
+              "leftRingDistal": 0.5002094086681684,
+              "leftLittleDistal": 0.5019281838382998,
+              "rightThumbDistal": 0.5334777957343289,
+              "rightIndexDistal": 0,
+              "rightMiddleDistal": 0.5002017318941333,
+              "rightRingDistal": 0.5002480218419832,
+              "rightLittleDistal": 0.5000195909168139
+            }
+          },
+          {
+            "gesture": "peace",
+            "fingers": {
+              "leftThumbMetacarpal": 0.6506853887444727,
+              "leftIndexProximal": 0.1022002655457708,
+              "leftMiddleProximal": 0.10385416918078179,
+              "leftRingProximal": 0.7543956356693555,
+              "leftLittleProximal": 0.8420423326597128,
+              "rightThumbMetacarpal": 0.6506872554273002,
+              "rightIndexProximal": 0.12518324098684142,
+              "rightMiddleProximal": 0.10385388310447818,
+              "rightRingProximal": 0.7581899642714757,
+              "rightLittleProximal": 0.8474958371367598,
+              "leftThumbProximal": 0.38683787870067027,
+              "leftIndexIntermediate": 0.0384917639426245,
+              "leftMiddleIntermediate": 0.05013071805245505,
+              "leftRingIntermediate": 0.9811036821696939,
+              "leftLittleIntermediate": 0.933544753286338,
+              "rightThumbProximal": 0.3855184962014212,
+              "rightIndexIntermediate": 0.020927620964857317,
+              "rightMiddleIntermediate": 0.05013095405521227,
+              "rightRingIntermediate": 0.979674903002388,
+              "rightLittleIntermediate": 0.9348335745497239,
+              "leftThumbDistal": 0,
+              "leftIndexDistal": 0,
+              "leftMiddleDistal": 0,
+              "leftRingDistal": 0.5002094086681684,
+              "leftLittleDistal": 0.5019281838382998,
+              "rightThumbDistal": 0,
+              "rightIndexDistal": 0,
+              "rightMiddleDistal": 0,
+              "rightRingDistal": 0.5002480218419832,
+              "rightLittleDistal": 0.5000195909168139
+            }
+          }
+        ]
+      },
+      "springs": [
+        {
+          "springMotion": "full",
+          "joints": 180,
+          "maximumAngle": 0.2844043272829273,
+          "finite": true
+        },
+        {
+          "springMotion": "gentle",
+          "joints": 180,
+          "maximumAngle": 0.19194045194761508,
+          "finite": true
+        },
+        {
+          "springMotion": "off",
+          "joints": 0,
+          "maximumAngle": 0,
+          "finite": true
+        }
+      ],
+      "outputSizes": [
+        {
+          "outputResolution": "720p",
+          "orientation": "landscape",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "outputResolution": "720p",
+          "orientation": "portrait",
+          "width": 720,
+          "height": 1280
+        },
+        {
+          "outputResolution": "1080p",
+          "orientation": "landscape",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "outputResolution": "1080p",
+          "orientation": "portrait",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "renders": [
+        {
+          "pose": "front",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 45,
+          "triangles": 59176,
+          "camera": [
+            -0.000020027160000000014,
+            1.5679658446769866,
+            0.5101118421864311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-front.png",
+          "imageSha256": "4f5293b12fcbcaa75e9ea7850bcab8c77e2e2290a7f30a7afed9d4a7c3548df6"
+        },
+        {
+          "pose": "side",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 45,
+          "triangles": 59176,
+          "camera": [
+            -0.020020027019999997,
+            1.5679658446769866,
+            0.5301118420464311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-side.png",
+          "imageSha256": "c3b5c2a15abd6bc39cfacbafbaad294ba25a9d5323b3b3271d2040aa3900105a"
+        },
+        {
+          "pose": "smile",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 45,
+          "triangles": 59176,
+          "camera": [
+            -0.000020027160000000014,
+            1.5679658446769866,
+            0.5101118421864311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-smile.png",
+          "imageSha256": "ae072e6881bd26bc7f0384598e3b48533cacb5db6ee8f9a41b7ff1c9975032b6"
+        },
+        {
+          "pose": "blink",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 45,
+          "triangles": 59176,
+          "camera": [
+            -0.000020027160000000014,
+            1.5679658446769866,
+            0.5101118421864311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-blink.png",
+          "imageSha256": "dc9d2d56340d89308a038b7e2c39ebe6383a45c993730efb68517bda17a3deed"
+        },
+        {
+          "pose": "mouth",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 45,
+          "triangles": 59176,
+          "camera": [
+            -0.000020027160000000014,
+            1.5679658446769866,
+            0.5101118421864311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-mouth.png",
+          "imageSha256": "b6f6a64850e82de6b4f6ec8d922db492ead527822b89487b20b2231948b81a22"
+        },
+        {
+          "pose": "brows",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 45,
+          "triangles": 59176,
+          "camera": [
+            -0.000020027160000000014,
+            1.5679658446769866,
+            0.5101118421864311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-brows.png",
+          "imageSha256": "4f5293b12fcbcaa75e9ea7850bcab8c77e2e2290a7f30a7afed9d4a7c3548df6"
+        },
+        {
+          "pose": "raised-arms",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 45,
+          "triangles": 59176,
+          "camera": [
+            0.00009328289032839443,
+            1.3758649722013208,
+            1.1403044098838424
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-raised-arms.png",
+          "imageSha256": "a4b62cea2cf16cdb9b7042ff9194dcf0f6d46f0098dd289414df2a828a7f7c4a"
+        },
+        {
+          "pose": "peace",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 45,
+          "triangles": 59176,
+          "camera": [
+            0.00009328289032839443,
+            1.3758649722013208,
+            1.1403044098838424
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-peace.png",
+          "imageSha256": "3548d96cddc1fa071336152db470dc122d49142db0a78866dd9598ce2a287b8b"
+        },
+        {
+          "pose": "front",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 45,
+          "triangles": 59176,
+          "camera": [
+            -0.000020027160000000014,
+            1.5679658446769866,
+            0.5101118421864311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-studio.png",
+          "imageSha256": "c7fa257c145449279490c548d7c4e3d64d3b4831591155c7ef99bf89dbf61088"
+        },
+        {
+          "pose": "front",
+          "lighting": "violet",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 45,
+          "triangles": 59176,
+          "camera": [
+            -0.000020027160000000014,
+            1.5679658446769866,
+            0.5101118421864311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-violet.png",
+          "imageSha256": "079d91092cb4b9ee4d6eed01cbe4afa47d9e341acfd9e0619e07f4fa4dab110b"
+        }
+      ]
+    },
+    {
+      "id": "rei-v2",
+      "capabilities": {
+        "validationVersion": 1,
+        "vrmVersion": "0",
+        "expressions": [
+          "neutral",
+          "aa",
+          "ih",
+          "ou",
+          "ee",
+          "oh",
+          "blink",
+          "happy",
+          "angry",
+          "sad",
+          "relaxed",
+          "lookUp",
+          "lookDown",
+          "lookLeft",
+          "lookRight",
+          "blinkLeft",
+          "blinkRight",
+          "のほほん",
+          "＞＜",
+          "びっくり",
+          "白目",
+          "瞳ハイライト消",
+          "ジト目",
+          "瞳小",
+          "両目見開き",
+          "挑発",
+          "困る",
+          "ドン引き",
+          "両目閉じ",
+          "ウィンク右",
+          "ウィンク左",
+          "瞳左",
+          "瞳右",
+          "瞳上",
+          "瞳下",
+          "vmodelBrowUpLeft",
+          "vmodelBrowUpRight",
+          "vmodelBrowDownLeft",
+          "vmodelBrowDownRight",
+          "vmodelBrowWorry",
+          "vmodelMouthSmile",
+          "vmodelMouthFrown",
+          "vmodelEyeWideLeft",
+          "vmodelEyeWideRight"
+        ],
+        "aliases": {
+          "surprised": "びっくり"
+        },
+        "missingOptionalBones": [
+          "upperChest"
+        ],
+        "springs": true,
+        "warnings": []
+      },
+      "resources": {
+        "geometryBytes": 19891256,
+        "textureBytes": 777344342,
+        "pixels": 145752064
+      },
+      "graphics": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "controls": {
+        "expressions": [
+          {
+            "name": "neutral",
+            "maxDisplacement": 0
+          },
+          {
+            "name": "aa",
+            "maxDisplacement": 0.0076143639180994436
+          },
+          {
+            "name": "ih",
+            "maxDisplacement": 0.00393356368129639
+          },
+          {
+            "name": "ou",
+            "maxDisplacement": 0.004624859667356539
+          },
+          {
+            "name": "ee",
+            "maxDisplacement": 0.005108116500415192
+          },
+          {
+            "name": "oh",
+            "maxDisplacement": 0.0034526597811660445
+          },
+          {
+            "name": "blink",
+            "maxDisplacement": 0.02401578426361084
+          },
+          {
+            "name": "happy",
+            "maxDisplacement": 0.014028992053755273
+          },
+          {
+            "name": "angry",
+            "maxDisplacement": 0.00783565521240237
+          },
+          {
+            "name": "sad",
+            "maxDisplacement": 0.008810393571853536
+          },
+          {
+            "name": "relaxed",
+            "maxDisplacement": 0.015052556991577148
+          },
+          {
+            "name": "lookUp",
+            "maxDisplacement": 0.007050202537468653
+          },
+          {
+            "name": "lookDown",
+            "maxDisplacement": 0.006201192615979276
+          },
+          {
+            "name": "lookLeft",
+            "maxDisplacement": 0.00510406808017754
+          },
+          {
+            "name": "lookRight",
+            "maxDisplacement": 0.0043450395892773415
+          },
+          {
+            "name": "blinkLeft",
+            "maxDisplacement": 0.023873790090405286
+          },
+          {
+            "name": "blinkRight",
+            "maxDisplacement": 0.02401578426361084
+          },
+          {
+            "name": "のほほん",
+            "maxDisplacement": 0.015052556991577148
+          },
+          {
+            "name": "＞＜",
+            "maxDisplacement": 0.01794674689715301
+          },
+          {
+            "name": "びっくり",
+            "maxDisplacement": 0.0035026074023258398
+          },
+          {
+            "name": "白目",
+            "maxDisplacement": 0.002263113856315613
+          },
+          {
+            "name": "瞳ハイライト消",
+            "maxDisplacement": 0.0012874230742454529
+          },
+          {
+            "name": "ジト目",
+            "maxDisplacement": 0.009006500244140625
+          },
+          {
+            "name": "瞳小",
+            "maxDisplacement": 0.0029410943388938904
+          },
+          {
+            "name": "両目見開き",
+            "maxDisplacement": 0.0033804002996337514
+          },
+          {
+            "name": "挑発",
+            "maxDisplacement": 0.01188850103563405
+          },
+          {
+            "name": "困る",
+            "maxDisplacement": 0.008178637146949663
+          },
+          {
+            "name": "ドン引き",
+            "maxDisplacement": 0.009073447052690033
+          },
+          {
+            "name": "両目閉じ",
+            "maxDisplacement": 0.02401578426361084
+          },
+          {
+            "name": "ウィンク右",
+            "maxDisplacement": 0.02401578426361084
+          },
+          {
+            "name": "ウィンク左",
+            "maxDisplacement": 0.023873790090405286
+          },
+          {
+            "name": "瞳左",
+            "maxDisplacement": 0.00510406808017754
+          },
+          {
+            "name": "瞳右",
+            "maxDisplacement": 0.0043450395892773415
+          },
+          {
+            "name": "瞳上",
+            "maxDisplacement": 0.007050202537468653
+          },
+          {
+            "name": "瞳下",
+            "maxDisplacement": 0.006201192615979276
+          },
+          {
+            "name": "vmodelBrowUpLeft",
+            "maxDisplacement": 0.005808247937514959
+          },
+          {
+            "name": "vmodelBrowUpRight",
+            "maxDisplacement": 0.005714258589158506
+          },
+          {
+            "name": "vmodelBrowDownLeft",
+            "maxDisplacement": 0.006157636642456055
+          },
+          {
+            "name": "vmodelBrowDownRight",
+            "maxDisplacement": 0.005226612091064453
+          },
+          {
+            "name": "vmodelBrowWorry",
+            "maxDisplacement": 0.0093308687210083
+          },
+          {
+            "name": "vmodelMouthSmile",
+            "maxDisplacement": 0.00022482872009277344
+          },
+          {
+            "name": "vmodelMouthFrown",
+            "maxDisplacement": 0.0007858332063866531
+          },
+          {
+            "name": "vmodelEyeWideLeft",
+            "maxDisplacement": 0.00330197811126709
+          },
+          {
+            "name": "vmodelEyeWideRight",
+            "maxDisplacement": 0.0031734704971313477
+          }
+        ],
+        "direct": [
+          {
+            "name": "spine",
+            "rawAngle": 0.4,
+            "surfaceSamples": 720,
+            "maxDisplacement": 0.20997226657993961
+          },
+          {
+            "name": "chest",
+            "rawAngle": 0.4,
+            "surfaceSamples": 720,
+            "maxDisplacement": 0.1708674757000756
+          },
+          {
+            "name": "leftThumbMetacarpal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.02407766082894786
+          },
+          {
+            "name": "leftThumbProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.014796140222794537
+          },
+          {
+            "name": "leftThumbDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.011128406315565558
+          },
+          {
+            "name": "leftIndexProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.01917037231539032
+          },
+          {
+            "name": "leftIndexIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.018320869267855845
+          },
+          {
+            "name": "leftIndexDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.010283710997465438
+          },
+          {
+            "name": "leftMiddleProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.028456265315171914
+          },
+          {
+            "name": "leftMiddleIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.01876800566064431
+          },
+          {
+            "name": "leftMiddleDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.009747291374595441
+          },
+          {
+            "name": "leftRingProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.03173558411221757
+          },
+          {
+            "name": "leftRingIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.017269469348082944
+          },
+          {
+            "name": "leftRingDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.010005750057666827
+          },
+          {
+            "name": "leftLittleProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.019326716891537473
+          },
+          {
+            "name": "leftLittleIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.011544352904743023
+          },
+          {
+            "name": "leftLittleDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.006058824088465139
+          },
+          {
+            "name": "rightThumbMetacarpal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.026579047505517633
+          },
+          {
+            "name": "rightThumbProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.017026615095524833
+          },
+          {
+            "name": "rightThumbDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.00867219723704274
+          },
+          {
+            "name": "rightIndexProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.019125766119648155
+          },
+          {
+            "name": "rightIndexIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.01831958939843931
+          },
+          {
+            "name": "rightIndexDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.010284078551257386
+          },
+          {
+            "name": "rightMiddleProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.028456823247723355
+          },
+          {
+            "name": "rightMiddleIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.018768204089209643
+          },
+          {
+            "name": "rightMiddleDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.009747285056940795
+          },
+          {
+            "name": "rightRingProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.031684702903213506
+          },
+          {
+            "name": "rightRingIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.017269516252971837
+          },
+          {
+            "name": "rightRingDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.01000583345301746
+          },
+          {
+            "name": "rightLittleProximal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.015124337065518634
+          },
+          {
+            "name": "rightLittleIntermediate",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.011545907218837047
+          },
+          {
+            "name": "rightLittleDistal",
+            "rawAngle": 0.4,
+            "surfaceSamples": 560,
+            "maxDisplacement": 0.006061325783636829
+          }
+        ],
+        "gestures": [
+          {
+            "gesture": "open",
+            "fingers": {
+              "leftThumbMetacarpal": 0.6506853887444727,
+              "leftIndexProximal": 0.1022002655457708,
+              "leftMiddleProximal": 0.10385416918078179,
+              "leftRingProximal": 0.05032244298718706,
+              "leftLittleProximal": 0.04710943053193315,
+              "rightThumbMetacarpal": 0.6506872554273002,
+              "rightIndexProximal": 0.12518324098684142,
+              "rightMiddleProximal": 0.10385388310447818,
+              "rightRingProximal": 0.05395303427879843,
+              "rightLittleProximal": 0.0578504745642526,
+              "leftThumbProximal": 0.38683787870067027,
+              "leftIndexIntermediate": 0.0384917639426245,
+              "leftMiddleIntermediate": 0.05013071805245505,
+              "leftRingIntermediate": 0.01945494099792765,
+              "leftLittleIntermediate": 0.07203372982429086,
+              "rightThumbProximal": 0.3855184962014212,
+              "rightIndexIntermediate": 0.020927620964857317,
+              "rightMiddleIntermediate": 0.05013095405521227,
+              "rightRingIntermediate": 0.05606034026767001,
+              "rightLittleIntermediate": 0.07203506774265943,
+              "leftThumbDistal": 0,
+              "leftIndexDistal": 0,
+              "leftMiddleDistal": 0,
+              "leftRingDistal": 0,
+              "leftLittleDistal": 0,
+              "rightThumbDistal": 0,
+              "rightIndexDistal": 0,
+              "rightMiddleDistal": 0,
+              "rightRingDistal": 0,
+              "rightLittleDistal": 0
+            }
+          },
+          {
+            "gesture": "fist",
+            "fingers": {
+              "leftThumbMetacarpal": 0.9065135626844287,
+              "leftIndexProximal": 0.6791317430114552,
+              "leftMiddleProximal": 0.6768296738752803,
+              "leftRingProximal": 0.7543956356693555,
+              "leftLittleProximal": 0.8420423326597128,
+              "rightThumbMetacarpal": 0.9065038968522428,
+              "rightIndexProximal": 0.6828344149235018,
+              "rightMiddleProximal": 0.6768304201395255,
+              "rightRingProximal": 0.7581899642714757,
+              "rightLittleProximal": 0.8474958371367598,
+              "leftThumbProximal": 0.9921204605066135,
+              "leftIndexIntermediate": 1.0097629966468016,
+              "leftMiddleIntermediate": 1.072546182443291,
+              "leftRingIntermediate": 0.9811036821696939,
+              "leftLittleIntermediate": 0.933544753286338,
+              "rightThumbProximal": 0.9714662055804717,
+              "rightIndexIntermediate": 1.009998146567777,
+              "rightMiddleIntermediate": 1.0725458096850604,
+              "rightRingIntermediate": 0.979674903002388,
+              "rightLittleIntermediate": 0.9348335745497239,
+              "leftThumbDistal": 0.532473512278817,
+              "leftIndexDistal": 0.5021144470755464,
+              "leftMiddleDistal": 0.5002017390198558,
+              "leftRingDistal": 0.5002094086681684,
+              "leftLittleDistal": 0.5019281838382998,
+              "rightThumbDistal": 0.5334777957343289,
+              "rightIndexDistal": 0.5021143998569895,
+              "rightMiddleDistal": 0.5002017318941333,
+              "rightRingDistal": 0.5002480218419832,
+              "rightLittleDistal": 0.5000195909168139
+            }
+          },
+          {
+            "gesture": "point",
+            "fingers": {
+              "leftThumbMetacarpal": 0.9065135626844287,
+              "leftIndexProximal": 0.1022002655457708,
+              "leftMiddleProximal": 0.6768296738752803,
+              "leftRingProximal": 0.7543956356693555,
+              "leftLittleProximal": 0.8420423326597128,
+              "rightThumbMetacarpal": 0.9065038968522428,
+              "rightIndexProximal": 0.12518324098684142,
+              "rightMiddleProximal": 0.6768304201395255,
+              "rightRingProximal": 0.7581899642714757,
+              "rightLittleProximal": 0.8474958371367598,
+              "leftThumbProximal": 0.9921204605066135,
+              "leftIndexIntermediate": 0.0384917639426245,
+              "leftMiddleIntermediate": 1.072546182443291,
+              "leftRingIntermediate": 0.9811036821696939,
+              "leftLittleIntermediate": 0.933544753286338,
+              "rightThumbProximal": 0.9714662055804717,
+              "rightIndexIntermediate": 0.020927620964857317,
+              "rightMiddleIntermediate": 1.0725458096850604,
+              "rightRingIntermediate": 0.979674903002388,
+              "rightLittleIntermediate": 0.9348335745497239,
+              "leftThumbDistal": 0.532473512278817,
+              "leftIndexDistal": 0,
+              "leftMiddleDistal": 0.5002017390198558,
+              "leftRingDistal": 0.5002094086681684,
+              "leftLittleDistal": 0.5019281838382998,
+              "rightThumbDistal": 0.5334777957343289,
+              "rightIndexDistal": 0,
+              "rightMiddleDistal": 0.5002017318941333,
+              "rightRingDistal": 0.5002480218419832,
+              "rightLittleDistal": 0.5000195909168139
+            }
+          },
+          {
+            "gesture": "peace",
+            "fingers": {
+              "leftThumbMetacarpal": 0.6506853887444727,
+              "leftIndexProximal": 0.1022002655457708,
+              "leftMiddleProximal": 0.10385416918078179,
+              "leftRingProximal": 0.7543956356693555,
+              "leftLittleProximal": 0.8420423326597128,
+              "rightThumbMetacarpal": 0.6506872554273002,
+              "rightIndexProximal": 0.12518324098684142,
+              "rightMiddleProximal": 0.10385388310447818,
+              "rightRingProximal": 0.7581899642714757,
+              "rightLittleProximal": 0.8474958371367598,
+              "leftThumbProximal": 0.38683787870067027,
+              "leftIndexIntermediate": 0.0384917639426245,
+              "leftMiddleIntermediate": 0.05013071805245505,
+              "leftRingIntermediate": 0.9811036821696939,
+              "leftLittleIntermediate": 0.933544753286338,
+              "rightThumbProximal": 0.3855184962014212,
+              "rightIndexIntermediate": 0.020927620964857317,
+              "rightMiddleIntermediate": 0.05013095405521227,
+              "rightRingIntermediate": 0.979674903002388,
+              "rightLittleIntermediate": 0.9348335745497239,
+              "leftThumbDistal": 0,
+              "leftIndexDistal": 0,
+              "leftMiddleDistal": 0,
+              "leftRingDistal": 0.5002094086681684,
+              "leftLittleDistal": 0.5019281838382998,
+              "rightThumbDistal": 0,
+              "rightIndexDistal": 0,
+              "rightMiddleDistal": 0,
+              "rightRingDistal": 0.5002480218419832,
+              "rightLittleDistal": 0.5000195909168139
+            }
+          }
+        ]
+      },
+      "springs": [
+        {
+          "springMotion": "full",
+          "joints": 180,
+          "maximumAngle": 0.2844043272829273,
+          "finite": true
+        },
+        {
+          "springMotion": "gentle",
+          "joints": 180,
+          "maximumAngle": 0.19194045194761508,
+          "finite": true
+        },
+        {
+          "springMotion": "off",
+          "joints": 0,
+          "maximumAngle": 0,
+          "finite": true
+        }
+      ],
+      "outputSizes": [
+        {
+          "outputResolution": "720p",
+          "orientation": "landscape",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "outputResolution": "720p",
+          "orientation": "portrait",
+          "width": 720,
+          "height": 1280
+        },
+        {
+          "outputResolution": "1080p",
+          "orientation": "landscape",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "outputResolution": "1080p",
+          "orientation": "portrait",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "renders": [
+        {
+          "pose": "front",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 61,
+          "triangles": 104952,
+          "camera": [
+            -0.000020027160000000014,
+            1.5679658446769866,
+            0.5101118421864311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-v2-front.png",
+          "imageSha256": "f9a1c6cc04d702769f1c545200a756ceb6c32d631cc1f2c04fbe103addaf961e"
+        },
+        {
+          "pose": "side",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 61,
+          "triangles": 104952,
+          "camera": [
+            -0.020020027019999997,
+            1.5679658446769866,
+            0.5301118420464311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-v2-side.png",
+          "imageSha256": "17023b9048b9d8e9f3b3f2c63c6ae9429fd6fd151e228ae80de8cf95b444d426"
+        },
+        {
+          "pose": "smile",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 61,
+          "triangles": 104952,
+          "camera": [
+            -0.000020027160000000014,
+            1.5679658446769866,
+            0.5101118421864311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-v2-smile.png",
+          "imageSha256": "bff4a54e5d8a61e20fd30e4ea0a619b0d9e48a4aecd55e08dabb04c59611fc06"
+        },
+        {
+          "pose": "blink",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 61,
+          "triangles": 104952,
+          "camera": [
+            -0.000020027160000000014,
+            1.5679658446769866,
+            0.5101118421864311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-v2-blink.png",
+          "imageSha256": "020bda51a23436619eb807230b3e8b7adc258f84f071f4bf3c9dfe7cc946c8de"
+        },
+        {
+          "pose": "mouth",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 61,
+          "triangles": 104952,
+          "camera": [
+            -0.000020027160000000014,
+            1.5679658446769866,
+            0.5101118421864311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-v2-mouth.png",
+          "imageSha256": "b7470cde7f552c5c38cb719efdc252b73d3823803f799db7fed64d43a971416f"
+        },
+        {
+          "pose": "brows",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 61,
+          "triangles": 104952,
+          "camera": [
+            -0.000020027160000000014,
+            1.5679658446769866,
+            0.5101118421864311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-v2-brows.png",
+          "imageSha256": "7888380f2bcd3b362fa10bad3a8f0d4fffce152ab1c48cb57d30b0e0dfbd8874"
+        },
+        {
+          "pose": "raised-arms",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 61,
+          "triangles": 104952,
+          "camera": [
+            0.00009328289032839443,
+            1.3758649722013208,
+            1.1403044098838424
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-v2-raised-arms.png",
+          "imageSha256": "284b14861e87f00f1f524abbb7ad078f2e312bc2b1172d693644f00a36f18126"
+        },
+        {
+          "pose": "peace",
+          "lighting": "warm",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 61,
+          "triangles": 104952,
+          "camera": [
+            0.00009328289032839443,
+            1.3758649722013208,
+            1.1403044098838424
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-v2-peace.png",
+          "imageSha256": "149eb0b744474e39cf988cc1f6abdbf3cde0502f6208bb199b3f0da28eaf40f4"
+        },
+        {
+          "pose": "front",
+          "lighting": "studio",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 61,
+          "triangles": 104952,
+          "camera": [
+            -0.000020027160000000014,
+            1.5679658446769866,
+            0.5101118421864311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-v2-studio.png",
+          "imageSha256": "8dfaed129fca566712205f5730f68583e40f3f2ba109691dc1621427fa19b9cb"
+        },
+        {
+          "pose": "front",
+          "lighting": "violet",
+          "width": 1920,
+          "height": 1080,
+          "drawCalls": 61,
+          "triangles": 104952,
+          "camera": [
+            -0.000020027160000000014,
+            1.5679658446769866,
+            0.5101118421864311
+          ],
+          "fov": 42,
+          "image": "ops/001-zhil/sprint-002/reports/local/rei-v2/rei-v2-violet.png",
+          "imageSha256": "c93b6b0a9c9fadcc9cef6947e7eaa8a997e3406a65ff19b5277b6fc370bf9e5a"
+        }
+      ]
+    }
+  ],
+  "geometry": [
+    {
+      "pose": "front",
+      "lighting": "warm",
+      "maximumCoordinateChange": 0
+    },
+    {
+      "pose": "side",
+      "lighting": "warm",
+      "maximumCoordinateChange": 0
+    },
+    {
+      "pose": "smile",
+      "lighting": "warm",
+      "maximumCoordinateChange": 0
+    },
+    {
+      "pose": "blink",
+      "lighting": "warm",
+      "maximumCoordinateChange": 0
+    },
+    {
+      "pose": "mouth",
+      "lighting": "warm",
+      "maximumCoordinateChange": 0
+    },
+    {
+      "pose": "brows",
+      "lighting": "warm",
+      "maximumCoordinateChange": 0.0039220690727233
+    },
+    {
+      "pose": "raised-arms",
+      "lighting": "warm",
+      "maximumCoordinateChange": 0
+    },
+    {
+      "pose": "peace",
+      "lighting": "warm",
+      "maximumCoordinateChange": 0
+    },
+    {
+      "pose": "front",
+      "lighting": "studio",
+      "maximumCoordinateChange": 0
+    },
+    {
+      "pose": "front",
+      "lighting": "violet",
+      "maximumCoordinateChange": 0
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "limits": [
+    "Fixed synthetic controls and software graphics.",
+    "No live camera accuracy or target GPU timing measurement.",
+    "Appearance acceptance remains open."
+  ]
+}

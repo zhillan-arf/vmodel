@@ -8,6 +8,20 @@ const frame:TrackingFrame={version:1,sequence:1,timestamp:0,face:{},faceMatrix:n
 const task={sampleSequence:1,captureSequence:1,sampleTimeMs:0,startedAtMs:0,finishedAtMs:1,state:'new' as const,present:false};
 const diagnostic:DiagnosticEnvelope={version:1,sessionId:'synthetic',captureSequence:1,captureTimeMs:0,videoTimeMs:0,inputSize:{width:640,height:480},runtimeVersion:'test',modelHashes:{face:'a'.repeat(64),pose:'b'.repeat(64),hands:'c'.repeat(64)},delegate:'CPU',tasks:{face:{...task},pose:{...task},hands:{...task}}};
 function record(){const recorder=new TraceRecorder({runtime:'test',modelHashes:diagnostic.modelHashes,solverVersion,settings:defaults,calibration:null,rigHashes:[]});recorder.append({kind:'sample',frame,diagnostics:diagnostic,reasons:[]},0);recorder.append({kind:'apply',frameSequence:1,solverTimeMs:10,dt:1/60},10);return recorder;}
+
+it('reads earlier settings and preserves face calibration in new traces', async () => {
+  const old = JSON.parse(JSON.stringify(record().trace));
+  for (const key of ['outputResolution', 'lighting', 'lightIntensity', 'cameraFov', 'faceDetail']) delete old.manifest.settings[key];
+  const restored = await importTrace(new Blob([JSON.stringify(old)]));
+  expect(restored.manifest.settings).toEqual(defaults);
+  const current = record();
+  const calibration = { version: 1 as const, head: [0, 0, 0, 1], root: [0, 0, 0], face: { jawOpen: .2 } };
+  current.append({ kind: 'calibration', calibration }, 20);
+  const trace = await importTrace(new Blob([JSON.stringify(current.trace)]));
+  expect(trace.events.at(-1)).toMatchObject({ kind: 'calibration', calibration });
+  old.manifest.settings.mode = 'invalid';
+  await expect(importTrace(new Blob([JSON.stringify(old)]))).rejects.toThrow('settings');
+});
 it('retains a valid prefix at a duration limit',async()=>{const recorder=record();expect(recorder.append({kind:'reset'},60001)).toBe(false);expect(recorder.stoppedReason).toContain('60 seconds');expect((await importTrace(recorder.export())).events).toHaveLength(2);});
 it('rejects missing references and unexpected fields',async()=>{const trace=record().trace;(trace.events[1]as any).frameSequence=99;await expect(importTrace(new Blob([JSON.stringify(trace)]))).rejects.toThrow('apply');(trace.events[1]as any).frameSequence=1;(trace.events[0]as any).deviceId='private';await expect(importTrace(new Blob([JSON.stringify(trace)]))).rejects.toThrow('fields');});
 it('replays from reset with identical canonical rotations and reasons',()=>{const trace=record().trace;const run=()=>{let rig=createCanonicalRig(),solver=new MotionSolver(rig);const reasons:string[]=[];replayTrace(trace,{reset:()=>{rig=createCanonicalRig();solver=new MotionSolver(rig);solver.diagnosticSink=x=>reasons.push(x.reason);},settings:()=>{},calibration:x=>solver.setCalibration(x),sample:()=>{},apply:(frame,dt,now)=>solver.update(frame,defaults,dt,now)});return{rotations:[...rig.bones.values()].map(x=>x.quaternion.toArray()),reasons};};expect(run()).toEqual(run());});

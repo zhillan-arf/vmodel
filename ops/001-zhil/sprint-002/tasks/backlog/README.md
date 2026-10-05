@@ -19,7 +19,7 @@ It does not mean the motion targets passed.
 | [S002-004](../active/S002-004.md) | P0 | Human test | Apply the corrected hand contract to palm and finger controls. |
 | [S002-005](../active/S002-005.md) | P1 | Human test | Run all enabled tasks on each Balanced submission. |
 | [S002-006](../active/S002-006.md) | P1 | Human test | Prepare the same-camera reference comparison. |
-| [S002-007](../active/S002-007.md) | P1 | Human test | Keep the working face mappings for the regression test. |
+| [S002-007](../active/S002-007.md) | P1 | Human test | Review both v2 assets and retest the shared appearance controls. |
 | [S002-008](../archived/S002-008.md) | P2 | Done | Defer VMC implementation until comparison evidence identifies a useful source. |
 | [S002-009](../active/S002-009.md) | P0 | Human test | Prepare the build, automated evidence, physical procedure, and result sheet. |
 
