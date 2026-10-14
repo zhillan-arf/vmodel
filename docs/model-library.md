@@ -3,7 +3,8 @@
 An entry is a saved model record. An asset is the original VRM file, identified by its SHA-256 hash.
 A prepared avatar contains decoded graphics and a motion solver. Preparation does not change the active avatar.
 
-The normal launcher uses `http://127.0.0.1:4173`. Other ports and `localhost` have separate browser storage.
+The Docker service uses `https://localhost:4173`. The Windows launcher uses `http://127.0.0.1:4173`.
+These addresses and other ports have separate browser storage.
 Keep original model files and backups outside browser storage. Browser data can disappear after storage cleanup.
 
 ## Import and selection

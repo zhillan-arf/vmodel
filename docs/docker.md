@@ -14,9 +14,9 @@ After the build, the studio loads its runtime files from the server.
 
 ## Start the service
 
-The default address is `https://10.12.1.193:4173`.
+The default address is `https://localhost:4173`.
 HTTPS protects the connection between the browser and the server.
-Port 4173 accepts connections on all IPv4 interfaces.
+Port 4173 accepts connections from this computer only.
 Caddy is the HTTPS server in `deploy/compose.yaml`.
 The VModel container accepts HTTP connections only inside the Docker network.
 
@@ -30,7 +30,7 @@ The VModel container accepts HTTP connections only inside the Docker network.
 The script builds the application and waits for the containers to pass their health checks.
 If Docker needs administrator access, the script uses `sudo`.
 The script exports the public certificate to `deploy/vmodel-local-ca.crt`.
-It does not change certificate trust on client computers.
+Install this certificate in the current user's trusted root store on this computer.
 
 To use Docker Compose directly, run these commands from the repository folder:
 
@@ -49,26 +49,24 @@ The default setup includes HTTPS; it does not need the former `compose.lan.yaml`
 
 Browsers require a secure context for camera access.
 A secure context uses trusted HTTPS or a local address such as `localhost`.
-An HTTP address such as `http://10.12.1.193:4173` cannot provide camera access.
+The local HTTPS address supports camera access after the browser trusts the certificate.
 See the [browser camera requirements](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia).
 
 Caddy creates a local certificate authority (CA) that signs the server certificate.
-Each client must trust this CA.
+The browser on this computer must trust this CA.
 See [Caddy local HTTPS](https://caddyserver.com/docs/automatic-https#local-https).
 
-1. If a firewall blocks port 4173, permit inbound TCP connections from your local network.
-2. Copy `deploy/vmodel-local-ca.crt` from the server to each client through a trusted connection.
-3. Install this certificate as a trusted root certificate on each client.
-4. Restart the client browser.
-5. Open `https://10.12.1.193:4173` in Chrome or Edge.
-6. Select **Start camera**.
-7. When the browser requests camera access, select **Allow**.
+1. Install `deploy/vmodel-local-ca.crt` as a trusted root certificate for the current user.
+2. Restart Chrome or Edge.
+3. Open `https://localhost:4173`.
+4. Select **Start camera**.
+5. When the browser requests camera access, select **Allow**.
 
 On Windows, use **Install Certificate**, then **Current User**, then **Trusted Root Certification Authorities**.
 Other operating systems and browsers can use different certificate stores.
 The browser must show a trusted connection before you start the camera.
 Do not use a certificate warning bypass as the setup method.
-Copy only the public certificate to clients; keep the CA private key on the server.
+Keep the CA private key on this computer.
 
 The browser can remember your camera permission.
 If access fails, check camera permission in the browser and the operating system.
@@ -94,21 +92,20 @@ Keep this volume to keep certificate trust after a restart.
 Do not use `docker compose down --volumes` unless you intend to replace the CA.
 The script also works from other folders when you use its absolute path.
 
-## Change the address or port
+## Change the port
 
 To change the defaults, copy `deploy/.env.example` to `deploy/.env`.
-Set `VMODEL_DOMAIN` to the server IP address or DNS name.
 Set `VMODEL_HTTPS_PORT` to the required TCP port.
 For example:
 
 ```dotenv
-VMODEL_DOMAIN=10.12.1.193
+VMODEL_DOMAIN=localhost
 VMODEL_HTTPS_PORT=4180
 ```
 
 Run `./deploy/manage.sh restart` to apply the change.
-Then open `https://10.12.1.193:4180`.
-If you use a DNS name, configure each client to resolve that name to the server address.
+Then open `https://localhost:4180`.
+The service remains available on this computer only.
 Move any existing Docker `.env` settings from the repository folder to `deploy/.env`.
 Replace the former `VMODEL_HTTP_PORT` setting with `VMODEL_HTTPS_PORT`.
 Port 4173 now uses HTTPS instead of HTTP.
@@ -147,7 +144,7 @@ To read server errors, run `./deploy/manage.sh logs`.
 To check HTTPS from the server, run:
 
 ```sh
-curl --cacert deploy/vmodel-local-ca.crt https://10.12.1.193:4173/health
+curl --cacert deploy/vmodel-local-ca.crt https://localhost:4173/health
 ```
 
 `/health` returns the application name when the server runs.

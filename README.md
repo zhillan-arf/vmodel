@@ -14,7 +14,7 @@ Use the **[human test procedure](ops/001-zhil/sprint-002/specs/human-test.md)** 
 
 Run `./deploy/manage.sh start` to build and start the Docker service.
 On Windows, run `powershell -ExecutionPolicy Bypass -File deploy\manage.ps1 start`.
-Open `https://10.12.1.193:4173` after you install the local certificate on the client.
+Open `https://localhost:4173` after you trust the local certificate on this computer.
 Use `./deploy/manage.sh stop` or `./deploy/manage.sh restart` to control the service.
 See [Docker setup](docs/docker.md) for certificate instructions and camera access.
 
