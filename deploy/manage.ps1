@@ -52,7 +52,7 @@ function Export-Certificate {
             $utf8NoBom = [System.Text.UTF8Encoding]::new($false)
             [System.IO.File]::WriteAllText($certificatePath, $certificateText, $utf8NoBom)
             Write-Output "Public certificate: $certificatePath"
-            Write-Output 'Install this certificate as a trusted root certificate on each client.'
+            Write-Output 'Install this certificate as a trusted root certificate on this computer.'
             return
         }
         catch {
@@ -105,7 +105,7 @@ try {
                 Invoke-Compose -ComposeArgs $composeArgs
                 Export-Certificate
                 $origin = Invoke-Compose -ComposeArgs @('exec', '-T', 'vmodel', 'printenv', 'VMODEL_ORIGIN') -CaptureOutput
-                Write-Output "Open $($origin -join '') after the client trusts the certificate."
+                Write-Output "Open $($origin -join '') after this computer trusts the certificate."
             }
             'stop' { Invoke-Compose -ComposeArgs @('down') }
             'status' { Invoke-Compose -ComposeArgs @('ps') }
